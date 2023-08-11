@@ -1,0 +1,28 @@
+
+select 
+case when  len(rtrim(k0101))>=9 and len(rtrim(k0101))<13  then left(rtrim(k0101),len(rtrim(k0101))-6)+left(rtrim(a0103),6)
+			when  len(rtrim(k0101))>13  then left(rtrim(k0101),len(rtrim(k0101))-10)+left(rtrim(a0103),6)
+				when  len(rtrim(k0101))<9 then rtrim(k0101)+left(rtrim(a0103),6)  END as k0101,
+MAX(k1.a) KA,
+SUM(K0114) K0114,k1.c KC
+
+from (select a,b,c
+from openrowset('microsoft.jet.oledb.4.0','excel 5.0;hdr=yes;database=f:\6078曹勇嵩\1.工作文件\1.工作文件（日期分类）\20230213 山西里程核对\30公路路线表.xls',sheet2$)
+)k1 
+left join  k01 on 	
+		 K1.A=case when  len(rtrim(k0101))>=9 and len(rtrim(k0101))<13  then left(rtrim(k0101),len(rtrim(k0101))-6)+left(rtrim(a0103),6)
+			when  len(rtrim(k0101))>13  then left(rtrim(k0101),len(rtrim(k0101))-10)+left(rtrim(a0103),6)
+				when  len(rtrim(k0101))<9 then rtrim(k0101)+left(rtrim(a0103),6)  END
+		--and k0114=k1.c
+where  isnull(k01.k0123,'2')='2' and (isnull(k01.k0124,'')='' or rtrim(k01.k0124) is null)  
+				and case when  len(rtrim(k0101))>=9 and len(rtrim(k0101))<13  then left(rtrim(k0101),len(rtrim(k0101))-6)+rtrim(a0103)
+			when  len(rtrim(k0101))>13  then left(rtrim(k0101),len(rtrim(k0101))-10)+rtrim(a0103)
+				when  len(rtrim(k0101))<9 then rtrim(k0101)+rtrim(a0103)  END is null
+				
+			--AND CAST(rtrim(K0114) AS NUMERIC(5,2))  - CAST(k1.c AS NUMERIC(5,2))  <>0
+			--AND K0114-k1.c<>'0'
+GROUP BY case when  len(rtrim(k0101))>=9 and len(rtrim(k0101))<13  then left(rtrim(k0101),len(rtrim(k0101))-6)+left(rtrim(a0103),6)
+			when  len(rtrim(k0101))>13  then left(rtrim(k0101),len(rtrim(k0101))-10)+left(rtrim(a0103),6)
+				when  len(rtrim(k0101))<9 then rtrim(k0101)+left(rtrim(a0103),6)  END,k1.c
+ORDER BY MAX(k1.a)
+

@@ -1,0 +1,440 @@
+{
+  "Version": 1.0,
+  "General": {
+    "TargetCatalog": "MYDB",
+    "TargetCloudInstanceName": "",
+    "TargetCloudProjectName": "",
+    "TargetCloudProjectOwnerUserID": "",
+    "TargetSchema": "dbo",
+    "TargetServer": "SQL2008R2",
+    "TargetServerType": "MSSQL",
+    "EmptyTargetTables": false,
+    "IsContinueOnError": false,
+    "RunMultipleInsert": true,
+    "UseExtendedInsert": true,
+    "UseTransaction": true
+  },
+  "TablesGenerateOrder": [
+    "goods"
+  ],
+  "Tables": [
+    {
+      "Name": "goods",
+      "objectType": "DataGenerationTable",
+      "Selected": true,
+      "VerifyStatus": "Normal",
+      "ErrMsg": "",
+      "Rows": 1000,
+      "Fields": [
+        {
+          "Name": "Id",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassSequence",
+            "IsUnsigned": false,
+            "StartVal": 31400,
+            "CustomMinVal": 1,
+            "CustomMaxVal": 2147483647,
+            "Increment": 1,
+            "UseCustomMinVal": false,
+            "UseCustomMaxVal": false,
+            "Cycle": false
+          }
+        },
+        {
+          "Name": "weight",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassNumber",
+            "NumStart": 0.0,
+            "NumEnd": 1000.0,
+            "NumType": "Decimal",
+            "NumDecimalPlace": 2
+          }
+        },
+        {
+          "Name": "Stock",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassNumber",
+            "NumStart": 0.0,
+            "NumEnd": 1000.0,
+            "NumType": "Integer",
+            "NumDecimalPlace": 2
+          }
+        },
+        {
+          "Name": "price",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassNumber",
+            "NumStart": 0.0,
+            "NumEnd": 1000.0,
+            "NumType": "Decimal",
+            "NumDecimalPlace": 2
+          }
+        },
+        {
+          "Name": "date",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassDate",
+            "StartDate": "2000-01-01",
+            "EndDate": "2022-07-18",
+            "IncludingDaysMode": "All",
+            "IncludingWeekdays": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ]
+          }
+        },
+        {
+          "Name": "Name",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": true,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassStringName",
+            "FormatType": "Fullname",
+            "LanguageTypes": [
+              "ChineseSimplified"
+            ]
+          }
+        },
+        {
+          "Name": "address",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassAddress",
+            "AddressType": "AddressLine1",
+            "RegionLanguageTypes": [
+              "ChinaSimplifiedChinese"
+            ]
+          }
+        },
+        {
+          "Name": "sex",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassGender",
+            "LanguageTypes": [
+              "English"
+            ]
+          }
+        },
+        {
+          "Name": "height",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassNumber",
+            "NumStart": 140.0,
+            "NumEnd": 200.0,
+            "NumType": "Decimal",
+            "NumDecimalPlace": 2
+          }
+        },
+        {
+          "Name": "country",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassRegion",
+            "RegionFormatType": "Name",
+            "LanguageTypes": [
+              "ChineseSimplified"
+            ]
+          }
+        },
+        {
+          "Name": "company",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassCompanyName",
+            "LanguageTypes": [
+              "ChineseSimplified"
+            ]
+          }
+        },
+        {
+          "Name": "sid",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassUUID",
+            "UseHyphenFormat": true,
+            "RegexString": "([0-9a-f]{8}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{12})"
+          }
+        },
+        {
+          "Name": "test2",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassPhoneNumber",
+            "PhoneNumberFormatType": "Domestic",
+            "IncludeDelimiter": true,
+            "Regions": [
+              "China"
+            ]
+          }
+        },
+        {
+          "Name": "TEST3",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassIPAddress",
+            "AddressType": "IPV4",
+            "RegexString": "(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])[.]){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])"
+          }
+        },
+        {
+          "Name": "TEST4",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassPaymentMethod",
+            "Values": [
+              "Credit Card",
+              "PayPal",
+              "Apple Pay",
+              "Huawei Pay",
+              "Oppo Pay",
+              "Oneplus Pay",
+              "Xiaomi Pay",
+              "Vivo pay",
+              "Honor Pay",
+              "Cash",
+              "Sumsung Pay",
+              "Meizu Pay"
+            ]
+          }
+        },
+        {
+          "Name": "TEST5",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassCreditCardNumber",
+            "CreditCardTypes": [
+              "UnionPay"
+            ]
+          }
+        },
+        {
+          "Name": "TEST1",
+          "objectType": "DataGenerationTableField",
+          "Selected": true,
+          "VerifyStatus": "Normal",
+          "ErrMsg": "",
+          "GenDefaultVal": false,
+          "DefaultVal": "",
+          "DefaultValPercentage": 5.0,
+          "GenNullVal": false,
+          "NullValPercentage": 5.0,
+          "IsUnique": false,
+          "ApplyGenCaseType": false,
+          "GenCaseType": "Capitalization",
+          "IsGenerateIndependently": false,
+          "Generator": {
+            "objectType": "DataGenerationPropertyClassCity",
+            "LanguageTypes": [
+              "ChineseSimplified"
+            ],
+            "Regions": [
+              "China"
+            ],
+            "UseCustomRegions": false
+          }
+        }
+      ]
+    }
+  ]
+}

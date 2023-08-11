@@ -1,0 +1,13 @@
+select k.a0102,k.ha0102,
+sum(case when left(k0101,1)='X' then isnull(k0114,0) end)	县道,
+sum(case when left(k0101,1)='Y' then isnull(k0114,0) end)	乡道,
+sum(case when left(k0101,1)='Z' then isnull(k0114,0) end)	专用公路,
+sum(case when left(k0101,1)='C' then isnull(k0114,0) end)	村道
+from  k01 k
+where isnull(k0124,'')='' and isnull(k0123,'2')='2' and a0102 like '42%'  and
+left(k0101,1) in ('x','y','z','c')
+and isnull(v0301,'2')='2'
+and k.a0102 like '4201%'
+group by 	k.a0102 ,k.ha0102 	with rollup
+having grouping (k.a0102)=grouping (k.ha0102)
+order by k.a0102

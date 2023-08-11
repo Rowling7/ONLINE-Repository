@@ -1,0 +1,21 @@
+--9
+--SH_K05_018
+-- K01的路线代码都要在技术状况评定表中有数据
+SELECT
+       'K01'+'&A0102 ='''+rtrim(cast(K01.A0102 as varchar))+''' and K0101='''+rtrim(cast(K01.K0101 as varchar))+''' and A0101='''+rtrim(cast(K01.A0101 as varchar))+''' and K0108 ='+rtrim(cast(K01.K0108 as varchar)) as 编辑,
+K01.a0102,k01.ha0102,RTRIM(k01.k0101) K0101,k01.A7002,K01.K0112,k01.k0108,k01.K0110,k01.k0109,k01.K0111,k01.a0101,k01.ha0101,K01.K0114
+FROM K01
+left JOIN (SELECT  RTRIM(K05.K0101) K0101,K05.A0102,K05.A0101A,K05.K0105 FROM K05 WHERE   K05.a0101a ='#TJND#' and K05.A0102 like '#A0102#%' and K05.A0102 like '#GLDW#%')B ON  K01.A0102 = B.A0102 AND RTRIM(K01.K0101) = RTRIM(B.K0101) AND ISNULL(K01.K0108,0) = ISNULL(B.K0105,0)
+WHERE  B.A0102 IS NULL and left(k01.k0101,1) in ('G','S') AND K01.a0101 ='#TJND#' and K01.A0102 like '#A0102#%' and K01.A0102 like '#GLDW#%'
+ORDER BY RTRIM(k01.k0101) ASC
+
+--10
+--SH_K04B_003
+-- K01的路线代码都要在技术状况评定表中有数据
+SELECT
+              'K01'+'&A0102 ='''+rtrim(cast(K01.A0102 as varchar))+''' and K0101='''+rtrim(cast(K01.K0101 as varchar))+''' and A0101='''+rtrim(cast(K01.A0101 as varchar))+''' and K0108 ='+rtrim(cast(K01.K0108 as varchar)) as 编辑,
+K01.a0102,k01.ha0102,RTRIM(k01.k0101) K0101,k01.A7002,K01.K0112,k01.k0108,k01.K0110,k01.k0109,k01.K0111,k01.a0101,k01.ha0101,K01.K0114,B.A0102
+FROM K01
+left JOIN (SELECT  RTRIM(K04B.K0101) K0101,K04B.A0102,K04B.A0101A,K04B.K0108 FROM K04B WHERE   K04B.a0101a ='#TJND#' and K04B.A0102 like '#A0102#%' and K04B.A0102 like '#GLDW#%')B ON  RTRIM(K01.A0102) = RTRIM(B.A0102) AND RTRIM(K01.K0101) = RTRIM(B.K0101) AND ISNULL(K01.K0108,0) = ISNULL(B.K0108,0)
+WHERE  B.A0102 IS NULL and left(k01.k0101,1) in ('X','Y','C') AND K01.a0101 ='#TJND#' and K01.A0102 like '#A0102#%' and K01.A0102 like '#GLDW#%'
+ORDER BY RTRIM(k01.k0101) ASC

@@ -1,0 +1,87 @@
+设置名字
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /
+$ git config --global user.name ysongcao
+
+设置邮箱
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /
+$ git config --global user.email 2804119807@qq.com
+
+克隆仓库
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /
+$ git clone https://github.com/Rowling7/ONLINE-Repository.git
+Cloning into 'ONLINE-Repository'...
+fatal: unable to access 'https://github.com/Rowling7/ONLINE-Repository.git/': SS
+L certificate problem: unable to get local issuer certificate
+
+关闭协议
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /
+$ git config --global http.sslverify false
+
+重新克隆
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /
+$ git clone https://github.com/Rowling7/ONLINE-Repository.git
+Cloning into 'ONLINE-Repository'...
+warning: You appear to have cloned an empty repository.
+
+
+添加文件
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
+$ git add README.TXT
+
+不能大写
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
+$ GIT STATUS
+git: 'STATUS' is not a git command. See 'git --help'.
+
+查看状态
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.TXT --字体颜色 绿色
+
+
+提交文件 未上传
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
+$ git commit -m 'add README.TXT'
+[main (root-commit) 2690cbb] add README.TXT
+ 1 file changed, 24 insertions(+)
+ create mode 100644 README.TXT
+
+查看日志
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
+$ git log
+commit 2690cbb65cbb8f29ad85de585625596a7e8c1391 (HEAD -> main)
+Author: ysongcao <2804119807@qq.com>
+Date:   Fri Aug 11 10:01:18 2023 +0800
+
+    add README.TXT
+
+上传文件
+OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
+$ git push
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify f
+or more information.
+info: please complete authentication in your browser...
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify f
+or more information.
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 573 bytes | 573.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Rowling7/ONLINE-Repository.git
+ * [new branch]      main -> main
+
+上传成功

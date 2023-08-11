@@ -1,0 +1,28 @@
+/*update openrowset('Microsoft.Jet.OLEDB.4.0',  --
+'E:\东方永德软件OYDSOFT(NEW)\HRP-GIS2012\MAPDATA\4205\mapdata.sdd';'admin';'',LX_z)
+set DWDM=(left(rtrim(DWDM),2)+SUBSTRING(rtrim(DWDM),4,2)+substring(rtrim(DWDM),7,2)),DWMC=rtrim(objjc)
+from da0102 
+where (left(rtrim(DWDM),2)+SUBSTRING(rtrim(DWDM),4,2)+substring(rtrim(DWDM),7,2))=rtrim(objname)
+
+select  *
+from openrowset('Microsoft.Jet.OLEDB.4.0',  'D:\东方永德软件OYDSOFT\HRP-GIS2015\MAPDATA\421\mapdata.sdd';'admin';'',LCZ)
+where  left(rtrim(LXBM),1)in('g','h')
+order by LXBM,DWDM,FSLB
+
+select  *
+from K098
+where left(k0101,1)='g' and k9803='1'
+order by A0102,k0101,K9802
+
+*/
+
+SELECT  rtrim(A0102),rtrim(K0101),rtrim(K9801), rtrim(K9802)
+FROM K098 
+DELETE   FROM K098
+WHERE  rtrim(A0102)+rtrim(K0101)+rtrim(K9801)+ rtrim(K9802) IN(
+select rtrim(A0102)+rtrim(K0101)+rtrim(K9801)+ rtrim(K9802)
+from k098
+left join openrowset('Microsoft.Jet.OLEDB.4.0',  'D:\东方永德软件OYDSOFT\HRP-GIS2015\MAPDATA\42\mapdata.sdd';'admin';'',LCZ)
+on rtrim(DWDM)=rtrim(A0102) AND rtrim(LXBM)= rtrim(K0101)AND WZZH=K9802 AND FSLB =K9801
+WHERE DWDM  IS NULL and left(rtrim(A0102),3)<>'42A' AND K9801<>'1270'
+)
