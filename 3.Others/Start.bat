@@ -13,8 +13,8 @@ rem 企业微信
 start D:\"Program Files (x86)"\WXWork\WXWork.exe
 
 rem 微信多开
-rem start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
-rem start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
+start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
+start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
 
 rem Ssms
 rem start C:\"Program Files (x86)"\"Microsoft SQL Server"\90\Tools\Binn\VSShell\Common7\IDE\Ssms.exe
