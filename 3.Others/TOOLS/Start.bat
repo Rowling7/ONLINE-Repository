@@ -31,7 +31,7 @@ taskkill /f /im ToDesk.exe
 :: 关闭向日葵
 taskkill /f /im SunloginClient.exe
 
-:: 关闭ToDesk 
+:: 关闭ToDesk
 taskkill /f /im ToDesk.exe
 :: 关闭ToDesk服务
 sc stop "ToDesk_Service"
