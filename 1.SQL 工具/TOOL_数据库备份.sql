@@ -1,1 +1,0 @@
-backup database [HRP-DBMS2015] to disk = 'E:\HRP-DBMS2015-0830'
