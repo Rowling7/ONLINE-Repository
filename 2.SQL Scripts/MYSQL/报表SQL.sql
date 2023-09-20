@@ -310,7 +310,7 @@ left join GYDWB on GS=MC
 where  d.s9532 = '2022' and a.z0011!=3
 and b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912) ,'%')
 and left (b01.b0111 ,3)<>'42a'  AND GS IS NOT NULL
-GROUP BY b0111 ;
+GROUP BY b0111,GS,bm ;
 
 
 -- -----------------------------------> R0024<----------------------------------- --
@@ -349,4 +349,4 @@ left join s951 e on  a.a0103=e.s951_id -- 单位代码
 where  d.s9532 = '2022' and a.z0011!=3
 and b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912),'%')
 and left (b01.b0111,3)='42a'  
-GROUP BY b01.b0111  with rollup;
+GROUP BY b01.b0111,b01.b0101  with rollup;
