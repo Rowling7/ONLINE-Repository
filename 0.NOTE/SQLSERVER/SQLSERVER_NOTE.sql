@@ -219,6 +219,9 @@ FROM INFO
 IF OBJECT_ID('TEMPDB..#T') IS NOT NULL
 DROP TABLE #T
 
+--判断存储过程是否存在
+IF EXISTS (SELECT * FROM sysobjects WHERE name = 'Pr_sysCheckFKForPublic')
+drop procedure Pr_sysCheckFKForPublic
 
 --CASE  WHEN   ****  THEN   ****ELSE ****  END
 SELECT 	[人名]=CASE WHEN LEFT(NAME,1)='张'THEN '张' ELSE '王'END,
