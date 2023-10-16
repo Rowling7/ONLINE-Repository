@@ -56,7 +56,7 @@ Transact-SQL的组成元素：
 　　　　图像文本
 　　　　表
 　　2. 自定义数据类型
-　　　　利用系统存储过程定义用户自定义数据类型： 
+　　　　利用系统存储过程定义用户自定义数据类型：
 　　　　　　Sp_addtype [@typename=] 新数据类型名,
 　　　　　　[@phystype=] 系统数据类型名
 　　　　　　[,[@nulltype=] null_type]
@@ -133,11 +133,11 @@ SELECT CAST('123.4' AS int)
 /*CAST()函数和CONVERT()函数都不能执行四舍五入或截断操作。由于123.4不能用int数据类型来表示，所以对这个函数调用将产生错误*/
 
 /*要返回一个合法的数值，就必须使用能处理这个值的数据类型。对于这个例子，存在多个可用的数据类型。如果通过CAST()函数将这个值转换为decimal类型，需要首先定义decimal值的精度与小数位数。在本例中，精度与小数位数分别为9与2。精度是总的数字位数，包括小数点左边和右边位数的总和。而小数位数是小数点右边的位数。这表示本例能够支持的最大的整数值是9999999，而最小的小数是0.01。*/
-SELECT CAST('123.4' AS decimal(9,2)) 
+SELECT CAST('123.4' AS decimal(9,2))
 /*decimal数据类型在结果网格中将显示有效小数位:123.40*/
 
 /*精度和小数位数的默认值分别是18与0。如果在decimal类型中不提供这两个值，SQL Server将截断数字的小数部分，而不会产生错误。*/
-SELECT CAST('123.4' AS decimal) 
+SELECT CAST('123.4' AS decimal)
 /*结果是一个整数值：123*/
 　　(2) CONVERT()
 　　　　语法：CONVERT(data_type[(length)],expression)
@@ -161,11 +161,11 @@ WHILE @i<=100
             SET @sum+=@i
         SET @i+=1
     END
-PRINT @sum;        
+PRINT @sum;
 /*CASE..END的使用*/
 SELECT '学号'=Sno, '课程号'=Cno,
-  '等级'= 
-    CASE  
+  '等级'=
+    CASE
        WHEN Grade<60 THEN '不及格'
        WHEN Grade BETWEEN 60 AND 69 THEN '差'
        WHEN Grade BETWEEN 70 AND 79 THEN '中'
