@@ -1,5 +1,10 @@
 mklink /H "E:\Documents\Navicat\MySQL\Servers\Localhost\test\报表SQL.sql" "E:\Documents\VSCode Files\0.NOTE\MYSQL\报表SQL.sql"
 
+-- 查询表名和所在数据库
+SELECT TABLE_NAME AS 表名,table_schema AS 库名
+FROM information_schema.TABLES
+WHERE TABLE_NAME LIKE '%S01%';
+
 -- 调整一次传送数据包的过程中最大允许的数据包大小
 set global max_allowed_packet=1024*1024*1*20;
 show global variables like 'max_allowed_packet';
