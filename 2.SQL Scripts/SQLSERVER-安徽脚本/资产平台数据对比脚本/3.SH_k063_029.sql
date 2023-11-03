@@ -1,6 +1,6 @@
 SELECT 
 'K063'+'&A0102 ='''+RTRIM(CAST(k063.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k063.K0101 AS VARCHAR))+''' AND K6301 ='+RTRIM(CAST(k063.K6301 AS VARCHAR))  AS 编辑, 
-RTRIM(K001.A0102),RTRIM(K001.HA0102),
+RTRIM(K001.A0102) '管理单位代码' ,RTRIM(K001.HA0102) '管理单位名称',
 K063.K6302 '年报|隧道长度(米)',	ZCPT_K063.K6302 '资产平台|隧道长度(米)',
 rtrim(replace(replace(replace(replace(replace(k063.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k063.a0103,6)+'U'+k063.k6301 '年报|隧道净宽(米)',	ZCPT_K063.SDDM '资产平台|隧道净宽(米)',
 
