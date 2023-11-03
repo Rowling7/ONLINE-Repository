@@ -147,6 +147,7 @@ case when len(是否按干线公路管理接养)>0 then 是否按干线公路管
 备注
 from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078曹勇嵩\1.工作文件\3.安徽工作文件\20231030 导入路段表\路线明细数据 (资产平台导出黄山市黄山区分中心).xls',sheet1$)
 left join dk0301 on left(技术等级,2)= rtrim(objjc)
+ORDER BY 路线编码
 
 --更新管理单位字段A0102,HA0102
 UPDATE zcpt_k001
@@ -154,6 +155,7 @@ SET zcpt_k001.a0102=rtrim(k001.a0102),zcpt_k001.ha0102=rtrim(k001.ha0102)
 FROM zcpt_k001
 left JOIN k001
 ON rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) +CAST(k001.K0108 as VARCHAR(20)) +CAST(k001.K0109 as VARCHAR(20))=rtrim(zcpt_k001.k0101) +CAST(zcpt_k001.K0108 as VARCHAR(20)) +CAST(zcpt_k001.K0109 as VARCHAR(20))
+
 
 
 --SELECT * from ZCPT_K001

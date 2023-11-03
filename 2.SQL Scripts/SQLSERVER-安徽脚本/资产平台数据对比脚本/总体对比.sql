@@ -41,8 +41,9 @@ rtrim(k001.HK0138)	'年报|是否为资产数据',	rtrim(zcpt_k001.HK0138)	'资�
 k001.K0199	'年报|备注',	zcpt_k001.K0199	'资产平台|备注'
 
 from K001
-left join ZCPT_K001 on rtrim(k001.a0103)=rtrim(ZCPT_K001.a0103) and rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=rtrim(ZCPT_K001.k0101) and k001.k0108=ZCPT_K001.k0108
-where  rtrim(k001.a0103)='341003' and
+join ZCPT_K001 on rtrim(k001.a0103)=rtrim(ZCPT_K001.a0103) and rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=rtrim(ZCPT_K001.k0101) and k001.k0108=ZCPT_K001.k0108
+where   k001.A0102 LIKE '34%' AND k001.A0102 LIKE '34%' and
+--where  k001.A0102 LIKE '#A0102#%' AND k001.A0102 LIKE '#GLDW#%' and
 (
 rtrim(k001.A0130)<>rtrim(zcpt_k001.A0130)	or
 rtrim(k001.K0112)<>rtrim(zcpt_k001.K0112) or
