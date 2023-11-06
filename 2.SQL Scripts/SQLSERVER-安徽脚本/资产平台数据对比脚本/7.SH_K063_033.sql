@@ -12,8 +12,8 @@ K063.K0199 '年报|备注',	ZCPT_K063.K0199 '资产平台|备注',
 from ZCPT_K063
 left join k063 on ZCPT_K063.SDDM= rtrim(replace(replace(replace(replace(replace(k063.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k063.a0103,6)+'U'+k063.k6301
 left join k001 on rtrim(k063.k0101)=rtrim(k001.k0101) and k063.k6324>=k001.k0108 and k063.k6324<=k001.k0109
-where   k063.A0102 LIKE '34%' AND k063.A0102 LIKE '34%' and
---where  k001.A0102 LIKE '#A0102#%' AND k001.A0102 LIKE '#GLDW#%' and
+--where   k063.A0102 LIKE '34%' AND k063.A0102 LIKE '34%' and
+where K063.A0102 LIKE '#A0102#%' AND K063.A0102 LIKE '#GLDW#%' and
 (
 K063.HK6343<>	ZCPT_K063.K6343 --隧道养护等级',
 )

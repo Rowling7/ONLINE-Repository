@@ -13,4 +13,4 @@ full JOIN k001
 ON rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) +CAST(k001.K0108 as VARCHAR(20)) +CAST(k001.K0109 as VARCHAR(20))=rtrim(zcpt_k001.k0101) +CAST(zcpt_k001.K0108 as VARCHAR(20)) +CAST(zcpt_k001.K0109 as VARCHAR(20))
 WHERE k001.a0102 IS NULL or rtrim(zcpt_k001.k0101) IS NULL 
 --and  k001.A0102 LIKE '#A0102#%' AND k001.A0102 LIKE '#GLDW#%'
-ORDER BY rtrim(zcpt_k001.k0101)
+--ORDER BY rtrim(zcpt_k001.k0101)

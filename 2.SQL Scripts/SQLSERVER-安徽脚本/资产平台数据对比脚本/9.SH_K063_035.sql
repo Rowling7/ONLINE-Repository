@@ -9,6 +9,8 @@ K063.A1313 '年报|单位性质代码',	ZCPT_K063.A1313 '资产平台|单位性�
 K063.A0130 '年报|管养单位名称',	ZCPT_K063.A0130 '资产平台|管养单位名称',
 K063.K6111 '年报|监管单位名称',	ZCPT_K063.K6111 '资产平台|监管单位名称',
 
+
+
 CASE 	when K063.A1313<>ZCPT_K063.A1313 and K063.A0130<>ZCPT_K063.A0130 and K063.K6111 <>ZCPT_K063.K6111
 then '单位性质代码/管养单位名称/监管单位名称 不一致'
 			when K063.A1313<>ZCPT_K063.A1313 and K063.A0130<>ZCPT_K063.A0130 and K063.K6111 =ZCPT_K063.K6111
@@ -29,12 +31,11 @@ END '对比结果'
 from ZCPT_K063
 left join k063 on ZCPT_K063.SDDM= rtrim(replace(replace(replace(replace(replace(k063.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k063.a0103,6)+'U'+k063.k6301
 left join k001 on rtrim(k063.k0101)=rtrim(k001.k0101) and k063.k6324>=k001.k0108 and k063.k6324<=k001.k0109
-where   k063.A0102 LIKE '34%' AND k063.A0102 LIKE '34%' and
---where  k001.A0102 LIKE '#A0102#%' AND k001.A0102 LIKE '#GLDW#%' and
+--where   k063.A0102 LIKE '34%' AND k063.A0102 LIKE '34%' and
+where K063.A0102 LIKE '#A0102#%' AND K063.A0102 LIKE '#GLDW#%' and
 (
 K063.A1313 <>ZCPT_K063.A1313 OR--单位性质代码',
 K063.A0130 <>ZCPT_K063.A0130 OR--管养单位名称',
 K063.K6111 <>	ZCPT_K063.K6111 --监管单位名称'
 )
 ORDER BY  sddm
-
