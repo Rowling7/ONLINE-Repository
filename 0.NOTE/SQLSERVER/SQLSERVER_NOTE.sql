@@ -2,6 +2,19 @@
 --/**
 --<------------------------------<---NEW--->------------------------------>--
 
+-- sql执行顺序区别
+/*
+where后面条件的执行顺序
+	1.mysql、sqlserver 从左往右执行
+	2.oracle 从右往左执行
+	tips：筛选掉数据越多的条件，越放到前面执行，可以提高数据库查询效率
+	tips：大多数时候，mysql会自动选择最优的执行顺序，但是有时候mysql不能做出最优的执行顺序，就需要我们自己判断哪种过滤最优。
+*/
+
+-- '' 和null 的区别
+/*
+	''是长度为0 的一个字符串，是一个确定的值，null是一个空值，是无法确定的
+*/
 --PARTITION BY
 --GROUP BY是分组函数，PARTITION BY是分区函数，SUM()等是聚合函数
 SELECT RANK()  OVER( PARTITION BY UID ORDER BY AGE DESC ) ,UID,AGE,ID
