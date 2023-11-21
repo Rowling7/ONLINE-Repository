@@ -728,3 +728,67 @@ case when isnull(K6338,'')<>isnull(ZCPT病害部位,'null') then '病害部位�
 case when isnull(K6339,'')<>isnull(ZCPT病害描述,'null') then '病害描述不一致' else null end
 )  like '%不一致%'
 order by K063.k6301
+
+
+--9.2.1
+SELECT distinct
+RTRIM(k060.A0102) A0102,RTRIM(k060.HA0102) HA0102,
+k060.K6002 '桥梁名称',	
+case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
+else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end '桥梁代码',
+'年报中存在 但 资产平台不存在 ' '对比结果'
+from k060
+left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108 and k060.k6003<=k001.k0109
+where k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
+LEFT(K001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%高速%' AND k001.A0102 LIKE '341%'and 
+(case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
+else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end)  not in (select ZCPT_K060.k6001 from ZCPT_K060)
+
+union
+
+SELECT distinct
+t.a0102 ,null,
+ZCPT_K060.K6002 '桥梁名称',
+ZCPT_K060.k6001 '桥梁代码',
+'资产平台存在 但 年报中不存在 ' '对比结果'
+from ZCPT_K060
+left join (SELECT distinct
+case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
+else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end  k6001,k060.a0102
+from k060
+left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108 and k060.k6003<=k001.k0109
+where  k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
+LEFT(K001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%高速%' AND k001.A0102 LIKE '341%'
+)t on ZCPT_K060.k6001=t.k6001
+where ZCPT_K060.A0102 LIKE '#A0102#%' AND ZCPT_K060.A0102 LIKE '#GLDW#%' and
+ t.a0102 is null
+order by '对比结果'
+
+--9.2.2
+SELECT
+'K060'+'&A0102 ='''+RTRIM(CAST(k060.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k060.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(k060.K6003 AS VARCHAR))  AS 编辑,
+rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
+rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) '年报|路线编码',
+rtrim(ZCPT_K060.K0101) '资产平台|路线编码',
+
+(case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
+else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end) '年报|桥梁代码',rtrim(ZCPT_K060.k6001) '资产平台|桥梁代码',
+rtrim(k060.k6002) '年报|桥梁名称',rtrim(ZCPT_K060.k6002) '资产平台|桥梁名称',
+rtrim(k060.k6003) '年报|桥梁中心桩号',rtrim(ZCPT_K060.k6003) '资产平台|桥梁中心桩号',
+
+case WHEN rtrim(k060.k6002)<>rtrim(ZCPT_K060.k6002) and rtrim(k060.k6003)=rtrim(ZCPT_K060.k6003) then '桥梁名称 不一致'
+WHEN rtrim(k060.k6002)=rtrim(ZCPT_K060.k6002) and rtrim(k060.k6003)<>rtrim(ZCPT_K060.k6003) then '桥梁中心桩号 不一致'
+else '桥梁名称/桥梁中心桩号 不一致' END '对比结果'
+
+from k060
+left join ZCPT_K060 on
+(case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
+else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end) = rtrim(ZCPT_K060.k6001)
+where  --k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
+LEFT(K060.K0101,1) IN ('G','S') and rtrim(k060.k0112) not like '%高速%'AND k060.A0102 LIKE '341%' and
+(
+rtrim(k060.k6002)<>rtrim(ZCPT_K060.k6002) or -- 桥梁名称,
+rtrim(k060.k6003)<>rtrim(ZCPT_K060.k6003)	 -- 桥梁中心桩号,
+)
+
+--9.2.3

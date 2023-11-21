@@ -3,6 +3,9 @@
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[ZCPT_K060]') AND type IN ('U'))
 	DROP TABLE [dbo].[ZCPT_K060]
 CREATE TABLE ZCPT_K060(
+[A0102] char(9) COLLATE Chinese_PRC_CI_AS   NULL,
+[HA0102] char(50) COLLATE Chinese_PRC_CI_AS  NULL,
+
   [K6002] char(100) COLLATE Chinese_PRC_CI_AS   NULL, --桥梁名称 
   [K6001] char(100) COLLATE Chinese_PRC_CI_AS   NULL, --桥梁编号 
   [K6003] numeric(18,3)   NULL, --桥梁中心桩号 
@@ -155,8 +158,8 @@ select
 桥梁编号 	,
 桥梁中心桩号 	,
 路线代码 	,
-路线简称 	,
-技术等级 	,
+case when len(路线简称)>0 then 路线简称 when len(路线简称)=0 or 路线简称 is null then null end 路线简称,
+case when len(技术等级)>0 then 技术等级 when len(技术等级)=0 or 技术等级 is null then null end 技术等级,
 [桥梁全长(米)] 	,
 [跨径总长(米)] 	,
 [单孔最大跨径(米)] 	,
@@ -164,42 +167,42 @@ select
 [桥梁全宽(米)] 	,
 [桥面净宽(米)] 	,
 桥梁跨径分类代码 	,
-桥梁跨径分类汉字 	,
-按使用年限分代码 	,
-按使用年限分汉字 	,
+case when len(桥梁跨径分类汉字)>0 then 桥梁跨径分类汉字 when len(桥梁跨径分类汉字)=0 or 桥梁跨径分类汉字 is null then null end ,
+case when len(按使用年限分代码)>0 then 按使用年限分代码 when len(按使用年限分代码)=0 or 按使用年限分代码 is null then null end ,
+case when len(按使用年限分汉字)>0 then 按使用年限分汉字 when len(按使用年限分汉字)=0 or 按使用年限分汉字 is null then null end ,
 上部结构类型代码 	,
-上部结构类型汉字 	,
+case when len(上部结构类型汉字)>0 then 上部结构类型汉字 when len(上部结构类型汉字)=0 or 上部结构类型汉字 is null then null end ,
 上部结构材料代码 	,
-上部结构材料汉字 	,
+case when len(上部结构材料汉字)>0 then 上部结构材料汉字 when len(上部结构材料汉字)=0 or 上部结构材料汉字 is null then null end ,
 桥墩类型代码 	,
-桥墩类型汉字 	,
+case when len(桥墩类型汉字)>0 then 桥墩类型汉字 when len(桥墩类型汉字)=0 or 桥墩类型汉字 is null then null end ,
 设计荷载等级代码 	,
-设计荷载等级汉字 	,
+case when len(设计荷载等级汉字)>0 then 设计荷载等级汉字 when len(设计荷载等级汉字)=0 or 设计荷载等级汉字 is null then null end ,
 抗震等级代码 	,
-抗震等级汉字 	,
+case when len(抗震等级汉字)>0 then 抗震等级汉字 when len(抗震等级汉字)=0 or 抗震等级汉字 is null then null end ,
 跨越地物类型代码 	,
-跨越地物类型汉字 	,
-跨越地物名称 	,
-[防洪标准(年)] 	,
-通航等级 	,
-墩台防撞设施类型 	,
-立交桥类别 	,
-建设单位名称 	,
-设计单位名称 	,
-施工单位名称 	,
-监理单位名称 	,
+case when len(跨越地物类型汉字)>0 then 跨越地物类型汉字 when len(跨越地物类型汉字)=0 or 跨越地物类型汉字 is null then null end ,
+case when len(跨越地物名称)>0 then 跨越地物名称 when len(跨越地物名称)=0 or 跨越地物名称 is null then null end ,
+case when len([防洪标准(年)])>0 then [防洪标准(年)] when len([防洪标准(年)])=0 or [防洪标准(年)] is null then null end ,
+case when len(通航等级)>0 then 通航等级 when len(通航等级)=0 or 通航等级 is null then null end ,
+case when len(墩台防撞设施类型)>0 then 墩台防撞设施类型 when len(墩台防撞设施类型)=0 or 墩台防撞设施类型 is null then null end ,
+case when len(立交桥类别)>0 then 立交桥类别 when len(立交桥类别)=0 or 立交桥类别 is null then null end ,
+case when len(建设单位名称)>0 then 建设单位名称 when len(建设单位名称)=0 or 建设单位名称 is null then null end ,
+case when len(设计单位名称)>0 then 设计单位名称 when len(设计单位名称)=0 or 设计单位名称 is null then null end ,
+case when len(施工单位名称)>0 then 施工单位名称 when len(施工单位名称)=0 or 施工单位名称 is null then null end ,
+case when len(监理单位名称)>0 then 监理单位名称 when len(监理单位名称)=0 or 监理单位名称 is null then null end ,
 case when len(REPLACE(修建年度, '-' ,'')) >0 then REPLACE(修建年度, '-' ,'') when len(REPLACE(修建年度, '-' ,'')) =0 or REPLACE(修建年度, '-' ,'') is null then null end 修建年度	,
 case when len(REPLACE(通车日期, '-' ,'')) >0 then REPLACE(通车日期, '-' ,'') when len(REPLACE(通车日期, '-' ,'')) =0 or REPLACE(通车日期, '-' ,'') is null then null end 通车日期	,
 管养单位性质 	,
-管养单位名称 	,
-监管单位名称 	,
+case when len(管养单位名称)>0 then 管养单位名称 when len(管养单位名称)=0 or 管养单位名称 is null then null end ,
+case when len(监管单位名称)>0 then 监管单位名称 when len(监管单位名称)=0 or 监管单位名称 is null then null end ,
 收费性质代码 	,
-收费性质汉字 	,
+case when len(收费性质汉字)>0 then 收费性质汉字 when len(收费性质汉字)=0 or 收费性质汉字 is null then null end ,
 技术状况评定代码 	,
-技术状况评定汉字 	,
+case when len(技术状况评定汉字)>0 then 技术状况评定汉字 when len(技术状况评定汉字)=0 or 技术状况评定汉字 is null then null end ,
 case when len(REPLACE(评定日期, '-' ,'')) >0 then REPLACE(评定日期, '-' ,'') when len(REPLACE(评定日期, '-' ,'')) =0 or REPLACE(评定日期, '-' ,'') is null then null end 评定日期	,
-技术状况评定单位 	,
-改建年度 	,
+case when len(技术状况评定单位)>0 then 技术状况评定单位 when len(技术状况评定单位)=0 or 技术状况评定单位 is null then null end ,
+case when len(改建年度)>0 then 改建年度 when len(改建年度)=0 or 改建年度 is null then null end ,
 case when len(REPLACE(改造完工日期, '-' ,'')) >0 then REPLACE(改造完工日期, '-' ,'') when len(REPLACE(改造完工日期, '-' ,'')) =0 or REPLACE(改造完工日期, '-' ,'') is null then null end 改造完工日期	,
 case when len(改造部位)>0 then 改造部位 when len(改造部位)=0 or 改造部位 is null then null end 改造部位,
 case when len(工程性质)>0 then 工程性质 when len(工程性质)=0 or 工程性质 is null then null end 工程性质,
@@ -209,14 +212,29 @@ case when len(主要病害位置)>0 then 主要病害位置 when len(主要病�
 case when len(主要病害描述)>0 then 主要病害描述 when len(主要病害描述)=0 or 主要病害描述 is null then null end 主要病害描述,
 case when len(已采取交通管制措施代码)>0 then 已采取交通管制措施代码 when len(已采取交通管制措施代码)=0 or 已采取交通管制措施代码 is null then null end 已采取交通管制措施代码,
 case when len(已采取交通管制措施汉字)>0 then 已采取交通管制措施汉字 when len(已采取交通管制措施汉字)=0 or 已采取交通管制措施汉字 is null then null end 已采取交通管制措施汉字,
-行政区划代码 	,
-行政区划汉字 	,
-桥梁所在位置 	,
-是否宽路窄桥 	,
-是否在长大桥梁目录中 	,
-case when len(是否跨省桥梁)>0 then 是否跨省桥梁 when len(是否跨省桥梁)=0 or 是否跨省桥梁 is null then null end 是否跨省桥梁,
-是否公铁两用桥梁 	,
+case when len(行政区划代码)>0 then 行政区划代码 when len(行政区划代码)=0 or 行政区划代码 is null then null end ,
+case when len(行政区划汉字)>0 then 行政区划汉字 when len(行政区划汉字)=0 or 行政区划汉字 is null then null end ,
+case when len(桥梁所在位置)>0 then 桥梁所在位置 when len(桥梁所在位置)=0 or 桥梁所在位置 is null then null end ,
+case when len(是否宽路窄桥)>0 then 是否宽路窄桥 when len(是否宽路窄桥)=0 or 是否宽路窄桥 is null then null end ,
+case when len(是否在长大桥梁目录中)>0 then 是否在长大桥梁目录中 when len(是否在长大桥梁目录中)=0 or 是否在长大桥梁目录中 is null then null end ,
+case when len(是否跨省桥梁)>0 then 是否跨省桥梁 when len(是否跨省桥梁)=0 or 是否跨省桥梁 is null then null end ,
+case when len(是否公铁两用桥梁)>0 then 是否公铁两用桥梁 when len(是否公铁两用桥梁)=0 or 是否公铁两用桥梁 is null then null end ,
 桥梁身份码 	,
 经度,
 纬度
-from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078曹勇嵩\1.工作文件\3.安徽工作文件\20231030 导入路段表\ZCPT_QL.xls',明细表$)
+from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078曹勇嵩\1.工作文件\3.安徽工作文件\20231120 安徽资产平台数据\全省桥梁明细表.xls',明细表$)
+
+--更新管理单位字段A0102,HA0102
+UPDATE zcpt_k060
+SET zcpt_k060.a0102=rtrim(k060.a0102),zcpt_k060.ha0102=rtrim(k060.ha0102)
+FROM zcpt_k060
+left JOIN k060
+ON (case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
+else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end)= rtrim(zcpt_k060.k6001)
+--更新管理单位字段A0102,HA0102
+UPDATE zcpt_k060
+SET zcpt_k060.a0102=rtrim(k001.a0102),zcpt_k060.ha0102=rtrim(k001.ha0102)
+FROM zcpt_k060
+left JOIN k001
+ON rtrim(replace(replace(replace(replace(replace(replace(replace(zcpt_k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=rtrim(replace(replace(replace(replace(replace(replace(replace(k001.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) and zcpt_k060.k6003>=k001.k0108 and zcpt_k060.k6003<=k001.k0109
+WHERE zcpt_k060.A0102 IS NULL
