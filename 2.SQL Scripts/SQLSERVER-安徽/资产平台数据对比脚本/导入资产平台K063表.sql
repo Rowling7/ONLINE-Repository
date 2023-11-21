@@ -159,7 +159,7 @@ case when len(SDGCS) >0 then SDGCS when len(SDGCS) =0 or SDGCS is null then null
 case when len(K0185) >0 then K0185 when len(K0185) =0 or K0185 is null then null end K0185	,
 case when len(K0186) >0 then K0186 when len(K0186) =0 or K0186 is null then null end K0186	,
 case when len(K6343) >0 then K6343 when len(K6343) =0 or K6343 is null then null end K6343	
-from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078曹勇嵩\1.工作文件\3.安徽工作文件\20231030 导入路段表\资产平台导出隧道明细表.xls',明细表$)
+from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078曹勇嵩\1.工作文件\3.安徽工作文件\20231120 安徽资产平台数据\全省隧道明细表.xls',明细表$)
 
 
 
@@ -206,7 +206,7 @@ CREATE NONCLUSTERED INDEX [_WA_Sys_K6032_42EBA8DC] ON [dbo].[ZCPT_K063] ([K6032]
 GO
 CREATE NONCLUSTERED INDEX [_WA_Sys_K0116_42EBA8DC] ON [dbo].[ZCPT_K063] ([K0116] ASC)
 GO
-CREATE NONCLUSTERED INDEX [_WA_Sys_hA1313_42EBA8DC] ON [dbo].[ZCPT_K063] ([hA1313] ASC)
+CREATE NONCLUSTERED INDEX [_WA_Sys_A1313_42EBA8DC] ON [dbo].[ZCPT_K063] ([A1313] ASC)
 GO
 CREATE NONCLUSTERED INDEX [_WA_Sys_A0130_42EBA8DC] ON [dbo].[ZCPT_K063] ([A0130] ASC)
 GO

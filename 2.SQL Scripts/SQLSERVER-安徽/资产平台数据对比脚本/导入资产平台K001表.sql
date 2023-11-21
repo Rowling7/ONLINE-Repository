@@ -41,23 +41,23 @@ CREATE TABLE [dbo].[ZCPT_K001] (
 [K0124] char(15) COLLATE Chinese_PRC_CI_AS  NULL,
 [K0126] char(1) COLLATE Chinese_PRC_CI_AS  NULL,
 [K0136] char(2) COLLATE Chinese_PRC_CI_AS  NULL,
-[K0138] char(1) COLLATE Chinese_PRC_CI_AS  NULL,
-[K0155] char(4) COLLATE Chinese_PRC_CI_AS  NULL,
-[K0156] char(1) COLLATE Chinese_PRC_CI_AS  NULL,
+[K0138] char(10) COLLATE Chinese_PRC_CI_AS  NULL,
+[K0155] char(40) COLLATE Chinese_PRC_CI_AS  NULL,
+[K0156] char(10) COLLATE Chinese_PRC_CI_AS  NULL,
 [K0162] numeric(18,3)  NULL,
 [K0163] numeric(18,3)  NULL,
-[K0180] char(4) COLLATE Chinese_PRC_CI_AS  NULL,
-[K0181] char(4) COLLATE Chinese_PRC_CI_AS  NULL,
-[K0182] char(1) COLLATE Chinese_PRC_CI_AS  NULL,
+[K0180] char(8) COLLATE Chinese_PRC_CI_AS  NULL,
+[K0181] char(20) COLLATE Chinese_PRC_CI_AS  NULL,
+[K0182] char(10) COLLATE Chinese_PRC_CI_AS  NULL,
 [K0199] text COLLATE Chinese_PRC_CI_AS  NULL,
 [K0306] numeric(18,3)  NULL,
-[K0404] char(1) COLLATE Chinese_PRC_CI_AS  NULL,
+[K0404] char(80) COLLATE Chinese_PRC_CI_AS  NULL,
 [K3990] char(15) COLLATE Chinese_PRC_CI_AS  NULL,
 [K4002] numeric(18,2)  NULL,
-[K5104] char(2) COLLATE Chinese_PRC_CI_AS  NULL,
-[K5222] numeric(18,1)  NULL,
+[K5104] char(20) COLLATE Chinese_PRC_CI_AS  NULL,
+[K5222] numeric(18,2)  NULL,
 [K5404] numeric(18,2)  NULL,
-[K9508] char(2) COLLATE Chinese_PRC_CI_AS  NULL,
+[K9508] char(80) COLLATE Chinese_PRC_CI_AS  NULL,
 [KWYID] char(100) COLLATE Chinese_PRC_CI_AS  NULL,
 [ModifyLogin] char(30) COLLATE Chinese_PRC_CI_AS  NULL,
 [InsertLogin] char(30) COLLATE Chinese_PRC_CI_AS  NULL,
@@ -81,6 +81,7 @@ K0304,--技术等级
 HK0304,--技术等级
 HK0126,--是否一幅高速
 K0404,--车道数量
+
 HK5104,--面层类型
 K4002,--路基宽度
 K5404,--路面宽度
@@ -111,28 +112,34 @@ SELECT
 政区代码,
 管养单位,
 路线名称,
-起点桩号名称,
-止点桩号名称,
+case when len(起点桩号名称)  >0 then 起点桩号名称   when len(起点桩号名称)  =0 or 起点桩号名称   is null then null end,
+case when len(止点桩号名称)  >0 then 止点桩号名称   when len(止点桩号名称)  =0 or 止点桩号名称   is null then null end,
 起点桩号,
 止点桩号,
 里程,
 dk0301.objname,
-技术等级,
-是否一幅高速,
-车道数量,
+case when len(技术等级)  >0 then 技术等级   when len(技术等级)  =0 or 技术等级   is null then null end,
+case when len(是否一幅高速)  >0 then 是否一幅高速   when len(是否一幅高速)  =0 or 是否一幅高速   is null then null end,
+case when len(车道数量)  >0 then 车道数量   when len(车道数量)  =0 or 车道数量   is null then null end,
 面层类型,
-路基宽度,
-路面宽度,
-面层厚度,
-[设计时速(km/h)],
-修建年度,
-改建年度,
+case when len(路基宽度)  >0 then 路基宽度   when len(路基宽度)  =0 or 路基宽度   is null then null end,
+case when len(路面宽度)  >0 then 路面宽度   when len(路面宽度)  =0 or 路面宽度   is null then null end,
+case when len(面层厚度)  >0 then 面层厚度   when len(面层厚度)  =0 or 面层厚度   is null then null end,
+case when len([设计时速(km/h)])  >0 then [设计时速(km/h)]   when len([设计时速(km/h)])  =0 or [设计时速(km/h)]   is null then null end,
+case when len(修建年度)  >0 then 修建年度   when len(修建年度)  =0 or 修建年度   is null then null end,
+case when len(改建年度)  >0 then 改建年度   when len(改建年度)  =0 or 改建年度   is null then null end,
 case when len(最后一次大中修年度)>0 then rtrim(最后一次大中修年度) when len(最后一次大中修年度)=0 or rtrim(最后一次大中修年度) is null then null end,
-断链类型,
-是否城管,
-是否断头,
-路段收费性质,
-重复路段编码,
+case when rtrim(断链类型) = '不相连路段' then '路段与前一路段不相连'
+		when rtrim(断链类型) = '短链' then '短链，与前段桩号不连续路段相连'
+		when rtrim(断链类型) = '断头路段' then '断头路段'
+		when rtrim(断链类型) = '长链' then '长链'
+		when rtrim(断链类型) = '正常路段' then '正常路段'
+		else null	end,是否城管,
+case when len(是否断头)  >0 then 是否断头   when len(是否断头)  =0 or 是否断头   is null then null end,
+
+case when len(路段收费性质)>0 then 路段收费性质 when len(路段收费性质)=0 or 路段收费性质 is null then null end,
+case when len(重复路段编码)>0 then 重复路段编码 when len(重复路段编码)=0 or 重复路段编码 is null then null end,
+
 case when len(重复路段起点桩号)>0 then 重复路段起点桩号 when len(重复路段起点桩号)=0 or 重复路段起点桩号 is null then null end,
 case when len(重复路段止点桩号)>0 then 重复路段止点桩号 when len(重复路段止点桩号)=0 or 重复路段止点桩号 is null then null end,
 case when len(养护里程)  >0 then 养护里程   when len(养护里程)  =0 or 养护里程   is null then null end,
@@ -140,14 +147,22 @@ case when len(可绿化里程)>0 then 可绿化里程 when len(可绿化里程)=
 case when len(已绿化里程)>0 then 已绿化里程 when len(已绿化里程)=0 or 已绿化里程 is null then null end,
 地貌,
 case when len(涵洞数量)>0 then 涵洞数量 when len(涵洞数量)=0 or 涵洞数量 is null then null end,
-case when len(省际出入口)>0 and rtrim(省际出入口)='非省际出入' then rtrim(省际出入口) when len(省际出入口)=0 or 省际出入口 is null then null else rtrim(省际出入口) end,
-国道调整前路线编号,
+case when rtrim(省际出入口)  like '%非省际出入%' then '路段非省际出入'
+		when rtrim(省际出入口) like '%起点在省界%' then '国省道路段起点在省界，与邻省路线连接'
+		when rtrim(省际出入口) like '%止点在省界%' then '国省道路段止点在省界，与邻省路线连接'
+		when rtrim(省际出入口) like '%起止点均在省界%' then '国省道路段起止点均在省界，与邻省路线连接'	
+		else null	end,
+
+case when len(国道调整前路线编号)>0 then 国道调整前路线编号 when len(国道调整前路线编号)=0 or 国道调整前路线编号 is null then null end,
+
 case when len(是否按干线公路管理接养)>0 then 是否按干线公路管理接养 when len(是否按干线公路管理接养)=0 or 是否按干线公路管理接养 is null then null end,
 --是否为资产数据,
-备注
-from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078曹勇嵩\1.工作文件\3.安徽工作文件\20231030 导入路段表\路线明细数据 (资产平台导出黄山市黄山区分中心).xls',sheet1$)
-left join dk0301 on left(技术等级,2)= rtrim(objjc)
+case when len(备注)>0 then 备注 when len(备注)=0 or 备注 is null then null end
+
+from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078曹勇嵩\1.工作文件\3.安徽工作文件\20231120 安徽资产平台数据\全省路线明细数据.xls',sheet1$)
+left join dk0301 on left((case when len(技术等级)  >0 then 技术等级   when len(技术等级)  =0 or 技术等级   is null then null end),2)= rtrim(objjc)
 ORDER BY 路线编码
+
 
 --更新管理单位字段A0102,HA0102
 UPDATE zcpt_k001
@@ -155,7 +170,3 @@ SET zcpt_k001.a0102=rtrim(k001.a0102),zcpt_k001.ha0102=rtrim(k001.ha0102)
 FROM zcpt_k001
 left JOIN k001
 ON rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) +CAST(k001.K0108 as VARCHAR(20)) +CAST(k001.K0109 as VARCHAR(20))=rtrim(zcpt_k001.k0101) +CAST(zcpt_k001.K0108 as VARCHAR(20)) +CAST(zcpt_k001.K0109 as VARCHAR(20))
-
-
-
---SELECT * from ZCPT_K001
