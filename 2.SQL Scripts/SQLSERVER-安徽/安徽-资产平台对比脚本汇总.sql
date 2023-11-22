@@ -733,14 +733,14 @@ order by K063.k6301
 --9.2.1
 SELECT distinct
 RTRIM(k060.A0102) A0102,RTRIM(k060.HA0102) HA0102,
-k060.K6002 '桥梁名称',	
+k060.K6002 '桥梁名称',
 case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
 else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end '桥梁代码',
 '年报中存在 但 资产平台不存在 ' '对比结果'
 from k060
 left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108 and k060.k6003<=k001.k0109
 where k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(K001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%高速%' AND k001.A0102 LIKE '341%'and 
+LEFT(K001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%高速%' AND k001.A0102 LIKE '341%'and
 (case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
 else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end)  not in (select ZCPT_K060.k6001 from ZCPT_K060)
 
@@ -765,6 +765,23 @@ where ZCPT_K060.A0102 LIKE '#A0102#%' AND ZCPT_K060.A0102 LIKE '#GLDW#%' and
 order by '对比结果'
 
 --9.2.2
+SELECT  'K060'+'&A0102 ='''+RTRIM(CAST(k060.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k060.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(k060.K6003 AS VARCHAR))  AS 编辑,
+rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
+rtrim(k060.k6002) '年报|桥梁名称',rtrim(ZCPT_K060.k6002) '资产平台|桥梁名称',
+rtrim(k060.k6003) '年报|桥梁中心桩号',rtrim(ZCPT_K060.k6003) '资产平台|桥梁中心桩号',
+rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) '年报|桥梁代码',
+rtrim(ZCPT_K060.k6001) '资产平台|桥梁代码',
+rtrim(K060.K6040) nk6040,rtrim(ZCPT_K060.K6040) zk6040,
+'桥梁身份码 不一致' '对比结果'
+from  k060
+left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108 and k060.k6003<=k001.k0109
+full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
+where --k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
+rtrim(K060.K6040) <>rtrim(ZCPT_K060.K6040) and
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%高速%'AND k001.A0102 LIKE '341%'
+
+
+--9.2.3
 SELECT
 'K060'+'&A0102 ='''+RTRIM(CAST(k060.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k060.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(k060.K6003 AS VARCHAR))  AS 编辑,
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -792,3 +809,50 @@ rtrim(k060.k6003)<>rtrim(ZCPT_K060.k6003)	 -- 桥梁中心桩号,
 )
 
 --9.2.3
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS 编辑,
+
+rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
+rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,rtrim(NBZC.zk0101)'资产平台|所在路线代码',
+CASE WHEN rtrim(NBZC.k0101)<>rtrim(NBZC.zk0101) THEN '所在路线代码 不一致'	ELSE null END '所在路线代码 对比',
+rtrim(NBZC.k6002) k6002,rtrim(NBZC.zk6002) '资产平台|桥梁名称',
+CASE WHEN rtrim(NBZC.k6002)<>rtrim(NBZC.zk6002) THEN '桥梁名称 不一致'	ELSE null END '桥梁名称 对比',
+rtrim(NBZC.k6003) k6003,rtrim(NBZC.zk6003) '资产平台|桥梁中心桩号',
+CASE WHEN rtrim(NBZC.k6003)<>rtrim(NBZC.zk6003) THEN '桥梁中心桩号 不一致'	ELSE null END'桥梁中心桩号 对比',
+nbzc.K6040 '桥梁身份码/桥梁编号'
+from (
+SELECT
+rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
+rtrim(K060.K0101) K0101,
+rtrim(ZCPT_K060.K0101) zK0101,
+rtrim(k060.k6002) k6002,rtrim(ZCPT_K060.k6002) zk6002,
+rtrim(k060.k6003) k6003,rtrim(ZCPT_K060.k6003) zk6003,
+rtrim(K060.K6040) K6040
+from  k060
+left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108 and k060.k6003<=k001.k0109
+full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
+where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
+k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%高速%'AND k001.A0102 LIKE '341%'
+UNION
+SELECT
+rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
+rtrim(K060.K0101) K0101,
+rtrim(ZCPT_K060.K0101) zK0101,
+rtrim(k060.k6002) k6002,rtrim(ZCPT_K060.k6002) zk6002,
+rtrim(k060.k6003) k6003,rtrim(ZCPT_K060.k6003) zk6003,
+rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) k6001
+from  k060
+left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108 and k060.k6003<=k001.k0109
+full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
+where k060.k6040 is null  and
+k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%高速%'AND k001.A0102 LIKE '341%'
+)NBZC
+where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and(
+rtrim(NBZC.k6002)<>rtrim(NBZC.zk6002) or -- 桥梁名称,
+rtrim(NBZC.k6003)<>rtrim(NBZC.zk6003) or -- 桥梁中心桩号
+rtrim(NBZC.k0101)<>rtrim(NBZC.zk0101)
+)	 -- 路线代码,
+order by k0101
+
+--9.2.4
