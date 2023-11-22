@@ -184,7 +184,7 @@ case when len(抗震等级汉字)>0 then 抗震等级汉字 when len(抗震等�
 case when len(跨越地物类型汉字)>0 then 跨越地物类型汉字 when len(跨越地物类型汉字)=0 or 跨越地物类型汉字 is null then null end ,
 case when len(跨越地物名称)>0 then 跨越地物名称 when len(跨越地物名称)=0 or 跨越地物名称 is null then null end ,
 case when len([防洪标准(年)])>0 then [防洪标准(年)] when len([防洪标准(年)])=0 or [防洪标准(年)] is null then null end ,
-case when len(通航等级)>0 then 通航等级 when len(通航等级)=0 or 通航等级 is null then null end ,
+replace(case when len(通航等级)>0 then 通航等级 when len(通航等级)=0 or 通航等级 is null then null end,'航道','') ,
 case when len(墩台防撞设施类型)>0 then 墩台防撞设施类型 when len(墩台防撞设施类型)=0 or 墩台防撞设施类型 is null then null end ,
 case when len(立交桥类别)>0 then 立交桥类别 when len(立交桥类别)=0 or 立交桥类别 is null then null end ,
 case when len(建设单位名称)>0 then 建设单位名称 when len(建设单位名称)=0 or 建设单位名称 is null then null end ,
