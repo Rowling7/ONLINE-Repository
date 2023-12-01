@@ -60,26 +60,26 @@ backup database [HRP-GHSS汇编库] to disk = 'E:\HRP-GHSS2014'
 
 
 
-update ZRC set v5708='1',hv5708='是' 
-from V53 
+update ZRC set v5708='1',hv5708='是'
+from V53
 right join OPENROWSET
 ('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\自然村(1).xls',sheet1$) on A=v5701
 where v5701 is not null
-update V53 set v5708='2',hv5708='否' 
-from V53 
+update V53 set v5708='2',hv5708='否'
+from V53
 right join OPENROWSET
 ('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\自然村(1).xls',sheet2$) on A=v5701
 where v5701 is not null
 
 
-update ZRC set v5708='1',hv5708='是' 
-from ZRC 
+update ZRC set v5708='1',hv5708='是'
+from ZRC
 right join OPENROWSET
 ('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\自然村(1).xls',sheet1$) on A=v5701
 where v5701 is not null
 
-update ZRC set v5708='2',hv5708='否' 
-from ZRC 
+update ZRC set v5708='2',hv5708='否'
+from ZRC
 right join OPENROWSET
 ('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\自然村(1).xls',sheet2$) on A=v5701
 where v5701 is not null
