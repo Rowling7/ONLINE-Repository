@@ -32,6 +32,12 @@ FROM INFO
 	--K0123不是断头路，K0124没有重复路段
 	where isnull(k0123,'2')='2' and nullif(k0124,'') is null
 
+/*  */
+update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(10), '') 
+--去除换行符
+update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(13), '') 
+--去除回车符
+
 
 --<------------------------------<---SQL 0.1.1--->------------------------------>--
 
