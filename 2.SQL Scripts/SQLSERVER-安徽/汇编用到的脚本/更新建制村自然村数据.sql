@@ -1,7 +1,42 @@
+alter table V51  NOCHECK constraint all;
+alter table V71  NOCHECK constraint all; 
 alter table V52  NOCHECK constraint all; 
 alter table V53  NOCHECK constraint all; 
 alter table JZC  NOCHECK constraint all; 
 alter table ZRC  NOCHECK constraint all; 
+
+-------------------------V51--------------------------------------------
+UPDATE V51 set HV0501 ='华亭镇'
+FROM V51 where HV0501 like '破凉镇%'
+
+UPDATE V51 set HV0501='三城镇'
+from V51 WHERE V0501 ='341122200'
+
+UPDATE V51 set HV0501='独山镇'
+from V51 WHERE V0501 ='341122201'
+
+UPDATE V51 set HV0501='张山镇'
+from V51 WHERE V0501 ='341122202'
+
+update V51 set V0501 ='340827109'
+FROM V51 where HV0501 like '雷池镇%'
+
+-------------------------V51--------------------------------------------
+UPDATE V71 set HV0501 ='华亭镇'
+FROM V71 where HV0501 like '破凉镇%'
+
+UPDATE V71 set HV0501='三城镇'
+from V71 WHERE V0501 ='341122200'
+
+UPDATE V71 set HV0501='独山镇'
+from V71 WHERE V0501 ='341122201'
+
+UPDATE V71 set HV0501='张山镇'
+from V71 WHERE V0501 ='341122202'
+
+update V71 set V0501 ='340827109'
+FROM V71 where HV0501 like '雷池镇%'
+
 -------------------------V52--------------------------------------------
 UPDATE V52 set HV0514 ='华亭镇'
 FROM V52 where HV0514 like '破凉镇%'
@@ -15,7 +50,7 @@ from V52 WHERE V0514 ='341122201'
 UPDATE V52 set HV0514='张山镇'
 from V52 WHERE V0514 ='341122202'
 
-update V52 set V0514 ='340817109'
+update V52 set V0514 ='340827109'
 FROM V52 where HV0514 like '雷池镇%'
 
 -------------------------V52--------------------------------------------
@@ -125,7 +160,7 @@ from V53 WHERE V0514 ='341122201'
 UPDATE V53 set HV0514='张山镇'
 from V53 WHERE V0514 ='341122202'
 
-update V53 set V0514 ='340817109'
+update V53 set V0514 ='340827109'
 FROM V53 where HV0514 like '雷池镇%'
 
 -------------------------V53--------------------------------------------
@@ -322,7 +357,7 @@ from JZC WHERE V0514 ='341122201'
 UPDATE JZC set HV0514='张山镇'
 from JZC WHERE V0514 ='341122202'
 
-update JZC set V0514 ='340817109'
+update JZC set V0514 ='340827109'
 FROM JZC where HV0514 like '雷池镇%'
 
 -------------------------JZC--------------------------------------------
@@ -432,7 +467,7 @@ from ZRC WHERE V0514 ='341122201'
 UPDATE ZRC set HV0514='张山镇'
 from ZRC WHERE V0514 ='341122202'
 
-update ZRC set V0514 ='340817109'
+update ZRC set V0514 ='340827109'
 FROM ZRC where HV0514 like '雷池镇%'
 
 -------------------------ZRC--------------------------------------------
@@ -615,7 +650,8 @@ UPDATE ZRC set v5701=REPLACE(v5701,'340827108201','340827003201')
 from ZRC	where v5701 like '340827108201%'
 
 
-
+alter table V51  CHECK constraint all; 
+alter table V71  CHECK constraint all; 
 alter table V52  CHECK constraint all; 
 alter table V53  CHECK constraint all; 
 alter table JZC  CHECK constraint all; 
