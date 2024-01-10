@@ -247,6 +247,8 @@ FROM INFO
 IF OBJECT_ID('TEMPDB..#T') IS NOT NULL
 DROP TABLE #T
 
+if exists(select * from tempdb..sysobjects where id=object_id('tempdb..##tk001')) DROP TABLE #T
+
 --判断存储过程是否存在
 IF EXISTS (SELECT * FROM sysobjects WHERE name = 'Pr_sysCheckFKForPublic')
 drop procedure Pr_sysCheckFKForPublic
