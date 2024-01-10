@@ -1,0 +1,37 @@
+/*不显示零*/
+SELECT
+	[COL01] = '已实施里程：'+CAST(SUM(CASE WHEN ISNULL(K0802,'')='1' THEN K0109-K0108 ELSE 0.000 END) AS VARCHAR)+'公里',
+	[COL02] = '未实施里程：'+CAST(SUM(CASE WHEN ISNULL(K0802,'')='2' THEN K0109-K0108 ELSE 0.000 END) AS VARCHAR)+'公里',
+	[COL03] = '无需实施里程：'+CAST(SUM(CASE WHEN ISNULL(K0802,'')='3' THEN K0109-K0108 ELSE 0.000 END) AS VARCHAR)+'公里'
+FROM K08
+WHERE A0102 LIKE '34%' and a0101 = '2023'
+
+
+
+SELECT
+	[COL01] = RTRIM(K0101),		--路线代码
+	[COL02] = RTRIM(K0112),   	--路线简称
+	[COL03] = LEFT(A0103,6),   	--县级政区代码
+	[COL04] = RTRIM(K0108),  		--起点桩号
+	[COL05] = RTRIM(K0109),  		--讫点桩号
+	[COL06] = RTRIM(HK0816),  		--路段类型
+ 	[COL07] = RTRIM(HK0801),		--是否需要实施安防工程
+	[COL08] = RTRIM(HK0802), 		--是否已实施安防工程
+	[COL09] = RTRIM(K0803), 		--实施时间
+	[COL10] = RTRIM(HK0804), 		--标志
+	[COL11] = RTRIM(HK0805), 		--标线
+	[COL12] = RTRIM(HK0806),		--护栏
+	[COL13] = RTRIM(HK0807),		--减速带
+	[COL14] = RTRIM(HK0808),		--示警墩/桩
+	[COL15] = RTRIM(HK0809),		--限高设施
+	[COL16] = RTRIM(HK0810),		--限宽设施
+	[COL17] = RTRIM(HK0814),		--视距设施
+	[COL18] = RTRIM(HK0815),		--错车道
+	[COL19] = RTRIM(HK0811),		--其他
+	[COL20] = RTRIM(K0812),		--该路段上路口数
+	[COL21] = RTRIM(K0813),  		--路口共有减速带数量
+	[COL22] = CAST(A0129 AS VARCHAR(200))		--备注
+FROM K08
+WHERE A0102 LIKE '34%' and a0101 = '2023'
+ORDER BY REPLACE(K0101,'C','ZZ'),K0108
+
