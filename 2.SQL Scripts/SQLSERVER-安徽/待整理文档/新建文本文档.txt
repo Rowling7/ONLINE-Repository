@@ -1,0 +1,77 @@
+/*不显示零*/
+SELECT
+	[COL01] = RTRIM(K0101)+'L'+RTRIM(A.K6001),		--桥梁代码
+	[COL02] = RTRIM(K0112),					--路线简称
+	[COL03] = RTRIM(REPLACE(K6002,' ','')),			--桥梁名称
+	[COL04] = K0180,						--修建年度
+	[COL05] = K0181,						--改造年度
+	[COL06] = K6003,						--桥梁中心桩号
+	[COL07] = K6008,						--桥梁全长
+	[COL08] = HK6022,						--设计荷载等级
+	[COL09] = HK6007,						--按跨径分类
+	[COL10] = HK6004,						--使用年限分
+	[COL11] = HK6016,						--主桥上部结构
+	[COL12] = CASE WHEN K6062='1' THEN '是' ELSE '否' END,	--是否互通立交
+	[COL13] = HK6028,						--评定等级
+	[COL14] = K6065,						--跨径总长
+	[COL15] = K6063,						--单孔最大跨径
+	[COL16] = K6066,						--桥梁全宽
+	--[COL17] = K6067,						--桥面全宽
+	[COL17] = K6009,						--桥面净宽
+	[COL18] = LTRIM(RTRIM(REPLACE(A1314,' ',''))),		--管养单位名称
+	[COL19] = HK3912,						--变更原因
+	[COL20] =  NULL,--RTRIM(B.K6001),					--原桥梁代码
+	[COL201] = NULL,--RTRIM(REPLACE(B.K60021,' ','')),					--原桥梁名称
+	[COL202] = NULL,--RTRIM(B.K60031),					--原桥梁中心桩号
+	[COL203] = NULL,--HK60281,						--去年评定等级
+	[COL21] = RTRIM(REPLACE(K6064,' ','')),			--跨径组合
+	[COL22] = CASE WHEN RTRIM(HK6017)='X形墩' THEN 'X 形墩' WHEN RTRIM(HK6017)='Y形墩' THEN 'Y 形墩' WHEN RTRIM(HK6017)='V形墩' THEN 'V 形墩' WHEN RTRIM(HK6017)='H形墩' THEN 'H 形墩' ELSE RTRIM(HK6017) END,	--桥墩类型
+	[COL23] = HK6023,						--抗震等级
+	[COL24] = CASE WHEN HK6005='其它地物' THEN '其它' ELSE HK6005 END,		--跨越地物类型
+	[COL25] = RTRIM(LTRIM(REPLACE(REPLACE(REPLACE(REPLACE(K6006,CHAR(13),''),CHAR(10),''),CHAR(9),''),CHAR(32),''))),		--跨越地物名称
+	[COL26] = HK6024,						--通航等级
+	[COL27] = HA1328,						--墩台防撞类型
+	[COL28] = K6079,						--建设单位
+	[COL29] = REPLACE(K6030,' ',''),				--设计单位
+	[COL30] = K6031,						--施工单位
+	[COL31] = REPLACE(K6032,' ',''),				--监理单位
+	[COL32] = K0116,						--通车日期
+	[COL33] = HA1313,						--管养单位性质代码
+	[COL34] = RTRIM(REPLACE(REPLACE(K6111,' ',''),CHAR(127),'')),	--监管单位名称
+	[COL35] = CASE WHEN ISNULL(A1302,'1')='1' THEN '非收费' WHEN ISNULL(A1302,'1')='2' THEN '还贷' WHEN ISNULL(A1302,'1')='3' THEN '经营' END,	--收费性质
+	[COL36] = A1305,						--技术状况评定日期
+	[COL37] = RTRIM(REPLACE(K6050,' ','')),			--技术状况评定单位
+	[COL38] = A1316,						--改造完工日期
+	[COL38] = ISNULL(HA1331,'否'),				--最新改造是否属于危桥改造项目
+	[COL40] = HA1317,						--改造部位
+	[COL41] = HA1318,						--工程性质代码
+	[COL42] = RTRIM(REPLACE(K6051,' ','')),			--改造施工单位
+	[COL43] = HA1319,						--是否部补足项目
+	[COL44] = RTRIM(HA1306),					--主要病害位置
+	[COL45] = RTRIM(K6102),					--主要病害描述
+	[COL46] = CASE WHEN ISNULL(K6028,'') IN ('4','5') THEN HA1307 ELSE '' END,	--采取交通管制措施
+	[COL47] = RTRIM(HK6110),				--主桥上部结构材料
+	[COL48] = RTRIM(ISNULL(HK6117,'双向')),			--桥梁所在位置
+	[COL49] = RTRIM(ISNULL(HK6118,'否')),			--是否宽路窄桥
+	--[COL50] = RTRIM(ISNULL(HK6119,'否')),			--是否在长大桥梁目录中
+  [COL50] = NULL,--RTRIM(HK6122),			--评定为四五类桥梁的原因
+
+	[COL51] = RTRIM(ISNULL(HK6120,'否'))			--是否跨省桥梁
+FROM [HRP-DBMS2014]..QIAOLIANG A
+--去年是危桥今年已删除不存在的桥梁数据
+WHERE RTRIM(K0101)+RTRIM(K6002)IN(
+'C024340506同心桥',
+'C076340603陈洼桥',
+'C206341821C189一桥',
+'C923341882干溪村桥',
+'CP10340422西河大桥',
+'X017340603大庙沟桥',
+'X206340422韩厂桥',
+'Y005340595马家桥',
+'Y097341622村子前桥',
+'Y126341802滩头桥',
+'Y616341023朱村桥'
+
+)
+ORDER BY REPLACE(REPLACE(REPLACE(K0101,'340000',''),'000000',''),'C','ZZ'),K6003
+
