@@ -1,14 +1,14 @@
---¹úÊ¡µÀ
-SELECT a.a0103  ÕşÇø±àÂë,
-d.objjc ÕşÇøÃû³Æ,
-a.k0101 Â·Ïß±àÂë,
-b.sk0114 È¥ÄêÍ¨³µÀï³Ì,
-a.sk0114 ½ñÄêÍ¨³µÀï³Ì,
-b.sa3101 È¥Äê¿ÉÂÌ»¯Àï³Ì,
-a.sa3101 ½ñÄê¿ÉÂÌ»¯Àï³Ì,
-b.sa3102 È¥ÄêÒÑÂÌ»¯Àï³Ì,
-a.sa3102 ½ñÄêÒÑÂÌ»¯Àï³Ì,
-a.sa3102-b.sa3102 ÒÑÂÌ»¯Àï³Ì¼õÉÙÇé¿ö
+--å›½çœé“
+SELECT a.a0103  æ”¿åŒºç¼–ç ,
+d.objjc æ”¿åŒºåç§°,
+a.k0101 è·¯çº¿ç¼–ç ,
+b.sk0114 å»å¹´é€šè½¦é‡Œç¨‹,
+a.sk0114 ä»Šå¹´é€šè½¦é‡Œç¨‹,
+b.sa3101 å»å¹´å¯ç»¿åŒ–é‡Œç¨‹,
+a.sa3101 ä»Šå¹´å¯ç»¿åŒ–é‡Œç¨‹,
+b.sa3102 å»å¹´å·²ç»¿åŒ–é‡Œç¨‹,
+a.sa3102 ä»Šå¹´å·²ç»¿åŒ–é‡Œç¨‹,
+a.sa3102-b.sa3102 å·²ç»¿åŒ–é‡Œç¨‹å‡å°‘æƒ…å†µ
 from(
 SELECT   left(A0103,6) a0103, (case when len(k01.k0101)>9  then left(rtrim(k01.k0101),4)
 	when len(k01.k0101)<=9 and charindex('D',rtrim(k01.k0101))<>0 then left(rtrim(k01.k0101),charindex('D',rtrim(k01.k0101))-1)
@@ -35,22 +35,22 @@ left join d020 d on a.A0103=d.objname
 ORDER BY a.sa3102-b.sa3102 desc
 
 
---Å©´å¹«Â·
+--å†œæ‘å…¬è·¯
 SELECT
-d.objjc ÏØÃû³Æ,
-a.a0103 ÏØ´úÂë,
-a.sk0114 ×ÜÀï³Ì,
-a.sa3101 ¿ÉÂÌ»¯Àï³Ì,
-a.sa3102 ÒÑÂÌ»¯Àï³Ì,
-a.sa1001 Ñø»¤Àï³Ì,
-cast(cast(round(a.lhl*100,2)as NUMERIC(18,2)) as VARCHAR)+'%'ÒÑÂÌ»¯ÂÊ,
-b.sk0114 ×ÜÀï³Ì2,
-b.sa3101 ¿ÉÂÌ»¯Àï³Ì2,
-b.sa3102 ÒÑÂÌ»¯Àï³Ì2,
-b.sa1001 Ñø»¤Àï³Ì2,
-cast(cast(round(b.lhl*100,2)as NUMERIC(18,2)) as VARCHAR)+'%'ÒÑÂÌ»¯ÂÊ2,
-a.sk0114-b.sk0114 ×ÜÀï³Ì±ä»¯Öµ,
-a.sa3102-b.sa3102 ÒÑÂÌ»¯Àï³Ì±ä»¯Öµ
+d.objjc å¿åç§°,
+a.a0103 å¿ä»£ç ,
+a.sk0114 æ€»é‡Œç¨‹,
+a.sa3101 å¯ç»¿åŒ–é‡Œç¨‹,
+a.sa3102 å·²ç»¿åŒ–é‡Œç¨‹,
+a.sa1001 å…»æŠ¤é‡Œç¨‹,
+cast(cast(round(a.lhl*100,2)as NUMERIC(18,2)) as VARCHAR)+'%'å·²ç»¿åŒ–ç‡,
+b.sk0114 æ€»é‡Œç¨‹2,
+b.sa3101 å¯ç»¿åŒ–é‡Œç¨‹2,
+b.sa3102 å·²ç»¿åŒ–é‡Œç¨‹2,
+b.sa1001 å…»æŠ¤é‡Œç¨‹2,
+cast(cast(round(b.lhl*100,2)as NUMERIC(18,2)) as VARCHAR)+'%'å·²ç»¿åŒ–ç‡2,
+a.sk0114-b.sk0114 æ€»é‡Œç¨‹å˜åŒ–å€¼,
+a.sa3102-b.sa3102 å·²ç»¿åŒ–é‡Œç¨‹å˜åŒ–å€¼
 --into #Tmp
 from(
 SELECT   left(A0103,6) a0103,sum(k0114) sk0114,sum(isnull(a3101,0)) sa3101,sum(isnull(a3102,0)) sa3102,SUM(isnull(A1001,0)) sa1001,sum(isnull(a3102,0))/sum(isnull(a3101,0)) lhl
@@ -66,4 +66,4 @@ GROUP BY left(A0103,6)
 )b  on a.a0103=REPLACE(b.a0103, '421023', '421088')
 left join d020 d on a.A0103=d.objname
 where a.a0103 like '42%'
-ORDER BY ÒÑÂÌ»¯Àï³Ì±ä»¯Öµ
+ORDER BY å·²ç»¿åŒ–é‡Œç¨‹å˜åŒ–å€¼

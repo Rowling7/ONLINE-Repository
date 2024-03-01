@@ -1,6 +1,6 @@
 -- 7.17
--- �ظ�·�ε���ֹ��׮�Ų���·�ε�׮�����Χ�ڻ����ظ�·���뱻�ظ�·�ε�����������һ��
--- �����ظ���·����Ϣ�У����ظ�·�����׮�š�Ӧ���׮�ţ����ظ�·��ֹ��׮�š�Ӧ�С׮�ţ������ظ�·�����׮�š�>���ظ�·��ֹ��׮�š�
+-- 重复路段的起止点桩号不在路段的桩号填报范围内或者重复路段与被重复路段的行政区划不一致
+-- 反向重复的路段信息中，【重复路段起点桩号】应填报大桩号，【重复路段止点桩号】应填报小桩号，即【重复路段起点桩号】>【重复路段止点桩号】
 drop table if exists temp_k001_chz;
 create  table temp_k001_chz(
 b0111 varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -47,7 +47,7 @@ select b0111,b0101,K0101,s9532,min(K0108) K0108,max(K0109) K0109
 group by b0111,K0101,s9532,ns
 );
 
--- ���ظ�·�β�����ʱ��
+-- 将重复路段插入临时表
 drop table if exists temp_k001_chf;
 create  table temp_k001_chf
 select b01.b0111,b01.b0101,k0124,c.s9532,c.s9533,K0162,K0163
@@ -62,7 +62,7 @@ and K0162>=b.k0108 and  K0163<= b.k0109 and k0162<k0163 and k001.A50_ID ='165077
 order by b01.b0111;
 -- SELECT* from temp_k001_chf;
 
--- ���ظ�·�β�����ʱ��
+-- 将重复路段插入临时表
 drop table if exists temp_k001_chf;
 create  table temp_k001_chf
 select b01.b0111,b01.b0101,k0124,c.s9532,c.s9533,K0162,K0163
@@ -75,14 +75,14 @@ and b01.b0111 like concat( (select b0111 from b01 where b01_id='1000001653571912
 order by b01.b0111;
 -- SELECT* from temp_k001_chf;
 
--- ����ʱ����ɾ����ʵ��·���е��ظ�·��
+-- 从临时表中删除在实际路段中的重复路段
 delete a
 from temp_k001_chf a
 join temp_k001_sjlc b on left(a.s9532,6)=left(b.s9532,6) and a.K0124=b.k0101
 where a.K0162>=b.k0108 and  a.K0163<= b.k0109
 and a.k0162<a.k0163;
 
--- ����ʱ����ɾ����ʵ��·���еķ����ظ�·��
+-- 从临时表中删除在实际路段中的反向重复路段
 delete a
 from temp_k001_chf a
 join temp_k001_sjlc b on left(a.s9532,6)=left(b.s9532,6) and a.K0124=b.k0101
@@ -90,17 +90,17 @@ where a.K0163>=b.k0108 and  a.K0162<= b.k0109
 and a.k0162>a.k0163;
 
 select
-b.b0101 'ʵ��·�ι�����λ',
-b.k0101 'ʵ��·�δ���',
-a.s9532 'ʵ��·��������������',
-a.s9533 'ʵ��·��������������',
-b.k0108 'ʵ��·�����׮��',
-b.k0109 'ʵ��·��ֹ��׮��',
-a.b0101 '���ظ�·�ι�����λ',
-a.k0124 '���ظ�·�δ���',
-b.s9532 '���ظ�·��������������',
-a.k0162 '���ظ�·�����׮��',
-a.k0163 '���ظ�·��ֹ��׮��'
+b.b0101 '实际路段管理单位',
+b.k0101 '实际路段代码',
+a.s9532 '实际路段行政区划代码',
+a.s9533 '实际路段行政区划汉字',
+b.k0108 '实际路段起点桩号',
+b.k0109 '实际路段止点桩号',
+a.b0101 '被重复路段管理单位',
+a.k0124 '被重复路段代码',
+b.s9532 '被重复路段行政区划代码',
+a.k0162 '被重复路段起点桩号',
+a.k0163 '被重复路段止点桩号'
 from temp_k001_chf a
 left join temp_k001_sjlc b on a.s9532=b.s9532 and a.k0124=b.k0101
 order by a.b0101,a.K0124,a.K0162;
@@ -117,18 +117,18 @@ order by a.b0101,a.K0124,a.K0162;
 
 DECLARE @adress NVARCHAR(250)
 DECLARE @path NVARCHAR(250)
-SET @path = 'E:\6078������\1.�����ļ�\1.�����ļ������ڷ��ࣩ\20230731 ���� ����\4208\3.0\���ſ�����-�����У�2308021130��.xls'
+SET @path = 'E:\6078曹勇嵩\1.工作文件\1.工作文件（日期分类）\20230731 桥梁 隧道\4208\3.0\国桥库桥梁-荆门市（2308021130）.xls'
 SET @adress = 'SELECT * FROM OPENROWSET(''MICROSOFT.JET.OLEDB.4.0'',''Excel 5.0;HDR=YES;Database=' + @path+''', [Sheet1$])'
 EXEC (@adress)
 
 
 DECLARE @adress NVARCHAR(250)
 DECLARE @path NVARCHAR(250)
-SET @path = 'E:\6078������\1.�����ļ�\1.�����ļ������ڷ��ࣩ\20230731 ���� ����\4208\3.0\���ſ�����-�����У�2308021130��.xls'
+SET @path = 'E:\6078曹勇嵩\1.工作文件\1.工作文件（日期分类）\20230731 桥梁 隧道\4208\3.0\国桥库桥梁-荆门市（2308021130）.xls'
 SET @adress ='
 if object_id(''tempdb..#qlk'') is not null drop table #qlk
-select ����������,�ŷ����,�ŷ�����,����׮��,·�߱��,·�߼����ȼ�
+select 桥梁身份码,桥幅编号,桥幅名称,中心桩号,路线编号,路线技术等级
 into #qlk
 from OPENROWSET(''MICROSOFT.JET.OLEDB.4.0'',''Excel 5.0;HDR=YES;Database=' + @path+''', [Sheet1$])
-order by ���������� desc,�ŷ����,����׮��'
+order by 桥梁身份码 desc,桥幅编号,中心桩号'
 EXEC (@adress)

@@ -10,20 +10,20 @@ where k0101=@k0101
 
 SELECT @k0114c=SUM(round(ZDZH-QDZH,3))
 from
-openrowset('Microsoft.Jet.OLEDB.4.0', 'D:\×ÀÃæÁÙÊ±ÎÄ¼ş¼Ğ\4208\mapdata.sdd';'admin';'',LX_Y)
+openrowset('Microsoft.Jet.OLEDB.4.0', 'D:\æ¡Œé¢ä¸´æ—¶æ–‡ä»¶å¤¹\4208\mapdata.sdd';'admin';'',LX_Y)
 WHERE LXBM =@k0101
 
-SELECT 'aÀúÊ·Êı¾İ', k0101,k0124,k0112,k0140,k0108,k0109,k0114
+SELECT 'aå†å²æ•°æ®', k0101,k0124,k0112,k0140,k0108,k0109,k0114
 from l001 where k0101=@k0101
 UNION
-SELECT 'bÀúÊ·-ĞŞ¸Äºó','------------','------------','------------','------------>',@k0114b-@k0114a'k0108', @k0114a'k0109', @k0114b'k0114'
+SELECT 'bå†å²-ä¿®æ”¹å','------------','------------','------------','------------>',@k0114b-@k0114a'k0108', @k0114a'k0109', @k0114b'k0114'
 union
-SELECT 'cĞŞ¸Äºó', k0101,k0124,k0112,k0140,k0108,k0109,k0114
+SELECT 'cä¿®æ”¹å', k0101,k0124,k0112,k0140,k0108,k0109,k0114
 from K001 where k0101=@k0101
 UNION
-SELECT 'dĞŞ¸Äºó-µØÍ¼Êı¾İ','------------','------------','------------','------------>',@k0114b-@k0114c'k0108', @k0114b'k0109', @k0114c'k0114'
+SELECT 'dä¿®æ”¹å-åœ°å›¾æ•°æ®','------------','------------','------------','------------>',@k0114b-@k0114c'k0108', @k0114b'k0109', @k0114c'k0114'
 union
-SELECT 'eµØÍ¼Êı¾İ',LXBM,'',LXMC,'',QDZH,ZDZH,round(ZDZH-QDZH,3) 'k0114'
+SELECT 'eåœ°å›¾æ•°æ®',LXBM,'',LXMC,'',QDZH,ZDZH,round(ZDZH-QDZH,3) 'k0114'
 FROM
-openrowset('Microsoft.Jet.OLEDB.4.0', 'D:\×ÀÃæÁÙÊ±ÎÄ¼ş¼Ğ\4208\mapdata.sdd';'admin';'',LX_Y)
+openrowset('Microsoft.Jet.OLEDB.4.0', 'D:\æ¡Œé¢ä¸´æ—¶æ–‡ä»¶å¤¹\4208\mapdata.sdd';'admin';'',LX_Y)
 WHERE LXBM =@k0101

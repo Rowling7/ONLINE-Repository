@@ -1,29 +1,29 @@
 SELECT
-'K001'+'&A0102 ='''+RTRIM(CAST(k001.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k001.K0101 AS VARCHAR))+''' AND K0108 ='+RTRIM(CAST(k001.K0108 AS VARCHAR))  AS ±à¼­, 
-rtrim(k001.A0102)	'Äê±¨|¹ÜÀíµ¥Î»´úÂë',rtrim(k001.hA0102)	'Äê±¨|¹ÜÀíµ¥Î»Ãû³Æ',
-rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))	'Äê±¨|Â·Ïß±àÂë',	rtrim(zcpt_k001.k0101)	'×Ê²úÆ½Ì¨|Â·Ïß±àÂë',
-rtrim(k001.A0103)	'Äê±¨|ÕşÇø´úÂë',	rtrim(zcpt_k001.A0103)	'×Ê²úÆ½Ì¨|ÕşÇø´úÂë',
+'K001'+'&A0102 ='''+RTRIM(CAST(k001.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k001.K0101 AS VARCHAR))+''' AND K0108 ='+RTRIM(CAST(k001.K0108 AS VARCHAR))  AS ç¼–è¾‘, 
+rtrim(k001.A0102)	'å¹´æŠ¥|ç®¡ç†å•ä½ä»£ç ',rtrim(k001.hA0102)	'å¹´æŠ¥|ç®¡ç†å•ä½åç§°',
+rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))	'å¹´æŠ¥|è·¯çº¿ç¼–ç ',	rtrim(zcpt_k001.k0101)	'èµ„äº§å¹³å°|è·¯çº¿ç¼–ç ',
+rtrim(k001.A0103)	'å¹´æŠ¥|æ”¿åŒºä»£ç ',	rtrim(zcpt_k001.A0103)	'èµ„äº§å¹³å°|æ”¿åŒºä»£ç ',
 
-k001.A1001	'Äê±¨|Ñø»¤Àï³Ì',	zcpt_k001.A1001	'×Ê²úÆ½Ì¨|Ñø»¤Àï³Ì',
-k001.A3101	'Äê±¨|¿ÉÂÌ»¯Àï³Ì',	zcpt_k001.A3101	'×Ê²úÆ½Ì¨|¿ÉÂÌ»¯Àï³Ì',
-k001.A3102	'Äê±¨|ÒÑÂÌ»¯Àï³Ì',		zcpt_k001.A3102		'×Ê²úÆ½Ì¨|ÒÑÂÌ»¯Àï³Ì',
+k001.A1001	'å¹´æŠ¥|å…»æŠ¤é‡Œç¨‹',	zcpt_k001.A1001	'èµ„äº§å¹³å°|å…»æŠ¤é‡Œç¨‹',
+k001.A3101	'å¹´æŠ¥|å¯ç»¿åŒ–é‡Œç¨‹',	zcpt_k001.A3101	'èµ„äº§å¹³å°|å¯ç»¿åŒ–é‡Œç¨‹',
+k001.A3102	'å¹´æŠ¥|å·²ç»¿åŒ–é‡Œç¨‹',		zcpt_k001.A3102		'èµ„äº§å¹³å°|å·²ç»¿åŒ–é‡Œç¨‹',
 
 CASE 	when isnull(k001.A1001,0)<>isnull(zcpt_k001.A1001,0) and isnull(k001.A3101,0)<>isnull(zcpt_k001.A3101,0) and isnull(k001.A3102,0)<>isnull(zcpt_k001.A3102,0)
-then 'Ñø»¤Àï³Ì/¿ÉÂÌ»¯Àï³Ì/ÒÑÂÌ»¯Àï³Ì ²»Ò»ÖÂ'
+then 'å…»æŠ¤é‡Œç¨‹/å¯ç»¿åŒ–é‡Œç¨‹/å·²ç»¿åŒ–é‡Œç¨‹ ä¸ä¸€è‡´'
 			when isnull(k001.A1001,0)<>isnull(zcpt_k001.A1001,0) and isnull(k001.A3101,0)<>isnull(zcpt_k001.A3101,0) and isnull(k001.A3102,0)=isnull(zcpt_k001.A3102,0)
-then 'Ñø»¤Àï³Ì/¿ÉÂÌ»¯Àï³Ì ²»Ò»ÖÂ'
+then 'å…»æŠ¤é‡Œç¨‹/å¯ç»¿åŒ–é‡Œç¨‹ ä¸ä¸€è‡´'
 			when isnull(k001.A1001,0)<>isnull(zcpt_k001.A1001,0) and isnull(k001.A3101,0)=isnull(zcpt_k001.A3101,0)  and isnull(k001.A3102,0)<>isnull(zcpt_k001.A3102,0)
-then 'Ñø»¤Àï³Ì/ÒÑÂÌ»¯Àï³Ì ²»Ò»ÖÂ'
+then 'å…»æŠ¤é‡Œç¨‹/å·²ç»¿åŒ–é‡Œç¨‹ ä¸ä¸€è‡´'
 			when isnull(k001.A1001,0)=isnull(zcpt_k001.A1001,0)  and isnull(k001.A3101,0)<>isnull(zcpt_k001.A3101,0) and isnull(k001.A3102,0)<>isnull(zcpt_k001.A3102,0)
-then '¿ÉÂÌ»¯Àï³Ì/ÒÑÂÌ»¯Àï³Ì ²»Ò»ÖÂ'
+then 'å¯ç»¿åŒ–é‡Œç¨‹/å·²ç»¿åŒ–é‡Œç¨‹ ä¸ä¸€è‡´'
 			WHEN isnull(k001.A1001,0)<>isnull(zcpt_k001.A1001,0) and isnull(k001.A3101,0)=isnull(zcpt_k001.A3101,0) and isnull(k001.A3102,0)=isnull(zcpt_k001.A3102,0)
-THEN 'Ñø»¤Àï³Ì ²»Ò»ÖÂ'
+THEN 'å…»æŠ¤é‡Œç¨‹ ä¸ä¸€è‡´'
       when isnull(k001.A1001,0)=isnull(zcpt_k001.A1001,0)  and isnull(k001.A3101,0)<>isnull(zcpt_k001.A3101,0) and isnull(k001.A3102,0)=isnull(zcpt_k001.A3102,0)
-then '¿ÉÂÌ»¯Àï³Ì ²»Ò»ÖÂ'
+then 'å¯ç»¿åŒ–é‡Œç¨‹ ä¸ä¸€è‡´'
 			when isnull(k001.A1001,0)=isnull(zcpt_k001.A1001,0) and isnull(k001.A3101,0)=isnull(zcpt_k001.A3101,0) and isnull(k001.A3102,0)<>isnull(zcpt_k001.A3102,0)
-then 'ÒÑÂÌ»¯Àï³Ì ²»Ò»ÖÂ'
+then 'å·²ç»¿åŒ–é‡Œç¨‹ ä¸ä¸€è‡´'
 			else 'error'
-END '¶Ô±È½á¹û'
+END 'å¯¹æ¯”ç»“æœ'
 
 from K001
 left join ZCPT_K001 on rtrim(k001.a0102)=rtrim(ZCPT_K001.a0102) and rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=rtrim(ZCPT_K001.k0101) and k001.k0108=ZCPT_K001.k0108
@@ -32,7 +32,7 @@ where  k001.A0102 LIKE '#A0102#%' AND k001.A0102 LIKE '#GLDW#%' and
 rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=rtrim(ZCPT_K001.k0101)
 and k001.k0108=ZCPT_K001.k0108 and 
 (
-isnull(k001.A1001,0)<>isnull(zcpt_k001.A1001,0)	or -- Ñø»¤Àï³Ì,
-isnull(k001.A3101,0)<>isnull(zcpt_k001.A3101,0)	or -- ¿ÉÂÌ»¯Àï³Ì,
-isnull(k001.A3102,0)<>isnull(zcpt_k001.A3102,0)	 -- ÒÑÂÌ»¯Àï³Ì,
+isnull(k001.A1001,0)<>isnull(zcpt_k001.A1001,0)	or -- å…»æŠ¤é‡Œç¨‹,
+isnull(k001.A3101,0)<>isnull(zcpt_k001.A3101,0)	or -- å¯ç»¿åŒ–é‡Œç¨‹,
+isnull(k001.A3102,0)<>isnull(zcpt_k001.A3102,0)	 -- å·²ç»¿åŒ–é‡Œç¨‹,
 )

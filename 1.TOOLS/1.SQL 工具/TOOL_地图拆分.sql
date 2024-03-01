@@ -5,7 +5,7 @@ select
 		when left(rtrim(objname),4)='4290' then left(rtrim(objname),6) else left(rtrim(objname),4) end) as objid,
 	(case when left(rtrim(objname),3)='42A' then '42A'
 		when left(rtrim(objname),4)='4290' then left(rtrim(objname),6) else left(rtrim(objname),4) end)
-		+'_'+	(case when left(rtrim(objname),3)='42A' then '¸ßËÙµØÍ¼Êı¾İ' else left(rtrim(objjc),3)+'µØÍ¼Êı¾İ' end) as objname
+		+'_'+	(case when left(rtrim(objname),3)='42A' then 'é«˜é€Ÿåœ°å›¾æ•°æ®' else left(rtrim(objjc),3)+'åœ°å›¾æ•°æ®' end) as objname
 from 	da0102
 where 	( (left(rtrim(objname),3)<>'42A' and len(rtrim(objname))=4) or left(rtrim(objname),4)='4290' or rtrim(objname)='42A')
 	and (case when left(objname,3)='42A' then left(objname,3) else left(objname,4) end) in (select distinct (case when left(a0102,3)='42A' then left(a0102,3) else left(a0102,4) end) a0102 from a01)
@@ -13,7 +13,7 @@ where 	( (left(rtrim(objname),3)<>'42A' and len(rtrim(objname))=4) or left(rtrim
 union
 select
 left(rtrim(objname),5) as objid,
-left(rtrim(objname),5)+'_'+left(rtrim(objjc),3)+'¸ßËÙµØÍ¼Êı¾İ' as objname
+left(rtrim(objname),5)+'_'+left(rtrim(objjc),3)+'é«˜é€Ÿåœ°å›¾æ•°æ®' as objname
 from da0102
 where left(rtrim(objname),5) in (select distinct left(rtrim(a0102),5) a0102 from a01 where rtrim(a0102) like '42A%')
 	and left(objname,2)='#AREACODE#' and objname like '#AREACODE#'+'%'
@@ -24,7 +24,7 @@ else
 begin
 select
 	rtrim(objname) as objid,
-	rtrim(objname)+'_'+left(rtrim(objjc),3)+'µØÍ¼Êı¾İ' as objname
+	rtrim(objname)+'_'+left(rtrim(objjc),3)+'åœ°å›¾æ•°æ®' as objname
 from 	da0102
 where 	len(rtrim(objname))>=5 and objname in (select a0102 from a01) and (objname like '#AREACODE#'+'%')
 order by rtrim(objname)

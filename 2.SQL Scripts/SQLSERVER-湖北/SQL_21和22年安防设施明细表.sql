@@ -1,4 +1,4 @@
------2022 关联DZ0101
+-----2022 鍏宠仈DZ0101
 SELECT
 rtrim(A0102),
 rtrim(HA0102),
@@ -44,7 +44,7 @@ order by left(rtrim(A0103),6) ,rtrim(K0101),rtrim(K0108)
 
 
 
------2021  关联D020
+-----2021  鍏宠仈D020
 SELECT
 rtrim(A0102),
 rtrim(HA0102),

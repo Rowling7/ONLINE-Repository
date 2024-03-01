@@ -1,11 +1,11 @@
-SELECT A0102 AS µ•Œª¥˙¬Î,HA0102 AS µ•Œª√˚≥∆,
-[¿Ô≥Ã∫œº∆]=ISNULL(ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'X' AND  (k0124 is null or k0124 = '') and isnull(k0123,'2') = '2' and isnull(k0126,'2')='2' THEN K0114 ELSE 0 END),0) +
+SELECT A0102 AS Âçï‰Ωç‰ª£Á†Å,HA0102 AS Âçï‰ΩçÂêçÁß∞,
+[ÈáåÁ®ãÂêàËÆ°]=ISNULL(ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'X' AND  (k0124 is null or k0124 = '') and isnull(k0123,'2') = '2' and isnull(k0126,'2')='2' THEN K0114 ELSE 0 END),0) +
 ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'Y' AND  (k0124 is null or k0124 = '') and isnull(k0123,'2') = '2' and isnull(k0126,'2')='2' THEN K0114 ELSE 0 END),0) +
 ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'C' AND  (k0124 is null or k0124 = '') and isnull(k0123,'2') = '2' and isnull(k0126,'2')='2' THEN K0114 ELSE 0 END),0),0) ,
---»•µÙ∂œÕ∑¬∑£¨“ª∏±∏ﬂÀŸ£¨÷ÿ∏¥¬∑∂Œ
-ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'X' AND K0123= '2'THEN K0114 ELSE 0 END),0) AS 'œÿ',
-ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'Y' AND K0123= '2'THEN K0114 ELSE 0 END),0) AS 'œÁ',
-ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'C'AND K0123= '2' THEN K0114 ELSE 0 END),0) AS '¥Â'
+--ÂéªÊéâÊñ≠Â§¥Ë∑ØÔºå‰∏ÄÂâØÈ´òÈÄüÔºåÈáçÂ§çË∑ØÊÆµ
+ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'X' AND K0123= '2'THEN K0114 ELSE 0 END),0) AS 'Âéø',
+ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'Y' AND K0123= '2'THEN K0114 ELSE 0 END),0) AS '‰π°',
+ISNULL(SUM(CASE WHEN  LEFT(RTRIM(K0101), 1) = 'C'AND K0123= '2' THEN K0114 ELSE 0 END),0) AS 'Êùë'
 FROM  K01
 GROUP BY HA0102,A0102
 ORDER BY A0102 ASC

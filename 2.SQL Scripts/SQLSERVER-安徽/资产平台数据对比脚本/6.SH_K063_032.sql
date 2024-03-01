@@ -1,19 +1,19 @@
 SELECT 
-'K063'+'&A0102 ='''+RTRIM(CAST(k063.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k063.K0101 AS VARCHAR))+''' AND K6301 ='+RTRIM(CAST(k063.K6301 AS VARCHAR))  AS ±à¼­, 
+'K063'+'&A0102 ='''+RTRIM(CAST(k063.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k063.K0101 AS VARCHAR))+''' AND K6301 ='+RTRIM(CAST(k063.K6301 AS VARCHAR))  AS ç¼–è¾‘, 
 
-RTRIM(K001.A0102) '¹ÜÀíµ¥Î»´úÂë' ,RTRIM(K001.HA0102) '¹ÜÀíµ¥Î»Ãû³Æ',
-K063.K6302 'Äê±¨|ËíµÀÃû³Æ',	ZCPT_K063.K6302 '×Ê²úÆ½Ì¨|ËíµÀÃû³Æ',
-rtrim(replace(replace(replace(replace(replace(k063.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k063.a0103,6)+'U'+k063.k6301 'Äê±¨|ËíµÀ´úÂë',	ZCPT_K063.SDDM '×Ê²úÆ½Ì¨|ËíµÀ´úÂë',
+RTRIM(K001.A0102) 'ç®¡ç†å•ä½ä»£ç ' ,RTRIM(K001.HA0102) 'ç®¡ç†å•ä½åç§°',
+K063.K6302 'å¹´æŠ¥|éš§é“åç§°',	ZCPT_K063.K6302 'èµ„äº§å¹³å°|éš§é“åç§°',
+rtrim(replace(replace(replace(replace(replace(k063.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k063.a0103,6)+'U'+k063.k6301 'å¹´æŠ¥|éš§é“ä»£ç ',	ZCPT_K063.SDDM 'èµ„äº§å¹³å°|éš§é“ä»£ç ',
 
-K063.hK6335 'Äê±¨|ÊÇ·ñË®ÏÂËíµÀ',	ZCPT_K063.K6335 '×Ê²úÆ½Ì¨|ÊÇ·ñË®ÏÂËíµÀ',
-K063.hK6371 'Äê±¨|ÊÇ·ñ¿çÊ¡ËíµÀ',	ZCPT_K063.K6371 '×Ê²úÆ½Ì¨|ÊÇ·ñ¿çÊ¡ËíµÀ',
-K063.K0199 'Äê±¨|±¸×¢',	ZCPT_K063.K0199 '×Ê²úÆ½Ì¨|±¸×¢',
+K063.hK6335 'å¹´æŠ¥|æ˜¯å¦æ°´ä¸‹éš§é“',	ZCPT_K063.K6335 'èµ„äº§å¹³å°|æ˜¯å¦æ°´ä¸‹éš§é“',
+K063.hK6371 'å¹´æŠ¥|æ˜¯å¦è·¨çœéš§é“',	ZCPT_K063.K6371 'èµ„äº§å¹³å°|æ˜¯å¦è·¨çœéš§é“',
+K063.K0199 'å¹´æŠ¥|å¤‡æ³¨',	ZCPT_K063.K0199 'èµ„äº§å¹³å°|å¤‡æ³¨',
 
-CASE 	when rtrim(K063.hK6335)<>rtrim(ZCPT_K063.K6335) and rtrim(K063.hK6371)<>rtrim(ZCPT_K063.K6371) then 'ÊÇ·ñË®ÏÂËíµÀ/ÊÇ·ñ¿çÊ¡ËíµÀ ²»Ò»ÖÂ'
-		  when rtrim(K063.hK6335)<>rtrim(ZCPT_K063.K6335)  and rtrim(K063.hK6371)=rtrim(ZCPT_K063.K6371)then 'ÊÇ·ñË®ÏÂËíµÀ ²»Ò»ÖÂ'
-			when rtrim(K063.hK6335)=rtrim(ZCPT_K063.K6335) and rtrim(K063.hK6371)<>rtrim(ZCPT_K063.K6371) then 'ÊÇ·ñ¿çÊ¡ËíµÀ ²»Ò»ÖÂ'
+CASE 	when rtrim(K063.hK6335)<>rtrim(ZCPT_K063.K6335) and rtrim(K063.hK6371)<>rtrim(ZCPT_K063.K6371) then 'æ˜¯å¦æ°´ä¸‹éš§é“/æ˜¯å¦è·¨çœéš§é“ ä¸ä¸€è‡´'
+		  when rtrim(K063.hK6335)<>rtrim(ZCPT_K063.K6335)  and rtrim(K063.hK6371)=rtrim(ZCPT_K063.K6371)then 'æ˜¯å¦æ°´ä¸‹éš§é“ ä¸ä¸€è‡´'
+			when rtrim(K063.hK6335)=rtrim(ZCPT_K063.K6335) and rtrim(K063.hK6371)<>rtrim(ZCPT_K063.K6371) then 'æ˜¯å¦è·¨çœéš§é“ ä¸ä¸€è‡´'
 			else ''
-END '¶Ô±È½á¹û'
+END 'å¯¹æ¯”ç»“æœ'
 
 from ZCPT_K063
 left join k063 on ZCPT_K063.SDDM= rtrim(replace(replace(replace(replace(replace(k063.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k063.a0103,6)+'U'+k063.k6301
@@ -21,7 +21,7 @@ left join k001 on rtrim(k063.k0101)=rtrim(k001.k0101) and k063.k6324>=k001.k0108
 --where   k063.A0102 LIKE '34%' AND k063.A0102 LIKE '34%' and
 where K063.A0102 LIKE '#A0102#%' AND K063.A0102 LIKE '#GLDW#%' and
 (
-K063.hK6335 <>	ZCPT_K063.K6335 or --ÊÇ·ñË®ÏÂËíµÀ',
-K063.hK6371 <>	ZCPT_K063.K6371  --ÊÇ·ñ¿çÊ¡ËíµÀ',
+K063.hK6335 <>	ZCPT_K063.K6335 or --æ˜¯å¦æ°´ä¸‹éš§é“',
+K063.hK6371 <>	ZCPT_K063.K6371  --æ˜¯å¦è·¨çœéš§é“',
 )
 ORDER BY  sddm

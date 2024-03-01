@@ -6,232 +6,232 @@ CREATE TABLE ZCPT_K060(
 [A0102] char(9) COLLATE Chinese_PRC_CI_AS   NULL,
 [HA0102] char(50) COLLATE Chinese_PRC_CI_AS  NULL,
 
-  [K6002] char(100) COLLATE Chinese_PRC_CI_AS   NULL, --ÇÅÁºÃû³Æ 
-  [K6001] char(100) COLLATE Chinese_PRC_CI_AS   NULL, --ÇÅÁº±àºÅ 
-  [K6003] numeric(18,3)   NULL, --ÇÅÁºÖĞĞÄ×®ºÅ 
-  [K0101] char(15) COLLATE Chinese_PRC_CI_AS   NULL, --Â·Ïß´úÂë 
-  [K0112] char(60) COLLATE Chinese_PRC_CI_AS  NULL, --Â·Ïß¼ò³Æ 
-  [HK0304] char(8) NULL, --ËùÊôÂ·Ïß¼¼ÊõµÈ¼¶
-	[K6008] numeric(18,2)  NULL, --[ÇÅÁºÈ«³¤(Ã×)] 
-  [K6065] numeric(18,2)  NULL, --¿ç¾¶×Ü³¤(Ã×) 
-  [K6063] numeric(18,2)  NULL, --µ¥¿××î´ó¿ç¾¶(Ã×) 	
-  [K6064] char(250) COLLATE Chinese_PRC_CI_AS  NULL, --ÇÅÁº¿ç¾¶×éºÏ(¿×*Ã×) 
-  [K6066] numeric(18,2)  NULL, --ÇÅÁºÈ«¿í(Ã×) 
-  [K6009] numeric(18,2)  NULL, --ÇÅÃæ¾»¿í(Ã×) 
-  [K6007] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --ÇÅÁº¿ç¾¶·ÖÀà 
-  [HK6007] char(10) COLLATE Chinese_PRC_CI_AS  NULL, --ÇÅÁº¿ç¾¶·ÖÀà 
-  [K6004] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --°´Ê¹ÓÃÄêÏŞ·Ö 
-  [HK6004] char(14) COLLATE Chinese_PRC_CI_AS  NULL, --°´Ê¹ÓÃÄêÏŞ·Ö 
-  [K6016] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --ÉÏ²¿½á¹¹ÀàĞÍ 
-  [HK6016] char(22) COLLATE Chinese_PRC_CI_AS  NULL, --ÉÏ²¿½á¹¹ÀàĞÍ 
-  [K6110] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --ÉÏ²¿½á¹¹²ÄÁÏ 
-  [HK6110] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --ÉÏ²¿½á¹¹²ÄÁÏ 
-  [K6017] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --ÇÅ¶ÕÀàĞÍ 
-  [HK6017] char(10) COLLATE Chinese_PRC_CI_AS  NULL, --ÇÅ¶ÕÀàĞÍ 
-  [K6022] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --Éè¼ÆºÉÔØµÈ¼¶ 
-  [HK6022] char(16) COLLATE Chinese_PRC_CI_AS  NULL, --Éè¼ÆºÉÔØµÈ¼¶ 
-  [K6023] char(3) COLLATE Chinese_PRC_CI_AS  NULL, --¿¹ÕğµÈ¼¶ 
-  [HK6023] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --¿¹ÕğµÈ¼¶ 
-  [K6005] char(1) COLLATE Chinese_PRC_CI_AS  NULL, --¿çÔ½µØÎïÀàĞÍ 
-  [HK6005] char(28) COLLATE Chinese_PRC_CI_AS  NULL, --¿çÔ½µØÎïÀàĞÍ 
-  [K6006] char(40) COLLATE Chinese_PRC_CI_AS  NULL, --¿çÔ½µØÎïÃû³Æ 
-  [HK0149] char(10) COLLATE Chinese_PRC_CI_AS  NULL, --·Àºé±ê×¼(Äê) 
-  [HK6024] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --Í¨º½µÈ¼¶ 
-  [HA1328] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ 
-  [hK6062] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --Á¢½»ÇÅÀà±ğ 
-  [K6079] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --½¨Éèµ¥Î»Ãû³Æ 
-  [K6030] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --Éè¼Æµ¥Î»Ãû³Æ 
-  [K6031] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --Ê©¹¤µ¥Î»Ãû³Æ 
-  [K6032] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --¼àÀíµ¥Î»Ãû³Æ 
-  [K0180] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --ĞŞ½¨Äê¶È 
-  [K0116] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --Í¨³µÈÕÆÚ 
-  [A1313] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --¹ÜÑøµ¥Î»ĞÔÖÊ 
-  [A1314] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --¹ÜÑøµ¥Î»Ãû³Æ 
-  [K6111] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --¼à¹Üµ¥Î»Ãû³Æ 
-  [A1302] char(3) COLLATE Chinese_PRC_CI_AS  NULL, --ÊÕ·ÑĞÔÖÊ 
-  [HA1302] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --ÊÕ·ÑĞÔÖÊ 
-  [K6028] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --¼¼Êõ×´¿öÆÀ¶¨ 
-  [HK6028] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --¼¼Êõ×´¿öÆÀ¶¨ 
-  [A1305] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --ÆÀ¶¨ÈÕÆÚ 
-  [K6050] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --¼¼Êõ×´¿öÆÀ¶¨µ¥Î» 
-  [K0181] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --¸Ä½¨Äê¶È 
-  [A1316] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --¸ÄÔìÍê¹¤ÈÕÆÚ 
-  [HA1317] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --¸ÄÔì²¿Î» 
-  [HA1318] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --¹¤³ÌĞÔÖÊ 
-  [K6051] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --¸ÄÔìÊ©¹¤µ¥Î» 
-  [HA1319] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --ÊÇ·ñ²¿²¹ÖúÏîÄ¿ 
-  [HA1306] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --Ö÷Òª²¡º¦Î»ÖÃ 
-  [K6102] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --Ö÷Òª²¡º¦ÃèÊö 
-  [A1307] char(3) COLLATE Chinese_PRC_CI_AS  NULL, --ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ© 
-  [HA1307] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ© 
-  [A0103] char(12) COLLATE Chinese_PRC_CI_AS  NULL, --ĞĞÕşÇø»® 
-  [HA0103] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --ĞĞÕşÇø»® 
-  [HK6117] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --ÇÅÁºËùÔÚÎ»ÖÃ 
-  [HK6118] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --ÊÇ·ñ¿íÂ·Õ­ÇÅ 
-  [HK6119] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ 
-  [HK6120] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --ÊÇ·ñ¿çÊ¡ÇÅÁº 
-  [HK6041] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº 
-  [K6040] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --ÇÅÁºÉí·İÂë 
-	[K0185] numeric(12,8)  NULL, --¾­¶È 
-  [K0186] numeric(12,8)  NULL --Î³¶È 
+  [K6002] char(100) COLLATE Chinese_PRC_CI_AS   NULL, --æ¡¥æ¢åç§° 
+  [K6001] char(100) COLLATE Chinese_PRC_CI_AS   NULL, --æ¡¥æ¢ç¼–å· 
+  [K6003] numeric(18,3)   NULL, --æ¡¥æ¢ä¸­å¿ƒæ¡©å· 
+  [K0101] char(15) COLLATE Chinese_PRC_CI_AS   NULL, --è·¯çº¿ä»£ç  
+  [K0112] char(60) COLLATE Chinese_PRC_CI_AS  NULL, --è·¯çº¿ç®€ç§° 
+  [HK0304] char(8) NULL, --æ‰€å±è·¯çº¿æŠ€æœ¯ç­‰çº§
+	[K6008] numeric(18,2)  NULL, --[æ¡¥æ¢å…¨é•¿(ç±³)] 
+  [K6065] numeric(18,2)  NULL, --è·¨å¾„æ€»é•¿(ç±³) 
+  [K6063] numeric(18,2)  NULL, --å•å­”æœ€å¤§è·¨å¾„(ç±³) 	
+  [K6064] char(250) COLLATE Chinese_PRC_CI_AS  NULL, --æ¡¥æ¢è·¨å¾„ç»„åˆ(å­”*ç±³) 
+  [K6066] numeric(18,2)  NULL, --æ¡¥æ¢å…¨å®½(ç±³) 
+  [K6009] numeric(18,2)  NULL, --æ¡¥é¢å‡€å®½(ç±³) 
+  [K6007] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --æ¡¥æ¢è·¨å¾„åˆ†ç±» 
+  [HK6007] char(10) COLLATE Chinese_PRC_CI_AS  NULL, --æ¡¥æ¢è·¨å¾„åˆ†ç±» 
+  [K6004] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --æŒ‰ä½¿ç”¨å¹´é™åˆ† 
+  [HK6004] char(14) COLLATE Chinese_PRC_CI_AS  NULL, --æŒ‰ä½¿ç”¨å¹´é™åˆ† 
+  [K6016] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --ä¸Šéƒ¨ç»“æ„ç±»å‹ 
+  [HK6016] char(22) COLLATE Chinese_PRC_CI_AS  NULL, --ä¸Šéƒ¨ç»“æ„ç±»å‹ 
+  [K6110] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --ä¸Šéƒ¨ç»“æ„ææ–™ 
+  [HK6110] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --ä¸Šéƒ¨ç»“æ„ææ–™ 
+  [K6017] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --æ¡¥å¢©ç±»å‹ 
+  [HK6017] char(10) COLLATE Chinese_PRC_CI_AS  NULL, --æ¡¥å¢©ç±»å‹ 
+  [K6022] char(2) COLLATE Chinese_PRC_CI_AS  NULL, --è®¾è®¡è·è½½ç­‰çº§ 
+  [HK6022] char(16) COLLATE Chinese_PRC_CI_AS  NULL, --è®¾è®¡è·è½½ç­‰çº§ 
+  [K6023] char(3) COLLATE Chinese_PRC_CI_AS  NULL, --æŠ—éœ‡ç­‰çº§ 
+  [HK6023] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --æŠ—éœ‡ç­‰çº§ 
+  [K6005] char(1) COLLATE Chinese_PRC_CI_AS  NULL, --è·¨è¶Šåœ°ç‰©ç±»å‹ 
+  [HK6005] char(28) COLLATE Chinese_PRC_CI_AS  NULL, --è·¨è¶Šåœ°ç‰©ç±»å‹ 
+  [K6006] char(40) COLLATE Chinese_PRC_CI_AS  NULL, --è·¨è¶Šåœ°ç‰©åç§° 
+  [HK0149] char(10) COLLATE Chinese_PRC_CI_AS  NULL, --é˜²æ´ªæ ‡å‡†(å¹´) 
+  [HK6024] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --é€šèˆªç­‰çº§ 
+  [HA1328] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --å¢©å°é˜²æ’è®¾æ–½ç±»å‹ 
+  [hK6062] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --ç«‹äº¤æ¡¥ç±»åˆ« 
+  [K6079] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --å»ºè®¾å•ä½åç§° 
+  [K6030] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --è®¾è®¡å•ä½åç§° 
+  [K6031] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --æ–½å·¥å•ä½åç§° 
+  [K6032] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --ç›‘ç†å•ä½åç§° 
+  [K0180] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --ä¿®å»ºå¹´åº¦ 
+  [K0116] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --é€šè½¦æ—¥æœŸ 
+  [A1313] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --ç®¡å…»å•ä½æ€§è´¨ 
+  [A1314] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --ç®¡å…»å•ä½åç§° 
+  [K6111] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --ç›‘ç®¡å•ä½åç§° 
+  [A1302] char(3) COLLATE Chinese_PRC_CI_AS  NULL, --æ”¶è´¹æ€§è´¨ 
+  [HA1302] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --æ”¶è´¹æ€§è´¨ 
+  [K6028] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --æŠ€æœ¯çŠ¶å†µè¯„å®š 
+  [HK6028] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --æŠ€æœ¯çŠ¶å†µè¯„å®š 
+  [A1305] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --è¯„å®šæ—¥æœŸ 
+  [K6050] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½ 
+  [K0181] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --æ”¹å»ºå¹´åº¦ 
+  [A1316] char(8) COLLATE Chinese_PRC_CI_AS  NULL, --æ”¹é€ å®Œå·¥æ—¥æœŸ 
+  [HA1317] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --æ”¹é€ éƒ¨ä½ 
+  [HA1318] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --å·¥ç¨‹æ€§è´¨ 
+  [K6051] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --æ”¹é€ æ–½å·¥å•ä½ 
+  [HA1319] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›® 
+  [HA1306] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --ä¸»è¦ç—…å®³ä½ç½® 
+  [K6102] char(200) COLLATE Chinese_PRC_CI_AS  NULL, --ä¸»è¦ç—…å®³æè¿° 
+  [A1307] char(3) COLLATE Chinese_PRC_CI_AS  NULL, --å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ 
+  [HA1307] char(20) COLLATE Chinese_PRC_CI_AS  NULL, --å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ 
+  [A0103] char(12) COLLATE Chinese_PRC_CI_AS  NULL, --è¡Œæ”¿åŒºåˆ’ 
+  [HA0103] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --è¡Œæ”¿åŒºåˆ’ 
+  [HK6117] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --æ¡¥æ¢æ‰€åœ¨ä½ç½® 
+  [HK6118] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --æ˜¯å¦å®½è·¯çª„æ¡¥ 
+  [HK6119] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­ 
+  [HK6120] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --æ˜¯å¦è·¨çœæ¡¥æ¢ 
+  [HK6041] char(4) COLLATE Chinese_PRC_CI_AS  NULL, --æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢ 
+  [K6040] char(100) COLLATE Chinese_PRC_CI_AS  NULL, --æ¡¥æ¢èº«ä»½ç  
+	[K0185] numeric(12,8)  NULL, --ç»åº¦ 
+  [K0186] numeric(12,8)  NULL --çº¬åº¦ 
 )
 	
 	
 	
 	
-	-- ²åÈë×Ê²úÆ½Ì¨ÇÅÁºÊı¾İ
+	-- æ’å…¥èµ„äº§å¹³å°æ¡¥æ¢æ•°æ®
 TRUNCATE table ZCPT_K060
 
 insert into ZCPT_K060(
-K6002, -- ÇÅÁºÃû³Æ
-K6001, -- ÇÅÁº±àºÅ
-K6003, -- ÇÅÁºÖĞĞÄ×®ºÅ
-K0101, -- Â·Ïß´úÂë
-K0112, -- Â·Ïß¼ò³Æ
-HK0304, -- ¼¼ÊõµÈ¼¶
-K6008, -- [ÇÅÁºÈ«³¤(Ã×)]
-K6065, -- ¿ç¾¶×Ü³¤(Ã×)
-K6063, -- µ¥¿××î´ó¿ç¾¶(Ã×)
-K6064, -- ÇÅÁº¿ç¾¶×éºÏ(¿×*Ã×)
-K6066, -- ÇÅÁºÈ«¿í(Ã×)
-K6009, -- ÇÅÃæ¾»¿í(Ã×)
-K6007, -- ÇÅÁº¿ç¾¶·ÖÀà
-hK6007, -- ÇÅÁº¿ç¾¶·ÖÀà
-K6004, -- °´Ê¹ÓÃÄêÏŞ·Ö
-hK6004, -- °´Ê¹ÓÃÄêÏŞ·Ö
-K6016, -- ÉÏ²¿½á¹¹ÀàĞÍ
-hK6016, -- ÉÏ²¿½á¹¹ÀàĞÍ
-K6110, -- ÉÏ²¿½á¹¹²ÄÁÏ
-hK6110, -- ÉÏ²¿½á¹¹²ÄÁÏ
-K6017, -- ÇÅ¶ÕÀàĞÍ
-hK6017, -- ÇÅ¶ÕÀàĞÍ
-K6022, -- Éè¼ÆºÉÔØµÈ¼¶
-hK6022, -- Éè¼ÆºÉÔØµÈ¼¶
-K6023, -- ¿¹ÕğµÈ¼¶
-hK6023, -- ¿¹ÕğµÈ¼¶
-K6005, -- ¿çÔ½µØÎïÀàĞÍ
-hK6005, -- ¿çÔ½µØÎïÀàĞÍ
-K6006, -- ¿çÔ½µØÎïÃû³Æ
-hK0149, -- ·Àºé±ê×¼(Äê)
-hK6024, -- Í¨º½µÈ¼¶
-hA1328, -- ¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ
-hK6062, -- Á¢½»ÇÅÀà±ğ
-K6079, -- ½¨Éèµ¥Î»Ãû³Æ
-K6030, -- Éè¼Æµ¥Î»Ãû³Æ
-K6031, -- Ê©¹¤µ¥Î»Ãû³Æ
-K6032, -- ¼àÀíµ¥Î»Ãû³Æ
-K0180, -- ĞŞ½¨Äê¶È
-K0116, -- Í¨³µÈÕÆÚ
-A1313, -- ¹ÜÑøµ¥Î»ĞÔÖÊ
-A1314, -- ¹ÜÑøµ¥Î»Ãû³Æ
-K6111, -- ¼à¹Üµ¥Î»Ãû³Æ
-A1302, -- ÊÕ·ÑĞÔÖÊ´úÂë
-hA1302, -- ÊÕ·ÑĞÔÖÊ·şÎñ
-K6028, -- ¼¼Êõ×´¿öÆÀ¶¨
-hK6028, -- ¼¼Êõ×´¿öÆÀ¶¨
-A1305, -- ÆÀ¶¨ÈÕÆÚ
-K6050, -- ¼¼Êõ×´¿öÆÀ¶¨µ¥Î»
-K0181, -- ¸Ä½¨Äê¶È
-A1316, -- ¸ÄÔìÍê¹¤ÈÕÆÚ
-hA1317, -- ¸ÄÔì²¿Î»
-hA1318, -- ¹¤³ÌĞÔÖÊ
-K6051, -- ¸ÄÔìÊ©¹¤µ¥Î»
-hA1319, -- ÊÇ·ñ²¿²¹ÖúÏîÄ¿
-hA1306, -- Ö÷Òª²¡º¦Î»ÖÃ
-K6102, -- Ö÷Òª²¡º¦ÃèÊö
-A1307, -- ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©
-hA1307, -- ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©
-A0103, -- ĞĞÕşÇø»®
-hA0103, -- ĞĞÕşÇø»®
-hK6117, -- ÇÅÁºËùÔÚÎ»ÖÃ
-hK6118, -- ÊÇ·ñ¿íÂ·Õ­ÇÅ
-hK6119, -- ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ
-hK6120, -- ÊÇ·ñ¿çÊ¡ÇÅÁº
-hK6041, -- ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº
-K6040, -- ÇÅÁºÉí·İÂë
-K0185, -- ¾­¶È
-K0186 -- Î³¶È
+K6002, -- æ¡¥æ¢åç§°
+K6001, -- æ¡¥æ¢ç¼–å·
+K6003, -- æ¡¥æ¢ä¸­å¿ƒæ¡©å·
+K0101, -- è·¯çº¿ä»£ç 
+K0112, -- è·¯çº¿ç®€ç§°
+HK0304, -- æŠ€æœ¯ç­‰çº§
+K6008, -- [æ¡¥æ¢å…¨é•¿(ç±³)]
+K6065, -- è·¨å¾„æ€»é•¿(ç±³)
+K6063, -- å•å­”æœ€å¤§è·¨å¾„(ç±³)
+K6064, -- æ¡¥æ¢è·¨å¾„ç»„åˆ(å­”*ç±³)
+K6066, -- æ¡¥æ¢å…¨å®½(ç±³)
+K6009, -- æ¡¥é¢å‡€å®½(ç±³)
+K6007, -- æ¡¥æ¢è·¨å¾„åˆ†ç±»
+hK6007, -- æ¡¥æ¢è·¨å¾„åˆ†ç±»
+K6004, -- æŒ‰ä½¿ç”¨å¹´é™åˆ†
+hK6004, -- æŒ‰ä½¿ç”¨å¹´é™åˆ†
+K6016, -- ä¸Šéƒ¨ç»“æ„ç±»å‹
+hK6016, -- ä¸Šéƒ¨ç»“æ„ç±»å‹
+K6110, -- ä¸Šéƒ¨ç»“æ„ææ–™
+hK6110, -- ä¸Šéƒ¨ç»“æ„ææ–™
+K6017, -- æ¡¥å¢©ç±»å‹
+hK6017, -- æ¡¥å¢©ç±»å‹
+K6022, -- è®¾è®¡è·è½½ç­‰çº§
+hK6022, -- è®¾è®¡è·è½½ç­‰çº§
+K6023, -- æŠ—éœ‡ç­‰çº§
+hK6023, -- æŠ—éœ‡ç­‰çº§
+K6005, -- è·¨è¶Šåœ°ç‰©ç±»å‹
+hK6005, -- è·¨è¶Šåœ°ç‰©ç±»å‹
+K6006, -- è·¨è¶Šåœ°ç‰©åç§°
+hK0149, -- é˜²æ´ªæ ‡å‡†(å¹´)
+hK6024, -- é€šèˆªç­‰çº§
+hA1328, -- å¢©å°é˜²æ’è®¾æ–½ç±»å‹
+hK6062, -- ç«‹äº¤æ¡¥ç±»åˆ«
+K6079, -- å»ºè®¾å•ä½åç§°
+K6030, -- è®¾è®¡å•ä½åç§°
+K6031, -- æ–½å·¥å•ä½åç§°
+K6032, -- ç›‘ç†å•ä½åç§°
+K0180, -- ä¿®å»ºå¹´åº¦
+K0116, -- é€šè½¦æ—¥æœŸ
+A1313, -- ç®¡å…»å•ä½æ€§è´¨
+A1314, -- ç®¡å…»å•ä½åç§°
+K6111, -- ç›‘ç®¡å•ä½åç§°
+A1302, -- æ”¶è´¹æ€§è´¨ä»£ç 
+hA1302, -- æ”¶è´¹æ€§è´¨æœåŠ¡
+K6028, -- æŠ€æœ¯çŠ¶å†µè¯„å®š
+hK6028, -- æŠ€æœ¯çŠ¶å†µè¯„å®š
+A1305, -- è¯„å®šæ—¥æœŸ
+K6050, -- æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½
+K0181, -- æ”¹å»ºå¹´åº¦
+A1316, -- æ”¹é€ å®Œå·¥æ—¥æœŸ
+hA1317, -- æ”¹é€ éƒ¨ä½
+hA1318, -- å·¥ç¨‹æ€§è´¨
+K6051, -- æ”¹é€ æ–½å·¥å•ä½
+hA1319, -- æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›®
+hA1306, -- ä¸»è¦ç—…å®³ä½ç½®
+K6102, -- ä¸»è¦ç—…å®³æè¿°
+A1307, -- å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½
+hA1307, -- å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½
+A0103, -- è¡Œæ”¿åŒºåˆ’
+hA0103, -- è¡Œæ”¿åŒºåˆ’
+hK6117, -- æ¡¥æ¢æ‰€åœ¨ä½ç½®
+hK6118, -- æ˜¯å¦å®½è·¯çª„æ¡¥
+hK6119, -- æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­
+hK6120, -- æ˜¯å¦è·¨çœæ¡¥æ¢
+hK6041, -- æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢
+K6040, -- æ¡¥æ¢èº«ä»½ç 
+K0185, -- ç»åº¦
+K0186 -- çº¬åº¦
 
 )
 select 
-ÇÅÁºÃû³Æ 	,
-ÇÅÁº±àºÅ 	,
-ÇÅÁºÖĞĞÄ×®ºÅ 	,
-Â·Ïß´úÂë 	,
-case when len(Â·Ïß¼ò³Æ)>0 then Â·Ïß¼ò³Æ when len(Â·Ïß¼ò³Æ)=0 or Â·Ïß¼ò³Æ is null then null end Â·Ïß¼ò³Æ,
-case when len(¼¼ÊõµÈ¼¶)>0 then ¼¼ÊõµÈ¼¶ when len(¼¼ÊõµÈ¼¶)=0 or ¼¼ÊõµÈ¼¶ is null then null end ¼¼ÊõµÈ¼¶,
-[ÇÅÁºÈ«³¤(Ã×)] 	,
-[¿ç¾¶×Ü³¤(Ã×)] 	,
-[µ¥¿××î´ó¿ç¾¶(Ã×)] 	,
-[ÇÅÁº¿ç¾¶×éºÏ(¿×*Ã×)] 	,
-[ÇÅÁºÈ«¿í(Ã×)] 	,
-[ÇÅÃæ¾»¿í(Ã×)] 	,
-ÇÅÁº¿ç¾¶·ÖÀà´úÂë 	,
-case when len(ÇÅÁº¿ç¾¶·ÖÀàºº×Ö)>0 then ÇÅÁº¿ç¾¶·ÖÀàºº×Ö when len(ÇÅÁº¿ç¾¶·ÖÀàºº×Ö)=0 or ÇÅÁº¿ç¾¶·ÖÀàºº×Ö is null then null end ,
-case when len(°´Ê¹ÓÃÄêÏŞ·Ö´úÂë)>0 then °´Ê¹ÓÃÄêÏŞ·Ö´úÂë when len(°´Ê¹ÓÃÄêÏŞ·Ö´úÂë)=0 or °´Ê¹ÓÃÄêÏŞ·Ö´úÂë is null then null end ,
-case when len(°´Ê¹ÓÃÄêÏŞ·Öºº×Ö)>0 then °´Ê¹ÓÃÄêÏŞ·Öºº×Ö when len(°´Ê¹ÓÃÄêÏŞ·Öºº×Ö)=0 or °´Ê¹ÓÃÄêÏŞ·Öºº×Ö is null then null end ,
-ÉÏ²¿½á¹¹ÀàĞÍ´úÂë 	,
-case when len(ÉÏ²¿½á¹¹ÀàĞÍºº×Ö)>0 then ÉÏ²¿½á¹¹ÀàĞÍºº×Ö when len(ÉÏ²¿½á¹¹ÀàĞÍºº×Ö)=0 or ÉÏ²¿½á¹¹ÀàĞÍºº×Ö is null then null end ,
-ÉÏ²¿½á¹¹²ÄÁÏ´úÂë 	,
-case when len(ÉÏ²¿½á¹¹²ÄÁÏºº×Ö)>0 then ÉÏ²¿½á¹¹²ÄÁÏºº×Ö when len(ÉÏ²¿½á¹¹²ÄÁÏºº×Ö)=0 or ÉÏ²¿½á¹¹²ÄÁÏºº×Ö is null then null end ,
-ÇÅ¶ÕÀàĞÍ´úÂë 	,
-case when len(ÇÅ¶ÕÀàĞÍºº×Ö)>0 then ÇÅ¶ÕÀàĞÍºº×Ö when len(ÇÅ¶ÕÀàĞÍºº×Ö)=0 or ÇÅ¶ÕÀàĞÍºº×Ö is null then null end ,
-Éè¼ÆºÉÔØµÈ¼¶´úÂë 	,
-case when len(Éè¼ÆºÉÔØµÈ¼¶ºº×Ö)>0 then Éè¼ÆºÉÔØµÈ¼¶ºº×Ö when len(Éè¼ÆºÉÔØµÈ¼¶ºº×Ö)=0 or Éè¼ÆºÉÔØµÈ¼¶ºº×Ö is null then null end ,
-¿¹ÕğµÈ¼¶´úÂë 	,
-case when len(¿¹ÕğµÈ¼¶ºº×Ö)>0 then ¿¹ÕğµÈ¼¶ºº×Ö when len(¿¹ÕğµÈ¼¶ºº×Ö)=0 or ¿¹ÕğµÈ¼¶ºº×Ö is null then null end ,
-¿çÔ½µØÎïÀàĞÍ´úÂë 	,
-case when len(¿çÔ½µØÎïÀàĞÍºº×Ö)>0 then ¿çÔ½µØÎïÀàĞÍºº×Ö when len(¿çÔ½µØÎïÀàĞÍºº×Ö)=0 or ¿çÔ½µØÎïÀàĞÍºº×Ö is null then null end ,
-case when len(¿çÔ½µØÎïÃû³Æ)>0 then ¿çÔ½µØÎïÃû³Æ when len(¿çÔ½µØÎïÃû³Æ)=0 or ¿çÔ½µØÎïÃû³Æ is null then null end ,
-case when len([·Àºé±ê×¼(Äê)])>0 then [·Àºé±ê×¼(Äê)] when len([·Àºé±ê×¼(Äê)])=0 or [·Àºé±ê×¼(Äê)] is null then null end ,
-replace(case when len(Í¨º½µÈ¼¶)>0 then Í¨º½µÈ¼¶ when len(Í¨º½µÈ¼¶)=0 or Í¨º½µÈ¼¶ is null then null end,'º½µÀ','') ,
-case when len(¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ)>0 then ¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ when len(¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ)=0 or ¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ is null then null end ,
-case when len(Á¢½»ÇÅÀà±ğ)>0 then Á¢½»ÇÅÀà±ğ when len(Á¢½»ÇÅÀà±ğ)=0 or Á¢½»ÇÅÀà±ğ is null then null end ,
-case when len(½¨Éèµ¥Î»Ãû³Æ)>0 then ½¨Éèµ¥Î»Ãû³Æ when len(½¨Éèµ¥Î»Ãû³Æ)=0 or ½¨Éèµ¥Î»Ãû³Æ is null then null end ,
-case when len(Éè¼Æµ¥Î»Ãû³Æ)>0 then Éè¼Æµ¥Î»Ãû³Æ when len(Éè¼Æµ¥Î»Ãû³Æ)=0 or Éè¼Æµ¥Î»Ãû³Æ is null then null end ,
-case when len(Ê©¹¤µ¥Î»Ãû³Æ)>0 then Ê©¹¤µ¥Î»Ãû³Æ when len(Ê©¹¤µ¥Î»Ãû³Æ)=0 or Ê©¹¤µ¥Î»Ãû³Æ is null then null end ,
-case when len(¼àÀíµ¥Î»Ãû³Æ)>0 then ¼àÀíµ¥Î»Ãû³Æ when len(¼àÀíµ¥Î»Ãû³Æ)=0 or ¼àÀíµ¥Î»Ãû³Æ is null then null end ,
-case when len(REPLACE(ĞŞ½¨Äê¶È, '-' ,'')) >0 then REPLACE(ĞŞ½¨Äê¶È, '-' ,'') when len(REPLACE(ĞŞ½¨Äê¶È, '-' ,'')) =0 or REPLACE(ĞŞ½¨Äê¶È, '-' ,'') is null then null end ĞŞ½¨Äê¶È	,
-case when len(REPLACE(Í¨³µÈÕÆÚ, '-' ,'')) >0 then REPLACE(Í¨³µÈÕÆÚ, '-' ,'') when len(REPLACE(Í¨³µÈÕÆÚ, '-' ,'')) =0 or REPLACE(Í¨³µÈÕÆÚ, '-' ,'') is null then null end Í¨³µÈÕÆÚ	,
-¹ÜÑøµ¥Î»ĞÔÖÊ 	,
-case when len(¹ÜÑøµ¥Î»Ãû³Æ)>0 then ¹ÜÑøµ¥Î»Ãû³Æ when len(¹ÜÑøµ¥Î»Ãû³Æ)=0 or ¹ÜÑøµ¥Î»Ãû³Æ is null then null end ,
-case when len(¼à¹Üµ¥Î»Ãû³Æ)>0 then ¼à¹Üµ¥Î»Ãû³Æ when len(¼à¹Üµ¥Î»Ãû³Æ)=0 or ¼à¹Üµ¥Î»Ãû³Æ is null then null end ,
-ÊÕ·ÑĞÔÖÊ´úÂë 	,
-case when len(ÊÕ·ÑĞÔÖÊºº×Ö)>0 then ÊÕ·ÑĞÔÖÊºº×Ö when len(ÊÕ·ÑĞÔÖÊºº×Ö)=0 or ÊÕ·ÑĞÔÖÊºº×Ö is null then null end ,
-¼¼Êõ×´¿öÆÀ¶¨´úÂë 	,
-case when len(¼¼Êõ×´¿öÆÀ¶¨ºº×Ö)>0 then ¼¼Êõ×´¿öÆÀ¶¨ºº×Ö when len(¼¼Êõ×´¿öÆÀ¶¨ºº×Ö)=0 or ¼¼Êõ×´¿öÆÀ¶¨ºº×Ö is null then null end ,
-case when len(REPLACE(ÆÀ¶¨ÈÕÆÚ, '-' ,'')) >0 then REPLACE(ÆÀ¶¨ÈÕÆÚ, '-' ,'') when len(REPLACE(ÆÀ¶¨ÈÕÆÚ, '-' ,'')) =0 or REPLACE(ÆÀ¶¨ÈÕÆÚ, '-' ,'') is null then null end ÆÀ¶¨ÈÕÆÚ	,
-case when len(¼¼Êõ×´¿öÆÀ¶¨µ¥Î»)>0 then ¼¼Êõ×´¿öÆÀ¶¨µ¥Î» when len(¼¼Êõ×´¿öÆÀ¶¨µ¥Î»)=0 or ¼¼Êõ×´¿öÆÀ¶¨µ¥Î» is null then null end ,
-case when len(¸Ä½¨Äê¶È)>0 then ¸Ä½¨Äê¶È when len(¸Ä½¨Äê¶È)=0 or ¸Ä½¨Äê¶È is null then null end ,
-case when len(REPLACE(¸ÄÔìÍê¹¤ÈÕÆÚ, '-' ,'')) >0 then REPLACE(¸ÄÔìÍê¹¤ÈÕÆÚ, '-' ,'') when len(REPLACE(¸ÄÔìÍê¹¤ÈÕÆÚ, '-' ,'')) =0 or REPLACE(¸ÄÔìÍê¹¤ÈÕÆÚ, '-' ,'') is null then null end ¸ÄÔìÍê¹¤ÈÕÆÚ	,
-case when len(¸ÄÔì²¿Î»)>0 then ¸ÄÔì²¿Î» when len(¸ÄÔì²¿Î»)=0 or ¸ÄÔì²¿Î» is null then null end ¸ÄÔì²¿Î»,
-case when len(¹¤³ÌĞÔÖÊ)>0 then ¹¤³ÌĞÔÖÊ when len(¹¤³ÌĞÔÖÊ)=0 or ¹¤³ÌĞÔÖÊ is null then null end ¹¤³ÌĞÔÖÊ,
-case when len(¸ÄÔìÊ©¹¤µ¥Î»)>0 then ¸ÄÔìÊ©¹¤µ¥Î» when len(¸ÄÔìÊ©¹¤µ¥Î»)=0 or ¸ÄÔìÊ©¹¤µ¥Î» is null then null end ¸ÄÔìÊ©¹¤µ¥Î»,
-case when len(ÊÇ·ñ²¿²¹ÖúÏîÄ¿)>0 then ÊÇ·ñ²¿²¹ÖúÏîÄ¿ when len(ÊÇ·ñ²¿²¹ÖúÏîÄ¿)=0 or ÊÇ·ñ²¿²¹ÖúÏîÄ¿ is null then null end ÊÇ·ñ²¿²¹ÖúÏîÄ¿,
-case when len(Ö÷Òª²¡º¦Î»ÖÃ)>0 then Ö÷Òª²¡º¦Î»ÖÃ when len(Ö÷Òª²¡º¦Î»ÖÃ)=0 or Ö÷Òª²¡º¦Î»ÖÃ is null then null end Ö÷Òª²¡º¦Î»ÖÃ,
-case when len(Ö÷Òª²¡º¦ÃèÊö)>0 then Ö÷Òª²¡º¦ÃèÊö when len(Ö÷Òª²¡º¦ÃèÊö)=0 or Ö÷Òª²¡º¦ÃèÊö is null then null end Ö÷Òª²¡º¦ÃèÊö,
-case when len(ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©´úÂë)>0 then ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©´úÂë when len(ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©´úÂë)=0 or ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©´úÂë is null then null end ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©´úÂë,
-case when len(ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©ºº×Ö)>0 then ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©ºº×Ö when len(ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©ºº×Ö)=0 or ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©ºº×Ö is null then null end ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©ºº×Ö,
-case when len(ĞĞÕşÇø»®´úÂë)>0 then ĞĞÕşÇø»®´úÂë when len(ĞĞÕşÇø»®´úÂë)=0 or ĞĞÕşÇø»®´úÂë is null then null end ,
-case when len(ĞĞÕşÇø»®ºº×Ö)>0 then ĞĞÕşÇø»®ºº×Ö when len(ĞĞÕşÇø»®ºº×Ö)=0 or ĞĞÕşÇø»®ºº×Ö is null then null end ,
-case when len(ÇÅÁºËùÔÚÎ»ÖÃ)>0 then ÇÅÁºËùÔÚÎ»ÖÃ when len(ÇÅÁºËùÔÚÎ»ÖÃ)=0 or ÇÅÁºËùÔÚÎ»ÖÃ is null then null end ,
-case when len(ÊÇ·ñ¿íÂ·Õ­ÇÅ)>0 then ÊÇ·ñ¿íÂ·Õ­ÇÅ when len(ÊÇ·ñ¿íÂ·Õ­ÇÅ)=0 or ÊÇ·ñ¿íÂ·Õ­ÇÅ is null then null end ,
-case when len(ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ)>0 then ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ when len(ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ)=0 or ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ is null then null end ,
-case when len(ÊÇ·ñ¿çÊ¡ÇÅÁº)>0 then ÊÇ·ñ¿çÊ¡ÇÅÁº when len(ÊÇ·ñ¿çÊ¡ÇÅÁº)=0 or ÊÇ·ñ¿çÊ¡ÇÅÁº is null then null end ,
-case when len(ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº)>0 then ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº when len(ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº)=0 or ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº is null then null end ,
-ÇÅÁºÉí·İÂë 	,
-¾­¶È,
-Î³¶È
-from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼ş\3.°²»Õ¹¤×÷ÎÄ¼ş\20231120 °²»Õ×Ê²úÆ½Ì¨Êı¾İ\È«Ê¡ÇÅÁºÃ÷Ï¸±í.xls',Ã÷Ï¸±í$)
+æ¡¥æ¢åç§° 	,
+æ¡¥æ¢ç¼–å· 	,
+æ¡¥æ¢ä¸­å¿ƒæ¡©å· 	,
+è·¯çº¿ä»£ç  	,
+case when len(è·¯çº¿ç®€ç§°)>0 then è·¯çº¿ç®€ç§° when len(è·¯çº¿ç®€ç§°)=0 or è·¯çº¿ç®€ç§° is null then null end è·¯çº¿ç®€ç§°,
+case when len(æŠ€æœ¯ç­‰çº§)>0 then æŠ€æœ¯ç­‰çº§ when len(æŠ€æœ¯ç­‰çº§)=0 or æŠ€æœ¯ç­‰çº§ is null then null end æŠ€æœ¯ç­‰çº§,
+[æ¡¥æ¢å…¨é•¿(ç±³)] 	,
+[è·¨å¾„æ€»é•¿(ç±³)] 	,
+[å•å­”æœ€å¤§è·¨å¾„(ç±³)] 	,
+[æ¡¥æ¢è·¨å¾„ç»„åˆ(å­”*ç±³)] 	,
+[æ¡¥æ¢å…¨å®½(ç±³)] 	,
+[æ¡¥é¢å‡€å®½(ç±³)] 	,
+æ¡¥æ¢è·¨å¾„åˆ†ç±»ä»£ç  	,
+case when len(æ¡¥æ¢è·¨å¾„åˆ†ç±»æ±‰å­—)>0 then æ¡¥æ¢è·¨å¾„åˆ†ç±»æ±‰å­— when len(æ¡¥æ¢è·¨å¾„åˆ†ç±»æ±‰å­—)=0 or æ¡¥æ¢è·¨å¾„åˆ†ç±»æ±‰å­— is null then null end ,
+case when len(æŒ‰ä½¿ç”¨å¹´é™åˆ†ä»£ç )>0 then æŒ‰ä½¿ç”¨å¹´é™åˆ†ä»£ç  when len(æŒ‰ä½¿ç”¨å¹´é™åˆ†ä»£ç )=0 or æŒ‰ä½¿ç”¨å¹´é™åˆ†ä»£ç  is null then null end ,
+case when len(æŒ‰ä½¿ç”¨å¹´é™åˆ†æ±‰å­—)>0 then æŒ‰ä½¿ç”¨å¹´é™åˆ†æ±‰å­— when len(æŒ‰ä½¿ç”¨å¹´é™åˆ†æ±‰å­—)=0 or æŒ‰ä½¿ç”¨å¹´é™åˆ†æ±‰å­— is null then null end ,
+ä¸Šéƒ¨ç»“æ„ç±»å‹ä»£ç  	,
+case when len(ä¸Šéƒ¨ç»“æ„ç±»å‹æ±‰å­—)>0 then ä¸Šéƒ¨ç»“æ„ç±»å‹æ±‰å­— when len(ä¸Šéƒ¨ç»“æ„ç±»å‹æ±‰å­—)=0 or ä¸Šéƒ¨ç»“æ„ç±»å‹æ±‰å­— is null then null end ,
+ä¸Šéƒ¨ç»“æ„ææ–™ä»£ç  	,
+case when len(ä¸Šéƒ¨ç»“æ„ææ–™æ±‰å­—)>0 then ä¸Šéƒ¨ç»“æ„ææ–™æ±‰å­— when len(ä¸Šéƒ¨ç»“æ„ææ–™æ±‰å­—)=0 or ä¸Šéƒ¨ç»“æ„ææ–™æ±‰å­— is null then null end ,
+æ¡¥å¢©ç±»å‹ä»£ç  	,
+case when len(æ¡¥å¢©ç±»å‹æ±‰å­—)>0 then æ¡¥å¢©ç±»å‹æ±‰å­— when len(æ¡¥å¢©ç±»å‹æ±‰å­—)=0 or æ¡¥å¢©ç±»å‹æ±‰å­— is null then null end ,
+è®¾è®¡è·è½½ç­‰çº§ä»£ç  	,
+case when len(è®¾è®¡è·è½½ç­‰çº§æ±‰å­—)>0 then è®¾è®¡è·è½½ç­‰çº§æ±‰å­— when len(è®¾è®¡è·è½½ç­‰çº§æ±‰å­—)=0 or è®¾è®¡è·è½½ç­‰çº§æ±‰å­— is null then null end ,
+æŠ—éœ‡ç­‰çº§ä»£ç  	,
+case when len(æŠ—éœ‡ç­‰çº§æ±‰å­—)>0 then æŠ—éœ‡ç­‰çº§æ±‰å­— when len(æŠ—éœ‡ç­‰çº§æ±‰å­—)=0 or æŠ—éœ‡ç­‰çº§æ±‰å­— is null then null end ,
+è·¨è¶Šåœ°ç‰©ç±»å‹ä»£ç  	,
+case when len(è·¨è¶Šåœ°ç‰©ç±»å‹æ±‰å­—)>0 then è·¨è¶Šåœ°ç‰©ç±»å‹æ±‰å­— when len(è·¨è¶Šåœ°ç‰©ç±»å‹æ±‰å­—)=0 or è·¨è¶Šåœ°ç‰©ç±»å‹æ±‰å­— is null then null end ,
+case when len(è·¨è¶Šåœ°ç‰©åç§°)>0 then è·¨è¶Šåœ°ç‰©åç§° when len(è·¨è¶Šåœ°ç‰©åç§°)=0 or è·¨è¶Šåœ°ç‰©åç§° is null then null end ,
+case when len([é˜²æ´ªæ ‡å‡†(å¹´)])>0 then [é˜²æ´ªæ ‡å‡†(å¹´)] when len([é˜²æ´ªæ ‡å‡†(å¹´)])=0 or [é˜²æ´ªæ ‡å‡†(å¹´)] is null then null end ,
+replace(case when len(é€šèˆªç­‰çº§)>0 then é€šèˆªç­‰çº§ when len(é€šèˆªç­‰çº§)=0 or é€šèˆªç­‰çº§ is null then null end,'èˆªé“','') ,
+case when len(å¢©å°é˜²æ’è®¾æ–½ç±»å‹)>0 then å¢©å°é˜²æ’è®¾æ–½ç±»å‹ when len(å¢©å°é˜²æ’è®¾æ–½ç±»å‹)=0 or å¢©å°é˜²æ’è®¾æ–½ç±»å‹ is null then null end ,
+case when len(ç«‹äº¤æ¡¥ç±»åˆ«)>0 then ç«‹äº¤æ¡¥ç±»åˆ« when len(ç«‹äº¤æ¡¥ç±»åˆ«)=0 or ç«‹äº¤æ¡¥ç±»åˆ« is null then null end ,
+case when len(å»ºè®¾å•ä½åç§°)>0 then å»ºè®¾å•ä½åç§° when len(å»ºè®¾å•ä½åç§°)=0 or å»ºè®¾å•ä½åç§° is null then null end ,
+case when len(è®¾è®¡å•ä½åç§°)>0 then è®¾è®¡å•ä½åç§° when len(è®¾è®¡å•ä½åç§°)=0 or è®¾è®¡å•ä½åç§° is null then null end ,
+case when len(æ–½å·¥å•ä½åç§°)>0 then æ–½å·¥å•ä½åç§° when len(æ–½å·¥å•ä½åç§°)=0 or æ–½å·¥å•ä½åç§° is null then null end ,
+case when len(ç›‘ç†å•ä½åç§°)>0 then ç›‘ç†å•ä½åç§° when len(ç›‘ç†å•ä½åç§°)=0 or ç›‘ç†å•ä½åç§° is null then null end ,
+case when len(REPLACE(ä¿®å»ºå¹´åº¦, '-' ,'')) >0 then REPLACE(ä¿®å»ºå¹´åº¦, '-' ,'') when len(REPLACE(ä¿®å»ºå¹´åº¦, '-' ,'')) =0 or REPLACE(ä¿®å»ºå¹´åº¦, '-' ,'') is null then null end ä¿®å»ºå¹´åº¦	,
+case when len(REPLACE(é€šè½¦æ—¥æœŸ, '-' ,'')) >0 then REPLACE(é€šè½¦æ—¥æœŸ, '-' ,'') when len(REPLACE(é€šè½¦æ—¥æœŸ, '-' ,'')) =0 or REPLACE(é€šè½¦æ—¥æœŸ, '-' ,'') is null then null end é€šè½¦æ—¥æœŸ	,
+ç®¡å…»å•ä½æ€§è´¨ 	,
+case when len(ç®¡å…»å•ä½åç§°)>0 then ç®¡å…»å•ä½åç§° when len(ç®¡å…»å•ä½åç§°)=0 or ç®¡å…»å•ä½åç§° is null then null end ,
+case when len(ç›‘ç®¡å•ä½åç§°)>0 then ç›‘ç®¡å•ä½åç§° when len(ç›‘ç®¡å•ä½åç§°)=0 or ç›‘ç®¡å•ä½åç§° is null then null end ,
+æ”¶è´¹æ€§è´¨ä»£ç  	,
+case when len(æ”¶è´¹æ€§è´¨æ±‰å­—)>0 then æ”¶è´¹æ€§è´¨æ±‰å­— when len(æ”¶è´¹æ€§è´¨æ±‰å­—)=0 or æ”¶è´¹æ€§è´¨æ±‰å­— is null then null end ,
+æŠ€æœ¯çŠ¶å†µè¯„å®šä»£ç  	,
+case when len(æŠ€æœ¯çŠ¶å†µè¯„å®šæ±‰å­—)>0 then æŠ€æœ¯çŠ¶å†µè¯„å®šæ±‰å­— when len(æŠ€æœ¯çŠ¶å†µè¯„å®šæ±‰å­—)=0 or æŠ€æœ¯çŠ¶å†µè¯„å®šæ±‰å­— is null then null end ,
+case when len(REPLACE(è¯„å®šæ—¥æœŸ, '-' ,'')) >0 then REPLACE(è¯„å®šæ—¥æœŸ, '-' ,'') when len(REPLACE(è¯„å®šæ—¥æœŸ, '-' ,'')) =0 or REPLACE(è¯„å®šæ—¥æœŸ, '-' ,'') is null then null end è¯„å®šæ—¥æœŸ	,
+case when len(æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½)>0 then æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½ when len(æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½)=0 or æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½ is null then null end ,
+case when len(æ”¹å»ºå¹´åº¦)>0 then æ”¹å»ºå¹´åº¦ when len(æ”¹å»ºå¹´åº¦)=0 or æ”¹å»ºå¹´åº¦ is null then null end ,
+case when len(REPLACE(æ”¹é€ å®Œå·¥æ—¥æœŸ, '-' ,'')) >0 then REPLACE(æ”¹é€ å®Œå·¥æ—¥æœŸ, '-' ,'') when len(REPLACE(æ”¹é€ å®Œå·¥æ—¥æœŸ, '-' ,'')) =0 or REPLACE(æ”¹é€ å®Œå·¥æ—¥æœŸ, '-' ,'') is null then null end æ”¹é€ å®Œå·¥æ—¥æœŸ	,
+case when len(æ”¹é€ éƒ¨ä½)>0 then æ”¹é€ éƒ¨ä½ when len(æ”¹é€ éƒ¨ä½)=0 or æ”¹é€ éƒ¨ä½ is null then null end æ”¹é€ éƒ¨ä½,
+case when len(å·¥ç¨‹æ€§è´¨)>0 then å·¥ç¨‹æ€§è´¨ when len(å·¥ç¨‹æ€§è´¨)=0 or å·¥ç¨‹æ€§è´¨ is null then null end å·¥ç¨‹æ€§è´¨,
+case when len(æ”¹é€ æ–½å·¥å•ä½)>0 then æ”¹é€ æ–½å·¥å•ä½ when len(æ”¹é€ æ–½å·¥å•ä½)=0 or æ”¹é€ æ–½å·¥å•ä½ is null then null end æ”¹é€ æ–½å·¥å•ä½,
+case when len(æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›®)>0 then æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›® when len(æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›®)=0 or æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›® is null then null end æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›®,
+case when len(ä¸»è¦ç—…å®³ä½ç½®)>0 then ä¸»è¦ç—…å®³ä½ç½® when len(ä¸»è¦ç—…å®³ä½ç½®)=0 or ä¸»è¦ç—…å®³ä½ç½® is null then null end ä¸»è¦ç—…å®³ä½ç½®,
+case when len(ä¸»è¦ç—…å®³æè¿°)>0 then ä¸»è¦ç—…å®³æè¿° when len(ä¸»è¦ç—…å®³æè¿°)=0 or ä¸»è¦ç—…å®³æè¿° is null then null end ä¸»è¦ç—…å®³æè¿°,
+case when len(å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ä»£ç )>0 then å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ä»£ç  when len(å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ä»£ç )=0 or å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ä»£ç  is null then null end å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ä»£ç ,
+case when len(å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½æ±‰å­—)>0 then å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½æ±‰å­— when len(å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½æ±‰å­—)=0 or å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½æ±‰å­— is null then null end å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½æ±‰å­—,
+case when len(è¡Œæ”¿åŒºåˆ’ä»£ç )>0 then è¡Œæ”¿åŒºåˆ’ä»£ç  when len(è¡Œæ”¿åŒºåˆ’ä»£ç )=0 or è¡Œæ”¿åŒºåˆ’ä»£ç  is null then null end ,
+case when len(è¡Œæ”¿åŒºåˆ’æ±‰å­—)>0 then è¡Œæ”¿åŒºåˆ’æ±‰å­— when len(è¡Œæ”¿åŒºåˆ’æ±‰å­—)=0 or è¡Œæ”¿åŒºåˆ’æ±‰å­— is null then null end ,
+case when len(æ¡¥æ¢æ‰€åœ¨ä½ç½®)>0 then æ¡¥æ¢æ‰€åœ¨ä½ç½® when len(æ¡¥æ¢æ‰€åœ¨ä½ç½®)=0 or æ¡¥æ¢æ‰€åœ¨ä½ç½® is null then null end ,
+case when len(æ˜¯å¦å®½è·¯çª„æ¡¥)>0 then æ˜¯å¦å®½è·¯çª„æ¡¥ when len(æ˜¯å¦å®½è·¯çª„æ¡¥)=0 or æ˜¯å¦å®½è·¯çª„æ¡¥ is null then null end ,
+case when len(æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­)>0 then æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­ when len(æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­)=0 or æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­ is null then null end ,
+case when len(æ˜¯å¦è·¨çœæ¡¥æ¢)>0 then æ˜¯å¦è·¨çœæ¡¥æ¢ when len(æ˜¯å¦è·¨çœæ¡¥æ¢)=0 or æ˜¯å¦è·¨çœæ¡¥æ¢ is null then null end ,
+case when len(æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢)>0 then æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢ when len(æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢)=0 or æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢ is null then null end ,
+æ¡¥æ¢èº«ä»½ç  	,
+ç»åº¦,
+çº¬åº¦
+from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\3.å®‰å¾½å·¥ä½œæ–‡ä»¶\20231120 å®‰å¾½èµ„äº§å¹³å°æ•°æ®\å…¨çœæ¡¥æ¢æ˜ç»†è¡¨.xls',æ˜ç»†è¡¨$)
 
---¸üĞÂ¹ÜÀíµ¥Î»×Ö¶ÎA0102,HA0102
+--æ›´æ–°ç®¡ç†å•ä½å­—æ®µA0102,HA0102
 UPDATE zcpt_k060
 SET zcpt_k060.a0102=rtrim(k060.a0102),zcpt_k060.ha0102=rtrim(k060.ha0102)
 FROM zcpt_k060
 left JOIN k060
 ON (case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
 else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end)= rtrim(zcpt_k060.k6001)
---¸üĞÂ¹ÜÀíµ¥Î»×Ö¶ÎA0102,HA0102
+--æ›´æ–°ç®¡ç†å•ä½å­—æ®µA0102,HA0102
 UPDATE zcpt_k060
 SET zcpt_k060.a0102=rtrim(k001.a0102),zcpt_k060.ha0102=rtrim(k001.ha0102)
 FROM zcpt_k060

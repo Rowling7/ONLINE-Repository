@@ -1,7 +1,7 @@
 DECLARE @SoftPath VARCHAR(255);
 DECLARE @FilePath VARCHAR(255);
 exec master..xp_regread	'HKEY_LOCAL_MACHINE'
-	,'Software\　东方永德\HRP-GHSS\标准版\单机版\2014'
+	,'Software\銆�涓滄柟姘稿痉\HRP-GHSS\鏍囧噯鐗圽鍗曟満鐗圽2014'
 	,'Path' , @SoftPath OUTPUT
 set @FilePath=@SoftPath+'SXZB20231217.xls'
 	

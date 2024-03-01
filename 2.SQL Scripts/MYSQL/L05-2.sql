@@ -1,21 +1,21 @@
---  ÉÏÄêÄêµ×µ½´ïÊı
+--  ä¸Šå¹´å¹´åº•åˆ°è¾¾æ•°
 select
 c.s9532,
-sum(ifnull(a0605,0)+ifnull(a0607,0)+ifnull(a0609,0)+ifnull(a0611,0)) as sdzzs, -- ×Ü×ùÊı
-cast(sum(ifnull(a0606,0)+ifnull(a0608,0)+ifnull(a0610,0)+ifnull(a0612,0))as decimal(18,3)) as sdzym, -- ×ÜÑÓÃ×
-sum(ifnull(a0601,0)) a0601,-- ËÄÎåÀàËíµÀÊı
-cast(sum(ifnull(a0602,0))as decimal(18,3)) a0602,-- ËÄÎåÀàËíµÀÑÓÃ×
-sum(ifnull(a0605,0))  a0605,-- ÌØ³¤ËíµÀÊı
-cast(sum(ifnull(a0606,0))as decimal(18,3)) a0606,-- ÌØ³¤ËíµÀÑÓÃ×
-sum(ifnull(a0607,0)) a0607,-- ³¤ËíµÀÊı
-cast(sum(ifnull(a0608,0)) as decimal(18,3))a0608,-- ³¤ËíµÀÑÓÃ×
-sum(ifnull(a0609,0)) a0609,-- ÖĞËíµÀÊı
-cast(sum(ifnull(a0610,0))as decimal(18,3)) a0610,-- ÖĞËíµÀÑÓÃ×
-sum(ifnull(a0611,0)) a0611,-- ¶ÌËíµÀÊı
-cast(sum(ifnull(a0612,0))as decimal(18,3)) a0612 -- ¶ÌËíµÀÑÓÃ×
+sum(ifnull(a0605,0)+ifnull(a0607,0)+ifnull(a0609,0)+ifnull(a0611,0)) as sdzzs, -- æ€»åº§æ•°
+cast(sum(ifnull(a0606,0)+ifnull(a0608,0)+ifnull(a0610,0)+ifnull(a0612,0))as decimal(18,3)) as sdzym, -- æ€»å»¶ç±³
+sum(ifnull(a0601,0)) a0601,-- å››äº”ç±»éš§é“æ•°
+cast(sum(ifnull(a0602,0))as decimal(18,3)) a0602,-- å››äº”ç±»éš§é“å»¶ç±³
+sum(ifnull(a0605,0))  a0605,-- ç‰¹é•¿éš§é“æ•°
+cast(sum(ifnull(a0606,0))as decimal(18,3)) a0606,-- ç‰¹é•¿éš§é“å»¶ç±³
+sum(ifnull(a0607,0)) a0607,-- é•¿éš§é“æ•°
+cast(sum(ifnull(a0608,0)) as decimal(18,3))a0608,-- é•¿éš§é“å»¶ç±³
+sum(ifnull(a0609,0)) a0609,-- ä¸­éš§é“æ•°
+cast(sum(ifnull(a0610,0))as decimal(18,3)) a0610,-- ä¸­éš§é“å»¶ç±³
+sum(ifnull(a0611,0)) a0611,-- çŸ­éš§é“æ•°
+cast(sum(ifnull(a0612,0))as decimal(18,3)) a0612 -- çŸ­éš§é“å»¶ç±³
 from a11 a
-left join  s951 b on a.a0101=b.s951_id -- ÄêÏŞ
-left join  s951 c on a.a0203=c.s951_id -- ĞĞÕşµÈ¼¶
+left join  s951 b on a.a0101=b.s951_id -- å¹´é™
+left join  s951 c on a.a0203=c.s951_id -- è¡Œæ”¿ç­‰çº§
 left join b01 d on d.b01_id=a.b01_id
 where b.s9532 <2022 and c.s9532 like 'G%'
 and d.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912),'%')
@@ -23,24 +23,24 @@ and d.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912),'
 GROUP BY c.s9532 with ROLLUP
 #HAVING c.s9532 = 'S'
 
--- ĞÂ½¨
+-- æ–°å»º
 select
 c.s9532,
-sum(ifnull(a0605,0)+ifnull(a0607,0)+ifnull(a0609,0)+ifnull(a0611,0)) as sdzzs, -- ×Ü×ùÊı
-cast(sum(ifnull(a0606,0)+ifnull(a0608,0)+ifnull(a0610,0)+ifnull(a0612,0))as decimal(18,3)) as sdzym, -- ×ÜÑÓÃ×
-sum(ifnull(a0601,0)) a0601,-- ËÄÎåÀàËíµÀÊı
-cast(sum(ifnull(a0602,0))as decimal(18,3)) a0602,-- ËÄÎåÀàËíµÀÑÓÃ×
-sum(ifnull(a0605,0))  a0605,-- ÌØ³¤ËíµÀÊı
-cast(sum(ifnull(a0606,0))as decimal(18,3)) a0606,-- ÌØ³¤ËíµÀÑÓÃ×
-sum(ifnull(a0607,0)) a0607,-- ³¤ËíµÀÊı
-cast(sum(ifnull(a0608,0)) as decimal(18,3))a0608,-- ³¤ËíµÀÑÓÃ×
-sum(ifnull(a0609,0)) a0609,-- ÖĞËíµÀÊı
-cast(sum(ifnull(a0610,0))as decimal(18,3)) a0610,-- ÖĞËíµÀÑÓÃ×
-sum(ifnull(a0611,0)) a0611,-- ¶ÌËíµÀÊı
-cast(sum(ifnull(a0612,0))as decimal(18,3)) a0612 -- ¶ÌËíµÀÑÓÃ×
+sum(ifnull(a0605,0)+ifnull(a0607,0)+ifnull(a0609,0)+ifnull(a0611,0)) as sdzzs, -- æ€»åº§æ•°
+cast(sum(ifnull(a0606,0)+ifnull(a0608,0)+ifnull(a0610,0)+ifnull(a0612,0))as decimal(18,3)) as sdzym, -- æ€»å»¶ç±³
+sum(ifnull(a0601,0)) a0601,-- å››äº”ç±»éš§é“æ•°
+cast(sum(ifnull(a0602,0))as decimal(18,3)) a0602,-- å››äº”ç±»éš§é“å»¶ç±³
+sum(ifnull(a0605,0))  a0605,-- ç‰¹é•¿éš§é“æ•°
+cast(sum(ifnull(a0606,0))as decimal(18,3)) a0606,-- ç‰¹é•¿éš§é“å»¶ç±³
+sum(ifnull(a0607,0)) a0607,-- é•¿éš§é“æ•°
+cast(sum(ifnull(a0608,0)) as decimal(18,3))a0608,-- é•¿éš§é“å»¶ç±³
+sum(ifnull(a0609,0)) a0609,-- ä¸­éš§é“æ•°
+cast(sum(ifnull(a0610,0))as decimal(18,3)) a0610,-- ä¸­éš§é“å»¶ç±³
+sum(ifnull(a0611,0)) a0611,-- çŸ­éš§é“æ•°
+cast(sum(ifnull(a0612,0))as decimal(18,3)) a0612 -- çŸ­éš§é“å»¶ç±³
 from a11 a
-left join  s951 b on a.a0101=b.s951_id -- ÄêÏŞ
-right join  s951 c on a.a0203=c.s951_id -- ĞĞÕşµÈ¼¶
+left join  s951 b on a.a0101=b.s951_id -- å¹´é™
+right join  s951 c on a.a0203=c.s951_id -- è¡Œæ”¿ç­‰çº§
 left join b01 d on d.b01_id=a.b01_id
 where b.s9532 =2022 -- and c.s9532 like 'G%'
 and d.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912),'%')
@@ -49,24 +49,24 @@ GROUP BY c.s9532 with ROLLUP
 
 
 
--- ¸Ä½¨
+-- æ”¹å»º
 select
 c.s9532,
-sum(ifnull(a0605,0)+ifnull(a0607,0)+ifnull(a0609,0)+ifnull(a0611,0)) as sdzzs, -- ×Ü×ùÊı
-cast(sum(ifnull(a0606,0)+ifnull(a0608,0)+ifnull(a0610,0)+ifnull(a0612,0))as decimal(18,3)) as sdzym, -- ×ÜÑÓÃ×
-sum(ifnull(a0601,0)) a0601,-- ËÄÎåÀàËíµÀÊı
-cast(sum(ifnull(a0602,0))as decimal(18,3)) a0602,-- ËÄÎåÀàËíµÀÑÓÃ×
-sum(ifnull(a0605,0))  a0605,-- ÌØ³¤ËíµÀÊı
-cast(sum(ifnull(a0606,0))as decimal(18,3)) a0606,-- ÌØ³¤ËíµÀÑÓÃ×
-sum(ifnull(a0607,0)) a0607,-- ³¤ËíµÀÊı
-cast(sum(ifnull(a0608,0)) as decimal(18,3))a0608,-- ³¤ËíµÀÑÓÃ×
-sum(ifnull(a0609,0)) a0609,-- ÖĞËíµÀÊı
-cast(sum(ifnull(a0610,0))as decimal(18,3)) a0610,-- ÖĞËíµÀÑÓÃ×
-sum(ifnull(a0611,0)) a0611,-- ¶ÌËíµÀÊı
-cast(sum(ifnull(a0612,0))as decimal(18,3)) a0612 -- ¶ÌËíµÀÑÓÃ×
+sum(ifnull(a0605,0)+ifnull(a0607,0)+ifnull(a0609,0)+ifnull(a0611,0)) as sdzzs, -- æ€»åº§æ•°
+cast(sum(ifnull(a0606,0)+ifnull(a0608,0)+ifnull(a0610,0)+ifnull(a0612,0))as decimal(18,3)) as sdzym, -- æ€»å»¶ç±³
+sum(ifnull(a0601,0)) a0601,-- å››äº”ç±»éš§é“æ•°
+cast(sum(ifnull(a0602,0))as decimal(18,3)) a0602,-- å››äº”ç±»éš§é“å»¶ç±³
+sum(ifnull(a0605,0))  a0605,-- ç‰¹é•¿éš§é“æ•°
+cast(sum(ifnull(a0606,0))as decimal(18,3)) a0606,-- ç‰¹é•¿éš§é“å»¶ç±³
+sum(ifnull(a0607,0)) a0607,-- é•¿éš§é“æ•°
+cast(sum(ifnull(a0608,0)) as decimal(18,3))a0608,-- é•¿éš§é“å»¶ç±³
+sum(ifnull(a0609,0)) a0609,-- ä¸­éš§é“æ•°
+cast(sum(ifnull(a0610,0))as decimal(18,3)) a0610,-- ä¸­éš§é“å»¶ç±³
+sum(ifnull(a0611,0)) a0611,-- çŸ­éš§é“æ•°
+cast(sum(ifnull(a0612,0))as decimal(18,3)) a0612 -- çŸ­éš§é“å»¶ç±³
 from a11 a
-left join  s951 b on a.a0101=b.s951_id -- ÄêÏŞ
-left join  s951 c on a.a0203=c.s951_id -- ĞĞÕşµÈ¼¶
+left join  s951 b on a.a0101=b.s951_id -- å¹´é™
+left join  s951 c on a.a0203=c.s951_id -- è¡Œæ”¿ç­‰çº§
 left join b01 d on d.b01_id=a.b01_id
 where b.s9532 =2022 -- and c.s9532 like 'G%'
 and d.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912),'%')
@@ -74,24 +74,24 @@ and a.a3219=1000000021972447
 GROUP BY c.s9532 with ROLLUP
 
 
--- ½ñÄêÄêµ×µ½´ïÊı
+-- ä»Šå¹´å¹´åº•åˆ°è¾¾æ•°
 select
 c.s9532,
-sum(ifnull(a0605,0)+ifnull(a0607,0)+ifnull(a0609,0)+ifnull(a0611,0)) as sdzzs, -- ×Ü×ùÊı
-cast(sum(ifnull(a0606,0)+ifnull(a0608,0)+ifnull(a0610,0)+ifnull(a0612,0))as decimal(18,3)) as sdzym, -- ×ÜÑÓÃ×
-sum(ifnull(a0601,0)) a0601,-- ËÄÎåÀàËíµÀÊı
-cast(sum(ifnull(a0602,0))as decimal(18,3)) a0602,-- ËÄÎåÀàËíµÀÑÓÃ×
-sum(ifnull(a0605,0))  a0605,-- ÌØ³¤ËíµÀÊı
-cast(sum(ifnull(a0606,0))as decimal(18,3)) a0606,-- ÌØ³¤ËíµÀÑÓÃ×
-sum(ifnull(a0607,0)) a0607,-- ³¤ËíµÀÊı
-cast(sum(ifnull(a0608,0)) as decimal(18,3))a0608,-- ³¤ËíµÀÑÓÃ×
-sum(ifnull(a0609,0)) a0609,-- ÖĞËíµÀÊı
-cast(sum(ifnull(a0610,0))as decimal(18,3)) a0610,-- ÖĞËíµÀÑÓÃ×
-sum(ifnull(a0611,0)) a0611,-- ¶ÌËíµÀÊı
-cast(sum(ifnull(a0612,0))as decimal(18,3)) a0612 -- ¶ÌËíµÀÑÓÃ×
+sum(ifnull(a0605,0)+ifnull(a0607,0)+ifnull(a0609,0)+ifnull(a0611,0)) as sdzzs, -- æ€»åº§æ•°
+cast(sum(ifnull(a0606,0)+ifnull(a0608,0)+ifnull(a0610,0)+ifnull(a0612,0))as decimal(18,3)) as sdzym, -- æ€»å»¶ç±³
+sum(ifnull(a0601,0)) a0601,-- å››äº”ç±»éš§é“æ•°
+cast(sum(ifnull(a0602,0))as decimal(18,3)) a0602,-- å››äº”ç±»éš§é“å»¶ç±³
+sum(ifnull(a0605,0))  a0605,-- ç‰¹é•¿éš§é“æ•°
+cast(sum(ifnull(a0606,0))as decimal(18,3)) a0606,-- ç‰¹é•¿éš§é“å»¶ç±³
+sum(ifnull(a0607,0)) a0607,-- é•¿éš§é“æ•°
+cast(sum(ifnull(a0608,0)) as decimal(18,3))a0608,-- é•¿éš§é“å»¶ç±³
+sum(ifnull(a0609,0)) a0609,-- ä¸­éš§é“æ•°
+cast(sum(ifnull(a0610,0))as decimal(18,3)) a0610,-- ä¸­éš§é“å»¶ç±³
+sum(ifnull(a0611,0)) a0611,-- çŸ­éš§é“æ•°
+cast(sum(ifnull(a0612,0))as decimal(18,3)) a0612 -- çŸ­éš§é“å»¶ç±³
 from a11 a
-left join  s951 b on a.a0101=b.s951_id -- ÄêÏŞ
-left join  s951 c on a.a0203=c.s951_id -- ĞĞÕşµÈ¼¶
+left join  s951 b on a.a0101=b.s951_id -- å¹´é™
+left join  s951 c on a.a0203=c.s951_id -- è¡Œæ”¿ç­‰çº§
 left join b01 d on d.b01_id=a.b01_id
 where b.s9532 <=2022 -- and c.s9532 like 'G%'
 and d.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912),'%')
@@ -113,7 +113,7 @@ where b0111 like CONCAT(42,'%')
 ORDER BY b0111
 
 
-SELECT CONCAT('Í³¼Æ¸ºÔğÈË:', 'TJFZR')
+SELECT CONCAT('ç»Ÿè®¡è´Ÿè´£äºº:', 'TJFZR')
 
 SELECT LEFT(S9532,4) A0101
 from S951

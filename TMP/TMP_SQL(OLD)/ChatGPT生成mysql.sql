@@ -48,49 +48,49 @@ CREATE TABLE IF NOT EXISTS class (
 
 
 
--- ÏòÑ§Éú±í£¨student£©ÖÐ²åÈë10ÌõÊý¾Ý
+-- å‘å­¦ç”Ÿè¡¨ï¼ˆstudentï¼‰ä¸­æ’å…¥10æ¡æ•°æ®
 INSERT INTO student (name, gender, age, class_id)
 VALUES
-  ('ÕÅÈý', 'male', 18, 1),
-  ('ÀîËÄ', 'female', 17, 2),
-  ('ÍõÎå', 'male', 16, 3),
-  ('ÕÔÁù', 'female', 18, 1),
-  ('Ç®Æß', 'male', 17, 2),
-  ('Ëï°Ë', 'female', 16, 3),
-  ('ÖÜ¾Å', 'male', 18, 1),
-  ('ÎâÊ®', 'female', 17, 2),
-  ('Ö£Ò»', 'male', 16, 3),
-  ('·ë¶þ', 'female', 18, 1);
+  ('å¼ ä¸‰', 'male', 18, 1),
+  ('æŽå››', 'female', 17, 2),
+  ('çŽ‹äº”', 'male', 16, 3),
+  ('èµµå…­', 'female', 18, 1),
+  ('é’±ä¸ƒ', 'male', 17, 2),
+  ('å­™å…«', 'female', 16, 3),
+  ('å‘¨ä¹', 'male', 18, 1),
+  ('å´å', 'female', 17, 2),
+  ('éƒ‘ä¸€', 'male', 16, 3),
+  ('å†¯äºŒ', 'female', 18, 1);
 
--- Ïò½ÌÊ¦±í£¨teacher£©ÖÐ²åÈë10ÌõÊý¾Ý
+-- å‘æ•™å¸ˆè¡¨ï¼ˆteacherï¼‰ä¸­æ’å…¥10æ¡æ•°æ®
 INSERT INTO teacher (name, gender, age, department)
 VALUES
-  ('ÕÅÀÏÊ¦', 'male', 35, 'ÊýÑ§Ïµ'),
-  ('ÀîÀÏÊ¦', 'female', 40, 'Ó¢ÓïÏµ'),
-  ('ÍõÀÏÊ¦', 'male', 30, 'ÎïÀíÏµ'),
-  ('ÕÔÀÏÊ¦', 'female', 38, '»¯Ñ§Ïµ'),
-  ('Ç®ÀÏÊ¦', 'male', 45, 'µØÀíÏµ'),
-  ('ËïÀÏÊ¦', 'female', 33, 'ÕþÖÎÏµ'),
-  ('ÖÜÀÏÊ¦', 'male', 42, 'ÀúÊ·Ïµ'),
-  ('ÎâÀÏÊ¦', 'female', 31, '¼ÆËã»úÏµ'),
-  ('Ö£ÀÏÊ¦', 'male', 46, 'ÌåÓýÏµ'),
-  ('·ëÀÏÊ¦', 'female', 34, 'ÒÕÊõÏµ');
+  ('å¼ è€å¸ˆ', 'male', 35, 'æ•°å­¦ç³»'),
+  ('æŽè€å¸ˆ', 'female', 40, 'è‹±è¯­ç³»'),
+  ('çŽ‹è€å¸ˆ', 'male', 30, 'ç‰©ç†ç³»'),
+  ('èµµè€å¸ˆ', 'female', 38, 'åŒ–å­¦ç³»'),
+  ('é’±è€å¸ˆ', 'male', 45, 'åœ°ç†ç³»'),
+  ('å­™è€å¸ˆ', 'female', 33, 'æ”¿æ²»ç³»'),
+  ('å‘¨è€å¸ˆ', 'male', 42, 'åŽ†å²ç³»'),
+  ('å´è€å¸ˆ', 'female', 31, 'è®¡ç®—æœºç³»'),
+  ('éƒ‘è€å¸ˆ', 'male', 46, 'ä½“è‚²ç³»'),
+  ('å†¯è€å¸ˆ', 'female', 34, 'è‰ºæœ¯ç³»');
 
--- Ïò¿Î³Ì±í£¨course£©ÖÐ²åÈë10ÌõÊý¾Ý
+-- å‘è¯¾ç¨‹è¡¨ï¼ˆcourseï¼‰ä¸­æ’å…¥10æ¡æ•°æ®
 INSERT INTO course (name, teacher_id, credit)
 VALUES
-  ('ÊýÑ§', 1, 3.0),
-  ('Ó¢Óï', 2, 2.5),
-  ('ÎïÀí', 3, 4.0),
-  ('»¯Ñ§', 4, 3.5),
-  ('µØÀí', 5, 2.0),
-  ('ÕþÖÎ', 6, 1.5),
-  ('ÀúÊ·', 7, 2.0),
-  ('¼ÆËã»ú', 8, 3.0),
-  ('ÌåÓý', 9, 1.0),
-  ('ÒÕÊõ', 10, 2.5);
+  ('æ•°å­¦', 1, 3.0),
+  ('è‹±è¯­', 2, 2.5),
+  ('ç‰©ç†', 3, 4.0),
+  ('åŒ–å­¦', 4, 3.5),
+  ('åœ°ç†', 5, 2.0),
+  ('æ”¿æ²»', 6, 1.5),
+  ('åŽ†å²', 7, 2.0),
+  ('è®¡ç®—æœº', 8, 3.0),
+  ('ä½“è‚²', 9, 1.0),
+  ('è‰ºæœ¯', 10, 2.5);
 
--- Ïò·ÖÊý±í£¨score£©ÖÐ²åÈë10ÌõÊý¾Ý
+-- å‘åˆ†æ•°è¡¨ï¼ˆscoreï¼‰ä¸­æ’å…¥10æ¡æ•°æ®
 INSERT INTO score (student_id, course_id, score)
 VALUES
   (1, 1, 90.5),
@@ -104,47 +104,47 @@ VALUES
   (5, 1, 95.0),
   (5, 3, 93.0);
 
--- Ïò°à¼¶±í£¨class£©ÖÐ²åÈë10ÌõÊý¾Ý
+-- å‘ç­çº§è¡¨ï¼ˆclassï¼‰ä¸­æ’å…¥10æ¡æ•°æ®
 INSERT INTO class (name, grade, teacher_id)
 VALUES
-  ('¸ßÒ»(1)°à', 'one', 1),
-  ('¸ßÒ»(2)°à', 'one', 2),
-  ('¸ßÒ»(3)°à', 'one', 3),
-  ('¸ß¶þ(1)°à', 'two', 4),
-  ('¸ß¶þ(2)°à', 'two', 5),
-  ('¸ß¶þ(3)°à', 'two', 6),
-  ('¸ßÈý(1)°à', 'three', 7),
-  ('¸ßÈý(2)°à', 'three', 8),
-  ('¸ßÈý(3)°à', 'three', 9),
-  ('¸ßÈý(4)°à', 'three', 10);
+  ('é«˜ä¸€(1)ç­', 'one', 1),
+  ('é«˜ä¸€(2)ç­', 'one', 2),
+  ('é«˜ä¸€(3)ç­', 'one', 3),
+  ('é«˜äºŒ(1)ç­', 'two', 4),
+  ('é«˜äºŒ(2)ç­', 'two', 5),
+  ('é«˜äºŒ(3)ç­', 'two', 6),
+  ('é«˜ä¸‰(1)ç­', 'three', 7),
+  ('é«˜ä¸‰(2)ç­', 'three', 8),
+  ('é«˜ä¸‰(3)ç­', 'three', 9),
+  ('é«˜ä¸‰(4)ç­', 'three', 10);
 
 UPDATE class SET name = CASE
-  WHEN id = 1 THEN '¼ÆËã»ú¿ÆÑ§Óë¼¼Êõ1°à'
-  WHEN id = 2 THEN 'Ó¢Óï×¨Òµ2°à'
-  WHEN id = 3 THEN 'ÎïÀíÊµÑé°à3°à'
-  WHEN id = 4 THEN '»¯Ñ§ºÏ³É°à1°à'
-  WHEN id = 5 THEN 'µØÀíÐÅÏ¢¹¤³Ì2°à'
-  WHEN id = 6 THEN 'ÕþÖÎÀíÂÛ3°à'
-  WHEN id = 7 THEN 'ÖÐ¹ú¹Å´úÊ·1°à'
-  WHEN id = 8 THEN 'Èí¼þ¹¤³Ì2°à'
-  WHEN id = 9 THEN 'ÌåÓý½ÌÓýÓëÑµÁ·3°à'
-  WHEN id = 10 THEN 'ÃÀÊõÉè¼Æ1°à'
+  WHEN id = 1 THEN 'è®¡ç®—æœºç§‘å­¦ä¸ŽæŠ€æœ¯1ç­'
+  WHEN id = 2 THEN 'è‹±è¯­ä¸“ä¸š2ç­'
+  WHEN id = 3 THEN 'ç‰©ç†å®žéªŒç­3ç­'
+  WHEN id = 4 THEN 'åŒ–å­¦åˆæˆç­1ç­'
+  WHEN id = 5 THEN 'åœ°ç†ä¿¡æ¯å·¥ç¨‹2ç­'
+  WHEN id = 6 THEN 'æ”¿æ²»ç†è®º3ç­'
+  WHEN id = 7 THEN 'ä¸­å›½å¤ä»£å²1ç­'
+  WHEN id = 8 THEN 'è½¯ä»¶å·¥ç¨‹2ç­'
+  WHEN id = 9 THEN 'ä½“è‚²æ•™è‚²ä¸Žè®­ç»ƒ3ç­'
+  WHEN id = 10 THEN 'ç¾Žæœ¯è®¾è®¡1ç­'
 END;
 
 UPDATE student SET age = FLOOR(RAND() * 5) + 18 WHERE age BETWEEN 18 AND 22;
 
 
 
-SELECT s.id AS Ñ§ÉúID, s.name AS Ñ§ÉúÐÕÃû, s.gender AS Ñ§ÉúÐÔ±ð, s.age AS Ñ§ÉúÄêÁä,
-       c.name AS °à¼¶Ãû³Æ,
-       t.id AS ½ÌÊ¦ID, t.name AS ½ÌÊ¦ÐÕÃû, t.gender AS ½ÌÊ¦ÐÔ±ð, t.age AS ½ÌÊ¦ÄêÁä, t.department AS ËùÊô²¿ÃÅ,
-       co.id AS ¿Î³ÌID, co.name AS ¿Î³ÌÃû³Æ, co.credit AS Ñ§·Ö,
-       sc.score AS ³É¼¨
+SELECT s.id AS å­¦ç”ŸID, s.name AS å­¦ç”Ÿå§“å, s.gender AS å­¦ç”Ÿæ€§åˆ«, s.age AS å­¦ç”Ÿå¹´é¾„,
+       c.name AS ç­çº§åç§°,
+       t.id AS æ•™å¸ˆID, t.name AS æ•™å¸ˆå§“å, t.gender AS æ•™å¸ˆæ€§åˆ«, t.age AS æ•™å¸ˆå¹´é¾„, t.department AS æ‰€å±žéƒ¨é—¨,
+       co.id AS è¯¾ç¨‹ID, co.name AS è¯¾ç¨‹åç§°, co.credit AS å­¦åˆ†,
+       sc.score AS æˆç»©
 FROM student s
 LEFT JOIN class c ON s.class_id = c.id
 LEFT JOIN score sc ON s.id = sc.student_id
 LEFT JOIN course co ON sc.course_id = co.id
 LEFT JOIN teacher t ON co.teacher_id = t.id
-WHERE s.name = 'ÕÅÈý';
+WHERE s.name = 'å¼ ä¸‰';
 
 

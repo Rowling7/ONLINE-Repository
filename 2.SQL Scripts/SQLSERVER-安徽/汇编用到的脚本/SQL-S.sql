@@ -1,6 +1,6 @@
---±¸·İ¿â ¸üĞÂÁËÀúÊ·±í
-backup database [HRP-DBMS2014] to disk ='E:\HRP-DBMS2014-02010912¸Ä³ØÖİÂ·¶ÎĞĞÇø»®'
+--å¤‡ä»½åº“ æ›´æ–°äº†å†å²è¡¨
+backup database [HRP-DBMS2014] to disk ='E:\HRP-DBMS2014-02010912æ”¹æ± å·è·¯æ®µè¡ŒåŒºåˆ’'
 
---±¸·İ¿â ¸üĞÂÁËÀúÊ·±í
+--å¤‡ä»½åº“ æ›´æ–°äº†å†å²è¡¨
 backup database [HRP-GHSS2014] to disk ='E:\HRP-GHSS2014-0103-1'
 

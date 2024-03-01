@@ -1,16 +1,16 @@
 SELECT
-'K001'+'&A0102 ='''+RTRIM(CAST(k001.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k001.K0101 AS VARCHAR))+''' AND K0108 ='+RTRIM(CAST(k001.K0108 AS VARCHAR))  AS ±à¼­, 
-rtrim(k001.A0102)	'Äê±¨|¹ÜÀíµ¥Î»´úÂë',rtrim(k001.hA0102)	'Äê±¨|¹ÜÀíµ¥Î»Ãû³Æ',
-rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))	'Äê±¨|Â·Ïß±àÂë',	rtrim(zcpt_k001.k0101)	'×Ê²úÆ½Ì¨|Â·Ïß±àÂë',
-rtrim(k001.A0103)	'Äê±¨|ÕşÇø´úÂë',	rtrim(zcpt_k001.A0103)	'×Ê²úÆ½Ì¨|ÕşÇø´úÂë',
+'K001'+'&A0102 ='''+RTRIM(CAST(k001.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k001.K0101 AS VARCHAR))+''' AND K0108 ='+RTRIM(CAST(k001.K0108 AS VARCHAR))  AS ç¼–è¾‘, 
+rtrim(k001.A0102)	'å¹´æŠ¥|ç®¡ç†å•ä½ä»£ç ',rtrim(k001.hA0102)	'å¹´æŠ¥|ç®¡ç†å•ä½åç§°',
+rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))	'å¹´æŠ¥|è·¯çº¿ç¼–ç ',	rtrim(zcpt_k001.k0101)	'èµ„äº§å¹³å°|è·¯çº¿ç¼–ç ',
+rtrim(k001.A0103)	'å¹´æŠ¥|æ”¿åŒºä»£ç ',	rtrim(zcpt_k001.A0103)	'èµ„äº§å¹³å°|æ”¿åŒºä»£ç ',
 
-rtrim(k001.HK9508)	'Äê±¨|µØÃ²',	rtrim(zcpt_k001.HK9508)	'×Ê²úÆ½Ì¨|µØÃ²',
-k001.A0522	'Äê±¨|º­¶´ÊıÁ¿',	zcpt_k001.A0522	'×Ê²úÆ½Ì¨|º­¶´ÊıÁ¿',
+rtrim(k001.HK9508)	'å¹´æŠ¥|åœ°è²Œ',	rtrim(zcpt_k001.HK9508)	'èµ„äº§å¹³å°|åœ°è²Œ',
+k001.A0522	'å¹´æŠ¥|æ¶µæ´æ•°é‡',	zcpt_k001.A0522	'èµ„äº§å¹³å°|æ¶µæ´æ•°é‡',
 
 case 
-when rtrim(k001.HK9508)<>rtrim(zcpt_k001.HK9508)	and isnull(k001.A0522,0)=isnull(zcpt_k001.A0522,0)		then 'µØÃ² ²»Ò»ÖÂ' 
-when rtrim(k001.HK9508)=rtrim(zcpt_k001.HK9508)	and isnull(k001.A0522,0)<>isnull(zcpt_k001.A0522,0)		then 'º­¶´ÊıÁ¿ ²»Ò»ÖÂ'
-else 'µØÃ²/º­¶´ÊıÁ¿ ²»Ò»ÖÂ'end '¶Ô±È½á¹û'
+when rtrim(k001.HK9508)<>rtrim(zcpt_k001.HK9508)	and isnull(k001.A0522,0)=isnull(zcpt_k001.A0522,0)		then 'åœ°è²Œ ä¸ä¸€è‡´' 
+when rtrim(k001.HK9508)=rtrim(zcpt_k001.HK9508)	and isnull(k001.A0522,0)<>isnull(zcpt_k001.A0522,0)		then 'æ¶µæ´æ•°é‡ ä¸ä¸€è‡´'
+else 'åœ°è²Œ/æ¶µæ´æ•°é‡ ä¸ä¸€è‡´'end 'å¯¹æ¯”ç»“æœ'
 
 from K001
 left join ZCPT_K001 on rtrim(k001.a0102)=rtrim(ZCPT_K001.a0102) and rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=rtrim(ZCPT_K001.k0101) and k001.k0108=ZCPT_K001.k0108
@@ -19,8 +19,8 @@ where  k001.A0102 LIKE '#A0102#%' AND k001.A0102 LIKE '#GLDW#%' and
 rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=rtrim(ZCPT_K001.k0101)
 and k001.k0108=ZCPT_K001.k0108 and 
 (
-rtrim(k001.HK9508)<>rtrim(zcpt_k001.HK9508)	or -- µØÃ²,
-isnull(k001.A0522,0)<>isnull(zcpt_k001.A0522,0)	 -- º­¶´ÊıÁ¿,
+rtrim(k001.HK9508)<>rtrim(zcpt_k001.HK9508)	or -- åœ°è²Œ,
+isnull(k001.A0522,0)<>isnull(zcpt_k001.A0522,0)	 -- æ¶µæ´æ•°é‡,
 )
 
 

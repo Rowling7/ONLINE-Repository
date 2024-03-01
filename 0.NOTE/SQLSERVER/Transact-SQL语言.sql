@@ -1,157 +1,157 @@
-Transact-SQLÊÇSQL ServerµÄ±à³ÌÓïÑÔ£¬½á¹¹»¯²éÑ¯ÓïÑÔ(SQL)µÄÔöÇ¿°æ±¾¡£
-Transact-SQLµÄ×é³ÉÔªËØ£º
-Êý¾Ý¿ØÖÆÓïÑÔÓï¾ä£º°²È«ÐÔ¹ÜÀí£¬Í¨¹ýGRANT¡¢REVOKE¡¢DENYÓï¾äÀ´È·±£Êý¾Ý¿âÖÐµÄÊý¾ÝºÍ²Ù×÷²»ÄÜ±»Î´ÊÚÈ¨µÄÓÃ»§Ê¹ÓÃ¡£
-Êý¾Ý¶¨ÒåÓïÑÔÓï¾ä£ºÍ¨¹ýCREATE¡¢ALTER¡¢DROPÓï¾äÀ´Ö´ÐÐÊý¾Ý¿âµÄÈÎÎñ¡¢´´½¨Êý¾Ý¿âÒÔ¼°Êý¾Ý¿âÖÐµÄ¶ÔÏó£¬ÈçÊý¾Ý¿â¡¢±í¡¢¹æÔò¡¢ÊÓÍ¼¡¢´æ´¢¹ý³Ì¡¢º¯ÊýµÈ¡£
-Êý¾Ý²Ù×ÝÓïÑÔÓï¾ä£ºÍ¨¹ýINSERT¡¢DELETE¡¢SELECT¡¢UPDATEÀ´¶ÔÊý¾Ý¿âÖÐµÄ¸÷¸ö¶ÔÏóµÄÊý¾Ý½øÐÐÔöÉ¾²é¸Ä¡£
-¸½¼ÓµÄÓï·¨ÓëÁ÷³Ì¿ØÖÆ£ºÎªÁËÊý¾Ý¿â±à³Ì¶øÔö¼ÓµÄÓï¾äÔªËØ£¬°üÀ¨£º
-Åú´¦ÀíÃüÁî
-×¢ÊÍ
-±êÊ¶·û
-Êý¾ÝÀàÐÍ
-³£Á¿
-±äÁ¿
-º¯Êý
-ÔËËã·û
-±í´ïÊ½
-Á÷³Ì¿ØÖÆµÄÓïÑÔÔªËØ
-ÓÎ±ê
-Ò»¡¢Åú´¦ÀíÃüÁî
-¡¡¡¡Åú´¦ÀíÊÇÖ¸°üº¬Ò»Ìõ»ò¶àÌõT-SQLÓï¾äµÄÓï¾ä×é£¬Õâ×éÓï¾ä´ÓÓ¦ÓÃ³ÌÐòÒ»´ÎÐÔµØ·¢ËÍµ½SQL·þÎñÆ÷ÖÐ±àÒëÐÎ³ÉÒ»¸ö¿ÉÖ´ÐÐµ¥Ôª£¬³ÆÎªÖ´ÐÐ¼Æ»®¡£GOÃüÁî±íÊ¾Åú´¦ÀíµÄ½áÊø¡£Èç¹ûÔÚT-SQL½Å±¾ÖÐÃ»ÓÐGOÃüÁî£¬ÄÇÃ´Ëü½«±»×÷Îªµ¥¸öÅú´¦ÀíÀ´Ö´ÐÐ¡£
-¡¡¡¡×¢Òâ£º
-¡¡¡¡Ò»¸öÅú´¦ÀíÈç¹ûÆäÖÐÓÐÒ»¸öÓï·¨´íÎó£¬ÄÇÃ´Õû¸öÅú´¦Àí¶¼ÎÞ·¨Í¨¹ý±àÒë£¬²»»áÖ´ÐÐ¡£
-¡¡¡¡²»ÄÜÔÚÅú´¦ÀíÖÐÒýÓÃÆäËüÅú´¦ÀíÖÐËù¶¨ÒåµÄ±äÁ¿¡£
-¡¡¡¡Åú´¦ÀíÖÐ¿ÉÒÔ°üº¬¶à¸ö´æ´¢¹ý³Ì£¬µ«ÊÇ³ýµÚÒ»¸ö¹ý³ÌÍâ£¬ÆäËûµÄ´æ´¢¹ý³ÌÇ°Ãæ¶¼±ØÐëÊ¹ÓÃEXECTUE¹Ø¼ü×Ö¡£
-¡¡¡¡ÓÃ»§±ØÐë×ñÕÕÊ¹ÓÃÅú´¦ÀíµÄ¹æÔò.ÀýÈç,ÔÚÍ¬Ò»Åú´¦ÀíÖÐ,´´½¨Êý¾Ý¿âÖ®ºó²»ÄÜÖ±½ÓÊ¹ÓÃÆäÐÂ½¨µÄÊý¾Ý¿â.¾Ö²¿£¨ÓÃ»§¶¨Òå£©±äÁ¿µÄ×÷ÓÃÓòÏÞÖÆÔÚÒ»¸öÅú´¦ÀíÖÐ,²»¿ÉÔÚ GO ÃüÁîºóÒýÓÃ.
-¡¡¡¡¹ØÓÚÅú´¦Àí
-¡¡¡¡Åú´¦ÀíÖÐµÄ´íÎó·ÖÎªÒÔÏÂÁ½Àà£º1¡¢Óï·¨´íÎó2¡¢ÔËÐÐÊ±´íÎó
-¡¡¡¡Óï·¨´íÎó£¬Ò»°ãÔÚÖ´ÐÐÇ°Ê¹ÓÃ·ÖÎö¾Í¿ÉÒÔ²é³ö£ºÈç¹û²éÑ¯·ÖÎöÆ÷·¢ÏÖÒ»¸öÓï·¨´íÎó£¬ÄÇÃ´Åú´¦ÀíµÄ´¦Àí¹ý³Ì»á±»Á¢¼´È¡Ïû¡£ÒòÎªÓï·¨¼ì²é·¢ÉúÔÚÅú´¦Àí±àÒë»òÕßÖ´ÐÐÖ®Ç°£¬ËùÒÔÔÚÓï·¨¼ì²éÆÚ¼äµÄÒ»¸öÊ§°ÜÒâÎ¶×Å»¹Ã»ÓÐÅú´¦Àí±»Ö´ÐÐ-²»¹ÜÓï·¨´íÎó·¢ÉúÔÚÅú´¦ÀíÖÐµÄÊ²Ã´Î»ÖÃ£»
-¡¡¡¡ÔËÐÐÊ±´íÎóµÄ¹¤×÷·½Ê½ÓÐºÜ´ó²»Í¬£¬ÕâÖÖÇé¿ö·ÖÎöÊÇ²»»á±¨´íµÄ£¬Ö»ÓÐÔÚÔËÐÐµÄ¹ý³ÌÖÐÓöµ½´íÎó²Å»áÖÕÖ¹£¬ÒòÎªÈÎºÎÔÚÓöµ½ÔËÐÐÊ±´íÎóÖ®Ç°Ö´ÐÐµÄÓï¾äÒÑ¾­Íê³ÉÁË£¬ËùÒÔ³ý·ÇÊÇÎ´Ìá½»ÊÂÎñµÄÒ»²¿·Ö£¬·ñÔòÕâÐ©Óï¾äËù×öµÄÈÎºÎÊÂÇé¶¼ÒÑ¾­ÊÇÏÖÊµÁË¡£
-¡¡¡¡Ò»°ã¶øÑÔ£¬ÔËÐÐÊ±´íÎó½«ÖÕÖ¹´Ó´íÎó·¢ÉúµÄµØ·½µ½´ËÅú´¦ÀíÄ©¶ËµÄÅú´¦ÀíµÄÖ´ÐÐ¡£ÏÂÒ»¸öÅú´¦Àí²»Ó°Ïì¡£
-¡¡¡¡https://www.cnblogs.com/shadow-ccos/p/5176186.html
-¶þ¡¢×¢ÊÍ
-¡¡¡¡Ò»ÖÖÊÇANSI±ê×¼µÄ×¢ÊÍ·û¡°--¡±£¬ËüÓÃÓÚµ¥ÐÐ×¢ÊÍ£»ÁíÒ»ÖÖÊÇÓëCÓïÑÔÏàÍ¬µÄ×¢ÊÍ·ûºÅ£¬¼´¡°/* */¡±¡£
-Èý¡¢±êÊ¶·û
-¡¡¡¡1. ±ê×¼±êÊ¶·û£º
-¡¡¡¡¡¡¡¡µÚÒ»¸ö×Ö·û±ØÐëÊÇ×ÖÄ¸£¨a~z »ò A~Z£©£¬µÚÒ»¸ö×Ö·ûºó¿ÉÒÔÊÇÊý×Ö¡¢×ÖÄ¸»ò¸÷ÖÖ·ûºÅ
-¡¡¡¡2. ÌØÊâ±êÊ¶·û£ºµ±±êÊ¶·ûµÄµÚÒ»¸ö×Ö·ûÊÇ·ûºÅÊ±£¬´ú±íËüÓÐÌØÊâÓÃ´¦
-¡¡¡¡¡¡¡¡ÒÔ@¿ªÍ·µÄ±êÊ¶·û´ú±í¾Ö²¿±äÁ¿»ò²ÎÊý
-¡¡¡¡¡¡¡¡ÒÔ@@¿ªÍ·µÄ±êÊ¶·û´ú±íÈ«¾Ö±äÁ¿»ò²ÎÊý
-¡¡¡¡¡¡¡¡ÒÔ#¿ªÍ·µÄ±êÊ¶·û´ú±íÁÙÊ±±í»ò´æ´¢¹ý³Ì
-¡¡¡¡¡¡¡¡ÒÔ##¿ªÍ·µÄ±êÊ¶·û´ú±íÒ»¸öÈ«¾ÖÁÙÊ±¶ÔÏó
-¡¡¡¡3. ÏÞ¶¨±êÊ¶·û£ºµ±¶ÔÏóÃû³Æ°üº¬¿Õ¸ñÊ± »ò µ±±£Áô¹Ø¼ü×Ö±»ÓÃ×÷¶ÔÏóÃû»ò¶ÔÏó²¿·ÖµÄÃû×ÖÊ±£¬
-¡¡¡¡¡¡¡¡ÓÃÖÐÀ¨ºÅ±íÊ¾µÄÀ¨ºÅ±êÊ¶·û£¨[ ]£©»ò ÓÃË«ÒýºÅ±íÊ¾µÄÒýÓÃ±êÊ¶·û£¨¡° ¡±£©
-¡¡¡¡ÃüÃû¹æÔò£º
-Ê¹ÓÃ¶ÌµÄÃû×Ö
-¾¡Á¿Ê¹ÓÃÓÐÒâÒåµÄÃû×Ö
-Ê¹ÓÃÄÜ¹»Çø·Ö³ö¶ÔÏóÀàÐÍµÄ±êÊ¶·û
-¡¡¡¡¡¡¡¡
-ËÄ¡¢Êý¾ÝÀàÐÍ
- ¡¡¡¡1. ÏµÍ³Êý¾ÝÀàÐÍ
-¡¡¡¡¡¡¡¡Êý×ÖÐÍ£ºint¡¢tinyint¡¢smallint¡¢bigintµÈ
-¡¡¡¡¡¡¡¡ÈÕÆÚÐÍ£ºdatatime¡¢smalldatetimeµÈ
-¡¡¡¡¡¡¡¡¶þ½øÖÆÐÍ£ºbinary¡¢varbinary
-¡¡¡¡¡¡¡¡×Ö·ûÐÍ£ºchar¡¢nchar¡¢varchar¡¢nvarchar
-¡¡¡¡¡¡¡¡ÓÎ±ê£ºÓÃÓÚ´æ´¢¹ý³ÌµÄ±à³ÌÖÐ£¬Ò²»áºÍµ×²ã¿Í»§½Ó¿ÚÍ¬Ê±Ê¹ÓÃ£¬²»ÓÃÓÚÊý¾Ý¶¨ÒåÓïÑÔÖÐ
-¡¡¡¡¡¡¡¡GUID
-¡¡¡¡¡¡¡¡Í¼ÏñÎÄ±¾
-¡¡¡¡¡¡¡¡±í
-¡¡¡¡2. ×Ô¶¨ÒåÊý¾ÝÀàÐÍ
-¡¡¡¡¡¡¡¡ÀûÓÃÏµÍ³´æ´¢¹ý³Ì¶¨ÒåÓÃ»§×Ô¶¨ÒåÊý¾ÝÀàÐÍ£º
-¡¡¡¡¡¡¡¡¡¡¡¡Sp_addtype [@typename=] ÐÂÊý¾ÝÀàÐÍÃû,
-¡¡¡¡¡¡¡¡¡¡¡¡[@phystype=] ÏµÍ³Êý¾ÝÀàÐÍÃû
-¡¡¡¡¡¡¡¡¡¡¡¡[,[@nulltype=] null_type]
-¡¡¡¡¡¡¡¡¡¡¡¡[,[@owner=] owner_name]
-¡¡¡¡¡¡¡¡¡¡¡¡ÏµÍ³Êý¾ÝÀàÐÍÃû³ýÁËint¡¢bigint¡¢smallint¡¢datetimeµÈ£¬ÆäÓà±ØÐëÓÃµ¥À¨ºÅÀ¨ÆðÀ´£»null_typeÖ¸ÐÂÊý¾ÝÀàÐÍ´¦Àí¿ÕÖµµÄ·½Ê½£¬£¬Ä¬ÈÏÎªnull£»owner_nameÖ¸ÐÂÊý¾ÝÀàÐÍµÄËùÓÐÕß£¬Ä¬ÈÏµ±Ç°ÓÃ»§
-Îå¡¢³£Á¿
-¡¡¡¡ÊÇ±íÊ¾Ò»¸öÌØ¶¨Êý¾ÝÖµµÄ·ûºÅ£¬ÔÚÔËÐÐÊ±²»»á¸Ä±äµÄÁ¿¡£¸ñÊ½È¡¾öÓÚ±íÊ¾µÄÖµµÄÊý¾ÝÀàÐÍ¡£
-Áù¡¢±äÁ¿
-¡¡¡¡¾Ö²¿±äÁ¿£ºÓÃ»§×Ô¼ºÊ¹ÓÃDECLAREÓï¾ä¶¨Òå£¬Ãû×ÖÇ°ÒªÓÐÒ»¸ö±ê¼Ç·û¡®@¡¯£¬¸³ÖµÓÃSET»òSELECTÓï¾ä£¨SETÖ»ÄÜ¶Ôµ¥¸ö±äÁ¿¸³Öµ£¬SELECT¿ÉÒÔ¶à¸ö£©
+Transact-SQLæ˜¯SQL Serverçš„ç¼–ç¨‹è¯­è¨€ï¼Œç»“æž„åŒ–æŸ¥è¯¢è¯­è¨€(SQL)çš„å¢žå¼ºç‰ˆæœ¬ã€‚
+Transact-SQLçš„ç»„æˆå…ƒç´ ï¼š
+æ•°æ®æŽ§åˆ¶è¯­è¨€è¯­å¥ï¼šå®‰å…¨æ€§ç®¡ç†ï¼Œé€šè¿‡GRANTã€REVOKEã€DENYè¯­å¥æ¥ç¡®ä¿æ•°æ®åº“ä¸­çš„æ•°æ®å’Œæ“ä½œä¸èƒ½è¢«æœªæŽˆæƒçš„ç”¨æˆ·ä½¿ç”¨ã€‚
+æ•°æ®å®šä¹‰è¯­è¨€è¯­å¥ï¼šé€šè¿‡CREATEã€ALTERã€DROPè¯­å¥æ¥æ‰§è¡Œæ•°æ®åº“çš„ä»»åŠ¡ã€åˆ›å»ºæ•°æ®åº“ä»¥åŠæ•°æ®åº“ä¸­çš„å¯¹è±¡ï¼Œå¦‚æ•°æ®åº“ã€è¡¨ã€è§„åˆ™ã€è§†å›¾ã€å­˜å‚¨è¿‡ç¨‹ã€å‡½æ•°ç­‰ã€‚
+æ•°æ®æ“çºµè¯­è¨€è¯­å¥ï¼šé€šè¿‡INSERTã€DELETEã€SELECTã€UPDATEæ¥å¯¹æ•°æ®åº“ä¸­çš„å„ä¸ªå¯¹è±¡çš„æ•°æ®è¿›è¡Œå¢žåˆ æŸ¥æ”¹ã€‚
+é™„åŠ çš„è¯­æ³•ä¸Žæµç¨‹æŽ§åˆ¶ï¼šä¸ºäº†æ•°æ®åº“ç¼–ç¨‹è€Œå¢žåŠ çš„è¯­å¥å…ƒç´ ï¼ŒåŒ…æ‹¬ï¼š
+æ‰¹å¤„ç†å‘½ä»¤
+æ³¨é‡Š
+æ ‡è¯†ç¬¦
+æ•°æ®ç±»åž‹
+å¸¸é‡
+å˜é‡
+å‡½æ•°
+è¿ç®—ç¬¦
+è¡¨è¾¾å¼
+æµç¨‹æŽ§åˆ¶çš„è¯­è¨€å…ƒç´ 
+æ¸¸æ ‡
+ä¸€ã€æ‰¹å¤„ç†å‘½ä»¤
+ã€€ã€€æ‰¹å¤„ç†æ˜¯æŒ‡åŒ…å«ä¸€æ¡æˆ–å¤šæ¡T-SQLè¯­å¥çš„è¯­å¥ç»„ï¼Œè¿™ç»„è¯­å¥ä»Žåº”ç”¨ç¨‹åºä¸€æ¬¡æ€§åœ°å‘é€åˆ°SQLæœåŠ¡å™¨ä¸­ç¼–è¯‘å½¢æˆä¸€ä¸ªå¯æ‰§è¡Œå•å…ƒï¼Œç§°ä¸ºæ‰§è¡Œè®¡åˆ’ã€‚GOå‘½ä»¤è¡¨ç¤ºæ‰¹å¤„ç†çš„ç»“æŸã€‚å¦‚æžœåœ¨T-SQLè„šæœ¬ä¸­æ²¡æœ‰GOå‘½ä»¤ï¼Œé‚£ä¹ˆå®ƒå°†è¢«ä½œä¸ºå•ä¸ªæ‰¹å¤„ç†æ¥æ‰§è¡Œã€‚
+ã€€ã€€æ³¨æ„ï¼š
+ã€€ã€€ä¸€ä¸ªæ‰¹å¤„ç†å¦‚æžœå…¶ä¸­æœ‰ä¸€ä¸ªè¯­æ³•é”™è¯¯ï¼Œé‚£ä¹ˆæ•´ä¸ªæ‰¹å¤„ç†éƒ½æ— æ³•é€šè¿‡ç¼–è¯‘ï¼Œä¸ä¼šæ‰§è¡Œã€‚
+ã€€ã€€ä¸èƒ½åœ¨æ‰¹å¤„ç†ä¸­å¼•ç”¨å…¶å®ƒæ‰¹å¤„ç†ä¸­æ‰€å®šä¹‰çš„å˜é‡ã€‚
+ã€€ã€€æ‰¹å¤„ç†ä¸­å¯ä»¥åŒ…å«å¤šä¸ªå­˜å‚¨è¿‡ç¨‹ï¼Œä½†æ˜¯é™¤ç¬¬ä¸€ä¸ªè¿‡ç¨‹å¤–ï¼Œå…¶ä»–çš„å­˜å‚¨è¿‡ç¨‹å‰é¢éƒ½å¿…é¡»ä½¿ç”¨EXECTUEå…³é”®å­—ã€‚
+ã€€ã€€ç”¨æˆ·å¿…é¡»éµç…§ä½¿ç”¨æ‰¹å¤„ç†çš„è§„åˆ™.ä¾‹å¦‚,åœ¨åŒä¸€æ‰¹å¤„ç†ä¸­,åˆ›å»ºæ•°æ®åº“ä¹‹åŽä¸èƒ½ç›´æŽ¥ä½¿ç”¨å…¶æ–°å»ºçš„æ•°æ®åº“.å±€éƒ¨ï¼ˆç”¨æˆ·å®šä¹‰ï¼‰å˜é‡çš„ä½œç”¨åŸŸé™åˆ¶åœ¨ä¸€ä¸ªæ‰¹å¤„ç†ä¸­,ä¸å¯åœ¨ GO å‘½ä»¤åŽå¼•ç”¨.
+ã€€ã€€å…³äºŽæ‰¹å¤„ç†
+ã€€ã€€æ‰¹å¤„ç†ä¸­çš„é”™è¯¯åˆ†ä¸ºä»¥ä¸‹ä¸¤ç±»ï¼š1ã€è¯­æ³•é”™è¯¯2ã€è¿è¡Œæ—¶é”™è¯¯
+ã€€ã€€è¯­æ³•é”™è¯¯ï¼Œä¸€èˆ¬åœ¨æ‰§è¡Œå‰ä½¿ç”¨åˆ†æžå°±å¯ä»¥æŸ¥å‡ºï¼šå¦‚æžœæŸ¥è¯¢åˆ†æžå™¨å‘çŽ°ä¸€ä¸ªè¯­æ³•é”™è¯¯ï¼Œé‚£ä¹ˆæ‰¹å¤„ç†çš„å¤„ç†è¿‡ç¨‹ä¼šè¢«ç«‹å³å–æ¶ˆã€‚å› ä¸ºè¯­æ³•æ£€æŸ¥å‘ç”Ÿåœ¨æ‰¹å¤„ç†ç¼–è¯‘æˆ–è€…æ‰§è¡Œä¹‹å‰ï¼Œæ‰€ä»¥åœ¨è¯­æ³•æ£€æŸ¥æœŸé—´çš„ä¸€ä¸ªå¤±è´¥æ„å‘³ç€è¿˜æ²¡æœ‰æ‰¹å¤„ç†è¢«æ‰§è¡Œ-ä¸ç®¡è¯­æ³•é”™è¯¯å‘ç”Ÿåœ¨æ‰¹å¤„ç†ä¸­çš„ä»€ä¹ˆä½ç½®ï¼›
+ã€€ã€€è¿è¡Œæ—¶é”™è¯¯çš„å·¥ä½œæ–¹å¼æœ‰å¾ˆå¤§ä¸åŒï¼Œè¿™ç§æƒ…å†µåˆ†æžæ˜¯ä¸ä¼šæŠ¥é”™çš„ï¼Œåªæœ‰åœ¨è¿è¡Œçš„è¿‡ç¨‹ä¸­é‡åˆ°é”™è¯¯æ‰ä¼šç»ˆæ­¢ï¼Œå› ä¸ºä»»ä½•åœ¨é‡åˆ°è¿è¡Œæ—¶é”™è¯¯ä¹‹å‰æ‰§è¡Œçš„è¯­å¥å·²ç»å®Œæˆäº†ï¼Œæ‰€ä»¥é™¤éžæ˜¯æœªæäº¤äº‹åŠ¡çš„ä¸€éƒ¨åˆ†ï¼Œå¦åˆ™è¿™äº›è¯­å¥æ‰€åšçš„ä»»ä½•äº‹æƒ…éƒ½å·²ç»æ˜¯çŽ°å®žäº†ã€‚
+ã€€ã€€ä¸€èˆ¬è€Œè¨€ï¼Œè¿è¡Œæ—¶é”™è¯¯å°†ç»ˆæ­¢ä»Žé”™è¯¯å‘ç”Ÿçš„åœ°æ–¹åˆ°æ­¤æ‰¹å¤„ç†æœ«ç«¯çš„æ‰¹å¤„ç†çš„æ‰§è¡Œã€‚ä¸‹ä¸€ä¸ªæ‰¹å¤„ç†ä¸å½±å“ã€‚
+ã€€ã€€https://www.cnblogs.com/shadow-ccos/p/5176186.html
+äºŒã€æ³¨é‡Š
+ã€€ã€€ä¸€ç§æ˜¯ANSIæ ‡å‡†çš„æ³¨é‡Šç¬¦â€œ--â€ï¼Œå®ƒç”¨äºŽå•è¡Œæ³¨é‡Šï¼›å¦ä¸€ç§æ˜¯ä¸ŽCè¯­è¨€ç›¸åŒçš„æ³¨é‡Šç¬¦å·ï¼Œå³â€œ/* */â€ã€‚
+ä¸‰ã€æ ‡è¯†ç¬¦
+ã€€ã€€1. æ ‡å‡†æ ‡è¯†ç¬¦ï¼š
+ã€€ã€€ã€€ã€€ç¬¬ä¸€ä¸ªå­—ç¬¦å¿…é¡»æ˜¯å­—æ¯ï¼ˆa~z æˆ– A~Zï¼‰ï¼Œç¬¬ä¸€ä¸ªå­—ç¬¦åŽå¯ä»¥æ˜¯æ•°å­—ã€å­—æ¯æˆ–å„ç§ç¬¦å·
+ã€€ã€€2. ç‰¹æ®Šæ ‡è¯†ç¬¦ï¼šå½“æ ‡è¯†ç¬¦çš„ç¬¬ä¸€ä¸ªå­—ç¬¦æ˜¯ç¬¦å·æ—¶ï¼Œä»£è¡¨å®ƒæœ‰ç‰¹æ®Šç”¨å¤„
+ã€€ã€€ã€€ã€€ä»¥@å¼€å¤´çš„æ ‡è¯†ç¬¦ä»£è¡¨å±€éƒ¨å˜é‡æˆ–å‚æ•°
+ã€€ã€€ã€€ã€€ä»¥@@å¼€å¤´çš„æ ‡è¯†ç¬¦ä»£è¡¨å…¨å±€å˜é‡æˆ–å‚æ•°
+ã€€ã€€ã€€ã€€ä»¥#å¼€å¤´çš„æ ‡è¯†ç¬¦ä»£è¡¨ä¸´æ—¶è¡¨æˆ–å­˜å‚¨è¿‡ç¨‹
+ã€€ã€€ã€€ã€€ä»¥##å¼€å¤´çš„æ ‡è¯†ç¬¦ä»£è¡¨ä¸€ä¸ªå…¨å±€ä¸´æ—¶å¯¹è±¡
+ã€€ã€€3. é™å®šæ ‡è¯†ç¬¦ï¼šå½“å¯¹è±¡åç§°åŒ…å«ç©ºæ ¼æ—¶ æˆ– å½“ä¿ç•™å…³é”®å­—è¢«ç”¨ä½œå¯¹è±¡åæˆ–å¯¹è±¡éƒ¨åˆ†çš„åå­—æ—¶ï¼Œ
+ã€€ã€€ã€€ã€€ç”¨ä¸­æ‹¬å·è¡¨ç¤ºçš„æ‹¬å·æ ‡è¯†ç¬¦ï¼ˆ[ ]ï¼‰æˆ– ç”¨åŒå¼•å·è¡¨ç¤ºçš„å¼•ç”¨æ ‡è¯†ç¬¦ï¼ˆâ€œ â€ï¼‰
+ã€€ã€€å‘½åè§„åˆ™ï¼š
+ä½¿ç”¨çŸ­çš„åå­—
+å°½é‡ä½¿ç”¨æœ‰æ„ä¹‰çš„åå­—
+ä½¿ç”¨èƒ½å¤ŸåŒºåˆ†å‡ºå¯¹è±¡ç±»åž‹çš„æ ‡è¯†ç¬¦
+ã€€ã€€ã€€ã€€
+å››ã€æ•°æ®ç±»åž‹
+ ã€€ã€€1. ç³»ç»Ÿæ•°æ®ç±»åž‹
+ã€€ã€€ã€€ã€€æ•°å­—åž‹ï¼šintã€tinyintã€smallintã€bigintç­‰
+ã€€ã€€ã€€ã€€æ—¥æœŸåž‹ï¼šdatatimeã€smalldatetimeç­‰
+ã€€ã€€ã€€ã€€äºŒè¿›åˆ¶åž‹ï¼šbinaryã€varbinary
+ã€€ã€€ã€€ã€€å­—ç¬¦åž‹ï¼šcharã€ncharã€varcharã€nvarchar
+ã€€ã€€ã€€ã€€æ¸¸æ ‡ï¼šç”¨äºŽå­˜å‚¨è¿‡ç¨‹çš„ç¼–ç¨‹ä¸­ï¼Œä¹Ÿä¼šå’Œåº•å±‚å®¢æˆ·æŽ¥å£åŒæ—¶ä½¿ç”¨ï¼Œä¸ç”¨äºŽæ•°æ®å®šä¹‰è¯­è¨€ä¸­
+ã€€ã€€ã€€ã€€GUID
+ã€€ã€€ã€€ã€€å›¾åƒæ–‡æœ¬
+ã€€ã€€ã€€ã€€è¡¨
+ã€€ã€€2. è‡ªå®šä¹‰æ•°æ®ç±»åž‹
+ã€€ã€€ã€€ã€€åˆ©ç”¨ç³»ç»Ÿå­˜å‚¨è¿‡ç¨‹å®šä¹‰ç”¨æˆ·è‡ªå®šä¹‰æ•°æ®ç±»åž‹ï¼š
+ã€€ã€€ã€€ã€€ã€€ã€€Sp_addtype [@typename=] æ–°æ•°æ®ç±»åž‹å,
+ã€€ã€€ã€€ã€€ã€€ã€€[@phystype=] ç³»ç»Ÿæ•°æ®ç±»åž‹å
+ã€€ã€€ã€€ã€€ã€€ã€€[,[@nulltype=] null_type]
+ã€€ã€€ã€€ã€€ã€€ã€€[,[@owner=] owner_name]
+ã€€ã€€ã€€ã€€ã€€ã€€ç³»ç»Ÿæ•°æ®ç±»åž‹åé™¤äº†intã€bigintã€smallintã€datetimeç­‰ï¼Œå…¶ä½™å¿…é¡»ç”¨å•æ‹¬å·æ‹¬èµ·æ¥ï¼›null_typeæŒ‡æ–°æ•°æ®ç±»åž‹å¤„ç†ç©ºå€¼çš„æ–¹å¼ï¼Œï¼Œé»˜è®¤ä¸ºnullï¼›owner_nameæŒ‡æ–°æ•°æ®ç±»åž‹çš„æ‰€æœ‰è€…ï¼Œé»˜è®¤å½“å‰ç”¨æˆ·
+äº”ã€å¸¸é‡
+ã€€ã€€æ˜¯è¡¨ç¤ºä¸€ä¸ªç‰¹å®šæ•°æ®å€¼çš„ç¬¦å·ï¼Œåœ¨è¿è¡Œæ—¶ä¸ä¼šæ”¹å˜çš„é‡ã€‚æ ¼å¼å–å†³äºŽè¡¨ç¤ºçš„å€¼çš„æ•°æ®ç±»åž‹ã€‚
+å…­ã€å˜é‡
+ã€€ã€€å±€éƒ¨å˜é‡ï¼šç”¨æˆ·è‡ªå·±ä½¿ç”¨DECLAREè¯­å¥å®šä¹‰ï¼Œåå­—å‰è¦æœ‰ä¸€ä¸ªæ ‡è®°ç¬¦â€˜@â€™ï¼Œèµ‹å€¼ç”¨SETæˆ–SELECTè¯­å¥ï¼ˆSETåªèƒ½å¯¹å•ä¸ªå˜é‡èµ‹å€¼ï¼ŒSELECTå¯ä»¥å¤šä¸ªï¼‰
 DECLARE @var1 varchar(20),@var2 varchar(40)
-SET  @var1='ÖÐ¹ú'   /*Ò»¸öSETÓï¾äÖ»ÄÜ¸øÒ»¸ö±äÁ¿¸³Öµ*/
-SET  @var2=@var1+'ÊÇÒ»¸öÎ°´óµÄ¹ú¼Ò'
-select   @var1,@var2  --¾Ö²¿±äÁ¿ÖµµÃÏÔÊ¾
-¡¡¡¡È«¾Ö±äÁ¿£ºÏµÍ³Ìá¹©µÄ±äÁ¿£¬Ç°ÒªÓÐÁ½¸ö±ê¼Ç·û¡®@@¡¯¡£ÓÃ»§²»ÄÜ´´½¨È«¾Ö±äÁ¿£¬Ö»ÄÜÊ¹ÓÃÏµÍ³Ìá¹©µÄÈ«¾Ö±äÁ¿¡£
-¡¡¡¡Ò»Ð©³£ÓÃµÄÈ«¾Ö±äÁ¿£º
-¡¡¡¡¡¡¡¡@@CONNECTIONS£º·µ»Ø×ÔÉÏ´ÎÆô¶¯SQL ServerÒÔÀ´Á¬½Ó»òÊÔÍ¼Á¬½ÓµÄ´ÎÊý¡£
-¡¡¡¡¡¡¡¡@@MAX_CONNECTIONS£º·µ»ØSQL ServerÉÏÔÊÐíµÄÍ¬Ê±ÓÃ»§Á¬½ÓµÄ×î´óÊý¡£
-¡¡¡¡¡¡¡¡@@ERROR£º·µ»Ø×îºóÖ´ÐÐµÄ T-SQL Óï¾äµÄ´íÎó´úÂë¡£
-¡¡¡¡¡¡¡¡@@TRANCOUNT£º·µ»Øµ±Ç°Á¬½ÓµÄ»î¶¯ÊÂÎñÊý¡£
-¡¡¡¡¡¡¡¡@@VERSION£º·µ»Ø SQL Server µ±Ç°°²×°µÄÈÕÆÚ¡¢°æ±¾ºÍ´¦ÀíÆ÷ÀàÐÍ¡£
-¡¡¡¡¡¡¡¡@@SERVERNAME£º·µ»ØÔËÐÐ SQL Server µÄ±¾µØ·þÎñÆ÷Ãû³Æ¡£
-¡¡¡¡¡¡¡¡@@SERVICENAME£º·µ»Ø SQL Server ÕýÔÚÆäÏÂÔËÐÐµÄ×¢²á±í¼üÃû¡£Èôµ±Ç°ÊµÀýÎªÄ¬ÈÏÊµÀý£¬Ôò·µ»ØMSSQLServer£»Èôµ±Ç°ÊµÀýÊÇÃüÃûÊµÀý£¬Ôò¸Ãº¯Êý·µ»ØÊµÀýÃû¡£
-¡¡¡¡¡¡¡¡@@SPID£º·µ»Øµ±Ç°ÓÃ»§½ø³ÌµÄ·þÎñÆ÷½ø³Ì±êÊ¶·û (ID)¡£
-¡¡¡¡¡¡¡¡@@ROWCOUNT£º·µ»ØÊÜÉÏÒ»Óï¾äÓ°ÏìµÄÐÐÊý¡£
-¡¡¡¡¡¡¡¡@@NESTLEVEL£º·µ»Øµ±Ç°´æ´¢¹ý³ÌÖ´ÐÐµÄÇ¶Ì×²ã´Î(³õÊ¼ÖµÎª0)¡£
-¡¡¡¡¡¡¡¡@@LANGUAGE£º·µ»Øµ±Ç°Ê¹ÓÃµÄÓïÑÔÃû¡£
-¡¡¡¡¡¡¡¡@@OPTIONS£º·µ»Øµ±Ç° SET Ñ¡ÏîµÄÐÅÏ¢¡£
-¡¡¡¡¡¡¡¡@@CPU_BUSY£º·µ»Ø×ÔÉÏ´ÎÆô¶¯ SQL Server ÒÔÀ´ CPU µÄ¹¤×÷Ê±¼ä,µ¥Î»ÎªºÁÃë(»ùÓÚÏµÍ³¼ÆÊ±Æ÷µÄ·Ö±æÂÊ)¡£
-¡¡¡¡¡¡¡¡@@IDLE£º·µ»Ø SQL Server ×ÔÉÏ´ÎÆô¶¯ºóÏÐÖÃµÄÊ±¼ä£¬µ¥Î»ÎªºÁÃë(»ùÓÚÏµÍ³¼ÆÊ±Æ÷µÄ·Ö±æÂÊ)¡£
-¡¡¡¡¡¡¡¡@@IDENTITY£º·µ»Ø×îºó²åÈëµÄ±êÊ¶Öµ¡£
-¡¡¡¡¡¡¡¡INSERT INTO jobs (job_desc,min_lvl,max_lvl) VALUES ('Accountant',12,125) SELECT @@IDENTITY AS 'Identity'
-Æß¡¢º¯Êý
-¡¡¡¡(Í¼Ïñ)£¨Í¼Æ¬×ª×Ô£ºhttp://www.cnblogs.com/jack-liang/archive/2011/03/25/1995466.html£©
-¡¡¡¡1. ×Ö·û´®º¯Êý£º
-¡¡¡¡£¨1£©»ù±¾×Ö·û´®º¯Êý:UPPER¡¢LOWER¡¢SPACE¡¢REPLICATE¡¢STUFF¡¢REVERSE¡¢LTRIM¡¢RTRIM¡£
-¡¡¡¡£¨2)  ×Ö·û´®²éÕÒº¯Êý:CHARINDEX¡¢PATINDEX¡£
-¡¡¡¡  (3)  ³¤¶ÈºÍ·ÖÎöº¯Êý:DATALENGTH¡¢ RIGHT ¡¢SUBSTRING¡£
-¡¡¡¡  (4)  ×ª»»º¯Êý:ASCH¡¢CHAR¡¢STR¡¢SOUNDEX ¡¢ DIFFERENCE¡£
-¡¡¡¡2. ÈÕÆÚÓëÊ±¼äº¯Êý£º
-¡¡¡¡ÏÈÉÏÊý¾ÝÀàÐÍ¼°¸ñÊ½ÈçÏÂ£º
-¡¡¡¡(Í¼Ïñ)
-¡¡¡¡(1) GETDATE()£º·µ»Øµ±Ç°ÏµÍ³ÈÕÆÚºÍÊ±¼ä
-¡¡¡¡(2) DAY()£º·µ»Ø´ú±íÖ¸¶¨ÈÕÆÚµÄÌìµÄÈÕÆÚ²¿·ÖµÄÕûÊý
-¡¡¡¡(3) MONTH()£º·µ»ØÖ¸¶¨ÈÕÆÚµÄÔÂ·ÝµÄÕûÊý
-¡¡¡¡(4) YEAR()£º·µ»ØÖ¸¶¨ÈÕÆÚµÄÄê·ÝµÄÕûÊý
-¡¡¡¡(5) DATEADD()¹¦ÄÜ:·µ»ØÒ»¸öÈÕÆÚ¼ÓÉÏÒ»¸öÖ¸¶¨Ê±¼ä¼ä¸ôÊýºóÊ±¼ä
-¡¡¡¡¡¡¡¡SELECT DATEADD(year,1,getdate())
-¡¡¡¡(6) DATEDIFF()¹¦ÄÜ:·µ»ØÁ½¸öÖ¸¶¨ÈÕÆÚ¼äÊ±¼ä¼ä¸ô
-¡¡¡¡¡¡¡¡SELECT datediff(y,¡¯2006-1-1¡¯,getdate())
-¡¡¡¡(7) DATENAME()¹¦ÄÜ:·µ»ØÖ¸¶¨ÈÕÆÚµÄÖ¸¶¨²¿·ÖµÄ×Ö·û´®ÐÎÊ½±íÊ¾
-¡¡¡¡¡¡¡¡SELECT datename(year,getdate())
-¡¡¡¡(8) DATEPART()¹¦ÄÜ:·µ»ØÖ¸¶¨ÈÕÆÚµÄÖ¸¶¨²¿·ÖµÄÕûÊýÐÎÊ½±íÊ¾
-¡¡¡¡3. ÊýÑ§º¯Êý£º
-¡¡¡¡(1) FLOOR()¹¦ÄÜ:·µ»ØÐ¡ÓÚ»òµÈÓÚËù¸øÊý×Ö±í´ïÊ½µÄ×î´óÕûÊý ¡£
-¡¡¡¡¡¡¡¡Óï·¨ : FLOOR (numeric_expression)
-¡¡¡¡¡¡¡¡¾ÙÀý: SELECT FLOOR(123.45), FLOOR(-123.45), FLOOR($123.45)
-¡¡¡¡(2) ROUND()¹¦ÄÜ:·µ»ØÊý×Ö±í´ïÊ½²¢ËÄÉáÎåÈëÎªÖ¸¶¨µÄ³¤¶È»ò¾«¶È ¡£
-¡¡¡¡¡¡¡¡Óï·¨: ROUND(numeric_expression,length[,function ] )
-¡¡¡¡¡¡¡¡¾ÙÀý: SELECT ROUND(123.9994, 3)
-¡¡¡¡(3) POWER()¹¦ÄÜ:·µ»Ø¸ø¶¨±í´ïÊ½³ËÖ¸¶¨´Î·½µÄÖµ¡£
-¡¡¡¡¡¡¡¡Óï·¨ : POWER(numeric_expression,y)
-¡¡¡¡(4) RAND()¹¦ÄÜ:·µ»Ø0µ½1Ö®¼äµÄËæ»úFLOATÖµ¡£
-¡¡¡¡¡¡¡¡Óï·¨ : RAND (seed)
- ¡¡¡¡4. ×ª»»º¯Êý£º
-¡¡¡¡(1) CAST()
-¡¡¡¡¡¡¡¡Óï·¨£ºCAST(expression AS data_type)
-¡¡¡¡¡¡¡¡ASÖ®Ç°ÊÇÒª×ª»»µÄÊý¾Ý£¬Ö®ºóÊÇÒª×ª»»µÄÊý¾ÝÀàÐÍ
-/*CAST()º¯ÊýµÄ²ÎÊýÊÇÒ»¸ö±í´ïÊ½£¬Ëü°üÀ¨ÓÃAS¹Ø¼ü×Ö·Ö¸ôµÄÔ´ÖµºÍÄ¿±êÊý¾ÝÀàÐÍ¡£ÒÔÏÂÀý×ÓÓÃÓÚ½«ÎÄ±¾×Ö·û´®'123'×ª»»ÎªÕûÐÍ:*/
+SET  @var1='ä¸­å›½'   /*ä¸€ä¸ªSETè¯­å¥åªèƒ½ç»™ä¸€ä¸ªå˜é‡èµ‹å€¼*/
+SET  @var2=@var1+'æ˜¯ä¸€ä¸ªä¼Ÿå¤§çš„å›½å®¶'
+select   @var1,@var2  --å±€éƒ¨å˜é‡å€¼å¾—æ˜¾ç¤º
+ã€€ã€€å…¨å±€å˜é‡ï¼šç³»ç»Ÿæä¾›çš„å˜é‡ï¼Œå‰è¦æœ‰ä¸¤ä¸ªæ ‡è®°ç¬¦â€˜@@â€™ã€‚ç”¨æˆ·ä¸èƒ½åˆ›å»ºå…¨å±€å˜é‡ï¼Œåªèƒ½ä½¿ç”¨ç³»ç»Ÿæä¾›çš„å…¨å±€å˜é‡ã€‚
+ã€€ã€€ä¸€äº›å¸¸ç”¨çš„å…¨å±€å˜é‡ï¼š
+ã€€ã€€ã€€ã€€@@CONNECTIONSï¼šè¿”å›žè‡ªä¸Šæ¬¡å¯åŠ¨SQL Serverä»¥æ¥è¿žæŽ¥æˆ–è¯•å›¾è¿žæŽ¥çš„æ¬¡æ•°ã€‚
+ã€€ã€€ã€€ã€€@@MAX_CONNECTIONSï¼šè¿”å›žSQL Serverä¸Šå…è®¸çš„åŒæ—¶ç”¨æˆ·è¿žæŽ¥çš„æœ€å¤§æ•°ã€‚
+ã€€ã€€ã€€ã€€@@ERRORï¼šè¿”å›žæœ€åŽæ‰§è¡Œçš„ T-SQL è¯­å¥çš„é”™è¯¯ä»£ç ã€‚
+ã€€ã€€ã€€ã€€@@TRANCOUNTï¼šè¿”å›žå½“å‰è¿žæŽ¥çš„æ´»åŠ¨äº‹åŠ¡æ•°ã€‚
+ã€€ã€€ã€€ã€€@@VERSIONï¼šè¿”å›ž SQL Server å½“å‰å®‰è£…çš„æ—¥æœŸã€ç‰ˆæœ¬å’Œå¤„ç†å™¨ç±»åž‹ã€‚
+ã€€ã€€ã€€ã€€@@SERVERNAMEï¼šè¿”å›žè¿è¡Œ SQL Server çš„æœ¬åœ°æœåŠ¡å™¨åç§°ã€‚
+ã€€ã€€ã€€ã€€@@SERVICENAMEï¼šè¿”å›ž SQL Server æ­£åœ¨å…¶ä¸‹è¿è¡Œçš„æ³¨å†Œè¡¨é”®åã€‚è‹¥å½“å‰å®žä¾‹ä¸ºé»˜è®¤å®žä¾‹ï¼Œåˆ™è¿”å›žMSSQLServerï¼›è‹¥å½“å‰å®žä¾‹æ˜¯å‘½åå®žä¾‹ï¼Œåˆ™è¯¥å‡½æ•°è¿”å›žå®žä¾‹åã€‚
+ã€€ã€€ã€€ã€€@@SPIDï¼šè¿”å›žå½“å‰ç”¨æˆ·è¿›ç¨‹çš„æœåŠ¡å™¨è¿›ç¨‹æ ‡è¯†ç¬¦ (ID)ã€‚
+ã€€ã€€ã€€ã€€@@ROWCOUNTï¼šè¿”å›žå—ä¸Šä¸€è¯­å¥å½±å“çš„è¡Œæ•°ã€‚
+ã€€ã€€ã€€ã€€@@NESTLEVELï¼šè¿”å›žå½“å‰å­˜å‚¨è¿‡ç¨‹æ‰§è¡Œçš„åµŒå¥—å±‚æ¬¡(åˆå§‹å€¼ä¸º0)ã€‚
+ã€€ã€€ã€€ã€€@@LANGUAGEï¼šè¿”å›žå½“å‰ä½¿ç”¨çš„è¯­è¨€åã€‚
+ã€€ã€€ã€€ã€€@@OPTIONSï¼šè¿”å›žå½“å‰ SET é€‰é¡¹çš„ä¿¡æ¯ã€‚
+ã€€ã€€ã€€ã€€@@CPU_BUSYï¼šè¿”å›žè‡ªä¸Šæ¬¡å¯åŠ¨ SQL Server ä»¥æ¥ CPU çš„å·¥ä½œæ—¶é—´,å•ä½ä¸ºæ¯«ç§’(åŸºäºŽç³»ç»Ÿè®¡æ—¶å™¨çš„åˆ†è¾¨çŽ‡)ã€‚
+ã€€ã€€ã€€ã€€@@IDLEï¼šè¿”å›ž SQL Server è‡ªä¸Šæ¬¡å¯åŠ¨åŽé—²ç½®çš„æ—¶é—´ï¼Œå•ä½ä¸ºæ¯«ç§’(åŸºäºŽç³»ç»Ÿè®¡æ—¶å™¨çš„åˆ†è¾¨çŽ‡)ã€‚
+ã€€ã€€ã€€ã€€@@IDENTITYï¼šè¿”å›žæœ€åŽæ’å…¥çš„æ ‡è¯†å€¼ã€‚
+ã€€ã€€ã€€ã€€INSERT INTO jobs (job_desc,min_lvl,max_lvl) VALUES ('Accountant',12,125) SELECT @@IDENTITY AS 'Identity'
+ä¸ƒã€å‡½æ•°
+ã€€ã€€(å›¾åƒ)ï¼ˆå›¾ç‰‡è½¬è‡ªï¼šhttp://www.cnblogs.com/jack-liang/archive/2011/03/25/1995466.htmlï¼‰
+ã€€ã€€1. å­—ç¬¦ä¸²å‡½æ•°ï¼š
+ã€€ã€€ï¼ˆ1ï¼‰åŸºæœ¬å­—ç¬¦ä¸²å‡½æ•°:UPPERã€LOWERã€SPACEã€REPLICATEã€STUFFã€REVERSEã€LTRIMã€RTRIMã€‚
+ã€€ã€€ï¼ˆ2)  å­—ç¬¦ä¸²æŸ¥æ‰¾å‡½æ•°:CHARINDEXã€PATINDEXã€‚
+ã€€ã€€  (3)  é•¿åº¦å’Œåˆ†æžå‡½æ•°:DATALENGTHã€ RIGHT ã€SUBSTRINGã€‚
+ã€€ã€€  (4)  è½¬æ¢å‡½æ•°:ASCHã€CHARã€STRã€SOUNDEX ã€ DIFFERENCEã€‚
+ã€€ã€€2. æ—¥æœŸä¸Žæ—¶é—´å‡½æ•°ï¼š
+ã€€ã€€å…ˆä¸Šæ•°æ®ç±»åž‹åŠæ ¼å¼å¦‚ä¸‹ï¼š
+ã€€ã€€(å›¾åƒ)
+ã€€ã€€(1) GETDATE()ï¼šè¿”å›žå½“å‰ç³»ç»Ÿæ—¥æœŸå’Œæ—¶é—´
+ã€€ã€€(2) DAY()ï¼šè¿”å›žä»£è¡¨æŒ‡å®šæ—¥æœŸçš„å¤©çš„æ—¥æœŸéƒ¨åˆ†çš„æ•´æ•°
+ã€€ã€€(3) MONTH()ï¼šè¿”å›žæŒ‡å®šæ—¥æœŸçš„æœˆä»½çš„æ•´æ•°
+ã€€ã€€(4) YEAR()ï¼šè¿”å›žæŒ‡å®šæ—¥æœŸçš„å¹´ä»½çš„æ•´æ•°
+ã€€ã€€(5) DATEADD()åŠŸèƒ½:è¿”å›žä¸€ä¸ªæ—¥æœŸåŠ ä¸Šä¸€ä¸ªæŒ‡å®šæ—¶é—´é—´éš”æ•°åŽæ—¶é—´
+ã€€ã€€ã€€ã€€SELECT DATEADD(year,1,getdate())
+ã€€ã€€(6) DATEDIFF()åŠŸèƒ½:è¿”å›žä¸¤ä¸ªæŒ‡å®šæ—¥æœŸé—´æ—¶é—´é—´éš”
+ã€€ã€€ã€€ã€€SELECT datediff(y,â€™2006-1-1â€™,getdate())
+ã€€ã€€(7) DATENAME()åŠŸèƒ½:è¿”å›žæŒ‡å®šæ—¥æœŸçš„æŒ‡å®šéƒ¨åˆ†çš„å­—ç¬¦ä¸²å½¢å¼è¡¨ç¤º
+ã€€ã€€ã€€ã€€SELECT datename(year,getdate())
+ã€€ã€€(8) DATEPART()åŠŸèƒ½:è¿”å›žæŒ‡å®šæ—¥æœŸçš„æŒ‡å®šéƒ¨åˆ†çš„æ•´æ•°å½¢å¼è¡¨ç¤º
+ã€€ã€€3. æ•°å­¦å‡½æ•°ï¼š
+ã€€ã€€(1) FLOOR()åŠŸèƒ½:è¿”å›žå°äºŽæˆ–ç­‰äºŽæ‰€ç»™æ•°å­—è¡¨è¾¾å¼çš„æœ€å¤§æ•´æ•° ã€‚
+ã€€ã€€ã€€ã€€è¯­æ³• : FLOOR (numeric_expression)
+ã€€ã€€ã€€ã€€ä¸¾ä¾‹: SELECT FLOOR(123.45), FLOOR(-123.45), FLOOR($123.45)
+ã€€ã€€(2) ROUND()åŠŸèƒ½:è¿”å›žæ•°å­—è¡¨è¾¾å¼å¹¶å››èˆäº”å…¥ä¸ºæŒ‡å®šçš„é•¿åº¦æˆ–ç²¾åº¦ ã€‚
+ã€€ã€€ã€€ã€€è¯­æ³•: ROUND(numeric_expression,length[,function ] )
+ã€€ã€€ã€€ã€€ä¸¾ä¾‹: SELECT ROUND(123.9994, 3)
+ã€€ã€€(3) POWER()åŠŸèƒ½:è¿”å›žç»™å®šè¡¨è¾¾å¼ä¹˜æŒ‡å®šæ¬¡æ–¹çš„å€¼ã€‚
+ã€€ã€€ã€€ã€€è¯­æ³• : POWER(numeric_expression,y)
+ã€€ã€€(4) RAND()åŠŸèƒ½:è¿”å›ž0åˆ°1ä¹‹é—´çš„éšæœºFLOATå€¼ã€‚
+ã€€ã€€ã€€ã€€è¯­æ³• : RAND (seed)
+ ã€€ã€€4. è½¬æ¢å‡½æ•°ï¼š
+ã€€ã€€(1) CAST()
+ã€€ã€€ã€€ã€€è¯­æ³•ï¼šCAST(expression AS data_type)
+ã€€ã€€ã€€ã€€ASä¹‹å‰æ˜¯è¦è½¬æ¢çš„æ•°æ®ï¼Œä¹‹åŽæ˜¯è¦è½¬æ¢çš„æ•°æ®ç±»åž‹
+/*CAST()å‡½æ•°çš„å‚æ•°æ˜¯ä¸€ä¸ªè¡¨è¾¾å¼ï¼Œå®ƒåŒ…æ‹¬ç”¨ASå…³é”®å­—åˆ†éš”çš„æºå€¼å’Œç›®æ ‡æ•°æ®ç±»åž‹ã€‚ä»¥ä¸‹ä¾‹å­ç”¨äºŽå°†æ–‡æœ¬å­—ç¬¦ä¸²'123'è½¬æ¢ä¸ºæ•´åž‹:*/
 SELECT CAST('123' AS int)
-/*·µ»ØÖµÊÇÕûÐÍÖµ123¡£*/
+/*è¿”å›žå€¼æ˜¯æ•´åž‹å€¼123ã€‚*/
 
-/*Èç¹ûÊÔÍ¼½«Ò»¸ö´ú±íÐ¡ÊýµÄ×Ö·û´®×ª»»ÎªÕûÐÍÖµ£¬ÓÖ»á³öÏÖÊ²Ã´Çé¿öÄØ£¿*/
+/*å¦‚æžœè¯•å›¾å°†ä¸€ä¸ªä»£è¡¨å°æ•°çš„å­—ç¬¦ä¸²è½¬æ¢ä¸ºæ•´åž‹å€¼ï¼Œåˆä¼šå‡ºçŽ°ä»€ä¹ˆæƒ…å†µå‘¢ï¼Ÿ*/
 SELECT CAST('123.4' AS int)
-/*CAST()º¯ÊýºÍCONVERT()º¯Êý¶¼²»ÄÜÖ´ÐÐËÄÉáÎåÈë»ò½Ø¶Ï²Ù×÷¡£ÓÉÓÚ123.4²»ÄÜÓÃintÊý¾ÝÀàÐÍÀ´±íÊ¾£¬ËùÒÔ¶ÔÕâ¸öº¯Êýµ÷ÓÃ½«²úÉú´íÎó*/
+/*CAST()å‡½æ•°å’ŒCONVERT()å‡½æ•°éƒ½ä¸èƒ½æ‰§è¡Œå››èˆäº”å…¥æˆ–æˆªæ–­æ“ä½œã€‚ç”±äºŽ123.4ä¸èƒ½ç”¨intæ•°æ®ç±»åž‹æ¥è¡¨ç¤ºï¼Œæ‰€ä»¥å¯¹è¿™ä¸ªå‡½æ•°è°ƒç”¨å°†äº§ç”Ÿé”™è¯¯*/
 
-/*Òª·µ»ØÒ»¸öºÏ·¨µÄÊýÖµ£¬¾Í±ØÐëÊ¹ÓÃÄÜ´¦ÀíÕâ¸öÖµµÄÊý¾ÝÀàÐÍ¡£¶ÔÓÚÕâ¸öÀý×Ó£¬´æÔÚ¶à¸ö¿ÉÓÃµÄÊý¾ÝÀàÐÍ¡£Èç¹ûÍ¨¹ýCAST()º¯Êý½«Õâ¸öÖµ×ª»»ÎªdecimalÀàÐÍ£¬ÐèÒªÊ×ÏÈ¶¨ÒådecimalÖµµÄ¾«¶ÈÓëÐ¡ÊýÎ»Êý¡£ÔÚ±¾ÀýÖÐ£¬¾«¶ÈÓëÐ¡ÊýÎ»Êý·Ö±ðÎª9Óë2¡£¾«¶ÈÊÇ×ÜµÄÊý×ÖÎ»Êý£¬°üÀ¨Ð¡Êýµã×ó±ßºÍÓÒ±ßÎ»ÊýµÄ×ÜºÍ¡£¶øÐ¡ÊýÎ»ÊýÊÇÐ¡ÊýµãÓÒ±ßµÄÎ»Êý¡£Õâ±íÊ¾±¾ÀýÄÜ¹»Ö§³ÖµÄ×î´óµÄÕûÊýÖµÊÇ9999999£¬¶ø×îÐ¡µÄÐ¡ÊýÊÇ0.01¡£*/
+/*è¦è¿”å›žä¸€ä¸ªåˆæ³•çš„æ•°å€¼ï¼Œå°±å¿…é¡»ä½¿ç”¨èƒ½å¤„ç†è¿™ä¸ªå€¼çš„æ•°æ®ç±»åž‹ã€‚å¯¹äºŽè¿™ä¸ªä¾‹å­ï¼Œå­˜åœ¨å¤šä¸ªå¯ç”¨çš„æ•°æ®ç±»åž‹ã€‚å¦‚æžœé€šè¿‡CAST()å‡½æ•°å°†è¿™ä¸ªå€¼è½¬æ¢ä¸ºdecimalç±»åž‹ï¼Œéœ€è¦é¦–å…ˆå®šä¹‰decimalå€¼çš„ç²¾åº¦ä¸Žå°æ•°ä½æ•°ã€‚åœ¨æœ¬ä¾‹ä¸­ï¼Œç²¾åº¦ä¸Žå°æ•°ä½æ•°åˆ†åˆ«ä¸º9ä¸Ž2ã€‚ç²¾åº¦æ˜¯æ€»çš„æ•°å­—ä½æ•°ï¼ŒåŒ…æ‹¬å°æ•°ç‚¹å·¦è¾¹å’Œå³è¾¹ä½æ•°çš„æ€»å’Œã€‚è€Œå°æ•°ä½æ•°æ˜¯å°æ•°ç‚¹å³è¾¹çš„ä½æ•°ã€‚è¿™è¡¨ç¤ºæœ¬ä¾‹èƒ½å¤Ÿæ”¯æŒçš„æœ€å¤§çš„æ•´æ•°å€¼æ˜¯9999999ï¼Œè€Œæœ€å°çš„å°æ•°æ˜¯0.01ã€‚*/
 SELECT CAST('123.4' AS decimal(9,2))
-/*decimalÊý¾ÝÀàÐÍÔÚ½á¹ûÍø¸ñÖÐ½«ÏÔÊ¾ÓÐÐ§Ð¡ÊýÎ»:123.40*/
+/*decimalæ•°æ®ç±»åž‹åœ¨ç»“æžœç½‘æ ¼ä¸­å°†æ˜¾ç¤ºæœ‰æ•ˆå°æ•°ä½:123.40*/
 
-/*¾«¶ÈºÍÐ¡ÊýÎ»ÊýµÄÄ¬ÈÏÖµ·Ö±ðÊÇ18Óë0¡£Èç¹ûÔÚdecimalÀàÐÍÖÐ²»Ìá¹©ÕâÁ½¸öÖµ£¬SQL Server½«½Ø¶ÏÊý×ÖµÄÐ¡Êý²¿·Ö£¬¶ø²»»á²úÉú´íÎó¡£*/
+/*ç²¾åº¦å’Œå°æ•°ä½æ•°çš„é»˜è®¤å€¼åˆ†åˆ«æ˜¯18ä¸Ž0ã€‚å¦‚æžœåœ¨decimalç±»åž‹ä¸­ä¸æä¾›è¿™ä¸¤ä¸ªå€¼ï¼ŒSQL Serverå°†æˆªæ–­æ•°å­—çš„å°æ•°éƒ¨åˆ†ï¼Œè€Œä¸ä¼šäº§ç”Ÿé”™è¯¯ã€‚*/
 SELECT CAST('123.4' AS decimal)
-/*½á¹ûÊÇÒ»¸öÕûÊýÖµ£º123*/
-¡¡¡¡(2) CONVERT()
-¡¡¡¡¡¡¡¡Óï·¨£ºCONVERT(data_type[(length)],expression)
-¡¡¡¡¡¡¡¡ÓÃ·¨ºÍCAST()ÏàÍ¬
-¡¡¡¡5. ¾ÛºÏº¯Êý
-¡¡¡¡¡¡¡¡¶ÔÒ»×éÖµÖ´ÐÐ¼ÆËã²¢·µ»Øµ¥Ò»µÄÖµ£¬³ýCOUNT()º¯ÊýÖ®Íâ£¬¾ÛºÏº¯ÊýºöÂÔ¿ÕÖµ¡£
-¡¡¡¡¡¡¡¡°üÀ¨£ºAVG()¡¢COUNT()¡¢MAX()¡¢MIN()¡¢SUM()
-°Ë¡¢ÔËËã·û
-¡¡¡¡(Í¼Ïñ)
-¾Å¡¢±í´ïÊ½
-¡¡¡¡¸÷¸ö·ûºÅºÍÔËËã·ûµÄ×éºÏ£¬±í´ïÊ½µÄ½á¹ûµÄÊý¾ÝÀàÐÍÓÉ±í´ïÊ½ÖÐµÄ³ÉÔ±¾ö¶¨¡£
-Ê®¡¢Á÷³Ì¿ØÖÆ
-¡¡¡¡(Í¼Ïñ)
-/*¼ÆËã1¡«100Ö®¼äËùÓÐÄÜ±»7Õû³ýµÄÊýµÄ×ÜºÍ¡£*/
+/*ç»“æžœæ˜¯ä¸€ä¸ªæ•´æ•°å€¼ï¼š123*/
+ã€€ã€€(2) CONVERT()
+ã€€ã€€ã€€ã€€è¯­æ³•ï¼šCONVERT(data_type[(length)],expression)
+ã€€ã€€ã€€ã€€ç”¨æ³•å’ŒCAST()ç›¸åŒ
+ã€€ã€€5. èšåˆå‡½æ•°
+ã€€ã€€ã€€ã€€å¯¹ä¸€ç»„å€¼æ‰§è¡Œè®¡ç®—å¹¶è¿”å›žå•ä¸€çš„å€¼ï¼Œé™¤COUNT()å‡½æ•°ä¹‹å¤–ï¼Œèšåˆå‡½æ•°å¿½ç•¥ç©ºå€¼ã€‚
+ã€€ã€€ã€€ã€€åŒ…æ‹¬ï¼šAVG()ã€COUNT()ã€MAX()ã€MIN()ã€SUM()
+å…«ã€è¿ç®—ç¬¦
+ã€€ã€€(å›¾åƒ)
+ä¹ã€è¡¨è¾¾å¼
+ã€€ã€€å„ä¸ªç¬¦å·å’Œè¿ç®—ç¬¦çš„ç»„åˆï¼Œè¡¨è¾¾å¼çš„ç»“æžœçš„æ•°æ®ç±»åž‹ç”±è¡¨è¾¾å¼ä¸­çš„æˆå‘˜å†³å®šã€‚
+åã€æµç¨‹æŽ§åˆ¶
+ã€€ã€€(å›¾åƒ)
+/*è®¡ç®—1ï½ž100ä¹‹é—´æ‰€æœ‰èƒ½è¢«7æ•´é™¤çš„æ•°çš„æ€»å’Œã€‚*/
 DECLARE @sum INT , @i INT
 SET @sum=0
 SET @i=1
@@ -162,14 +162,14 @@ WHILE @i<=100
         SET @i+=1
     END
 PRINT @sum;
-/*CASE..ENDµÄÊ¹ÓÃ*/
-SELECT 'Ñ§ºÅ'=Sno, '¿Î³ÌºÅ'=Cno,
-  'µÈ¼¶'=
+/*CASE..ENDçš„ä½¿ç”¨*/
+SELECT 'å­¦å·'=Sno, 'è¯¾ç¨‹å·'=Cno,
+  'ç­‰çº§'=
     CASE
-       WHEN Grade<60 THEN '²»¼°¸ñ'
-       WHEN Grade BETWEEN 60 AND 69 THEN '²î'
-       WHEN Grade BETWEEN 70 AND 79 THEN 'ÖÐ'
-       WHEN Grade BETWEEN 80 AND 89 THEN 'Á¼'
-       ElSE 'ÓÅ'
+       WHEN Grade<60 THEN 'ä¸åŠæ ¼'
+       WHEN Grade BETWEEN 60 AND 69 THEN 'å·®'
+       WHEN Grade BETWEEN 70 AND 79 THEN 'ä¸­'
+       WHEN Grade BETWEEN 80 AND 89 THEN 'è‰¯'
+       ElSE 'ä¼˜'
     END
 FROM SC;

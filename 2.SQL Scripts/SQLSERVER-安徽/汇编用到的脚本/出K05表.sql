@@ -1,13 +1,13 @@
-/*²»ÏÔÊ¾Áã*/
+/*ä¸æ˜¾ç¤ºé›¶*/
 SELECT
-	REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(K05.K0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''),		--Â·Ïß±àºÅ
-	RTRIM(A50.K0112),	--Â·ÏßÃû³Æ
-	K05.K0105,		--Æğµã×®ºÅ
-	K05.K0106,		--Ö¹µã×®ºÅ
-	RTRIM(OBJJC),		--¼ì²â·½Ïò
-	RTRIM(HK0304),		--¼¼ÊõµÈ¼¶
-	CASE WHEN K5104 IN ('11','21','22','23') THEN 'Á¤Çà' WHEN K5104 IN ('12') THEN 'Ë®Äà' ELSE 'É°Ê¯' END,			--Â·ÃæÀàĞÍ
-	A5008,		--Â·¶Î³¤¶È(Ã×)
+	REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(K05.K0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''),		--è·¯çº¿ç¼–å·
+	RTRIM(A50.K0112),	--è·¯çº¿åç§°
+	K05.K0105,		--èµ·ç‚¹æ¡©å·
+	K05.K0106,		--æ­¢ç‚¹æ¡©å·
+	RTRIM(OBJJC),		--æ£€æµ‹æ–¹å‘
+	RTRIM(HK0304),		--æŠ€æœ¯ç­‰çº§
+	CASE WHEN K5104 IN ('11','21','22','23') THEN 'æ²¥é’' WHEN K5104 IN ('12') THEN 'æ°´æ³¥' ELSE 'ç ‚çŸ³' END,			--è·¯é¢ç±»å‹
+	A5008,		--è·¯æ®µé•¿åº¦(ç±³)
 	case when isnull(a5011,0)=0 then nullif(a5010,0) else a5010 end,		--MQI
 	nullif(a5011,0),		--PQI
 	case when isnull(a5011,0)=0 then nullif(a5011A,0) else a5011A end,		--PCI
@@ -20,7 +20,7 @@ SELECT
 	case when isnull(a5011,0)=0 then nullif(a5012,0) else a5012 end,		--SCI
 	case when isnull(a5011,0)=0 then nullif(a5013,0) else a5013 end,		--BCI
 	case when isnull(a5011,0)=0 then nullif(a5014,0) else a5014 end,		--TCI
-	case when k05.k0101 like '%D%' AND LEN(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(K05.K0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=4 then '³¤Á´-'+cast(isnull(a0129,'') as varchar(100)) else cast(isnull(a0129,'') as varchar(100)) end		--±¸×¢
+	case when k05.k0101 like '%D%' AND LEN(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(K05.K0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=4 then 'é•¿é“¾-'+cast(isnull(a0129,'') as varchar(100)) else cast(isnull(a0129,'') as varchar(100)) end		--å¤‡æ³¨
 FROM 	K05 	LEFT JOIN D132 ON K05.A5009=D132.OBJNAME
 		LEFT JOIN A50 ON K05.A0102=A50.A0102 AND K05.K0101=A50.K0101
 WHERE	K05.A0102 LIKE '34%'
