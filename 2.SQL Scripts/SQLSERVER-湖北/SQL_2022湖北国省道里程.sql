@@ -1,57 +1,57 @@
---å›½é“æ€»é‡Œç¨‹
+--¹úµÀ×ÜÀï³Ì
 select
 (case when left(rtrim(k0101),1)='h' then replace(rtrim(k0101),'h','g') else
 	case when left(rtrim(k0101),1)='t' then replace(rtrim(k0101),'t','s') else
-    case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) è·¯çº¿ä»£ç ,
-sum(isnull(k0114,0)) æ€»é‡Œç¨‹
+    case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) Â·Ïß´úÂë,
+sum(isnull(k0114,0)) ×ÜÀï³Ì
 from k01
 where left(k0101,1)in ('g') and isnull(k0123,'2')='2' and nullif(k0124,'') is null --and len(rtrim(k0101))>9
 group by
 (case when left(rtrim(k0101),1)='h' then replace(rtrim(k0101),'h','g') else
 	case when left(rtrim(k0101),1)='t' then replace(rtrim(k0101),'t','s') else
     case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) with rollup
-order by è·¯çº¿ä»£ç 
+order by Â·Ïß´úÂë
 
---å›½é«˜é‡Œç¨‹
+--¹ú¸ßÀï³Ì
 select
 (case when left(rtrim(k0101),1)='h' then replace(rtrim(k0101),'h','g') else
 	case when left(rtrim(k0101),1)='t' then replace(rtrim(k0101),'t','s') else
-    case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) è·¯çº¿ä»£ç ,
-sum(isnull(k0114,0)) æ€»é‡Œç¨‹
+    case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) Â·Ïß´úÂë,
+sum(isnull(k0114,0)) ×ÜÀï³Ì
 from k01
 where left(k0101,1)in ('g') and isnull(k0123,'2')='2' and nullif(k0124,'') is null and len(rtrim(k0101))<9
 group by
 (case when left(rtrim(k0101),1)='h' then replace(rtrim(k0101),'h','g') else
 	case when left(rtrim(k0101),1)='t' then replace(rtrim(k0101),'t','s') else
     case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) with rollup
-order by  è·¯çº¿ä»£ç 
+order by  Â·Ïß´úÂë
 
---çœé“æ€»é‡Œç¨‹
+--Ê¡µÀ×ÜÀï³Ì
 select
 (case when left(rtrim(k0101),1)='h' then replace(rtrim(k0101),'h','g') else
 	case when left(rtrim(k0101),1)='t' then replace(rtrim(k0101),'t','s') else
-    case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) è·¯çº¿ä»£ç ,
-sum(isnull(k0114,0)) æ€»é‡Œç¨‹
+    case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) Â·Ïß´úÂë,
+sum(isnull(k0114,0)) ×ÜÀï³Ì
 from k01
 where left(k0101,1)in ('s') and isnull(k0123,'2')='2' and nullif(k0124,'') is null --and len(rtrim(k0101))>9
 group by
 (case when left(rtrim(k0101),1)='h' then replace(rtrim(k0101),'h','g') else
 	case when left(rtrim(k0101),1)='t' then replace(rtrim(k0101),'t','s') else
     case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) with rollup
-order by è·¯çº¿ä»£ç 
+order by Â·Ïß´úÂë
 
---çœé«˜é‡Œç¨‹
+--Ê¡¸ßÀï³Ì
 select
 (case when left(rtrim(k0101),1)='h' then replace(rtrim(k0101),'h','g') else
 	case when left(rtrim(k0101),1)='t' then replace(rtrim(k0101),'t','s') else
-    case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) è·¯çº¿ä»£ç ,
-sum(isnull(k0114,0)) æ€»é‡Œç¨‹
+    case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) Â·Ïß´úÂë,
+sum(isnull(k0114,0)) ×ÜÀï³Ì
 from k01
 where left(k0101,1)in ('s') and isnull(k0123,'2')='2' and nullif(k0124,'') is null and len(rtrim(k0101))<9
 group by
 (case when left(rtrim(k0101),1)='h' then replace(rtrim(k0101),'h','g') else
 	case when left(rtrim(k0101),1)='t' then replace(rtrim(k0101),'t','s') else
     case when len(rtrim(k0101))>9 then left(rtrim(k0101),4) else rtrim(k0101) end end end) with rollup
-order by  è·¯çº¿ä»£ç 
+order by  Â·Ïß´úÂë
 
 

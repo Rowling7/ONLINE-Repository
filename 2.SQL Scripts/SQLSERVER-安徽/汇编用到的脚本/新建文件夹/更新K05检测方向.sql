@@ -8,7 +8,7 @@ where left(a0101a,4) ='2023'
 
 SELECT * from #t
 
-update #t set a5009='2' ,ha5009='涓婅'
+update #t set a5009='2' ,ha5009='上行'
 from #t
 where A5009='1'
 
@@ -23,7 +23,7 @@ having count(a0102+k0101+a0101a+k0105+hA5009)>1
 
 
 /*
-update k05 set a5009='2' ,ha5009='涓婅'
+update k05 set a5009='2' ,ha5009='上行'
 from k05
 where A5009='1'
 

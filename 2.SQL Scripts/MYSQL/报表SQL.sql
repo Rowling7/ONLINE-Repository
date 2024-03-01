@@ -1,14 +1,14 @@
 -- -----------------------------------> R0027<----------------------------------- --
--- 2023å¹´7æœˆ6æ—¥
+-- 2023Äê7ÔÂ6ÈÕ
 
--- å…¶ä»–ä¿¡æ¯é¡¹
+-- ÆäËûĞÅÏ¢Ïî
 SELECT
-CONCAT(:A0101 ,'å¹´')AS A0101,
-CONCAT('å•ä½è´Ÿè´£äºº:',:DWFZR) AS DWFZR,
-CONCAT('ç»Ÿè®¡è´Ÿè´£äºº:', :TJFZR) TJFZR,
-CONCAT('å¡«æŠ¥äºº:', :TBR) TBR,
-CONCAT('å¡«æŠ¥æ—¥æœŸ:', :TBRQ) TBRQ,
-B01_ID, B0111 ,CONCAT('ç®¡ç†å•ä½: ',b0101) AS B0101,CONCAT(B0111,'-',b0101) DWDM
+CONCAT(:A0101 ,'Äê')AS A0101,
+CONCAT('µ¥Î»¸ºÔğÈË:',:DWFZR) AS DWFZR,
+CONCAT('Í³¼Æ¸ºÔğÈË:', :TJFZR) TJFZR,
+CONCAT('Ìî±¨ÈË:', :TBR) TBR,
+CONCAT('Ìî±¨ÈÕÆÚ:', :TBRQ) TBRQ,
+B01_ID, B0111 ,CONCAT('¹ÜÀíµ¥Î»: ',b0101) AS B0101,CONCAT(B0111,'-',b0101) DWDM
 from b01
 where b01_id=:B01_ID and z0011!=3
 ORDER BY b0111;
@@ -16,25 +16,25 @@ ORDER BY b0111;
 
 
 -- -----------------------------------> R0027<----------------------------------- --
--- 2023å¹´7æœˆ4æ—¥
+-- 2023Äê7ÔÂ4ÈÕ
 
--- åˆè®¡
+-- ºÏ¼Æ
 select
-max(b.s9533) a3401,-- ç±»åˆ«
-max(c.s9533) a3402,-- å…·ä½“åå½•
+max(b.s9533) a3401,-- Àà±ğ
+max(c.s9533) a3402,-- ¾ßÌåÃûÂ¼
 '' NULL1,
-sum(ifnull(a3404,0)) a3404,-- å²—ä½æ•°é‡
-sum(ifnull(a3405,0)) a3405,-- è„±è´«æˆ·æ•°é‡
-cast(sum(ifnull(a3406,0)*ifnull(a3404,0))/nullif(sum(ifnull(a3404,0)),0) as decimal(6,1)) a3406,	-- å¹³å‡å¹´é¾„
-cast(sum(ifnull(a3407,0)*ifnull(a3404,0))/nullif(sum(ifnull(a3404,0)),0) as decimal(8,0)) a3407, -- å¹³å‡å¹´æ”¶å…¥ï¼ˆå…ƒï¼‰
+sum(ifnull(a3404,0)) a3404,-- ¸ÚÎ»ÊıÁ¿
+sum(ifnull(a3405,0)) a3405,-- ÍÑÆ¶»§ÊıÁ¿
+cast(sum(ifnull(a3406,0)*ifnull(a3404,0))/nullif(sum(ifnull(a3404,0)),0) as decimal(6,1)) a3406,	-- Æ½¾ùÄêÁä
+cast(sum(ifnull(a3407,0)*ifnull(a3404,0))/nullif(sum(ifnull(a3404,0)),0) as decimal(8,0)) a3407, -- Æ½¾ùÄêÊÕÈë£¨Ôª£©
 '' NULL2,
 '' NULL3,
 '' NULL4
 from A24 a
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 b on a.a3401=b.s951_id -- ç±»åˆ«
-left join s951 c on  a.a3402=c.s951_id -- å…·ä½“åå½•
-left join s951 d on a.a0101=d.s951_id -- å¹´é™
+left join s951 b on a.a3401=b.s951_id -- Àà±ğ
+left join s951 c on  a.a3402=c.s951_id -- ¾ßÌåÃûÂ¼
+left join s951 d on a.a0101=d.s951_id -- ÄêÏŞ
 -- where d.s9532 = :A0101 and a.z0011!=3
 -- and b01.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID ),'%')
 where d.s9532 = 2022 and a.z0011!=3
@@ -42,24 +42,24 @@ and b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912)
 group by a3401,a3402
 order by a3401,a3402;
 
--- è¯¦ç»†
+-- ÏêÏ¸
 select
-b.s9533 a3401,-- ç±»åˆ«
-c.s9533 a3402,-- å…·ä½“åå½•
-a3403 a3403,-- ä¸»è¦å·¥ä½œå†…å®¹
-ifnull(a3404,0) a3404,-- å²—ä½æ•°é‡
-ifnull(a3405,0) a3405,-- è„±è´«æˆ·æ•°é‡
-ifnull(a3406,0) a3406,-- å¹³å‡å¹´é¾„
-ifnull(a3407,0) a3407,-- å¹³å‡å¹´æ”¶å…¥ï¼ˆå…ƒï¼‰
-a3408 a3408,-- ä¸»è¦èµ„é‡‘æ¥æº
-cast(a0129 as char) a0129,-- å¤‡æ³¨
+b.s9533 a3401,-- Àà±ğ
+c.s9533 a3402,-- ¾ßÌåÃûÂ¼
+a3403 a3403,-- Ö÷Òª¹¤×÷ÄÚÈİ
+ifnull(a3404,0) a3404,-- ¸ÚÎ»ÊıÁ¿
+ifnull(a3405,0) a3405,-- ÍÑÆ¶»§ÊıÁ¿
+ifnull(a3406,0) a3406,-- Æ½¾ùÄêÁä
+ifnull(a3407,0) a3407,-- Æ½¾ùÄêÊÕÈë£¨Ôª£©
+a3408 a3408,-- Ö÷Òª×Ê½ğÀ´Ô´
+cast(a0129 as char) a0129,-- ±¸×¢
 e.s9532 a0103
 from A24 a
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 b on a.a3401=b.s951_id -- ç±»åˆ«
-left join s951 c on  a.a3402=c.s951_id -- å…·ä½“åå½•
-left join s951 d on a.a0101=d.s951_id -- å¹´é™
-left join s951 e on  a.a0103=e.s951_id -- å•ä½ä»£ç 
+left join s951 b on a.a3401=b.s951_id -- Àà±ğ
+left join s951 c on  a.a3402=c.s951_id -- ¾ßÌåÃûÂ¼
+left join s951 d on a.a0101=d.s951_id -- ÄêÏŞ
+left join s951 e on  a.a0103=e.s951_id -- µ¥Î»´úÂë
 -- where d.s9532 = :A0101 and a.z0011!=3
 -- and b01.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID ),'%')
 where d.s9532 = 2022 and a.z0011!=3
@@ -69,46 +69,46 @@ order by e.s9532 ,b.s9533,c.s9533;
 
 
 -- -----------------------------------> R0028<----------------------------------- --
--- 2023å¹´7æœˆ4æ—¥
+-- 2023Äê7ÔÂ4ÈÕ
 
--- åˆè®¡
+-- ºÏ¼Æ
 select
-'åˆè®¡' SUM0,-- å¿çº§æ€»è·¯é•¿è¡Œæ”¿èŒåŠ¡
-sum(ifnull(a3411,0)+ifnull(a3412,0)+ifnull(a3413,0)) SUM1,-- åˆè®¡
-sum(ifnull(a3411,0)) a3411,-- å¿çº§
-sum(ifnull(a3412,0)) a3412,-- ä¹¡çº§
-sum(ifnull(a3413,0)) a3413,-- æ‘çº§
-sum(ifnull(a3414,0)+ifnull(a3415,0)+ifnull(a3416,0)) SUM2,-- åˆè®¡
-sum(ifnull(a3414,0)) a3414,-- å¿é“
-sum(ifnull(a3415,0)) a3415,-- ä¹¡é“
-sum(ifnull(a3416,0)) a3416-- æ‘é“
+'ºÏ¼Æ' SUM0,-- ÏØ¼¶×ÜÂ·³¤ĞĞÕşÖ°Îñ
+sum(ifnull(a3411,0)+ifnull(a3412,0)+ifnull(a3413,0)) SUM1,-- ºÏ¼Æ
+sum(ifnull(a3411,0)) a3411,-- ÏØ¼¶
+sum(ifnull(a3412,0)) a3412,-- Ïç¼¶
+sum(ifnull(a3413,0)) a3413,-- ´å¼¶
+sum(ifnull(a3414,0)+ifnull(a3415,0)+ifnull(a3416,0)) SUM2,-- ºÏ¼Æ
+sum(ifnull(a3414,0)) a3414,-- ÏØµÀ
+sum(ifnull(a3415,0)) a3415,-- ÏçµÀ
+sum(ifnull(a3416,0)) a3416-- ´åµÀ
 from A25 A
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 d on a.a0101=d.s951_id -- å¹´é™
+left join s951 d on a.a0101=d.s951_id -- ÄêÏŞ
 -- where d.s9532 = :A0101 and a.z0011!=3
 -- and b01.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID ),'%')
 where d.s9532 = 2022 and a.z0011!=3
 and b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912),'%');
 
--- è¯¦ç»†
+-- ÏêÏ¸
 select
-e.s9532 a0103,-- å¿çº§è¡Œæ”¿ä»£ç 
-A3410 A3410,-- å¿çº§æ€»è·¯é•¿è¡Œæ”¿èŒåŠ¡
-(ifnull(a3411,0)+ifnull(a3412,0)+ifnull(a3413,0)) SUM1,-- åˆè®¡
-ifnull(a3411,0) a3411,-- å¿çº§
-ifnull(a3412,0) a3412,-- ä¹¡çº§
-ifnull(a3413,0) a3413,-- æ‘çº§
-(ifnull(a3414,0)+ifnull(a3415,0)+ifnull(a3416,0)) SUM2,-- åˆè®¡
-ifnull(a3414,0) a3414,-- å¿é“
-ifnull(a3415,0) a3415,-- ä¹¡é“
-ifnull(a3416,0) a3416, -- æ‘é“
-b.s9533 a3417,-- æ˜¯å¦åº”ç”¨ä¿¡æ¯åŒ–
-cast(a0129 as char) a0129-- å¤‡æ³¨
+e.s9532 a0103,-- ÏØ¼¶ĞĞÕş´úÂë
+A3410 A3410,-- ÏØ¼¶×ÜÂ·³¤ĞĞÕşÖ°Îñ
+(ifnull(a3411,0)+ifnull(a3412,0)+ifnull(a3413,0)) SUM1,-- ºÏ¼Æ
+ifnull(a3411,0) a3411,-- ÏØ¼¶
+ifnull(a3412,0) a3412,-- Ïç¼¶
+ifnull(a3413,0) a3413,-- ´å¼¶
+(ifnull(a3414,0)+ifnull(a3415,0)+ifnull(a3416,0)) SUM2,-- ºÏ¼Æ
+ifnull(a3414,0) a3414,-- ÏØµÀ
+ifnull(a3415,0) a3415,-- ÏçµÀ
+ifnull(a3416,0) a3416, -- ´åµÀ
+b.s9533 a3417,-- ÊÇ·ñÓ¦ÓÃĞÅÏ¢»¯
+cast(a0129 as char) a0129-- ±¸×¢
 from A25 A
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 b on a.a3417=b.s951_id -- æ˜¯å¦åº”ç”¨ä¿¡æ¯åŒ–
-left join s951 d on a.a0101=d.s951_id -- å¹´é™
-left join s951 e on  a.a0103=e.s951_id -- å•ä½ä»£ç 
+left join s951 b on a.a3417=b.s951_id -- ÊÇ·ñÓ¦ÓÃĞÅÏ¢»¯
+left join s951 d on a.a0101=d.s951_id -- ÄêÏŞ
+left join s951 e on  a.a0103=e.s951_id -- µ¥Î»´úÂë
 -- where d.s9532 = :A0101 and a.z0011!=3
 -- and b01.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID ),'%')
 where d.s9532 = 2022 and a.z0011!=3
@@ -116,37 +116,37 @@ and b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912)
 
 
 -- -----------------------------------> R0026<----------------------------------- --
--- 2023å¹´7æœˆ5æ—¥
+-- 2023Äê7ÔÂ5ÈÕ
 
 SELECT
-COALESCE(e.s9533,e.s9532,'åˆè®¡') ha0103,-- å•ä½ä»£ç 
-COALESCE(e.s9532,e.s9533,'42') a0103,-- å•ä½åç§°
--- e.s9533 ha0103,-- å•ä½åç§°
--- e.s9532 a0103,-- å•ä½ä»£ç 
-SUM(ifnull(A0108A,0)) A0108A,-- å…»æŠ¤å·¥åŒºé“ç­
-SUM(ifnull(A0118A,0)) A0118A, -- å…»æŠ¤ä¼ä¸š(ä¸ª)
-SUM(ifnull(A0119A,0)) A0119A,-- æ”¶è´¹å…¬è·¯ç»è¥ä¼ä¸š(ä¸ª)
+COALESCE(e.s9533,e.s9532,'ºÏ¼Æ') ha0103,-- µ¥Î»´úÂë
+COALESCE(e.s9532,e.s9533,'42') a0103,-- µ¥Î»Ãû³Æ
+-- e.s9533 ha0103,-- µ¥Î»Ãû³Æ
+-- e.s9532 a0103,-- µ¥Î»´úÂë
+SUM(ifnull(A0108A,0)) A0108A,-- Ñø»¤¹¤ÇøµÀ°à
+SUM(ifnull(A0118A,0)) A0118A, -- Ñø»¤ÆóÒµ(¸ö)
+SUM(ifnull(A0119A,0)) A0119A,-- ÊÕ·Ñ¹«Â·¾­ÓªÆóÒµ(¸ö)
 sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)+ifnull(A0834a,0)+ifnull(A0835a,0)+
-	ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum2, -- åˆè®¡
-sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)+ifnull(A0834a,0)+ifnull(A0835a,0)) sum3, -- å°è®¡
-sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)) sum6, -- åœ¨å²—èŒå·¥
-sum(ifnull(A0830a,0)) A0830a,	-- å·¥ç¨‹æŠ€æœ¯äººå‘˜
-sum(ifnull(A0831a,0)) A0831a,	-- äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0832a,0)) A0832a,	-- åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0833a,0)) A0833a,	-- ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0834a,0)) A0834a,	-- åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0835a,0)) A0835a,	-- å…¶ä»–äººå‘˜
-sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum4, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)) sum5, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821a,0)) A0821a, -- å·¥åŒº_äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0822a,0)) A0822a, -- å·¥åŒº_åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0823a,0)) A0823a, -- å·¥åŒº_ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0836a,0)) A0836a, -- å·¥åŒº_åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0824a,0)) A0824a  -- å·¥åŒº_å…¶ä»–äººå‘˜
+	ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum2, -- ºÏ¼Æ
+sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)+ifnull(A0834a,0)+ifnull(A0835a,0)) sum3, -- Ğ¡¼Æ
+sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)) sum6, -- ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0830a,0)) A0830a,	-- ¹¤³Ì¼¼ÊõÈËÔ±
+sum(ifnull(A0831a,0)) A0831a,	-- ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0832a,0)) A0832a,	-- ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0833a,0)) A0833a,	-- ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0834a,0)) A0834a,	-- ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0835a,0)) A0835a,	-- ÆäËûÈËÔ±
+sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum4, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)) sum5, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821a,0)) A0821a, -- ¹¤Çø_ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0822a,0)) A0822a, -- ¹¤Çø_ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0823a,0)) A0823a, -- ¹¤Çø_ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0836a,0)) A0836a, -- ¹¤Çø_ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0824a,0)) A0824a  -- ¹¤Çø_ÆäËûÈËÔ±
 from a21 a
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 e on  a.a0103=e.s951_id -- å•ä½ä»£ç 
-left join s951 d on a.a0101=d.s951_id -- å¹´é™
+left join s951 e on  a.a0103=e.s951_id -- µ¥Î»´úÂë
+left join s951 d on a.a0101=d.s951_id -- ÄêÏŞ
 -- where d.s9532 = :A0101 and a.z0011!=3
 -- and b01.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID ),'%')
 where  d.s9532 = '2022' and a.z0011!=3
@@ -155,38 +155,38 @@ and left (b01.b0111,3)<>'42a'
 and (LENGTH(e.s9532)=6 )
 and e.s9532 not in('420201','420301','420501','420601','420701','421001','421101','421201','421301')
 GROUP BY e.s9532 ,e.s9533 with rollup
-having COALESCE(e.s9533,e.s9532,'åˆè®¡')<>COALESCE(e.s9532,e.s9533,'42');
+having COALESCE(e.s9533,e.s9532,'ºÏ¼Æ')<>COALESCE(e.s9532,e.s9533,'42');
 
-/*  --åˆè®¡è¡Œ
+/*  --ºÏ¼ÆĞĞ
 SELECT
--- e.s9533 ha0103,-- å•ä½åç§°
--- e.s9532 a0103,-- å•ä½ä»£ç 
-'åˆè®¡' ha0103,-- å•ä½åç§°
-'' a0103,-- å•ä½ä»£ç 
-SUM(ifnull(A0108A,0)) A0108A,-- å…»æŠ¤å·¥åŒºé“ç­
-SUM(ifnull(A0118A,0)) A0118A, -- å…»æŠ¤ä¼ä¸š(ä¸ª)
-SUM(ifnull(A0119A,0)) A0119A,-- æ”¶è´¹å…¬è·¯ç»è¥ä¼ä¸š(ä¸ª)
+-- e.s9533 ha0103,-- µ¥Î»Ãû³Æ
+-- e.s9532 a0103,-- µ¥Î»´úÂë
+'ºÏ¼Æ' ha0103,-- µ¥Î»Ãû³Æ
+'' a0103,-- µ¥Î»´úÂë
+SUM(ifnull(A0108A,0)) A0108A,-- Ñø»¤¹¤ÇøµÀ°à
+SUM(ifnull(A0118A,0)) A0118A, -- Ñø»¤ÆóÒµ(¸ö)
+SUM(ifnull(A0119A,0)) A0119A,-- ÊÕ·Ñ¹«Â·¾­ÓªÆóÒµ(¸ö)
 sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)+ifnull(A0834a,0)+ifnull(A0835a,0)+
-	ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum2, -- åˆè®¡
-sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)+ifnull(A0834a,0)+ifnull(A0835a,0)) sum3, -- å°è®¡
-sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)) sum6, -- åœ¨å²—èŒå·¥
-sum(ifnull(A0830a,0)) A0830a,	-- å·¥ç¨‹æŠ€æœ¯äººå‘˜
-sum(ifnull(A0831a,0)) A0831a,	-- äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0832a,0)) A0832a,	-- åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0833a,0)) A0833a,	-- ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0834a,0)) A0834a,	-- åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0835a,0)) A0835a,	-- å…¶ä»–äººå‘˜
-sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum4, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)) sum5, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821a,0)) A0821a, -- å·¥åŒº_äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0822a,0)) A0822a, -- å·¥åŒº_åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0823a,0)) A0823a, -- å·¥åŒº_ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0836a,0)) A0836a, -- å·¥åŒº_åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0824a,0)) A0824a  -- å·¥åŒº_å…¶ä»–äººå‘˜
+	ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum2, -- ºÏ¼Æ
+sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)+ifnull(A0834a,0)+ifnull(A0835a,0)) sum3, -- Ğ¡¼Æ
+sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)) sum6, -- ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0830a,0)) A0830a,	-- ¹¤³Ì¼¼ÊõÈËÔ±
+sum(ifnull(A0831a,0)) A0831a,	-- ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0832a,0)) A0832a,	-- ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0833a,0)) A0833a,	-- ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0834a,0)) A0834a,	-- ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0835a,0)) A0835a,	-- ÆäËûÈËÔ±
+sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum4, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)) sum5, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821a,0)) A0821a, -- ¹¤Çø_ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0822a,0)) A0822a, -- ¹¤Çø_ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0823a,0)) A0823a, -- ¹¤Çø_ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0836a,0)) A0836a, -- ¹¤Çø_ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0824a,0)) A0824a  -- ¹¤Çø_ÆäËûÈËÔ±
 from a21 a
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 e on  a.a0103=e.s951_id -- å•ä½ä»£ç 
-left join s951 d on a.a0101=d.s951_id -- å¹´é™
+left join s951 e on  a.a0103=e.s951_id -- µ¥Î»´úÂë
+left join s951 d on a.a0101=d.s951_id -- ÄêÏŞ
 -- where d.s9532 = :A0101 and a.z0011!=3
 -- and b01.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID ),'%')
 where  d.s9532 = '2022' and a.z0011!=3
@@ -198,35 +198,35 @@ and e.s9532 not in('420201','420301','420501','420601','420701','421001','421101
 
 */
 
-/*-- è¯¦ç»†æ•°æ®
+/*-- ÏêÏ¸Êı¾İ
 
 SELECT
-e.s9532 a0103,-- å•ä½ä»£ç 
-e.s9533 ha0103,-- å•ä½åç§°
-SUM(ifnull(A0108A,0)) A0108A,-- å…»æŠ¤å·¥åŒºé“ç­
-SUM(ifnull(A0118A,0)) A0118A, -- å…»æŠ¤ä¼ä¸š(ä¸ª)
-SUM(ifnull(A0119A,0)) A0119A,-- æ”¶è´¹å…¬è·¯ç»è¥ä¼ä¸š(ä¸ª)
+e.s9532 a0103,-- µ¥Î»´úÂë
+e.s9533 ha0103,-- µ¥Î»Ãû³Æ
+SUM(ifnull(A0108A,0)) A0108A,-- Ñø»¤¹¤ÇøµÀ°à
+SUM(ifnull(A0118A,0)) A0118A, -- Ñø»¤ÆóÒµ(¸ö)
+SUM(ifnull(A0119A,0)) A0119A,-- ÊÕ·Ñ¹«Â·¾­ÓªÆóÒµ(¸ö)
 sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)+ifnull(A0834a,0)+ifnull(A0835a,0)+
-	ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum2, -- åˆè®¡
-sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)+ifnull(A0834a,0)+ifnull(A0835a,0)) sum3, -- å°è®¡
-sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)) sum6, -- åœ¨å²—èŒå·¥
-sum(ifnull(A0830a,0)) A0830a,	-- å·¥ç¨‹æŠ€æœ¯äººå‘˜
-sum(ifnull(A0831a,0)) A0831a,	-- äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0832a,0)) A0832a,	-- åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0833a,0)) A0833a,	-- ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0834a,0)) A0834a,	-- åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0835a,0)) A0835a,	-- å…¶ä»–äººå‘˜
-sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum4, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)) sum5, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821a,0)) A0821a, -- å·¥åŒº_äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0822a,0)) A0822a, -- å·¥åŒº_åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0823a,0)) A0823a, -- å·¥åŒº_ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0836a,0)) A0836a, -- å·¥åŒº_åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0824a,0)) A0824a  -- å·¥åŒº_å…¶ä»–äººå‘˜
+	ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum2, -- ºÏ¼Æ
+sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)+ifnull(A0834a,0)+ifnull(A0835a,0)) sum3, -- Ğ¡¼Æ
+sum(ifnull(A0831a,0)+ifnull(A0832a,0)+ifnull(A0833a,0)) sum6, -- ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0830a,0)) A0830a,	-- ¹¤³Ì¼¼ÊõÈËÔ±
+sum(ifnull(A0831a,0)) A0831a,	-- ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0832a,0)) A0832a,	-- ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0833a,0)) A0833a,	-- ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0834a,0)) A0834a,	-- ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0835a,0)) A0835a,	-- ÆäËûÈËÔ±
+sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)+ifnull(A0836a,0)+ifnull(A0824a,0)) sum4, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821a,0)+ifnull(A0822a,0)+ifnull(A0823a,0)) sum5, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821a,0)) A0821a, -- ¹¤Çø_ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0822a,0)) A0822a, -- ¹¤Çø_ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0823a,0)) A0823a, -- ¹¤Çø_ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0836a,0)) A0836a, -- ¹¤Çø_ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0824a,0)) A0824a  -- ¹¤Çø_ÆäËûÈËÔ±
 from a21 a
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 e on  a.a0103=e.s951_id -- å•ä½ä»£ç 
-left join s951 d on a.a0101=d.s951_id -- å¹´é™
+left join s951 e on  a.a0103=e.s951_id -- µ¥Î»´úÂë
+left join s951 d on a.a0101=d.s951_id -- ÄêÏŞ
  where  d.s9532 = '2022' and a.z0011!=3
 and b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912),'%')
 and left (b01.b0111,3)<>'42a'
@@ -239,35 +239,35 @@ GROUP BY e.s9532 ,e.s9533
 
 
 -- -----------------------------------> R0025<----------------------------------- --
--- 2023å¹´7æœˆ6æ—¥
+-- 2023Äê7ÔÂ6ÈÕ
 
--- åˆè®¡
+-- ºÏ¼Æ
 select
-'åˆè®¡' GS ,	-- ç®¡ç†å•ä½åç§°
- '' BM ,	-- ç®¡ç†å•ä½ä»£ç 
-SUM(ifnull(A0108 ,0)) A0108 ,	-- å…»æŠ¤å·¥åŒºé“ç­
-SUM(ifnull(A1118 ,0)) A1118 , 	-- å…»æŠ¤ä¼ä¸š(ä¸ª)
-SUM(ifnull(A0109 ,0)) A0109 ,	-- æ”¶è´¹å…¬è·¯ç»è¥ä¼ä¸š(ä¸ª)
+'ºÏ¼Æ' GS ,	-- ¹ÜÀíµ¥Î»Ãû³Æ
+ '' BM ,	-- ¹ÜÀíµ¥Î»´úÂë
+SUM(ifnull(A0108 ,0)) A0108 ,	-- Ñø»¤¹¤ÇøµÀ°à
+SUM(ifnull(A1118 ,0)) A1118 , 	-- Ñø»¤ÆóÒµ(¸ö)
+SUM(ifnull(A0109 ,0)) A0109 ,	-- ÊÕ·Ñ¹«Â·¾­ÓªÆóÒµ(¸ö)
 sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)+ifnull(A0834 ,0)+ifnull(A0835 ,0)+
-	ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)+ifnull(A0836 ,0)+ifnull(A0824 ,0)) sum0,	-- åˆè®¡
-sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)+ifnull(A0834 ,0)+ifnull(A0835 ,0)) sum1,	-- å°è®¡
-sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)) sum2 , -- åœ¨å²—èŒå·¥
-sum(ifnull(A0830 ,0)) A0830,	-- å·¥ç¨‹æŠ€æœ¯äººå‘˜
-sum(ifnull(A0831 ,0)) A0831,	-- äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0832 ,0)) A0832,	-- åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0833 ,0)) A0833,	-- ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0834 ,0)) A0834,	-- åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0835 ,0)) A0835,	-- å…¶ä»–äººå‘˜
-sum(ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)+ifnull(A0836 ,0)+ifnull(A0824 ,0)) sum3, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)) sum4, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821 ,0)) A0821, -- å·¥åŒº_äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0822 ,0)) A0822, -- å·¥åŒº_åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0823 ,0)) A0823, -- å·¥åŒº_ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0836 ,0)) A0836, -- å·¥åŒº_åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0824 ,0)) A0824 -- å·¥åŒº_å…¶ä»–äººå‘˜
+	ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)+ifnull(A0836 ,0)+ifnull(A0824 ,0)) sum0,	-- ºÏ¼Æ
+sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)+ifnull(A0834 ,0)+ifnull(A0835 ,0)) sum1,	-- Ğ¡¼Æ
+sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)) sum2 , -- ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0830 ,0)) A0830,	-- ¹¤³Ì¼¼ÊõÈËÔ±
+sum(ifnull(A0831 ,0)) A0831,	-- ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0832 ,0)) A0832,	-- ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0833 ,0)) A0833,	-- ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0834 ,0)) A0834,	-- ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0835 ,0)) A0835,	-- ÆäËûÈËÔ±
+sum(ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)+ifnull(A0836 ,0)+ifnull(A0824 ,0)) sum3, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)) sum4, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821 ,0)) A0821, -- ¹¤Çø_ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0822 ,0)) A0822, -- ¹¤Çø_ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0823 ,0)) A0823, -- ¹¤Çø_ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0836 ,0)) A0836, -- ¹¤Çø_ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0824 ,0)) A0824 -- ¹¤Çø_ÆäËûÈËÔ±
 from a21 a
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 d on a.a0101=d.s951_id --  å¹´é™
+left join s951 d on a.a0101=d.s951_id --  ÄêÏŞ
 left JOIN XQLXB ON B01.B0111 =G02
 left join GYDWB on GS=MC
 --  where d.s9532 = :A0101 and a.z0011!=3
@@ -276,33 +276,33 @@ where  d.s9532 = '2022' and a.z0011!=3
 and b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912) ,'%')
 and left (b01.b0111 ,3)<>'42a'  ;
 
--- è¯¦ç»†
+-- ÏêÏ¸
 select
-GS GS ,-- ç®¡ç†å•ä½åç§°
-BM BM ,-- ç®¡ç†å•ä½ä»£ç 
-SUM(ifnull(A0108 ,0)) A0108 ,		-- å…»æŠ¤å·¥åŒºé“ç­
-SUM(ifnull(A1118 ,0)) A1118 , 	-- å…»æŠ¤ä¼ä¸š(ä¸ª)
-SUM(ifnull(A0109 ,0)) A0109 ,		-- æ”¶è´¹å…¬è·¯ç»è¥ä¼ä¸š(ä¸ª)
+GS GS ,-- ¹ÜÀíµ¥Î»Ãû³Æ
+BM BM ,-- ¹ÜÀíµ¥Î»´úÂë
+SUM(ifnull(A0108 ,0)) A0108 ,		-- Ñø»¤¹¤ÇøµÀ°à
+SUM(ifnull(A1118 ,0)) A1118 , 	-- Ñø»¤ÆóÒµ(¸ö)
+SUM(ifnull(A0109 ,0)) A0109 ,		-- ÊÕ·Ñ¹«Â·¾­ÓªÆóÒµ(¸ö)
 sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)+ifnull(A0834 ,0)+ifnull(A0835 ,0)+
-	ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)+ifnull(A0836 ,0)+ifnull(A0824 ,0)) sum0, -- åˆè®¡
-sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)+ifnull(A0834 ,0)+ifnull(A0835 ,0)) sum1, -- å°è®¡
-sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)) sum2 , -- åœ¨å²—èŒå·¥
-sum(ifnull(A0830 ,0)) A0830,	-- å·¥ç¨‹æŠ€æœ¯äººå‘˜
-sum(ifnull(A0831 ,0)) A0831,	-- äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0832 ,0)) A0832,	-- åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0833 ,0)) A0833,	-- ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0834 ,0)) A0834,	-- åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0835 ,0)) A0835,	-- å…¶ä»–äººå‘˜
-sum(ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)+ifnull(A0836 ,0)+ifnull(A0824 ,0)) sum3, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)) sum4, -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821 ,0)) A0821, -- å·¥åŒº_äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0822 ,0)) A0822, -- å·¥åŒº_åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0823 ,0)) A0823, -- å·¥åŒº_ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0836 ,0)) A0836, -- å·¥åŒº_åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0824 ,0)) A0824 -- å·¥åŒº_å…¶ä»–äººå‘˜
+	ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)+ifnull(A0836 ,0)+ifnull(A0824 ,0)) sum0, -- ºÏ¼Æ
+sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)+ifnull(A0834 ,0)+ifnull(A0835 ,0)) sum1, -- Ğ¡¼Æ
+sum(ifnull(A0831 ,0)+ifnull(A0832 ,0)+ifnull(A0833 ,0)) sum2 , -- ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0830 ,0)) A0830,	-- ¹¤³Ì¼¼ÊõÈËÔ±
+sum(ifnull(A0831 ,0)) A0831,	-- ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0832 ,0)) A0832,	-- ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0833 ,0)) A0833,	-- ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0834 ,0)) A0834,	-- ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0835 ,0)) A0835,	-- ÆäËûÈËÔ±
+sum(ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)+ifnull(A0836 ,0)+ifnull(A0824 ,0)) sum3, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821 ,0)+ifnull(A0822 ,0)+ifnull(A0823 ,0)) sum4, -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821 ,0)) A0821, -- ¹¤Çø_ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0822 ,0)) A0822, -- ¹¤Çø_ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0823 ,0)) A0823, -- ¹¤Çø_ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0836 ,0)) A0836, -- ¹¤Çø_ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0824 ,0)) A0824 -- ¹¤Çø_ÆäËûÈËÔ±
 from a21 a
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 d on a.a0101=d.s951_id --  å¹´é™
+left join s951 d on a.a0101=d.s951_id --  ÄêÏŞ
 left JOIN XQLXB ON B01.B0111 =G02
 left join GYDWB on GS=MC
 --  where d.s9532 = :A0101 and a.z0011!=3
@@ -314,36 +314,36 @@ GROUP BY b0111,GS,bm ;
 
 
 -- -----------------------------------> R0024<----------------------------------- --
--- 2023å¹´7æœˆ6æ—¥
+-- 2023Äê7ÔÂ6ÈÕ
 
--- è¯¦ç»†
+-- ÏêÏ¸
 select
-b01.b0101 ha0103,-- å•ä½åç§°
-b01.b0111 a0103,-- å•ä½ä»£ç 
-SUM(ifnull(A0108b, 0)) A0108b, 	-- å…»æŠ¤å·¥åŒºé“ç­
-SUM(ifnull(A0118b, 0)) A0118b,	-- å…»æŠ¤ä¼ä¸š(ä¸ª)
-SUM(ifnull(A0119b, 0)) A0119b, 	-- æ”¶è´¹å…¬è·¯ç»è¥ä¼ä¸š(ä¸ª)
+b01.b0101 ha0103,-- µ¥Î»Ãû³Æ
+b01.b0111 a0103,-- µ¥Î»´úÂë
+SUM(ifnull(A0108b, 0)) A0108b, 	-- Ñø»¤¹¤ÇøµÀ°à
+SUM(ifnull(A0118b, 0)) A0118b,	-- Ñø»¤ÆóÒµ(¸ö)
+SUM(ifnull(A0119b, 0)) A0119b, 	-- ÊÕ·Ñ¹«Â·¾­ÓªÆóÒµ(¸ö)
 sum(ifnull(A0831b, 0)+ifnull(A0832b, 0)+ifnull(A0833b, 0)+ifnull(A0834b, 0)+ifnull(A0835b, 0)+
-	ifnull(A0821b, 0)+ifnull(A0822b, 0)+ifnull(A0823b, 0)+ifnull(A0836b, 0)+ifnull(A0824b, 0)) sum0,  -- åˆè®¡
-sum(ifnull(A0831b, 0)+ifnull(A0832b, 0)+ifnull(A0833b, 0)+ifnull(A0834b, 0)+ifnull(A0835b, 0)) sum1,  -- å°è®¡
-sum(ifnull(A0831b, 0)+ifnull(A0832b, 0)+ifnull(A0833b, 0))sum2,  -- åœ¨å²—èŒå·¥
-sum(ifnull(A0830b, 0)) A0830b, 	-- å·¥ç¨‹æŠ€æœ¯äººå‘˜
-sum(ifnull(A0831b, 0)) A0831b, 	-- äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0832b, 0)) A0832b, 	-- åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0833b, 0)) A0833b, 	-- ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0834b, 0)) A0834b, 	-- åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0835b, 0)) A0835b, 	-- å…¶ä»–äººå‘˜
-sum(ifnull(A0821b, 0)+ifnull(A0822b, 0)+ifnull(A0823b, 0)+ifnull(A0836b, 0)+ifnull(A0824b, 0)) sum3,  -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821b, 0)+ifnull(A0822b, 0)+ifnull(A0823b, 0)) sum4,  -- å·¥åŒº_åœ¨å²—èŒå·¥
-sum(ifnull(A0821b, 0)) A0821b,	-- å·¥åŒº_äº‹ä¸šèº«ä»½äººå‘˜
-sum(ifnull(A0822b, 0)) A0822b,	-- å·¥åŒº_åˆåŒåˆ¶äººå‘˜
-sum(ifnull(A0823b, 0)) A0823b,	-- å·¥åŒº_ä¸´æ—¶è˜ç”¨äººå‘˜
-sum(ifnull(A0836b, 0)) A0836b,	-- å·¥åŒº_åŠ³åŠ¡æ´¾é£äººå‘˜
-sum(ifnull(A0824b, 0)) A0824b 	-- å·¥åŒº_å…¶ä»–äººå‘˜
+	ifnull(A0821b, 0)+ifnull(A0822b, 0)+ifnull(A0823b, 0)+ifnull(A0836b, 0)+ifnull(A0824b, 0)) sum0,  -- ºÏ¼Æ
+sum(ifnull(A0831b, 0)+ifnull(A0832b, 0)+ifnull(A0833b, 0)+ifnull(A0834b, 0)+ifnull(A0835b, 0)) sum1,  -- Ğ¡¼Æ
+sum(ifnull(A0831b, 0)+ifnull(A0832b, 0)+ifnull(A0833b, 0))sum2,  -- ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0830b, 0)) A0830b, 	-- ¹¤³Ì¼¼ÊõÈËÔ±
+sum(ifnull(A0831b, 0)) A0831b, 	-- ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0832b, 0)) A0832b, 	-- ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0833b, 0)) A0833b, 	-- ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0834b, 0)) A0834b, 	-- ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0835b, 0)) A0835b, 	-- ÆäËûÈËÔ±
+sum(ifnull(A0821b, 0)+ifnull(A0822b, 0)+ifnull(A0823b, 0)+ifnull(A0836b, 0)+ifnull(A0824b, 0)) sum3,  -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821b, 0)+ifnull(A0822b, 0)+ifnull(A0823b, 0)) sum4,  -- ¹¤Çø_ÔÚ¸ÚÖ°¹¤
+sum(ifnull(A0821b, 0)) A0821b,	-- ¹¤Çø_ÊÂÒµÉí·İÈËÔ±
+sum(ifnull(A0822b, 0)) A0822b,	-- ¹¤Çø_ºÏÍ¬ÖÆÈËÔ±
+sum(ifnull(A0823b, 0)) A0823b,	-- ¹¤Çø_ÁÙÊ±Æ¸ÓÃÈËÔ±
+sum(ifnull(A0836b, 0)) A0836b,	-- ¹¤Çø_ÀÍÎñÅÉÇ²ÈËÔ±
+sum(ifnull(A0824b, 0)) A0824b 	-- ¹¤Çø_ÆäËûÈËÔ±
 from a21 A
 left join b01 on a.B01_ID=b01.B01_ID
-left join s951 d on a.a0101=d.s951_id -- å¹´é™
-left join s951 e on  a.a0103=e.s951_id -- å•ä½ä»£ç 
+left join s951 d on a.a0101=d.s951_id -- ÄêÏŞ
+left join s951 e on  a.a0103=e.s951_id -- µ¥Î»´úÂë
 -- where d.s9532 = :A0101 and a.z0011!=3
 -- and b01.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID ),'%')
 where  d.s9532 = '2022' and a.z0011!=3

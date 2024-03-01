@@ -1,16 +1,16 @@
-/*ä¸æ˜¾ç¤ºé›¶*/
+/*²»ÏÔÊ¾Áã*/
 select
-	'ä¹¡é“',	--è·¯çº¿ç¼–å·
-	'',		--è¡Œæ”¿åŒºåˆ’ä»£ç 
-	'',		--è·¯çº¿åç§°
-	'',		--èµ·ç‚¹æ¡©å·
-	'',		--æ­¢ç‚¹æ¡©å·
-	'',		--æ£€æµ‹æ–¹å‘
-	'',		--æŠ€æœ¯ç­‰çº§
-	'',		--è·¯é¢ç±»åž‹
+	'ÏçµÀ',	--Â·Ïß±àºÅ
+	'',		--ÐÐÕþÇø»®´úÂë
+	'',		--Â·ÏßÃû³Æ
+	'',		--Æðµã×®ºÅ
+	'',		--Ö¹µã×®ºÅ
+	'',		--¼ì²â·½Ïò
+	'',		--¼¼ÊõµÈ¼¶
+	'',		--Â·ÃæÀàÐÍ
 	CAST(CAST((ISNULL(SUM(CASE WHEN ISNULL(A5009,'') IN ('2','3') THEN isnull(a5008,0) END)/2,0)+
-	ISNULL(SUM(CASE WHEN ISNULL(A5009,'') IN ('1') THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) AS VARCHAR)+'å…¬é‡Œ',	--è·¯æ®µé•¿åº¦(å…¬é‡Œ)
-	'',		--è·¯æ®µå®½åº¦(ç±³)
+	ISNULL(SUM(CASE WHEN ISNULL(A5009,'') IN ('1') THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) AS VARCHAR)+'¹«Àï',	--Â·¶Î³¤¶È(¹«Àï)
+	'',		--Â·¶Î¿í¶È(Ã×)
 	CAST(sum(isnull(A5010,0)*isnull(a5008,0))/nullif(sum(isnull(a5008,0)),0) AS NUMERIC(18,2)) MQI,		--MQI
 	CAST(sum(isnull(A5011,0)*isnull(a5008,0))/nullif(sum(isnull(a5008,0)),0) AS NUMERIC(18,2)) PQI		--PQI
 from  k03 a

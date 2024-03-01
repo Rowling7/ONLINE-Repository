@@ -1,4 +1,4 @@
--- å¡«å†™ç®¡ç†å•ä½ä»£ç 
+-- ÌîĞ´¹ÜÀíµ¥Î»´úÂë
 declare @A0102 char(15)
 set @A0102='33_0783'
 
@@ -47,7 +47,7 @@ update #k001 set a0102=left(a0102,5)
 update #k063 set a0102=left(a0102,5)
 update #k060 set a0102=left(a0102,5)
 */
---æ•´åˆä¸€ä¸ªå¿åŒºç®¡ç†å•ä½åï¼Œåˆ é™¤é‡å¤è·¯çº¿
+--ÕûºÏÒ»¸öÏØÇø¹ÜÀíµ¥Î»ºó£¬É¾³ıÖØ¸´Â·Ïß
 delete #a50
 where rtrim(k0101) in (
 select rtrim(k0101) from #a50
@@ -60,7 +60,7 @@ group by a0102,k0101
 having count(1)>1
 )
 
--- !!è¯»å–EXCELè¡¨ä¸­ è·¯çº¿ é¡µç­¾çš„æ•°æ®
+-- !!¶ÁÈ¡EXCEL±íÖĞ Â·Ïß Ò³Ç©µÄÊı¾İ
 if object_id('tempdb..#lx') is not null drop table #lx
 create table #lx(FHSJ CHAR(50),TPBM CHAR(50),gldw char(20),a0102 char(12),ha0102 varchar(50),
 Yk0101 char(15),Yk0112 varchar(50),Yk0108 numeric(18,3),Yk0109 numeric(18,3),YK0114 NUMERIC(18,3),YHK5104 VARCHAR(50),
@@ -71,11 +71,11 @@ INSERT #lx(fhsj,tpbm,gldw,YK0101,YK0112,YK0108,YK0109,YK0114,YHK5104,WK0101,WK01
 Select a,f2,f3,f4,f5,f6,f7,f8,f9,F10,f11,f12,f13,f14,f15,f16,f17,f18,f19  from
 --OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;
 OPENROWSET('Microsoft.JET.OLEDB.4.0','Excel 5.0;HDR=YES;
-DATABASE=E:\My Files\Work-DFYD\ç»™äº¤ç§‘é™¢-é‡‘åå¤æ ¸20230923\æ•°æ®æ ¸æŸ¥-é‡‘åæ°¸åº·-æ±‡æ€»-20230923.xlsx'
-,è·¯çº¿$)
+DATABASE=E:\My Files\Work-DFYD\¸ø½»¿ÆÔº-½ğ»ª¸´ºË20230923\Êı¾İºË²é-½ğ»ªÓÀ¿µ-»ã×Ü-20230923.xlsx'
+,Â·Ïß$)
 DELETE FROM #LX WHERE yk0101 LIKE 'CYS%'
 
--- !!è¯»å–EXCELè¡¨ä¸­ æ¡¥æ¢ é¡µç­¾çš„æ•°æ®
+-- !!¶ÁÈ¡EXCEL±íÖĞ ÇÅÁº Ò³Ç©µÄÊı¾İ
 if object_id('tempdb..#ql') is not null drop table #ql
 create table #ql(FHSJ CHAR(50),TPBM CHAR(50),gldw char(20),a0102 char(12),ha0102 varchar(50),
 Yk0101 char(15),Yk0112 varchar(50),k6001 char(20),k6002 char(50),yk6003 NUMERIC(18,3),
@@ -86,11 +86,11 @@ INSERT #ql(fhsj,tpbm,gldw,YK0101,YK0112,k6001,k6002,yk6003,WK0101,wk6003,WCJWT,B
 Select a,f2,f3,f4,f5,f6,f7,f8,F9,f10,f11,f12,f13,f14  from
 --OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;
 OPENROWSET('Microsoft.JET.OLEDB.4.0','Excel 5.0;HDR=YES;
-DATABASE=E:\My Files\Work-DFYD\ç»™äº¤ç§‘é™¢-é‡‘åå¤æ ¸20230923\æ•°æ®æ ¸æŸ¥-é‡‘åæ°¸åº·-æ±‡æ€»-20230923.xlsx'
-,æ¡¥æ¢$)
+DATABASE=E:\My Files\Work-DFYD\¸ø½»¿ÆÔº-½ğ»ª¸´ºË20230923\Êı¾İºË²é-½ğ»ªÓÀ¿µ-»ã×Ü-20230923.xlsx'
+,ÇÅÁº$)
 DELETE FROM #ql WHERE yk0101 LIKE 'CYS%'
 
--- !!è¯»å–EXCELè¡¨ä¸­ éš§é“ é¡µç­¾çš„æ•°æ®
+-- !!¶ÁÈ¡EXCEL±íÖĞ ËíµÀ Ò³Ç©µÄÊı¾İ
 if object_id('tempdb..#sd') is not null drop table #sd
 create table #sd(FHSJ CHAR(50),TPBM CHAR(50),gldw char(20),a0102 char(12),ha0102 varchar(50),
 Yk0101 char(15),Yk0112 varchar(50),k6301 char(20),k6302 char(50),yk6303 NUMERIC(18,3),
@@ -99,23 +99,23 @@ BGLX CHAR(20),BGYY VARCHAR(255),XGJY CHAR(50),B1 CHAR(255),B2 CHAR(255),B3 CHAR(
 )
 INSERT #sd(fhsj,tpbm,gldw,YK0101,YK0112,k6301,k6302,yk6303,WK0101,wk6303,WCJWT,BGLX,BGYY,XGJY)
 Select a,f2,f3,f4,f5,f6,f7,f8,F9,f10,f11,f12,f13,f14 from
--- !!å†™æ³•ä¸€
+-- !!Ğ´·¨Ò»
 --OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;
 OPENROWSET('Microsoft.JET.OLEDB.4.0','Excel 5.0;HDR=YES;
-DATABASE=E:\My Files\Work-DFYD\ç»™äº¤ç§‘é™¢-é‡‘åå¤æ ¸20230923\æ•°æ®æ ¸æŸ¥-é‡‘åæ°¸åº·-æ±‡æ€»-20230923.xlsx'
-,æ¡¥æ¢$)
-/*  !!å†™æ³•äºŒ
+DATABASE=E:\My Files\Work-DFYD\¸ø½»¿ÆÔº-½ğ»ª¸´ºË20230923\Êı¾İºË²é-½ğ»ªÓÀ¿µ-»ã×Ü-20230923.xlsx'
+,ÇÅÁº$)
+/*  !!Ğ´·¨¶ş
 OpenRowSet
 ('MSDASQL','DRIVER=Microsoft Excel Driver (*.xls);
-DBQ=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20230923 æµ™æ±Ÿ\map\330783ä¸œé˜³\æ•°æ®æ ¸æŸ¥-é‡‘åä¸œé˜³-æ±‡æ€».xls;
-UID=admin; PWS=','SELECT * from [éš§é“$]')*/
+DBQ=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼ş\1.¹¤×÷ÎÄ¼ş£¨ÈÕÆÚ·ÖÀà£©\20230923 Õã½­\map\330783¶«Ñô\Êı¾İºË²é-½ğ»ª¶«Ñô-»ã×Ü.xls;
+UID=admin; PWS=','SELECT * from [ËíµÀ$]')*/
 
 
 
-------------------------------------------------------è·¯çº¿------------------------------------------------------
---æ’å…¥å¤–ä¸šæœªé‡‡é›†çš„è·¯çº¿
+------------------------------------------------------Â·Ïß------------------------------------------------------
+--²åÈëÍâÒµÎ´²É¼¯µÄÂ·Ïß
 insert into #lx(yk0101,yk0112,yk0108,yk0109,yk0114,yhk5104,bglx,xgjy,B4)
-select k0101,k0112,k0108,k0109,k0114,hk5104,'ä¸å˜','ä¸å˜','æœªé‡‡é›†' from #k001  a
+select k0101,k0112,k0108,k0109,k0114,hk5104,'²»±ä','²»±ä','Î´²É¼¯' from #k001  a
 left join #lx on rtrim(k0101)=rtrim(yk0101) and rtrim(k0108)=rtrim(yk0108)
 where 1=1
 and yk0101 is null
@@ -126,30 +126,30 @@ and a.a0102 like rtrim(@A0102)+'%'
 and left(k0101,1) in  ('G','S','X','Y','C')
 
 
---æ’å…¥å¤–ä¸šæœªé‡‡é›†çš„æ¡¥æ¢
+--²åÈëÍâÒµÎ´²É¼¯µÄÇÅÁº
 insert into #ql(yk0101,yk0112,k6001,k6002,yk6003,bglx,xgjy,B4)
-select k0101,k0112,rtrim(k0101)+'L'+rtrim(a.k6001),a.k6002,a.k6003,'æ— æ³•åˆ¤æ–­','','æœªé‡‡é›†' from #k060 a left join #ql on rtrim(k0101)=rtrim(yk0101) and rtrim(k6003)=rtrim(yk6003)
+select k0101,k0112,rtrim(k0101)+'L'+rtrim(a.k6001),a.k6002,a.k6003,'ÎŞ·¨ÅĞ¶Ï','','Î´²É¼¯' from #k060 a left join #ql on rtrim(k0101)=rtrim(yk0101) and rtrim(k6003)=rtrim(yk6003)
 where yk0101 is null
 and a.a0102 like rtrim(@A0102)+'%'
 and left(k0101,1) in  ('G','S','X','Y','C')
 
---æ’å…¥å¤–ä¸šæœªé‡‡é›†çš„éš§é“
+--²åÈëÍâÒµÎ´²É¼¯µÄËíµÀ
 insert into #sd(yk0101,yk0112,k6301,k6302,yk6303,bglx,xgjy,B4)
-select k0101,k0112,rtrim(k0101)+'U'+rtrim(a.k6301),a.k6302,a.k6303,'æ— æ³•åˆ¤æ–­','','æœªé‡‡é›†' from #k063 a left join #sd on rtrim(k0101)=rtrim(yk0101) and rtrim(k6303)=rtrim(yk6303)
+select k0101,k0112,rtrim(k0101)+'U'+rtrim(a.k6301),a.k6302,a.k6303,'ÎŞ·¨ÅĞ¶Ï','','Î´²É¼¯' from #k063 a left join #sd on rtrim(k0101)=rtrim(yk0101) and rtrim(k6303)=rtrim(yk6303)
 where yk0101 is null
 and a.a0102 like rtrim(@A0102)+'%'
 and left(k0101,1) in  ('G','S','X','Y','C')
 
--- å¤„ç†è·¯çº¿æ ¸æŸ¥æ•°æ®
+-- ´¦ÀíÂ·ÏßºË²éÊı¾İ
 update #lx set yk0101=case when len(wk0101)>=10 then left(wk0101,10) else left(wk0101,len(wk0101)-1) end where isnull(yk0101,'')=''
 
--- æ ¹æ®æ•°æ®åº“è·å–ç®¡ç†å•ä½
--- åŸæ•°æ®åº“æ•°æ®
+-- ¸ù¾İÊı¾İ¿â»ñÈ¡¹ÜÀíµ¥Î»
+-- Ô­Êı¾İ¿âÊı¾İ
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102
 from #lx a join #k001 b on a.yk0101=b.k0101 AND A.YK0108=B.K0108
 
--- å¤–ä¸šæ•°æ®æˆ–è€…å’Œæ•°æ®åº“å¯¹åº”ä¸ä¸Šçš„æ•°æ®
--- !!æ›´æ–°å¯¹ä¸ä¸Šæ•°æ®çš„ç®¡ç†å•ä½
+-- ÍâÒµÊı¾İ»òÕßºÍÊı¾İ¿â¶ÔÓ¦²»ÉÏµÄÊı¾İ
+-- !!¸üĞÂ¶Ô²»ÉÏÊı¾İµÄ¹ÜÀíµ¥Î»
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102
 from #lx a join #k001 b on left(a.yk0101,10)=b.k0101 and wk0108>=k0108 and wk0108<=k0109
 where a.a0102 is null
@@ -161,10 +161,10 @@ select rtrim(max(a0102))+k0101 a from #k001 group by k0101)
 ) b on left(a.yk0101,10)=b.k0101
 where a.a0102 is null
 
---åˆ é™¤ä¸å­˜åœ¨çš„æ•°æ®
+--É¾³ı²»´æÔÚµÄÊı¾İ
 delete #lx where a0102 is null and wk0101 is null
 
----åˆ é™¤æ ¸æŸ¥çš„é‡å¤é‡Œç¨‹
+---É¾³ıºË²éµÄÖØ¸´Àï³Ì
 if object_id('tempdb..#cf') is not null drop table #cf
 select a.* into #cf
 from #lx a left join #k001 on yk0101=k0101 and yk0108=k0108
@@ -177,58 +177,58 @@ where yk0101 is not null and yk0108 is not null
 and (isnull(k0124,'')<>''
 or isnull(k0123,2)=1)
 
---æ›´æ–°è·¯é¢ç±»å‹
-update #lx set b1=case when left(yhk5104,2)='æ²¥é’' then '11' else case when left(yhk5104,2)='æ°´æ³¥' then '12' else '13' end end
+--¸üĞÂÂ·ÃæÀàĞÍ
+update #lx set b1=case when left(yhk5104,2)='Á¤Çà' then '11' else case when left(yhk5104,2)='Ë®Äà' then '12' else '13' end end
 where yhk5104 is not null
-update #lx set b2=case when left(whk5104,2)='æ²¥é’' then '11' else case when left(whk5104,2)='æ°´æ³¥' then '12' else '13' end end
+update #lx set b2=case when left(whk5104,2)='Á¤Çà' then '11' else case when left(whk5104,2)='Ë®Äà' then '12' else '13' end end
 where whk5104 is not null
 
---æŸ¥è¯¢å‡ºå˜æ›´ç±»å‹æ²¡æœ‰å¡«å†™çš„æ•°æ®ï¼Œå¹¶ä¸”ä¸€å¹¶æŒ‰ç…§ä¸å˜å¡«å†™
-update #lx set bglx='ä¸å˜',xgjy='ä¸å˜'
+--²éÑ¯³ö±ä¸üÀàĞÍÃ»ÓĞÌîĞ´µÄÊı¾İ£¬²¢ÇÒÒ»²¢°´ÕÕ²»±äÌîĞ´
+update #lx set bglx='²»±ä',xgjy='²»±ä'
 where yk0101 is not null and yk0108 is not null and bglx is null
 
---æ›´æ–°å˜æ›´è·¯çº¿
+--¸üĞÂ±ä¸üÂ·Ïß
 update #lx set bglx=ltrim(rtrim(bglx))
 
-UPDATE #LX SET B3=case WHEN isnull(bglx,'')='ä¸å˜' THEN '1' ELSE
-case WHEN isnull(bglx,'') in ('å˜æ›´') THEN '2' ELSE
-case WHEN isnull(bglx,'')='æ–°å¢' THEN '3' ELSE
-case WHEN isnull(bglx,'')='åˆ é™¤' THEN '4' ELSE
-case WHEN isnull(bglx,'')='æ— æ³•åˆ¤æ–­' THEN '5' ELSE null end end end end end
+UPDATE #LX SET B3=case WHEN isnull(bglx,'')='²»±ä' THEN '1' ELSE
+case WHEN isnull(bglx,'') in ('±ä¸ü') THEN '2' ELSE
+case WHEN isnull(bglx,'')='ĞÂÔö' THEN '3' ELSE
+case WHEN isnull(bglx,'')='É¾³ı' THEN '4' ELSE
+case WHEN isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' THEN '5' ELSE null end end end end end
 
--- ä¿®æ­£é‡Œç¨‹
--- !!é‡æ–°è®¡ç®—è·¯æ®µé•¿åº¦ k0114 wk0114
+-- ĞŞÕıÀï³Ì
+-- !!ÖØĞÂ¼ÆËãÂ·¶Î³¤¶È k0114 wk0114
 update #lx set yk0114=convert(decimal(8,3),isnull(yk0109,0)-isnull(yk0108,0)),wk0114=convert(decimal(8,3),isnull(wk0109,0)-isnull(wk0108,0))
 
 update a set yhk5104=rtrim(hk5104)
 from #lx a join #k001 b on yk0101=k0101 and yk0108=k0108
 
-update #lx set whk5104=null where bglx='ä¸å˜'
+update #lx set whk5104=null where bglx='²»±ä'
 
 
-------------------------------------------------------æ¡¥æ¢------------------------------------------------------
+------------------------------------------------------ÇÅÁº------------------------------------------------------
 update #ql set yk0101=left(wk0101,10) where isnull(yk0101,'')=''
---æ ¹æ®æ•°æ®åº“æ›´æ–°æ¡¥æ¢çš„ç®¡ç†å•ä½
+--¸ù¾İÊı¾İ¿â¸üĞÂÇÅÁºµÄ¹ÜÀíµ¥Î»
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102,a.yk0112=b.k0112
 from #ql a left join #k060 b on left(a.yk0101,10)=left(b.k0101,10) and yk6003=k6003
---æ›´æ–°å¤–ä¸šé‡‡é›†çš„æ•°æ®çš„ç®¡ç†å•ä½
+--¸üĞÂÍâÒµ²É¼¯µÄÊı¾İµÄ¹ÜÀíµ¥Î»
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102
 from #ql a left join #a50 b on left(a.yk0101,10)=left(b.k0101,10)
 where a.a0102 is null
 
---æ›´æ–°å˜æ›´ç±»å‹  select * from #ql   select * from #k060
+--¸üĞÂ±ä¸üÀàĞÍ  select * from #ql   select * from #k060
 update #ql set bglx=ltrim(rtrim(bglx))
-UPDATE #ql SET B3=case WHEN isnull(bglx,'')='ä¸å˜' THEN '1' ELSE
-case WHEN isnull(bglx,'') in ('å˜æ›´') THEN '2' ELSE
-case WHEN isnull(bglx,'')='æ–°å¢' THEN '3' ELSE
-case WHEN isnull(bglx,'')='åˆ é™¤' THEN '4' ELSE
-case WHEN isnull(bglx,'')='æ— æ³•åˆ¤æ–­' THEN '5' ELSE null end end end end end
---åˆ é™¤é”™è¯¯æ•°æ®
+UPDATE #ql SET B3=case WHEN isnull(bglx,'')='²»±ä' THEN '1' ELSE
+case WHEN isnull(bglx,'') in ('±ä¸ü') THEN '2' ELSE
+case WHEN isnull(bglx,'')='ĞÂÔö' THEN '3' ELSE
+case WHEN isnull(bglx,'')='É¾³ı' THEN '4' ELSE
+case WHEN isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' THEN '5' ELSE null end end end end end
+--É¾³ı´íÎóÊı¾İ
 --select * from #ql where a0102 is null
 delete #ql where a0102 is null
 
 
-------------------------------------------------------éš§é“------------------------------------------------------
+------------------------------------------------------ËíµÀ------------------------------------------------------
 update #sd set yk0101=left(wk0101,10) where isnull(yk0101,'')=''
 
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102,a.yk0112=b.k0112
@@ -237,22 +237,22 @@ update a set a.a0102=b.a0102,a.ha0102=b.ha0102
 from #sd a left join #a50 b on left(a.wk0101,10)=left(b.k0101,10)
 where a.a0102 is null
 
---åˆ é™¤é”™è¯¯æ•°æ®
+--É¾³ı´íÎóÊı¾İ
 delete #sd where a0102 is null
---æ›´æ–°å˜æ›´ç±»å‹
+--¸üĞÂ±ä¸üÀàĞÍ
 update #sd set bglx=ltrim(rtrim(bglx))
-UPDATE #sd SET B3=case WHEN isnull(bglx,'')='ä¸å˜' THEN '1' ELSE
-case WHEN isnull(bglx,'') in ('å˜æ›´') THEN '2' ELSE
-case WHEN isnull(bglx,'')='æ–°å¢' THEN '3' ELSE
-case WHEN isnull(bglx,'')='åˆ é™¤' THEN '4' ELSE
-case WHEN isnull(bglx,'')='æ— æ³•åˆ¤æ–­' THEN '5' ELSE null end end end end end
+UPDATE #sd SET B3=case WHEN isnull(bglx,'')='²»±ä' THEN '1' ELSE
+case WHEN isnull(bglx,'') in ('±ä¸ü') THEN '2' ELSE
+case WHEN isnull(bglx,'')='ĞÂÔö' THEN '3' ELSE
+case WHEN isnull(bglx,'')='É¾³ı' THEN '4' ELSE
+case WHEN isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' THEN '5' ELSE null end end end end end
 
 
-------------------------------------------------------å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨------------------------------------------------------
--- !è¡¨2-1
--- !!æŸ¥è¯¢è·¯çº¿æ¡æ•°
+------------------------------------------------------¹«Â·ÆÕ²é½áÂÛ±í------------------------------------------------------
+-- !±í2-1
+-- !!²éÑ¯Â·ÏßÌõÊı
 SELECT
-'å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨' '!!è¡¨2-1',1 A,*
+'¹«Â·ÆÕ²é½áÂÛ±í' '!!±í2-1',1 A,*
 FROM (
 	select LEFT(min(A01.A0102),7) A0102,MAX(YTS.HA0102) HA0102,
 	case when grouping(A01.A0102)=1 and grouping(A01.K0101)=1 then 'zzZ' else
@@ -261,10 +261,10 @@ FROM (
 	case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 	else max(rtrim(A01.K0101)) end end end end k0101,
 	SUM(ISNULL(YTS,0)) YTS,
-	'â€”â€”' F10,
+	'¡ª¡ª' F10,
 	SUM(ISNULL(WTS,0))    WTS,
 	SUM(ISNULL(YTS,0))+SUM(case when XZTS is null then 0 else isnull(XZTS,0) END)-SUM(case when SCTS is null then 0 else isnull(SCTS,0) END) FHTS,
-	'â€”â€”' A2,
+	'¡ª¡ª' A2,
 	((SUM(ISNULL(YTS,0))+SUM(case when XZTS is null then 0 else isnull(XZTS,0) END)-SUM(case when SCTS is null then 0 else isnull(SCTS,0) END)-SUM(			ISNULL(YTS,0)))*1.0/CASE WHEN SUM(ISNULL(YTS,0))=0 THEN 1 ELSE SUM(ISNULL(YTS,0)) END)*100 BHL
 from
 (	select MAX(a.A0102) A0102,MAX(a.HA0102) ha0102,replace(replace(replace(a.k0101,'D001',''),'D002',''),'D003','') k0101,1 YTS
@@ -278,7 +278,7 @@ from
 ) YTS
 FULL join (
 	select 1 WTS,replace(replace(replace(yk0101,'D001',''),'D002',''),'D003','') k0101,a0102 from #lx
-	where left(yk0101,1) in ('G','S','X','Y','C') AND isnull(B4,'')<>'æœªé‡‡é›†'
+	where left(yk0101,1) in ('G','S','X','Y','C') AND isnull(B4,'')<>'Î´²É¼¯'
 	group by a0102,replace(replace(replace(yk0101,'D001',''),'D002',''),'D003','')
 ) WTS ON YTS.A0102=WTS.A0102 AND YTS.K0101=WTS.K0101
 FULL JOIN (
@@ -291,7 +291,7 @@ FULL JOIN (
 FULL JOIN (
 	select yk0101 K0101,max(a0102) a0102,count(1) XZTS from #lx
 	where left(yk0101,1) in ('G','S','X','Y','C')
-	AND isnull(b3,'')='3' and isnull(wcjwt,'') like 'éåŸæ•°æ®åº“%'
+	AND isnull(b3,'')='3' and isnull(wcjwt,'') like '·ÇÔ­Êı¾İ¿â%'
 	group by yk0101
 ) XZTS ON YTS.A0102=XZTS.A0102 AND YTS.K0101=XZTS.K0101
 left JOIN #A01 A01 ON YTS.A0102=A01.A0102 AND LEFT(YTS.K0101,1)=A01.K0101
@@ -301,8 +301,8 @@ WITH ROLLUP
 
 UNION
 
---!!æŸ¥è¯¢è·¯çº¿é‡Œç¨‹
-SELECT 'å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨' 'å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨',2 A,*
+--!!²éÑ¯Â·ÏßÀï³Ì
+SELECT '¹«Â·ÆÕ²é½áÂÛ±í' '¹«Â·ÆÕ²é½áÂÛ±í',2 A,*
 FROM (
 SELECT LEFT(min(A01.A0102),7) A0102,MAX(YLC.HA0102) HA0102,
 	case when grouping(A01.A0102)=1 and grouping(A01.K0101)=1 then 'zzZ' else
@@ -311,10 +311,10 @@ SELECT LEFT(min(A01.A0102),7) A0102,MAX(YLC.HA0102) HA0102,
 	case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 	else max(rtrim(A01.K0101)) end end end end k0101,
 	SUM(ISNULL(YLC.K0114,0)) K0114
-	,'â€”â€”' F10,
+	,'¡ª¡ª' F10,
 	SUM(ISNULL(FHLC.WLC,0)) WLC,
 	SUM(ISNULL(YLC.K0114,0))+SUM(ISNULL(FHLC.XZLC,0))-SUM(ISNULL(FHLC.SCLC,0))+SUM(ISNULL(FHLC.LXBG_LCBG,0)) FHHLC,
-	'â€”â€”' A2,
+	'¡ª¡ª' A2,
 	((SUM(ISNULL(YLC.K0114,0))+SUM(ISNULL(FHLC.XZLC,0))-SUM(ISNULL(FHLC.SCLC,0))+SUM(ISNULL(FHLC.LXBG_LCBG,0))-SUM(ISNULL(YLC.K0114,0)))*1.0/CASE WHEN 		SUM(ISNULL(YLC.K0114,0))=0 THEN 1 ELSE SUM(ISNULL(YLC.K0114,0)) END )*100 LCBHL
  FROM (
 	select  max(A.A0102) A0102,max(A.HA0102) HA0102,max(A.K0101) K0101,sum(k0114) K0114 from #k001 a
@@ -330,11 +330,11 @@ SELECT LEFT(min(A01.A0102),7) A0102,MAX(YLC.HA0102) HA0102,
 LEFT JOIN (
 	select
 		A0102,MAX(HA0102) ha0102,Yk0101,
-		sum(isnull(wk0114,0)) wlc,--å¤–ä¸šé‡‡é›†é‡Œç¨‹
-		sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --æ–°å¢
-		sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --åˆ é™¤
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
-		(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 			end) LXBG_LCBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´
+		sum(isnull(wk0114,0)) wlc,--ÍâÒµ²É¼¯Àï³Ì
+		sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --ĞÂÔö
+		sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --É¾³ı
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
+		(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 			end) LXBG_LCBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü
 		null w
 	from #LX a
 	where left(yK0101,1) in  ('G','S','X','Y','C')
@@ -346,8 +346,8 @@ FULL JOIN
 	) LC WHERE LEFT(K0101,1)='z'
 
 UNION
---!!æŸ¥è¯¢æ¡¥æ¢æ•°æ®
-SELECT 'å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨' 'å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨',3,*
+--!!²éÑ¯ÇÅÁºÊı¾İ
+SELECT '¹«Â·ÆÕ²é½áÂÛ±í' '¹«Â·ÆÕ²é½áÂÛ±í',3,*
 FROM (
 SELECT
 	CASE WHEN A01.A0102 IS NULL THEN MIN(FHQL.A0102) ELSE LEFT(min(A01.A0102),7) END A0102,
@@ -358,10 +358,10 @@ SELECT
 	case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 	else max(rtrim(A01.K0101)) end end end end k0101,
 	SUM(ISNULL(YQL,0)) YQL,
-	'â€”â€”' F10,
+	'¡ª¡ª' F10,
 	SUM(ISNULL(WQL,0)) WQL,
 	SUM(ISNULL(YQL,0))+SUM(ISNULL(XZQL,0))-SUM(ISNULL(SCQL,0)) FHQL,
-	'â€”â€”' A2,
+	'¡ª¡ª' A2,
 	((SUM(ISNULL(YQL,0))+SUM(ISNULL(XZQL,0))-SUM(ISNULL(SCQL,0))-SUM(ISNULL(YQL,0)))*1.0/case when SUM(ISNULL(YQL,0))=0 then 1 else SUM(ISNULL(YQL,0)) 		end)*100 QLBHL
 FROM (
 	select B.a0102,max(B.ha0102) ha0102,MAX(B.k0101) K0101,SUM(CASE WHEN A.A0102 IS NULL THEN 0 ELSE 1 END) YQL
@@ -383,8 +383,8 @@ GROUP BY A01.A0102,A01.K0101 WITH ROLLUP
 ) QL WHERE LEFT(K0101,1)='z'
 
 UNION
---!!æŸ¥è¯¢éš§é“æ•°æ®
-SELECT 'å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨' 'å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨',4,*
+--!!²éÑ¯ËíµÀÊı¾İ
+SELECT '¹«Â·ÆÕ²é½áÂÛ±í' '¹«Â·ÆÕ²é½áÂÛ±í',4,*
 FROM (
 SELECT
 	CASE WHEN MAX(A01.A0102) IS NULL THEN MIN(FHSD.A0102) ELSE LEFT(min(A01.A0102),7) END A0102,
@@ -395,9 +395,9 @@ SELECT
 	case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 	else max(rtrim(A01.K0101)) end end end end k0101,
 	SUM(ISNULL(YSD,0)) YSD,
-	'â€”â€”' F10,
+	'¡ª¡ª' F10,
 	SUM(ISNULL(WSD,0)) WSD,
-	SUM(ISNULL(YSD,0))+SUM(ISNULL(XZSD,0))-SUM(ISNULL(SCSD,0)) FHSD,'â€”â€”' A2,
+	SUM(ISNULL(YSD,0))+SUM(ISNULL(XZSD,0))-SUM(ISNULL(SCSD,0)) FHSD,'¡ª¡ª' A2,
 	((SUM(ISNULL(YSD,0))+SUM(ISNULL(XZSD,0))-SUM(ISNULL(SCSD,0))-SUM(ISNULL(YSD,0)))*1.0/CASE WHEN SUM(ISNULL(YSD,0))=0 THEN 1 ELSE SUM(ISNULL(YSD,0)) END)*100 QLBHL
 FROM (
 	select B.a0102,max(B.ha0102) ha0102,MAX(B.k0101) K0101,SUM(CASE WHEN A.A0102 IS NULL THEN 0 ELSE 1 END) YSD
@@ -419,9 +419,9 @@ GROUP BY A01.A0102,A01.K0101 WITH ROLLUP
 ) SD WHERE LEFT(K0101,1)='z'
 ORDER BY A,A0102,K0101 DESC
 
-------------------------------------------------------å¹²çº¿å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨------------------------------------------------------
----è·¯çº¿æ¡æ•°
-	SELECT 'å¹²çº¿å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨' 'å¹²çº¿å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨',* FROM (
+------------------------------------------------------¸ÉÏß¹«Â·ÆÕ²é½áÂÛ±í------------------------------------------------------
+---Â·ÏßÌõÊı
+	SELECT '¸ÉÏß¹«Â·ÆÕ²é½áÂÛ±í' '¸ÉÏß¹«Â·ÆÕ²é½áÂÛ±í',* FROM (
 	SELECT 1 A,* FROM (
 	    select
 	LEFT(min(A01.A0102),7) A0102,MAX(YTS.HA0102) HA0102,
@@ -430,7 +430,7 @@ ORDER BY A,A0102,K0101 DESC
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=1 and left(A01.a0102,3)<>'330' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(A01.K0101,'S','G'),'C','X'),'Y','X'),'Z','X')) else
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 		else max(rtrim(A01.K0101)) end end end end k0101,
-	SUM(case when YTS is null then 0 else isnull(YTS,0) END) YTS,'â€”â€”' F10,SUM(case when WTS is null then 0 else isnull(WTS,0) END) WTS,SUM(case when YTS is null then 0 else isnull(YTS,0) END)+SUM(case when XZTS is null then 0 else isnull(XZTS,0) END)-SUM(case when SCTS is null then 0 else isnull(SCTS,0) END) FHTS,'â€”â€”' A2,
+	SUM(case when YTS is null then 0 else isnull(YTS,0) END) YTS,'¡ª¡ª' F10,SUM(case when WTS is null then 0 else isnull(WTS,0) END) WTS,SUM(case when YTS is null then 0 else isnull(YTS,0) END)+SUM(case when XZTS is null then 0 else isnull(XZTS,0) END)-SUM(case when SCTS is null then 0 else isnull(SCTS,0) END) FHTS,'¡ª¡ª' A2,
 	((SUM(case when YTS is null then 0 else isnull(YTS,0) END)+SUM(case when XZTS is null then 0 else isnull(XZTS,0) END)-SUM(case when SCTS is null then 0 else isnull(SCTS,0) END)-SUM(case when YTS is null then 0 else isnull(YTS,0) END))*1.0/CASE WHEN SUM(case when YTS is null then 0 else isnull(YTS,0) END)=0 THEN 1 ELSE SUM(case when YTS is null then 0 else isnull(YTS,0) END) END)*100 BHL
 	from
 	(
@@ -445,7 +445,7 @@ ORDER BY A,A0102,K0101 DESC
 		group by a.a0102,replace(replace(replace(a.k0101,'D001',''),'D002',''),'D003','')
 	) YTS FULL join (
 		select 1 WTS,replace(replace(replace(yk0101,'D001',''),'D002',''),'D003','') k0101,a0102 from #lx
-		where left(yk0101,1) in ('G','S')  AND isnull(B4,'')<>'æœªé‡‡é›†'
+		where left(yk0101,1) in ('G','S')  AND isnull(B4,'')<>'Î´²É¼¯'
 		group by a0102,replace(replace(replace(yk0101,'D001',''),'D002',''),'D003','')
 	) WTS ON YTS.A0102=WTS.A0102 AND YTS.K0101=WTS.K0101
 	FULL JOIN (
@@ -458,7 +458,7 @@ ORDER BY A,A0102,K0101 DESC
 	FULL JOIN (
 	select yk0101 K0101,max(a0102) a0102,count(1) XZTS from #lx
 	where left(yk0101,1) in ('G','S')
-	AND isnull(b3,'')='3' and isnull(wcjwt,'') like 'éåŸæ•°æ®åº“%'
+	AND isnull(b3,'')='3' and isnull(wcjwt,'') like '·ÇÔ­Êı¾İ¿â%'
 	group by yk0101
 	) XZTS ON YTS.A0102=XZTS.A0102 AND YTS.K0101=XZTS.K0101
 	FULL JOIN (select * from #A01 where k0101 in ('G','S')) A01 ON YTS.A0102=A01.A0102 AND LEFT(YTS.K0101,1)=A01.K0101
@@ -468,7 +468,7 @@ ORDER BY A,A0102,K0101 DESC
 
 	UNION
 
-	--è·¯çº¿é‡Œç¨‹
+	--Â·ÏßÀï³Ì
 	SELECT 2 A,* FROM (
 	SELECT
 	LEFT(min(A01.A0102),7) A0102,MAX(YLC.HA0102) HA0102,
@@ -477,8 +477,8 @@ ORDER BY A,A0102,K0101 DESC
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=1 and left(A01.a0102,3)<>'330' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(A01.K0101,'S','G'),'C','X'),'Y','X'),'Z','X')) else
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 		else max(rtrim(A01.K0101)) end end end end k0101,
-		SUM(ISNULL(YLC.K0114,0)) K0114,'â€”â€”' F10,SUM(ISNULL(FHLC.WLC,0)) WLC,
-		SUM(ISNULL(YLC.K0114,0))+SUM(ISNULL(FHLC.XZLC,0))-SUM(ISNULL(FHLC.SCLC,0))+SUM(ISNULL(FHLC.LXBG_LCBG,0)) FHHLC,'â€”â€”' A2,
+		SUM(ISNULL(YLC.K0114,0)) K0114,'¡ª¡ª' F10,SUM(ISNULL(FHLC.WLC,0)) WLC,
+		SUM(ISNULL(YLC.K0114,0))+SUM(ISNULL(FHLC.XZLC,0))-SUM(ISNULL(FHLC.SCLC,0))+SUM(ISNULL(FHLC.LXBG_LCBG,0)) FHHLC,'¡ª¡ª' A2,
 		((SUM(ISNULL(YLC.K0114,0))+SUM(ISNULL(FHLC.XZLC,0))-SUM(ISNULL(FHLC.SCLC,0))+SUM(ISNULL(FHLC.LXBG_LCBG,0))-SUM(ISNULL(YLC.K0114,0)))*1.0/CASE WHEN SUM(ISNULL(YLC.K0114,0))=0 THEN 1 ELSE SUM(ISNULL(YLC.K0114,0)) END)*100 LCBHL
 
 	FROM (
@@ -495,13 +495,13 @@ ORDER BY A,A0102,K0101 DESC
 	) YLC LEFT JOIN (
 	select
 	 A0102,MAX(HA0102) ha0102,Yk0101,
-	 sum(isnull(wk0114,0)) wlc,--å¤–ä¸šé‡‡é›†é‡Œç¨‹
-	 --sum(case when isnull(wcjwt,'')<>''then isnull(wk0114,0) else 0 end) wcwlc,--å¤–ä¸šé‡‡é›†é”™è¯¯é‡Œç¨‹
-	--sum(case when isnull(b3,'') in ('1','2','4') then yk0114 else 0 end) fhlc, --å¤æ ¸é‡Œç¨‹
-	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --æ–°å¢
-	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --åˆ é™¤
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´
+	 sum(isnull(wk0114,0)) wlc,--ÍâÒµ²É¼¯Àï³Ì
+	 --sum(case when isnull(wcjwt,'')<>''then isnull(wk0114,0) else 0 end) wcwlc,--ÍâÒµ²É¼¯´íÎóÀï³Ì
+	--sum(case when isnull(b3,'') in ('1','2','4') then yk0114 else 0 end) fhlc, --¸´ºËÀï³Ì
+	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --ĞÂÔö
+	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --É¾³ı
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü
 	null w
 	from #LX a
 	where left(yK0101,1) in ('G','S')
@@ -512,7 +512,7 @@ ORDER BY A,A0102,K0101 DESC
 	) LC
 
 	UNION
-	--æ¡¥æ¢
+	--ÇÅÁº
 	SELECT 3,* FROM (
 	SELECT
 	CASE WHEN A01.A0102 IS NULL THEN MIN(A01.A0102) ELSE LEFT(min(A01.A0102),7) END A0102,CASE WHEN MAX(A01.HA0102) IS NULL THEN MAX(A01.HA0102) ELSE MAX(A01.HA0102) END HA0102,
@@ -521,8 +521,8 @@ ORDER BY A,A0102,K0101 DESC
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=1 and left(A01.a0102,3)<>'330' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(A01.K0101,'S','G'),'C','X'),'Y','X'),'Z','X')) else
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 		else max(rtrim(A01.K0101)) end end end end k0101,
-		SUM(ISNULL(YQL,0)) YQL,'â€”â€”' F10,SUM(ISNULL(WQL,0)) WQL,
-		SUM(ISNULL(YQL,0))+SUM(ISNULL(XZQL,0))-SUM(ISNULL(SCQL,0)) FHQL,'â€”â€”' A2,
+		SUM(ISNULL(YQL,0)) YQL,'¡ª¡ª' F10,SUM(ISNULL(WQL,0)) WQL,
+		SUM(ISNULL(YQL,0))+SUM(ISNULL(XZQL,0))-SUM(ISNULL(SCQL,0)) FHQL,'¡ª¡ª' A2,
 		((SUM(ISNULL(YQL,0))+SUM(ISNULL(XZQL,0))-SUM(ISNULL(SCQL,0))-SUM(ISNULL(YQL,0)))*1.0/CASE WHEN SUM(ISNULL(YQL,0))=0 THEN 1 ELSE SUM(ISNULL(YQL,0)) END)*100 QLBHL
 	FROM (
 		select B.a0102,max(B.ha0102) ha0102,MAX(B.k0101) K0101,SUM(CASE WHEN A.A0102 IS NULL THEN 0 ELSE 1 END) YQL
@@ -543,7 +543,7 @@ ORDER BY A,A0102,K0101 DESC
 	) QL
 
 	UNION
-	--éš§é“
+	--ËíµÀ
 	SELECT 4,* FROM (
 	SELECT
 	CASE WHEN MAX(A01.A0102) IS NULL THEN MIN(A01.A0102) ELSE LEFT(min(A01.A0102),7) END A0102,
@@ -553,7 +553,7 @@ ORDER BY A,A0102,K0101 DESC
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=1 and left(A01.a0102,3)<>'330' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(A01.K0101,'S','G'),'C','X'),'Y','X'),'Z','X')) else
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 		else max(rtrim(A01.K0101)) end end end end k0101,
-		SUM(ISNULL(YSD,0)) YSD,'â€”â€”' F10,SUM(ISNULL(WSD,0)) WSD,SUM(ISNULL(YSD,0))+SUM(ISNULL(XZSD,0))-SUM(ISNULL(SCSD,0)) FHSD,'â€”â€”' A2,
+		SUM(ISNULL(YSD,0)) YSD,'¡ª¡ª' F10,SUM(ISNULL(WSD,0)) WSD,SUM(ISNULL(YSD,0))+SUM(ISNULL(XZSD,0))-SUM(ISNULL(SCSD,0)) FHSD,'¡ª¡ª' A2,
 		((SUM(ISNULL(YSD,0))+SUM(ISNULL(XZSD,0))-SUM(ISNULL(SCSD,0))-SUM(ISNULL(YSD,0)))*1.0/CASE WHEN SUM(ISNULL(YSD,0))=0 THEN 1 ELSE SUM(ISNULL(YSD,0)) END)*100 QLBHL
 	FROM (
 		select B.a0102,max(B.ha0102) ha0102,MAX(B.k0101) K0101,SUM(CASE WHEN A.A0102 IS NULL THEN 0 ELSE 1 END) YSD
@@ -577,9 +577,9 @@ ORDER BY A,A0102,K0101 DESC
 
 
 
-	-------------------------------------------å†œæ‘å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨
-	---è·¯çº¿æ¡æ•°
-	SELECT 'å†œæ‘å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨' 'å†œæ‘å…¬è·¯æ™®æŸ¥ç»“è®ºè¡¨',* FROM (
+	-------------------------------------------Å©´å¹«Â·ÆÕ²é½áÂÛ±í
+	---Â·ÏßÌõÊı
+	SELECT 'Å©´å¹«Â·ÆÕ²é½áÂÛ±í' 'Å©´å¹«Â·ÆÕ²é½áÂÛ±í',* FROM (
 	SELECT 1 A,* FROM (
     select
 	LEFT(min(A01.A0102),7) A0102,MAX(A01.HA0102) HA0102,
@@ -588,8 +588,8 @@ ORDER BY A,A0102,K0101 DESC
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=1 and left(A01.a0102,3)<>'330' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(A01.K0101,'S','G'),'C','X'),'Y','X'),'Z','X')) else
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 		else max(rtrim(A01.K0101)) end end end end k0101,
-	SUM(ISNULL(YTS,0)) YTS,'â€”â€”' F10,
-	SUM(ISNULL(WTS,0)) WTS,SUM(YTS)+SUM(case when XZTS is null then 0 else isnull(XZTS,0) END)-SUM(case when SCTS is null then 0 else isnull(SCTS,0) END) FHTS,'â€”â€”' A2,
+	SUM(ISNULL(YTS,0)) YTS,'¡ª¡ª' F10,
+	SUM(ISNULL(WTS,0)) WTS,SUM(YTS)+SUM(case when XZTS is null then 0 else isnull(XZTS,0) END)-SUM(case when SCTS is null then 0 else isnull(SCTS,0) END) FHTS,'¡ª¡ª' A2,
 	((SUM(ISNULL(YTS,0))+SUM(case when XZTS is null then 0 else isnull(XZTS,0) END)-SUM(case when SCTS is null then 0 else isnull(SCTS,0) END)-SUM(ISNULL(YTS,0)))*1.0/CASE WHEN SUM(ISNULL(YTS,0))=0 THEN 1 ELSE SUM(ISNULL(YTS,0)) END)*100 BHL
 	from
 	(
@@ -604,7 +604,7 @@ ORDER BY A,A0102,K0101 DESC
 		group by a.a0102,replace(replace(replace(a.k0101,'D001',''),'D002',''),'D003','')
 	) YTS LEFT join (
 		select 1 WTS,yk0101 k0101,a0102 from #lx
-		where left(yk0101,1) in ('X','Y','C') AND isnull(B4,'')<>'æœªé‡‡é›†'
+		where left(yk0101,1) in ('X','Y','C') AND isnull(B4,'')<>'Î´²É¼¯'
 		group by a0102,yk0101
 	) WTS ON YTS.A0102=WTS.A0102 AND YTS.K0101=WTS.K0101
 	FULL JOIN (
@@ -617,7 +617,7 @@ ORDER BY A,A0102,K0101 DESC
 	FULL JOIN (
 	select yk0101 K0101,max(a0102) a0102,count(1) XZTS from #lx
 	where left(yk0101,1) in ('X','Y','C')
-	AND isnull(b3,'')='3' and isnull(wcjwt,'') like 'éåŸæ•°æ®åº“%'
+	AND isnull(b3,'')='3' and isnull(wcjwt,'') like '·ÇÔ­Êı¾İ¿â%'
 	group by yk0101
 	) XZTS ON YTS.A0102=XZTS.A0102 AND YTS.K0101=XZTS.K0101
 	FULL JOIN (select * from #A01 where k0101 in ('X','Y','C')) A01 ON YTS.A0102=A01.A0102 AND LEFT(YTS.K0101,1)=A01.K0101
@@ -628,7 +628,7 @@ ORDER BY A,A0102,K0101 DESC
 
 	UNION
 
-	--è·¯çº¿é‡Œç¨‹
+	--Â·ÏßÀï³Ì
 	SELECT 2 A,* FROM (
 	SELECT
 	LEFT(min(A01.A0102),7) A0102,MAX(A01.HA0102) HA0102,
@@ -637,8 +637,8 @@ ORDER BY A,A0102,K0101 DESC
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=1 and left(A01.a0102,3)<>'330' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(A01.K0101,'S','G'),'C','X'),'Y','X'),'Z','X')) else
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 		else max(rtrim(A01.K0101)) end end end end k0101,
-		SUM(ISNULL(YLC.K0114,0)) K0114,'â€”â€”' F10,
-		SUM(ISNULL(FHLC.WLC,0)) WLC,SUM(ISNULL(YLC.K0114,0))+SUM(ISNULL(FHLC.XZLC,0))-SUM(ISNULL(FHLC.SCLC,0))+SUM(ISNULL(FHLC.LXBG_LCBG,0)) FHHLC,'â€”â€”' A2,
+		SUM(ISNULL(YLC.K0114,0)) K0114,'¡ª¡ª' F10,
+		SUM(ISNULL(FHLC.WLC,0)) WLC,SUM(ISNULL(YLC.K0114,0))+SUM(ISNULL(FHLC.XZLC,0))-SUM(ISNULL(FHLC.SCLC,0))+SUM(ISNULL(FHLC.LXBG_LCBG,0)) FHHLC,'¡ª¡ª' A2,
 		((SUM(ISNULL(YLC.K0114,0))+SUM(ISNULL(FHLC.XZLC,0))-SUM(ISNULL(FHLC.SCLC,0))+SUM(ISNULL(FHLC.LXBG_LCBG,0))-SUM(ISNULL(YLC.K0114,0)))*1.0/CASE WHEN SUM(ISNULL(YLC.K0114,0))=0 THEN 1 ELSE SUM(ISNULL(YLC.K0114,0)) END)*100 LCBHL
 
 	FROM (
@@ -655,13 +655,13 @@ ORDER BY A,A0102,K0101 DESC
 	) YLC LEFT JOIN (
 	select
 	 A0102,MAX(HA0102) ha0102,Yk0101,
-	 sum(isnull(wk0114,0)) wlc,--å¤–ä¸šé‡‡é›†é‡Œç¨‹
-	 --sum(case when isnull(wcjwt,'')<>''then isnull(wk0114,0) else 0 end) wcwlc,--å¤–ä¸šé‡‡é›†é”™è¯¯é‡Œç¨‹
-	--sum(case when isnull(b3,'') in ('1','2','4') then yk0114 else 0 end) fhlc, --å¤æ ¸é‡Œç¨‹
-	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --æ–°å¢
-	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --åˆ é™¤
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´
+	 sum(isnull(wk0114,0)) wlc,--ÍâÒµ²É¼¯Àï³Ì
+	 --sum(case when isnull(wcjwt,'')<>''then isnull(wk0114,0) else 0 end) wcwlc,--ÍâÒµ²É¼¯´íÎóÀï³Ì
+	--sum(case when isnull(b3,'') in ('1','2','4') then yk0114 else 0 end) fhlc, --¸´ºËÀï³Ì
+	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --ĞÂÔö
+	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --É¾³ı
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü
 	null w
 	from #LX a
 	where left(yK0101,1) in ('X','Y','C')
@@ -673,7 +673,7 @@ ORDER BY A,A0102,K0101 DESC
 	where isnull(k0101,'')<>'ZZZ'
 
 	UNION
-	--æ¡¥æ¢
+	--ÇÅÁº
 	SELECT 3,* FROM (
 	SELECT
 	CASE WHEN A01.A0102 IS NULL THEN MIN(A01.A0102) ELSE LEFT(min(A01.A0102),7) END A0102,CASE WHEN MAX(A01.HA0102) IS NULL THEN MAX(A01.HA0102) ELSE MAX(A01.HA0102) END HA0102,
@@ -682,8 +682,8 @@ ORDER BY A,A0102,K0101 DESC
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=1 and left(A01.a0102,3)<>'330' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(A01.K0101,'S','G'),'C','X'),'Y','X'),'Z','X')) else
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 		else max(rtrim(A01.K0101)) end end end end k0101,
-		SUM(ISNULL(YQL,0)) YQL,'â€”â€”' F10,SUM(ISNULL(WQL,0)) WQL,
-		SUM(ISNULL(YQL,0))+SUM(ISNULL(XZQL,0))-SUM(ISNULL(SCQL,0)) FHQL,'â€”â€”' A2,
+		SUM(ISNULL(YQL,0)) YQL,'¡ª¡ª' F10,SUM(ISNULL(WQL,0)) WQL,
+		SUM(ISNULL(YQL,0))+SUM(ISNULL(XZQL,0))-SUM(ISNULL(SCQL,0)) FHQL,'¡ª¡ª' A2,
 		((SUM(ISNULL(YQL,0))+SUM(ISNULL(XZQL,0))-SUM(ISNULL(SCQL,0))-SUM(ISNULL(YQL,0)))*1.0/case when SUM(ISNULL(YQL,0))=0 then 1 else SUM(ISNULL(YQL,0)) end)*100 QLBHL
 	FROM (
 		select B.a0102,max(B.ha0102) ha0102,MAX(B.k0101) K0101,SUM(CASE WHEN A.A0102 IS NULL THEN 0 ELSE 1 END) YQL
@@ -705,7 +705,7 @@ ORDER BY A,A0102,K0101 DESC
 	where isnull(k0101,'')<>'ZZZ'
 
 	UNION
-	--éš§é“
+	--ËíµÀ
 	SELECT 4,* FROM (
 	SELECT
 	CASE WHEN MAX(A01.A0102) IS NULL THEN MIN(A01.A0102) ELSE LEFT(min(A01.A0102),7) END A0102,
@@ -715,8 +715,8 @@ ORDER BY A,A0102,K0101 DESC
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=1 and left(A01.a0102,3)<>'330' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(A01.K0101,'S','G'),'C','X'),'Y','X'),'Z','X')) else
 		case when grouping(A01.A0102)=0 and grouping(A01.K0101)=0 and left(A01.a0102,3)='330' then max(rtrim(A01.K0101))+rtrim('S')
 		else max(rtrim(A01.K0101)) end end end end k0101,
-		SUM(ISNULL(YSD,0)) YSD,'â€”â€”' F10,SUM(ISNULL(WSD,0)) WSD,
-		SUM(ISNULL(YSD,0))+SUM(ISNULL(XZSD,0))-SUM(ISNULL(SCSD,0)) FHSD,'â€”â€”' A2,
+		SUM(ISNULL(YSD,0)) YSD,'¡ª¡ª' F10,SUM(ISNULL(WSD,0)) WSD,
+		SUM(ISNULL(YSD,0))+SUM(ISNULL(XZSD,0))-SUM(ISNULL(SCSD,0)) FHSD,'¡ª¡ª' A2,
 		((SUM(ISNULL(YSD,0))+SUM(ISNULL(XZSD,0))-SUM(ISNULL(SCSD,0))-SUM(ISNULL(YSD,0)))*1.0/CASE WHEN SUM(ISNULL(YSD,0))=0 THEN 1 ELSE SUM(ISNULL(YSD,0)) END)*100 QLBHL
 	FROM (
 		select B.a0102,max(B.ha0102) ha0102,MAX(B.k0101) K0101,SUM(CASE WHEN A.A0102 IS NULL THEN 0 ELSE 1 END) YSD
@@ -742,13 +742,13 @@ ORDER BY A,A0102,K0101 DESC
 
 
 
---------------------------------------------------------------------åˆ†é¡µæ®µè½-------------------------------------------------------------
------------------------å†œæ‘å…¬è·¯çº¿è·¯æ¡æ•°--------------------
+--------------------------------------------------------------------·ÖÒ³¶ÎÂä-------------------------------------------------------------
+-----------------------Å©´å¹«Â·ÏßÂ·ÌõÊı--------------------
 
---åŸè·¯çº¿æ¡æ•°
+--Ô­Â·ÏßÌõÊı
 
 
-SELECT 'å†œæ‘å…¬è·¯çº¿è·¯æ¡æ•°' 'å†œæ‘å…¬è·¯çº¿è·¯æ¡æ•°',OBJNAME,rtrim(YTS),rtrim(XZTS),rtrim(SCTS),rtrim(TZHTS) FROM (
+SELECT 'Å©´å¹«Â·ÏßÂ·ÌõÊı' 'Å©´å¹«Â·ÏßÂ·ÌõÊı',OBJNAME,rtrim(YTS),rtrim(XZTS),rtrim(SCTS),rtrim(TZHTS) FROM (
 select '1' A,YTS.a0102 A0102,objname,
 cast(ISNULL(TS,0) as char(50)) YTS,
 cast(ISNULL(XZTS,0) as char(50)) XZTS,
@@ -759,7 +759,7 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else max(rtrim(ha0102)) end ha0102,
 	case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else
 	case when grouping(a0102)=0 and grouping(objname)=1 then 'A'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(OBJNAME,'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(objname)) end end objname,
-	case when grouping(objname)=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
+	case when grouping(objname)=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
 	sum(1) TS
 	from
 	(
@@ -777,19 +777,19 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	with rollup
 	) YTS full join
 	(
-	---æ–°å¢è·¯çº¿æ¡æ•°
+	---ĞÂÔöÂ·ÏßÌõÊı
 	select
 	max(rtrim(a0102)) a0102,
 	case when grouping(a0102)=1 and grouping(left(wk0101,1))=1 then 'A' else
 	case when grouping(a0102)=0 and grouping(left(wk0101,1))=1 then 'A'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(left(wk0101,1),'S','G'),'C','X'),'Y','X'),'Z','X'))
 	else max(rtrim(left(wk0101,1))) end end k0101,
 	sum(1) xzts
-	from (select * from #lx where bglx='æ–°å¢' and isnull(wcjwt,'') like 'éåŸæ•°æ®åº“%') a
+	from (select * from #lx where bglx='ĞÂÔö' and isnull(wcjwt,'') like '·ÇÔ­Êı¾İ¿â%') a
 	group by a0102,left(wk0101,1) with rollup
 	) XZTS ON YTS.A0102=XZTS.A0102 AND YTS.OBJNAME=XZTS.K0101
 	full join
 	(
-	--åˆ é™¤è·¯çº¿æ¡æ•°
+	--É¾³ıÂ·ÏßÌõÊı
 	select
 	max(rtrim(a0102)) a0102,
 	case when grouping(a0102)=1 and grouping(left(yk0101,1))=1 then 'A' else
@@ -805,7 +805,7 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	) SCTS ON YTS.A0102=SCTS.A0102 AND YTS.OBJNAME=SCTS.K0101
     --ORDER BY YTS.OBJNAME
 	UNION
-	SELECT '2' A,'','','ç®¡ç†å•ä½ç¼–ç ','ç®¡ç†å•ä½åç§°','åˆ é™¤è·¯çº¿ç¼–ç ','åˆ é™¤è·¯çº¿åç§°'
+	SELECT '2' A,'','','¹ÜÀíµ¥Î»±àÂë','¹ÜÀíµ¥Î»Ãû³Æ','É¾³ıÂ·Ïß±àÂë','É¾³ıÂ·ÏßÃû³Æ'
 	union
 	SELECT '3' A,'','',A0102,MAX(HA0102) HA0102,
 	K0101,MAX(K0112) FROM K001 WHERE K0101 IN (
@@ -819,20 +819,20 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	where objname<>'A'
 	ORDER BY A,A0102,replace(OBJNAME,'C','YY'),SCTS
 
-	-----------------------------çº¿è·¯è½¨è¿¹--------------------  select * from #lx
+	-----------------------------ÏßÂ·¹ì¼£--------------------  select * from #lx
 
-	--å°†å¤–ä¸šé‡‡é›†è½¨è¿¹ã€ç”µå­åœ°å›¾è½¨è¿¹ã€åŸæ•°æ®åº“è½¨è¿¹ä¸‰è€…è¿›è¡Œæ¯”å¯¹ï¼Œå¯¹å¤–ä¸šé‡‡é›†è½¨è¿¹çº¿å½¢æ›´å¹³æ»‘ï¼Œæ›´ç¬¦åˆç”µå­åœ°å›¾è½¨è¿¹èµ°å‘çš„è·¯æ®µå»ºè®®è°ƒæ•´è½¨è¿¹ï¼Œè°ƒæ•´å˜åŒ–è·¯çº¿å…±**æ¡ï¼Œå…¶ä¸­å¿é“**æ¡ï¼Œä¹¡é“**æ¡ï¼Œæ‘é“**æ¡ï¼Œæ¶‰åŠå…¬è·¯é‡Œç¨‹å…±è®¡**å…¬é‡Œã€‚
+	--½«ÍâÒµ²É¼¯¹ì¼£¡¢µç×ÓµØÍ¼¹ì¼£¡¢Ô­Êı¾İ¿â¹ì¼£ÈıÕß½øĞĞ±È¶Ô£¬¶ÔÍâÒµ²É¼¯¹ì¼£ÏßĞÎ¸üÆ½»¬£¬¸ü·ûºÏµç×ÓµØÍ¼¹ì¼£×ßÏòµÄÂ·¶Î½¨Òéµ÷Õû¹ì¼££¬µ÷Õû±ä»¯Â·Ïß¹²**Ìõ£¬ÆäÖĞÏØµÀ**Ìõ£¬ÏçµÀ**Ìõ£¬´åµÀ**Ìõ£¬Éæ¼°¹«Â·Àï³Ì¹²¼Æ**¹«Àï¡£
 
-	select 'å°†å¤–ä¸šé‡‡é›†è½¨è¿¹ã€ç”µå­åœ°å›¾è½¨è¿¹ã€åŸæ•°æ®åº“è½¨è¿¹ä¸‰è€…è¿›è¡Œæ¯”å¯¹ï¼Œå¯¹å¤–ä¸šé‡‡é›†è½¨è¿¹çº¿å½¢æ›´å¹³æ»‘ï¼Œæ›´ç¬¦åˆç”µå­åœ°å›¾è½¨è¿¹èµ°å‘çš„è·¯æ®µå»ºè®®è°ƒæ•´è½¨è¿¹ï¼Œè°ƒæ•´å˜åŒ–è·¯çº¿å…±'+
+	select '½«ÍâÒµ²É¼¯¹ì¼£¡¢µç×ÓµØÍ¼¹ì¼£¡¢Ô­Êı¾İ¿â¹ì¼£ÈıÕß½øĞĞ±È¶Ô£¬¶ÔÍâÒµ²É¼¯¹ì¼£ÏßĞÎ¸üÆ½»¬£¬¸ü·ûºÏµç×ÓµØÍ¼¹ì¼£×ßÏòµÄÂ·¶Î½¨Òéµ÷Õû¹ì¼££¬µ÷Õû±ä»¯Â·Ïß¹²'+
 	rtrim(sum(case when k0101='zx' then ts else 0 end))
-	+'æ¡ï¼Œå…¶ä¸­å¿é“'+rtrim(sum(case when k0101='x' then ts else 0 end))+'æ¡ï¼Œä¹¡é“'+rtrim(sum(case when k0101='Y' then ts else 0 end))+'æ¡ï¼Œæ‘é“'+rtrim(sum(case when k0101='C' then ts else 0 end))+
-	'æ¡ï¼Œæ¶‰åŠå…¬è·¯é‡Œç¨‹å…±è®¡'+rtrim(sum(case when k0101='zx' then k0114 else 0 end))+'å…¬é‡Œã€‚'
+	+'Ìõ£¬ÆäÖĞÏØµÀ'+rtrim(sum(case when k0101='x' then ts else 0 end))+'Ìõ£¬ÏçµÀ'+rtrim(sum(case when k0101='Y' then ts else 0 end))+'Ìõ£¬´åµÀ'+rtrim(sum(case when k0101='C' then ts else 0 end))+
+	'Ìõ£¬Éæ¼°¹«Â·Àï³Ì¹²¼Æ'+rtrim(sum(case when k0101='zx' then k0114 else 0 end))+'¹«Àï¡£'
 	from (
 	SELECT MAX(A0102) a0102,
 	case when grouping(a0102)=1 and grouping(left(k0101,1))=1 then 'Zz' else
 	case when grouping(a0102)=0 and grouping(left(k0101,1))=1 then 'z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(left(k0101,1),'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(left(k0101,1))) end end k0101
 	,SUM(TS) ts,SUM(K0114) k0114 FROM (
-	select a0102,k0101,1 TS,SUM(K0114) K0114 from #k001 where k0101 in (select yk0101 from #lx where bglx='å˜æ›´' and xgjy='æ›¿æ¢çº¿å½¢')
+	select a0102,k0101,1 TS,SUM(K0114) K0114 from #k001 where k0101 in (select yk0101 from #lx where bglx='±ä¸ü' and xgjy='Ìæ»»ÏßĞÎ')
 	AND isnull(k0124,'')=''
 	and isnull(k0123,2)<>1
 	and left(K0101,1) in ('X','Y','C')
@@ -841,9 +841,9 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	) a
 	group by a0102
 
-	----------------------------çº¿è·¯é‡Œç¨‹---------------------------
+	----------------------------ÏßÂ·Àï³Ì---------------------------
 
-    select 'çº¿è·¯é‡Œç¨‹''çº¿è·¯é‡Œç¨‹',* from (
+    select 'ÏßÂ·Àï³Ì''ÏßÂ·Àï³Ì',* from (
     select
 	max(a0102) a0102,max(ha0102) ha0102,
 	case when grouping(left(k0101,1))=1 then 'Z' else max(left(k0101,1)) end k0101,
@@ -860,17 +860,17 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	sum(j_lmbg_lcbb)+
 	sum(j_lxbg_lmbg_lcbb)+
 	sum(j_wfpd) j_bblc,
-	sum(j_LXBG_LCBG_ylc) j_LXBG_LCBG_ylc,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-åŸé‡Œç¨‹
-	sum(j_LXBG_LCBG_bhl) j_LXBG_LCBG_bhl,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-å˜åŒ–é‡
+	sum(j_LXBG_LCBG_ylc) j_LXBG_LCBG_ylc,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Ô­Àï³Ì
+	sum(j_LXBG_LCBG_bhl) j_LXBG_LCBG_bhl,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-±ä»¯Á¿
 	sum(j_LXBG_LCBG_ylc)+
 	sum(j_LXBG_LCBG_bhl) j_LXBG_lcbg,
-	sum(j_lxXZLC) j_lxXZLC, --è·¯çº¿æ–°å¢
-	sum(j_ycXZLC) j_ycXZLC, --å»¶é•¿æ–°å¢
+	sum(j_lxXZLC) j_lxXZLC, --Â·ÏßĞÂÔö
+	sum(j_ycXZLC) j_ycXZLC, --ÑÓ³¤ĞÂÔö
 	sum(j_lxXZLC)+
-	sum(j_ycXZLC) j_xzlc, --å»¶é•¿æ–°å¢
+	sum(j_ycXZLC) j_xzlc, --ÑÓ³¤ĞÂÔö
 	sum(case when bglx1=4 and bglx2=4 then J_scLC else 0 end) j_wqsc,
 	sum(case when bglx1<>4 or bglx2<>4 then J_scLC else 0 end) j_bfscsc,
-	sum(j_scLC) j_scLC, --åˆ é™¤
+	sum(j_scLC) j_scLC, --É¾³ı
 	(sum(j_lcbb)+sum(j_lxbg_lmbb_lcbb)+sum(j_lmbg_lcbb)+sum(j_lxbg_lmbg_lcbb)+sum(j_wfpd))
 	+(sum(j_LXBG_LCBG_ylc)+sum(j_LXBG_LCBG_bhl))
 	+(sum(j_lxXZLC)+sum(j_ycXZLC)) tzjg,
@@ -880,32 +880,32 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	 from (
 		select
 		 A.A0102,MAX(A.HA0102) ha0102, yk0101 k0101,
-		----ç»™äº¤ç§‘é™¢æ•°æ®
+		----¸ø½»¿ÆÔºÊı¾İ
 		sum(yk0114) ylc,
-		sum(case when isnull(b3,'')='1' then yk0114 else 0 end) j_lcbb,  --é‡Œç¨‹ä¸å˜
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+		sum(case when isnull(b3,'')='1' then yk0114 else 0 end) j_lcbb,  --Àï³Ì²»±ä
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
 		(yk0114/(case when wk0114=0 then yk0114 else wk0114 end)>0.8 and
-				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<1.2) and b1=b2 then yk0114 else 0 end) j_lxbg_lmbb_lcbb,  --è·¯çº¿å˜æ›´-è·¯é¢ä¸å˜-é‡Œç¨‹ä¸å˜
+				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<1.2) and b1=b2 then yk0114 else 0 end) j_lxbg_lmbb_lcbb,  --Â·Ïß±ä¸ü-Â·Ãæ²»±ä-Àï³Ì²»±ä
 
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')='è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) j_lmbg_lcbb,  --è·¯é¢å˜æ›´-é‡Œç¨‹ä¸å˜
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')='Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) j_lmbg_lcbb,  --Â·Ãæ±ä¸ü-Àï³Ì²»±ä
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
 		(yk0114/(case when wk0114=0 then yk0114 else wk0114 end)>0.8 and
 				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<1.2)  and b1<>b2  then yk0114 else 0 end)
-		 j_lxbg_lmbg_lcbb,  --è·¯çº¿å˜æ›´-è·¯é¢å˜æ›´-é‡Œç¨‹ä¸å˜
-		sum(case when isnull(b3,'')='5' then yk0114 else 0 end) j_wfpd,  --æ— æ³•åˆ¤æ–­
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+		 j_lxbg_lmbg_lcbb,  --Â·Ïß±ä¸ü-Â·Ãæ±ä¸ü-Àï³Ì²»±ä
+		sum(case when isnull(b3,'')='5' then yk0114 else 0 end) j_wfpd,  --ÎŞ·¨ÅĞ¶Ï
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
 		(yk0114/(case when wk0114=0 then yk0114 else wk0114 end)>=1.2 or
-				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<=0.8) then yk0114 else 0 end) j_LXBG_LCBG_ylc,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-åŸé‡Œç¨‹
+				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<=0.8) then yk0114 else 0 end) j_LXBG_LCBG_ylc,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Ô­Àï³Ì
 
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
 		(yk0114/(case when wk0114=0 then yk0114 else wk0114 end)>=1.2 or
-				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) j_LXBG_LCBG_bhl,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-å˜åŒ–é‡
-		sum(case when isnull(b3,'')='3' and isnull(wcjwt,'')='éåŸæ•°æ®åº“æ•°æ®' then wk0114 else 0 end) j_lxXZLC, --è·¯çº¿æ–°å¢
-		sum(case when isnull(b3,'')='3' and isnull(wcjwt,'')<>'éåŸæ•°æ®åº“æ•°æ®' then wk0114 else 0 end) j_ycXZLC, --å»¶é•¿æ–°å¢
+				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) j_LXBG_LCBG_bhl,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-±ä»¯Á¿
+		sum(case when isnull(b3,'')='3' and isnull(wcjwt,'')='·ÇÔ­Êı¾İ¿âÊı¾İ' then wk0114 else 0 end) j_lxXZLC, --Â·ÏßĞÂÔö
+		sum(case when isnull(b3,'')='3' and isnull(wcjwt,'')<>'·ÇÔ­Êı¾İ¿âÊı¾İ' then wk0114 else 0 end) j_ycXZLC, --ÑÓ³¤ĞÂÔö
 		sum(case when isnull(b3,'')='3' then wk0114 else 0 end) j_xzlc,
-		min(case when yk0108 is not null then b3 else 4 end) BGLX1, --æ ¹æ®è·¯çº¿åˆ†ç»„ï¼Œè·å–æœ€å¤§çš„å˜æ›´ç±»å‹,
-		max(case when yk0108 is not null then b3 else 4 end) BGLX2, --æ ¹æ®è·¯çº¿åˆ†ç»„ï¼Œè·å–æœ€å¤§çš„å˜æ›´ç±»å‹,
-		sum(case when isnull(b3,'')='4' then yk0114 else 0 end) J_scLC --åˆ é™¤
+		min(case when yk0108 is not null then b3 else 4 end) BGLX1, --¸ù¾İÂ·Ïß·Ö×é£¬»ñÈ¡×î´óµÄ±ä¸üÀàĞÍ,
+		max(case when yk0108 is not null then b3 else 4 end) BGLX2, --¸ù¾İÂ·Ïß·Ö×é£¬»ñÈ¡×î´óµÄ±ä¸üÀàĞÍ,
+		sum(case when isnull(b3,'')='4' then yk0114 else 0 end) J_scLC --É¾³ı
 
 		from #LX a left join #a50 b on a.a0102=b.a0102 and a.Yk0101=b.k0101
 		where isnull(k0180,'1')<>'3' and a.A0102 like rtrim(@a0102)+'%'
@@ -923,7 +923,7 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
     order by  replace(k0101,'C','yy')
     /*
 
-	select * from #lx where b3=3 or bglx='æ–°å¢'
+	select * from #lx where b3=3 or bglx='ĞÂÔö'
 
 	select * from #lx where yk0101 in (
 	select yk0101 from #lx where  yk0114<>0
@@ -932,17 +932,17 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	and yk0114<>0
 	order by yk0101,yk0108
 	*/
-    -------------æŸ¥è¯¢å‡ºé‡Œç¨‹å˜æ›´çš„æ•°æ®
-select 'æŸ¥è¯¢å‡ºé‡Œç¨‹å˜æ›´çš„æ•°æ®' 'æŸ¥è¯¢å‡ºé‡Œç¨‹å˜æ›´çš„æ•°æ®',yk0101,yk0112,yk0108,yk0109,yk0114,yhk5104,wk0108,wk0109,wk0114,whk5104 from (SELECT * FROM #lx WHERE isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´') A
+    -------------²éÑ¯³öÀï³Ì±ä¸üµÄÊı¾İ
+select '²éÑ¯³öÀï³Ì±ä¸üµÄÊı¾İ' '²éÑ¯³öÀï³Ì±ä¸üµÄÊı¾İ',yk0101,yk0112,yk0108,yk0109,yk0114,yhk5104,wk0108,wk0109,wk0114,whk5104 from (SELECT * FROM #lx WHERE isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü') A
 where ((yk0114/(case when wk0114=0 then yk0114 else wk0114 end)>=1.2 or
 		yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<=0.8))
 order by replace(yk0101,'C','YY'),yk0108
 
---SELECT * FROM #LX WHERE isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´'
+--SELECT * FROM #LX WHERE isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü'
 
---------------------------è·¯é¢ç±»å‹-----------------------
+--------------------------Â·ÃæÀàĞÍ-----------------------
 
-select 'è·¯é¢ç±»å‹''è·¯é¢ç±»å‹',--YLC.OBJNAME,
+select 'Â·ÃæÀàĞÍ''Â·ÃæÀàĞÍ',--YLC.OBJNAME,
 YLC.LQLC,YLC.SNLC,YLC.QTLC,
 LQLC+LQBH+LXBG_lqBG+XZLQ-SCLQ TZHLQ,
 CAST((((LQLC+LQBH+LXBG_lqBG+XZLQ-SCLQ-LQLC)/CASE WHEN LQLC=0 THEN 1 ELSE LQLC END))*100 AS DECIMAL(8,3)) LQBHL,
@@ -958,7 +958,7 @@ from (
 	case when grouping(a.a0102)=1 and grouping(objname)=1 then 'zZ' else max(rtrim(a.ha0102)) end ha0102,
 	case when grouping(A.a0102)=1 and grouping(objname)=1 then 'zZ' else
 	case when grouping(A.a0102)=0 and grouping(objname)=1 then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(OBJNAME,'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(objname)) end end objname,
-	case when grouping(objname)=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
+	case when grouping(objname)=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
 	sum(k0114) LC,
 	sum(case when k5104='11' then k0114 else 0 end) LQLC,
 	sum(case when k5104='12' then k0114 else 0 end) SNLC,
@@ -979,41 +979,41 @@ select
 	 max(A0102) a0102,MAX(HA0102) ha0102,
 	case when grouping(A.a0102)=1 and grouping(left(yK0101,1))=1 then 'zZ' else
 	case when grouping(A.a0102)=0 and grouping(left(yK0101,1))=1 then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(left(yK0101,1),'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(left(yK0101,1))) end end k0101,
-	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --æ–°å¢
-	sum(case when isnull(b3,'')='3' and b2='11' then wk0114 else 0 end) XZLQ, --æ²¥é’æ–°å¢
-	sum(case when isnull(b3,'')='3' and b2='12' then wk0114 else 0 end) XZSN, --æ°´æ³¥æ–°å¢
-	sum(case when isnull(b3,'')='3' and b2='13' then wk0114 else 0 end) XZQT, --å…¶ä»–æ–°å¢
-	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --åˆ é™¤
-	sum(case when isnull(b3,'')='4' and b1='11' then yk0114 else 0 end) scLQ, --æ²¥é’åˆ é™¤
-	sum(case when isnull(b3,'')='4' and b1='12' then yk0114 else 0 end) scSN, --æ°´æ³¥åˆ é™¤
-	sum(case when isnull(b3,'')='4' and b1='13' then yk0114 else 0 end) scQT, --å…¶ä»–åˆ é™¤
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='11' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_lqBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ²¥é’
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='12' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_snBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ°´æ³¥
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='13' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_qtBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-å…¶ä»–
-	sum(case when (isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8)) or b3='4' then 1 else 0 end) LXBG_tsBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ¡æ•°
-	----è·¯é¢ç±»å‹å˜æ›´
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqtz, --æ²¥é’è·¯é¢è°ƒæ•´
-	sum(case when isnull(b3,'')='1' and b1='11' then yk0114 else 0 end) lqbb, --æ²¥é’è·¯é¢ä¸å˜
+	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --ĞÂÔö
+	sum(case when isnull(b3,'')='3' and b2='11' then wk0114 else 0 end) XZLQ, --Á¤ÇàĞÂÔö
+	sum(case when isnull(b3,'')='3' and b2='12' then wk0114 else 0 end) XZSN, --Ë®ÄàĞÂÔö
+	sum(case when isnull(b3,'')='3' and b2='13' then wk0114 else 0 end) XZQT, --ÆäËûĞÂÔö
+	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --É¾³ı
+	sum(case when isnull(b3,'')='4' and b1='11' then yk0114 else 0 end) scLQ, --Á¤ÇàÉ¾³ı
+	sum(case when isnull(b3,'')='4' and b1='12' then yk0114 else 0 end) scSN, --Ë®ÄàÉ¾³ı
+	sum(case when isnull(b3,'')='4' and b1='13' then yk0114 else 0 end) scQT, --ÆäËûÉ¾³ı
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='11' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_lqBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Á¤Çà
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='12' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_snBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Ë®Äà
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='13' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_qtBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-ÆäËû
+	sum(case when (isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8)) or b3='4' then 1 else 0 end) LXBG_tsBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-ÌõÊı
+	----Â·ÃæÀàĞÍ±ä¸ü
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqtz, --Á¤ÇàÂ·Ãæµ÷Õû
+	sum(case when isnull(b3,'')='1' and b1='11' then yk0114 else 0 end) lqbb, --Á¤ÇàÂ·Ãæ²»±ä
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'11' and b2='11' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqbh, --æ²¥é’è·¯é¢å˜åŒ–
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) sntz, --æ°´æ³¥è·¯é¢è°ƒæ•´
-	sum(case when isnull(b3,'')='1' and b1='12' then yk0114 else 0 end) snbb, --æ°´æ³¥è·¯é¢ä¸å˜
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqbh, --Á¤ÇàÂ·Ãæ±ä»¯
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) sntz, --Ë®ÄàÂ·Ãæµ÷Õû
+	sum(case when isnull(b3,'')='1' and b1='12' then yk0114 else 0 end) snbb, --Ë®ÄàÂ·Ãæ²»±ä
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'12' and b2='12' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) snbh, --æ°´æ³¥è·¯é¢å˜åŒ–
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qttz, --å…¶ä»–è·¯é¢è°ƒæ•´
-	sum(case when isnull(b3,'')='1' and b1='13' then yk0114 else 0 end) qtbb, --å…¶ä»–è·¯é¢ä¸å˜
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) snbh, --Ë®ÄàÂ·Ãæ±ä»¯
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qttz, --ÆäËûÂ·Ãæµ÷Õû
+	sum(case when isnull(b3,'')='1' and b1='13' then yk0114 else 0 end) qtbb, --ÆäËûÂ·Ãæ²»±ä
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'13' and b2='13' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qtbh, --å…¶ä»–è·¯é¢å˜åŒ–
-	sum(case when isnull(bglx,'') in ('å˜æ›´') then yk0114 else 0 end) BgLC, --å˜æ›´
-	sum(case when isnull(bglx,'')='å˜æ›´' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) LXBG_THXX,--è·¯çº¿å˜æ›´-æ›¿æ¢çº¿å½¢
-	sum(case when isnull(bglx,'')='å˜æ›´' and isnull(xgjy,'')='è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) LXBG_LMLX,--è·¯çº¿å˜æ›´-è·¯é¢ç±»å‹
-    sum(case when isnull(bglx,'')='æ— æ³•åˆ¤æ–­' then yk0114 else 0 end) WFPD, --çº¿å½¢æ— æ³•åˆ¤æ–­
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qtbh, --ÆäËûÂ·Ãæ±ä»¯
+	sum(case when isnull(bglx,'') in ('±ä¸ü') then yk0114 else 0 end) BgLC, --±ä¸ü
+	sum(case when isnull(bglx,'')='±ä¸ü' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) LXBG_THXX,--Â·Ïß±ä¸ü-Ìæ»»ÏßĞÎ
+	sum(case when isnull(bglx,'')='±ä¸ü' and isnull(xgjy,'')='Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) LXBG_LMLX,--Â·Ïß±ä¸ü-Â·ÃæÀàĞÍ
+    sum(case when isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' then yk0114 else 0 end) WFPD, --ÏßĞÎÎŞ·¨ÅĞ¶Ï
 	null w
 	from #LX a
 	where left(yK0101,1) in ('X','Y','C')
@@ -1023,7 +1023,7 @@ select
 	ORDER BY REPLACE(OBJNAME,'c','YY')
 
 
-	-------------------------------------æ¡¥æ¢------------------------------
+	-------------------------------------ÇÅÁº------------------------------
 
 	select Yql.K0101,BBql,WFPDql,BGql,SCql,XZql,Yql,Yql+XZql-SCql FHHql,
 	cast(((((XZql-SCql)*1.0)/Yql))*100 as DECIMAL(8,3)) BHL
@@ -1049,11 +1049,11 @@ select
 	max(a0102) a0102,max(ha0102) ha0102,
 		case when grouping(a0102)=1 and grouping(left(YK0101,1))=1 then 'zZ' else
 		case when grouping(a0102)=0 and grouping(left(YK0101,1))=1 then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(left(YK0101,1),'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(left(YK0101,1))) end end k0101,
-	SUM(case when isnull(k6001,'')<>'' and b3='1' then 1 else 0 end) bbql,--ä¸å˜æ¡¥æ¢
-	SUM(case when isnull(k6001,'')<>'' and b3='5' then 1 else 0 end) wfpdql, --æ— æ³•åˆ¤æ–­æ¡¥æ¢
-	SUM(case when isnull(k6001,'')<>'' and b3='2' then 1 else 0 end) bgql,--å˜æ›´æ¡¥æ¢
-	SUM(case when isnull(k6001,'')<>'' and b3='4' then 1 else 0 end) scql,--åˆ é™¤æ¡¥æ¢
-	SUM(case when b3='3' then 1 else 0 end) xzql--æ–°å¢æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='1' then 1 else 0 end) bbql,--²»±äÇÅÁº
+	SUM(case when isnull(k6001,'')<>'' and b3='5' then 1 else 0 end) wfpdql, --ÎŞ·¨ÅĞ¶ÏÇÅÁº
+	SUM(case when isnull(k6001,'')<>'' and b3='2' then 1 else 0 end) bgql,--±ä¸üÇÅÁº
+	SUM(case when isnull(k6001,'')<>'' and b3='4' then 1 else 0 end) scql,--É¾³ıÇÅÁº
+	SUM(case when b3='3' then 1 else 0 end) xzql--ĞÂÔöÇÅÁº
 	from
 	(
 		select *
@@ -1066,7 +1066,7 @@ select
 	where yql.k0101<>'zz'
 	ORDER BY REPLACE(Yql.K0101,'C','YY')
 
-	----------------------------------------éš§é“---------------------------
+	----------------------------------------ËíµÀ---------------------------
 	select case when isnull(Ysd.K0101,'')='' then FHsd.k0101 else isnull(Ysd.K0101,'') end  k0101,BBsd,WFPDsd,BGsd,SCsd,XZsd,isnull(Ysd,''),isnull(Ysd+XZsd-SCsd,'') FHHsd,
 	cast((((isnull(XZsd-SCsd,''))*1.0/isnull(Ysd,1)))*100 as DECIMAL(8,3)) BHL from (
 		select
@@ -1090,11 +1090,11 @@ select
 	max(a0102) a0102,max(ha0102) ha0102,
 		case when grouping(a0102)=1 and grouping(left(YK0101,1))=1 then 'zZ' else
 		case when grouping(a0102)=0 and grouping(left(YK0101,1))=1 then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(left(YK0101,1),'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(left(YK0101,1))) end end k0101,
-	SUM(case when isnull(k6301,'')<>'' and b3='1' then 1 else 0 end) bbsd,--ä¸å˜éš§é“
-	SUM(case when isnull(k6301,'')<>'' and b3='5' then 1 else 0 end) wfpdsd, --æ— æ³•åˆ¤æ–­éš§é“
-	SUM(case when isnull(k6301,'')<>'' and b3='2' then 1 else 0 end) bgsd,--å˜æ›´éš§é“
-	SUM(case when isnull(k6301,'')<>'' and b3='4' then 1 else 0 end) scsd,--åˆ é™¤éš§é“
-	SUM(case when b3='3' then 1 else 0 end) xzsd--æ–°å¢éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='1' then 1 else 0 end) bbsd,--²»±äËíµÀ
+	SUM(case when isnull(k6301,'')<>'' and b3='5' then 1 else 0 end) wfpdsd, --ÎŞ·¨ÅĞ¶ÏËíµÀ
+	SUM(case when isnull(k6301,'')<>'' and b3='2' then 1 else 0 end) bgsd,--±ä¸üËíµÀ
+	SUM(case when isnull(k6301,'')<>'' and b3='4' then 1 else 0 end) scsd,--É¾³ıËíµÀ
+	SUM(case when b3='3' then 1 else 0 end) xzsd--ĞÂÔöËíµÀ
 	from
 	(
 		select *
@@ -1111,12 +1111,12 @@ select
 
 
 
-	select '------------------å¹²çº¿å…¬è·¯---------------------------------------------------'
+	select '------------------¸ÉÏß¹«Â·---------------------------------------------------'
 	-- select * from #lx
----------------è·¯é¢ç±»å‹
+---------------Â·ÃæÀàĞÍ
 
 
-select 'å¹²çº¿å…¬è·¯-è·¯é¢ç±»å‹' 'å¹²çº¿å…¬è·¯-è·¯é¢ç±»å‹',YLC.OBJNAME,YLC.LQLC,YLC.SNLC,YLC.QTLC,
+select '¸ÉÏß¹«Â·-Â·ÃæÀàĞÍ' '¸ÉÏß¹«Â·-Â·ÃæÀàĞÍ',YLC.OBJNAME,YLC.LQLC,YLC.SNLC,YLC.QTLC,
 LQLC+LQBH+LXBG_lqBG+XZLQ-SCLQ TZHLQ,CAST((((LQLC+LQBH+LXBG_lqBG+XZLQ-SCLQ)/CASE WHEN LQLC=0 THEN 1 ELSE LQLC END)-1)*100 AS DECIMAL(8,3)) LQBHL,
 SNLC+SNBH+LXBG_SNBG+XZSN-SCSN TZHSN,CAST((((SNLC+SNBH+LXBG_SNBG+XZSN-SCSN)/CASE WHEN SNLC=0 THEN 1 ELSE SNLC END)-1)*100 AS DECIMAL(8,3)) SNBHL,
 QTLC+QTBH+LXBG_QTBG+XZQT-SCQT TZHQT,CAST((((QTLC+QTBH+LXBG_QTBG+XZQT-SCQT)/CASE WHEN QTLC=0 THEN 1 ELSE QTLC END)-1)*100 AS DECIMAL(8,3)) QTBHL,
@@ -1132,7 +1132,7 @@ from (
 	case when grouping(A.a0102)=0 and grouping(objname)=1 and left(a.a0102,3)='331' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(OBJNAME,'S','G'),'C','X'),'Y','X'),'Z','X')) else
 	case when grouping(A.a0102)=0 and grouping(objname)=0 and left(a.a0102,3)='330' then max(rtrim(objname))+rtrim('S')
 	else max(rtrim(objname)) end end end end objname,
-	case when grouping(objname)=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
+	case when grouping(objname)=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
 	sum(k0114) LC,
 	sum(case when k5104='11' then k0114 else 0 end) LQLC,
 	sum(case when k5104='12' then k0114 else 0 end) SNLC,
@@ -1157,42 +1157,42 @@ select
 	case when grouping(A.a0102)=0 and grouping(left(yk0101,1))=1 and left(a.a0102,3)='331' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(left(yk0101,1),'S','G'),'C','X'),'Y','X'),'Z','X')) else
 	case when grouping(A.a0102)=0 and grouping(left(yk0101,1))=0 and left(a.a0102,3)='330' then max(rtrim(left(yk0101,1)))+rtrim('S')
 	else max(rtrim(left(yk0101,1))) end end end end k0101,
-	--case when grouping(left(yk0101,1))=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
-	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --æ–°å¢
-	sum(case when isnull(b3,'')='3' and b2='11' then wk0114 else 0 end) XZLQ, --æ²¥é’æ–°å¢
-	sum(case when isnull(b3,'')='3' and b2='12' then wk0114 else 0 end) XZSN, --æ°´æ³¥æ–°å¢
-	sum(case when isnull(b3,'')='3' and b2='13' then wk0114 else 0 end) XZQT, --å…¶ä»–æ–°å¢
-	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --åˆ é™¤
-	sum(case when isnull(b3,'')='4' and b1='11' then yk0114 else 0 end) scLQ, --æ²¥é’åˆ é™¤
-	sum(case when isnull(b3,'')='4' and b1='12' then yk0114 else 0 end) scSN, --æ°´æ³¥åˆ é™¤
-	sum(case when isnull(b3,'')='4' and b1='13' then yk0114 else 0 end) scQT, --å…¶ä»–åˆ é™¤
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='11' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_lqBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ²¥é’
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='12' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_snBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ°´æ³¥
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='13' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_qtBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-å…¶ä»–
-	sum(case when (isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8)) or b3='4' then 1 else 0 end) LXBG_tsBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ¡æ•°
-	----è·¯é¢ç±»å‹å˜æ›´
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqtz, --æ²¥é’è·¯é¢è°ƒæ•´
-	sum(case when isnull(b3,'')='1' and b1='11' then yk0114 else 0 end) lqbb, --æ²¥é’è·¯é¢ä¸å˜
+	--case when grouping(left(yk0101,1))=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
+	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --ĞÂÔö
+	sum(case when isnull(b3,'')='3' and b2='11' then wk0114 else 0 end) XZLQ, --Á¤ÇàĞÂÔö
+	sum(case when isnull(b3,'')='3' and b2='12' then wk0114 else 0 end) XZSN, --Ë®ÄàĞÂÔö
+	sum(case when isnull(b3,'')='3' and b2='13' then wk0114 else 0 end) XZQT, --ÆäËûĞÂÔö
+	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --É¾³ı
+	sum(case when isnull(b3,'')='4' and b1='11' then yk0114 else 0 end) scLQ, --Á¤ÇàÉ¾³ı
+	sum(case when isnull(b3,'')='4' and b1='12' then yk0114 else 0 end) scSN, --Ë®ÄàÉ¾³ı
+	sum(case when isnull(b3,'')='4' and b1='13' then yk0114 else 0 end) scQT, --ÆäËûÉ¾³ı
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='11' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_lqBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Á¤Çà
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='12' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_snBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Ë®Äà
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='13' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_qtBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-ÆäËû
+	sum(case when (isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8)) or b3='4' then 1 else 0 end) LXBG_tsBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-ÌõÊı
+	----Â·ÃæÀàĞÍ±ä¸ü
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqtz, --Á¤ÇàÂ·Ãæµ÷Õû
+	sum(case when isnull(b3,'')='1' and b1='11' then yk0114 else 0 end) lqbb, --Á¤ÇàÂ·Ãæ²»±ä
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'11' and b2='11' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqbh, --æ²¥é’è·¯é¢å˜åŒ–
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) sntz, --æ°´æ³¥è·¯é¢è°ƒæ•´
-	sum(case when isnull(b3,'')='1' and b1='12' then yk0114 else 0 end) snbb, --æ°´æ³¥è·¯é¢ä¸å˜
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqbh, --Á¤ÇàÂ·Ãæ±ä»¯
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) sntz, --Ë®ÄàÂ·Ãæµ÷Õû
+	sum(case when isnull(b3,'')='1' and b1='12' then yk0114 else 0 end) snbb, --Ë®ÄàÂ·Ãæ²»±ä
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'12' and b2='12' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) snbh, --æ°´æ³¥è·¯é¢å˜åŒ–
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qttz, --å…¶ä»–è·¯é¢è°ƒæ•´
-	sum(case when isnull(b3,'')='1' and b1='13' then yk0114 else 0 end) qtbb, --å…¶ä»–è·¯é¢ä¸å˜
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) snbh, --Ë®ÄàÂ·Ãæ±ä»¯
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qttz, --ÆäËûÂ·Ãæµ÷Õû
+	sum(case when isnull(b3,'')='1' and b1='13' then yk0114 else 0 end) qtbb, --ÆäËûÂ·Ãæ²»±ä
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'13' and b2='13' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qtbh, --å…¶ä»–è·¯é¢å˜åŒ–
-	sum(case when isnull(bglx,'') in ('å˜æ›´') then yk0114 else 0 end) BgLC, --å˜æ›´
-	sum(case when isnull(bglx,'')='å˜æ›´' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) LXBG_THXX,--è·¯çº¿å˜æ›´-æ›¿æ¢çº¿å½¢
-	sum(case when isnull(bglx,'')='å˜æ›´' and isnull(xgjy,'')='è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) LXBG_LMLX,--è·¯çº¿å˜æ›´-è·¯é¢ç±»å‹
-    sum(case when isnull(bglx,'')='æ— æ³•åˆ¤æ–­' then yk0114 else 0 end) WFPD, --çº¿å½¢æ— æ³•åˆ¤æ–­
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qtbh, --ÆäËûÂ·Ãæ±ä»¯
+	sum(case when isnull(bglx,'') in ('±ä¸ü') then yk0114 else 0 end) BgLC, --±ä¸ü
+	sum(case when isnull(bglx,'')='±ä¸ü' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) LXBG_THXX,--Â·Ïß±ä¸ü-Ìæ»»ÏßĞÎ
+	sum(case when isnull(bglx,'')='±ä¸ü' and isnull(xgjy,'')='Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) LXBG_LMLX,--Â·Ïß±ä¸ü-Â·ÃæÀàĞÍ
+    sum(case when isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' then yk0114 else 0 end) WFPD, --ÏßĞÎÎŞ·¨ÅĞ¶Ï
 	null w
 	from #LX a
 	where left(yK0101,1) in ('G','S')
@@ -1202,7 +1202,7 @@ select
 	 when objname='ZGS' then 2 when objname='SS' then 3 when objname='GS' then 4 when objname='ZG' then 5 when objname='S' then 6 when objname='G' then 7 end
 	desc
 
-	-------------------------------------æ¡¥æ¢------------------------------
+	-------------------------------------ÇÅÁº------------------------------
 	select yql.a0102,Yql.K0101,BBql,WFPDql,BGql,SCql,XZql,Yql,Yql+XZql-SCql FHHql,
 	cast(((((Yql+XZql-SCql)*1.0)/Yql)-1.0)*100 as DECIMAL(8,3)) BHL from (
 		select
@@ -1232,11 +1232,11 @@ select
 	case when grouping(a0102)=0 and grouping(left(yk0101,1))=1 and left(a0102,3)='331' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(left(yk0101,1),'S','G'),'C','X'),'Y','X'),'Z','X')) else
 	case when grouping(a0102)=0 and grouping(left(yk0101,1))=0 and left(a0102,3)='330' then max(rtrim(left(yk0101,1)))+rtrim('S')
 	else max(rtrim(left(yk0101,1))) end end end end k0101,
-	SUM(case when isnull(k6001,'')<>'' and b3='1' then 1 else 0 end) bbql,--ä¸å˜æ¡¥æ¢
-	SUM(case when isnull(k6001,'')<>'' and b3='5' then 1 else 0 end) wfpdql, --æ— æ³•åˆ¤æ–­æ¡¥æ¢
-	SUM(case when isnull(k6001,'')<>'' and b3='2' then 1 else 0 end) bgql,--å˜æ›´æ¡¥æ¢
-	SUM(case when isnull(k6001,'')<>'' and b3='4' then 1 else 0 end) scql,--åˆ é™¤æ¡¥æ¢
-	SUM(case when b3='3' then 1 else 0 end) xzql--æ–°å¢æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='1' then 1 else 0 end) bbql,--²»±äÇÅÁº
+	SUM(case when isnull(k6001,'')<>'' and b3='5' then 1 else 0 end) wfpdql, --ÎŞ·¨ÅĞ¶ÏÇÅÁº
+	SUM(case when isnull(k6001,'')<>'' and b3='2' then 1 else 0 end) bgql,--±ä¸üÇÅÁº
+	SUM(case when isnull(k6001,'')<>'' and b3='4' then 1 else 0 end) scql,--É¾³ıÇÅÁº
+	SUM(case when b3='3' then 1 else 0 end) xzql--ĞÂÔöÇÅÁº
 	from
 	(
 		select *
@@ -1249,7 +1249,7 @@ select
 	ORDER BY case when yql.k0101='ZZZ' then left(replace(Yql.A0102,'331','330'),7) else yql.a0102 end,REPLACE(Yql.K0101,'G','SS') desc
 
 
-	----------------------------------------éš§é“---------------------------
+	----------------------------------------ËíµÀ---------------------------
 	select isnull(Ysd.K0101,'') k0101,BBsd,WFPDsd,BGsd,SCsd,XZsd,isnull(Ysd,''),isnull(Ysd+XZsd-SCsd,'') FHHsd,
 	cast((((isnull(Ysd+XZsd-SCsd,''))*1.0/isnull(Ysd,1))-1.0)*100 as DECIMAL(8,3)) BHL from (
 		select
@@ -1279,11 +1279,11 @@ select
 	case when grouping(a0102)=0 and grouping(left(yk0101,1))=1 and left(a0102,3)='331' then 'Z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(left(yk0101,1),'S','G'),'C','X'),'Y','X'),'Z','X')) else
 	case when grouping(a0102)=0 and grouping(left(yk0101,1))=0 and left(a0102,3)='330' then max(rtrim(left(yk0101,1)))+rtrim('S')
 	else max(rtrim(left(yk0101,1))) end end end end k0101,
-	SUM(case when isnull(k6301,'')<>'' and b3='1' then 1 else 0 end) bbsd,--ä¸å˜éš§é“
-	SUM(case when isnull(k6301,'')<>'' and b3='5' then 1 else 0 end) wfpdsd, --æ— æ³•åˆ¤æ–­éš§é“
-	SUM(case when isnull(k6301,'')<>'' and b3='2' then 1 else 0 end) bgsd,--å˜æ›´éš§é“
-	SUM(case when isnull(k6301,'')<>'' and b3='4' then 1 else 0 end) scsd,--åˆ é™¤éš§é“
-	SUM(case when b3='3' then 1 else 0 end) xzsd--æ–°å¢éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='1' then 1 else 0 end) bbsd,--²»±äËíµÀ
+	SUM(case when isnull(k6301,'')<>'' and b3='5' then 1 else 0 end) wfpdsd, --ÎŞ·¨ÅĞ¶ÏËíµÀ
+	SUM(case when isnull(k6301,'')<>'' and b3='2' then 1 else 0 end) bgsd,--±ä¸üËíµÀ
+	SUM(case when isnull(k6301,'')<>'' and b3='4' then 1 else 0 end) scsd,--É¾³ıËíµÀ
+	SUM(case when b3='3' then 1 else 0 end) xzsd--ĞÂÔöËíµÀ
 	from
 	(
 		select *
@@ -1298,9 +1298,9 @@ select
 
 
 	/*
-----------------------çº¿è·¯æ¡æ•°--------------------
+----------------------ÏßÂ·ÌõÊı--------------------
 
---åŸè·¯çº¿æ¡æ•°
+--Ô­Â·ÏßÌõÊı
 SELECT OBJNAME,rtrim(YTS),rtrim(XZTS),rtrim(SCTS),rtrim(TZHTS) FROM (
 select '1' A,YTS.a0102 A0102,objname,
 cast(ISNULL(TS,0) as char(50)) YTS,
@@ -1315,7 +1315,7 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	 when grouping(a0102)=0 and grouping(objname)=1 and left(max(a0102),3)='330' then 'A'+rtrim(MAX(REPLACE(REPLACE(REPLACE(REPLACE(OBJNAME,'S','G'),'C','X'),'Y','X'),'Z','X')))+'S'
 	 when grouping(a0102)=0 and grouping(objname)=0 and left(max(a0102),3)='330' then max(rtrim(objname))+'S' else
 	max(rtrim(objname)) end objname,
-	case when grouping(objname)=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
+	case when grouping(objname)=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
 	sum(1) TS
 	from
 	(
@@ -1333,7 +1333,7 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	with rollup
 	) YTS full join
 	(
-	---æ–°å¢è·¯çº¿æ¡æ•°
+	---ĞÂÔöÂ·ÏßÌõÊı
 	select
 	max(rtrim(a0102)) a0102,
 	case when grouping(a0102)=1 and grouping(left(wk0101,1))=1 then 'A'
@@ -1342,12 +1342,12 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	 when grouping(a0102)=0 and grouping(left(wk0101,1))=0 and left(max(a0102),3)='330' then max(rtrim(left(wk0101,1)))+'S' else
 	max(rtrim(left(wk0101,1))) end k0101,
 	sum(1) xzts
-	from (select * from #lx where bglx='æ–°å¢' and isnull(wcjwt,'') like 'éåŸæ•°æ®åº“%' and left(yK0101,1) in ('G','S')) a
+	from (select * from #lx where bglx='ĞÂÔö' and isnull(wcjwt,'') like '·ÇÔ­Êı¾İ¿â%' and left(yK0101,1) in ('G','S')) a
 	group by a0102,left(wk0101,1) with rollup
 	) XZTS ON YTS.A0102=XZTS.A0102 AND YTS.OBJNAME=XZTS.K0101
 	full join
 	(
-	--åˆ é™¤è·¯çº¿æ¡æ•°
+	--É¾³ıÂ·ÏßÌõÊı
 	select
 	max(rtrim(a0102)) a0102,
 	case when grouping(a0102)=1 and grouping(left(yk0101,1))=1 then 'A'
@@ -1366,21 +1366,21 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	) A
 	ORDER BY A,A0102,replace(OBJNAME,'S','GG'),SCTS
 
-	-----------------------------çº¿è·¯è½¨è¿¹--------------------
+	-----------------------------ÏßÂ·¹ì¼£--------------------
 
-	--å°†å¤–ä¸šé‡‡é›†è½¨è¿¹ã€ç”µå­åœ°å›¾è½¨è¿¹ã€åŸæ•°æ®åº“è½¨è¿¹ä¸‰è€…è¿›è¡Œæ¯”å¯¹ï¼Œå¯¹å¤–ä¸šé‡‡é›†è½¨è¿¹çº¿å½¢æ›´å¹³æ»‘ï¼Œæ›´ç¬¦åˆç”µå­åœ°å›¾è½¨è¿¹èµ°å‘çš„è·¯æ®µå»ºè®®è°ƒæ•´è½¨è¿¹ï¼Œè°ƒæ•´å˜åŒ–è·¯çº¿å…±**æ¡ï¼Œå…¶ä¸­å›½é“é«˜é€Ÿ**æ¡ï¼Œçœé“é«˜é€Ÿ**æ¡ï¼Œæ™®é€šå›½é“**æ¡ï¼Œæ™®é€šçœé“**æ¡ï¼Œæ¶‰åŠå…¬è·¯é‡Œç¨‹å…±è®¡**å…¬é‡Œã€‚
+	--½«ÍâÒµ²É¼¯¹ì¼£¡¢µç×ÓµØÍ¼¹ì¼£¡¢Ô­Êı¾İ¿â¹ì¼£ÈıÕß½øĞĞ±È¶Ô£¬¶ÔÍâÒµ²É¼¯¹ì¼£ÏßĞÎ¸üÆ½»¬£¬¸ü·ûºÏµç×ÓµØÍ¼¹ì¼£×ßÏòµÄÂ·¶Î½¨Òéµ÷Õû¹ì¼££¬µ÷Õû±ä»¯Â·Ïß¹²**Ìõ£¬ÆäÖĞ¹úµÀ¸ßËÙ**Ìõ£¬Ê¡µÀ¸ßËÙ**Ìõ£¬ÆÕÍ¨¹úµÀ**Ìõ£¬ÆÕÍ¨Ê¡µÀ**Ìõ£¬Éæ¼°¹«Â·Àï³Ì¹²¼Æ**¹«Àï¡£
 
-	select 'å°†å¤–ä¸šé‡‡é›†è½¨è¿¹ã€ç”µå­åœ°å›¾è½¨è¿¹ã€åŸæ•°æ®åº“è½¨è¿¹ä¸‰è€…è¿›è¡Œæ¯”å¯¹ï¼Œå¯¹å¤–ä¸šé‡‡é›†è½¨è¿¹çº¿å½¢æ›´å¹³æ»‘ï¼Œæ›´ç¬¦åˆç”µå­åœ°å›¾è½¨è¿¹èµ°å‘çš„è·¯æ®µå»ºè®®è°ƒæ•´è½¨è¿¹ï¼Œè°ƒæ•´å˜åŒ–è·¯çº¿å…±'+
+	select '½«ÍâÒµ²É¼¯¹ì¼£¡¢µç×ÓµØÍ¼¹ì¼£¡¢Ô­Êı¾İ¿â¹ì¼£ÈıÕß½øĞĞ±È¶Ô£¬¶ÔÍâÒµ²É¼¯¹ì¼£ÏßĞÎ¸üÆ½»¬£¬¸ü·ûºÏµç×ÓµØÍ¼¹ì¼£×ßÏòµÄÂ·¶Î½¨Òéµ÷Õû¹ì¼££¬µ÷Õû±ä»¯Â·Ïß¹²'+
 	isnull(rtrim(sum(case when k0101='zZ' then ts else 0 end)),0)
-	+'æ¡ï¼Œå…¶ä¸­å›½é“é«˜é€Ÿ'+rtrim(sum(case when k0101='G' and left(a0102,3)='330' then ts else 0 end))+'æ¡ï¼Œçœé“é«˜é€Ÿ'+rtrim(sum(case when k0101='S' and left(a0102,3)='330' then ts else 0 end))+
-	'æ¡ï¼Œæ™®é€šå›½é“'+rtrim(sum(case when k0101='G' and left(a0102,3)='331' then ts else 0 end))+'æ¡ï¼Œæ™®é€šçœé“'+rtrim(sum(case when k0101='S' and left(a0102,3)='331' then ts else 0 end))+
-	'æ¡ï¼Œæ¶‰åŠå…¬è·¯é‡Œç¨‹å…±è®¡'+rtrim(sum(case when k0101='zZ' then k0114 else 0 end))+'å…¬é‡Œã€‚'
+	+'Ìõ£¬ÆäÖĞ¹úµÀ¸ßËÙ'+rtrim(sum(case when k0101='G' and left(a0102,3)='330' then ts else 0 end))+'Ìõ£¬Ê¡µÀ¸ßËÙ'+rtrim(sum(case when k0101='S' and left(a0102,3)='330' then ts else 0 end))+
+	'Ìõ£¬ÆÕÍ¨¹úµÀ'+rtrim(sum(case when k0101='G' and left(a0102,3)='331' then ts else 0 end))+'Ìõ£¬ÆÕÍ¨Ê¡µÀ'+rtrim(sum(case when k0101='S' and left(a0102,3)='331' then ts else 0 end))+
+	'Ìõ£¬Éæ¼°¹«Â·Àï³Ì¹²¼Æ'+rtrim(sum(case when k0101='zZ' then k0114 else 0 end))+'¹«Àï¡£'
 	from (
 	SELECT min(A0102) a0102,
 	case when grouping(a0102)=1 and grouping(left(k0101,1))=1 then 'Zz' else
 	case when grouping(a0102)=0 and grouping(left(k0101,1))=1 then 'z'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(left(k0101,1),'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(left(k0101,1))) end end k0101
 	,SUM(TS) ts,SUM(K0114) k0114 FROM (
-	select a0102,replace(replace(k0101,'D001',''),'D002','') k0101,1 TS,SUM(K0114) K0114 from #k001 where ''='' and k0101 in (select yk0101 from #lx where bglx='å˜æ›´' and xgjy='æ›¿æ¢çº¿å½¢')
+	select a0102,replace(replace(k0101,'D001',''),'D002','') k0101,1 TS,SUM(K0114) K0114 from #k001 where ''='' and k0101 in (select yk0101 from #lx where bglx='±ä¸ü' and xgjy='Ìæ»»ÏßĞÎ')
 	AND isnull(k0124,'')=''
 	and isnull(k0123,2)<>1
 	and left(k0101,1) in ('G','S')
@@ -1389,7 +1389,7 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	) a
 
 
-	----------------------------çº¿è·¯é‡Œç¨‹---------------------------    select * from #lx
+	----------------------------ÏßÂ·Àï³Ì---------------------------    select * from #lx
 
     select * from (
     select
@@ -1412,17 +1412,17 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	sum(j_lmbg_lcbb)+
 	sum(j_lxbg_lmbg_lcbb)+
 	sum(j_wfpd) j_bblc,
-	sum(j_LXBG_LCBG_ylc) j_LXBG_LCBG_ylc,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-åŸé‡Œç¨‹
-	sum(j_LXBG_LCBG_bhl) j_LXBG_LCBG_bhl,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-å˜åŒ–é‡
+	sum(j_LXBG_LCBG_ylc) j_LXBG_LCBG_ylc,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Ô­Àï³Ì
+	sum(j_LXBG_LCBG_bhl) j_LXBG_LCBG_bhl,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-±ä»¯Á¿
 	sum(j_LXBG_LCBG_ylc)+
 	sum(j_LXBG_LCBG_bhl) j_LXBG_lcbg,
-	sum(j_lxXZLC) j_lxXZLC, --è·¯çº¿æ–°å¢
-	sum(j_ycXZLC) j_ycXZLC, --å»¶é•¿æ–°å¢
+	sum(j_lxXZLC) j_lxXZLC, --Â·ÏßĞÂÔö
+	sum(j_ycXZLC) j_ycXZLC, --ÑÓ³¤ĞÂÔö
 	sum(j_lxXZLC)+
-	sum(j_ycXZLC) j_xzlc, --å»¶é•¿æ–°å¢
+	sum(j_ycXZLC) j_xzlc, --ÑÓ³¤ĞÂÔö
 	sum(case when bglx1=4 and bglx2=4 then J_scLC else 0 end) j_wqsc,
 	sum(case when bglx1<>4 or bglx2<>4 then J_scLC else 0 end) j_bfscsc,
-	sum(j_scLC) j_scLC, --åˆ é™¤
+	sum(j_scLC) j_scLC, --É¾³ı
 	(sum(j_lcbb)+sum(j_lxbg_lmbb_lcbb)+sum(j_lmbg_lcbb)+sum(j_lxbg_lmbg_lcbb)+sum(j_wfpd))
 	+(sum(j_LXBG_LCBG_ylc)+sum(j_LXBG_LCBG_bhl))
 	+(sum(j_lxXZLC)+sum(j_ycXZLC)) tzjg,
@@ -1432,32 +1432,32 @@ cast(ISNULL(TS,0)+ISNULL(XZTS,0)-ISNULL(SCTS,0) as char(50)) TZHTS from (
 	 from (
 		select
 		 A0102,min(HA0102) ha0102, replace(replace(yk0101,'D001',''),'D002','') k0101,
-		----ç»™äº¤ç§‘é™¢æ•°æ®     select * from #lx where left(yK0101,1) in ('G','S')
+		----¸ø½»¿ÆÔºÊı¾İ     select * from #lx where left(yK0101,1) in ('G','S')
 		sum(yk0114) ylc,
-		sum(case when isnull(b3,'')='1' then yk0114 else 0 end) j_lcbb,  --é‡Œç¨‹ä¸å˜
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+		sum(case when isnull(b3,'')='1' then yk0114 else 0 end) j_lcbb,  --Àï³Ì²»±ä
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
 		(yk0114/(case when wk0114=0 then yk0114 else wk0114 end)>0.8 and
-				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<1.2) and b1=b2 then yk0114 else 0 end) j_lxbg_lmbb_lcbb,  --è·¯çº¿å˜æ›´-è·¯é¢ä¸å˜-é‡Œç¨‹ä¸å˜
+				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<1.2) and b1=b2 then yk0114 else 0 end) j_lxbg_lmbb_lcbb,  --Â·Ïß±ä¸ü-Â·Ãæ²»±ä-Àï³Ì²»±ä
 
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')='è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) j_lmbg_lcbb,  --è·¯é¢å˜æ›´-é‡Œç¨‹ä¸å˜
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')='Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) j_lmbg_lcbb,  --Â·Ãæ±ä¸ü-Àï³Ì²»±ä
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
 		(yk0114/(case when wk0114=0 then yk0114 else wk0114 end)>0.8 and
 				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<1.2)  and b1<>b2  then yk0114 else 0 end)
-		 j_lxbg_lmbg_lcbb,  --è·¯çº¿å˜æ›´-è·¯é¢å˜æ›´-é‡Œç¨‹ä¸å˜
-		sum(case when isnull(b3,'')='5' then yk0114 else 0 end) j_wfpd,  --æ— æ³•åˆ¤æ–­
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+		 j_lxbg_lmbg_lcbb,  --Â·Ïß±ä¸ü-Â·Ãæ±ä¸ü-Àï³Ì²»±ä
+		sum(case when isnull(b3,'')='5' then yk0114 else 0 end) j_wfpd,  --ÎŞ·¨ÅĞ¶Ï
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
 		(yk0114/(case when wk0114=0 then yk0114 else wk0114 end)>=1.2 or
-				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<=0.8) then yk0114 else 0 end) j_LXBG_LCBG_ylc,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-åŸé‡Œç¨‹
+				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<=0.8) then yk0114 else 0 end) j_LXBG_LCBG_ylc,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Ô­Àï³Ì
 
-		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+		sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
 		(yk0114/(case when wk0114=0 then yk0114 else wk0114 end)>=1.2 or
-				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) j_LXBG_LCBG_bhl,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-å˜åŒ–é‡
-		sum(case when isnull(b3,'')='3' and isnull(wcjwt,'')='éåŸæ•°æ®åº“æ•°æ®' then wk0114 else 0 end) j_lxXZLC, --è·¯çº¿æ–°å¢
-		sum(case when isnull(b3,'')='3' and isnull(wcjwt,'')<>'éåŸæ•°æ®åº“æ•°æ®' then wk0114 else 0 end) j_ycXZLC, --å»¶é•¿æ–°å¢
+				yk0114/(case when wk0114=0 then yk0114 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) j_LXBG_LCBG_bhl,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-±ä»¯Á¿
+		sum(case when isnull(b3,'')='3' and isnull(wcjwt,'')='·ÇÔ­Êı¾İ¿âÊı¾İ' then wk0114 else 0 end) j_lxXZLC, --Â·ÏßĞÂÔö
+		sum(case when isnull(b3,'')='3' and isnull(wcjwt,'')<>'·ÇÔ­Êı¾İ¿âÊı¾İ' then wk0114 else 0 end) j_ycXZLC, --ÑÓ³¤ĞÂÔö
 		sum(case when isnull(b3,'')='3' then wk0114 else 0 end) j_xzlc,
-		min(case when yk0108 is not null then b3 else 4 end) BGLX1, --æ ¹æ®è·¯çº¿åˆ†ç»„ï¼Œè·å–æœ€å¤§çš„å˜æ›´ç±»å‹,
-		max(case when yk0108 is not null then b3 else 4 end) BGLX2, --æ ¹æ®è·¯çº¿åˆ†ç»„ï¼Œè·å–æœ€å¤§çš„å˜æ›´ç±»å‹,
-		sum(case when isnull(b3,'')='4' then yk0114 else 0 end) J_scLC --åˆ é™¤
+		min(case when yk0108 is not null then b3 else 4 end) BGLX1, --¸ù¾İÂ·Ïß·Ö×é£¬»ñÈ¡×î´óµÄ±ä¸üÀàĞÍ,
+		max(case when yk0108 is not null then b3 else 4 end) BGLX2, --¸ù¾İÂ·Ïß·Ö×é£¬»ñÈ¡×î´óµÄ±ä¸üÀàĞÍ,
+		sum(case when isnull(b3,'')='4' then yk0114 else 0 end) J_scLC --É¾³ı
 		from #LX a
 		where left(yK0101,1) in ('G','S')
 		group by A0102,yk0101

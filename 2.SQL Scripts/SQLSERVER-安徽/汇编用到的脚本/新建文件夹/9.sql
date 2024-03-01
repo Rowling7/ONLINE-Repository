@@ -1,4 +1,4 @@
---2023鏂板缓涓�绾т簩绾ц矾
+--2023新建一级二级路
 SELECT  left(k0101,1),sum(isnull(k0114,0))
 from k01 
 where isnull(k0123,'2')='2' and k0124 is null
@@ -9,7 +9,7 @@ AND K0180 ='2023'
 GROUP BY left(k0101,1) with rollup
 
 
---2023鏂板缓涓�绾т簩绾ц矾
+--2023新建一级二级路
 SELECT  left(k0101,1),sum(isnull(k0114,0))
 from k01 
 where isnull(k0123,'2')='2' and k0124 is null

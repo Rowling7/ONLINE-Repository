@@ -1,5 +1,5 @@
--- åˆ›å»º
-DELIMITER $$ -- æŒ‡å®šç»“æŸç¬¦
+-- ´´½¨
+DELIMITER $$ -- Ö¸¶¨½áÊø·û
 CREATE PROCEDURE  P1()
 BEGIN
 
@@ -8,10 +8,10 @@ SELECT  * FROM A50 LIMIT 10 ;
 END $$
 DELIMITER ;
 
--- è°ƒç”¨
+-- µ÷ÓÃ
 CALL P1;
--- æŸ¥è¯¢
+-- ²éÑ¯
 SHOW CREATE PROCEDURE P1;
--- åˆ é™¤
+-- É¾³ý
 DROP PROCEDURE IF EXISTS P1;
 

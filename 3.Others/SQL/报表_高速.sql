@@ -1,29 +1,29 @@
 
 select
-'åˆè®¡' gydw,
+'ºÏ¼Æ' gydw,
 null mc,
-sum(ifnull(a2711,0)) a2711,-- å‚¨å¤‡ä¸­å¿ƒï¼ˆç‚¹ï¼‰æ•°é‡çœçº§
-sum(ifnull(a2712,0)) a2712,-- å‚¨å¤‡ä¸­å¿ƒï¼ˆç‚¹ï¼‰æ•°é‡åœ°å¸‚åŠä»¥ä¸‹çº§
-cast(sum(ifnull(a2702,0)) as decimal(18,3)) a2702,-- ç¼–ç»‡è¢‹
-sum(ifnull(a2703,0)) a2703,-- èé›ªå‰‚
-sum(ifnull(a2713,0)) a2713,-- é˜²æ»‘å‰‚
-sum(ifnull(a2701,0)) a2701,-- æˆ˜å¤‡é’¢æ¢
-sum(ifnull(a2714,0)) a2714,-- æœºæ¢°åŒ–æ¡¥
-sum(ifnull(a2704,0)) a2704,-- å¹³æ¿è½¦
-sum(ifnull(a2705,0)) a2705,-- æŒ–æ˜æœº
-sum(ifnull(a2706,0)) a2706,-- æ¨åœŸæœº
-sum(ifnull(a2707,0)) a2707,-- è£…è½½æœº
-sum(ifnull(a2715,0)) a2715,-- èµ·é‡æœº
-sum(ifnull(a2716,0)) a2716,-- å¤šåŠŸèƒ½é™¤é›ªï¼ˆå†°ï¼‰è½¦
-sum(ifnull(a2710,0)) a2710,-- æ¨é›ªé“²
-sum(ifnull(a2717,0)) a2717,-- é™¤é›ªæ»šåˆ·
-sum(ifnull(a2708,0)) a2708,-- æŠ½æ°´æœº
-sum(ifnull(a2718,0)) a2718,-- åº”æ€¥é€šè®¯è½¦
-sum(ifnull(a2719,0)) a2719,-- å•å…µè£…å¤‡
-sum(ifnull(a2720,0)) a2720,-- æ— äººæœº
-sum(ifnull(a2709,0)) a2709,-- å‘ç”µæœºç»„
-sum(ifnull(a2721,0)) a2721,-- ç§»åŠ¨ç…§æ˜è®¾å¤‡
-sum(ifnull(a2722,0)) a2722-- åº”æ€¥æŠ¢é€šå®¿è¥è½¦
+sum(ifnull(a2711,0)) a2711,-- ´¢±¸ÖĞĞÄ£¨µã£©ÊıÁ¿Ê¡¼¶
+sum(ifnull(a2712,0)) a2712,-- ´¢±¸ÖĞĞÄ£¨µã£©ÊıÁ¿µØÊĞ¼°ÒÔÏÂ¼¶
+cast(sum(ifnull(a2702,0)) as decimal(18,3)) a2702,-- ±àÖ¯´ü
+sum(ifnull(a2703,0)) a2703,-- ÈÚÑ©¼Á
+sum(ifnull(a2713,0)) a2713,-- ·À»¬¼Á
+sum(ifnull(a2701,0)) a2701,-- Õ½±¸¸ÖÁº
+sum(ifnull(a2714,0)) a2714,-- »úĞµ»¯ÇÅ
+sum(ifnull(a2704,0)) a2704,-- Æ½°å³µ
+sum(ifnull(a2705,0)) a2705,-- ÍÚ¾ò»ú
+sum(ifnull(a2706,0)) a2706,-- ÍÆÍÁ»ú
+sum(ifnull(a2707,0)) a2707,-- ×°ÔØ»ú
+sum(ifnull(a2715,0)) a2715,-- ÆğÖØ»ú
+sum(ifnull(a2716,0)) a2716,-- ¶à¹¦ÄÜ³ıÑ©£¨±ù£©³µ
+sum(ifnull(a2710,0)) a2710,-- ÍÆÑ©²ù
+sum(ifnull(a2717,0)) a2717,-- ³ıÑ©¹öË¢
+sum(ifnull(a2708,0)) a2708,-- ³éË®»ú
+sum(ifnull(a2718,0)) a2718,-- Ó¦¼±Í¨Ñ¶³µ
+sum(ifnull(a2719,0)) a2719,-- µ¥±ø×°±¸
+sum(ifnull(a2720,0)) a2720,-- ÎŞÈË»ú
+sum(ifnull(a2709,0)) a2709,-- ·¢µç»ú×é
+sum(ifnull(a2721,0)) a2721,-- ÒÆ¶¯ÕÕÃ÷Éè±¸
+sum(ifnull(a2722,0)) a2722-- Ó¦¼±ÇÀÍ¨ËŞÓª³µ
 from a27 
 left join b01 b on a27.b01_id=b.b01_id	 
 where   b.b0111 like'42A%'
@@ -34,31 +34,31 @@ union
 select
 b.b0101 b0101,
 b.b0111 b0111,
-sum(ifnull(a2711,0)) a2711,-- å‚¨å¤‡ä¸­å¿ƒï¼ˆç‚¹ï¼‰æ•°é‡çœçº§
-sum(ifnull(a2712,0)) a2712,-- å‚¨å¤‡ä¸­å¿ƒï¼ˆç‚¹ï¼‰æ•°é‡åœ°å¸‚åŠä»¥ä¸‹çº§
-cast(sum(ifnull(a2702,0)) as decimal(18,3)) a2702,-- ç¼–ç»‡è¢‹
-sum(ifnull(a2703,0)) a2703,-- èé›ªå‰‚
-sum(ifnull(a2713,0)) a2713,-- é˜²æ»‘å‰‚
-sum(ifnull(a2701,0)) a2701,-- æˆ˜å¤‡é’¢æ¢
-sum(ifnull(a2714,0)) a2714,-- æœºæ¢°åŒ–æ¡¥
-sum(ifnull(a2704,0)) a2704,-- å¹³æ¿è½¦
-sum(ifnull(a2705,0)) a2705,-- æŒ–æ˜æœº
-sum(ifnull(a2706,0)) a2706,-- æ¨åœŸæœº
-sum(ifnull(a2707,0)) a2707,-- è£…è½½æœº
-sum(ifnull(a2715,0)) a2715,-- èµ·é‡æœº
-sum(ifnull(a2716,0)) a2716,-- å¤šåŠŸèƒ½é™¤é›ªï¼ˆå†°ï¼‰è½¦
-sum(ifnull(a2710,0)) a2710,-- æ¨é›ªé“²
-sum(ifnull(a2717,0)) a2717,-- é™¤é›ªæ»šåˆ·
-sum(ifnull(a2708,0)) a2708,-- æŠ½æ°´æœº
-sum(ifnull(a2718,0)) a2718,-- åº”æ€¥é€šè®¯è½¦
-sum(ifnull(a2719,0)) a2719,-- å•å…µè£…å¤‡
-sum(ifnull(a2720,0)) a2720,-- æ— äººæœº
-sum(ifnull(a2709,0)) a2709,-- å‘ç”µæœºç»„
-sum(ifnull(a2721,0)) a2721,-- ç§»åŠ¨ç…§æ˜è®¾å¤‡
-sum(ifnull(a2722,0)) a2722-- ç§»åŠ¨ç…§æ˜è®¾å¤‡
+sum(ifnull(a2711,0)) a2711,-- ´¢±¸ÖĞĞÄ£¨µã£©ÊıÁ¿Ê¡¼¶
+sum(ifnull(a2712,0)) a2712,-- ´¢±¸ÖĞĞÄ£¨µã£©ÊıÁ¿µØÊĞ¼°ÒÔÏÂ¼¶
+cast(sum(ifnull(a2702,0)) as decimal(18,3)) a2702,-- ±àÖ¯´ü
+sum(ifnull(a2703,0)) a2703,-- ÈÚÑ©¼Á
+sum(ifnull(a2713,0)) a2713,-- ·À»¬¼Á
+sum(ifnull(a2701,0)) a2701,-- Õ½±¸¸ÖÁº
+sum(ifnull(a2714,0)) a2714,-- »úĞµ»¯ÇÅ
+sum(ifnull(a2704,0)) a2704,-- Æ½°å³µ
+sum(ifnull(a2705,0)) a2705,-- ÍÚ¾ò»ú
+sum(ifnull(a2706,0)) a2706,-- ÍÆÍÁ»ú
+sum(ifnull(a2707,0)) a2707,-- ×°ÔØ»ú
+sum(ifnull(a2715,0)) a2715,-- ÆğÖØ»ú
+sum(ifnull(a2716,0)) a2716,-- ¶à¹¦ÄÜ³ıÑ©£¨±ù£©³µ
+sum(ifnull(a2710,0)) a2710,-- ÍÆÑ©²ù
+sum(ifnull(a2717,0)) a2717,-- ³ıÑ©¹öË¢
+sum(ifnull(a2708,0)) a2708,-- ³éË®»ú
+sum(ifnull(a2718,0)) a2718,-- Ó¦¼±Í¨Ñ¶³µ
+sum(ifnull(a2719,0)) a2719,-- µ¥±ø×°±¸
+sum(ifnull(a2720,0)) a2720,-- ÎŞÈË»ú
+sum(ifnull(a2709,0)) a2709,-- ·¢µç»ú×é
+sum(ifnull(a2721,0)) a2721,-- ÒÆ¶¯ÕÕÃ÷Éè±¸
+sum(ifnull(a2722,0)) a2722-- ÒÆ¶¯ÕÕÃ÷Éè±¸
 from a27 
 left join b01 b on a27.b01_id=b.b01_id and B.z0011!=3
-left join  s951 C on a27.a0101=C.s951_id and C.z0011!=3 -- å¹´é™		 
+left join  s951 C on a27.a0101=C.s951_id and C.z0011!=3 -- ÄêÏŞ		 
 where  b.b0111 like'42A%'  and A27.z0011!=3
 AND C.s9532 < :A0101
 and b.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID),'%')

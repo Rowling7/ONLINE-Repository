@@ -12,10 +12,10 @@ openrowset('Microsoft.ACE.OLEDB.12.0', 'E:\42\mapdata.sdd';'admin';'',QL)
 order by  rtrim(DWDM)
 
 
---æ ¸å¯¹è¡¨æ ¼æ•°æ®åº“æ˜¯å¦ä¸€è‡´
+--ºË¶Ô±í¸ñÊý¾Ý¿âÊÇ·ñÒ»ÖÂ
 
 SELECT  E,F,b.K0108,G,b.K0109,H,b.k0114
-from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20230818 æ¸©å·žæ ¸æŸ¥\330328\330328.xlsx',sheet1$)
+from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼þ\1.¹¤×÷ÎÄ¼þ£¨ÈÕÆÚ·ÖÀà£©\20230818 ÎÂÖÝºË²é\330328\330328.xlsx',sheet1$)
 LEFT JOIN
 (
 SELECT rtrim(K0101) k0101,K0108,k0109,K0114
@@ -25,11 +25,11 @@ WHERE LEFT(K0101,1)in('C','z')
 where  b.K0108 IS NULL OR b.K0109 IS NULL --OR b.k0114 IS NULL
 
 SELECT  E,b.LXBM,F,b.QDZH,G,b.ZDZH,H
-from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20230818 æ¸©å·žæ ¸æŸ¥\330328\330328.xlsx',sheet1$)
+from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼þ\1.¹¤×÷ÎÄ¼þ£¨ÈÕÆÚ·ÖÀà£©\20230818 ÎÂÖÝºË²é\330328\330328.xlsx',sheet1$)
 LEFT JOIN
 (
 select  rtrim(LXBM) LXBM,RTRIM(QDZH) QDZH,RTRIM(ZDZH) ZDZH
 from
-openrowset('Microsoft.ACE.OLEDB.12.0', 'D:\ä¸œæ–¹æ°¸å¾·è½¯ä»¶OYDSOFT æµ™æ±Ÿ\HRP-GIS2011\MAPDATA\330328\mapdata.sdd';'admin';'',LX_C)
+openrowset('Microsoft.ACE.OLEDB.12.0', 'D:\¶«·½ÓÀµÂÈí¼þOYDSOFT Õã½­\HRP-GIS2011\MAPDATA\330328\mapdata.sdd';'admin';'',LX_C)
 )b on a=b.LXBM and  b=b.QDZH and c=b.ZDZH
 where  b.QDZH IS NULL OR b.ZDZH IS NULL

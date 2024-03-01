@@ -2,7 +2,7 @@ IF OBJECT_ID('TEMPDB..#tempSNLX') IS NOT NULL DROP TABLE #tempSNLX
 IF OBJECT_ID('TEMPDB..#tempSNLXB') IS NOT NULL DROP TABLE #tempSNLXB
 
 SELECT
-NULL åºå·,
+NULL ÐòºÅ,
 A0102,
 HA0102,
 rtrim(K1302) K1302,
@@ -35,31 +35,31 @@ IDS = @N
 UPDATE #tempSNLX SET
 @Z = CASE WHEN rtrim(@Y)!= rtrim(K1302) THEN @Z+1 ELSE @Z END,
 @Y = rtrim(K1302),
-åºå· = @Z
+ÐòºÅ = @Z
 
 select T1.Ha0102,T1.K1302,
-[ä¸Šå¹´èµ·ç‚¹æ¡©å·]=T2.K1303,
-[ä¸Šå¹´æ­¢ç‚¹æ¡©å·]=T2.K1304,[ä¸‹ä¸€è·¯æ®µçš„ä¸Šå¹´èµ·ç‚¹æ¡©å·]=T1.K1303,[å·®å€¼]=T2.K1304 - T1.K1303
+[ÉÏÄêÆðµã×®ºÅ]=T2.K1303,
+[ÉÏÄêÖ¹µã×®ºÅ]=T2.K1304,[ÏÂÒ»Â·¶ÎµÄÉÏÄêÆðµã×®ºÅ]=T1.K1303,[²îÖµ]=T2.K1304 - T1.K1303
 INTO #tempSNLXB 
 FROM #tempSNLX T1
 JOIN #tempSNLX T2
-ON T1.K1302 = T2.K1302 AND T1.IDS = T2.IDS +1 AND T1.åºå·=T2.åºå· 
+ON T1.K1302 = T2.K1302 AND T1.IDS = T2.IDS +1 AND T1.ÐòºÅ=T2.ÐòºÅ 
 where T2.K1304 - T1.K1303<>0
 
-DELETE #tempSNLXB WHERE [å·®å€¼]<>0 AND [å·®å€¼]<0
+DELETE #tempSNLXB WHERE [²îÖµ]<>0 AND [²îÖµ]<0
 
 SELECT * FROM #tempSNLXB
 
 /*
 ---------------
---------------æ›´æ–°1
+--------------¸üÐÂ1
 update a set a.k1303=a.k0108,a.k1304=a.k0109
 --select a.k0101,a.k0108,a.k0109,a.k1302,a.k1303,a.k1304 
-from k001 a right join #tempSNLXB b on a.k0101=b.k1302 and a.k1302=b.k1302 and a.k1303=b.ä¸Šå¹´èµ·ç‚¹æ¡©å·
+from k001 a right join #tempSNLXB b on a.k0101=b.k1302 and a.k1302=b.k1302 and a.k1303=b.ÉÏÄêÆðµã×®ºÅ
 
---------------æ›´æ–°2
+--------------¸üÐÂ2
 update a set a.k1303=a.k0108--,a.k1304=a.k0109
 --select a.k0101,a.k0108,a.k0109,a.k1302,a.k1303,a.k1304 
-from k001 a right join #tempSNLXB b on a.k0101=b.k1302 and a.k1302=b.k1302 and a.k1303=b.ä¸‹ä¸€è·¯æ®µçš„ä¸Šå¹´èµ·ç‚¹æ¡©å·
+from k001 a right join #tempSNLXB b on a.k0101=b.k1302 and a.k1302=b.k1302 and a.k1303=b.ÏÂÒ»Â·¶ÎµÄÉÏÄêÆðµã×®ºÅ
 order by a.k0101
 */

@@ -1,4 +1,4 @@
---------鏇存柊鎵�鏈夌殑琛屾斂鍖哄垝姹夊瓧閮ㄥ垎--------------------
+--------更新所有的行政区划汉字部分--------------------
 exec Pr_ExecSQL2 
 'select
 ''update ''+tablename+
@@ -13,7 +13,7 @@ from dbo.oydst_FieldCont1
 where fieldname=''A0103''
 )'
 
---------鏇存柊鎵�鏈夌殑绠＄悊鍗曚綅姹夊瓧閮ㄥ垎--------------------
+--------更新所有的管理单位汉字部分--------------------
 exec Pr_ExecSQL2 
 'select
 ''update ''+tablename+

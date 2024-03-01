@@ -1,4 +1,4 @@
--- P1 SELECT ç»“æœ
+-- P1 SELECT ½á¹û
 delimiter $$
 drop procedure if exists p1;
 create procedure p1 ( in num int )
@@ -18,7 +18,7 @@ delimiter ;
 
 call p1(100);
 
--- P2 OUT ç»“æœ
+-- P2 OUT ½á¹û
 delimiter $$
 drop procedure if exists p2;
 create procedure p2(in num int, out result int)
@@ -40,7 +40,7 @@ call p2(100,@result);
 select @result;
 
 
--- P3 repeat å¾ªç¯ until æ¡ä»¶é€€å‡ºå¾ªç¯
+-- P3 repeat Ñ­»· until Ìõ¼şÍË³öÑ­»·
 delimiter $$
 drop procedure if exists p3;
 create procedure p3(in num int, out result int)
@@ -62,7 +62,7 @@ delimiter ;
  SELECT @result;
 
 
--- P4 loop å¾ªç¯ leave <loop> æ¨å‡ºLOOP
+-- P4 loop Ñ­»· leave <loop> ÍÆ³öLOOP
 delimiter $$
 drop procedure if exists p4;
 create procedure p4( in num int ,out result int )

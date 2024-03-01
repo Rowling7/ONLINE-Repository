@@ -1,17 +1,17 @@
-UPDATE DV5701 set objjc ='åäº­é•‡'
-FROM DV5701 where objjc like 'ç ´å‡‰é•‡%'
+UPDATE DV5701 set objjc ='»ªÍ¤Õò'
+FROM DV5701 where objjc like 'ÆÆÁ¹Õò%'
 
-UPDATE DV5701 set OBJJC='ä¸‰åŸé•‡'
+UPDATE DV5701 set OBJJC='Èı³ÇÕò'
 from DV5701 WHERE OBJNAME ='341122200'
 
-UPDATE DV5701 set OBJJC='ç‹¬å±±é•‡'
+UPDATE DV5701 set OBJJC='¶ÀÉ½Õò'
 from DV5701 WHERE OBJNAME ='341122201'
 
-UPDATE DV5701 set OBJJC='å¼ å±±é•‡'
+UPDATE DV5701 set OBJJC='ÕÅÉ½Õò'
 from DV5701 WHERE OBJNAME ='341122202'
 
 update DV5701 set objname ='340817109'
-FROM DV5701 where objjc like 'é›·æ± é•‡%'
+FROM DV5701 where objjc like 'À×³ØÕò%'
 
 UPDATE DV5701 set OBJNAME=REPLACE(OBJNAME,'340827200','340827109')
 from DV5701 WHERE OBJNAME like '340827200%'
@@ -100,5 +100,5 @@ from DV5701	where objname like '340827101011%'
 UPDATE DV5701 set OBJNAME=REPLACE(OBJNAME,'340827108201','340827003201')
 from DV5701	where objname like '340827108201%'
 
-update DV5701 set objjc ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+update DV5701 set objjc ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
 FROM DV5701 where objname = '340826001001'

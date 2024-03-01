@@ -6,52 +6,52 @@ alter table JZC  NOCHECK constraint all;
 alter table ZRC  NOCHECK constraint all; 
 
 -------------------------V51--------------------------------------------
-UPDATE V51 set HV0501 ='åäº­é•‡'
-FROM V51 where HV0501 like 'ç ´å‡‰é•‡%'
+UPDATE V51 set HV0501 ='»ªÍ¤Õò'
+FROM V51 where HV0501 like 'ÆÆÁ¹Õò%'
 
-UPDATE V51 set HV0501='ä¸‰åŸé•‡'
+UPDATE V51 set HV0501='Èı³ÇÕò'
 from V51 WHERE V0501 ='341122200'
 
-UPDATE V51 set HV0501='ç‹¬å±±é•‡'
+UPDATE V51 set HV0501='¶ÀÉ½Õò'
 from V51 WHERE V0501 ='341122201'
 
-UPDATE V51 set HV0501='å¼ å±±é•‡'
+UPDATE V51 set HV0501='ÕÅÉ½Õò'
 from V51 WHERE V0501 ='341122202'
 
 update V51 set V0501 ='340827109'
-FROM V51 where HV0501 like 'é›·æ± é•‡%'
+FROM V51 where HV0501 like 'À×³ØÕò%'
 
 -------------------------V51--------------------------------------------
-UPDATE V71 set HV0501 ='åäº­é•‡'
-FROM V71 where HV0501 like 'ç ´å‡‰é•‡%'
+UPDATE V71 set HV0501 ='»ªÍ¤Õò'
+FROM V71 where HV0501 like 'ÆÆÁ¹Õò%'
 
-UPDATE V71 set HV0501='ä¸‰åŸé•‡'
+UPDATE V71 set HV0501='Èı³ÇÕò'
 from V71 WHERE V0501 ='341122200'
 
-UPDATE V71 set HV0501='ç‹¬å±±é•‡'
+UPDATE V71 set HV0501='¶ÀÉ½Õò'
 from V71 WHERE V0501 ='341122201'
 
-UPDATE V71 set HV0501='å¼ å±±é•‡'
+UPDATE V71 set HV0501='ÕÅÉ½Õò'
 from V71 WHERE V0501 ='341122202'
 
 update V71 set V0501 ='340827109'
-FROM V71 where HV0501 like 'é›·æ± é•‡%'
+FROM V71 where HV0501 like 'À×³ØÕò%'
 
 -------------------------V52--------------------------------------------
-UPDATE V52 set HV0514 ='åäº­é•‡'
-FROM V52 where HV0514 like 'ç ´å‡‰é•‡%'
+UPDATE V52 set HV0514 ='»ªÍ¤Õò'
+FROM V52 where HV0514 like 'ÆÆÁ¹Õò%'
 
-UPDATE V52 set HV0514='ä¸‰åŸé•‡'
+UPDATE V52 set HV0514='Èı³ÇÕò'
 from V52 WHERE V0514 ='341122200'
 
-UPDATE V52 set HV0514='ç‹¬å±±é•‡'
+UPDATE V52 set HV0514='¶ÀÉ½Õò'
 from V52 WHERE V0514 ='341122201'
 
-UPDATE V52 set HV0514='å¼ å±±é•‡'
+UPDATE V52 set HV0514='ÕÅÉ½Õò'
 from V52 WHERE V0514 ='341122202'
 
 update V52 set V0514 ='340827109'
-FROM V52 where HV0514 like 'é›·æ± é•‡%'
+FROM V52 where HV0514 like 'À×³ØÕò%'
 
 -------------------------V52--------------------------------------------
 UPDATE V52 set V0514=REPLACE(V0514,'340827200','340827109')
@@ -141,27 +141,27 @@ from V52	where V0514 like '340827101011%'
 UPDATE V52 set V0514=REPLACE(V0514,'340827108201','340827003201')
 from V52	where V0514 like '340827108201%'
 
-update V52 set HV0514 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+update V52 set HV0514 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
 FROM V52 where V0514 = '340826001001'
 
 
 
 
 -------------------------V53--------------------------------------------
-UPDATE V53 set HV0514 ='åäº­é•‡'
-FROM V53 where HV0514 like 'ç ´å‡‰é•‡%'
+UPDATE V53 set HV0514 ='»ªÍ¤Õò'
+FROM V53 where HV0514 like 'ÆÆÁ¹Õò%'
 
-UPDATE V53 set HV0514='ä¸‰åŸé•‡'
+UPDATE V53 set HV0514='Èı³ÇÕò'
 from V53 WHERE V0514 ='341122200'
 
-UPDATE V53 set HV0514='ç‹¬å±±é•‡'
+UPDATE V53 set HV0514='¶ÀÉ½Õò'
 from V53 WHERE V0514 ='341122201'
 
-UPDATE V53 set HV0514='å¼ å±±é•‡'
+UPDATE V53 set HV0514='ÕÅÉ½Õò'
 from V53 WHERE V0514 ='341122202'
 
 update V53 set V0514 ='340827109'
-FROM V53 where HV0514 like 'é›·æ± é•‡%'
+FROM V53 where HV0514 like 'À×³ØÕò%'
 
 -------------------------V53--------------------------------------------
 UPDATE V53 set V0514=REPLACE(V0514,'340827200','340827109')
@@ -251,7 +251,7 @@ from V53	where V0514 like '340827101011%'
 UPDATE V53 set V0514=REPLACE(V0514,'340827108201','340827003201')
 from V53	where V0514 like '340827108201%'
 
-update V53 set HV0514 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+update V53 set HV0514 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
 FROM V53 where V0514 = '340826001001'
 
 -------------------------V53--------------------------------------------
@@ -343,22 +343,22 @@ UPDATE V53 set v5701=REPLACE(v5701,'340827108201','340827003201')
 from V53	where v5701 like '340827108201%'
 
 
------------------------å†å²è¡¨--------------------------------------
+-----------------------ÀúÊ·±í--------------------------------------
 -------------------------JZC--------------------------------------------
-UPDATE JZC set HV0514 ='åäº­é•‡'
-FROM JZC where HV0514 like 'ç ´å‡‰é•‡%'
+UPDATE JZC set HV0514 ='»ªÍ¤Õò'
+FROM JZC where HV0514 like 'ÆÆÁ¹Õò%'
 
-UPDATE JZC set HV0514='ä¸‰åŸé•‡'
+UPDATE JZC set HV0514='Èı³ÇÕò'
 from JZC WHERE V0514 ='341122200'
 
-UPDATE JZC set HV0514='ç‹¬å±±é•‡'
+UPDATE JZC set HV0514='¶ÀÉ½Õò'
 from JZC WHERE V0514 ='341122201'
 
-UPDATE JZC set HV0514='å¼ å±±é•‡'
+UPDATE JZC set HV0514='ÕÅÉ½Õò'
 from JZC WHERE V0514 ='341122202'
 
 update JZC set V0514 ='340827109'
-FROM JZC where HV0514 like 'é›·æ± é•‡%'
+FROM JZC where HV0514 like 'À×³ØÕò%'
 
 -------------------------JZC--------------------------------------------
 UPDATE JZC set V0514=REPLACE(V0514,'340827200','340827109')
@@ -448,27 +448,27 @@ from JZC	where V0514 like '340827101011%'
 UPDATE JZC set V0514=REPLACE(V0514,'340827108201','340827003201')
 from JZC	where V0514 like '340827108201%'
 
-update JZC set HV0514 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+update JZC set HV0514 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
 FROM JZC where V0514 = '340826001001'
 
 
 
 
 -------------------------ZRC--------------------------------------------
-UPDATE ZRC set HV0514 ='åäº­é•‡'
-FROM ZRC where HV0514 like 'ç ´å‡‰é•‡%'
+UPDATE ZRC set HV0514 ='»ªÍ¤Õò'
+FROM ZRC where HV0514 like 'ÆÆÁ¹Õò%'
 
-UPDATE ZRC set HV0514='ä¸‰åŸé•‡'
+UPDATE ZRC set HV0514='Èı³ÇÕò'
 from ZRC WHERE V0514 ='341122200'
 
-UPDATE ZRC set HV0514='ç‹¬å±±é•‡'
+UPDATE ZRC set HV0514='¶ÀÉ½Õò'
 from ZRC WHERE V0514 ='341122201'
 
-UPDATE ZRC set HV0514='å¼ å±±é•‡'
+UPDATE ZRC set HV0514='ÕÅÉ½Õò'
 from ZRC WHERE V0514 ='341122202'
 
 update ZRC set V0514 ='340827109'
-FROM ZRC where HV0514 like 'é›·æ± é•‡%'
+FROM ZRC where HV0514 like 'À×³ØÕò%'
 
 -------------------------ZRC--------------------------------------------
 UPDATE ZRC set V0514=REPLACE(V0514,'340827200','340827109')
@@ -558,7 +558,7 @@ from ZRC	where V0514 like '340827101011%'
 UPDATE ZRC set V0514=REPLACE(V0514,'340827108201','340827003201')
 from ZRC	where V0514 like '340827108201%'
 
-update ZRC set HV0514 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+update ZRC set HV0514 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
 FROM ZRC where V0514 = '340826001001'
 
 -------------------------ZRC--------------------------------------------

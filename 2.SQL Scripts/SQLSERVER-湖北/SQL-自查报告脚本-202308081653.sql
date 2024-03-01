@@ -10,7 +10,7 @@ round(sum(case when isnull(a5011,0)>=80 then isnull(a5008,0) else 0 end)/sum(isn
 round(sum(isnull(a5008,0)*a5011)/sum(isnull(a5008,0)),2) PQI
 from k05
 where rtrim(a0101a)='2021' and left(a0102,3)='42A' and left(rtrim(k0101),1)='G'  and
-(rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='é•¿é“¾')
+(rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='³¤Á´')
 UNION
 select
 's' s,
@@ -24,7 +24,7 @@ round(sum(case when isnull(a5011,0)>=80 then isnull(a5008,0) else 0 end)/sum(isn
 round(sum(isnull(a5008,0)*a5011)/sum(isnull(a5008,0)),2) PQI
 from k05
 where rtrim(a0101a)='2022' and left(a0102,3)='42A' and left(rtrim(k0101),1)='S'  and
-(rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='é•¿é“¾')
+(rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='³¤Á´')
 
 
 

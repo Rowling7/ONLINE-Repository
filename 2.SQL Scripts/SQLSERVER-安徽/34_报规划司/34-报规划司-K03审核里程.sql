@@ -1,6 +1,6 @@
 /*
 select  rtrim(a.a0102) a0102,a.ha0102,rtrim(a.k0101) k0101,
-[K03琛ㄤ腑閲岀▼]=sum(isnull(a.a5008/1000,0)),[k001琛ㄤ腑閲岀▼]=b.k0114,'k03涓婅閲岀▼涓巏01閲岀▼涓嶄竴鑷达紒'
+[K03表中里程]=sum(isnull(a.a5008/1000,0)),[k001表中里程]=b.k0114,'k03上行里程与k01里程不一致！'
 from K03 a
 left join (
     select  rtrim(c.a0102) a0102,c.ha0102,rtrim(c.k0101) k0101 ,sum(isnull(c.k0114,0)) k0114
@@ -21,7 +21,7 @@ order by a.k0101 asc
 */
 
 select  rtrim(a.a0102) a0102,a.ha0102,rtrim(a.k0101) k0101,
-[K03琛ㄤ腑閲岀▼]=sum(isnull(a.a5008/1000,0)),[k001琛ㄤ腑閲岀▼]=b.k0114,'k03涓婅閲岀▼涓巏01閲岀▼涓嶄竴鑷达紒'
+[K03表中里程]=sum(isnull(a.a5008/1000,0)),[k001表中里程]=b.k0114,'k03上行里程与k01里程不一致！'
 from K03 a
 left join (
     select  rtrim(c.a0102) a0102,c.ha0102,rtrim(c.k0101) k0101 ,sum(isnull(c.k0114,0)) k0114

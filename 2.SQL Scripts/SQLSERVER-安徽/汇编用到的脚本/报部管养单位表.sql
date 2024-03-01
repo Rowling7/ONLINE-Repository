@@ -14,7 +14,7 @@ DWDM,
 HYLBDM,
 HYLBMC
 from 
-OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 8.0;HDR=YES;DATABASE=C:\Users\Administrator\Desktop\å®‰å¾½ç®¡å…»å•ä½æ˜ç»†è¡¨+è¡Œä¸šç±»åˆ« (1).xls',sheet2$)
+OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 8.0;HDR=YES;DATABASE=C:\Users\Administrator\Desktop\°²»Õ¹ÜÑøµ¥Î»Ã÷Ï¸±í+ĞĞÒµÀà±ğ (1).xls',sheet2$)
 UNION 
 SELECT 
 OBJJC,
@@ -22,6 +22,6 @@ OBJNAME ,
 
 '2023',
 '10',
-'äº¤é€šéƒ¨é—¨'
+'½»Í¨²¿ÃÅ'
 from da0102
 where objjc is not null

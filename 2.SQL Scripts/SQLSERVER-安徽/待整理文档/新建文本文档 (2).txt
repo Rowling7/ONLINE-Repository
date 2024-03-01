@@ -1,67 +1,67 @@
-/*ä¸æ˜¾ç¤ºé›¶*/
+/*²»ÏÔÊ¾Áã*/
 SELECT
-	[COL01] = RTRIM(K0101)+'L'+RTRIM(A.K6001),		--æ¡¥æ¢ä»£ç 
-	[COL02] = RTRIM(K0112),					--è·¯çº¿ç®€ç§°
-	[COL03] = RTRIM(REPLACE(K6002,' ','')),			--æ¡¥æ¢åç§°
-	[COL04] = K0180,						--ä¿®å»ºå¹´åº¦
-	[COL05] = K0181,						--æ”¹é€ å¹´åº¦
-	[COL06] = K6003,						--æ¡¥æ¢ä¸­å¿ƒæ¡©å·
-	[COL07] = K6008,						--æ¡¥æ¢å…¨é•¿
-	[COL08] = HK6022,						--è®¾è®¡è·è½½ç­‰çº§
-	[COL09] = HK6007,						--æŒ‰è·¨å¾„åˆ†ç±»
-	[COL10] = HK6004,						--ä½¿ç”¨å¹´é™åˆ†
-	[COL11] = HK6016,						--ä¸»æ¡¥ä¸Šéƒ¨ç»“æž„
-	[COL12] = CASE WHEN K6062='1' THEN 'æ˜¯' ELSE 'å¦' END,	--æ˜¯å¦äº’é€šç«‹äº¤
-	[COL13] = HK6028,						--è¯„å®šç­‰çº§
-	[COL14] = K6065,						--è·¨å¾„æ€»é•¿
-	[COL15] = K6063,						--å•å­”æœ€å¤§è·¨å¾„
-	[COL16] = K6066,						--æ¡¥æ¢å…¨å®½
-	--[COL17] = K6067,						--æ¡¥é¢å…¨å®½
-	[COL17] = K6009,						--æ¡¥é¢å‡€å®½
-	[COL18] = LTRIM(RTRIM(REPLACE(A1314,' ',''))),		--ç®¡å…»å•ä½åç§°
-	[COL19] = HK3912,						--å˜æ›´åŽŸå› 
-	[COL20] = RTRIM(B.K6001),											--åŽŸæ¡¥æ¢ä»£ç 
-	[COL201] = RTRIM(REPLACE(B.K60021,' ','')),		--åŽŸæ¡¥æ¢åç§°
-	[COL202] = RTRIM(B.K60031),										--åŽŸæ¡¥æ¢ä¸­å¿ƒæ¡©å·
-	[COL203] = HK60281,														--åŽŸæ¡¥æ¢è¯„å®šç­‰çº§
-	[COL204] = RTRIM(REPLACE(B.K01011,' ','')),		--åŽŸè·¯çº¿ç¼–ç 
-	[COL205] = RTRIM(B.K01121),										--åŽŸè·¯çº¿åç§°
-	[COL206] = K60081,														--åŽŸæ¡¥æ¢å…¨é•¿
-	[COL207] = K60661,														--åŽŸæ¡¥æ¢å…¨å®½
+	[COL01] = RTRIM(K0101)+'L'+RTRIM(A.K6001),		--ÇÅÁº´úÂë
+	[COL02] = RTRIM(K0112),					--Â·Ïß¼ò³Æ
+	[COL03] = RTRIM(REPLACE(K6002,' ','')),			--ÇÅÁºÃû³Æ
+	[COL04] = K0180,						--ÐÞ½¨Äê¶È
+	[COL05] = K0181,						--¸ÄÔìÄê¶È
+	[COL06] = K6003,						--ÇÅÁºÖÐÐÄ×®ºÅ
+	[COL07] = K6008,						--ÇÅÁºÈ«³¤
+	[COL08] = HK6022,						--Éè¼ÆºÉÔØµÈ¼¶
+	[COL09] = HK6007,						--°´¿ç¾¶·ÖÀà
+	[COL10] = HK6004,						--Ê¹ÓÃÄêÏÞ·Ö
+	[COL11] = HK6016,						--Ö÷ÇÅÉÏ²¿½á¹¹
+	[COL12] = CASE WHEN K6062='1' THEN 'ÊÇ' ELSE '·ñ' END,	--ÊÇ·ñ»¥Í¨Á¢½»
+	[COL13] = HK6028,						--ÆÀ¶¨µÈ¼¶
+	[COL14] = K6065,						--¿ç¾¶×Ü³¤
+	[COL15] = K6063,						--µ¥¿××î´ó¿ç¾¶
+	[COL16] = K6066,						--ÇÅÁºÈ«¿í
+	--[COL17] = K6067,						--ÇÅÃæÈ«¿í
+	[COL17] = K6009,						--ÇÅÃæ¾»¿í
+	[COL18] = LTRIM(RTRIM(REPLACE(A1314,' ',''))),		--¹ÜÑøµ¥Î»Ãû³Æ
+	[COL19] = HK3912,						--±ä¸üÔ­Òò
+	[COL20] = RTRIM(B.K6001),											--Ô­ÇÅÁº´úÂë
+	[COL201] = RTRIM(REPLACE(B.K60021,' ','')),		--Ô­ÇÅÁºÃû³Æ
+	[COL202] = RTRIM(B.K60031),										--Ô­ÇÅÁºÖÐÐÄ×®ºÅ
+	[COL203] = HK60281,														--Ô­ÇÅÁºÆÀ¶¨µÈ¼¶
+	[COL204] = RTRIM(REPLACE(B.K01011,' ','')),		--Ô­Â·Ïß±àÂë
+	[COL205] = RTRIM(B.K01121),										--Ô­Â·ÏßÃû³Æ
+	[COL206] = K60081,														--Ô­ÇÅÁºÈ«³¤
+	[COL207] = K60661,														--Ô­ÇÅÁºÈ«¿í
 	
-	[COL21] = RTRIM(REPLACE(K6064,' ','')),			--è·¨å¾„ç»„åˆ
-	[COL22] = CASE WHEN RTRIM(HK6017)='Xå½¢å¢©' THEN 'X å½¢å¢©' WHEN RTRIM(HK6017)='Yå½¢å¢©' THEN 'Y å½¢å¢©' WHEN RTRIM(HK6017)='Vå½¢å¢©' THEN 'V å½¢å¢©' WHEN RTRIM(HK6017)='Hå½¢å¢©' THEN 'H å½¢å¢©' ELSE RTRIM(HK6017) END,	--æ¡¥å¢©ç±»åž‹
-	[COL23] = HK6023,						--æŠ—éœ‡ç­‰çº§
-	[COL24] = CASE WHEN HK6005='å…¶å®ƒåœ°ç‰©' THEN 'å…¶å®ƒ' ELSE HK6005 END,		--è·¨è¶Šåœ°ç‰©ç±»åž‹
-	[COL25] = RTRIM(LTRIM(REPLACE(REPLACE(REPLACE(REPLACE(K6006,CHAR(13),''),CHAR(10),''),CHAR(9),''),CHAR(32),''))),		--è·¨è¶Šåœ°ç‰©åç§°
-	[COL26] = HK6024,						--é€šèˆªç­‰çº§
-	[COL27] = HA1328,						--å¢©å°é˜²æ’žç±»åž‹
-	[COL28] = K6079,						--å»ºè®¾å•ä½
-	[COL29] = REPLACE(K6030,' ',''),				--è®¾è®¡å•ä½
-	[COL30] = K6031,						--æ–½å·¥å•ä½
-	[COL31] = REPLACE(K6032,' ',''),				--ç›‘ç†å•ä½
-	[COL32] = K0116,						--é€šè½¦æ—¥æœŸ
-	[COL33] = HA1313,						--ç®¡å…»å•ä½æ€§è´¨ä»£ç 
-	[COL34] = RTRIM(REPLACE(REPLACE(K6111,' ',''),CHAR(127),'')),	--ç›‘ç®¡å•ä½åç§°
-	[COL35] = CASE WHEN ISNULL(A1302,'1')='1' THEN 'éžæ”¶è´¹' WHEN ISNULL(A1302,'1')='2' THEN 'è¿˜è´·' WHEN ISNULL(A1302,'1')='3' THEN 'ç»è¥' END,	--æ”¶è´¹æ€§è´¨
-	[COL36] = A1305,						--æŠ€æœ¯çŠ¶å†µè¯„å®šæ—¥æœŸ
-	[COL37] = RTRIM(REPLACE(K6050,' ','')),			--æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½
-	[COL38] = A1316,						--æ”¹é€ å®Œå·¥æ—¥æœŸ
-	[COL38] = ISNULL(HA1331,'å¦'),				--æœ€æ–°æ”¹é€ æ˜¯å¦å±žäºŽå±æ¡¥æ”¹é€ é¡¹ç›®
-	[COL40] = HA1317,						--æ”¹é€ éƒ¨ä½
-	[COL41] = HA1318,						--å·¥ç¨‹æ€§è´¨ä»£ç 
-	[COL42] = RTRIM(REPLACE(K6051,' ','')),			--æ”¹é€ æ–½å·¥å•ä½
-	[COL43] = HA1319,						--æ˜¯å¦éƒ¨è¡¥è¶³é¡¹ç›®
-	[COL44] = RTRIM(HA1306),					--ä¸»è¦ç—…å®³ä½ç½®
-	[COL45] = RTRIM(K6102),					--ä¸»è¦ç—…å®³æè¿°
-	[COL46] = CASE WHEN ISNULL(K6028,'') IN ('4','5') THEN HA1307 ELSE '' END,	--é‡‡å–äº¤é€šç®¡åˆ¶æŽªæ–½
-	[COL47] = RTRIM(HK6110),				--ä¸»æ¡¥ä¸Šéƒ¨ç»“æž„ææ–™
-	[COL48] = RTRIM(ISNULL(HK6117,'åŒå‘')),			--æ¡¥æ¢æ‰€åœ¨ä½ç½®
-	[COL49] = RTRIM(ISNULL(HK6118,'å¦')),			--æ˜¯å¦å®½è·¯çª„æ¡¥
-	--[COL50] = RTRIM(ISNULL(HK6119,'å¦')),			--æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­
-      [COL50] = RTRIM(HK6122),			--è¯„å®šä¸ºå››äº”ç±»æ¡¥æ¢çš„åŽŸå› 
+	[COL21] = RTRIM(REPLACE(K6064,' ','')),			--¿ç¾¶×éºÏ
+	[COL22] = CASE WHEN RTRIM(HK6017)='XÐÎ¶Õ' THEN 'X ÐÎ¶Õ' WHEN RTRIM(HK6017)='YÐÎ¶Õ' THEN 'Y ÐÎ¶Õ' WHEN RTRIM(HK6017)='VÐÎ¶Õ' THEN 'V ÐÎ¶Õ' WHEN RTRIM(HK6017)='HÐÎ¶Õ' THEN 'H ÐÎ¶Õ' ELSE RTRIM(HK6017) END,	--ÇÅ¶ÕÀàÐÍ
+	[COL23] = HK6023,						--¿¹ÕðµÈ¼¶
+	[COL24] = CASE WHEN HK6005='ÆäËüµØÎï' THEN 'ÆäËü' ELSE HK6005 END,		--¿çÔ½µØÎïÀàÐÍ
+	[COL25] = RTRIM(LTRIM(REPLACE(REPLACE(REPLACE(REPLACE(K6006,CHAR(13),''),CHAR(10),''),CHAR(9),''),CHAR(32),''))),		--¿çÔ½µØÎïÃû³Æ
+	[COL26] = HK6024,						--Í¨º½µÈ¼¶
+	[COL27] = HA1328,						--¶ÕÌ¨·À×²ÀàÐÍ
+	[COL28] = K6079,						--½¨Éèµ¥Î»
+	[COL29] = REPLACE(K6030,' ',''),				--Éè¼Æµ¥Î»
+	[COL30] = K6031,						--Ê©¹¤µ¥Î»
+	[COL31] = REPLACE(K6032,' ',''),				--¼àÀíµ¥Î»
+	[COL32] = K0116,						--Í¨³µÈÕÆÚ
+	[COL33] = HA1313,						--¹ÜÑøµ¥Î»ÐÔÖÊ´úÂë
+	[COL34] = RTRIM(REPLACE(REPLACE(K6111,' ',''),CHAR(127),'')),	--¼à¹Üµ¥Î»Ãû³Æ
+	[COL35] = CASE WHEN ISNULL(A1302,'1')='1' THEN '·ÇÊÕ·Ñ' WHEN ISNULL(A1302,'1')='2' THEN '»¹´û' WHEN ISNULL(A1302,'1')='3' THEN '¾­Óª' END,	--ÊÕ·ÑÐÔÖÊ
+	[COL36] = A1305,						--¼¼Êõ×´¿öÆÀ¶¨ÈÕÆÚ
+	[COL37] = RTRIM(REPLACE(K6050,' ','')),			--¼¼Êõ×´¿öÆÀ¶¨µ¥Î»
+	[COL38] = A1316,						--¸ÄÔìÍê¹¤ÈÕÆÚ
+	[COL38] = ISNULL(HA1331,'·ñ'),				--×îÐÂ¸ÄÔìÊÇ·ñÊôÓÚÎ£ÇÅ¸ÄÔìÏîÄ¿
+	[COL40] = HA1317,						--¸ÄÔì²¿Î»
+	[COL41] = HA1318,						--¹¤³ÌÐÔÖÊ´úÂë
+	[COL42] = RTRIM(REPLACE(K6051,' ','')),			--¸ÄÔìÊ©¹¤µ¥Î»
+	[COL43] = HA1319,						--ÊÇ·ñ²¿²¹×ãÏîÄ¿
+	[COL44] = RTRIM(HA1306),					--Ö÷Òª²¡º¦Î»ÖÃ
+	[COL45] = RTRIM(K6102),					--Ö÷Òª²¡º¦ÃèÊö
+	[COL46] = CASE WHEN ISNULL(K6028,'') IN ('4','5') THEN HA1307 ELSE '' END,	--²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©
+	[COL47] = RTRIM(HK6110),				--Ö÷ÇÅÉÏ²¿½á¹¹²ÄÁÏ
+	[COL48] = RTRIM(ISNULL(HK6117,'Ë«Ïò')),			--ÇÅÁºËùÔÚÎ»ÖÃ
+	[COL49] = RTRIM(ISNULL(HK6118,'·ñ')),			--ÊÇ·ñ¿íÂ·Õ­ÇÅ
+	--[COL50] = RTRIM(ISNULL(HK6119,'·ñ')),			--ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖÐ
+      [COL50] = RTRIM(HK6122),			--ÆÀ¶¨ÎªËÄÎåÀàÇÅÁºµÄÔ­Òò
 
-	[COL51] = RTRIM(ISNULL(HK6120,'å¦'))			--æ˜¯å¦è·¨çœæ¡¥æ¢
+	[COL51] = RTRIM(ISNULL(HK6120,'·ñ'))			--ÊÇ·ñ¿çÊ¡ÇÅÁº
 FROM [HRP-DBMS2014]..K060 A
 	left JOIN 
 	(SELECT CASE WHEN LEFT(K0101,1) IN ('G','S','H','T') THEN RTRIM(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(K0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+LEFT(RTRIM(A0103),6) ELSE RTRIM(K0101) END+'L'+RTRIM(K6001) K6001,KWYID ,k0101 k01011,K6003 K60031,K6002 K60021,HK6028 HK60281,K6066 K60661,K6008 K60081,K0112 K01121
@@ -69,10 +69,10 @@ FROM [HRP-DBMS2014]..K060 A
 	WHERE A0102 LIKE '34%' AND LEFT(K0101,1) IN ('X','Y','Z','C','J','N')) B ON A.KWYID=B.KWYID
 WHERE LEFT(K0101,1) IN ('X','Y','Z','C','J','N') AND A0102 LIKE '34%'
 
---åŽ»å¹´ä¸æ˜¯å±æ¡¥ä»Šå¹´æ˜¯å±æ¡¥çš„æ•°æ®
---AND HK6028  IN ('å››ç±»','äº”ç±»') and HK60281 NOT IN ('å››ç±»','äº”ç±»') 
---åŽ»å¹´æ˜¯å±æ¡¥ä»Šå¹´ä¸æ˜¯å±æ¡¥çš„æ•°æ®
-AND HK6028 NOT IN ('å››ç±»','äº”ç±»') and HK60281  IN ('å››ç±»','äº”ç±»') 
+--È¥Äê²»ÊÇÎ£ÇÅ½ñÄêÊÇÎ£ÇÅµÄÊý¾Ý
+--AND HK6028  IN ('ËÄÀà','ÎåÀà') and HK60281 NOT IN ('ËÄÀà','ÎåÀà') 
+--È¥ÄêÊÇÎ£ÇÅ½ñÄê²»ÊÇÎ£ÇÅµÄÊý¾Ý
+AND HK6028 NOT IN ('ËÄÀà','ÎåÀà') and HK60281  IN ('ËÄÀà','ÎåÀà') 
 ORDER BY REPLACE(REPLACE(REPLACE(K0101,'340000',''),'000000',''),'C','ZZ'),K6003
 
 

@@ -3,7 +3,7 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[luduan]') 
 	DROP TABLE [dbo].[luduan]
 select *
 into luduan
-from [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k001
+from [HRP-DBMS2014»ã±à»ùÊı]..k001
 where not (left(k0101,1) in ('G','S','H','T') AND K0101 LIKE '%ZD%')
 
 --2.Wluduan
@@ -11,7 +11,7 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[Wluduan]')
 	DROP TABLE [dbo].[Wluduan]
 select *
 into Wluduan
-from [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k001
+from [HRP-DBMS2014»ã±à»ùÊı]..k001
 where left(k0101,1) in ('W')
 
 --3.qiaoliang
@@ -19,23 +19,23 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[qiaoliang]
 	DROP TABLE [dbo].[qiaoliang]
 select *
 into qiaoliang
-from [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k060
+from [HRP-DBMS2014»ã±à»ùÊı]..k060
 
 --4.suidao
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[suidao]') AND type IN ('U'))
 	DROP TABLE [dbo].[suidao]
 select *
 into suidao
-from [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k063
+from [HRP-DBMS2014»ã±à»ùÊı]..k063
 
 --5.dukou
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[dukou]') AND type IN ('U'))
 	DROP TABLE [dbo].[dukou]
 select *
 into dukou
-from [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k065
+from [HRP-DBMS2014»ã±à»ùÊı]..k065
 
----æ›´æ–°ä¹¡é•‡å†å²è¡¨
+---¸üĞÂÏçÕòÀúÊ·±í
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[XZ]') AND type IN ('U'))
 	DROP TABLE [dbo].[XZ]
 GO
@@ -83,9 +83,9 @@ CREATE TABLE [dbo].[XZ] (
 GO
 INSERT INTO [dbo].[XZ] ([A0102], [HA0102],[A0101], [V0501], [V0503], [V0506], [HV0506], [V0507], [HV0507], [V0508], [V0509], [HV0509], [V0510], [V0511], [V0512], [V0516], [HV0516], [V0560], [HV0560], [A0129], [V8101], [HV8101], [V8102], [HV8102], [V8103], [HV8103], [V8104], [V8105], [V8106], [HV8106], [K0199], [InsertLogin], [ModifyLogin], [HV0501], [V0504], [HV0504], [V0502], [HV0502], [KWYID])
 select [A0102], [HA0102],'2022', [V0501], [V0503], [V0506], [HV0506], [V0507], [HV0507], [V0508], [V0509], [HV0509], [V0510], [V0511], [V0512], [V0516], [HV0516], [V0560], [HV0560], [A0129], [V8101], [HV8101], [V8102], [HV8102], [V8103], [HV8103], [V8104], [V8105], [V8106], [HV8106], [K0199], [InsertLogin], [ModifyLogin], [HV0501], [V0504], [HV0504], [V0502], [HV0502], [KWYID]
-from [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..V51
+from [HRP-DBMS2014»ã±à»ùÊı]..V51
 
----æ›´æ–°å»ºåˆ¶æ‘å†å²è¡¨
+---¸üĞÂ½¨ÖÆ´åÀúÊ·±í
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[JZC]') AND type IN ('U'))
 	DROP TABLE [dbo].[JZC]
 GO
@@ -134,9 +134,9 @@ GO
 
 INSERT INTO [dbo].[JZC] ([A0102], [HA0102],[A0101], [V0514], [V0519], [V0506], [HV0506], [V0507], [HV0507], [V0508], [V0509], [HV0509], [V0520], [V0521], [V0524], [V0516], [HV0516], [V0561], [HV0561], [A0129], [V8101], [HV8101], [V8201], [HV8201], [V8103], [HV8103], [V8104], [V8105], [V8106], [HV8106], [K0199], [InsertLogin], [ModifyLogin], [HV0514], [V0505], [HV0505], [V0513], [HV0513], [KWYID])
 select [A0102], [HA0102],'2022', [V0514], [V0519], [V0506], [HV0506], [V0507], [HV0507], [V0508], [V0509], [HV0509], [V0520], [V0521], [V0524], [V0516], [HV0516], [V0561], [HV0561], [A0129], [V8101], [HV8101], [V8201], [HV8201], [V8103], [HV8103], [V8104], [V8105], [V8106], [HV8106], [K0199], [InsertLogin], [ModifyLogin], [HV0514], [V0505], [HV0505], [V0513], [HV0513], [KWYID]
-from [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..v52
+from [HRP-DBMS2014»ã±à»ùÊı]..v52
 
----æ›´æ–°å»ºåˆ¶æ‘è‡ªç„¶è¡¨
+---¸üĞÂ½¨ÖÆ´å×ÔÈ»±í
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[ZRC]') AND type IN ('U'))
 	DROP TABLE [dbo].[ZRC]
 GO
@@ -164,57 +164,57 @@ GO
 
 INSERT INTO [dbo].[ZRC] ([A0102], [HA0102],[A0101], [V0514], [HV0514], [V5701], [HV5701], [V5708], [HV5708], [V8104], [V8105], [V5703], [A0129], [InsertLogin], [ModifyLogin], [K0185], [K0186], [KWYID]) 
 SELECT [A0102], [HA0102],'2022', [V0514], [HV0514], [V5701], [HV5701], [V5708], [HV5708], [V8104], [V8105], [V5703], [A0129], [InsertLogin], [ModifyLogin], [K0185], [K0186], [KWYID]
-from [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..V53
+from [HRP-DBMS2014»ã±à»ùÊı]..V53
 
 
-select case when a.a=b.b then'è·¯æ®µå†å²è¡¨æ›´æ–°å®Œæˆ' else 'ï¼ï¼è·¯æ®µå†å²è¡¨æ›´æ–°æœªæˆåŠŸï¼ï¼'  end  'æ›´æ–°ç»“æœ' 
+select case when a.a=b.b then'Â·¶ÎÀúÊ·±í¸üĞÂÍê³É' else '£¡£¡Â·¶ÎÀúÊ·±í¸üĞÂÎ´³É¹¦£¡£¡'  end  '¸üĞÂ½á¹û' 
 from 
 (SELECT COUNT(*) a FROM LUDUAN where not (left(k0101,1) in ('G','S','H','T') AND K0101 LIKE '%ZD%'))a,
-(SELECT COUNT(*) b FROM [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k001 where not (left(k0101,1) in ('G','S','H','T') AND K0101 LIKE '%ZD%'))b
+(SELECT COUNT(*) b FROM [HRP-DBMS2014»ã±à»ùÊı]..k001 where not (left(k0101,1) in ('G','S','H','T') AND K0101 LIKE '%ZD%'))b
 UNION
-select case when a.a=b.b then'Wè·¯æ®µå†å²è¡¨æ›´æ–°å®Œæˆ' else 'ï¼ï¼Wè·¯æ®µå†å²è¡¨æ›´æ–°æœªæˆåŠŸï¼ï¼'  end  'æ›´æ–°ç»“æœ' 
+select case when a.a=b.b then'WÂ·¶ÎÀúÊ·±í¸üĞÂÍê³É' else '£¡£¡WÂ·¶ÎÀúÊ·±í¸üĞÂÎ´³É¹¦£¡£¡'  end  '¸üĞÂ½á¹û' 
 from 
 (SELECT COUNT(*) a FROM Wluduan where left(k0101,1) in ('W'))a,
-(SELECT COUNT(*) b FROM [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k001 where left(k0101,1) in ('W'))b
+(SELECT COUNT(*) b FROM [HRP-DBMS2014»ã±à»ùÊı]..k001 where left(k0101,1) in ('W'))b
 UNION
-select case when a.a=b.b then'æ¡¥æ¢å†å²è¡¨æ›´æ–°å®Œæˆ' else 'ï¼ï¼æ¡¥æ¢å†å²è¡¨æ›´æ–°æœªæˆåŠŸï¼ï¼'  end  'æ›´æ–°ç»“æœ' 
+select case when a.a=b.b then'ÇÅÁºÀúÊ·±í¸üĞÂÍê³É' else '£¡£¡ÇÅÁºÀúÊ·±í¸üĞÂÎ´³É¹¦£¡£¡'  end  '¸üĞÂ½á¹û' 
 from 
 (SELECT COUNT(*) a FROM qiaoliang )a,
-(SELECT COUNT(*) b FROM [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..K060 )b
+(SELECT COUNT(*) b FROM [HRP-DBMS2014»ã±à»ùÊı]..K060 )b
 UNION
-select case when a.a=b.b then'éš§é“å†å²è¡¨æ›´æ–°å®Œæˆ' else 'ï¼ï¼éš§é“å†å²è¡¨æ›´æ–°æœªæˆåŠŸï¼ï¼'  end  'æ›´æ–°ç»“æœ' 
+select case when a.a=b.b then'ËíµÀÀúÊ·±í¸üĞÂÍê³É' else '£¡£¡ËíµÀÀúÊ·±í¸üĞÂÎ´³É¹¦£¡£¡'  end  '¸üĞÂ½á¹û' 
 from 
 (SELECT COUNT(*) a FROM suidao )a,
-(SELECT COUNT(*) b FROM [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..K063 )b
+(SELECT COUNT(*) b FROM [HRP-DBMS2014»ã±à»ùÊı]..K063 )b
 UNION
-select case when a.a=b.b then'æ¸¡å£å†å²è¡¨æ›´æ–°å®Œæˆ' else 'ï¼ï¼æ¸¡å£å†å²è¡¨æ›´æ–°æœªæˆåŠŸï¼ï¼'  end  'æ›´æ–°ç»“æœ' 
+select case when a.a=b.b then'¶É¿ÚÀúÊ·±í¸üĞÂÍê³É' else '£¡£¡¶É¿ÚÀúÊ·±í¸üĞÂÎ´³É¹¦£¡£¡'  end  '¸üĞÂ½á¹û' 
 from 
 (SELECT COUNT(*) a FROM dukou )a,
-(SELECT COUNT(*) b FROM [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..K065 )b
+(SELECT COUNT(*) b FROM [HRP-DBMS2014»ã±à»ùÊı]..K065 )b
 UNION
-select case when a.a=b.b then'ä¹¡é•‡å†å²è¡¨æ›´æ–°å®Œæˆ' else 'ï¼ï¼ä¹¡é•‡å†å²è¡¨æ›´æ–°æœªæˆåŠŸï¼ï¼'  end  'æ›´æ–°ç»“æœ' 
+select case when a.a=b.b then'ÏçÕòÀúÊ·±í¸üĞÂÍê³É' else '£¡£¡ÏçÕòÀúÊ·±í¸üĞÂÎ´³É¹¦£¡£¡'  end  '¸üĞÂ½á¹û' 
 from 
 (SELECT COUNT(*) a FROM XZ )a,
-(SELECT COUNT(*) b FROM [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..V51 )b
+(SELECT COUNT(*) b FROM [HRP-DBMS2014»ã±à»ùÊı]..V51 )b
 UNION
-select case when a.a=b.b then'å»ºåˆ¶æ‘å†å²è¡¨æ›´æ–°å®Œæˆ' else 'ï¼ï¼å»ºåˆ¶æ‘å†å²è¡¨æ›´æ–°æœªæˆåŠŸï¼ï¼'  end  'æ›´æ–°ç»“æœ' 
+select case when a.a=b.b then'½¨ÖÆ´åÀúÊ·±í¸üĞÂÍê³É' else '£¡£¡½¨ÖÆ´åÀúÊ·±í¸üĞÂÎ´³É¹¦£¡£¡'  end  '¸üĞÂ½á¹û' 
 from 
 (SELECT COUNT(*) a FROM JZC )a,
-(SELECT COUNT(*) b FROM [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..V52 )b
+(SELECT COUNT(*) b FROM [HRP-DBMS2014»ã±à»ùÊı]..V52 )b
 UNION
-select case when a.a=b.b then'è‡ªç„¶æ‘å†å²è¡¨æ›´æ–°å®Œæˆ' else 'ï¼ï¼è‡ªç„¶æ‘å†å²è¡¨æ›´æ–°æœªæˆåŠŸï¼ï¼'  end  'æ›´æ–°ç»“æœ' 
+select case when a.a=b.b then'×ÔÈ»´åÀúÊ·±í¸üĞÂÍê³É' else '£¡£¡×ÔÈ»´åÀúÊ·±í¸üĞÂÎ´³É¹¦£¡£¡'  end  '¸üĞÂ½á¹û' 
 from 
 (SELECT COUNT(*) a FROM zrc )a,
-(SELECT COUNT(*) b FROM [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..V53 )b
-ORDER BY 'æ›´æ–°ç»“æœ'
+(SELECT COUNT(*) b FROM [HRP-DBMS2014»ã±à»ùÊı]..V53 )b
+ORDER BY '¸üĞÂ½á¹û'
 
 
 
-update luduan set a0101='2022',ha0101='2022å¹´'
-update qiaoliang set a0101='2022',ha0101='2022å¹´'
-update Wluduan set a0101='2022',ha0101='2022å¹´'
-update suidao set a0101='2022',ha0101='2022å¹´'
-update dukou set a0101='2022',ha0101='2022å¹´'
+update luduan set a0101='2022',ha0101='2022Äê'
+update qiaoliang set a0101='2022',ha0101='2022Äê'
+update Wluduan set a0101='2022',ha0101='2022Äê'
+update suidao set a0101='2022',ha0101='2022Äê'
+update dukou set a0101='2022',ha0101='2022Äê'
 
 
 SELECT kwyid,*
