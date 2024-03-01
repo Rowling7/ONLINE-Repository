@@ -1,40 +1,40 @@
 drop TRIGGER TR_LOCK_v51_V0502
---åˆ›å»ºè§¦å‘å™¨
+--´´½¨´¥·¢Æ÷
 CREATE TRIGGER TR_LOCK_v51_V0502
 ON V51
 FOR UPDATE
 AS
 BEGIN
-    IF UPDATE(V0502)  -- æ£€æŸ¥æ˜¯å¦æ­£åœ¨æ›´æ–° V0502 å­—æ®µ
+    IF UPDATE(V0502)  -- ¼ì²éÊÇ·ñÕýÔÚ¸üÐÂ V0502 ×Ö¶Î
     BEGIN
         ROLLBACK;
     END
 END;
 
 drop TRIGGER TR_LOCK_v52_V0513
---åˆ›å»ºè§¦å‘å™¨
+--´´½¨´¥·¢Æ÷
 CREATE TRIGGER TR_LOCK_v52_V0513
 ON V52
 FOR UPDATE
 AS
 BEGIN
-    IF UPDATE(V0513)  -- æ£€æŸ¥æ˜¯å¦æ­£åœ¨æ›´æ–° V0513 å­—æ®µ
+    IF UPDATE(V0513)  -- ¼ì²éÊÇ·ñÕýÔÚ¸üÐÂ V0513 ×Ö¶Î
     BEGIN
         ROLLBACK;
     END
 END;
 
--- åˆ é™¤ç´¢å¼•
+-- É¾³ýË÷Òý
 DROP INDEX k060._WA_Sys_HK6005_31C11CDA;
 ALTER TABLE K060
 ALTER COLUMN HK6005 VARCHAR(100);
--- åˆ›å»ºéžèšé›†ç´¢å¼•
+-- ´´½¨·Ç¾Û¼¯Ë÷Òý
 CREATE INDEX _WA_Sys_HK6005_31C11CDA
 ON k060 (HK6005);
 
---æ‰§è¡Œçº§è”æ›´æ–°è„šæœ¬
+--Ö´ÐÐ¼¶Áª¸üÐÂ½Å±¾
 
---è¡¥å……ç¼ºå°‘å¾—å¤–é”®
+--²¹³äÈ±ÉÙµÃÍâ¼ü
 ALTER TABLE [dbo].[K063] ADD CONSTRAINT [FK_K063_A50] FOREIGN KEY ([A0102], [K0101]) REFERENCES [dbo].[A50] ([A0102], [K0101]) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 ALTER TABLE [dbo].[K065] ADD CONSTRAINT [FK_K065_A50] FOREIGN KEY ([A0102], [K0101]) REFERENCES [dbo].[A50] ([A0102], [K0101]) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -46,96 +46,96 @@ ALTER TABLE [dbo].[K001] ADD CONSTRAINT [FK_K001_A50] FOREIGN KEY ([A0102], [K01
 
 
 
---æ’å…¥æ–°å•ä½
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6145, 106, 4, NULL, 'TLBS', 'é“œé™µä¿ç››äº¤é€šå»ºè®¾ç®¡ç†æœ‰é™å…¬å¸                      ', '34107C1  ');
+--²åÈëÐÂµ¥Î»
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6145, 106, 4, NULL, 'TLBS', 'Í­Áê±£Ê¢½»Í¨½¨Éè¹ÜÀíÓÐÏÞ¹«Ë¾                      ', '34107C1  ');
 
---INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6143, 1, 2, NULL, 'ANTY', 'å®‰å¾½å¤©æ‰¬é«˜é€Ÿå…¬è·¯å¼€å‘æœ‰é™å…¬å¸                      ', '349E  ');
---INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6144, 106, 4, NULL, 'TLBS', 'é“œé™µä¿ç››äº¤é€šå»ºè®¾ç®¡ç†æœ‰é™å…¬å¸                      ', '34107C1  ');
-
-
-backup database [HRP-DBMSæ±‡ç¼–åº“] to disk = 'E:\HRP-DBMS2014'
-backup database [HRP-GHSSæ±‡ç¼–åº“] to disk = 'E:\HRP-GHSS2014'
+--INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6143, 1, 2, NULL, 'ANTY', '°²»ÕÌìÑï¸ßËÙ¹«Â·¿ª·¢ÓÐÏÞ¹«Ë¾                      ', '349E  ');
+--INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6144, 106, 4, NULL, 'TLBS', 'Í­Áê±£Ê¢½»Í¨½¨Éè¹ÜÀíÓÐÏÞ¹«Ë¾                      ', '34107C1  ');
 
 
+backup database [HRP-DBMS»ã±à¿â] to disk = 'E:\HRP-DBMS2014'
+backup database [HRP-GHSS»ã±à¿â] to disk = 'E:\HRP-GHSS2014'
 
 
 
-update ZRC set v5708='1',hv5708='æ˜¯'
+
+
+update ZRC set v5708='1',hv5708='ÊÇ'
 from V53
 right join OPENROWSET
-('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\è‡ªç„¶æ‘(1).xls',sheet1$) on A=v5701
+('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\×ÔÈ»´å(1).xls',sheet1$) on A=v5701
 where v5701 is not null
-update V53 set v5708='2',hv5708='å¦'
+update V53 set v5708='2',hv5708='·ñ'
 from V53
 right join OPENROWSET
-('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\è‡ªç„¶æ‘(1).xls',sheet2$) on A=v5701
+('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\×ÔÈ»´å(1).xls',sheet2$) on A=v5701
 where v5701 is not null
 
 
-update ZRC set v5708='1',hv5708='æ˜¯'
+update ZRC set v5708='1',hv5708='ÊÇ'
 from ZRC
 right join OPENROWSET
-('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\è‡ªç„¶æ‘(1).xls',sheet1$) on A=v5701
+('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\×ÔÈ»´å(1).xls',sheet1$) on A=v5701
 where v5701 is not null
 
-update ZRC set v5708='2',hv5708='å¦'
+update ZRC set v5708='2',hv5708='·ñ'
 from ZRC
 right join OPENROWSET
-('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\è‡ªç„¶æ‘(1).xls',sheet2$) on A=v5701
+('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\×ÔÈ»´å(1).xls',sheet2$) on A=v5701
 where v5701 is not null
 
 
 
-update b set b.v0513='1',b.hv0513='æ˜¯'
-from V52 b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\å»ºåˆ¶æ‘ï¼ˆæ˜¯ï¼‰.xls',sheet1$) a on b.v0514=a.a
+update b set b.v0513='1',b.hv0513='ÊÇ'
+from V52 b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\½¨ÖÆ´å£¨ÊÇ£©.xls',sheet1$) a on b.v0514=a.a
 
-update b set b.v0513='2',b.hv0513='å¦'
-from V52 b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\å»ºåˆ¶æ‘ï¼ˆå¦ï¼‰.xls',sheet1$) a on b.v0514=a.a
+update b set b.v0513='2',b.hv0513='·ñ'
+from V52 b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\½¨ÖÆ´å£¨·ñ£©.xls',sheet1$) a on b.v0514=a.a
 
-update b set b.v0513='2',b.hv0513='å¦'
-from v52 b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\129ä¸ªä»ä¸åŒå»ºåˆ¶æ‘.xls',sheet1$) a on b.v0514=a.a
+update b set b.v0513='2',b.hv0513='·ñ'
+from v52 b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\129¸öÈÔ²»Í¬½¨ÖÆ´å.xls',sheet1$) a on b.v0514=a.a
 
 
-update b set b.v0513='1',b.hv0513='æ˜¯'
-from JZC b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\å»ºåˆ¶æ‘ï¼ˆæ˜¯ï¼‰.xls',sheet1$) a on b.v0514=a.a
+update b set b.v0513='1',b.hv0513='ÊÇ'
+from JZC b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\½¨ÖÆ´å£¨ÊÇ£©.xls',sheet1$) a on b.v0514=a.a
 
-update b set b.v0513='2',b.hv0513='å¦'
-from JZC b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\å»ºåˆ¶æ‘ï¼ˆå¦ï¼‰.xls',sheet1$) a on b.v0514=a.a
+update b set b.v0513='2',b.hv0513='·ñ'
+from JZC b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\½¨ÖÆ´å£¨·ñ£©.xls',sheet1$) a on b.v0514=a.a
 
-update b set b.v0513='2',b.hv0513='å¦'
-from JZC b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\129ä¸ªä»ä¸åŒå»ºåˆ¶æ‘.xls',sheet1$) a on b.v0514=a.a
+update b set b.v0513='2',b.hv0513='·ñ'
+from JZC b right join OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\129¸öÈÔ²»Í¬½¨ÖÆ´å.xls',sheet1$) a on b.v0514=a.a
 
 
 
 UPDATE zcpt_k001
 SET zcpt_k001.a0102=rtrim(k001.a0102),zcpt_k001.ha0102=rtrim(k001.ha0102)
 FROM zcpt_k001
-left JOIN [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..K001 k001
+left JOIN [HRP-DBMS2014»ã±à»ùÊý]..K001 k001
 ON rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) +CAST(k001.K0108 as VARCHAR(20)) +CAST(k001.K0109 as VARCHAR(20))=rtrim(zcpt_k001.k0101) +CAST(zcpt_k001.K0108 as VARCHAR(20)) +CAST(zcpt_k001.K0109 as VARCHAR(20))
 
 
---æ›´æ–°ç®¡ç†å•ä½å­—æ®µA0102,HA0102
+--¸üÐÂ¹ÜÀíµ¥Î»×Ö¶ÎA0102,HA0102
 UPDATE zcpt_k060
 SET zcpt_k060.a0102=rtrim(k060.a0102),zcpt_k060.ha0102=rtrim(k060.ha0102)
 FROM zcpt_k060
-left JOIN [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k060 k060
+left JOIN [HRP-DBMS2014»ã±à»ùÊý]..k060 k060
 ON (case when left(k060.k0101,1)in ('H','G','T','S') then rtrim(replace(replace(replace(replace(replace(replace(replace(k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
 else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end)= rtrim(zcpt_k060.k6001)
---æ›´æ–°ç®¡ç†å•ä½å­—æ®µA0102,HA0102
+--¸üÐÂ¹ÜÀíµ¥Î»×Ö¶ÎA0102,HA0102
 UPDATE zcpt_k060
 SET zcpt_k060.a0102=rtrim(k001.a0102),zcpt_k060.ha0102=rtrim(k001.ha0102)
 FROM zcpt_k060
-left JOIN [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k001 k001
+left JOIN [HRP-DBMS2014»ã±à»ùÊý]..k001 k001
 ON rtrim(replace(replace(replace(replace(replace(replace(replace(zcpt_k060.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=rtrim(replace(replace(replace(replace(replace(replace(replace(k001.k0101,'H','G'),'T','S'),'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) and zcpt_k060.k6003>=k001.k0108 and zcpt_k060.k6003<=k001.k0109
 WHERE zcpt_k060.A0102 IS NULL
 
 
---æ›´æ–°ç®¡ç†å•ä½å­—æ®µA0102,HA0102
+--¸üÐÂ¹ÜÀíµ¥Î»×Ö¶ÎA0102,HA0102
 UPDATE zcpt_k063
 SET zcpt_k063.a0102=rtrim(k001.a0102),zcpt_k063.ha0102=rtrim(k001.ha0102)
 --SELECT zcpt_k063.a0102,rtrim(k001.a0102),zcpt_k063.ha0102,rtrim(k001.ha0102)
 FROM zcpt_k063
-left JOIN [HRP-DBMS2014æ±‡ç¼–åŸºæ•°]..k001 k001
+left JOIN [HRP-DBMS2014»ã±à»ùÊý]..k001 k001
 on rtrim(zcpt_k063.k0101)=rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) and ISNULL(zcpt_k063.k6303,0)>=ISNULL(k001.k0108,0) and ISNULL(zcpt_k063.k6303,0)<=ISNULL(k001.k0109,0)
 
 

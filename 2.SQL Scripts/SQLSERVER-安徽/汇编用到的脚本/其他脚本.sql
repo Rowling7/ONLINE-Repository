@@ -1,22 +1,22 @@
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (3000, 4, 3, '3401                                                                                                                                                                                                                                                           ', 'XXC ', 'è§å¿å¤„                                            ', '34301    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (3000, 4, 3, '3401                                                                                                                                                                                                                                                           ', 'XXC ', 'ÏôÏØ´¦                                            ', '34301    ');
 
 
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6090, 4, 3, NULL, 'LJGS', 'åºæ±Ÿå…¬å¸                                          ', '34316    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6090, 4, 3, NULL, 'LJGS', 'Â®½­¹«Ë¾                                          ', '34316    ');
 
 
 
 
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (3006, 4, 3, '3414                                                                                                                                                                                                                                                           ', 'TCC ', 'å¤©é•¿å¤„                                            ', '34307    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (3006, 4, 3, '3414                                                                                                                                                                                                                                                           ', 'TCC ', 'Ìì³¤´¦                                            ', '34307    ');
 
 
-update da0102 set objjc='æ¥å®‰å¿å…¬è·¯è¿è¾“ç®¡ç†æœåŠ¡ä¸­å¿ƒ(å†œæ‘å…¬è·¯)' 
+update da0102 set objjc='À´°²ÏØ¹«Â·ÔËÊä¹ÜÀí·şÎñÖĞĞÄ(Å©´å¹«Â·)' 
 from da0102
 where objname='3421122'
 
 
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6148, 1, 2, NULL, 'AHMC', 'å®‰å¾½æ˜å·¢é«˜é€Ÿå…¬è·¯å¼€å‘æœ‰é™å…¬å¸                      ', '349F     ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6149, 1, 2, NULL, 'AHLL', 'å®‰å¾½æ¥å…­é«˜é€Ÿå…¬è·¯å¼€å‘æœ‰é™å…¬å¸                      ', '349G     ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6148, 1, 2, NULL, 'AHMC', '°²»ÕÃ÷³²¸ßËÙ¹«Â·¿ª·¢ÓĞÏŞ¹«Ë¾                      ', '349F     ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6149, 1, 2, NULL, 'AHLL', '°²»ÕÀ´Áù¸ßËÙ¹«Â·¿ª·¢ÓĞÏŞ¹«Ë¾                      ', '349G     ');
 
 update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(10), '') 
---å»é™¤æ¢è¡Œç¬¦
+--È¥³ı»»ĞĞ·û
 update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(13), '') 

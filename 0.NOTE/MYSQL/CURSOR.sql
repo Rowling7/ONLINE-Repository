@@ -5,19 +5,19 @@ create table detail_salary  (  id int(8)  null , salary double null default null
 create procedure get_count_by_limit_total_salary(in limit_total_salary double,out total_count int)
 
 begin
-	declare sum_salary double default 0; #è®°å½•ç´¯åŠ çš„æ€»å·¥èµ„
-	declare cursor_salary double default 0; #è®°å½•æŸä¸€ä¸ªå·¥èµ„å€¼
-	declare emp_count int default 0; #è®°å½•å¾ªç¯ä¸ªæ•°
+	declare sum_salary double default 0; #¼ÇÂ¼ÀÛ¼ÓµÄ×Ü¹¤×Ê
+	declare cursor_salary double default 0; #¼ÇÂ¼Ä³Ò»¸ö¹¤×ÊÖµ
+	declare emp_count int default 0; #¼ÇÂ¼Ñ­»·¸öÊı
 	declare employees_id int ;
 
-	#å®šä¹‰æ¸¸æ ‡
+	#¶¨ÒåÓÎ±ê
 	declare emp_cursor cursor for select employee_id,salary from employees order by salary desc;
 
-	#æ‰“å¼€æ¸¸æ ‡
+	#´ò¿ªÓÎ±ê
 	open emp_cursor;
 
 	repeat
-		#ä½¿ç”¨æ¸¸æ ‡ï¼ˆä»æ¸¸æ ‡ä¸­è·å–æ•°æ®ï¼‰
+		#Ê¹ÓÃÓÎ±ê£¨´ÓÓÎ±êÖĞ»ñÈ¡Êı¾İ£©
 		fetch emp_cursor into employees_id,cursor_salary;
 
 		set sum_salary = sum_salary + cursor_salary;
@@ -30,7 +30,7 @@ begin
 
 	set total_count = emp_count;
 
-	#å…³é—­æ¸¸æ ‡
+	#¹Ø±ÕÓÎ±ê
 	close emp_cursor;
 
 end$$

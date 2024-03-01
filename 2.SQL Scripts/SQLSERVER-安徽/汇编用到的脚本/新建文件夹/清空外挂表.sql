@@ -6,7 +6,7 @@ SET @A0101 ='2023'+'%'
 SET @LA0101 ='2023'+'%'
 --SELECT  @A0102,@A0101,@LA0101
 
-/* æ¸…ç©ºä»Šå¹´å¤–æŒ‚è¡¨
+/* Çå¿Õ½ñÄêÍâ¹Ò±í
 DELETE from k08 where a0101 LIKE  @A0101 AND A0102 LIKE @A0102
 DELETE from k03 where a0101A LIKE  @A0101 AND A0102 LIKE @A0102
 DELETE from k04 where a0101A LIKE  @A0101 AND A0102 LIKE @A0102
@@ -24,7 +24,7 @@ DELETE from A25 where a0101 LIKE  @A0101 AND A0102 LIKE @A0102
 */
 
 
-/* æ¸…ç©ºå†å²å¤–æŒ‚è¡¨
+/* Çå¿ÕÀúÊ·Íâ¹Ò±í
 DELETE from k08 where a0101 not like @LA0101 AND A0102 LIKE @A0102
 DELETE from k03 where a0101A not like @LA0101 AND A0102 LIKE @A0102
 DELETE from k04 where a0101A not like @LA0101 AND A0102 LIKE @A0102
@@ -48,7 +48,7 @@ DELETE from A52 where a0101 not like @LA0101 AND A0102 LIKE @A0102
 */
 
 
-/* æ¸…æ¥šå†å²æ±‡æ€»è¡¨
+/* Çå³şÀúÊ·»ã×Ü±í
 SELECT COUNT(*) from k08 where a0101 not like '2023%' ;
 SELECT COUNT(*) from k03 where a0101A not like '2023%' ;
 SELECT COUNT(*) from k04 where a0101A not like '2023%' ;

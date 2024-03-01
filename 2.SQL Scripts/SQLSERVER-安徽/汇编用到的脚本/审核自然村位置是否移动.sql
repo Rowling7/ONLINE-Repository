@@ -35,9 +35,9 @@ End
 select a.bm,a.mc,b.bm,b.mc,
 dbo.get_earth_distance(isnull(a.jd,0.000),isnull(a.wd,0.000),isnull(b.jd,0.000),isnull(b.wd,0.000))
 from
-openrowset('Microsoft.Jet.OLEDB.4.0','C:\ä¸œæ–¹æ°¸å¾·è½¯ä»¶OYDSOFT å®‰å¾½\HRP-GIS2014\MAPDATA\341882\mapdata.sdd';'admin';'',ZRC) a 
+openrowset('Microsoft.Jet.OLEDB.4.0','C:\¶«·½ÓÀµÂÈí¼þOYDSOFT °²»Õ\HRP-GIS2014\MAPDATA\341882\mapdata.sdd';'admin';'',ZRC) a 
 inner join 
-openrowset('Microsoft.Jet.OLEDB.4.0','C:\ä¸œæ–¹æ°¸å¾·è½¯ä»¶OYDSOFT å®‰å¾½\HRP-GIS2014\BGDATA\34\mapdata.sdd';'admin';'',ZRC) b on a.BM=b.BM
+openrowset('Microsoft.Jet.OLEDB.4.0','C:\¶«·½ÓÀµÂÈí¼þOYDSOFT °²»Õ\HRP-GIS2014\BGDATA\34\mapdata.sdd';'admin';'',ZRC) b on a.BM=b.BM
 where dbo.get_earth_distance(isnull(a.jd,0.000),isnull(a.wd,0.000),isnull(b.jd,0.000),isnull(b.wd,0.000))>=200
 
 drop Function get_earth_distance

@@ -1,17 +1,17 @@
 
---å„å¸‚åŒºæ€»è®¡
+--¸÷ÊĞÇø×Ü¼Æ
 select
 left(A0103 ,6) ,rtrim(OBJJC),
-sum(isnull(K0114,0)) 'é‡Œç¨‹',
-sum(CASE WHEN  isnull(K0304,0)='10' THEN K0114 else 0 END) é«˜é€Ÿ,
-sum(case when left(k0101,1)='G' then isnull(k0114,0) end)	å›½é“,
-sum(CASE WHEN isnull(K0304,0)='10' and  left(k0101,1)='G'THEN K0114 else 0 END) å›½é“é«˜é€Ÿ,
-sum(case when left(k0101,1)='S' then isnull(k0114,0) end)	çœé“,
-sum(CASE WHEN isnull(K0304,0)='10' and  left(k0101,1)='S'THEN K0114 else 0 END) çœé“é«˜é€Ÿ,
-sum(case when left(k0101,1)='X' then isnull(k0114,0) end)	å¿é“,
-sum(case when left(k0101,1)='Y' then isnull(k0114,0) end)	ä¹¡é“,
-sum(case when left(k0101,1)='C' then isnull(k0114,0) end)	æ‘é“,
-sum(case when left(k0101,1)='Z' then isnull(k0114,0) end)	ä¸“ç”¨å…¬è·¯
+sum(isnull(K0114,0)) 'Àï³Ì',
+sum(CASE WHEN  isnull(K0304,0)='10' THEN K0114 else 0 END) ¸ßËÙ,
+sum(case when left(k0101,1)='G' then isnull(k0114,0) end)	¹úµÀ,
+sum(CASE WHEN isnull(K0304,0)='10' and  left(k0101,1)='G'THEN K0114 else 0 END) ¹úµÀ¸ßËÙ,
+sum(case when left(k0101,1)='S' then isnull(k0114,0) end)	Ê¡µÀ,
+sum(CASE WHEN isnull(K0304,0)='10' and  left(k0101,1)='S'THEN K0114 else 0 END) Ê¡µÀ¸ßËÙ,
+sum(case when left(k0101,1)='X' then isnull(k0114,0) end)	ÏØµÀ,
+sum(case when left(k0101,1)='Y' then isnull(k0114,0) end)	ÏçµÀ,
+sum(case when left(k0101,1)='C' then isnull(k0114,0) end)	´åµÀ,
+sum(case when left(k0101,1)='Z' then isnull(k0114,0) end)	×¨ÓÃ¹«Â·
 from K01
 left JOIN d020 on left(A0103 ,6)=RTRIM(OBJNAME)
 where left(k0101,1) in ('G','S','X','Y','C','Z')

@@ -1,5 +1,5 @@
 
---æ›´æ–°å°å†™å­—æ¯ä¸ºå¤§å†™å­—æ¯
+--¸üĞÂĞ¡Ğ´×ÖÄ¸Îª´óĞ´×ÖÄ¸
 select k0101
 from k001 where k0101 collate Chinese_PRC_CS_AI like '%[abcdefghijklmnopqrstuvwxyz]%'
 

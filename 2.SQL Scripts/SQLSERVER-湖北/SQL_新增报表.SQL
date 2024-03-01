@@ -1,5 +1,5 @@
---ÊôÆÈÄöÂõΩÁúÅÈÅì
-select 	'','ÂêàËÆ°',sum(isnull(a5008,0))/1000 mqipdlc,
+--∆’Õ®π˙ °µ¿
+select 	'','∫œº∆',sum(isnull(a5008,0))/1000 mqipdlc,
 sum(case when isnull(a5010,0)>=90 then isnull(a5008,0) else 0 end)/1000 mqiydlc,        --YDLC
 sum(case when isnull(a5010,0)>=80 and isnull(a5010,0)<90 then isnull(a5008,0) else 0 end)/1000 mqildlc,        --LDLC
 sum(case when isnull(a5010,0)>=70 and isnull(a5010,0)<80 then isnull(a5008,0) else 0 end)/1000 mqizdlc,        --ZDLC
@@ -16,13 +16,13 @@ sum(case when isnull(a5011,0)<60 then isnull(a5008,0) else 0 end)/1000 pqichadlc
 round(sum(case when isnull(a5011,0)>=80 then isnull(a5008,0) else 0 end)/sum(isnull(a5008,0))*100,2) pqiyllc,       --YLLV
 round(sum(isnull(a5008,0)*a5011)/sum(isnull(a5008,0)),2) pqi        --PQI
 from k05
-where a0102 like '#oyds_Âçï‰Ωç‰ª£Á†Å#%' and a0101a = '#oyds_Êä•Ë°®Âπ¥Èôê#' and left(a0102,3)<>'42A' and left(rtrim(k0101),1) in ('G','S') and k5124 in ('1','2') and
-(rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='ÈïøÈìæ')
+where a0102 like '#oyds_µ•Œª¥˙¬Î#%' and a0101a = '#oyds_±®±ÌƒÍœﬁ#' and left(a0102,3)<>'42A' and left(rtrim(k0101),1) in ('G','S') and k5124 in ('1','2') and
+(rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='≥§¡¥')
 
 
---ÊôÆÈÄöÂõΩÁúÅÈÅì
+--∆’Õ®π˙ °µ¿
 DECLARE @a0102 char(100)
-set @a0102 = '#oyds_Âçï‰Ωç‰ª£Á†Å#'
+set @a0102 = '#oyds_µ•Œª¥˙¬Î#'
 select 	NULLIF(objname,objname),objjc,sum(isnull(a5008,0))/1000 mqipdlc,
 sum(case when isnull(a5010,0)>=90 then isnull(a5008,0) else 0 end)/1000 mqiydlc,        --YDLC
 sum(case when isnull(a5010,0)>=80 and isnull(a5010,0)<90 then isnull(a5008,0) else 0 end)/1000 mqildlc,        --LDLC
@@ -46,40 +46,40 @@ left join d020 on     CASE WHEN LEN(@a0102) = 2 AND LEFT(k01.a0103, 4) = '4290' 
         WHEN LEN(@a0102) = 2 THEN LEFT(k01.a0103, 4)
         WHEN LEN(@a0102) > 2 THEN LEFT(k01.a0103, 6) END  =objname
 
-where k05.a0102 like '#oyds_Âçï‰Ωç‰ª£Á†Å#%' and k05.a0101a = '2022' and left(k05.a0102,3)<>'42A'
+where k05.a0102 like '#oyds_µ•Œª¥˙¬Î#%' and k05.a0101a = '2022' and left(k05.a0102,3)<>'42A'
 and left(rtrim(k05.k0101),1) in ('G','S')
-and k5124 in ('1','2') and  (rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='ÈïøÈìæ')
+and k5124 in ('1','2') and  (rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='≥§¡¥')
 GROUP BY objjc ,objname
 order by objname
 
 
-SELECT '','','ÂêàËÆ°',A.k0114,A.YBLC,B.SBLC,B.PDLC,B.QXZRQ,B.SSLM,B.SGLD,B.SZDL,B.QTDW
+SELECT '','','∫œº∆',A.k0114,A.YBLC,B.SBLC,B.PDLC,B.QXZRQ,B.SSLM,B.SGLD,B.SZDL,B.QTDW
 FROM (
-select  'ÂêàËÆ°' hj,
+select  '∫œº∆' hj,
 sum(isnull(K01.k0114,0)) k0114,SUM(	CASE WHEN K01.K0304 IN('22','23','24','30')THEN isnull(K01.k0114,0)ELSE isnull(K01.k0114,0)*2 END ) YBLC
 from k01
 where  isnull(K01.k0123,'2')='2' and k0124 is null
-and K01.a0102 like '#oyds_Âçï‰Ωç‰ª£Á†Å#%' and K01.a0101 = '#oyds_Êä•Ë°®Âπ¥Èôê#'
+and K01.a0102 like '#oyds_µ•Œª¥˙¬Î#%' and K01.a0101 = '#oyds_±®±ÌƒÍœﬁ#'
 AND left(K01.a0102,3)<>'42A'  AND LEFT(K01.K0101,1) IN ('G','S')
 )A
 LEFT JOIN
-(SELECT  'ÂêàËÆ°' hj,
+(SELECT  '∫œº∆' hj,
 SUM(Isnull(K05.a5008/1000,0)) SBLC,
-sum(CASE WHEN (rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='ÈïøÈìæ') AND k5124 <> '3' THEN isnull(K05.a5008/1000,0 ) ELSE 0 END) PDLC,
-sum(CASE WHEN A0129 LIKE '%Áº∫Èô∑Ë¥£‰ªªÊúü%'and k5124 in ('1','2')THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QXZRQ,
+sum(CASE WHEN (rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='≥§¡¥') AND k5124 <> '3' THEN isnull(K05.a5008/1000,0 ) ELSE 0 END) PDLC,
+sum(CASE WHEN A0129 LIKE '%»±œ›‘»Œ∆⁄%'and k5124 in ('1','2')THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QXZRQ,
 sum(CASE WHEN k5124  ='3'  						 THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SSLM,
-sum(CASE WHEN A0129 LIKE '%ÊñΩÂ∑•%'          and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SGLD,
-sum(CASE WHEN A0129 LIKE '%Â∏ÇÊîøÈÅìË∑Ø%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SZDL,
-sum(CASE WHEN A0129 LIKE '%ÂÖ∂‰ªñÂçï‰Ωç%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QTDW
+sum(CASE WHEN A0129 LIKE '% ©π§%'          and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SGLD,
+sum(CASE WHEN A0129 LIKE '% –’˛µ¿¬∑%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SZDL,
+sum(CASE WHEN A0129 LIKE '%∆‰À˚µ•Œª%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QTDW
 FROM K05
-where K05.a0102 like '#oyds_Âçï‰Ωç‰ª£Á†Å#%' and K05.a0101a = '#oyds_Êä•Ë°®Âπ¥Èôê#'   and
+where K05.a0102 like '#oyds_µ•Œª¥˙¬Î#%' and K05.a0101a = '#oyds_±®±ÌƒÍœﬁ#'   and
 left(K05.a0102,3)<>'42A' AND A0101A='2022'  AND LEFT(K05.K0101,1) IN ('G','S')
 )B ON A.hj=B.hj
 
 
 
 
-SELECT 'ÊπñÂåó',A.K0101,A.K0112,A.k0114,A.YBLC,B.SBLC,B.PDLC,B.QXZRQ,B.SSLM,B.SGLD,B.SZDL,B.QTDW
+SELECT '∫˛±±',A.K0101,A.K0112,A.k0114,A.YBLC,B.SBLC,B.PDLC,B.QXZRQ,B.SSLM,B.SGLD,B.SZDL,B.QTDW
 FROM (
 select  (case when len(K01.k0101)>9  then left(rtrim(K01.k0101),4)
 when len(K01.k0101)<=9 and charindex('D',rtrim(K01.k0101))<>0 then left(rtrim(K01.k0101),charindex('D',rtrim(K01.k0101))-1)
@@ -87,7 +87,7 @@ when len(K01.k0101)<=9 and charindex('D',rtrim(K01.k0101))=0 then rtrim(K01.k010
 sum(isnull(K01.k0114,0)) k0114,SUM(	CASE WHEN K01.K0304 IN('22','23','24','30')THEN isnull(K01.k0114,0)ELSE isnull(K01.k0114,0)*2 END ) YBLC
 from k01
 where  isnull(K01.k0123,'2')='2' and k0124 is null
-and K01.a0102 like '#oyds_Âçï‰Ωç‰ª£Á†Å#%' and K01.a0101 = '#oyds_Êä•Ë°®Âπ¥Èôê#'
+and K01.a0102 like '#oyds_µ•Œª¥˙¬Î#%' and K01.a0101 = '#oyds_±®±ÌƒÍœﬁ#'
 AND left(K01.a0102,3)<>'42A'  AND LEFT(K01.K0101,1) IN ('G','S')
 group by  (case when len(K01.k0101)>9  then left(rtrim(K01.k0101),4)
 when len(K01.k0101)<=9 and charindex('D',rtrim(K01.k0101))<>0 then left(rtrim(K01.k0101),charindex('D',rtrim(K01.k0101))-1)
@@ -98,14 +98,14 @@ LEFT JOIN
 	when len(k05.k0101)<=9 and charindex('D',rtrim(k05.k0101))<>0 then left(rtrim(k05.k0101),charindex('D',rtrim(k05.k0101))-1)
 	when len(k05.k0101)<=9 and charindex('D',rtrim(k05.k0101))=0 then rtrim(k05.k0101) else rtrim(k05.k0101) end) k0101,
 SUM(Isnull(K05.a5008/1000,0)) SBLC,
-sum(CASE WHEN (rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='ÈïøÈìæ') AND k5124 <> '3' THEN isnull(K05.a5008/1000,0 ) ELSE 0 END) PDLC,
-sum(CASE WHEN A0129 LIKE '%Áº∫Èô∑Ë¥£‰ªªÊúü%' and k5124 in ('1','2')THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QXZRQ,
+sum(CASE WHEN (rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='≥§¡¥') AND k5124 <> '3' THEN isnull(K05.a5008/1000,0 ) ELSE 0 END) PDLC,
+sum(CASE WHEN A0129 LIKE '%»±œ›‘»Œ∆⁄%' and k5124 in ('1','2')THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QXZRQ,
 sum(CASE WHEN k5124  ='3' THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SSLM,
-sum(CASE WHEN A0129 LIKE '%ÊñΩÂ∑•%' 		and k5124 in ('1','2') THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SGLD,
-sum(CASE WHEN A0129 LIKE '%Â∏ÇÊîøÈÅìË∑Ø%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SZDL,
-sum(CASE WHEN A0129 LIKE '%ÂÖ∂‰ªñÂçï‰Ωç%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QTDW
+sum(CASE WHEN A0129 LIKE '% ©π§%' 		and k5124 in ('1','2') THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SGLD,
+sum(CASE WHEN A0129 LIKE '% –’˛µ¿¬∑%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SZDL,
+sum(CASE WHEN A0129 LIKE '%∆‰À˚µ•Œª%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QTDW
 FROM K05
-where K05.a0102 like '#oyds_Âçï‰Ωç‰ª£Á†Å#%' and K05.a0101a = '#oyds_Êä•Ë°®Âπ¥Èôê#' and
+where K05.a0102 like '#oyds_µ•Œª¥˙¬Î#%' and K05.a0101a = '#oyds_±®±ÌƒÍœﬁ#' and
 left(K05.a0102,3)<>'42A' AND LEFT(K05.K0101,1) IN ('G','S')
 GROUP BY  (case when len(k05.k0101)>9  then left(rtrim(k05.k0101),4)
 	when len(k05.k0101)<=9 and charindex('D',rtrim(k05.k0101))<>0 then left(rtrim(k05.k0101),charindex('D',rtrim(k05.k0101))-1)
@@ -123,26 +123,26 @@ left join d020 on     CASE WHEN LEN('42') = 2 AND LEFT(k01.a0103, 4) = '4290' TH
         WHEN LEN('42') = 2 THEN LEFT(k01.a0103, 4)
         WHEN LEN('42') > 2 THEN LEFT(k01.a0103, 6) END  =objname
 where  isnull(K01.k0123,'2')='2' and k0124 is null
-and K01.a0102 like '#oyds_Âçï‰Ωç‰ª£Á†Å#%' and K01.a0101 = '#oyds_Êä•Ë°®Âπ¥Èôê#'
+and K01.a0102 like '#oyds_µ•Œª¥˙¬Î#%' and K01.a0101 = '#oyds_±®±ÌƒÍœﬁ#'
 AND left(K01.a0102,3)<>'42A'  AND LEFT(K01.K0101,1) IN ('G','S')
 group by  objname,objjc
 )A
 LEFT JOIN
 (SELECT  objname,objjc,
 SUM(Isnull(K05.a5008/1000,0)) SBLC,
-sum(CASE WHEN (rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='ÈïøÈìæ') AND k5124 <> '3' THEN isnull(K05.a5008/1000,0 ) ELSE 0 END) PDLC,
-sum(CASE WHEN A0129 LIKE '%Áº∫Èô∑Ë¥£‰ªªÊúü%' and k5124 in ('1','2')THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QXZRQ,
+sum(CASE WHEN (rtrim(cast(a0129 as char))='' or rtrim(cast(a0129 as char)) is null or rtrim(cast(a0129 as char))='≥§¡¥') AND k5124 <> '3' THEN isnull(K05.a5008/1000,0 ) ELSE 0 END) PDLC,
+sum(CASE WHEN A0129 LIKE '%»±œ›‘»Œ∆⁄%' and k5124 in ('1','2')THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QXZRQ,
 sum(CASE WHEN k5124  ='3' THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SSLM,
-sum(CASE WHEN A0129 LIKE '%ÊñΩÂ∑•%' 		and k5124 in ('1','2') THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SGLD,
-sum(CASE WHEN A0129 LIKE '%Â∏ÇÊîøÈÅìË∑Ø%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SZDL,
-sum(CASE WHEN A0129 LIKE '%ÂÖ∂‰ªñÂçï‰Ωç%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QTDW
+sum(CASE WHEN A0129 LIKE '% ©π§%' 		and k5124 in ('1','2') THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SGLD,
+sum(CASE WHEN A0129 LIKE '% –’˛µ¿¬∑%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) SZDL,
+sum(CASE WHEN A0129 LIKE '%∆‰À˚µ•Œª%' and k5124 in ('1','2')  THEN isnull(K05.a5008/1000,0 )ELSE 0 END) QTDW
 FROM K05
 right join k01 on k05.a0102=k01.a0102 and k05.k0101=k01.k0101 and k05.K0105>=k01.k0108 and k05.K0105<k01.k0109
 left join d020 on     CASE WHEN LEN('42') = 2 AND LEFT(k01.a0103, 4) = '4290' THEN LEFT(k01.a0103, 6)
         WHEN LEN('42') = 2 THEN LEFT(k01.a0103, 4)
         WHEN LEN('42') > 2 THEN LEFT(k01.a0103, 6) END  =objname
 where
-K05.a0102 like '#oyds_Âçï‰Ωç‰ª£Á†Å#%' and K05.a0101a = '#oyds_Êä•Ë°®Âπ¥Èôê#'
+K05.a0102 like '#oyds_µ•Œª¥˙¬Î#%' and K05.a0101a = '#oyds_±®±ÌƒÍœﬁ#'
 and left(K05.a0102,3)<>'42A' AND LEFT(K05.K0101,1) IN ('G')
 GROUP BY  objname,objjc
 )B ON A.objname=B.objname

@@ -1,26 +1,26 @@
-mklink /H "E:\Documents\Navicat\MySQL\Servers\Localhost\test\æŠ¥è¡¨SQL.sql" "E:\Documents\VSCode Files\0.NOTE\MYSQL\æŠ¥è¡¨SQL.sql" 
+mklink /H "E:\Documents\Navicat\MySQL\Servers\Localhost\test\±¨±íSQL.sql" "E:\Documents\VSCode Files\0.NOTE\MYSQL\±¨±íSQL.sql" 
 
--- è°ƒæ•´ä¸€æ¬¡ä¼ é€æ•°æ®åŒ…çš„è¿‡ç¨‹ä¸­æœ€å¤§å…è®¸çš„æ•°æ®åŒ…å¤§å°
+-- µ÷ÕûÒ»´Î´«ËÍÊı¾İ°üµÄ¹ı³ÌÖĞ×î´óÔÊĞíµÄÊı¾İ°ü´óĞ¡
 set global max_allowed_packet=1024*1024*1*20;
 show global variables like 'max_allowed_packet';
 
--- æŸ¥çœ‹æ˜¯å¦å¼€å¯å…¨å±€æ—¥å¿—
-SHOW VARIABLES LIKE "general_log%";-- å¼€å¯å…¨å±€æ—¥å¿—
+-- ²é¿´ÊÇ·ñ¿ªÆôÈ«¾ÖÈÕÖ¾
+SHOW VARIABLES LIKE "general_log%";-- ¿ªÆôÈ«¾ÖÈÕÖ¾
 SET GLOBAL general_log = 'ON';
 SET GLOBAL general_log = 'OFF';
 
 
--- æŸ¥è¯¢åˆ—å
+-- ²éÑ¯ÁĞÃû
 select table_name,column_name,data_type,column_comment
 from information_schema.columns
 where column_name like 'A0102%' AND column_name like 'A0102A%' and table_schema = 'oydhrp_hb';
 
--- æŸ¥çœ‹è¡¨çš„æ³¨é‡Š comment
+-- ²é¿´±íµÄ×¢ÊÍ comment
 SELECT table_name, table_comment
 FROM information_schema.tables
 WHERE table_schema = 'oydhrp_hb'
 
--- æŸ¥çœ‹è¡¨ä¸­ columns çš„æ³¨é‡Š comment
+-- ²é¿´±íÖĞ columns µÄ×¢ÊÍ comment
 SELECT table_name,column_name, column_comment
 FROM information_schema.columns
 WHERE table_schema = 'oydhrp_hb'
@@ -30,18 +30,18 @@ ORDER BY table_name,column_name
 -- sql_mode
 select @@global.sql_mode
 
--- ç´¢å¼•
-#1ã€æ·»åŠ ä¸»é”®ç´¢å¼•(PRIMARY KEY)
+-- Ë÷Òı
+#1¡¢Ìí¼ÓÖ÷¼üË÷Òı(PRIMARY KEY)
 ALTER TABLE table_name ADD PRIMARY KEY ( column)
-#2ã€æ·»åŠ æ™®é€šç´¢å¼•(INDEX)
+#2¡¢Ìí¼ÓÆÕÍ¨Ë÷Òı(INDEX)
 ALTER TABLE table_name ADD INDEX index_name ( column )
-#3ã€æ·»åŠ å”¯ä¸€ç´¢å¼•(UNIQUE)
+#3¡¢Ìí¼ÓÎ¨Ò»Ë÷Òı(UNIQUE)
 ALTER TABLE table_name ADD UNIQUE (column)
-#4ã€æ·»åŠ å…¨æ–‡ç´¢å¼•(FULLTEXT)
+#4¡¢Ìí¼ÓÈ«ÎÄË÷Òı(FULLTEXT)
 ALTER TABLE table_name ADD FULLTEXT ( column)
-#5ã€æ·»åŠ å¤åˆç´¢å¼•
+#5¡¢Ìí¼Ó¸´ºÏË÷Òı
 ALTER TABLE table_name ADD INDEX index_name ( column1, column2, column3 )
-#6ã€åˆ é™¤ç´¢å¼•
+#6¡¢É¾³ıË÷Òı
 DROP INDEX index_name ON table
 
 -- backup
@@ -50,8 +50,8 @@ mysql -u root -p test < f:\oydhrp_hb.sql
 
 
 -- PROCEDURE
--- åˆ›å»º
-DELIMITER $$ -- æŒ‡å®šç»“æŸç¬¦
+-- ´´½¨
+DELIMITER $$ -- Ö¸¶¨½áÊø·û
 CREATE PROCEDURE  P1()
 BEGIN
 
@@ -60,10 +60,10 @@ SELECT  * FROM A50 LIMIT 10 ;
 END $$
 DELIMITER ;
 
--- è°ƒç”¨
+-- µ÷ÓÃ
 CALL P1;
--- æŸ¥è¯¢
+-- ²éÑ¯
 SHOW CREATE PROCEDURE P1;
--- åˆ é™¤
+-- É¾³ı
 DROP PROCEDURE IF EXISTS P1;
 

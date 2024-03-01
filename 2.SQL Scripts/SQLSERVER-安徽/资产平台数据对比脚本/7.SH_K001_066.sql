@@ -1,15 +1,15 @@
 SELECT
-'K001'+'&A0102 ='''+RTRIM(CAST(k001.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k001.K0101 AS VARCHAR))+''' AND K0108 ='+RTRIM(CAST(k001.K0108 AS VARCHAR))  AS ç¼–è¾‘, 
-rtrim(k001.A0102)	'å¹´æŠ¥|ç®¡ç†å•ä½ä»£ç ',rtrim(k001.hA0102)	'å¹´æŠ¥|ç®¡ç†å•ä½åç§°',
-rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))	'å¹´æŠ¥|è·¯çº¿ç¼–ç ',	rtrim(zcpt_k001.k0101)	'èµ„äº§å¹³å°|è·¯çº¿ç¼–ç ',
-rtrim(k001.A0103)	'å¹´æŠ¥|æ”¿åŒºä»£ç ',	rtrim(zcpt_k001.A0103)	'èµ„äº§å¹³å°|æ”¿åŒºä»£ç ',
+'K001'+'&A0102 ='''+RTRIM(CAST(k001.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(k001.K0101 AS VARCHAR))+''' AND K0108 ='+RTRIM(CAST(k001.K0108 AS VARCHAR))  AS ±à¼­, 
+rtrim(k001.A0102)	'Äê±¨|¹ÜÀíµ¥Î»´úÂë',rtrim(k001.hA0102)	'Äê±¨|¹ÜÀíµ¥Î»Ãû³Æ',
+rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))	'Äê±¨|Â·Ïß±àÂë',	rtrim(zcpt_k001.k0101)	'×Ê²úÆ½Ì¨|Â·Ïß±àÂë',
+rtrim(k001.A0103)	'Äê±¨|ÕşÇø´úÂë',	rtrim(zcpt_k001.A0103)	'×Ê²úÆ½Ì¨|ÕşÇø´úÂë',
 
-rtrim(k001.hK0182)	'å¹´æŠ¥|æ–­é“¾ç±»å‹',	rtrim(zcpt_k001.hK0182)	'èµ„äº§å¹³å°|æ–­é“¾ç±»å‹',
-rtrim(k001.HK0123)	'å¹´æŠ¥|æ˜¯å¦æ–­å¤´',	rtrim(zcpt_k001.HK0123) 'èµ„äº§å¹³å°|æ˜¯å¦æ–­å¤´',
+rtrim(k001.hK0182)	'Äê±¨|¶ÏÁ´ÀàĞÍ',	rtrim(zcpt_k001.hK0182)	'×Ê²úÆ½Ì¨|¶ÏÁ´ÀàĞÍ',
+rtrim(k001.HK0123)	'Äê±¨|ÊÇ·ñ¶ÏÍ·',	rtrim(zcpt_k001.HK0123) '×Ê²úÆ½Ì¨|ÊÇ·ñ¶ÏÍ·',
 case 
-when rtrim(k001.hK0182)<>rtrim(zcpt_k001.hK0182)	and rtrim(k001.HK0123)=rtrim(zcpt_k001.HK0123)		then 'æ–­é“¾ç±»å‹ ä¸ä¸€è‡´' 
-when rtrim(k001.hK0182)=rtrim(zcpt_k001.hK0182)	and rtrim(k001.HK0123)=rtrim(zcpt_k001.HK0123)		then 'æ˜¯å¦æ–­å¤´ ä¸ä¸€è‡´'
-else 'æ–­é“¾ç±»å‹/æ˜¯å¦æ–­å¤´ ä¸ä¸€è‡´'end 'å¯¹æ¯”ç»“æœ'
+when rtrim(k001.hK0182)<>rtrim(zcpt_k001.hK0182)	and rtrim(k001.HK0123)=rtrim(zcpt_k001.HK0123)		then '¶ÏÁ´ÀàĞÍ ²»Ò»ÖÂ' 
+when rtrim(k001.hK0182)=rtrim(zcpt_k001.hK0182)	and rtrim(k001.HK0123)=rtrim(zcpt_k001.HK0123)		then 'ÊÇ·ñ¶ÏÍ· ²»Ò»ÖÂ'
+else '¶ÏÁ´ÀàĞÍ/ÊÇ·ñ¶ÏÍ· ²»Ò»ÖÂ'end '¶Ô±È½á¹û'
 
 
 from K001
@@ -19,6 +19,6 @@ where   k001.A0102 LIKE '34%' AND k001.A0102 LIKE '34%' and
 rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))=rtrim(ZCPT_K001.k0101)
 and k001.k0108=ZCPT_K001.k0108 and 
 (
-rtrim(k001.hK0182)<>rtrim(zcpt_k001.hK0182)	or -- æ–­é“¾ç±»å‹,
-rtrim(k001.HK0123)<>rtrim(zcpt_k001.HK0123)	 -- æ˜¯å¦æ–­å¤´,
+rtrim(k001.hK0182)<>rtrim(zcpt_k001.hK0182)	or -- ¶ÏÁ´ÀàĞÍ,
+rtrim(k001.HK0123)<>rtrim(zcpt_k001.HK0123)	 -- ÊÇ·ñ¶ÏÍ·,
 )

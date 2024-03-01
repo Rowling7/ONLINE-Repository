@@ -1,17 +1,17 @@
-/* DBMSæŸ¥è¯¢
---é¡¹ç›®ç±»å‹
+/* DBMS²éÑ¯
+--ÏîÄ¿ÀàĞÍ
 select j0103, hj0103,a0102
 from k001
 --update  k001 set j0103='09'
 where j0103 ='9'
 
---é¡¹ç›®ç±»å‹
+--ÏîÄ¿ÀàĞÍ
 select j0103,hj0103, a0102
 from k001
 --update  k001 set j0103='07'
 where j0103 ='7'
 
---é¡¹ç›®ç±»å‹
+--ÏîÄ¿ÀàĞÍ
 select j0103,hj0103, a0102
 from L001
 --update  L001 set j0103='07'
@@ -36,27 +36,27 @@ from  l001
 where k3102='0'
 
 
---è¡Œæ”¿ç­‰çº§
+--ĞĞÕşµÈ¼¶
 select  a0203,a0102
 from a50
 --update a50 set a0203='C'
 where a0203='c'
 
 
--- è·¯çº¿æ€§è´¨
+-- Â·ÏßĞÔÖÊ
 select  kf0180,hkf0180,a0102
 from a50
 --update a50 set kf0180=null,hkf0180=null
 where kf0180='0'
 
--- è·¯çº¿æ€§è´¨
+-- Â·ÏßĞÔÖÊ
 select  kf0180,hkf0180,a0102
 from a50
 --update a50 set kf0180=null,hkf0180=null
 where kf0180='?'
 
 
---æ˜¯å¦æŒ‰å¹²çº¿å…¬è·¯ç®¡å…»æ¥å…»
+--ÊÇ·ñ°´¸ÉÏß¹«Â·¹ÜÑø½ÓÑø
 select k0138,hk0138 ,a0102
 from k001
 --update k001 set k0138= null
@@ -107,19 +107,19 @@ where  a0103 like '421023%'
 SELECT K6115
 FROM L060
 -- UPDATE L060 SET  K6115 =NULL
-WHERE K6115='ä¸€'
+WHERE K6115='Ò»'
 
---è·¯æ®µæ”¶è´¹æ€§è´¨
+--Â·¶ÎÊÕ·ÑĞÔÖÊ
 select  k0128,hk0128,bg0128,hbg0128
 from bg01
 -- update bg01 set k0128 ='01', bg0128='01'
 where k0128='1'
 
 
--- å»ºè®¾æ€§è´¨
+-- ½¨ÉèĞÔÖÊ
 select j0838,hj0838
 from  j08
--- update j08 set  j0838 ='5',hj0838='åŠ å›ºæ”¹é€ '
+-- update j08 set  j0838 ='5',hj0838='¼Ó¹Ì¸ÄÔì'
 where j0838 ='9'
 
 
@@ -133,23 +133,23 @@ where  j0102= '2019421222006'
 --j03
 select j5104,hj5104
 from j03
---update j03 set j5104='12',hj5104='æ°´æ³¥æ··å‡åœŸ'
+--update j03 set j5104='12',hj5104='Ë®Äà»ìÄıÍÁ'
 where j5104 is not null and hj5104 is null
 
 select j5104,hj5104
 from j03
---update j03 set j5104 ='5' ,hj5104='æœªé“ºè£…è·¯é¢(æ— è·¯é¢)'
+--update j03 set j5104 ='5' ,hj5104='Î´ÆÌ×°Â·Ãæ(ÎŞÂ·Ãæ)'
 where j5104 ='36'
 
 
---æ‹Ÿå»ºé“è·¯
+--Äâ½¨µÀÂ·
 SELECT  V8103
 FROM V53
 --update v53 set v8103 = 'V'
 WHERE v8103='w'
 
 
---æ‰€å±åœ°å½¢
+--ËùÊôµØĞÎ
 SELECT V0506
 FROM V53
 --UPDATE V53 SET V0506 ='1'
@@ -158,7 +158,7 @@ WHERE V0506='11'
 */
 
 
-/* DBMS æ‰§è¡Œ
+/* DBMS Ö´ĞĞ
 update  k001 set j0103='09'
 where j0103 ='9';
 
@@ -205,21 +205,21 @@ update l060 set  a0103='421088'+right(rtrim(a0103),3)
 where  a0103 like '421023%';
 
 UPDATE L060 SET  K6115 =NULL
-WHERE K6115='ä¸€';
+WHERE K6115='Ò»';
 
 update bg01 set k0128 ='01', bg0128='01'
 where k0128='1';
 
-update j08 set  j0838 ='5',hj0838='åŠ å›ºæ”¹é€ '
+update j08 set  j0838 ='5',hj0838='¼Ó¹Ì¸ÄÔì'
 where j0838 ='9';
 
 update j05 set k0101=j0312,j0312= k0101
 where  j0102= '2019421222006';
 
-update j03 set j5104='12',hj5104='æ°´æ³¥æ··å‡åœŸ'
+update j03 set j5104='12',hj5104='Ë®Äà»ìÄıÍÁ'
 where j5104 is not null and hj5104 is null;
 
-update j03 set j5104 ='5' ,hj5104='æœªé“ºè£…è·¯é¢(æ— è·¯é¢)'
+update j03 set j5104 ='5' ,hj5104='Î´ÆÌ×°Â·Ãæ(ÎŞÂ·Ãæ)'
 where j5104 ='36';
 
 update v53 set v8103 = 'V'
@@ -231,7 +231,7 @@ WHERE V0506='11';
 
 
 
-/* GHSS  æŸ¥è¯¢
+/* GHSS  ²éÑ¯
 -- A11
 SELECT a0203
 from a11
@@ -244,31 +244,31 @@ WHERE A0203='y';
 SELECT *
 -- DELETE
 FROM A21
-WHERE HA0103='æ¹–åŒ—çœåå °å¸‚éƒ§  å¿';
+WHERE HA0103='ºş±±Ê¡Ê®ÑßÊĞÔÇ  ÏØ';
 
 SELECT A0103,ha0103
 from a21
--- UPDATE A21 SET a0103 ='420304' ,ha0103='éƒ§é˜³åŒº'
+-- UPDATE A21 SET a0103 ='420304' ,ha0103='ÔÇÑôÇø'
 where a0103 ='420321';
 
 SELECT A0103 ,HA0103
 FROM A21
--- UPDATE A21 SET A0103 ='420882' ,HA0103='äº¬å±±å¸‚'
+-- UPDATE A21 SET A0103 ='420882' ,HA0103='¾©É½ÊĞ'
 WHERE A0103 ='420821';
 
 SELECT A0103 ,HA0103
 FROM A21
--- UPDATE A21 SET A0103 ='421088' ,HA0103='ç›‘åˆ©å¸‚'
+-- UPDATE A21 SET A0103 ='421088' ,HA0103='¼àÀûÊĞ'
 WHERE A0103 ='421023';
 
 SELECT A0103 ,HA0103
 FROM a17
--- UPDATE a17 SET A0103 ='420882' ,HA0103='äº¬å±±å¸‚'
+-- UPDATE a17 SET A0103 ='420882' ,HA0103='¾©É½ÊĞ'
 WHERE A0103 ='420821';
 
 SELECT A0103 ,HA0103
 FROM a17
--- UPDATE a17 SET A0103 ='421088' ,HA0103='ç›‘åˆ©å¸‚'
+-- UPDATE a17 SET A0103 ='421088' ,HA0103='¼àÀûÊĞ'
 WHERE A0103 ='421023';
 
 
@@ -283,7 +283,7 @@ where  a0203='s'
 */
 
 
-/*GHSS æ‰§è¡Œ
+/*GHSS Ö´ĞĞ
 -- A11
 UPDATE A11 SET A0203 ='Y'
 WHERE A0203='y';
@@ -293,36 +293,36 @@ WHERE A0203='s';
 
 DELETE
 FROM A21
-WHERE HA0103='æ¹–åŒ—çœåå °å¸‚éƒ§  å¿';
+WHERE HA0103='ºş±±Ê¡Ê®ÑßÊĞÔÇ  ÏØ';
 
-UPDATE A21 SET a0103 ='420304' ,ha0103='éƒ§é˜³åŒº'
+UPDATE A21 SET a0103 ='420304' ,ha0103='ÔÇÑôÇø'
 where a0103 ='420321';
 
-UPDATE A21 SET A0103 ='420882' ,HA0103='äº¬å±±å¸‚'
+UPDATE A21 SET A0103 ='420882' ,HA0103='¾©É½ÊĞ'
 WHERE A0103 ='420821';
 
-UPDATE A21 SET A0103 ='421088' ,HA0103='ç›‘åˆ©å¸‚'
+UPDATE A21 SET A0103 ='421088' ,HA0103='¼àÀûÊĞ'
 WHERE A0103 ='421023';
 
-UPDATE a17 SET A0103 ='420882' ,HA0103='äº¬å±±å¸‚'
+UPDATE a17 SET A0103 ='420882' ,HA0103='¾©É½ÊĞ'
 WHERE A0103 ='420821';
 
-UPDATE a17 SET A0103 ='421088' ,HA0103='ç›‘åˆ©å¸‚'
+UPDATE a17 SET A0103 ='421088' ,HA0103='¼àÀûÊĞ'
 WHERE A0103 ='421023';
 
-UPDATE A25 SET A0103 ='421088' ,HA0103='ç›‘åˆ©å¸‚'
+UPDATE A25 SET A0103 ='421088' ,HA0103='¼àÀûÊĞ'
 WHERE A0103 ='421023';
 
-UPDATE A27 SET a0103 ='420304' ,ha0103='éƒ§é˜³åŒº'
+UPDATE A27 SET a0103 ='420304' ,ha0103='ÔÇÑôÇø'
 where a0103 ='420321';
 
-UPDATE A27 SET A0103 ='420882' ,HA0103='äº¬å±±å¸‚'
+UPDATE A27 SET A0103 ='420882' ,HA0103='¾©É½ÊĞ'
 WHERE A0103 ='420821';
 
-UPDATE A27 SET A0103 ='421088' ,HA0103='ç›‘åˆ©å¸‚'
+UPDATE A27 SET A0103 ='421088' ,HA0103='¼àÀûÊĞ'
 WHERE A0103 ='421023';
 
-UPDATE A15 SET A0103 ='421088' ,HA0103='ç›‘åˆ©å¸‚'
+UPDATE A15 SET A0103 ='421088' ,HA0103='¼àÀûÊĞ'
 WHERE A0103 ='421023';
 
 UPDATE K04 SET A0203 ='Y'

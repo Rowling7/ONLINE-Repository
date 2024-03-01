@@ -1,11 +1,11 @@
 select
 case when len(rtrim(objname))='5'then STUFF(rtrim(objname),3,1,null) else rtrim(objname) end  objname,rtrim(objjc)objjc
 from DA0102
-where len(rtrim(objname))=5 AND  (OBJJC LIKE '%å¹²çº¿å…¬è·¯%' or OBJJC LIKE '%å†œæ‘å…¬è·¯%')   --ç­›é€‰åœ°åœ°å¸‚
-or (left(rtrim(objname),3)>=343 and len(rtrim(objname)) <5) --ç­›é€‰é«˜é€Ÿå•ä½
+where len(rtrim(objname))=5 AND  (OBJJC LIKE '%¸ÉÏß¹«Â·%' or OBJJC LIKE '%Å©´å¹«Â·%')   --É¸Ñ¡µØµØÊÐ
+or (left(rtrim(objname),3)>=343 and len(rtrim(objname)) <5) --É¸Ñ¡¸ßËÙµ¥Î»
 union
-select --æŸ¥è¯¢å¸‚å·ž
+select --²éÑ¯ÊÐÖÝ
 STUFF(rtrim(objname),3,1,null) objname,left(objjc,3) objjc
 from DA0102
-where len(rtrim(objname))=5 AND  OBJJC LIKE '%å¹²çº¿å…¬è·¯%'
-order by objname,objjc --ç»¼åˆæŽ’åº
+where len(rtrim(objname))=5 AND  OBJJC LIKE '%¸ÉÏß¹«Â·%'
+order by objname,objjc --×ÛºÏÅÅÐò

@@ -1,5 +1,5 @@
 /*
-update k05 set a5009='2' ,ha5009='ä¸Šè¡Œ'
+update k05 set a5009='2' ,ha5009='ÉÏÐÐ'
 from k05
 where A5009='1' AND left(a0101a,4)='2023'
 */

@@ -1,70 +1,70 @@
-/*ä¸æ˜¾ç¤ºé›¶*/
---å°†é•¿é“¾å’Œå®é™…è·¯æ®µä¿¡æ¯å¯¼å…¥ä¸´æ—¶è¡¨
+/*²»ÏÔÊ¾Áã*/
+--½«³¤Á´ºÍÊµ¼ÊÂ·¶ÎĞÅÏ¢µ¼ÈëÁÙÊ±±í
 if object_id('tempdb..#tempk01') is not null drop table #tempk01
 create table #tempk01(col01 varchar(16),col02 varchar(100),col03 varchar(100),col04 varchar(100),col05 varchar(100),col06 varchar(100),col07 numeric(18,3),col08 numeric(18,3),col09 numeric(18,3),col10 varchar(100),col11 varchar(100),col12 varchar(100),col13 varchar(100),col14 varchar(100),col15 varchar(100),col16 varchar(100),col17 numeric(18,2),col18 numeric(18,2),col19 numeric(18,0),col20 varchar(100),col21 varchar(100),col22 varchar(100),col23 varchar(100),col24 varchar(100),col25 varchar(100),col26 numeric(18,3),col27 numeric(18,3),col28 numeric(18,3),col29 numeric(18,3),col30 numeric(18,3),col31 numeric(18,3),col32 numeric(18,3),col33 numeric(18,3),col34 numeric(2,0),col35 varchar(100),col36 numeric(18,0),col38 varchar(100),col39 varchar(100),col41 numeric(18,1),col42 varchar(1000),col43 varchar(1000),col44 numeric(18,3),col45 varchar(16),col46 numeric(18,3),col47 varchar(10),col48 varchar(20),col49 varchar(10),col50 varchar(2),col37 varchar(1000),PX int IDENTITY(1,1))
 insert #tempk01( col01,col02,col03,col04,col05,col06,col07,col08,col09,col10,col11,col12,col13,col14,col15,col16,col17,col18,col19,col20,col21,col22,col23,col24,col25,col26,col27,col28,col29,col30,col31,col32,col33,col34,col35,col36,col38,col39,col41,col42,col43,col44,col45,col46,col47,col48,col49,col50,col37  )
 select
-	[col01] = (case when charindex('D',k0101)=11 then  left(k0101,4) else replace(replace(rtrim(k0101),'000000',''),'420000','') end),	--é¡¹ç›®
-	[col02] = left(rtrim(a0103),9), --è¡Œæ”¿åŒºåˆ’ä»£ç 
-	[col03] = rtrim(k0112), 	--è·¯çº¿æ ‡å‡†åç§°
-	[col04] = rtrim(a7002),  	--è·¯çº¿åœ°æ–¹åç§°	ã€ä¸å‡ºã€‘
-	[col05] = rtrim(k0110),		--è·¯æ®µèµ·ç‚¹åç§°
-	[col06] = rtrim(k0111),		--è·¯æ®µæ­¢ç‚¹åç§°
-	[col07] = k0108, --è·¯æ®µèµ·ç‚¹æ¡©å·
-	[col08] = k0109, --è·¯æ®µæ­¢ç‚¹æ¡©å·
+	[col01] = (case when charindex('D',k0101)=11 then  left(k0101,4) else replace(replace(rtrim(k0101),'000000',''),'420000','') end),	--ÏîÄ¿
+	[col02] = left(rtrim(a0103),9), --ĞĞÕşÇø»®´úÂë
+	[col03] = rtrim(k0112), 	--Â·Ïß±ê×¼Ãû³Æ
+	[col04] = rtrim(a7002),  	--Â·ÏßµØ·½Ãû³Æ	¡¾²»³ö¡¿
+	[col05] = rtrim(k0110),		--Â·¶ÎÆğµãÃû³Æ
+	[col06] = rtrim(k0111),		--Â·¶ÎÖ¹µãÃû³Æ
+	[col07] = k0108, --Â·¶ÎÆğµã×®ºÅ
+	[col08] = k0109, --Â·¶ÎÖ¹µã×®ºÅ
 	[col09] = k0114,
 	[col10] = (case when rtrim(k0304)='22' then '12'
 			when rtrim(k0304)='23' then '13'
-			when rtrim(k0304)='24' then '14' else rtrim(k0304) end),	--æŠ€æœ¯ç­‰çº§ä»£ç 
-	[col11] = rtrim(hk0304),	--æŠ€æœ¯ç­‰çº§
-	[col12] = isnull(rtrim(hk0126),'å¦'),	--æ˜¯å¦ä¸€å¹…é«˜é€Ÿ
-	[col13] = rtrim(k0404),		--è½¦é“åˆ†ç±»ä»£ç 
-	[col14] = rtrim(hk0404),	--è½¦é“åˆ†ç±»
-	[col15] = rtrim(k5104),		--é¢å±‚ç±»å‹ä»£ç 
-	[col16] = rtrim(hk5104),	--é¢å±‚ç±»å‹
-	[col17] = k4002,		--è·¯åŸºå®½åº¦
-	[col18] = k5404,		--è·¯é¢å®½åº¦
-	[col19] = k0306,		--è®¾è®¡æ—¶é€Ÿ
-	[col20] = rtrim(k0180),--ä¿®å»ºå¹´åº¦
-	[col21] = rtrim(k0181),--æ”¹å»ºå¹´åº¦
-	[col22] = rtrim(k0182),--æ–­é“¾ç±»å‹
-	[col23] = isnull(rtrim(hk0121),'å¦'),	--æ˜¯å¦åŸç®¡è·¯æ®µ
-	[col24] = isnull(rtrim(hk0123),'å¦'),	--æ˜¯å¦æ–­å¤´è·¯æ®µ
-	[col25] = (case when (charindex('D',k0124) = 0 and len(k0124)>9 and left(k0124,1)<>'Z') then left(rtrim(k0124),4) else (case when charindex('D',rtrim(k0124))=11 then left(k0124,4) else rtrim(k0124) end) end), --é‡å¤è·¯çº¿ä»£ç 
-	[col26] = k0162,		--é‡å¤è·¯æ®µèµ·ç‚¹æ¡©å·
-	[col27] = k0163,		--é‡å¤è·¯æ®µç»ˆç‚¹æ¡©å·
-	[col28] = a1001,		--å…»æŠ¤
-	[col29] = a0320,		--æ™´é›¨é€šè½¦	ã€ä¸å‡ºã€‘
-	[col30] = a3101,		--å¯ç»¿åŒ–
-	[col31] = a3102,		--å·²ç»¿åŒ–
-	[col32] = a0322,		--GBM		ã€ä¸å‡ºã€‘
-	[col33] = a0323,		--æ–‡æ˜æ ·æ¿è·¯	ã€ä¸å‡ºã€‘
-	[col34] = k9508,		--åœ°è²Œä»£ç 
-	[col35] = rtrim(hk9508),	--åœ°è²Œ
-	[col36] = a0522,		--æ¶µæ´æ•°é‡
-	[col38] = rtrim(hk0128),	--è·¯æ®µæ”¶è´¹æ€§è´¨
-	[col39] = rtrim(A0130),		--ç®¡å…»å•ä½åç§°
-	[col41] = k5222,		--é¢å±‚åšåº¦
-	[col42] = rtrim(k0155),		--æœ€è¿‘ä¸€æ¬¡å¤§ä¸­ä¿®å¹´åº¦
-	[col43] = rtrim(k0156),		--çœé™…å‡ºå…¥å£æ ‡è¯†
-	[col44] = A3305,		--å¹´å‡æ—¥äº¤é€šé‡
-	[col45] = rtrim(K3990),		--å›½é“è°ƒæ•´å‰è·¯çº¿ç¼–å·
-	[col46] = K3992,		--å›½é“æ¡©å·ä¼ é€’é¢„ç•™é‡Œç¨‹
-	[col47] = (case when isnull(k0138,'2')='1' then 'æ˜¯' else 'å¦' end),	--æ˜¯å¦æŒ‰å¹²çº¿å…¬è·¯ç®¡ç†æ¥å…»
-	[col48] = rtrim(HK6023),		--æŠ—éœ‡ç­‰çº§
-	[col49] = replace(rtrim(HK0149),'å¹´',''),		--é˜²æ´ªæ ‡å‡†
-	[col50] = (case when (charindex('D',k0124) = 0 and rtrim(k0124) is not null) then 'å¦'
-			when (charindex('D',k0124) <> 0 and rtrim(k0124) is not null) then 'æ˜¯' else null end),		--é‡å¤è·¯æ®µæ˜¯å¦é•¿é“¾
-    [col37] = ltrim(rtrim(cast(k0199 as varchar(1000))))	--å¤‡æ³¨
+			when rtrim(k0304)='24' then '14' else rtrim(k0304) end),	--¼¼ÊõµÈ¼¶´úÂë
+	[col11] = rtrim(hk0304),	--¼¼ÊõµÈ¼¶
+	[col12] = isnull(rtrim(hk0126),'·ñ'),	--ÊÇ·ñÒ»·ù¸ßËÙ
+	[col13] = rtrim(k0404),		--³µµÀ·ÖÀà´úÂë
+	[col14] = rtrim(hk0404),	--³µµÀ·ÖÀà
+	[col15] = rtrim(k5104),		--Ãæ²ãÀàĞÍ´úÂë
+	[col16] = rtrim(hk5104),	--Ãæ²ãÀàĞÍ
+	[col17] = k4002,		--Â·»ù¿í¶È
+	[col18] = k5404,		--Â·Ãæ¿í¶È
+	[col19] = k0306,		--Éè¼ÆÊ±ËÙ
+	[col20] = rtrim(k0180),--ĞŞ½¨Äê¶È
+	[col21] = rtrim(k0181),--¸Ä½¨Äê¶È
+	[col22] = rtrim(k0182),--¶ÏÁ´ÀàĞÍ
+	[col23] = isnull(rtrim(hk0121),'·ñ'),	--ÊÇ·ñ³Ç¹ÜÂ·¶Î
+	[col24] = isnull(rtrim(hk0123),'·ñ'),	--ÊÇ·ñ¶ÏÍ·Â·¶Î
+	[col25] = (case when (charindex('D',k0124) = 0 and len(k0124)>9 and left(k0124,1)<>'Z') then left(rtrim(k0124),4) else (case when charindex('D',rtrim(k0124))=11 then left(k0124,4) else rtrim(k0124) end) end), --ÖØ¸´Â·Ïß´úÂë
+	[col26] = k0162,		--ÖØ¸´Â·¶ÎÆğµã×®ºÅ
+	[col27] = k0163,		--ÖØ¸´Â·¶ÎÖÕµã×®ºÅ
+	[col28] = a1001,		--Ñø»¤
+	[col29] = a0320,		--ÇçÓêÍ¨³µ	¡¾²»³ö¡¿
+	[col30] = a3101,		--¿ÉÂÌ»¯
+	[col31] = a3102,		--ÒÑÂÌ»¯
+	[col32] = a0322,		--GBM		¡¾²»³ö¡¿
+	[col33] = a0323,		--ÎÄÃ÷Ñù°åÂ·	¡¾²»³ö¡¿
+	[col34] = k9508,		--µØÃ²´úÂë
+	[col35] = rtrim(hk9508),	--µØÃ²
+	[col36] = a0522,		--º­¶´ÊıÁ¿
+	[col38] = rtrim(hk0128),	--Â·¶ÎÊÕ·ÑĞÔÖÊ
+	[col39] = rtrim(A0130),		--¹ÜÑøµ¥Î»Ãû³Æ
+	[col41] = k5222,		--Ãæ²ãºñ¶È
+	[col42] = rtrim(k0155),		--×î½üÒ»´Î´óÖĞĞŞÄê¶È
+	[col43] = rtrim(k0156),		--Ê¡¼Ê³öÈë¿Ú±êÊ¶
+	[col44] = A3305,		--Äê¾ùÈÕ½»Í¨Á¿
+	[col45] = rtrim(K3990),		--¹úµÀµ÷ÕûÇ°Â·Ïß±àºÅ
+	[col46] = K3992,		--¹úµÀ×®ºÅ´«µİÔ¤ÁôÀï³Ì
+	[col47] = (case when isnull(k0138,'2')='1' then 'ÊÇ' else '·ñ' end),	--ÊÇ·ñ°´¸ÉÏß¹«Â·¹ÜÀí½ÓÑø
+	[col48] = rtrim(HK6023),		--¿¹ÕğµÈ¼¶
+	[col49] = replace(rtrim(HK0149),'Äê',''),		--·Àºé±ê×¼
+	[col50] = (case when (charindex('D',k0124) = 0 and rtrim(k0124) is not null) then '·ñ'
+			when (charindex('D',k0124) <> 0 and rtrim(k0124) is not null) then 'ÊÇ' else null end),		--ÖØ¸´Â·¶ÎÊÇ·ñ³¤Á´
+    [col37] = ltrim(rtrim(cast(k0199 as varchar(1000))))	--±¸×¢
 
 from k01
-where   a0102 like '#oyds_å•ä½ä»£ç #%' and a0101 = '#oyds_æŠ¥è¡¨å¹´é™#'
+where   a0102 like '#oyds_µ¥Î»´úÂë#%' and a0101 = '#oyds_±¨±íÄêÏŞ#'
 	and (#oyds_filter#)
 /*where   a0102 like '421202%' and a0101 = '2022'
 	and (1=1)*/
 order by a0102,k0101,k0108
 
---å‡ºè·¯çº¿æ˜ç»†
+--³öÂ·ÏßÃ÷Ï¸
 select
 col01,
 col02,col03,col05,col06,col07,col08,col09,col10,col11,col12,
