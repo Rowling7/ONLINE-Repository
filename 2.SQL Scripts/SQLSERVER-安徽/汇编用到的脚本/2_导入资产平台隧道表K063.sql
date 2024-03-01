@@ -3,125 +3,125 @@ drop table ##tk063
 declare @softpath varchar(255);
 declare @filepath varchar(255);
 exec master..xp_regread	'hkey_local_machine'
-	,'software\¡¡¶«·½ÓÀµÂ\hrp-ghss\±ê×¼°æ\µ¥»ú°æ\2014'
+	,'software\ã€€ä¸œæ–¹æ°¸å¾·\hrp-ghss\æ ‡å‡†ç‰ˆ\å•æœºç‰ˆ\2014'
 	,'path' , @softpath output
-set @filepath=@softpath+'×Ê²úÆ½Ì¨ËíµÀÃ÷Ï¸±í.xls'
+set @filepath=@softpath+'èµ„äº§å¹³å°éš§é“æ˜ç»†è¡¨.xls'
 
 declare @query nvarchar(1000);
 set @query = 
     'select 
         *
 				into ##tk063
-    from openrowset(''microsoft.jet.oledb.4.0'', ''excel 5.0;database=' + @filepath + ';hdr=yes'', ''select * from [Ã÷Ï¸±í$]'')';
+    from openrowset(''microsoft.jet.oledb.4.0'', ''excel 5.0;database=' + @filepath + ';hdr=yes'', ''select * from [æ˜ç»†è¡¨$]'')';
 
 exec(@query);
 
 
 truncate table zcpt_k063
 insert into zcpt_k063(
-k6302,-- ËíµÀÃû³Æ
-sddm,-- ËíµÀ´úÂë
-k6303,-- ËíµÀÈë¿Ú×®ºÅ
-k0101,-- Â·Ïß±àºÅ
-k0112,-- Â·ÏßÃû³Æ
-k0304,-- ¼¼ÊõµÈ¼¶
-k6305,-- ËíµÀ³¤¶È£¨Ã×£©
-k6306,-- ËíµÀ¾»¿í£¨Ã×£©
-k6307,-- ËíµÀ¾»¸ß£¨Ã×£©
-k6304,-- °´ËíµÀ³¤¶È·ÖÀà
-hk6304,-- °´ËíµÀ³¤¶È·ÖÀà
-k6335,-- ÊÇ·ñË®ÏÂËíµÀ
-k0180,-- ĞŞ½¨Äê¶È
-k6079,-- ½¨Éèµ¥Î»Ãû³Æ
-k6030,-- Éè¼Æµ¥Î»Ãû³Æ
-k6031,-- Ê©¹¤µ¥Î»Ãû³Æ
-k6032,-- ¼àÀíµ¥Î»Ãû³Æ
-k0116,-- ½¨³ÉÍ¨³µÊ±¼ä
-a1313,-- µ¥Î»ĞÔÖÊ´úÂë
-a0130,-- Ãû³Æ
-k6111,-- ¼à¹Üµ¥Î»Ãû³Æ
-hk6346,-- ÆÀ¶¨µÈ¼¶
-k6344,-- ÆÀ¶¨ÈÕÆÚ
-k6345,-- ÆÀ¶¨µ¥Î»
-hk6336,-- ÆÀ¶¨µÈ¼¶
-k6347,-- ÆÀ¶¨ÈÕÆÚ
-k6348,-- ÆÀ¶¨µ¥Î»
-hk6349,-- ÆÀ¶¨µÈ¼¶
-k6350,-- ÆÀ¶¨ÈÕÆÚ
-k6351,-- ÆÀ¶¨µ¥Î»
-hk6352,-- ÆÀ¶¨µÈ¼¶
-k6353,-- ÆÀ¶¨ÈÕÆÚ
-k6354,-- ÆÀ¶¨µ¥Î»
-k0181,-- ¸ÄÔìÄê¶È
-a1316,-- Íê¹¤ÈÕÆÚ
-k6337,-- ¸ÄÔì²¿Î»
-a1318,-- ¹¤³ÌĞÔÖÊ
-k6338,-- ²¡º¦²¿Î»
-k6339,-- ²¡º¦ÃèÊö
-a0103,-- ËùÔÚÕşÇø´úÂë
-k6370,-- ËíµÀËùÔÚÎ»ÖÃ
-k6355,-- ÊÇ·ñÔÚ³¤´óËíµÀÄ¿Â¼ÖĞ
-k6371,-- ÊÇ·ñ¿çÊ¡ËíµÀ
-k0199,-- ±¸×¢
-sdgcs,-- ËíµÀ¹¤³ÌÊ¦
-k0185,-- ¾­¶È
-k0186,-- Î³¶È
-k6343-- ËíµÀÑø»¤µÈ¼¶
+k6302,-- éš§é“åç§°
+sddm,-- éš§é“ä»£ç 
+k6303,-- éš§é“å…¥å£æ¡©å·
+k0101,-- è·¯çº¿ç¼–å·
+k0112,-- è·¯çº¿åç§°
+k0304,-- æŠ€æœ¯ç­‰çº§
+k6305,-- éš§é“é•¿åº¦ï¼ˆç±³ï¼‰
+k6306,-- éš§é“å‡€å®½ï¼ˆç±³ï¼‰
+k6307,-- éš§é“å‡€é«˜ï¼ˆç±³ï¼‰
+k6304,-- æŒ‰éš§é“é•¿åº¦åˆ†ç±»
+hk6304,-- æŒ‰éš§é“é•¿åº¦åˆ†ç±»
+k6335,-- æ˜¯å¦æ°´ä¸‹éš§é“
+k0180,-- ä¿®å»ºå¹´åº¦
+k6079,-- å»ºè®¾å•ä½åç§°
+k6030,-- è®¾è®¡å•ä½åç§°
+k6031,-- æ–½å·¥å•ä½åç§°
+k6032,-- ç›‘ç†å•ä½åç§°
+k0116,-- å»ºæˆé€šè½¦æ—¶é—´
+a1313,-- å•ä½æ€§è´¨ä»£ç 
+a0130,-- åç§°
+k6111,-- ç›‘ç®¡å•ä½åç§°
+hk6346,-- è¯„å®šç­‰çº§
+k6344,-- è¯„å®šæ—¥æœŸ
+k6345,-- è¯„å®šå•ä½
+hk6336,-- è¯„å®šç­‰çº§
+k6347,-- è¯„å®šæ—¥æœŸ
+k6348,-- è¯„å®šå•ä½
+hk6349,-- è¯„å®šç­‰çº§
+k6350,-- è¯„å®šæ—¥æœŸ
+k6351,-- è¯„å®šå•ä½
+hk6352,-- è¯„å®šç­‰çº§
+k6353,-- è¯„å®šæ—¥æœŸ
+k6354,-- è¯„å®šå•ä½
+k0181,-- æ”¹é€ å¹´åº¦
+a1316,-- å®Œå·¥æ—¥æœŸ
+k6337,-- æ”¹é€ éƒ¨ä½
+a1318,-- å·¥ç¨‹æ€§è´¨
+k6338,-- ç—…å®³éƒ¨ä½
+k6339,-- ç—…å®³æè¿°
+a0103,-- æ‰€åœ¨æ”¿åŒºä»£ç 
+k6370,-- éš§é“æ‰€åœ¨ä½ç½®
+k6355,-- æ˜¯å¦åœ¨é•¿å¤§éš§é“ç›®å½•ä¸­
+k6371,-- æ˜¯å¦è·¨çœéš§é“
+k0199,-- å¤‡æ³¨
+sdgcs,-- éš§é“å·¥ç¨‹å¸ˆ
+k0185,-- ç»åº¦
+k0186,-- çº¬åº¦
+k6343-- éš§é“å…»æŠ¤ç­‰çº§
 )
 select
-case when len(ËíµÀÃû³Æ) >0 then ËíµÀÃû³Æ when len(ËíµÀÃû³Æ) =0 or ËíµÀÃû³Æ is null then null end ËíµÀÃû³Æ	,
-case when len(ËíµÀ´úÂë) >0 then ËíµÀ´úÂë when len(ËíµÀ´úÂë) =0 or ËíµÀ´úÂë is null then null end ËíµÀ´úÂë	,
-case when len(ËíµÀÈë¿Ú×®ºÅ) >0 then ËíµÀÈë¿Ú×®ºÅ when len(ËíµÀÈë¿Ú×®ºÅ) =0 or ËíµÀÈë¿Ú×®ºÅ is null then null end ËíµÀÈë¿Ú×®ºÅ	,
-case when len(rtrim(replace(replace(replace(replace(replace(Â·Ïß±àºÅ,'340000',''),'000000',''),'d001',''),'d002',''),'d003',''))) >0 then rtrim(replace(replace(replace(replace(replace(Â·Ïß±àºÅ,'340000',''),'000000',''),'d001',''),'d002',''),'d003','')) when len(rtrim(replace(replace(replace(replace(replace(Â·Ïß±àºÅ,'340000',''),'000000',''),'d001',''),'d002',''),'d003',''))) =0 or rtrim(replace(replace(replace(replace(replace(Â·Ïß±àºÅ,'340000',''),'000000',''),'d001',''),'d002',''),'d003','')) is null then null end Â·Ïß±àºÅ	,
-case when len(Â·ÏßÃû³Æ) >0 then Â·ÏßÃû³Æ when len(Â·ÏßÃû³Æ) =0 or Â·ÏßÃû³Æ is null then null end Â·ÏßÃû³Æ	,
-case when len(¼¼ÊõµÈ¼¶) >0 then ¼¼ÊõµÈ¼¶ when len(¼¼ÊõµÈ¼¶) =0 or ¼¼ÊõµÈ¼¶ is null then null end ¼¼ÊõµÈ¼¶	,
-case when len(ËíµÀ³¤¶È) >0 then ËíµÀ³¤¶È when len(ËíµÀ³¤¶È) =0 or ËíµÀ³¤¶È is null then null end ËíµÀ³¤¶È	,
-case when len(ËíµÀ¾»¿í) >0 then ËíµÀ¾»¿í when len(ËíµÀ¾»¿í) =0 or ËíµÀ¾»¿í is null then null end ËíµÀ¾»¿í	,
-case when len(ËíµÀ¾»¸ß) >0 then ËíµÀ¾»¸ß when len(ËíµÀ¾»¸ß) =0 or ËíµÀ¾»¸ß is null then null end ËíµÀ¾»¸ß	,
-case when len(°´ËíµÀ³¤¶È·ÖÀà1) >0 then °´ËíµÀ³¤¶È·ÖÀà1 when len(°´ËíµÀ³¤¶È·ÖÀà1) =0 or °´ËíµÀ³¤¶È·ÖÀà1 is null then null end °´ËíµÀ³¤¶È·ÖÀà1	,
-case when len(°´ËíµÀ³¤¶È·ÖÀà) >0 then °´ËíµÀ³¤¶È·ÖÀà when len(°´ËíµÀ³¤¶È·ÖÀà) =0 or °´ËíµÀ³¤¶È·ÖÀà is null then null end °´ËíµÀ³¤¶È·ÖÀà	,
-case when len(ÊÇ·ñË®ÏÂËíµÀ) >0 then ÊÇ·ñË®ÏÂËíµÀ when len(ÊÇ·ñË®ÏÂËíµÀ) =0 or ÊÇ·ñË®ÏÂËíµÀ is null then null end ÊÇ·ñË®ÏÂËíµÀ	,
-case when len(replace(ĞŞ½¨Äê¶È, '-' ,'')) >0 then replace(ĞŞ½¨Äê¶È, '-' ,'') when len(replace(ĞŞ½¨Äê¶È, '-' ,'')) =0 or replace(ĞŞ½¨Äê¶È, '-' ,'') is null then null end ĞŞ½¨Äê¶È	,
-case when len(½¨Éèµ¥Î»Ãû³Æ) >0 then ½¨Éèµ¥Î»Ãû³Æ when len(½¨Éèµ¥Î»Ãû³Æ) =0 or ½¨Éèµ¥Î»Ãû³Æ is null then null end ½¨Éèµ¥Î»Ãû³Æ	,
-case when len(Éè¼Æµ¥Î»Ãû³Æ) >0 then Éè¼Æµ¥Î»Ãû³Æ when len(Éè¼Æµ¥Î»Ãû³Æ) =0 or Éè¼Æµ¥Î»Ãû³Æ is null then null end Éè¼Æµ¥Î»Ãû³Æ	,
-case when len(Ê©¹¤µ¥Î»Ãû³Æ) >0 then Ê©¹¤µ¥Î»Ãû³Æ when len(Ê©¹¤µ¥Î»Ãû³Æ) =0 or Ê©¹¤µ¥Î»Ãû³Æ is null then null end Ê©¹¤µ¥Î»Ãû³Æ	,
-case when len(¼àÀíµ¥Î»Ãû³Æ) >0 then ¼àÀíµ¥Î»Ãû³Æ when len(¼àÀíµ¥Î»Ãû³Æ) =0 or ¼àÀíµ¥Î»Ãû³Æ is null then null end ¼àÀíµ¥Î»Ãû³Æ	,
-case when len(replace(½¨³ÉÍ¨³µÊ±¼ä, '-' ,'')) >0 then replace(½¨³ÉÍ¨³µÊ±¼ä, '-' ,'') when len(replace(½¨³ÉÍ¨³µÊ±¼ä, '-' ,'')) =0 or replace(½¨³ÉÍ¨³µÊ±¼ä, '-' ,'') is null then null end ½¨³ÉÍ¨³µÊ±¼ä	,
-case when len(µ¥Î»ĞÔÖÊ´úÂë) >0 then µ¥Î»ĞÔÖÊ´úÂë when len(µ¥Î»ĞÔÖÊ´úÂë) =0 or µ¥Î»ĞÔÖÊ´úÂë is null then null end µ¥Î»ĞÔÖÊ´úÂë	,
-case when len(Ãû³Æ) >0 then Ãû³Æ when len(Ãû³Æ) =0 or Ãû³Æ is null then null end Ãû³Æ	,
-case when len(¼à¹Üµ¥Î»Ãû³Æ) >0 then ¼à¹Üµ¥Î»Ãû³Æ when len(¼à¹Üµ¥Î»Ãû³Æ) =0 or ¼à¹Üµ¥Î»Ãû³Æ is null then null end ¼à¹Üµ¥Î»Ãû³Æ	,
-case when len(ÆÀ¶¨µÈ¼¶×ÜÌå) >0 then ÆÀ¶¨µÈ¼¶×ÜÌå when len(ÆÀ¶¨µÈ¼¶×ÜÌå) =0 or ÆÀ¶¨µÈ¼¶×ÜÌå is null then null end ÆÀ¶¨µÈ¼¶×ÜÌå	,
-case when len(replace(ÆÀ¶¨ÈÕÆÚ×ÜÌå, '-', '')) >0 then replace(ÆÀ¶¨ÈÕÆÚ×ÜÌå, '-', '') when len(replace(ÆÀ¶¨ÈÕÆÚ×ÜÌå, '-', '')) =0 or replace(ÆÀ¶¨ÈÕÆÚ×ÜÌå, '-', '') is null then null end ÆÀ¶¨ÈÕÆÚ×ÜÌå	,
-case when len(ÆÀ¶¨µ¥Î»×ÜÌå) >0 then ÆÀ¶¨µ¥Î»×ÜÌå when len(ÆÀ¶¨µ¥Î»×ÜÌå) =0 or ÆÀ¶¨µ¥Î»×ÜÌå is null then null end ÆÀ¶¨µ¥Î»×ÜÌå	,
-case when len(ÆÀ¶¨µÈ¼¶ÍÁ½¨½á¹¹) >0 then ÆÀ¶¨µÈ¼¶ÍÁ½¨½á¹¹ when len(ÆÀ¶¨µÈ¼¶ÍÁ½¨½á¹¹) =0 or ÆÀ¶¨µÈ¼¶ÍÁ½¨½á¹¹ is null then null end ÆÀ¶¨µÈ¼¶ÍÁ½¨½á¹¹	,
-case when len(replace(ÆÀ¶¨ÈÕÆÚÍÁ½¨½á¹¹, '-', '')) >0 then replace(ÆÀ¶¨ÈÕÆÚÍÁ½¨½á¹¹, '-', '') when len(replace(ÆÀ¶¨ÈÕÆÚÍÁ½¨½á¹¹, '-', '')) =0 or replace(ÆÀ¶¨ÈÕÆÚÍÁ½¨½á¹¹, '-', '') is null then null end ÆÀ¶¨ÈÕÆÚÍÁ½¨½á¹¹	,
-case when len(ÆÀ¶¨µ¥Î»ÍÁ½¨½á¹¹) >0 then ÆÀ¶¨µ¥Î»ÍÁ½¨½á¹¹ when len(ÆÀ¶¨µ¥Î»ÍÁ½¨½á¹¹) =0 or ÆÀ¶¨µ¥Î»ÍÁ½¨½á¹¹ is null then null end ÆÀ¶¨µ¥Î»ÍÁ½¨½á¹¹	,
-case when len(ÆÀ¶¨µÈ¼¶»úµçÉèÊ©) >0 then ÆÀ¶¨µÈ¼¶»úµçÉèÊ© when len(ÆÀ¶¨µÈ¼¶»úµçÉèÊ©) =0 or ÆÀ¶¨µÈ¼¶»úµçÉèÊ© is null then null end ÆÀ¶¨µÈ¼¶»úµçÉèÊ©	,
-case when len(replace(ÆÀ¶¨ÈÕÆÚ»úµçÉèÊ©, '-', '')) >0 then replace(ÆÀ¶¨ÈÕÆÚ»úµçÉèÊ©, '-', '') when len(replace(ÆÀ¶¨ÈÕÆÚ»úµçÉèÊ©, '-', '')) =0 or replace(ÆÀ¶¨ÈÕÆÚ»úµçÉèÊ©, '-', '') is null then null end ÆÀ¶¨ÈÕÆÚ»úµçÉèÊ©	,
-case when len(ÆÀ¶¨µ¥Î»»úµçÉèÊ©) >0 then ÆÀ¶¨µ¥Î»»úµçÉèÊ© when len(ÆÀ¶¨µ¥Î»»úµçÉèÊ©) =0 or ÆÀ¶¨µ¥Î»»úµçÉèÊ© is null then null end ÆÀ¶¨µ¥Î»»úµçÉèÊ©	,
-case when len(ÆÀ¶¨µÈ¼¶ÆäËû¹¤³ÌÉèÊ©) >0 then ÆÀ¶¨µÈ¼¶ÆäËû¹¤³ÌÉèÊ© when len(ÆÀ¶¨µÈ¼¶ÆäËû¹¤³ÌÉèÊ©) =0 or ÆÀ¶¨µÈ¼¶ÆäËû¹¤³ÌÉèÊ© is null then null end ÆÀ¶¨µÈ¼¶ÆäËû¹¤³ÌÉèÊ©	,
-case when len(replace(ÆÀ¶¨ÈÕÆÚÆäËû¹¤³ÌÉèÊ©, '-', '') ) >0 then replace(ÆÀ¶¨ÈÕÆÚÆäËû¹¤³ÌÉèÊ©, '-', '')  when len(replace(ÆÀ¶¨ÈÕÆÚÆäËû¹¤³ÌÉèÊ©, '-', '') ) =0 or replace(ÆÀ¶¨ÈÕÆÚÆäËû¹¤³ÌÉèÊ©, '-', '')  is null then null end ÆÀ¶¨ÈÕÆÚÆäËû¹¤³ÌÉèÊ©	,
-case when len(ÆÀ¶¨µ¥Î»ÆäËû¹¤³ÌÉèÊ©) >0 then ÆÀ¶¨µ¥Î»ÆäËû¹¤³ÌÉèÊ© when len(ÆÀ¶¨µ¥Î»ÆäËû¹¤³ÌÉèÊ©) =0 or ÆÀ¶¨µ¥Î»ÆäËû¹¤³ÌÉèÊ© is null then null end ÆÀ¶¨µ¥Î»ÆäËû¹¤³ÌÉèÊ©	,
-case when len(¸ÄÔìÄê¶È) >0 then ¸ÄÔìÄê¶È when len(¸ÄÔìÄê¶È) =0 or ¸ÄÔìÄê¶È is null then null end ¸ÄÔìÄê¶È	,
-case when len(replace(Íê¹¤ÈÕÆÚ ,'-' ,'')) >0 then replace(Íê¹¤ÈÕÆÚ ,'-' ,'') when len(replace(Íê¹¤ÈÕÆÚ ,'-' ,'')) =0 or replace(Íê¹¤ÈÕÆÚ ,'-' ,'') is null then null end  Íê¹¤ÈÕÆÚ	,
-case when len(¸ÄÔì²¿Î») >0 then ¸ÄÔì²¿Î» when len(¸ÄÔì²¿Î») =0 or ¸ÄÔì²¿Î» is null then null end ¸ÄÔì²¿Î»	,
-case when len(¹¤³ÌĞÔÖÊ) >0 then ¹¤³ÌĞÔÖÊ when len(¹¤³ÌĞÔÖÊ) =0 or ¹¤³ÌĞÔÖÊ is null then null end ¹¤³ÌĞÔÖÊ	,
-case when len(²¡º¦²¿Î») >0 then ²¡º¦²¿Î» when len(²¡º¦²¿Î») =0 or ²¡º¦²¿Î» is null then null end ²¡º¦²¿Î»	,
-case when len(²¡º¦ÃèÊö) >0 then ²¡º¦ÃèÊö when len(²¡º¦ÃèÊö) =0 or ²¡º¦ÃèÊö is null then null end ²¡º¦ÃèÊö	,
-case when len(ËùÔÚÕşÇø´úÂë) >0 then ËùÔÚÕşÇø´úÂë when len(ËùÔÚÕşÇø´úÂë) =0 or ËùÔÚÕşÇø´úÂë is null then null end ËùÔÚÕşÇø´úÂë	,
-case when len(ËíµÀËùÔÚÎ»ÖÃ) >0 then ËíµÀËùÔÚÎ»ÖÃ when len(ËíµÀËùÔÚÎ»ÖÃ) =0 or ËíµÀËùÔÚÎ»ÖÃ is null then null end ËíµÀËùÔÚÎ»ÖÃ	,
-case when len(ÊÇ·ñÔÚ³¤´óËíµÀÄ¿Â¼ÖĞ) >0 then ÊÇ·ñÔÚ³¤´óËíµÀÄ¿Â¼ÖĞ when len(ÊÇ·ñÔÚ³¤´óËíµÀÄ¿Â¼ÖĞ) =0 or ÊÇ·ñÔÚ³¤´óËíµÀÄ¿Â¼ÖĞ is null then null end ÊÇ·ñÔÚ³¤´óËíµÀÄ¿Â¼ÖĞ	,
-case when len(ÊÇ·ñ¿çÊ¡ËíµÀ) >0 then ÊÇ·ñ¿çÊ¡ËíµÀ when len(ÊÇ·ñ¿çÊ¡ËíµÀ) =0 or ÊÇ·ñ¿çÊ¡ËíµÀ is null then null end ÊÇ·ñ¿çÊ¡ËíµÀ	,
-case when len(±¸×¢) >0 then ±¸×¢ when len(±¸×¢) =0 or ±¸×¢ is null then null end ±¸×¢	,
-case when len(ËíµÀ¹¤³ÌÊ¦) >0 then ËíµÀ¹¤³ÌÊ¦ when len(ËíµÀ¹¤³ÌÊ¦) =0 or ËíµÀ¹¤³ÌÊ¦ is null then null end ËíµÀ¹¤³ÌÊ¦	,
-case when len(¾­¶È) >0 then ¾­¶È when len(¾­¶È) =0 or ¾­¶È is null then null end ¾­¶È	,
-case when len(Î³¶È) >0 then Î³¶È when len(Î³¶È) =0 or Î³¶È is null then null end Î³¶È	,
-case when len(ËíµÀÑø»¤µÈ¼¶) >0 then ËíµÀÑø»¤µÈ¼¶ when len(ËíµÀÑø»¤µÈ¼¶) =0 or ËíµÀÑø»¤µÈ¼¶ is null then null end ËíµÀÑø»¤µÈ¼¶	
+case when len(éš§é“åç§°) >0 then éš§é“åç§° when len(éš§é“åç§°) =0 or éš§é“åç§° is null then null end éš§é“åç§°	,
+case when len(éš§é“ä»£ç ) >0 then éš§é“ä»£ç  when len(éš§é“ä»£ç ) =0 or éš§é“ä»£ç  is null then null end éš§é“ä»£ç 	,
+case when len(éš§é“å…¥å£æ¡©å·) >0 then éš§é“å…¥å£æ¡©å· when len(éš§é“å…¥å£æ¡©å·) =0 or éš§é“å…¥å£æ¡©å· is null then null end éš§é“å…¥å£æ¡©å·	,
+case when len(rtrim(replace(replace(replace(replace(replace(è·¯çº¿ç¼–å·,'340000',''),'000000',''),'d001',''),'d002',''),'d003',''))) >0 then rtrim(replace(replace(replace(replace(replace(è·¯çº¿ç¼–å·,'340000',''),'000000',''),'d001',''),'d002',''),'d003','')) when len(rtrim(replace(replace(replace(replace(replace(è·¯çº¿ç¼–å·,'340000',''),'000000',''),'d001',''),'d002',''),'d003',''))) =0 or rtrim(replace(replace(replace(replace(replace(è·¯çº¿ç¼–å·,'340000',''),'000000',''),'d001',''),'d002',''),'d003','')) is null then null end è·¯çº¿ç¼–å·	,
+case when len(è·¯çº¿åç§°) >0 then è·¯çº¿åç§° when len(è·¯çº¿åç§°) =0 or è·¯çº¿åç§° is null then null end è·¯çº¿åç§°	,
+case when len(æŠ€æœ¯ç­‰çº§) >0 then æŠ€æœ¯ç­‰çº§ when len(æŠ€æœ¯ç­‰çº§) =0 or æŠ€æœ¯ç­‰çº§ is null then null end æŠ€æœ¯ç­‰çº§	,
+case when len(éš§é“é•¿åº¦) >0 then éš§é“é•¿åº¦ when len(éš§é“é•¿åº¦) =0 or éš§é“é•¿åº¦ is null then null end éš§é“é•¿åº¦	,
+case when len(éš§é“å‡€å®½) >0 then éš§é“å‡€å®½ when len(éš§é“å‡€å®½) =0 or éš§é“å‡€å®½ is null then null end éš§é“å‡€å®½	,
+case when len(éš§é“å‡€é«˜) >0 then éš§é“å‡€é«˜ when len(éš§é“å‡€é«˜) =0 or éš§é“å‡€é«˜ is null then null end éš§é“å‡€é«˜	,
+case when len(æŒ‰éš§é“é•¿åº¦åˆ†ç±»1) >0 then æŒ‰éš§é“é•¿åº¦åˆ†ç±»1 when len(æŒ‰éš§é“é•¿åº¦åˆ†ç±»1) =0 or æŒ‰éš§é“é•¿åº¦åˆ†ç±»1 is null then null end æŒ‰éš§é“é•¿åº¦åˆ†ç±»1	,
+case when len(æŒ‰éš§é“é•¿åº¦åˆ†ç±») >0 then æŒ‰éš§é“é•¿åº¦åˆ†ç±» when len(æŒ‰éš§é“é•¿åº¦åˆ†ç±») =0 or æŒ‰éš§é“é•¿åº¦åˆ†ç±» is null then null end æŒ‰éš§é“é•¿åº¦åˆ†ç±»	,
+case when len(æ˜¯å¦æ°´ä¸‹éš§é“) >0 then æ˜¯å¦æ°´ä¸‹éš§é“ when len(æ˜¯å¦æ°´ä¸‹éš§é“) =0 or æ˜¯å¦æ°´ä¸‹éš§é“ is null then null end æ˜¯å¦æ°´ä¸‹éš§é“	,
+case when len(replace(ä¿®å»ºå¹´åº¦, '-' ,'')) >0 then replace(ä¿®å»ºå¹´åº¦, '-' ,'') when len(replace(ä¿®å»ºå¹´åº¦, '-' ,'')) =0 or replace(ä¿®å»ºå¹´åº¦, '-' ,'') is null then null end ä¿®å»ºå¹´åº¦	,
+case when len(å»ºè®¾å•ä½åç§°) >0 then å»ºè®¾å•ä½åç§° when len(å»ºè®¾å•ä½åç§°) =0 or å»ºè®¾å•ä½åç§° is null then null end å»ºè®¾å•ä½åç§°	,
+case when len(è®¾è®¡å•ä½åç§°) >0 then è®¾è®¡å•ä½åç§° when len(è®¾è®¡å•ä½åç§°) =0 or è®¾è®¡å•ä½åç§° is null then null end è®¾è®¡å•ä½åç§°	,
+case when len(æ–½å·¥å•ä½åç§°) >0 then æ–½å·¥å•ä½åç§° when len(æ–½å·¥å•ä½åç§°) =0 or æ–½å·¥å•ä½åç§° is null then null end æ–½å·¥å•ä½åç§°	,
+case when len(ç›‘ç†å•ä½åç§°) >0 then ç›‘ç†å•ä½åç§° when len(ç›‘ç†å•ä½åç§°) =0 or ç›‘ç†å•ä½åç§° is null then null end ç›‘ç†å•ä½åç§°	,
+case when len(replace(å»ºæˆé€šè½¦æ—¶é—´, '-' ,'')) >0 then replace(å»ºæˆé€šè½¦æ—¶é—´, '-' ,'') when len(replace(å»ºæˆé€šè½¦æ—¶é—´, '-' ,'')) =0 or replace(å»ºæˆé€šè½¦æ—¶é—´, '-' ,'') is null then null end å»ºæˆé€šè½¦æ—¶é—´	,
+case when len(å•ä½æ€§è´¨ä»£ç ) >0 then å•ä½æ€§è´¨ä»£ç  when len(å•ä½æ€§è´¨ä»£ç ) =0 or å•ä½æ€§è´¨ä»£ç  is null then null end å•ä½æ€§è´¨ä»£ç 	,
+case when len(åç§°) >0 then åç§° when len(åç§°) =0 or åç§° is null then null end åç§°	,
+case when len(ç›‘ç®¡å•ä½åç§°) >0 then ç›‘ç®¡å•ä½åç§° when len(ç›‘ç®¡å•ä½åç§°) =0 or ç›‘ç®¡å•ä½åç§° is null then null end ç›‘ç®¡å•ä½åç§°	,
+case when len(è¯„å®šç­‰çº§æ€»ä½“) >0 then è¯„å®šç­‰çº§æ€»ä½“ when len(è¯„å®šç­‰çº§æ€»ä½“) =0 or è¯„å®šç­‰çº§æ€»ä½“ is null then null end è¯„å®šç­‰çº§æ€»ä½“	,
+case when len(replace(è¯„å®šæ—¥æœŸæ€»ä½“, '-', '')) >0 then replace(è¯„å®šæ—¥æœŸæ€»ä½“, '-', '') when len(replace(è¯„å®šæ—¥æœŸæ€»ä½“, '-', '')) =0 or replace(è¯„å®šæ—¥æœŸæ€»ä½“, '-', '') is null then null end è¯„å®šæ—¥æœŸæ€»ä½“	,
+case when len(è¯„å®šå•ä½æ€»ä½“) >0 then è¯„å®šå•ä½æ€»ä½“ when len(è¯„å®šå•ä½æ€»ä½“) =0 or è¯„å®šå•ä½æ€»ä½“ is null then null end è¯„å®šå•ä½æ€»ä½“	,
+case when len(è¯„å®šç­‰çº§åœŸå»ºç»“æ„) >0 then è¯„å®šç­‰çº§åœŸå»ºç»“æ„ when len(è¯„å®šç­‰çº§åœŸå»ºç»“æ„) =0 or è¯„å®šç­‰çº§åœŸå»ºç»“æ„ is null then null end è¯„å®šç­‰çº§åœŸå»ºç»“æ„	,
+case when len(replace(è¯„å®šæ—¥æœŸåœŸå»ºç»“æ„, '-', '')) >0 then replace(è¯„å®šæ—¥æœŸåœŸå»ºç»“æ„, '-', '') when len(replace(è¯„å®šæ—¥æœŸåœŸå»ºç»“æ„, '-', '')) =0 or replace(è¯„å®šæ—¥æœŸåœŸå»ºç»“æ„, '-', '') is null then null end è¯„å®šæ—¥æœŸåœŸå»ºç»“æ„	,
+case when len(è¯„å®šå•ä½åœŸå»ºç»“æ„) >0 then è¯„å®šå•ä½åœŸå»ºç»“æ„ when len(è¯„å®šå•ä½åœŸå»ºç»“æ„) =0 or è¯„å®šå•ä½åœŸå»ºç»“æ„ is null then null end è¯„å®šå•ä½åœŸå»ºç»“æ„	,
+case when len(è¯„å®šç­‰çº§æœºç”µè®¾æ–½) >0 then è¯„å®šç­‰çº§æœºç”µè®¾æ–½ when len(è¯„å®šç­‰çº§æœºç”µè®¾æ–½) =0 or è¯„å®šç­‰çº§æœºç”µè®¾æ–½ is null then null end è¯„å®šç­‰çº§æœºç”µè®¾æ–½	,
+case when len(replace(è¯„å®šæ—¥æœŸæœºç”µè®¾æ–½, '-', '')) >0 then replace(è¯„å®šæ—¥æœŸæœºç”µè®¾æ–½, '-', '') when len(replace(è¯„å®šæ—¥æœŸæœºç”µè®¾æ–½, '-', '')) =0 or replace(è¯„å®šæ—¥æœŸæœºç”µè®¾æ–½, '-', '') is null then null end è¯„å®šæ—¥æœŸæœºç”µè®¾æ–½	,
+case when len(è¯„å®šå•ä½æœºç”µè®¾æ–½) >0 then è¯„å®šå•ä½æœºç”µè®¾æ–½ when len(è¯„å®šå•ä½æœºç”µè®¾æ–½) =0 or è¯„å®šå•ä½æœºç”µè®¾æ–½ is null then null end è¯„å®šå•ä½æœºç”µè®¾æ–½	,
+case when len(è¯„å®šç­‰çº§å…¶ä»–å·¥ç¨‹è®¾æ–½) >0 then è¯„å®šç­‰çº§å…¶ä»–å·¥ç¨‹è®¾æ–½ when len(è¯„å®šç­‰çº§å…¶ä»–å·¥ç¨‹è®¾æ–½) =0 or è¯„å®šç­‰çº§å…¶ä»–å·¥ç¨‹è®¾æ–½ is null then null end è¯„å®šç­‰çº§å…¶ä»–å·¥ç¨‹è®¾æ–½	,
+case when len(replace(è¯„å®šæ—¥æœŸå…¶ä»–å·¥ç¨‹è®¾æ–½, '-', '') ) >0 then replace(è¯„å®šæ—¥æœŸå…¶ä»–å·¥ç¨‹è®¾æ–½, '-', '')  when len(replace(è¯„å®šæ—¥æœŸå…¶ä»–å·¥ç¨‹è®¾æ–½, '-', '') ) =0 or replace(è¯„å®šæ—¥æœŸå…¶ä»–å·¥ç¨‹è®¾æ–½, '-', '')  is null then null end è¯„å®šæ—¥æœŸå…¶ä»–å·¥ç¨‹è®¾æ–½	,
+case when len(è¯„å®šå•ä½å…¶ä»–å·¥ç¨‹è®¾æ–½) >0 then è¯„å®šå•ä½å…¶ä»–å·¥ç¨‹è®¾æ–½ when len(è¯„å®šå•ä½å…¶ä»–å·¥ç¨‹è®¾æ–½) =0 or è¯„å®šå•ä½å…¶ä»–å·¥ç¨‹è®¾æ–½ is null then null end è¯„å®šå•ä½å…¶ä»–å·¥ç¨‹è®¾æ–½	,
+case when len(æ”¹é€ å¹´åº¦) >0 then æ”¹é€ å¹´åº¦ when len(æ”¹é€ å¹´åº¦) =0 or æ”¹é€ å¹´åº¦ is null then null end æ”¹é€ å¹´åº¦	,
+case when len(replace(å®Œå·¥æ—¥æœŸ ,'-' ,'')) >0 then replace(å®Œå·¥æ—¥æœŸ ,'-' ,'') when len(replace(å®Œå·¥æ—¥æœŸ ,'-' ,'')) =0 or replace(å®Œå·¥æ—¥æœŸ ,'-' ,'') is null then null end  å®Œå·¥æ—¥æœŸ	,
+case when len(æ”¹é€ éƒ¨ä½) >0 then æ”¹é€ éƒ¨ä½ when len(æ”¹é€ éƒ¨ä½) =0 or æ”¹é€ éƒ¨ä½ is null then null end æ”¹é€ éƒ¨ä½	,
+case when len(å·¥ç¨‹æ€§è´¨) >0 then å·¥ç¨‹æ€§è´¨ when len(å·¥ç¨‹æ€§è´¨) =0 or å·¥ç¨‹æ€§è´¨ is null then null end å·¥ç¨‹æ€§è´¨	,
+case when len(ç—…å®³éƒ¨ä½) >0 then ç—…å®³éƒ¨ä½ when len(ç—…å®³éƒ¨ä½) =0 or ç—…å®³éƒ¨ä½ is null then null end ç—…å®³éƒ¨ä½	,
+case when len(ç—…å®³æè¿°) >0 then ç—…å®³æè¿° when len(ç—…å®³æè¿°) =0 or ç—…å®³æè¿° is null then null end ç—…å®³æè¿°	,
+case when len(æ‰€åœ¨æ”¿åŒºä»£ç ) >0 then æ‰€åœ¨æ”¿åŒºä»£ç  when len(æ‰€åœ¨æ”¿åŒºä»£ç ) =0 or æ‰€åœ¨æ”¿åŒºä»£ç  is null then null end æ‰€åœ¨æ”¿åŒºä»£ç 	,
+case when len(éš§é“æ‰€åœ¨ä½ç½®) >0 then éš§é“æ‰€åœ¨ä½ç½® when len(éš§é“æ‰€åœ¨ä½ç½®) =0 or éš§é“æ‰€åœ¨ä½ç½® is null then null end éš§é“æ‰€åœ¨ä½ç½®	,
+case when len(æ˜¯å¦åœ¨é•¿å¤§éš§é“ç›®å½•ä¸­) >0 then æ˜¯å¦åœ¨é•¿å¤§éš§é“ç›®å½•ä¸­ when len(æ˜¯å¦åœ¨é•¿å¤§éš§é“ç›®å½•ä¸­) =0 or æ˜¯å¦åœ¨é•¿å¤§éš§é“ç›®å½•ä¸­ is null then null end æ˜¯å¦åœ¨é•¿å¤§éš§é“ç›®å½•ä¸­	,
+case when len(æ˜¯å¦è·¨çœéš§é“) >0 then æ˜¯å¦è·¨çœéš§é“ when len(æ˜¯å¦è·¨çœéš§é“) =0 or æ˜¯å¦è·¨çœéš§é“ is null then null end æ˜¯å¦è·¨çœéš§é“	,
+case when len(å¤‡æ³¨) >0 then å¤‡æ³¨ when len(å¤‡æ³¨) =0 or å¤‡æ³¨ is null then null end å¤‡æ³¨	,
+case when len(éš§é“å·¥ç¨‹å¸ˆ) >0 then éš§é“å·¥ç¨‹å¸ˆ when len(éš§é“å·¥ç¨‹å¸ˆ) =0 or éš§é“å·¥ç¨‹å¸ˆ is null then null end éš§é“å·¥ç¨‹å¸ˆ	,
+case when len(ç»åº¦) >0 then ç»åº¦ when len(ç»åº¦) =0 or ç»åº¦ is null then null end ç»åº¦	,
+case when len(çº¬åº¦) >0 then çº¬åº¦ when len(çº¬åº¦) =0 or çº¬åº¦ is null then null end çº¬åº¦	,
+case when len(éš§é“å…»æŠ¤ç­‰çº§) >0 then éš§é“å…»æŠ¤ç­‰çº§ when len(éš§é“å…»æŠ¤ç­‰çº§) =0 or éš§é“å…»æŠ¤ç­‰çº§ is null then null end éš§é“å…»æŠ¤ç­‰çº§	
 from ##tk063
 
 
 
---¸üĞÂ¹ÜÀíµ¥Î»×Ö¶Îa0102,ha0102
+--æ›´æ–°ç®¡ç†å•ä½å­—æ®µa0102,ha0102
 update zcpt_k063
 set zcpt_k063.a0102=rtrim(k001.a0102),zcpt_k063.ha0102=rtrim(k001.ha0102)
 --select zcpt_k063.a0102,rtrim(k001.a0102),zcpt_k063.ha0102,rtrim(k001.ha0102)
@@ -134,11 +134,11 @@ drop table ##tk063
 
 --<CONTROL
 	SELECT
-		'Ö´ĞĞ½á¹û' AS CAPTION , 
-		LABELTEXT='µ¼ÈëÍê³É'+char(13)+char(10),
+		'æ‰§è¡Œç»“æœ' AS CAPTION , 
+		LABELTEXT='å¯¼å…¥å®Œæˆ'+char(13)+char(10),
 		370 AS WIDTH , 
 		0 AS HEIGHT, 
-		'È·¶¨=' AS BUTTON,
+		'ç¡®å®š=' AS BUTTON,
 		0 AS SHOWTITLE,
 		'select null' as datasource
 --CONTROL>

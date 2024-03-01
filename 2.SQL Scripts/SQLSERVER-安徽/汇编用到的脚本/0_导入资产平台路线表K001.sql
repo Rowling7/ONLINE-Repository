@@ -3,16 +3,16 @@ drop table ##tk001
 declare @softpath varchar(255);
 declare @filepath varchar(255);
 exec master..xp_regread	'hkey_local_machine'
-	,'software\¡¡¶«·½ÓÀµÂ\hrp-ghss\±ê×¼°æ\µ¥»ú°æ\2014'
+	,'software\ã€€ä¸œæ–¹æ°¸å¾·\hrp-ghss\æ ‡å‡†ç‰ˆ\å•æœºç‰ˆ\2014'
 	,'path' , @softpath output
-set @filepath=@softpath+'×Ê²úÆ½Ì¨Â·ÏßÃ÷Ï¸±í.xls'
+set @filepath=@softpath+'èµ„äº§å¹³å°è·¯çº¿æ˜ç»†è¡¨.xls'
 
 declare @query nvarchar(1000);
 set @query = 
     'select 
         *
 				into ##tk001
-    from openrowset(''microsoft.jet.oledb.4.0'', ''excel 5.0;database=' + @filepath + ';hdr=yes'', ''select * from [Ã÷Ï¸±í$]'')';
+    from openrowset(''microsoft.jet.oledb.4.0'', ''excel 5.0;database=' + @filepath + ';hdr=yes'', ''select * from [æ˜ç»†è¡¨$]'')';
 
 exec(@query);
 
@@ -21,108 +21,108 @@ truncate table zcpt_k001
 insert into zcpt_k001(
 a0102,
 ha0102,
-k0101,--Â·Ïß±àÂë
-a0103,--ĞĞÕşÇø»®
-a0130,--¹ÜÑøµ¥Î»Ãû³Æ
-k0112,--Â·ÏßÃû³Æ
-k0110,--Æğµã×®ºÅÃû³Æ
-k0111,--Ö¹µã×®ºÅÃû³Æ
-k0108,--Æğµã×®ºÅ
-k0109,--Ö¹µã×®ºÅ
-k0114,--Àï³Ì
-k0304,--¼¼ÊõµÈ¼¶
-hk0304,--¼¼ÊõµÈ¼¶
-hk0126,--ÊÇ·ñÒ»·ù¸ßËÙ
-k0404,--³µµÀÊıÁ¿
+k0101,--è·¯çº¿ç¼–ç 
+a0103,--è¡Œæ”¿åŒºåˆ’
+a0130,--ç®¡å…»å•ä½åç§°
+k0112,--è·¯çº¿åç§°
+k0110,--èµ·ç‚¹æ¡©å·åç§°
+k0111,--æ­¢ç‚¹æ¡©å·åç§°
+k0108,--èµ·ç‚¹æ¡©å·
+k0109,--æ­¢ç‚¹æ¡©å·
+k0114,--é‡Œç¨‹
+k0304,--æŠ€æœ¯ç­‰çº§
+hk0304,--æŠ€æœ¯ç­‰çº§
+hk0126,--æ˜¯å¦ä¸€å¹…é«˜é€Ÿ
+k0404,--è½¦é“æ•°é‡
 
-hk5104,--Ãæ²ãÀàĞÍ
-k4002,--Â·»ù¿í¶È
-k5404,--Â·Ãæ¿í¶È
-k5222,--Ãæ²ãºñ¶È
-k0306,--Éè¼ÆÊ±ËÙ(km/h)
-k0180,--ĞŞ½¨Äê¶È
-k0181,--¸Ä½¨Äê¶È
-k0155,--×îºóÒ»´Î´óÖĞĞŞÄê¶È
-hk0182,--¶ÏÁ´ÀàĞÍ
-hk0121,--ÊÇ·ñ³Ç¹ÜÂ·¶Î
-hk0123,--ÊÇ·ñ¶ÏÍ·Â·Â·¶Î
-hk0136,--Â·¶ÎÊÕ·ÑĞÔÖÊ
-k0124,--ÖØ¸´Â·¶Î±àÂë
-k0162,--ÖØ¸´Â·¶ÎÆğµã×®ºÅ
-k0163,--ÖØ¸´Â·¶ÎÖ¹µã×®ºÅ
-a1001,--Ñø»¤Àï³Ì(¹«Àï)
-a3101,--¿ÉÂÌ»¯Àï³Ì(¹«Àï)
-a3102,--ÒÑÂÌ»¯Àï³Ì(¹«Àï)
-hk9508,--µØÃ²
-a0522,--º­¶´(µÀ)
-hk0156,--Ê¡¼Ê³öÈë¿Ú±êÊ¶
-k3990,--¹úµÀµ÷ÕûÇ°Â·Ïß±àºÅ
-hk0138,--ÊÇ·ñ°´¸ÉÏß¹«Â·¹ÜÀí½ÓÑø
-k0199--±¸×¢
+hk5104,--é¢å±‚ç±»å‹
+k4002,--è·¯åŸºå®½åº¦
+k5404,--è·¯é¢å®½åº¦
+k5222,--é¢å±‚åšåº¦
+k0306,--è®¾è®¡æ—¶é€Ÿ(km/h)
+k0180,--ä¿®å»ºå¹´åº¦
+k0181,--æ”¹å»ºå¹´åº¦
+k0155,--æœ€åä¸€æ¬¡å¤§ä¸­ä¿®å¹´åº¦
+hk0182,--æ–­é“¾ç±»å‹
+hk0121,--æ˜¯å¦åŸç®¡è·¯æ®µ
+hk0123,--æ˜¯å¦æ–­å¤´è·¯è·¯æ®µ
+hk0136,--è·¯æ®µæ”¶è´¹æ€§è´¨
+k0124,--é‡å¤è·¯æ®µç¼–ç 
+k0162,--é‡å¤è·¯æ®µèµ·ç‚¹æ¡©å·
+k0163,--é‡å¤è·¯æ®µæ­¢ç‚¹æ¡©å·
+a1001,--å…»æŠ¤é‡Œç¨‹(å…¬é‡Œ)
+a3101,--å¯ç»¿åŒ–é‡Œç¨‹(å…¬é‡Œ)
+a3102,--å·²ç»¿åŒ–é‡Œç¨‹(å…¬é‡Œ)
+hk9508,--åœ°è²Œ
+a0522,--æ¶µæ´(é“)
+hk0156,--çœé™…å‡ºå…¥å£æ ‡è¯†
+k3990,--å›½é“è°ƒæ•´å‰è·¯çº¿ç¼–å·
+hk0138,--æ˜¯å¦æŒ‰å¹²çº¿å…¬è·¯ç®¡ç†æ¥å…»
+k0199--å¤‡æ³¨
 )
 select 
 rtrim(k001.a0102),
 rtrim(k001.ha0102),
-Â·Ïß±àÂë,
-ÕşÇø´úÂë,
-¹ÜÑøµ¥Î»,
-Â·ÏßÃû³Æ,
-case when len(Æğµã×®ºÅÃû³Æ)  >0 then Æğµã×®ºÅÃû³Æ   when len(Æğµã×®ºÅÃû³Æ)  =0 or Æğµã×®ºÅÃû³Æ   is null then null end,
-case when len(Ö¹µã×®ºÅÃû³Æ)  >0 then Ö¹µã×®ºÅÃû³Æ   when len(Ö¹µã×®ºÅÃû³Æ)  =0 or Ö¹µã×®ºÅÃû³Æ   is null then null end,
-Æğµã×®ºÅ,
-Ö¹µã×®ºÅ,
-Àï³Ì,
+è·¯çº¿ç¼–ç ,
+æ”¿åŒºä»£ç ,
+ç®¡å…»å•ä½,
+è·¯çº¿åç§°,
+case when len(èµ·ç‚¹æ¡©å·åç§°)  >0 then èµ·ç‚¹æ¡©å·åç§°   when len(èµ·ç‚¹æ¡©å·åç§°)  =0 or èµ·ç‚¹æ¡©å·åç§°   is null then null end,
+case when len(æ­¢ç‚¹æ¡©å·åç§°)  >0 then æ­¢ç‚¹æ¡©å·åç§°   when len(æ­¢ç‚¹æ¡©å·åç§°)  =0 or æ­¢ç‚¹æ¡©å·åç§°   is null then null end,
+èµ·ç‚¹æ¡©å·,
+æ­¢ç‚¹æ¡©å·,
+é‡Œç¨‹,
 dk0301.objname,
-case when len(¼¼ÊõµÈ¼¶)  >0 then ¼¼ÊõµÈ¼¶   when len(¼¼ÊõµÈ¼¶)  =0 or ¼¼ÊõµÈ¼¶   is null then null end,
-case when len(ÊÇ·ñÒ»·ù¸ßËÙ)  >0 then ÊÇ·ñÒ»·ù¸ßËÙ   when len(ÊÇ·ñÒ»·ù¸ßËÙ)  =0 or ÊÇ·ñÒ»·ù¸ßËÙ   is null then null end,
-case when len(³µµÀÊıÁ¿)  >0 then ³µµÀÊıÁ¿   when len(³µµÀÊıÁ¿)  =0 or ³µµÀÊıÁ¿   is null then null end,
-Ãæ²ãÀàĞÍ,
-case when len(Â·»ù¿í¶È)  >0 then Â·»ù¿í¶È   when len(Â·»ù¿í¶È)  =0 or Â·»ù¿í¶È   is null then null end,
-case when len(Â·Ãæ¿í¶È)  >0 then Â·Ãæ¿í¶È   when len(Â·Ãæ¿í¶È)  =0 or Â·Ãæ¿í¶È   is null then null end,
-case when len(Ãæ²ãºñ¶È)  >0 then Ãæ²ãºñ¶È   when len(Ãæ²ãºñ¶È)  =0 or Ãæ²ãºñ¶È   is null then null end,
-case when len(Éè¼ÆÊ±ËÙ)  >0 then Éè¼ÆÊ±ËÙ   when len(Éè¼ÆÊ±ËÙ)  =0 or Éè¼ÆÊ±ËÙ   is null then null end,
-case when len(ĞŞ½¨Äê¶È)  >0 then ĞŞ½¨Äê¶È   when len(ĞŞ½¨Äê¶È)  =0 or ĞŞ½¨Äê¶È   is null then null end,
-case when len(¸Ä½¨Äê¶È)  >0 then ¸Ä½¨Äê¶È   when len(¸Ä½¨Äê¶È)  =0 or ¸Ä½¨Äê¶È   is null then null end,
-case when len(×îºóÒ»´Î´óÖĞĞŞÄê¶È)>0 then rtrim(×îºóÒ»´Î´óÖĞĞŞÄê¶È) when len(×îºóÒ»´Î´óÖĞĞŞÄê¶È)=0 or rtrim(×îºóÒ»´Î´óÖĞĞŞÄê¶È) is null then null end,
-case when rtrim(¶ÏÁ´ÀàĞÍ) = '²»ÏàÁ¬Â·¶Î' then 'Â·¶ÎÓëÇ°Ò»Â·¶Î²»ÏàÁ¬'
-		when rtrim(¶ÏÁ´ÀàĞÍ) = '¶ÌÁ´' then '¶ÌÁ´£¬ÓëÇ°¶Î×®ºÅ²»Á¬ĞøÂ·¶ÎÏàÁ¬'
-		when rtrim(¶ÏÁ´ÀàĞÍ) = '¶ÏÍ·Â·¶Î' then '¶ÏÍ·Â·¶Î'
-		when rtrim(¶ÏÁ´ÀàĞÍ) = '³¤Á´' then '³¤Á´'
-		when rtrim(¶ÏÁ´ÀàĞÍ) = 'Õı³£Â·¶Î' or (len(¶ÏÁ´ÀàĞÍ)=0 or ¶ÏÁ´ÀàĞÍ is null)then 'Õı³£Â·¶Î'
-		else null	end,ÊÇ·ñ³Ç¹Ü,
-case when len(ÊÇ·ñ¶ÏÍ·)  >0 then ÊÇ·ñ¶ÏÍ·   when len(ÊÇ·ñ¶ÏÍ·)  =0 or ÊÇ·ñ¶ÏÍ·   is null then null end,
+case when len(æŠ€æœ¯ç­‰çº§)  >0 then æŠ€æœ¯ç­‰çº§   when len(æŠ€æœ¯ç­‰çº§)  =0 or æŠ€æœ¯ç­‰çº§   is null then null end,
+case when len(æ˜¯å¦ä¸€å¹…é«˜é€Ÿ)  >0 then æ˜¯å¦ä¸€å¹…é«˜é€Ÿ   when len(æ˜¯å¦ä¸€å¹…é«˜é€Ÿ)  =0 or æ˜¯å¦ä¸€å¹…é«˜é€Ÿ   is null then null end,
+case when len(è½¦é“æ•°é‡)  >0 then è½¦é“æ•°é‡   when len(è½¦é“æ•°é‡)  =0 or è½¦é“æ•°é‡   is null then null end,
+é¢å±‚ç±»å‹,
+case when len(è·¯åŸºå®½åº¦)  >0 then è·¯åŸºå®½åº¦   when len(è·¯åŸºå®½åº¦)  =0 or è·¯åŸºå®½åº¦   is null then null end,
+case when len(è·¯é¢å®½åº¦)  >0 then è·¯é¢å®½åº¦   when len(è·¯é¢å®½åº¦)  =0 or è·¯é¢å®½åº¦   is null then null end,
+case when len(é¢å±‚åšåº¦)  >0 then é¢å±‚åšåº¦   when len(é¢å±‚åšåº¦)  =0 or é¢å±‚åšåº¦   is null then null end,
+case when len(è®¾è®¡æ—¶é€Ÿ)  >0 then è®¾è®¡æ—¶é€Ÿ   when len(è®¾è®¡æ—¶é€Ÿ)  =0 or è®¾è®¡æ—¶é€Ÿ   is null then null end,
+case when len(ä¿®å»ºå¹´åº¦)  >0 then ä¿®å»ºå¹´åº¦   when len(ä¿®å»ºå¹´åº¦)  =0 or ä¿®å»ºå¹´åº¦   is null then null end,
+case when len(æ”¹å»ºå¹´åº¦)  >0 then æ”¹å»ºå¹´åº¦   when len(æ”¹å»ºå¹´åº¦)  =0 or æ”¹å»ºå¹´åº¦   is null then null end,
+case when len(æœ€åä¸€æ¬¡å¤§ä¸­ä¿®å¹´åº¦)>0 then rtrim(æœ€åä¸€æ¬¡å¤§ä¸­ä¿®å¹´åº¦) when len(æœ€åä¸€æ¬¡å¤§ä¸­ä¿®å¹´åº¦)=0 or rtrim(æœ€åä¸€æ¬¡å¤§ä¸­ä¿®å¹´åº¦) is null then null end,
+case when rtrim(æ–­é“¾ç±»å‹) = 'ä¸ç›¸è¿è·¯æ®µ' then 'è·¯æ®µä¸å‰ä¸€è·¯æ®µä¸ç›¸è¿'
+		when rtrim(æ–­é“¾ç±»å‹) = 'çŸ­é“¾' then 'çŸ­é“¾ï¼Œä¸å‰æ®µæ¡©å·ä¸è¿ç»­è·¯æ®µç›¸è¿'
+		when rtrim(æ–­é“¾ç±»å‹) = 'æ–­å¤´è·¯æ®µ' then 'æ–­å¤´è·¯æ®µ'
+		when rtrim(æ–­é“¾ç±»å‹) = 'é•¿é“¾' then 'é•¿é“¾'
+		when rtrim(æ–­é“¾ç±»å‹) = 'æ­£å¸¸è·¯æ®µ' or (len(æ–­é“¾ç±»å‹)=0 or æ–­é“¾ç±»å‹ is null)then 'æ­£å¸¸è·¯æ®µ'
+		else null	end,æ˜¯å¦åŸç®¡,
+case when len(æ˜¯å¦æ–­å¤´)  >0 then æ˜¯å¦æ–­å¤´   when len(æ˜¯å¦æ–­å¤´)  =0 or æ˜¯å¦æ–­å¤´   is null then null end,
 
-case when len(Â·¶ÎÊÕ·ÑĞÔÖÊ)>0 then Â·¶ÎÊÕ·ÑĞÔÖÊ when len(Â·¶ÎÊÕ·ÑĞÔÖÊ)=0 or Â·¶ÎÊÕ·ÑĞÔÖÊ is null then null end,
-case when len(ÖØ¸´Â·¶Î±àÂë)>0 then ÖØ¸´Â·¶Î±àÂë when len(ÖØ¸´Â·¶Î±àÂë)=0 or ÖØ¸´Â·¶Î±àÂë is null then null end,
+case when len(è·¯æ®µæ”¶è´¹æ€§è´¨)>0 then è·¯æ®µæ”¶è´¹æ€§è´¨ when len(è·¯æ®µæ”¶è´¹æ€§è´¨)=0 or è·¯æ®µæ”¶è´¹æ€§è´¨ is null then null end,
+case when len(é‡å¤è·¯æ®µç¼–ç )>0 then é‡å¤è·¯æ®µç¼–ç  when len(é‡å¤è·¯æ®µç¼–ç )=0 or é‡å¤è·¯æ®µç¼–ç  is null then null end,
 
-case when len(ÖØ¸´Â·¶ÎÆğµã×®ºÅ)>0 then ÖØ¸´Â·¶ÎÆğµã×®ºÅ when len(ÖØ¸´Â·¶ÎÆğµã×®ºÅ)=0 or ÖØ¸´Â·¶ÎÆğµã×®ºÅ is null then null end,
-case when len(ÖØ¸´Â·¶ÎÖ¹µã×®ºÅ)>0 then ÖØ¸´Â·¶ÎÖ¹µã×®ºÅ when len(ÖØ¸´Â·¶ÎÖ¹µã×®ºÅ)=0 or ÖØ¸´Â·¶ÎÖ¹µã×®ºÅ is null then null end,
-case when len(Ñø»¤Àï³Ì)  >0 then Ñø»¤Àï³Ì   when len(Ñø»¤Àï³Ì)  =0 or Ñø»¤Àï³Ì   is null then null end,
-case when len(¿ÉÂÌ»¯Àï³Ì)>0 then ¿ÉÂÌ»¯Àï³Ì when len(¿ÉÂÌ»¯Àï³Ì)=0 or ¿ÉÂÌ»¯Àï³Ì is null then null end,
-case when len(ÒÑÂÌ»¯Àï³Ì)>0 then ÒÑÂÌ»¯Àï³Ì when len(ÒÑÂÌ»¯Àï³Ì)=0 or ÒÑÂÌ»¯Àï³Ì is null then null end,
-µØÃ²,
-case when len(º­¶´ÊıÁ¿)>0 then º­¶´ÊıÁ¿ when len(º­¶´ÊıÁ¿)=0 or º­¶´ÊıÁ¿ is null then null end,
-case when rtrim(Ê¡¼Ê³öÈë¿Ú)  like '%·ÇÊ¡¼Ê³öÈë%' or (len(Ê¡¼Ê³öÈë¿Ú)=0 or Ê¡¼Ê³öÈë¿Ú is null) then 'Â·¶Î·ÇÊ¡¼Ê³öÈë'
-		when rtrim(Ê¡¼Ê³öÈë¿Ú) like '%ÆğµãÔÚÊ¡½ç%' then '¹úÊ¡µÀÂ·¶ÎÆğµãÔÚÊ¡½ç£¬ÓëÁÚÊ¡Â·ÏßÁ¬½Ó'
-		when rtrim(Ê¡¼Ê³öÈë¿Ú) like '%Ö¹µãÔÚÊ¡½ç%' then '¹úÊ¡µÀÂ·¶ÎÖ¹µãÔÚÊ¡½ç£¬ÓëÁÚÊ¡Â·ÏßÁ¬½Ó'
-		when rtrim(Ê¡¼Ê³öÈë¿Ú) like '%ÆğÖ¹µã¾ùÔÚÊ¡½ç%' then '¹úÊ¡µÀÂ·¶ÎÆğÖ¹µã¾ùÔÚÊ¡½ç£¬ÓëÁÚÊ¡Â·ÏßÁ¬½Ó'	
+case when len(é‡å¤è·¯æ®µèµ·ç‚¹æ¡©å·)>0 then é‡å¤è·¯æ®µèµ·ç‚¹æ¡©å· when len(é‡å¤è·¯æ®µèµ·ç‚¹æ¡©å·)=0 or é‡å¤è·¯æ®µèµ·ç‚¹æ¡©å· is null then null end,
+case when len(é‡å¤è·¯æ®µæ­¢ç‚¹æ¡©å·)>0 then é‡å¤è·¯æ®µæ­¢ç‚¹æ¡©å· when len(é‡å¤è·¯æ®µæ­¢ç‚¹æ¡©å·)=0 or é‡å¤è·¯æ®µæ­¢ç‚¹æ¡©å· is null then null end,
+case when len(å…»æŠ¤é‡Œç¨‹)  >0 then å…»æŠ¤é‡Œç¨‹   when len(å…»æŠ¤é‡Œç¨‹)  =0 or å…»æŠ¤é‡Œç¨‹   is null then null end,
+case when len(å¯ç»¿åŒ–é‡Œç¨‹)>0 then å¯ç»¿åŒ–é‡Œç¨‹ when len(å¯ç»¿åŒ–é‡Œç¨‹)=0 or å¯ç»¿åŒ–é‡Œç¨‹ is null then null end,
+case when len(å·²ç»¿åŒ–é‡Œç¨‹)>0 then å·²ç»¿åŒ–é‡Œç¨‹ when len(å·²ç»¿åŒ–é‡Œç¨‹)=0 or å·²ç»¿åŒ–é‡Œç¨‹ is null then null end,
+åœ°è²Œ,
+case when len(æ¶µæ´æ•°é‡)>0 then æ¶µæ´æ•°é‡ when len(æ¶µæ´æ•°é‡)=0 or æ¶µæ´æ•°é‡ is null then null end,
+case when rtrim(çœé™…å‡ºå…¥å£)  like '%éçœé™…å‡ºå…¥%' or (len(çœé™…å‡ºå…¥å£)=0 or çœé™…å‡ºå…¥å£ is null) then 'è·¯æ®µéçœé™…å‡ºå…¥'
+		when rtrim(çœé™…å‡ºå…¥å£) like '%èµ·ç‚¹åœ¨çœç•Œ%' then 'å›½çœé“è·¯æ®µèµ·ç‚¹åœ¨çœç•Œï¼Œä¸é‚»çœè·¯çº¿è¿æ¥'
+		when rtrim(çœé™…å‡ºå…¥å£) like '%æ­¢ç‚¹åœ¨çœç•Œ%' then 'å›½çœé“è·¯æ®µæ­¢ç‚¹åœ¨çœç•Œï¼Œä¸é‚»çœè·¯çº¿è¿æ¥'
+		when rtrim(çœé™…å‡ºå…¥å£) like '%èµ·æ­¢ç‚¹å‡åœ¨çœç•Œ%' then 'å›½çœé“è·¯æ®µèµ·æ­¢ç‚¹å‡åœ¨çœç•Œï¼Œä¸é‚»çœè·¯çº¿è¿æ¥'	
 		else null	end,
 
-case when len(¹úµÀµ÷ÕûÇ°Â·Ïß±àºÅ)>0 then ¹úµÀµ÷ÕûÇ°Â·Ïß±àºÅ when len(¹úµÀµ÷ÕûÇ°Â·Ïß±àºÅ)=0 or ¹úµÀµ÷ÕûÇ°Â·Ïß±àºÅ is null then null end,
+case when len(å›½é“è°ƒæ•´å‰è·¯çº¿ç¼–å·)>0 then å›½é“è°ƒæ•´å‰è·¯çº¿ç¼–å· when len(å›½é“è°ƒæ•´å‰è·¯çº¿ç¼–å·)=0 or å›½é“è°ƒæ•´å‰è·¯çº¿ç¼–å· is null then null end,
 
-case when len(ÊÇ·ñ°´¸ÉÏß¹«Â·¹ÜÀí½ÓÑø)>0 then ÊÇ·ñ°´¸ÉÏß¹«Â·¹ÜÀí½ÓÑø when len(ÊÇ·ñ°´¸ÉÏß¹«Â·¹ÜÀí½ÓÑø)=0 or ÊÇ·ñ°´¸ÉÏß¹«Â·¹ÜÀí½ÓÑø is null then null end,
---ÊÇ·ñÎª×Ê²úÊı¾İ,
-case when len(±¸×¢)>0 then ±¸×¢ when len(±¸×¢)=0 or ±¸×¢ is null then null end
+case when len(æ˜¯å¦æŒ‰å¹²çº¿å…¬è·¯ç®¡ç†æ¥å…»)>0 then æ˜¯å¦æŒ‰å¹²çº¿å…¬è·¯ç®¡ç†æ¥å…» when len(æ˜¯å¦æŒ‰å¹²çº¿å…¬è·¯ç®¡ç†æ¥å…»)=0 or æ˜¯å¦æŒ‰å¹²çº¿å…¬è·¯ç®¡ç†æ¥å…» is null then null end,
+--æ˜¯å¦ä¸ºèµ„äº§æ•°æ®,
+case when len(å¤‡æ³¨)>0 then å¤‡æ³¨ when len(å¤‡æ³¨)=0 or å¤‡æ³¨ is null then null end
 
 from ##tk001
-left join dk0301 on left((case when len(¼¼ÊõµÈ¼¶)  >0 then ¼¼ÊõµÈ¼¶   when len(¼¼ÊõµÈ¼¶)  =0 or ¼¼ÊõµÈ¼¶   is null then null end),2)= rtrim(objjc)
+left join dk0301 on left((case when len(æŠ€æœ¯ç­‰çº§)  >0 then æŠ€æœ¯ç­‰çº§   when len(æŠ€æœ¯ç­‰çº§)  =0 or æŠ€æœ¯ç­‰çº§   is null then null end),2)= rtrim(objjc)
 left join k001
-on rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'d001',''),'d002',''),'d003','')) +cast(k001.k0108 as varchar(20)) +cast(k001.k0109 as varchar(20))=rtrim(##tk001.Â·Ïß±àÂë) +cast(##tk001.Æğµã×®ºÅ as varchar(20)) +cast(##tk001.Ö¹µã×®ºÅ as varchar(20))
+on rtrim(replace(replace(replace(replace(replace(k001.k0101,'340000',''),'000000',''),'d001',''),'d002',''),'d003','')) +cast(k001.k0108 as varchar(20)) +cast(k001.k0109 as varchar(20))=rtrim(##tk001.è·¯çº¿ç¼–ç ) +cast(##tk001.èµ·ç‚¹æ¡©å· as varchar(20)) +cast(##tk001.æ­¢ç‚¹æ¡©å· as varchar(20))
 
-order by Â·Ïß±àÂë
+order by è·¯çº¿ç¼–ç 
 
 
---¸üĞÂ¹ÜÀíµ¥Î»×Ö¶ÎA0102,HA0102
+--æ›´æ–°ç®¡ç†å•ä½å­—æ®µA0102,HA0102
 UPDATE zcpt_k001
 SET zcpt_k001.a0102=rtrim(k001.a0102),zcpt_k001.ha0102=rtrim(k001.ha0102)
 FROM zcpt_k001
@@ -135,11 +135,11 @@ drop table ##tk001
 
 --<CONTROL
 	SELECT
-		'Ö´ĞĞ½á¹û' AS CAPTION , 
-		LABELTEXT='µ¼ÈëÍê³É'+char(13)+char(10),
+		'æ‰§è¡Œç»“æœ' AS CAPTION , 
+		LABELTEXT='å¯¼å…¥å®Œæˆ'+char(13)+char(10),
 		370 AS WIDTH , 
 		0 AS HEIGHT, 
-		'È·¶¨=' AS BUTTON,
+		'ç¡®å®š=' AS BUTTON,
 		0 AS SHOWTITLE,
 		'select null' as datasource
 --CONTROL>

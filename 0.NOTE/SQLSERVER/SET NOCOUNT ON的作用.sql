@@ -16,7 +16,7 @@ SET NOCOUNT { ON | OFF }
 
 即使当 SET NOCOUNT 为 ON 时，也更新 @@ROWCOUNT 函数。
 
-当 SET NOCOUNT 为 ON 时，将不给客户端发送存储过程中的每个语句的 DONE_IN_PROC 信息。当使用 Microsoft&reg; SQL Server™ 提供的实用工具执行查询时，在 Transact-SQL 语句（如 SELECT、INSERT、UPDATE 和 DELETE）结束时将不会在查询结果中显示"nn rows affected"。
+当 SET NOCOUNT 为 ON 时，将不给客户端发送存储过程中的每个语句的 DONE_IN_PROC 信息。当使用 Microsoft&reg; SQL ServerTM 提供的实用工具执行查询时，在 Transact-SQL 语句（如 SELECT、INSERT、UPDATE 和 DELETE）结束时将不会在查询结果中显示"nn rows affected"。
 
 如果存储过程中包含的一些语句并不返回许多实际的数据，则该设置由于大量减少了网络流量，因此可显著提高性能。
 

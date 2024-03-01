@@ -1,18 +1,18 @@
 title %time%
-:: ´ò¿ª vscode
+:: æ‰“å¼€ vscode
 :: start D:\"Program Files (x86)"\"Microsoft VS Code"\code.exe
 :: timeout /t 10
-:: ¹Ø±Õ VScode
+:: å…³é—­ VScode
 :: taskkill /f /im code.exe
 :: timeout /t 3
 
 :: QQ
 start D:\"Program Files (x86)"\Tencent\QQ\Bin\QQScLauncher.exe
 
-:: ÆóÒµÎ¢ĞÅ
+:: ä¼ä¸šå¾®ä¿¡
 start D:\"Program Files (x86)"\WXWork\WXWork.exe
 
-:: Î¢ĞÅ¶à¿ª
+:: å¾®ä¿¡å¤šå¼€
 :: start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
 :: start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
 
@@ -22,21 +22,21 @@ start D:\"Program Files (x86)"\WXWork\WXWork.exe
 :: Edge
 :: start C:\"Program Files (x86)"\Microsoft\Edge\Application\msedge.exe
 
-:: ´ËµçÄÔ
+:: æ­¤ç”µè„‘
 :: start C:\Users\OYDSOFT\AppData\Roaming\Microsoft\Windows\"Start Menu"\Programs\"System Tools"\computer.lnk
 
-:: ¹Ø±ÕÏòÈÕ¿û
+:: å…³é—­å‘æ—¥è‘µ
 taskkill /f /im SunloginClient.exe
 
-:: ¹Ø±ÕToDesk
+:: å…³é—­ToDesk
 taskkill /f /im ToDesk.exe
-:: ¹Ø±ÕToDesk·şÎñ
+:: å…³é—­ToDeskæœåŠ¡
 sc stop "ToDesk_Service"
 
-:: ¹Ø±Õedge ºóÌ¨
+:: å…³é—­edge åå°
 taskkill /f /im MSEDGE.EXE
 
-:: ¹Ø±ÕChrome ºóÌ¨
+:: å…³é—­Chrome åå°
 taskkill /f /im Chrome.EXE
 
 pause

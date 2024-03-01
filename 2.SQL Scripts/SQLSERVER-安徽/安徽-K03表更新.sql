@@ -5,19 +5,19 @@ INTO tk03
 FROM
 (
 SELECT A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R
-from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼þ\2.°²»Õ¹¤×÷ÎÄ¼þ\1.¹¤×÷ÎÄ¼þ£¨ÈÕÆÚ·ÖÀà£©\20240220 11-2±í\34-±¨¹«Â·¾Ö-L11-2-202402061440-1.xlsx',sheet1$)
+from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\2.å®‰å¾½å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20240220 11-2è¡¨\34-æŠ¥å…¬è·¯å±€-L11-2-202402061440-1.xlsx',sheet1$)
 
 UNION
 SELECT A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R
-from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼þ\2.°²»Õ¹¤×÷ÎÄ¼þ\1.¹¤×÷ÎÄ¼þ£¨ÈÕÆÚ·ÖÀà£©\20240220 11-2±í\34-±¨¹«Â·¾Ö-L11-2-202402061440-2.xlsx',sheet1$)
+from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\2.å®‰å¾½å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20240220 11-2è¡¨\34-æŠ¥å…¬è·¯å±€-L11-2-202402061440-2.xlsx',sheet1$)
 
 UNION
 SELECT A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R
-from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼þ\2.°²»Õ¹¤×÷ÎÄ¼þ\1.¹¤×÷ÎÄ¼þ£¨ÈÕÆÚ·ÖÀà£©\20240220 11-2±í\34-±¨¹«Â·¾Ö-L11-2-202402061440-4.xlsx',sheet1$)
+from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\2.å®‰å¾½å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20240220 11-2è¡¨\34-æŠ¥å…¬è·¯å±€-L11-2-202402061440-4.xlsx',sheet1$)
 
 UNION
 SELECT A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R
-from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼þ\2.°²»Õ¹¤×÷ÎÄ¼þ\1.¹¤×÷ÎÄ¼þ£¨ÈÕÆÚ·ÖÀà£©\20240220 11-2±í\34-±¨¹«Â·¾Ö-L11-2-202402071419-3.xlsx',sheet1$)
+from OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\2.å®‰å¾½å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20240220 11-2è¡¨\34-æŠ¥å…¬è·¯å±€-L11-2-202402071419-3.xlsx',sheet1$)
 ) XLS
 SELECT * FROM #TK03
 /*
@@ -34,7 +34,7 @@ GROUP BY LEFT(LDBM,10)
 
 --136832
 SELECT k0101,
-REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(hk0304,'Ò»¼¶','2'),'¶þ¼¶','3'),'Èý¼¶','4'),'ËÄ¼¶','5'),'Îå¼¶','6') hk0304,
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(hk0304,'ä¸€çº§','2'),'äºŒçº§','3'),'ä¸‰çº§','4'),'å››çº§','5'),'äº”çº§','6') hk0304,
 SUM(ISNULL(a5008,0))/1000 a5008
 FROM [HRP-GHSS2014]..k03
 GROUP BY k0101,hk0304
@@ -45,7 +45,7 @@ SELECT A ,LDBM M,g,LDJSDJ,I ,LDLC
 FROM
 (
 --136829
-SELECT A,REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(G,'Ò»¼¶','2'),'¶þ¼¶','3'),'Èý¼¶','4'),'ËÄ¼¶','5'),'Îå¼¶','6') g,SUM(ISNULL(I,0))/1000 I
+SELECT A,REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(G,'ä¸€çº§','2'),'äºŒçº§','3'),'ä¸‰çº§','4'),'å››çº§','5'),'äº”çº§','6') g,SUM(ISNULL(I,0))/1000 I
 FROM #TK03
 GROUP BY A,G
 )XLS
@@ -67,7 +67,7 @@ FROM
 (
 --136829
 SELECT k0101,
-REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(hk0304,'Ò»¼¶','2'),'¶þ¼¶','3'),'Èý¼¶','4'),'ËÄ¼¶','5'),'Îå¼¶','6') hk0304,
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(hk0304,'ä¸€çº§','2'),'äºŒçº§','3'),'ä¸‰çº§','4'),'å››çº§','5'),'äº”çº§','6') hk0304,
 SUM(ISNULL(a5008,0))/1000 a5008
 FROM [HRP-GHSS2014]..k03
 GROUP BY k0101,hk0304

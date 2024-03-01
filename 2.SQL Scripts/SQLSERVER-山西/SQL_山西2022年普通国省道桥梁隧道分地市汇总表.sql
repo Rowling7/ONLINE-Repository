@@ -1,18 +1,18 @@
---ÇÅÁº È«Ê¡
+--æ¡¥æ¢ å…¨çœ
 select
 left(a0103,4)a0103, objjc,
-sum(case when k6007 in ('1','2','3','4') then k6008 else 0 end) ×ÜÑÓÃ×,
-sum(case when k6007 in ('1','2','3','4') then 1 else 0 end) ×Ü×ùÊı,
-sum(case when k6028 in ('4','5') then k6008 else 0 end) Î£ÇÅÑÓÃ×,
-sum(case when k6028 in ('4','5') then 1 else 0 end) Î£ÇÅ×ùÊı,
-sum(case when k6007='1' then k6008 else 0 end) ÌØ´óÑÓÃ×,
-sum(case when k6007='1' then 1 else 0 end) ÌØ´ó×ùÊı,
-sum(case when k6007='2' then k6008 else 0 end) ´óÇÅÑÓÃ×,
-sum(case when k6007='2' then 1 else 0 end) ´óÇÅ×ùÊı,
-sum(case when k6007='3' then k6008 else 0 end) ÖĞÇÅÑÓÃ×,
-sum(case when k6007='3' then 1 else 0 end) ÖĞÇÅ×ùÊı,
-sum(case when k6007='4' then k6008 else 0 end) Ğ¡ÇÅÑÓÃ×,
-sum(case when k6007='4' then 1 else 0 end) Ğ¡ÇÅ×ùÊı
+sum(case when k6007 in ('1','2','3','4') then k6008 else 0 end) æ€»å»¶ç±³,
+sum(case when k6007 in ('1','2','3','4') then 1 else 0 end) æ€»åº§æ•°,
+sum(case when k6028 in ('4','5') then k6008 else 0 end) å±æ¡¥å»¶ç±³,
+sum(case when k6028 in ('4','5') then 1 else 0 end) å±æ¡¥åº§æ•°,
+sum(case when k6007='1' then k6008 else 0 end) ç‰¹å¤§å»¶ç±³,
+sum(case when k6007='1' then 1 else 0 end) ç‰¹å¤§åº§æ•°,
+sum(case when k6007='2' then k6008 else 0 end) å¤§æ¡¥å»¶ç±³,
+sum(case when k6007='2' then 1 else 0 end) å¤§æ¡¥åº§æ•°,
+sum(case when k6007='3' then k6008 else 0 end) ä¸­æ¡¥å»¶ç±³,
+sum(case when k6007='3' then 1 else 0 end) ä¸­æ¡¥åº§æ•°,
+sum(case when k6007='4' then k6008 else 0 end) å°æ¡¥å»¶ç±³,
+sum(case when k6007='4' then 1 else 0 end) å°æ¡¥åº§æ•°
 from k60
 left join d020 on objname=left(a0103,4)
 --where rtrim(a0102) like '141%'
@@ -20,21 +20,21 @@ group by left(a0103,4), objjc  with rollup
 having grouping(left(a0103,4))=grouping(objjc)
 order by left(a0103,4)
 
---ÇÅÁº ¹úÊ¡¸ÉÏß
+--æ¡¥æ¢ å›½çœå¹²çº¿
 select
 left(a0103,4)a0103, objjc,
-sum(case when k6007 in ('1','2','3','4') then k6008 else 0 end) ×ÜÑÓÃ×,
-sum(case when k6007 in ('1','2','3','4') then 1 else 0 end) ×Ü×ùÊı,
-sum(case when k6028 in ('4','5') then k6008 else 0 end) Î£ÇÅÑÓÃ×,
-sum(case when k6028 in ('4','5') then 1 else 0 end) Î£ÇÅ×ùÊı,
-sum(case when k6007='1' then k6008 else 0 end) ÌØ´óÑÓÃ×,
-sum(case when k6007='1' then 1 else 0 end) ÌØ´ó×ùÊı,
-sum(case when k6007='2' then k6008 else 0 end) ´óÇÅÑÓÃ×,
-sum(case when k6007='2' then 1 else 0 end) ´óÇÅ×ùÊı,
-sum(case when k6007='3' then k6008 else 0 end) ÖĞÇÅÑÓÃ×,
-sum(case when k6007='3' then 1 else 0 end) ÖĞÇÅ×ùÊı,
-sum(case when k6007='4' then k6008 else 0 end) Ğ¡ÇÅÑÓÃ×,
-sum(case when k6007='4' then 1 else 0 end) Ğ¡ÇÅ×ùÊı
+sum(case when k6007 in ('1','2','3','4') then k6008 else 0 end) æ€»å»¶ç±³,
+sum(case when k6007 in ('1','2','3','4') then 1 else 0 end) æ€»åº§æ•°,
+sum(case when k6028 in ('4','5') then k6008 else 0 end) å±æ¡¥å»¶ç±³,
+sum(case when k6028 in ('4','5') then 1 else 0 end) å±æ¡¥åº§æ•°,
+sum(case when k6007='1' then k6008 else 0 end) ç‰¹å¤§å»¶ç±³,
+sum(case when k6007='1' then 1 else 0 end) ç‰¹å¤§åº§æ•°,
+sum(case when k6007='2' then k6008 else 0 end) å¤§æ¡¥å»¶ç±³,
+sum(case when k6007='2' then 1 else 0 end) å¤§æ¡¥åº§æ•°,
+sum(case when k6007='3' then k6008 else 0 end) ä¸­æ¡¥å»¶ç±³,
+sum(case when k6007='3' then 1 else 0 end) ä¸­æ¡¥åº§æ•°,
+sum(case when k6007='4' then k6008 else 0 end) å°æ¡¥å»¶ç±³,
+sum(case when k6007='4' then 1 else 0 end) å°æ¡¥åº§æ•°
 from k60
 left join d020 on objname=left(a0103,4)
 where rtrim(a0102) like '141%'
@@ -43,19 +43,19 @@ having grouping(left(a0103,4))=grouping(objjc)
 order by left(a0103,4)
 
 
---ËíµÀ È«Ê¡
+--éš§é“ å…¨çœ
 select
 left(a0103,4)a0103, objjc,
-sum(case when k6304 in ('1','2','3','4') then k6305 else 0 end) ×ÜÑÓÃ×,
-sum(case when k6304 in ('1','2','3','4') then 1 else 0 end) ×Ü×ùÊı,
-sum(case when k6304='1' then k6305 else 0 end)	as	ÌØ³¤ËíµÀÑÓÃ×,
-sum(case when k6304='1' then 1 else 0 end)	as	ÌØ³¤ËíµÀ,
-sum(case when k6304='2' then k6305 else 0 end)	as	³¤ËíµÀÑÓÃ×,
-sum(case when k6304='2' then 1 else 0 end)	as	³¤ËíµÀ,
-sum(case when k6304='3' then k6305 else 0 end)	as	ÖĞËíµÀÑÓÃ×,
-sum(case when k6304='3' then 1 else 0 end)	as	ÖĞËíµÀ,
-sum(case when k6304='4' then k6305 else 0 end)	as	¶ÌËíµÀÑÓÃ×,
-sum(case when k6304='4' then 1 else 0 end)	as	¶ÌËíµÀ
+sum(case when k6304 in ('1','2','3','4') then k6305 else 0 end) æ€»å»¶ç±³,
+sum(case when k6304 in ('1','2','3','4') then 1 else 0 end) æ€»åº§æ•°,
+sum(case when k6304='1' then k6305 else 0 end)	as	ç‰¹é•¿éš§é“å»¶ç±³,
+sum(case when k6304='1' then 1 else 0 end)	as	ç‰¹é•¿éš§é“,
+sum(case when k6304='2' then k6305 else 0 end)	as	é•¿éš§é“å»¶ç±³,
+sum(case when k6304='2' then 1 else 0 end)	as	é•¿éš§é“,
+sum(case when k6304='3' then k6305 else 0 end)	as	ä¸­éš§é“å»¶ç±³,
+sum(case when k6304='3' then 1 else 0 end)	as	ä¸­éš§é“,
+sum(case when k6304='4' then k6305 else 0 end)	as	çŸ­éš§é“å»¶ç±³,
+sum(case when k6304='4' then 1 else 0 end)	as	çŸ­éš§é“
 from k63
 left join d020 on objname=left(a0103,4)
 --where rtrim(a0102) like '141%'
@@ -63,19 +63,19 @@ group by left(a0103,4), objjc  with rollup
 having grouping(left(a0103,4))=grouping(objjc)
 order by left(a0103,4)
 
---ËíµÀ ¹úÊ¡¸ÉÏß
+--éš§é“ å›½çœå¹²çº¿
 select
 left(a0103,4)a0103, objjc,
-sum(case when k6304 in ('1','2','3','4') then k6305 else 0 end) ×ÜÑÓÃ×,
-sum(case when k6304 in ('1','2','3','4') then 1 else 0 end) ×Ü×ùÊı,
-sum(case when k6304='1' then k6305 else 0 end)	as	ÌØ³¤ËíµÀÑÓÃ×,
-sum(case when k6304='1' then 1 else 0 end)	as	ÌØ³¤ËíµÀ,
-sum(case when k6304='2' then k6305 else 0 end)	as	³¤ËíµÀÑÓÃ×,
-sum(case when k6304='2' then 1 else 0 end)	as	³¤ËíµÀ,
-sum(case when k6304='3' then k6305 else 0 end)	as	ÖĞËíµÀÑÓÃ×,
-sum(case when k6304='3' then 1 else 0 end)	as	ÖĞËíµÀ,
-sum(case when k6304='4' then k6305 else 0 end)	as	¶ÌËíµÀÑÓÃ×,
-sum(case when k6304='4' then 1 else 0 end)	as	¶ÌËíµÀ
+sum(case when k6304 in ('1','2','3','4') then k6305 else 0 end) æ€»å»¶ç±³,
+sum(case when k6304 in ('1','2','3','4') then 1 else 0 end) æ€»åº§æ•°,
+sum(case when k6304='1' then k6305 else 0 end)	as	ç‰¹é•¿éš§é“å»¶ç±³,
+sum(case when k6304='1' then 1 else 0 end)	as	ç‰¹é•¿éš§é“,
+sum(case when k6304='2' then k6305 else 0 end)	as	é•¿éš§é“å»¶ç±³,
+sum(case when k6304='2' then 1 else 0 end)	as	é•¿éš§é“,
+sum(case when k6304='3' then k6305 else 0 end)	as	ä¸­éš§é“å»¶ç±³,
+sum(case when k6304='3' then 1 else 0 end)	as	ä¸­éš§é“,
+sum(case when k6304='4' then k6305 else 0 end)	as	çŸ­éš§é“å»¶ç±³,
+sum(case when k6304='4' then 1 else 0 end)	as	çŸ­éš§é“
 from k63
 left join d020 on objname=left(a0103,4)
 where rtrim(a0102) like '141%'

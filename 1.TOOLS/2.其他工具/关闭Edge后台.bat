@@ -1,3 +1,3 @@
-echo ¹Ø±Õedge ºóÌ¨
+echo å…³é—­edge åå°
 taskkill /f /im MSEDGE.EXE
 pause

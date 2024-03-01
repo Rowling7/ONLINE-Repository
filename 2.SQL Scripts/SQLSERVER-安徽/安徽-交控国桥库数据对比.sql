@@ -13,7 +13,7 @@ ORDER BY [F1]
 
 
 
---«≈¡∫√˚≥∆ ÷––ƒ◊Æ∫≈
+--Ê°•Ê¢ÅÂêçÁß∞ ‰∏≠ÂøÉÊ°©Âè∑
 SELECT
 [F42],[F1],[F58],[F4],k6040,RTRIM(k6002) k6002,k6003,CASE WHEN CONVERT(DECIMAL(18,3),[F4])=RTRIM(k6003)THEN 1 ELSE 0 END  DIFF
 --UPDATE [HRP-DBMS2014]..k060 SET k6003=[F4]
@@ -23,7 +23,7 @@ WHERE  [F1]<>RTRIM(k6002)
 ORDER BY DIFF
 
 
---«≈¡∫»´≥§£®√◊£©	øÁæ∂◊‹≥§ £®√◊£©	µ•ø◊◊Ó¥ÛøÁæ∂ £®√◊£©
+--Ê°•Ê¢ÅÂÖ®ÈïøÔºàÁ±≥Ôºâ	Ë∑®ÂæÑÊÄªÈïø ÔºàÁ±≥Ôºâ	ÂçïÂ≠îÊúÄÂ§ßË∑®ÂæÑ ÔºàÁ±≥Ôºâ
 SELECT
 [F42],[F1],[F58],RTRIM(k6040) k6040,RTRIM(k6002) k6002,
 [F9],k6008,
@@ -43,7 +43,7 @@ CASE WHEN CONVERT(DECIMAL(18,3),[F10])=RTRIM(k6065)THEN 1 ELSE '0' END ='0' or
 CASE WHEN CONVERT(DECIMAL(18,3),[F11])=RTRIM(k6063)THEN 1 ELSE '0' END ='0' )
 ORDER BY DIFF
 
---«≈¡∫»´øÌ £®√◊£©	«≈√ÊæªøÌ £®√◊£©--4
+--Ê°•Ê¢ÅÂÖ®ÂÆΩ ÔºàÁ±≥Ôºâ	Ê°•Èù¢ÂáÄÂÆΩ ÔºàÁ±≥Ôºâ--4
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F13],k6066,
@@ -57,7 +57,7 @@ WHERE CONVERT(DECIMAL(18,3),RTRIM(k6066))<>[F13] OR CONVERT(DECIMAL(18,3),RTRIM(
 ORDER BY [F1],DIFF
 
 
---I|i¢Ò ÷˜«≈…œ≤øππ‘ÏΩ·ππ–Œ Ω			--5
+--I|i‚Ö† ‰∏ªÊ°•‰∏äÈÉ®ÊûÑÈÄ†ÁªìÊûÑÂΩ¢Âºè			--5
 
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
@@ -72,7 +72,7 @@ WHERE (RTRIM(k6016)<>[F19] OR RTRIM(hK6016)<>[F20] ) --AND F19 <>'14'
 ORDER BY [F1],DIFF
 
 
----	÷˜«≈…œ≤øππ‘ÏΩ·ππ–Œ Ω≤ƒ¡œ
+---	‰∏ªÊ°•‰∏äÈÉ®ÊûÑÈÄ†ÁªìÊûÑÂΩ¢ÂºèÊùêÊñô
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F21],k6110,
@@ -82,7 +82,7 @@ CASE WHEN RTRIM(hk6110)=[F22]THEN 1 ELSE 0 END  DIFF2
 --UPDATE [HRP-DBMS2014]..k060 SET k6110=RTRIM([F21])--,hK6016=RTRIM([F20])
 from  tk060
 left join [HRP-DBMS2014]..k060  on k6040=F58
-WHERE (RTRIM(k6110)<>[F21] OR RTRIM(hk6110)<>[F22] )--and f20 not  like '±°ø««≈%' --AND F19 <>'14'
+WHERE (RTRIM(k6110)<>[F21] OR RTRIM(hk6110)<>[F22] )--and f20 not  like 'ËñÑÂ£≥Ê°•%' --AND F19 <>'14'
 ORDER BY [F1],DIFF --SELECT * from [HRP-DBMS2014]..dk6035
 
 SELECT rtrim(k6040),k6110,rtrim(objname),hk6110,RTRIM([objjc])
@@ -92,7 +92,7 @@ left join [HRP-DBMS2014]..dk6035 on k6110=rtrim(objname)
 where hk6110<>RTRIM([objjc])
 
 
---«≈∂’¿‡–Õ---38
+--Ê°•Â¢©Á±ªÂûã---38
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F23],k6017,
@@ -102,7 +102,7 @@ CASE WHEN RTRIM(hk6017)=[F24]THEN 1 ELSE 0 END  DIFF2
 --UPDATE [HRP-DBMS2014]..k060 SET k6017=RTRIM([F23])--,hk6017=RTRIM([F24])
 from  tk060
 left join [HRP-DBMS2014]..k060  on k6040=F58
-WHERE (RTRIM(k6017)<>[F23] OR RTRIM(hk6017)<>[F24]) --and [F42]='Àﬁ÷›÷––ƒ'
+WHERE (RTRIM(k6017)<>[F23] OR RTRIM(hk6017)<>[F24]) --and [F42]='ÂÆøÂ∑û‰∏≠ÂøÉ'
 ORDER BY [F1],DIFF
 
 SELECT rtrim(k6040),k6017,rtrim(objname),hk6017,RTRIM([objjc])
@@ -113,7 +113,7 @@ where hk6017<>RTRIM([objjc])
 
 
 
---…Ëº∆∫…‘ÿµ»º∂
+--ËÆæËÆ°Ëç∑ËΩΩÁ≠âÁ∫ß
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F25],k6022,
@@ -132,7 +132,7 @@ where hk6022<>RTRIM([objjc])
 
 
 
---øÁ‘ΩµÿŒÔ¿‡–Õ
+--Ë∑®Ë∂äÂú∞Áâ©Á±ªÂûã
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F29],k6005,
@@ -150,7 +150,7 @@ left join [HRP-DBMS2014]..DK6002 on k6005=rtrim(objname)
 where hk6005<>RTRIM([objjc])
 
 
---øÁ‘ΩµÿŒÔ√˚≥∆  --2
+--Ë∑®Ë∂äÂú∞Áâ©ÂêçÁß∞  --2
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F31],k6006,
@@ -158,11 +158,11 @@ CASE WHEN RTRIM(k6005)=[F29]THEN 1 ELSE 0 END  DIFF
 --UPDATE [HRP-DBMS2014]..k060 SET k6006=RTRIM([F31])
 from  tk060
 left join [HRP-DBMS2014]..k060  on k6040=F58
-WHERE RTRIM(k6006)<>[F31]  --and [f42]<>'Œﬂ∫˛÷––ƒ'
+WHERE RTRIM(k6006)<>[F31]  --and [f42]<>'ËäúÊπñ‰∏≠ÂøÉ'
 ORDER BY [F1],DIFF
 
 
---Ω®…Ëµ•Œª	…Ëº∆µ•Œª	 ©π§µ•Œª	º‡¿Ìµ•Œª
+--Âª∫ËÆæÂçï‰Ωç	ËÆæËÆ°Âçï‰Ωç	ÊñΩÂ∑•Âçï‰Ωç	ÁõëÁêÜÂçï‰Ωç
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F35],k6079,
@@ -183,7 +183,7 @@ RTRIM(k6032)<>[F38] --133
 ORDER BY [F1],DIFF
 
 
---–ﬁΩ®ƒÍ∂»	Ω®≥…Õ®≥µ»’∆⁄
+--‰øÆÂª∫Âπ¥Â∫¶	Âª∫ÊàêÈÄöËΩ¶Êó•Êúü
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F39],k0180,
@@ -199,7 +199,7 @@ ORDER BY [F1]
 
 
 
---∆¿∂®µ»º∂
+--ËØÑÂÆöÁ≠âÁ∫ß
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F46],k6028,
@@ -216,7 +216,7 @@ from [HRP-DBMS2014]..k060
 left join [HRP-DBMS2014]..DK6014 on k6028=rtrim(objname)
 where hk6028<>RTRIM([objjc])
 
---∆¿∂®»’∆⁄
+--ËØÑÂÆöÊó•Êúü
 SELECT
 [F42],[F1],[F58],rtrim(k6040) k6040,RTRIM(k6002) k6002,
 [F48],A1305,
@@ -228,60 +228,60 @@ left join [HRP-DBMS2014]..k060  on k6040=F58
 WHERE RTRIM(A1305)<>[F48] OR RTRIM(K6050)<>[F49]
 ORDER BY [F1],DIFF
 
---∑¿∫È --100ƒÍ
+--Èò≤Ê¥™ --100Âπ¥
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
-[F59],REPLACE(Hk0149,'ƒÍ','') Hk0149,
-CASE WHEN REPLACE(Hk0149,'ƒÍ','')=[F59]THEN 1 ELSE 0 END  DIFF,RTRIM([F59])+'ƒÍ'
---UPDATE [HRP-DBMS2014]..k060 SET k0149='7',hk0149='100ƒÍ'
+[F59],REPLACE(Hk0149,'Âπ¥','') Hk0149,
+CASE WHEN REPLACE(Hk0149,'Âπ¥','')=[F59]THEN 1 ELSE 0 END  DIFF,RTRIM([F59])+'Âπ¥'
+--UPDATE [HRP-DBMS2014]..k060 SET k0149='7',hk0149='100Âπ¥'
 from  tk060
 left join [HRP-DBMS2014]..k060  on k6040=F58
-WHERE REPLACE(Hk0149,'ƒÍ','')<>[F59] and [f59]='100'
+WHERE REPLACE(Hk0149,'Âπ¥','')<>[F59] and [f59]='100'
 ORDER BY [F1],DIFF
 
---∑¿∫È --300ƒÍ
+--Èò≤Ê¥™ --300Âπ¥
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
-[F59],REPLACE(Hk0149,'ƒÍ','') Hk0149,
-CASE WHEN REPLACE(Hk0149,'ƒÍ','')=[F59]THEN 1 ELSE 0 END  DIFF,RTRIM([F59])+'ƒÍ'
---UPDATE [HRP-DBMS2014]..k060 SET k0149='8',hk0149='300ƒÍ'
+[F59],REPLACE(Hk0149,'Âπ¥','') Hk0149,
+CASE WHEN REPLACE(Hk0149,'Âπ¥','')=[F59]THEN 1 ELSE 0 END  DIFF,RTRIM([F59])+'Âπ¥'
+--UPDATE [HRP-DBMS2014]..k060 SET k0149='8',hk0149='300Âπ¥'
 from  tk060
 left join [HRP-DBMS2014]..k060  on k6040=F58
-WHERE REPLACE(Hk0149,'ƒÍ','')<>[F59] and [f59]='300'
+WHERE REPLACE(Hk0149,'Âπ¥','')<>[F59] and [f59]='300'
 ORDER BY [F1],DIFF
 
---∑¿∫È--101
+--Èò≤Ê¥™--101
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
-[F59],REPLACE(Hk0149,'ƒÍ','') Hk0149,
-CASE WHEN REPLACE(Hk0149,'ƒÍ','')=[F59]THEN 1 ELSE 0 END  DIFF
---UPDATE [HRP-DBMS2014]..k060 SET k0149='7',hk0149='100ƒÍ'
+[F59],REPLACE(Hk0149,'Âπ¥','') Hk0149,
+CASE WHEN REPLACE(Hk0149,'Âπ¥','')=[F59]THEN 1 ELSE 0 END  DIFF
+--UPDATE [HRP-DBMS2014]..k060 SET k0149='7',hk0149='100Âπ¥'
 from  tk060
 left join [HRP-DBMS2014]..k060  on k6040=F58
-WHERE REPLACE(Hk0149,'ƒÍ','')<>[F59] AND [f59]='∆‰À˚'
+WHERE REPLACE(Hk0149,'Âπ¥','')<>[F59] AND [f59]='ÂÖ∂‰ªñ'
 ORDER BY [F1],DIFF
 
 
 
---À˘‘⁄Œª÷√
+--ÊâÄÂú®‰ΩçÁΩÆ
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F53],k6117,rtrim(hk6117) hk6117,
 CASE WHEN rtrim(hk6117)=[F53]THEN 1 ELSE 0 END  DIFF
---UPDATE [HRP-DBMS2014]..k060 SET k6117='2',hk6117='œ¬––'
+--UPDATE [HRP-DBMS2014]..k060 SET k6117='2',hk6117='‰∏ãË°å'
 from  tk060
 left join [HRP-DBMS2014]..k060  on k6040=F58
-WHERE rtrim(hk6117)<>[F53] and [F53]='œ¬––'  --169
+WHERE rtrim(hk6117)<>[F53] and [F53]='‰∏ãË°å'  --169
 ORDER BY [F1],DIFF
 
 SELECT
 [F42],[F1],[F58],k6040,RTRIM(k6002) k6002,
 [F53],k6117,rtrim(hk6117) hk6117,
 CASE WHEN rtrim(hk6117)=[F53]THEN 1 ELSE 0 END  DIFF
---UPDATE [HRP-DBMS2014]..k060 SET k6117='1',hk6117='…œ––'
+--UPDATE [HRP-DBMS2014]..k060 SET k6117='1',hk6117='‰∏äË°å'
 from  tk060
 left join [HRP-DBMS2014]..k060  on k6040=F58
-WHERE rtrim(hk6117)<>[F53] and [F53]='…œ––'  --169
+WHERE rtrim(hk6117)<>[F53] and [F53]='‰∏äË°å'  --169
 ORDER BY [F1],DIFF
 
 
