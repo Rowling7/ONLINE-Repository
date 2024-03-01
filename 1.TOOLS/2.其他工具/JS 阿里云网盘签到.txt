@@ -1,109 +1,109 @@
-//JS °¢ÀïÔÆÍøÅÌÇ©µ½
-var myDate = new Date(); // ´´½¨Ò»¸ö±íÊ¾µ±Ç°Ê±¼äµÄ Date ¶ÔÏó
-var data_time = myDate.toLocaleDateString(); // »ñÈ¡µ±Ç°ÈÕÆÚµÄ×Ö·û´®±íÊ¾
+//JS é˜¿é‡Œäº‘ç½‘ç›˜ç­¾åˆ°
+var myDate = new Date(); // åˆ›å»ºä¸€ä¸ªè¡¨ç¤ºå½“å‰æ—¶é—´çš„ Date å¯¹è±¡
+var data_time = myDate.toLocaleDateString(); // è·å–å½“å‰æ—¥æœŸçš„å­—ç¬¦ä¸²è¡¨ç¤º
 
 function sleep(d) {
-  for (var t = Date.now(); Date.now() - t <= d;); // Ê¹³ÌĞòÔİÍ£Ö´ĞĞÒ»¶ÎÊ±¼ä
+  for (var t = Date.now(); Date.now() - t <= d;); // ä½¿ç¨‹åºæš‚åœæ‰§è¡Œä¸€æ®µæ—¶é—´
 }
 
 function log(message) {
-  console.log(message); // ´òÓ¡ÏûÏ¢µ½¿ØÖÆÌ¨
-  // TODO: ½«ÈÕÖ¾Ğ´ÈëÎÄ¼ş
+  console.log(message); // æ‰“å°æ¶ˆæ¯åˆ°æ§åˆ¶å°
+  // TODO: å°†æ—¥å¿—å†™å…¥æ–‡ä»¶
 }
 
-var tokenColumn = "A"; // ÉèÖÃÁĞºÅ±äÁ¿Îª "A"
-var signInColumn = "B"; // ÉèÖÃÁĞºÅ±äÁ¿Îª "B"
-var rewardColumn = "C"; // ÉèÖÃÁĞºÅ±äÁ¿Îª "C"
-var emailColumn = "F"; // ÉèÖÃÁĞºÅ±äÁ¿Îª "F"
-var sendEmailColumn = "G"; // ÉèÖÃÁĞºÅ±äÁ¿Îª "G"
-var resultColumn = "J"; // ÉèÖÃÁĞºÅ±äÁ¿Îª "J"
+var tokenColumn = "A"; // è®¾ç½®åˆ—å·å˜é‡ä¸º "A"
+var signInColumn = "B"; // è®¾ç½®åˆ—å·å˜é‡ä¸º "B"
+var rewardColumn = "C"; // è®¾ç½®åˆ—å·å˜é‡ä¸º "C"
+var emailColumn = "F"; // è®¾ç½®åˆ—å·å˜é‡ä¸º "F"
+var sendEmailColumn = "G"; // è®¾ç½®åˆ—å·å˜é‡ä¸º "G"
+var resultColumn = "J"; // è®¾ç½®åˆ—å·å˜é‡ä¸º "J"
 
-for (let row = 2; row <= 20; row++) { // Ñ­»·±éÀú´ÓµÚ 2 ĞĞµ½µÚ 20 ĞĞµÄÊı¾İ
-  var refresh_token = Application.Range(tokenColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-  var sflq = Application.Range(signInColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-  var sflqReward = Application.Range(rewardColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-  var jsyx = Application.Range(emailColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-  var sendEmail = Application.Range(sendEmailColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-  var customEmailResult = Application.Range(resultColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
+for (let row = 2; row <= 20; row++) { // å¾ªç¯éå†ä»ç¬¬ 2 è¡Œåˆ°ç¬¬ 20 è¡Œçš„æ•°æ®
+  var refresh_token = Application.Range(tokenColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+  var sflq = Application.Range(signInColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+  var sflqReward = Application.Range(rewardColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+  var jsyx = Application.Range(emailColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+  var sendEmail = Application.Range(sendEmailColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+  var customEmailResult = Application.Range(resultColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
 
-  var emailConfigured = Application.Range("J1").Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-  var zdy_host = Application.Range("J2").Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-  var zdy_post = parseInt(Application.Range("J3").Text); // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ²¢×ª»»ÎªÕûÊı
-  var zdy_username = Application.Range("J4").Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-  var zdy_pasd = Application.Range("J5").Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
+  var emailConfigured = Application.Range("J1").Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+  var zdy_host = Application.Range("J2").Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+  var zdy_post = parseInt(Application.Range("J3").Text); // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼å¹¶è½¬æ¢ä¸ºæ•´æ•°
+  var zdy_username = Application.Range("J4").Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+  var zdy_pasd = Application.Range("J5").Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
 
-  if (sflq == "ÊÇ") { // Èç¹û¡°ÊÇ·ñÇ©µ½¡±Îª¡°ÊÇ¡±
-    if (refresh_token != "") { // Èç¹ûË¢ĞÂÁîÅÆ²»Îª¿Õ
-      // ·¢ÆğÍøÂçÇëÇó-»ñÈ¡token
+  if (sflq == "æ˜¯") { // å¦‚æœâ€œæ˜¯å¦ç­¾åˆ°â€ä¸ºâ€œæ˜¯â€
+    if (refresh_token != "") { // å¦‚æœåˆ·æ–°ä»¤ç‰Œä¸ä¸ºç©º
+      // å‘èµ·ç½‘ç»œè¯·æ±‚-è·å–token
       let data = HTTP.post("https://auth.aliyundrive.com/v2/account/token",
         JSON.stringify({
           "grant_type": "refresh_token",
           "refresh_token": refresh_token
         })
       );
-      data = data.json(); // ½«ÏìÓ¦Êı¾İ½âÎöÎª JSON ¸ñÊ½
-      var access_token = data['access_token']; // »ñÈ¡·ÃÎÊÁîÅÆ
-      var phone = data["user_name"]; // »ñÈ¡ÓÃ»§Ãû
+      data = data.json(); // å°†å“åº”æ•°æ®è§£æä¸º JSON æ ¼å¼
+      var access_token = data['access_token']; // è·å–è®¿é—®ä»¤ç‰Œ
+      var phone = data["user_name"]; // è·å–ç”¨æˆ·å
 
-      if (access_token == undefined) { // Èç¹û·ÃÎÊÁîÅÆÎ´¶¨Òå
-        log("µ¥Ôª¸ñ¡¾" + tokenColumn + row + "¡¿ÄÚµÄtokenÖµ´íÎó£¬³ÌĞòÖ´ĞĞÊ§°Ü£¬ÇëÖØĞÂ¸´ÖÆÕıÈ·µÄtokenÖµ");
-        continue; // Ìø¹ıµ±Ç°ĞĞµÄºóĞø²Ù×÷
+      if (access_token == undefined) { // å¦‚æœè®¿é—®ä»¤ç‰Œæœªå®šä¹‰
+        log("å•å…ƒæ ¼ã€" + tokenColumn + row + "ã€‘å†…çš„tokenå€¼é”™è¯¯ï¼Œç¨‹åºæ‰§è¡Œå¤±è´¥ï¼Œè¯·é‡æ–°å¤åˆ¶æ­£ç¡®çš„tokenå€¼");
+        continue; // è·³è¿‡å½“å‰è¡Œçš„åç»­æ“ä½œ
       }
 
       try {
-        var access_token2 = 'Bearer ' + access_token; // ¹¹½¨°üº¬·ÃÎÊÁîÅÆµÄÇëÇóÍ·
-        // Ç©µ½
+        var access_token2 = 'Bearer ' + access_token; // æ„å»ºåŒ…å«è®¿é—®ä»¤ç‰Œçš„è¯·æ±‚å¤´
+        // ç­¾åˆ°
         let data2 = HTTP.post("https://member.aliyundrive.com/v1/activity/sign_in_list",
           JSON.stringify({ "_rx-s": "mobile" }),
           { headers: { "Authorization": access_token2 } }
         );
-        data2 = data2.json(); // ½«ÏìÓ¦Êı¾İ½âÎöÎª JSON ¸ñÊ½
-        var signin_count = data2['result']['signInCount']; // »ñÈ¡Ç©µ½´ÎÊı
+        data2 = data2.json(); // å°†å“åº”æ•°æ®è§£æä¸º JSON æ ¼å¼
+        var signin_count = data2['result']['signInCount']; // è·å–ç­¾åˆ°æ¬¡æ•°
 
-        var logMessage = "ÕËºÅ£º" + phone + " - Ç©µ½³É¹¦£¬±¾ÔÂÀÛ¼ÆÇ©µ½ " + signin_count + " Ìì";
+        var logMessage = "è´¦å·ï¼š" + phone + " - ç­¾åˆ°æˆåŠŸï¼Œæœ¬æœˆç´¯è®¡ç­¾åˆ° " + signin_count + " å¤©";
         var rewardMessage = "";
 
-        if (sflqReward == "ÊÇ") { // Èç¹û¡°ÊÇ·ñÁìÈ¡½±Àø¡±Îª¡°ÊÇ¡±
-          if (sflq == "ÊÇ") { // Èç¹û¡°ÊÇ·ñÇ©µ½¡±Îª¡°ÊÇ¡±
+        if (sflqReward == "æ˜¯") { // å¦‚æœâ€œæ˜¯å¦é¢†å–å¥–åŠ±â€ä¸ºâ€œæ˜¯â€
+          if (sflq == "æ˜¯") { // å¦‚æœâ€œæ˜¯å¦ç­¾åˆ°â€ä¸ºâ€œæ˜¯â€
             try {
-              // ÁìÈ¡½±Àø
+              // é¢†å–å¥–åŠ±
               let data3 = HTTP.post(
                 "https://member.aliyundrive.com/v1/activity/sign_in_reward?_rx-s=mobile",
                 JSON.stringify({ "signInDay": signin_count }),
                 { headers: { "Authorization": access_token2 } }
               );
-              data3 = data3.json(); // ½«ÏìÓ¦Êı¾İ½âÎöÎª JSON ¸ñÊ½
-              var rewardName = data3["result"]["name"]; // »ñÈ¡½±ÀøÃû³Æ
-              var rewardDescription = data3["result"]["description"]; // »ñÈ¡½±ÀøÃèÊö
+              data3 = data3.json(); // å°†å“åº”æ•°æ®è§£æä¸º JSON æ ¼å¼
+              var rewardName = data3["result"]["name"]; // è·å–å¥–åŠ±åç§°
+              var rewardDescription = data3["result"]["description"]; // è·å–å¥–åŠ±æè¿°
               rewardMessage = " " + rewardName + " - " + rewardDescription;
             } catch (error) {
               if (error.response && error.response.data && error.response.data.error) {
-                var errorMessage = error.response.data.error; // »ñÈ¡´íÎóĞÅÏ¢
-                if (errorMessage.includes(" - ½ñÌì½±ÀøÒÑÁìÈ¡")) {
-                  rewardMessage = " - ½ñÌì½±ÀøÒÑÁìÈ¡";
-                  log("ÕËºÅ£º" + phone + " - " + rewardMessage);
+                var errorMessage = error.response.data.error; // è·å–é”™è¯¯ä¿¡æ¯
+                if (errorMessage.includes(" - ä»Šå¤©å¥–åŠ±å·²é¢†å–")) {
+                  rewardMessage = " - ä»Šå¤©å¥–åŠ±å·²é¢†å–";
+                  log("è´¦å·ï¼š" + phone + " - " + rewardMessage);
                 } else {
-                  log("ÕËºÅ£º" + phone + " - ½±ÀøÁìÈ¡Ê§°Ü£º" + errorMessage);
+                  log("è´¦å·ï¼š" + phone + " - å¥–åŠ±é¢†å–å¤±è´¥ï¼š" + errorMessage);
                 }
               } else {
-                log("ÕËºÅ£º" + phone + " - ½±ÀøÁìÈ¡Ê§°Ü");
+                log("è´¦å·ï¼š" + phone + " - å¥–åŠ±é¢†å–å¤±è´¥");
               }
             }
           } else {
-            rewardMessage = " - ½±Àø´ıÁìÈ¡";
+            rewardMessage = " - å¥–åŠ±å¾…é¢†å–";
           }
         } else {
-          rewardMessage = " - ½±Àø´ıÁìÈ¡";
+          rewardMessage = " - å¥–åŠ±å¾…é¢†å–";
         }
 
         log(logMessage + rewardMessage);
 
-        if (sendEmail == "ÊÇ") { // Èç¹û¡°ÊÇ·ñ·¢ËÍÓÊ¼ş¡±Îª¡°ÊÇ¡±
+        if (sendEmail == "æ˜¯") { // å¦‚æœâ€œæ˜¯å¦å‘é€é‚®ä»¶â€ä¸ºâ€œæ˜¯â€
           try {
             let mailer;
-            if (customEmailResult == "ÊÇ") { // Èç¹û¡°ÊÇ·ñ×Ô¶¨ÒåÓÊÏä¡±Îª¡°ÊÇ¡±
-              var customEmail = Application.Range(resultColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-              if (emailConfigured === "ÊÇ") { // Èç¹ûÅäÖÃÁË×Ô¶¨ÒåÓÊÏä
+            if (customEmailResult == "æ˜¯") { // å¦‚æœâ€œæ˜¯å¦è‡ªå®šä¹‰é‚®ç®±â€ä¸ºâ€œæ˜¯â€
+              var customEmail = Application.Range(resultColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+              if (emailConfigured === "æ˜¯") { // å¦‚æœé…ç½®äº†è‡ªå®šä¹‰é‚®ç®±
                 mailer = SMTP.login({
                   host: zdy_host,
                   port: zdy_post,
@@ -112,12 +112,12 @@ for (let row = 2; row <= 20; row++) { // Ñ­»·±éÀú´ÓµÚ 2 ĞĞµ½µÚ 20 ĞĞµÄÊı¾İ
                   secure: true
                 });
                 mailer.send({
-                  from: "°¢ÀïÔÆÅÌÇ©µ½<" + zdy_username + ">",
+                  from: "é˜¿é‡Œäº‘ç›˜ç­¾åˆ°<" + zdy_username + ">",
                   to: customEmail,
-                  subject: "°¢ÀïÔÆÅÌÇ©µ½Í¨Öª - " + data_time,
+                  subject: "é˜¿é‡Œäº‘ç›˜ç­¾åˆ°é€šçŸ¥ - " + data_time,
                   text: logMessage + rewardMessage
                 });
-              } else { // Èç¹ûÎ´ÅäÖÃ×Ô¶¨ÒåÓÊÏä£¬Ä¬ÈÏÊ¹ÓÃÊ¾ÀıÓÊÏä
+              } else { // å¦‚æœæœªé…ç½®è‡ªå®šä¹‰é‚®ç®±ï¼Œé»˜è®¤ä½¿ç”¨ç¤ºä¾‹é‚®ç®±
                 mailer = SMTP.login({
                   host: "smtp.163.com",
                   port: 465,
@@ -126,15 +126,15 @@ for (let row = 2; row <= 20; row++) { // Ñ­»·±éÀú´ÓµÚ 2 ĞĞµ½µÚ 20 ĞĞµÄÊı¾İ
                   secure: true
                 });
                 mailer.send({
-                  from: "°¢ÀïÔÆÅÌÇ©µ½<fs8484848@163.com>",
+                  from: "é˜¿é‡Œäº‘ç›˜ç­¾åˆ°<fs8484848@163.com>",
                   to: customEmail,
-                  subject: "°¢ÀïÔÆÅÌÇ©µ½Í¨Öª - " + data_time,
+                  subject: "é˜¿é‡Œäº‘ç›˜ç­¾åˆ°é€šçŸ¥ - " + data_time,
                   text: logMessage + rewardMessage
                 });
               }
-              log("ÕËºÅ£º" + phone + " - ÒÑ·¢ËÍÓÊ¼şÖÁ£º" + customEmail);
-            } else { // Èç¹û¡°ÊÇ·ñ×Ô¶¨ÒåÓÊÏä¡±Îª¡°·ñ¡±
-              if (emailConfigured === "ÊÇ") { // Èç¹ûÅäÖÃÁË×Ô¶¨ÒåÓÊÏä
+              log("è´¦å·ï¼š" + phone + " - å·²å‘é€é‚®ä»¶è‡³ï¼š" + customEmail);
+            } else { // å¦‚æœâ€œæ˜¯å¦è‡ªå®šä¹‰é‚®ç®±â€ä¸ºâ€œå¦â€
+              if (emailConfigured === "æ˜¯") { // å¦‚æœé…ç½®äº†è‡ªå®šä¹‰é‚®ç®±
                 mailer = SMTP.login({
                   host: zdy_host,
                   port: zdy_post,
@@ -143,12 +143,12 @@ for (let row = 2; row <= 20; row++) { // Ñ­»·±éÀú´ÓµÚ 2 ĞĞµ½µÚ 20 ĞĞµÄÊı¾İ
                   secure: true
                 });
                 mailer.send({
-                  from: "°¢ÀïÔÆÅÌÇ©µ½<" + zdy_username + ">",
+                  from: "é˜¿é‡Œäº‘ç›˜ç­¾åˆ°<" + zdy_username + ">",
                   to: jsyx,
-                  subject: "°¢ÀïÔÆÅÌÇ©µ½Í¨Öª - " + data_time,
+                  subject: "é˜¿é‡Œäº‘ç›˜ç­¾åˆ°é€šçŸ¥ - " + data_time,
                   text: logMessage + rewardMessage
                 });
-              } else { // Èç¹ûÎ´ÅäÖÃ×Ô¶¨ÒåÓÊÏä£¬Ä¬ÈÏÊ¹ÓÃÊ¾ÀıÓÊÏä
+              } else { // å¦‚æœæœªé…ç½®è‡ªå®šä¹‰é‚®ç®±ï¼Œé»˜è®¤ä½¿ç”¨ç¤ºä¾‹é‚®ç®±
                 mailer = SMTP.login({
                   host: "smtp.163.com",
                   port: 465,
@@ -157,84 +157,84 @@ for (let row = 2; row <= 20; row++) { // Ñ­»·±éÀú´ÓµÚ 2 ĞĞµ½µÚ 20 ĞĞµÄÊı¾İ
                   secure: true
                 });
                 mailer.send({
-                  from: "°¢ÀïÔÆÅÌÇ©µ½<fs8484848@163.com>",
+                  from: "é˜¿é‡Œäº‘ç›˜ç­¾åˆ°<fs8484848@163.com>",
                   to: jsyx,
-                  subject: "°¢ÀïÔÆÅÌÇ©µ½Í¨Öª - " + data_time,
+                  subject: "é˜¿é‡Œäº‘ç›˜ç­¾åˆ°é€šçŸ¥ - " + data_time,
                   text: logMessage + rewardMessage
                 });
               }
-              log("ÕËºÅ£º" + phone + " - ÒÑ·¢ËÍÓÊ¼şÖÁ£º" + jsyx);
+              log("è´¦å·ï¼š" + phone + " - å·²å‘é€é‚®ä»¶è‡³ï¼š" + jsyx);
             }
           } catch (error) {
-            log("ÕËºÅ£º" + phone + " - ·¢ËÍÓÊ¼şÊ§°Ü£º" + error);
+            log("è´¦å·ï¼š" + phone + " - å‘é€é‚®ä»¶å¤±è´¥ï¼š" + error);
           }
         }
       } catch {
-        log("µ¥Ôª¸ñ¡¾" + tokenColumn + row + "¡¿ÄÚµÄtokenÇ©µ½Ê§°Ü");
-        continue; // Ìø¹ıµ±Ç°ĞĞµÄºóĞø²Ù×÷
+        log("å•å…ƒæ ¼ã€" + tokenColumn + row + "ã€‘å†…çš„tokenç­¾åˆ°å¤±è´¥");
+        continue; // è·³è¿‡å½“å‰è¡Œçš„åç»­æ“ä½œ
       }
     } else {
-      log("ÕËºÅ£º" + phone + " ²»Ç©µ½");
+      log("è´¦å·ï¼š" + phone + " ä¸ç­¾åˆ°");
     }
   }
 }
 
-var currentDate = new Date(); // ´´½¨Ò»¸ö±íÊ¾µ±Ç°Ê±¼äµÄ Date ¶ÔÏó
-var currentDay = currentDate.getDate(); // »ñÈ¡µ±Ç°ÈÕÆÚµÄÌìÊı
-var lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate(); // »ñÈ¡µ±ÔÂµÄ×îºóÒ»ÌìµÄÈÕÆÚ
+var currentDate = new Date(); // åˆ›å»ºä¸€ä¸ªè¡¨ç¤ºå½“å‰æ—¶é—´çš„ Date å¯¹è±¡
+var currentDay = currentDate.getDate(); // è·å–å½“å‰æ—¥æœŸçš„å¤©æ•°
+var lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate(); // è·å–å½“æœˆçš„æœ€åä¸€å¤©çš„æ—¥æœŸ
 
-if (currentDay === lastDayOfMonth) { // Èç¹ûµ±Ç°ÈÕÆÚÊÇµ±ÔÂµÄ×îºóÒ»Ìì
-  for (let row = 2; row <= 20; row++) { // Ñ­»·±éÀú´ÓµÚ 2 ĞĞµ½µÚ 20 ĞĞµÄÊı¾İ
-    var sflq = Application.Range(signInColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-    var sflqReward = Application.Range(rewardColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
+if (currentDay === lastDayOfMonth) { // å¦‚æœå½“å‰æ—¥æœŸæ˜¯å½“æœˆçš„æœ€åä¸€å¤©
+  for (let row = 2; row <= 20; row++) { // å¾ªç¯éå†ä»ç¬¬ 2 è¡Œåˆ°ç¬¬ 20 è¡Œçš„æ•°æ®
+    var sflq = Application.Range(signInColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+    var sflqReward = Application.Range(rewardColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
 
-    if (sflq === "ÊÇ" && sflqReward === "ÊÇ") { // Èç¹û¡°ÊÇ·ñÇ©µ½¡±ºÍ¡°ÊÇ·ñÁìÈ¡½±Àø¡±¾ùÎª¡°ÊÇ¡±
-      var refresh_token = Application.Range(tokenColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-      var jsyx = Application.Range(emailColumn + row).Text; // »ñÈ¡Ö¸¶¨µ¥Ôª¸ñµÄÖµ
-      var phone = "ÕËºÅ£º" + phone; // ¹¹½¨ÕËºÅĞÅÏ¢×Ö·û´®
+    if (sflq === "æ˜¯" && sflqReward === "æ˜¯") { // å¦‚æœâ€œæ˜¯å¦ç­¾åˆ°â€å’Œâ€œæ˜¯å¦é¢†å–å¥–åŠ±â€å‡ä¸ºâ€œæ˜¯â€
+      var refresh_token = Application.Range(tokenColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+      var jsyx = Application.Range(emailColumn + row).Text; // è·å–æŒ‡å®šå•å…ƒæ ¼çš„å€¼
+      var phone = "è´¦å·ï¼š" + phone; // æ„å»ºè´¦å·ä¿¡æ¯å­—ç¬¦ä¸²
 
-      if (refresh_token !== "") { // Èç¹ûË¢ĞÂÁîÅÆ²»Îª¿Õ
-        // ·¢ÆğÍøÂçÇëÇó-»ñÈ¡token
+      if (refresh_token !== "") { // å¦‚æœåˆ·æ–°ä»¤ç‰Œä¸ä¸ºç©º
+        // å‘èµ·ç½‘ç»œè¯·æ±‚-è·å–token
         let data = HTTP.post("https://auth.aliyundrive.com/v2/account/token",
           JSON.stringify({
             "grant_type": "refresh_token",
             "refresh_token": refresh_token
           })
         );
-        data = data.json(); // ½«ÏìÓ¦Êı¾İ½âÎöÎª JSON ¸ñÊ½
-        var access_token = data['access_token']; // »ñÈ¡·ÃÎÊÁîÅÆ
+        data = data.json(); // å°†å“åº”æ•°æ®è§£æä¸º JSON æ ¼å¼
+        var access_token = data['access_token']; // è·å–è®¿é—®ä»¤ç‰Œ
 
-        if (access_token === undefined) { // Èç¹û·ÃÎÊÁîÅÆÎ´¶¨Òå
-          log("µ¥Ôª¸ñ¡¾" + tokenColumn + row + "¡¿ÄÚµÄtokenÖµ´íÎó£¬³ÌĞòÖ´ĞĞÊ§°Ü£¬ÇëÖØĞÂ¸´ÖÆÕıÈ·µÄtokenÖµ");
-          continue; // Ìø¹ıµ±Ç°ĞĞµÄºóĞø²Ù×÷
+        if (access_token === undefined) { // å¦‚æœè®¿é—®ä»¤ç‰Œæœªå®šä¹‰
+          log("å•å…ƒæ ¼ã€" + tokenColumn + row + "ã€‘å†…çš„tokenå€¼é”™è¯¯ï¼Œç¨‹åºæ‰§è¡Œå¤±è´¥ï¼Œè¯·é‡æ–°å¤åˆ¶æ­£ç¡®çš„tokenå€¼");
+          continue; // è·³è¿‡å½“å‰è¡Œçš„åç»­æ“ä½œ
         }
 
         try {
-          var access_token2 = 'Bearer ' + access_token; // ¹¹½¨°üº¬·ÃÎÊÁîÅÆµÄÇëÇóÍ·
-          // ÁìÈ¡½±Àø
+          var access_token2 = 'Bearer ' + access_token; // æ„å»ºåŒ…å«è®¿é—®ä»¤ç‰Œçš„è¯·æ±‚å¤´
+          // é¢†å–å¥–åŠ±
           let data4 = HTTP.post(
             "https://member.aliyundrive.com/v1/activity/sign_in_reward?_rx-s=mobile",
             JSON.stringify({ "signInDay": lastDayOfMonth }),
             { headers: { "Authorization": access_token2 } }
           );
-          data4 = data4.json(); // ½«ÏìÓ¦Êı¾İ½âÎöÎª JSON ¸ñÊ½
-          var claimStatus = data4["result"]["status"]; // »ñÈ¡½±Àø×´Ì¬
-          var day = lastDayOfMonth; // »ñÈ¡×îºóÒ»ÌìµÄÈÕÆÚ
+          data4 = data4.json(); // å°†å“åº”æ•°æ®è§£æä¸º JSON æ ¼å¼
+          var claimStatus = data4["result"]["status"]; // è·å–å¥–åŠ±çŠ¶æ€
+          var day = lastDayOfMonth; // è·å–æœ€åä¸€å¤©çš„æ—¥æœŸ
 
           if (claimStatus === "CLAIMED") {
-            log("ÕËºÅ£º" + phone + " - µÚ " + day + " Ìì½±ÀøÁìÈ¡³É¹¦");
+            log("è´¦å·ï¼š" + phone + " - ç¬¬ " + day + " å¤©å¥–åŠ±é¢†å–æˆåŠŸ");
           } else {
-            log("ÕËºÅ£º" + phone + " - µÚ " + day + " Ìì½±ÀøÁìÈ¡Ê§°Ü");
+            log("è´¦å·ï¼š" + phone + " - ç¬¬ " + day + " å¤©å¥–åŠ±é¢†å–å¤±è´¥");
           }
         } catch {
-          log("µ¥Ôª¸ñ¡¾" + tokenColumn + row + "¡¿ÄÚµÄtokenÇ©µ½Ê§°Ü");
-          continue; // Ìø¹ıµ±Ç°ĞĞµÄºóĞø²Ù×÷
+          log("å•å…ƒæ ¼ã€" + tokenColumn + row + "ã€‘å†…çš„tokenç­¾åˆ°å¤±è´¥");
+          continue; // è·³è¿‡å½“å‰è¡Œçš„åç»­æ“ä½œ
         }
       } else {
-        log("ÕËºÅ£º" + phone + " ²»Ç©µ½");
+        log("è´¦å·ï¼š" + phone + " ä¸ç­¾åˆ°");
       }
     }
   }
 
-  log("×Ô¶¯ÁìÈ¡Î´ÁìÈ¡½±ÀøÍê³É¡£");
+  log("è‡ªåŠ¨é¢†å–æœªé¢†å–å¥–åŠ±å®Œæˆã€‚");
 }

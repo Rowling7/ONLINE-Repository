@@ -1,25 +1,25 @@
--- ´´½¨´æ´¢¹ý³Ì ÓÃÀ´´úÌæCHECK
+-- åˆ›å»ºå­˜å‚¨è¿‡ç¨‹ ç”¨æ¥ä»£æ›¿CHECK
 DELIMITER $$
 CREATE PROCEDURE `check_A50`(IN A0203 BIGINT(20), IN K0105 double,IN K0106 double,IN K0116 varchar(8))
 BEGIN
     IF A0203 = 1000001816547608 THEN
         SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'A50.A0203 ²»ÄÜÌîÐ´''G'',¸ÄÓÃ"GA"»ò"G9" ';
+            SET MESSAGE_TEXT = 'A50.A0203 ä¸èƒ½å¡«å†™''G'',æ”¹ç”¨"GA"æˆ–"G9" ';
     END IF;
     IF K0105 > K0106 THEN
         SIGNAL SQLSTATE '45001'
-            SET MESSAGE_TEXT = 'Æðµã×®ºÅ(K0105)±ØÐë´óÓÚÖÕµã×®ºÅ(K0106)';
+            SET MESSAGE_TEXT = 'èµ·ç‚¹æ¡©å·(K0105)å¿…é¡»å¤§äºŽç»ˆç‚¹æ¡©å·(K0106)';
     END IF;
     IF STR_TO_DATE(K0116,'%Y%m%d')IS  NULL OR LENGTH(K0116) < 4  THEN
         SIGNAL SQLSTATE '45002'
-            SET MESSAGE_TEXT = 'K0116 ÌîÐ´²»¹æ·¶';
+            SET MESSAGE_TEXT = 'K0116 å¡«å†™ä¸è§„èŒƒ';
     END IF;
 
 END$$
 
 DELIMITER ;
 
--- ´´½¨´¥·¢Æ÷,ºÍ´æ´¢¹ý³ÌÒ»Æð¼ì²é×Ö¶ÎÌîÐ´ÊÇ·ñ¹æ·¶
+-- åˆ›å»ºè§¦å‘å™¨,å’Œå­˜å‚¨è¿‡ç¨‹ä¸€èµ·æ£€æŸ¥å­—æ®µå¡«å†™æ˜¯å¦è§„èŒƒ
 -- before insert
 DELIMITER $$
 CREATE TRIGGER `A50_before_insert` BEFORE INSERT ON A50

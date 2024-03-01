@@ -1,4 +1,4 @@
--- ´´½¨ employees ±í
+-- åˆ›å»º employees è¡¨
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
     first_name VARCHAR(50),
@@ -6,7 +6,7 @@ CREATE TABLE employees (
     salary DECIMAL(10, 2)
 );
 
--- ´´½¨ salary_log ±í
+-- åˆ›å»º salary_log è¡¨
 CREATE TABLE salary_log (
     log_id INT PRIMARY KEY AUTO_INCREMENT,
     employee_id INT,
@@ -16,7 +16,7 @@ CREATE TABLE salary_log (
     FOREIGN KEY (employee_id) REFERENCES employees (employee_id)
 );
 
--- ²åÈë²âÊÔÊı¾İ
+-- æ’å…¥æµ‹è¯•æ•°æ®
 INSERT INTO employees (employee_id, first_name, last_name, salary)
 VALUES (1001, 'John', 'Doe', 5000),
        (1002, 'Jane', 'Smith', 5500),
@@ -24,7 +24,7 @@ VALUES (1001, 'John', 'Doe', 5000),
 
 
 
--- ´´½¨´æ´¢¹ı³Ì
+-- åˆ›å»ºå­˜å‚¨è¿‡ç¨‹
 DELIMITER //
 
 CREATE PROCEDURE update_salary(IN emp_id INT, IN new_salary DECIMAL(10, 2))
@@ -32,23 +32,23 @@ BEGIN
     DECLARE emp_count INT;
     DECLARE old_salary DECIMAL(10, 2);
 
-    -- ¼ì²éÔ±¹¤ÊÇ·ñ´æÔÚ
+    -- æ£€æŸ¥å‘˜å·¥æ˜¯å¦å­˜åœ¨
     SELECT COUNT(*) INTO emp_count FROM employees WHERE employee_id = emp_id;
     IF emp_count = 0 THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Ô±¹¤²»´æÔÚ';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'å‘˜å·¥ä¸å­˜åœ¨';
     END IF;
 
-    -- »ñÈ¡µ±Ç°Ğ½Ë®
+    -- è·å–å½“å‰è–ªæ°´
     SELECT salary INTO old_salary FROM employees WHERE employee_id = emp_id;
 
-    -- ¸üĞÂĞ½Ë®
+    -- æ›´æ–°è–ªæ°´
     UPDATE employees SET salary = new_salary WHERE employee_id = emp_id;
 
-    -- ¼ÇÂ¼Ğ½Ë®±ä¸üÈÕÖ¾
+    -- è®°å½•è–ªæ°´å˜æ›´æ—¥å¿—
     INSERT INTO salary_log (employee_id, old_salary, new_salary) VALUES (emp_id, old_salary, new_salary);
 END
 
 DELIMITER ;
 
--- µ÷ÓÃ
+-- è°ƒç”¨
 CALL UPDATE_SALARY ( 1002,7000);

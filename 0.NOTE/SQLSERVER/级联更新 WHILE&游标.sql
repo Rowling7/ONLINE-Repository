@@ -1,11 +1,11 @@
---WHILEÁª¼¶¸üĞÂ
-ALTER PROCEDURE [WHILEÁª¼¶¸üĞÂ]
+--WHILEè”çº§æ›´æ–°
+ALTER PROCEDURE [WHILEè”çº§æ›´æ–°]
 AS
 
 declare @temp_id INT,@temp_name varchar(15),@temp_age int
 BEGIN
 SET NOCOUNT ON;
---´´½¨ÁÙÊ±±í
+--åˆ›å»ºä¸´æ—¶è¡¨
 CREATE TABLE #tempTable
 (
 tempID int identity(1,1),
@@ -16,15 +16,15 @@ id INT,
 insert into #tempTable(name,age,id)
 SELECT name,age,id  FROM B
 
-DECLARE @TOTAL_COUNT INT,--ÁÙÊ±±í¼ÇÂ¼ÌõÊı
-		@NOW_COUNT INT--ÏÖÔÚ±éÀúµ½ÄÄÌõ¼ÇÂ¼
+DECLARE @TOTAL_COUNT INT,--ä¸´æ—¶è¡¨è®°å½•æ¡æ•°
+		@NOW_COUNT INT--ç°åœ¨éå†åˆ°å“ªæ¡è®°å½•
 
 SELECT @TOTAL_COUNT=COUNT(*) FROM #tempTable
 SET @NOW_COUNT=1;
 WHILE(@NOW_COUNT<=@TOTAL_COUNT)
 	BEGIN
 		SELECT @temp_id=id,@temp_name=name,@temp_age=age FROM #tempTable
-		WHERE tempID=@NOW_COUNT --¹Ø¼ü¾ÍÔÚÕâ
+		WHERE tempID=@NOW_COUNT --å…³é”®å°±åœ¨è¿™
 	if exists(select * from A where id=@temp_id)
 		begin
 			update A set name=@temp_name,age=@temp_age where id=@temp_id
@@ -37,46 +37,46 @@ WHILE(@NOW_COUNT<=@TOTAL_COUNT)
 		SET @NOW_COUNT=@NOW_COUNT+1
 	END
 	--SELECT *FROM #TEMPTABLE
-DROP TABLE #tempTable	--É¾³ıÁÙÊ±±í
+DROP TABLE #tempTable	--åˆ é™¤ä¸´æ—¶è¡¨
 
 END
 
---ÓÎ±ê Áª¼¶¸üĞÂ
-ALTER PROCEDURE ÓÎ±ê Áª¼¶¸üĞÂ
+--æ¸¸æ ‡ è”çº§æ›´æ–°
+ALTER PROCEDURE æ¸¸æ ‡ è”çº§æ›´æ–°
 	@rtn int output
 AS
 
 declare @temp_id INT ,@temp_name varchar(15),@temp_age int
 
 BEGIN
-SET NOCOUNT ON; -->SET NOCOUNT ONµÄ×÷ÓÃ
+SET NOCOUNT ON; -->SET NOCOUNT ONçš„ä½œç”¨
 
 DECLARE
-	@cursor_b_val CURSOR	--´´½¨ÓÎ±ê±äÁ¿
-DECLARE cursor_B CURSOR scroll		--´´½¨¶¯Ì¬ÓÎ±ê
-FOR	SELECT name,age,id FROM B;	--´´½¨ÓÎ±ê½ÓÊÜ½á¹û¼¯
-OPEN cursor_B	--´ò¿ªÓÎ±ê
-fetch First from cursor_B into @temp_name,@temp_age,@temp_id --intoµÄ±äÁ¿ÊıÁ¿±ØĞëÓëÓÎ±ê²éÑ¯½á¹û¼¯µÄÁĞÊıÏàÍ¬
+	@cursor_b_val CURSOR	--åˆ›å»ºæ¸¸æ ‡å˜é‡
+DECLARE cursor_B CURSOR scroll		--åˆ›å»ºåŠ¨æ€æ¸¸æ ‡
+FOR	SELECT name,age,id FROM B;	--åˆ›å»ºæ¸¸æ ‡æ¥å—ç»“æœé›†
+OPEN cursor_B	--æ‰“å¼€æ¸¸æ ‡
+fetch First from cursor_B into @temp_name,@temp_age,@temp_id --intoçš„å˜é‡æ•°é‡å¿…é¡»ä¸æ¸¸æ ‡æŸ¥è¯¢ç»“æœé›†çš„åˆ—æ•°ç›¸åŒ
 
-	--0£¬FetchÓï¾ä³É¹¦¡£
-	--1£ºFetchÓï¾äÊ§°Ü»òĞĞ²»ÔÚ½á¹û¼¯ÖĞ¡£
-	--2£ºÌáÈ¡µÄĞĞ²»´æÔÚ¡£
+	--0ï¼ŒFetchè¯­å¥æˆåŠŸã€‚
+	--1ï¼šFetchè¯­å¥å¤±è´¥æˆ–è¡Œä¸åœ¨ç»“æœé›†ä¸­ã€‚
+	--2ï¼šæå–çš„è¡Œä¸å­˜åœ¨ã€‚
 	print @@FETCH_STATUS
-WHILE @@FETCH_STATUS=0 --ÅĞ¶ÏFETCHÓï¾äÊÇ·ñÖ´ĞĞ³É¹¦
+WHILE @@FETCH_STATUS=0 --åˆ¤æ–­FETCHè¯­å¥æ˜¯å¦æ‰§è¡ŒæˆåŠŸ
 BEGIN
 	if exists(select * from A where id=@temp_id)
 		begin
 			update A set name=@temp_name,age=@temp_age where id=@temp_id
-			set @rtn=1 --ÓĞÉí·İÖ¤ÏàÍ¬µÄÊı¾İ£¬½øĞĞ¸üĞÂ´¦Àí
+			set @rtn=1 --æœ‰èº«ä»½è¯ç›¸åŒçš„æ•°æ®ï¼Œè¿›è¡Œæ›´æ–°å¤„ç†
 		end
 	else
 			begin
 			insert into A(name,id,age) values(@temp_name,@temp_id,@temp_age)
-			set @rtn=2 --Ã»ÓĞÏàÍ¬µÄÊı¾İ£¬½øĞĞ²åÈë´¦Àí
+			set @rtn=2 --æ²¡æœ‰ç›¸åŒçš„æ•°æ®ï¼Œè¿›è¡Œæ’å…¥å¤„ç†
 			end
-	fetch next from cursor_B into @temp_name,@temp_age,@temp_id  --ÒÆ¶¯ÓÎ±ê
+	fetch next from cursor_B into @temp_name,@temp_age,@temp_id  --ç§»åŠ¨æ¸¸æ ‡
 	PRINT @RTN
 END
-CLOSE cursor_B --¹Ø±ÕÓÎ±ê
-DEALLOCATE cursor_B; --ÊÍ·ÅÓÎ±ê
+CLOSE cursor_B --å…³é—­æ¸¸æ ‡
+DEALLOCATE cursor_B; --é‡Šæ”¾æ¸¸æ ‡
 END

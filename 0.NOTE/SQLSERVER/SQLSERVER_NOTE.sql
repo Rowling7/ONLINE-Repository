@@ -2,66 +2,66 @@
 --/**
 --<------------------------------<---NEW--->------------------------------>--
 
--- sqlÖ´ÐÐË³ÐòÇø±ð
+-- sqlæ‰§è¡Œé¡ºåºåŒºåˆ«
 /*
-whereºóÃæÌõ¼þµÄÖ´ÐÐË³Ðò
-	1.mysql¡¢sqlserver ´Ó×óÍùÓÒÖ´ÐÐ
-	2.oracle ´ÓÓÒÍù×óÖ´ÐÐ
-	tips£ºÉ¸Ñ¡µôÊý¾ÝÔ½¶àµÄÌõ¼þ£¬Ô½·Åµ½Ç°ÃæÖ´ÐÐ£¬¿ÉÒÔÌá¸ßÊý¾Ý¿â²éÑ¯Ð§ÂÊ
-	tips£º´ó¶àÊýÊ±ºò£¬mysql»á×Ô¶¯Ñ¡Ôñ×îÓÅµÄÖ´ÐÐË³Ðò£¬µ«ÊÇÓÐÊ±ºòmysql²»ÄÜ×ö³ö×îÓÅµÄÖ´ÐÐË³Ðò£¬¾ÍÐèÒªÎÒÃÇ×Ô¼ºÅÐ¶ÏÄÄÖÖ¹ýÂË×îÓÅ¡£
+whereåŽé¢æ¡ä»¶çš„æ‰§è¡Œé¡ºåº
+	1.mysqlã€sqlserver ä»Žå·¦å¾€å³æ‰§è¡Œ
+	2.oracle ä»Žå³å¾€å·¦æ‰§è¡Œ
+	tipsï¼šç­›é€‰æŽ‰æ•°æ®è¶Šå¤šçš„æ¡ä»¶ï¼Œè¶Šæ”¾åˆ°å‰é¢æ‰§è¡Œï¼Œå¯ä»¥æé«˜æ•°æ®åº“æŸ¥è¯¢æ•ˆçŽ‡
+	tipsï¼šå¤§å¤šæ•°æ—¶å€™ï¼Œmysqlä¼šè‡ªåŠ¨é€‰æ‹©æœ€ä¼˜çš„æ‰§è¡Œé¡ºåºï¼Œä½†æ˜¯æœ‰æ—¶å€™mysqlä¸èƒ½åšå‡ºæœ€ä¼˜çš„æ‰§è¡Œé¡ºåºï¼Œå°±éœ€è¦æˆ‘ä»¬è‡ªå·±åˆ¤æ–­å“ªç§è¿‡æ»¤æœ€ä¼˜ã€‚
 */
 
--- '' ºÍnull µÄÇø±ð
+-- '' å’Œnull çš„åŒºåˆ«
 /*
-	''ÊÇ³¤¶ÈÎª0 µÄÒ»¸ö×Ö·û´®£¬ÊÇÒ»¸öÈ·¶¨µÄÖµ£¬nullÊÇÒ»¸ö¿ÕÖµ£¬ÊÇÎÞ·¨È·¶¨µÄ
+	''æ˜¯é•¿åº¦ä¸º0 çš„ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œæ˜¯ä¸€ä¸ªç¡®å®šçš„å€¼ï¼Œnullæ˜¯ä¸€ä¸ªç©ºå€¼ï¼Œæ˜¯æ— æ³•ç¡®å®šçš„
 */
 --PARTITION BY
---GROUP BYÊÇ·Ö×éº¯Êý£¬PARTITION BYÊÇ·ÖÇøº¯Êý£¬SUM()µÈÊÇ¾ÛºÏº¯Êý
+--GROUP BYæ˜¯åˆ†ç»„å‡½æ•°ï¼ŒPARTITION BYæ˜¯åˆ†åŒºå‡½æ•°ï¼ŒSUM()ç­‰æ˜¯èšåˆå‡½æ•°
 SELECT RANK()  OVER( PARTITION BY UID ORDER BY AGE DESC ) ,UID,AGE,ID
 FROM INFO
 
---ÉóºËÓÃ
---ÅÐ¿Õ
+--å®¡æ ¸ç”¨
+--åˆ¤ç©º
 	where nullif(a0103,'') is null
---where Ìõ¼þ
+--where æ¡ä»¶
 	where AND A0102 LIKE '#A0102#%' AND A0102 LIKE '#GLDW#%'
---¹ú¼Ò¸ßËÙ¹«Â·¡¢Ê¡µÀ¸ßËÙ¹«Â·£¨ÎÞÔÑµÀ£©
-	--k0304¼¼ÊõµÈ¼¶-10£º¸ßËÙ
+--å›½å®¶é«˜é€Ÿå…¬è·¯ã€çœé“é«˜é€Ÿå…¬è·¯ï¼ˆæ— åŒé“ï¼‰
+	--k0304æŠ€æœ¯ç­‰çº§-10ï¼šé«˜é€Ÿ
 	WHERE len(ltrim(rtrim(k0101)))<=9 and k0304='10'
---ÄÉÈëÀï³ÌÍ³¼Æ
-	--K0123²»ÊÇ¶ÏÍ·Â·£¬K0124Ã»ÓÐÖØ¸´Â·¶Î
+--çº³å…¥é‡Œç¨‹ç»Ÿè®¡
+	--K0123ä¸æ˜¯æ–­å¤´è·¯ï¼ŒK0124æ²¡æœ‰é‡å¤è·¯æ®µ
 	where isnull(k0123,'2')='2' and nullif(k0124,'') is null
 
 /*  */
 update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(10), '') 
---È¥³ý»»ÐÐ·û
+--åŽ»é™¤æ¢è¡Œç¬¦
 update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(13), '') 
---È¥³ý»Ø³µ·û
+--åŽ»é™¤å›žè½¦ç¬¦
 
 
 --<------------------------------<---SQL 0.1.1--->------------------------------>--
 
---WAITFOR  Ö±µ½ËùÉè¶¨µÄµÈ´ýÊ±¼äÒÑ¹ý»òËùÉè¶¨µÄÊ±¼äÒÑµ½²Å¼ÌÐøÍùÏÂÖ´ÐÐ
-WAITFOR DELAY '00:00:03' --'00:00:03' ¹Ì¶¨¸ñÊ½£¬µÈ´ý3ÃëºóÖ´ÐÐ
-WAITFOR TIME  '16:02:50'	  --'16:02:50'	¹Ì¶¨¸ñÊ½£¬µÈµ½16Ê±02·Ö50Ãë¿ªÊ¼Ö´ÐÐ
+--WAITFOR  ç›´åˆ°æ‰€è®¾å®šçš„ç­‰å¾…æ—¶é—´å·²è¿‡æˆ–æ‰€è®¾å®šçš„æ—¶é—´å·²åˆ°æ‰ç»§ç»­å¾€ä¸‹æ‰§è¡Œ
+WAITFOR DELAY '00:00:03' --'00:00:03' å›ºå®šæ ¼å¼ï¼Œç­‰å¾…3ç§’åŽæ‰§è¡Œ
+WAITFOR TIME  '16:02:50'	  --'16:02:50'	å›ºå®šæ ¼å¼ï¼Œç­‰åˆ°16æ—¶02åˆ†50ç§’å¼€å§‹æ‰§è¡Œ
 SELECT * FROM INFO
 
---²éÑ¯ SQL Óï¾äÖ´ÐÐÊ±³¤
+--æŸ¥è¯¢ SQL è¯­å¥æ‰§è¡Œæ—¶é•¿
 SET STATISTICS PROFILE ON;
 SET STATISTICS IO ON;
 SET STATISTICS TIME ON;
 GO
---ÄãµÄSQL½Å±¾¿ªÊ¼
+--ä½ çš„SQLè„šæœ¬å¼€å§‹
 --WAITFOR DELAY '00:00:03'
 --WAITFOR TIME  '16:52:20'
 SELECT * FROM INFO
---ÄãµÄSQL½Å±¾½áÊø
+--ä½ çš„SQLè„šæœ¬ç»“æŸ
 GO
 SET STATISTICS PROFILE OFF;
 SET STATISTICS IO OFF;
 SET STATISTICS TIME OFF;
 
--- ²é¿´Êý¾Ý¿â°æ±¾
+-- æŸ¥çœ‹æ•°æ®åº“ç‰ˆæœ¬
 SELECT @@VERSION
 
 
@@ -70,7 +70,7 @@ SELECT @@VERSION
 --ALL
 SELECT * FROM DBO.INFO
 
---DISTINCT DISTINCTÖØ¸´Ö»ÏÔÊ¾Ò»´Î
+--DISTINCT DISTINCTé‡å¤åªæ˜¾ç¤ºä¸€æ¬¡
 SELECT DISTINCT NAME FROM DBO.INFO
 
 --INSERT
@@ -78,42 +78,42 @@ INSERT DBO.INFO VALUES ('20','LILU','','HUNAN')
 
 --UPDATE
 UPDATE DBO.INFO SET ID=3 WHERE ID =10
-		--Á¬±í¸üÐÂ
+		--è¿žè¡¨æ›´æ–°
 UPDATE  t01	SET T01.A6102 = A61.A6102
 FROM T01
 LEFT JOIN  A61 ON T01.Z0001 = A61.Z0001
 
 ---<TRUNCATE & DELETE >---
---DELETE É¾³ý±íÖÐµÄÊý¾Ý¿ÉÓÃWHERE ÊôÓÚDML£¬¿É»Ø¹ö
+--DELETE åˆ é™¤è¡¨ä¸­çš„æ•°æ®å¯ç”¨WHERE å±žäºŽDMLï¼Œå¯å›žæ»š
 DELETE FROM DBO.INFO WHERE ID =20
---TRUNCATE TABLE É¾³ý±íÖÐµÄËùÓÐÐÐµ«ÊÇ½á¹¹¡¢Ô¼Êø¡¢Ë÷Òý²»»áÉ¾³ý£¬²¢ÖØ½¨±í
-	--ÖØÖÃËùÓÐ×Ô¶¯ÔöÁ¿Öµ¡¢²»¿ÉÓÃWHERE¡¢Ð§ÂÊ¸ßÓÚDELETE
-	--ÊôÓÚDDL £¬²»¿É»Ø¹ö
+--TRUNCATE TABLE åˆ é™¤è¡¨ä¸­çš„æ‰€æœ‰è¡Œä½†æ˜¯ç»“æž„ã€çº¦æŸã€ç´¢å¼•ä¸ä¼šåˆ é™¤ï¼Œå¹¶é‡å»ºè¡¨
+	--é‡ç½®æ‰€æœ‰è‡ªåŠ¨å¢žé‡å€¼ã€ä¸å¯ç”¨WHEREã€æ•ˆçŽ‡é«˜äºŽDELETE
+	--å±žäºŽDDL ï¼Œä¸å¯å›žæ»š
 TRUNCATE TABLE K60
 
 --TOP
 SELECT TOP 60 PERCENT (NAME) ,ID,ADDRESS FROM DBO.INFO
 
---LIKE ¿ªÍ·%°üº¬%½áÎ²
+--LIKE å¼€å¤´%åŒ…å«%ç»“å°¾
 SELECT * FROM DBO.INFO
-WHERE NAME  LIKE '%Èý%'
+WHERE NAME  LIKE '%ä¸‰%'
 
 --[]
 SELECT * FROM DBO.INFO
-WHERE NAME LIKE '%[ÈýËÄÎå]%'
+WHERE NAME LIKE '%[ä¸‰å››äº”]%'
 
---IN ±¸·Ý Ñ¡Ôñ²åÈëÊý¾Ý
+--IN å¤‡ä»½ é€‰æ‹©æ’å…¥æ•°æ®
 SELECT *FROM DBO.INFO
-WHERE NAME IN ('ÕÅÈý','ÀîËÄ')
+WHERE NAME IN ('å¼ ä¸‰','æŽå››')
 
 --BETWEEN
 SELECT * FROM DBO.INFO
 WHERE ID
 BETWEEN '3' AND '15'
 
---UNION ÄÚ²¿µÄ SELECT Óï¾ä±ØÐëÓµÓÐÏàÍ¬ÊýÁ¿µÄÁÐ¡£ÁÐÒ²±ØÐëÓµÓÐÏàËÆµÄÊý¾ÝÀàÐÍ¡£
---Í¬Ê±£¬Ã¿Ìõ SELECT Óï¾äÖÐµÄÁÐµÄË³Ðò±ØÐëÏàÍ¬¡£
---ÁªºÏ½á¹ûÓÉÁ½¸ö±íÖÐÈÎÒâÒ»¸ö±í»òÕßÁ½¸ö±íÖÐ¶¼´æÔÚµÄÐÐ×é³É
+--UNION å†…éƒ¨çš„ SELECT è¯­å¥å¿…é¡»æ‹¥æœ‰ç›¸åŒæ•°é‡çš„åˆ—ã€‚åˆ—ä¹Ÿå¿…é¡»æ‹¥æœ‰ç›¸ä¼¼çš„æ•°æ®ç±»åž‹ã€‚
+--åŒæ—¶ï¼Œæ¯æ¡ SELECT è¯­å¥ä¸­çš„åˆ—çš„é¡ºåºå¿…é¡»ç›¸åŒã€‚
+--è”åˆç»“æžœç”±ä¸¤ä¸ªè¡¨ä¸­ä»»æ„ä¸€ä¸ªè¡¨æˆ–è€…ä¸¤ä¸ªè¡¨ä¸­éƒ½å­˜åœ¨çš„è¡Œç»„æˆ
 SELECT * FROM INFO
 UNION
 SELECT * FROM INFO_COPY1
@@ -126,7 +126,7 @@ SELECT *
 INTO DBO.INFOBACKUP
 FROM DBO.INFO
 
---Çå¿Õ±í¸ñÊý¾Ý
+--æ¸…ç©ºè¡¨æ ¼æ•°æ®
 TRUNCATE TABLE DBO.TMPTABLE
 
 --ALTER
@@ -136,131 +136,131 @@ DROP(ADD) COLUMN COLUMN_NAME
 ALTER TABLE DBO.INFO
 ALTER COLUMN ID AUTO_INCREMENT
 
---AUTO-INCREMENT »áÔÚÐÂ¼ÇÂ¼²åÈë±íÖÐÊ±Éú³ÉÒ»¸öÎ¨Ò»µÄÊý×Ö¡£
+--AUTO-INCREMENT ä¼šåœ¨æ–°è®°å½•æ’å…¥è¡¨ä¸­æ—¶ç”Ÿæˆä¸€ä¸ªå”¯ä¸€çš„æ•°å­—ã€‚
 --P_ID INT NOT NULL AUTO_INCREMENT
 
 --ISNULL
 SELECT NAME,AGE*(AGE+ISNULL(AGE,0)) AS AGE
 FROM DBO.INFO
 
---MID/SUBSTRING ÌáÈ¡×Ö·û
+--MID/SUBSTRING æå–å­—ç¬¦
 SELECT SUBSTRING(NAME,1,1) AS FNAME FROM DBO.INFO
 
---LEN ·µ»Ø³¤¶È
-SELECT LEN(NAME)AS ³¤¶È FROM DBO.INFO
+--LEN è¿”å›žé•¿åº¦
+SELECT LEN(NAME)AS é•¿åº¦ FROM DBO.INFO
 
---ROUNDËÄÉáÎåÈë DECIMALS Î»Êý
+--ROUNDå››èˆäº”å…¥ DECIMALS ä½æ•°
 SELECT ROUND(AGE,0) FROM DBO.INFO
 
---GETDATE()/NOW() »ñÈ¡µ±Ç°Ê±¼ä
-SELECT *,GETDATE()AS µ±Ç°Ê±¼ä FROM DBO.INFO
+--GETDATE()/NOW() èŽ·å–å½“å‰æ—¶é—´
+SELECT *,GETDATE()AS å½“å‰æ—¶é—´ FROM DBO.INFO
 
---FORMAT ¸ñÊ½»¯ÏÔÊ¾×Ö¶Î
+--FORMAT æ ¼å¼åŒ–æ˜¾ç¤ºå­—æ®µ
 SELECT *, FORMAT(NOW(),'YYYY-MM-DD') AS PERDATE
 FROM DBO.INFO
 
---CONVERT(SQLSERVERÓÐ)¸ñÊ½»¯ÏÔÊ¾×Ö¶Î
-SELECT CONVERT(VARCHAR(12) , GETDATE(), 111 ) AS ÈÕÆÚ
+--CONVERT(SQLSERVERæœ‰)æ ¼å¼åŒ–æ˜¾ç¤ºå­—æ®µ
+SELECT CONVERT(VARCHAR(12) , GETDATE(), 111 ) AS æ—¥æœŸ
 --2023/11/08
-SELECT CONVERT(VARCHAR(12) , GETDATE(), 112 ) AS ÈÕÆÚ
+SELECT CONVERT(VARCHAR(12) , GETDATE(), 112 ) AS æ—¥æœŸ
 --20231108
 
---CONVERT ºÍCAST Çø±ð
-SELECT CONVERT(VARCHAR(12) , GETDATE(), 113 ) AS ÈÕÆÚ
+--CONVERT å’ŒCAST åŒºåˆ«
+SELECT CONVERT(VARCHAR(12) , GETDATE(), 113 ) AS æ—¥æœŸ
 --08 11 2023 1
-SELECT CAST( GETDATE() as VARCHAR(12) ) AS ÈÕÆÚ
+SELECT CAST( GETDATE() as VARCHAR(12) ) AS æ—¥æœŸ
 --08 11 2023 1
 
 
---²éÑ¯³¤¶È LEN ²éÑ¯ ×Ö¶ÎºóÃæµÄ¿Õ¸ñ²»ËãÔÚÄÚ
+--æŸ¥è¯¢é•¿åº¦ LEN æŸ¥è¯¢ å­—æ®µåŽé¢çš„ç©ºæ ¼ä¸ç®—åœ¨å†…
 SELECT LEN(NAME) 	LEN FROM INFO WHERE NAME LIKE 'ZZZ'
 SELECT DATALENGTH(NAME) DATALENGTH FROM INFO WHERE  NAME LIKE 'ZZZ'
 
---CI Ö¸¶¨²»Çø·Ö´óÐ¡Ð´£¬CS Ö¸¶¨Çø·Ö´óÐ¡Ð´
---CHARINDEX ÕÒµ½×Ö·û£¨CHAR£©µÄÎ»ÖÃ£¨INDEX£©  È«Æ¥Åä
+--CI æŒ‡å®šä¸åŒºåˆ†å¤§å°å†™ï¼ŒCS æŒ‡å®šåŒºåˆ†å¤§å°å†™
+--CHARINDEX æ‰¾åˆ°å­—ç¬¦ï¼ˆCHARï¼‰çš„ä½ç½®ï¼ˆINDEXï¼‰  å…¨åŒ¹é…
 SELECT CHARINDEX('TEST','THIS TEST IS TEST') --6
 SELECT CHARINDEX('TEST','THIS TEST IS TEST',7)  --14
 SELECT CHARINDEX('TEST','THIS TEST IS TEST'COLLATE LATIN1_GENERAL_CS_AS)  --14
 SELECT CHARINDEX('TEST','THIS TEST IS TEST'COLLATE LATIN1_GENERAL_CI_AS)  --6
 
---PATINDEX ÅÐ¶ÏÒ»¸ö×Ö·û´®ÖÐÊÇ·ñ°üº¬ÁíÒ»¸ö×Ö·û´®  Ä£ºýÆ¥Åä
+--PATINDEX åˆ¤æ–­ä¸€ä¸ªå­—ç¬¦ä¸²ä¸­æ˜¯å¦åŒ…å«å¦ä¸€ä¸ªå­—ç¬¦ä¸²  æ¨¡ç³ŠåŒ¹é…
 SELECT PATINDEX('%TER%','INTERESTING DATA')  --3
 SELECT PATINDEX('%T_NG%','INTERESTING DATA')  --8
 SELECT PATINDEX('%ES%','THIS TEST IS TEST' COLLATE LATIN1_GENERAL_CS_AS)  --15
 SELECT PATINDEX('%T_S%','THIS TEST IS TEST'COLLATE LATIN1_GENERAL_CI_AS)  --6
 
 --ISNULL(VALUE1,VALUE2)
-        --VALUE1ÓëVALUE2µÄÊý¾ÝÀàÐÍ±ØÐëÒ»ÖÂ¡£
-        --Èç¹ûVALUE1µÄÖµ²»ÎªNULL£¬½á¹û·µ»ØVALUE1¡£
-        --Èç¹ûVALUE1ÎªNULL£¬½á¹û·µ»ØVAULE2µÄÖµ¡£VAULE2ÊÇÄãÉè¶¨µÄÖµ¡£
+        --VALUE1ä¸ŽVALUE2çš„æ•°æ®ç±»åž‹å¿…é¡»ä¸€è‡´ã€‚
+        --å¦‚æžœVALUE1çš„å€¼ä¸ä¸ºNULLï¼Œç»“æžœè¿”å›žVALUE1ã€‚
+        --å¦‚æžœVALUE1ä¸ºNULLï¼Œç»“æžœè¿”å›žVAULE2çš„å€¼ã€‚VAULE2æ˜¯ä½ è®¾å®šçš„å€¼ã€‚
 USE [MYDB]
-SELECT *,[·µ»ØÖµ]=ISNULL(AGE,'999')
+SELECT *,[è¿”å›žå€¼]=ISNULL(AGE,'999')
 FROM INFO
 WHERE ISNULL(AGE,'0')='0'
 
---REPLACE ºÍ STUFF ¶¼Ö´ÐÐ×Ó×Ö·û´®Ìæ»»
---REPLACE °´Êý¾ÝÖµËÑË÷×Ó×Ö·û´®¡£STUFF °´×Ö·û´®Î»ÖÃºÍ³¤¶ÈËÑË÷×Ó×Ö·û´®
+--REPLACE å’Œ STUFF éƒ½æ‰§è¡Œå­å­—ç¬¦ä¸²æ›¿æ¢
+--REPLACE æŒ‰æ•°æ®å€¼æœç´¢å­å­—ç¬¦ä¸²ã€‚STUFF æŒ‰å­—ç¬¦ä¸²ä½ç½®å’Œé•¿åº¦æœç´¢å­å­—ç¬¦ä¸²
 
 --REPLACE(string_expression, string_pattern, string_replacement)
-		--REPLACE(ÐèÒª±»Ìæ»»µÄ×Ö·û´®-ABCXYZ£¬ÐèÒªÌæ»»µÄ×Ö·û´®-ABC£¬Ìæ»»³ÉµÄ×Ö·û´®-À²À²À² )
-SELECT	replace('ABCXYZ','ABC','À²À²À²'),
-		replace('ABCXYZ','XYZ','À²À²À²')
+		--REPLACE(éœ€è¦è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²-ABCXYZï¼Œéœ€è¦æ›¿æ¢çš„å­—ç¬¦ä¸²-ABCï¼Œæ›¿æ¢æˆçš„å­—ç¬¦ä¸²-å•¦å•¦å•¦ )
+SELECT	replace('ABCXYZ','ABC','å•¦å•¦å•¦'),
+		replace('ABCXYZ','XYZ','å•¦å•¦å•¦')
 FROM DBO.INFO
 
 --STUFF(string,start,length,substring)
-		--STUFF(ÐèÒª±»Ìæ»»µÄ×Ö·û´®,¿ªÊ¼Î»ÖÃ£¬³¤¶È£¬Ìæ»»³ÉµÄ×Ö·û´®)
-SELECT STUFF('ABC test XYZ',4,5,'À²À²À²')
---½á¹û£ºABCÀ²À²À² XYZ
-SELECT STUFF('ABC test XYZ',9,0,' (À²À²À²)')
---½á¹û£ºABC test (À²À²À²) XYZ
-SELECT STUFF('ABC test XYZ',1,0,'À²À²À²')
---½á¹û£ºÀ²À²À²ABC test XYZ
+		--STUFF(éœ€è¦è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²,å¼€å§‹ä½ç½®ï¼Œé•¿åº¦ï¼Œæ›¿æ¢æˆçš„å­—ç¬¦ä¸²)
+SELECT STUFF('ABC test XYZ',4,5,'å•¦å•¦å•¦')
+--ç»“æžœï¼šABCå•¦å•¦å•¦ XYZ
+SELECT STUFF('ABC test XYZ',9,0,' (å•¦å•¦å•¦)')
+--ç»“æžœï¼šABC test (å•¦å•¦å•¦) XYZ
+SELECT STUFF('ABC test XYZ',1,0,'å•¦å•¦å•¦')
+--ç»“æžœï¼šå•¦å•¦å•¦ABC test XYZ
 SELECT STUFF('ABC test XYZ',4,5,'')
---½á¹û£ºABC XYZ
+--ç»“æžœï¼šABC XYZ
 
--- NULLIF:Èç¹ûÁ½¸ö±í´ïÊ½¾ßÓÐÏàÍ¬µÄÖµ£¬Ôò·µ»Ø NULL µÄº¯Êý£¬·ñÔò·µ»ØEXPRESSION1¡£
+-- NULLIF:å¦‚æžœä¸¤ä¸ªè¡¨è¾¾å¼å…·æœ‰ç›¸åŒçš„å€¼ï¼Œåˆ™è¿”å›ž NULL çš„å‡½æ•°ï¼Œå¦åˆ™è¿”å›žEXPRESSION1ã€‚
 --NULLIF(EXPRESSION1,EXPRESSION2)
 SELECT 	NAME ,LEFT(NAME,1),FIRSTNAME,
 		NULLIF(LEFT(NAME,1), FIRSTNAME) AS 'NULLIF'
 FROM INFO
 
---°ÑÊý¾Ý¿â±íARTICLEÖÐµÄËùÓÐTITLE×Ö¶ÎÀïµÄSCHOOL×Ö·û´®Ìæ»»³ÉHELLO¡£
+--æŠŠæ•°æ®åº“è¡¨ARTICLEä¸­çš„æ‰€æœ‰TITLEå­—æ®µé‡Œçš„SCHOOLå­—ç¬¦ä¸²æ›¿æ¢æˆHELLOã€‚
 UPDATE A SET AGE=REPLACE(AGE,'1','37');
 
--- ROUND()ËÄÉáÎåÈë ROUND£¨P1,P2,P3£©;P1±»²Ù×÷Êý P2 Ð¡ÊýµãÎ»Êý	P3£¨0/1£©0ËÄÉáÎåÈë 1½Ø¶Ï
--- NUMERIC() NUMERIC£¨18£¬0£©×ÜµÄÎ»ÊýÎª18Î»Êý×Ö£¬Ð¡ÊýµãºóµÄÎ»ÊýÎª0Î»¡£
-SELECT	NUMBER Ô­Êý¾Ý,
-		ROUND(NUMBER,1,0) ËÄÉáÎåÈë,
-		ROUND(NUMBER,2,1) ½Ø¶Ï,
-		CAST(NUMBER  AS NUMERIC(8,0)) ÎÞÐ¡Êý,
-		CAST(NUMBER  AS NUMERIC(8,3)) ÈýÎ»Ð¡Êý
+-- ROUND()å››èˆäº”å…¥ ROUNDï¼ˆP1,P2,P3ï¼‰;P1è¢«æ“ä½œæ•° P2 å°æ•°ç‚¹ä½æ•°	P3ï¼ˆ0/1ï¼‰0å››èˆäº”å…¥ 1æˆªæ–­
+-- NUMERIC() NUMERICï¼ˆ18ï¼Œ0ï¼‰æ€»çš„ä½æ•°ä¸º18ä½æ•°å­—ï¼Œå°æ•°ç‚¹åŽçš„ä½æ•°ä¸º0ä½ã€‚
+SELECT	NUMBER åŽŸæ•°æ®,
+		ROUND(NUMBER,1,0) å››èˆäº”å…¥,
+		ROUND(NUMBER,2,1) æˆªæ–­,
+		CAST(NUMBER  AS NUMERIC(8,0)) æ— å°æ•°,
+		CAST(NUMBER  AS NUMERIC(8,3)) ä¸‰ä½å°æ•°
 FROM INFO
 
---ISDATA() ·µ»ØÖµ 1ÊÇ 0·ñ
+--ISDATA() è¿”å›žå€¼ 1æ˜¯ 0å¦
 SELECT 	TEN , ISDATE(TEN) TEN,
 		NUMBER,ISDATE(NUMBER)  NUMBER
 FROM INFO
 
---#T ÁÙÊ±Ë½ÈË±í£¬ÉúÃüÖÜÆÚÊÇÁ¬½ÓÆÚ¼ä£¬ÆäËûÈËÎÞ·¨·ÃÎÊ£¨½¨Á¢±íÁ´½Ó¿ÉÒÔ£©¡£
---##T È«¾ÖÁÙÊ±±í£¬ÆäËûÈË¿É·ÃÎÊ
---É¾³ýµÄÕýÈ·¸ñÊ½
+--#T ä¸´æ—¶ç§äººè¡¨ï¼Œç”Ÿå‘½å‘¨æœŸæ˜¯è¿žæŽ¥æœŸé—´ï¼Œå…¶ä»–äººæ— æ³•è®¿é—®ï¼ˆå»ºç«‹è¡¨é“¾æŽ¥å¯ä»¥ï¼‰ã€‚
+--##T å…¨å±€ä¸´æ—¶è¡¨ï¼Œå…¶ä»–äººå¯è®¿é—®
+--åˆ é™¤çš„æ­£ç¡®æ ¼å¼
 IF OBJECT_ID('TEMPDB..#T') IS NOT NULL
 DROP TABLE #T
 
 if exists(select * from tempdb..sysobjects where id=object_id('tempdb..##tk001')) DROP TABLE #T
 
---ÅÐ¶Ï´æ´¢¹ý³ÌÊÇ·ñ´æÔÚ
+--åˆ¤æ–­å­˜å‚¨è¿‡ç¨‹æ˜¯å¦å­˜åœ¨
 IF EXISTS (SELECT * FROM sysobjects WHERE name = 'Pr_sysCheckFKForPublic')
 drop procedure Pr_sysCheckFKForPublic
 
 --CASE  WHEN   ****  THEN   ****ELSE ****  END
-SELECT 	[ÈËÃû]=CASE WHEN LEFT(NAME,1)='ÕÅ'THEN 'ÕÅ' ELSE 'Íõ'END,
-		[ÈËÊý]	=SUM(1)
+SELECT 	[äººå]=CASE WHEN LEFT(NAME,1)='å¼ 'THEN 'å¼ ' ELSE 'çŽ‹'END,
+		[äººæ•°]	=SUM(1)
 FROM INFO
 WHERE NAME<>''
-GROUP BY CASE WHEN LEFT(NAME,1)='ÕÅ'THEN 'ÕÅ' ELSE 'Íõ'END
+GROUP BY CASE WHEN LEFT(NAME,1)='å¼ 'THEN 'å¼ ' ELSE 'çŽ‹'END
 
---²éÑ¯ÁÐÃû
+--æŸ¥è¯¢åˆ—å
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS
 WHERE COLUMN_NAME = 'NAME'
 
@@ -268,31 +268,31 @@ WHERE COLUMN_NAME = 'NAME'
 --UPDATE TABLENAME SET COLUMNA = COLUMNB, COLUMNB = COLUMNA
 --UPDATE INFO 	SET NAME =FIRSTNAME , FIRSTNAME= NAME
 
---ROLLUP ÔËËã·ûÉú³ÉµÄ½á¹û¼¯ÀàËÆÓÚ CUBE ÔËËã·ûÉú³ÉµÄ½á¹û¼¯¡£
+--ROLLUP è¿ç®—ç¬¦ç”Ÿæˆçš„ç»“æžœé›†ç±»ä¼¼äºŽ CUBE è¿ç®—ç¬¦ç”Ÿæˆçš„ç»“æžœé›†ã€‚
 --GROUP BY AGE  WITH CUBE
 
 
 --<------------------------------<---SQL 0.1.3--->------------------------------>--
 
---Ò»¡¢ºÏ²¢ÁÐÖµ
---1.SQLÒçÓÃ OUTER APPLY
---replace stuff ÊµÀý
+--ä¸€ã€åˆå¹¶åˆ—å€¼
+--1.SQLæº¢ç”¨ OUTER APPLY
+--replace stuff å®žä¾‹
 SELECT * FROM
 (
 	SELECT INFO.NAME FROM INFO
 )AS I
 OUTER APPLY(
-SELECT [ÄêÁä]= --ºÏ²¢ÁÐÖµ
---Õ¹¿ª
-STUFF(--Ìæ»»µÚÒ»¸ö¶àÓàµÄ,
-	REPLACE(--Ìæ»»AGE=
-		REPLACE(--Ìæ»»AB
-			REPLACE(--Ìæ»»<
-				REPLACE(--Ìæ»»/>
-					REPLACE(--Ìæ»»"
+SELECT [å¹´é¾„]= --åˆå¹¶åˆ—å€¼
+--å±•å¼€
+STUFF(--æ›¿æ¢ç¬¬ä¸€ä¸ªå¤šä½™çš„,
+	REPLACE(--æ›¿æ¢AGE=
+		REPLACE(--æ›¿æ¢AB
+			REPLACE(--æ›¿æ¢<
+				REPLACE(--æ›¿æ¢/>
+					REPLACE(--æ›¿æ¢"
 						(SELECT AB.AGE  FROM
-							(SELECT NAME, AGE FROM INFO --WHERE INFO.NAME='ÕÅËÄ'
-								UNION SELECT NAME,AGE FROM A  --WHERE A.NAME='ÕÅËÄ'
+							(SELECT NAME, AGE FROM INFO --WHERE INFO.NAME='å¼ å››'
+								UNION SELECT NAME,AGE FROM A  --WHERE A.NAME='å¼ å››'
 							)AS AB
 						WHERE I.NAME=AB.NAME FOR XML AUTO)
 					,'"','')
@@ -303,15 +303,15 @@ STUFF(--Ìæ»»µÚÒ»¸ö¶àÓàµÄ,
 ,1,1,'')
 
 )AS  IA
---WHERE I.NAME='ÕÅËÄ'
+--WHERE I.NAME='å¼ å››'
 
---2.FRO XML PTAH('  ')  Êä³öxmlÀûÓÃ¿Õ±êÇ©´ïµ½¡°Á¬½ÓÁÐÖµ¡±µÄÐ§¹û
+--2.FRO XML PTAH('  ')  è¾“å‡ºxmlåˆ©ç”¨ç©ºæ ‡ç­¾è¾¾åˆ°â€œè¿žæŽ¥åˆ—å€¼â€çš„æ•ˆæžœ
 USE MYDB
-SELECT LEFT(NAME, LEN(NAME) - 1) NAME --ÀûÓÃleft ½Ø¶Ï×îÓÒ±ßµÄ¶ººÅ
+SELECT LEFT(NAME, LEN(NAME) - 1) NAME --åˆ©ç”¨left æˆªæ–­æœ€å³è¾¹çš„é€—å·
 FROM (SELECT DISTINCT (SELECT  NAME + ','
 		FROM info
 		WHERE TUID = '37'
-		FOR XML PATH ( '' ) --Êä³öxml ÀûÓÃ ''¿ÕµÄ±êÇ©ºÍ +','  Ò»Í¬ÊµÏÖ ¡°Á¬½ÓÁÐÖµ¡±
+		FOR XML PATH ( '' ) --è¾“å‡ºxml åˆ©ç”¨ ''ç©ºçš„æ ‡ç­¾å’Œ +','  ä¸€åŒå®žçŽ° â€œè¿žæŽ¥åˆ—å€¼â€
     ) AS NAME) AS A
 
 
@@ -320,25 +320,25 @@ SELECT NAME FROM INFO FOR XML AUTO
 SELECT NAME+',' FROM INFO FOR XML PATH ('')
 SELECT NAME FROM INFO FOR XML RAW
 
---------------------ÊÂÎñ--------------------
-begin TRANSACTION--¿ªÊ¼ÊÂÎñ
---¿ªÊ¼sql
+--------------------äº‹åŠ¡--------------------
+begin TRANSACTION--å¼€å§‹äº‹åŠ¡
+--å¼€å§‹sql
 delete  from a where id=21  ;
 delete  from a where id=20  ;
 delete  from a where id=19  ;
---commit  --Ìá½»
-rollback --»Ø¹ö
+--commit  --æäº¤
+rollback --å›žæ»š
 
-SELECT * FROM A  --ÖÐ¼ä¿É²éÑ¯Êý¾ÝÊÇ·ñdel
+SELECT * FROM A  --ä¸­é—´å¯æŸ¥è¯¢æ•°æ®æ˜¯å¦del
 
 
---------------------É¾³ýË÷Òý¡¢Ìí¼ÓË÷Òý--------------------
-drop index oydschk_a71_07 on a71;--É¾³ýË÷Òý
+--------------------åˆ é™¤ç´¢å¼•ã€æ·»åŠ ç´¢å¼•--------------------
+drop index oydschk_a71_07 on a71;--åˆ é™¤ç´¢å¼•
 
---Ìí¼Ó ²»Î¨Ò»¡¢·Ç¾Û¼¯ Ë÷Òý
+--æ·»åŠ  ä¸å”¯ä¸€ã€éžèšé›† ç´¢å¼•
 USE [GHRHB]
 GO
---Ë÷ÒýÃû³Æ£ºoydschk_a71_07
+--ç´¢å¼•åç§°ï¼šoydschk_a71_07
 CREATE  NONCLUSTERED INDEX [oydschk_a71_07] ON [dbo].[A71]
 (
 	[B0111] ASC,
@@ -348,111 +348,111 @@ CREATE  NONCLUSTERED INDEX [oydschk_a71_07] ON [dbo].[A71]
 GO
 
 
---------------------½ûÓÃË÷Òý¡¢ÖØ½¨£¨ÆôÓÃ£©Ë÷Òý--------------------
+--------------------ç¦ç”¨ç´¢å¼•ã€é‡å»ºï¼ˆå¯ç”¨ï¼‰ç´¢å¼•--------------------
 USE GHRHB
---½ûÓÃË÷ÒýÓï·¨
+--ç¦ç”¨ç´¢å¼•è¯­æ³•
 ALTER INDEX oydschk_a71_07 ON DBO.A71 DISABLE
---ÆôÓÃË÷ÒýÓï·¨
+--å¯ç”¨ç´¢å¼•è¯­æ³•
 ALTER INDEX oydschk_a71_07 ON DBO.A71 REBUILD
 
 
---------------------´æ´¢¹ý³Ì--------------------
+--------------------å­˜å‚¨è¿‡ç¨‹--------------------
 CREATE PROCEDURE PROCEDURE_NAME
---PROCEDURE_NAMEÎª´æ´¢¹ý³ÌÃû(²»ÄÜÒÔ°¢À­²®Êý×Ö¿ªÍ·)£¬ÔÚÒ»¸öÊý¾Ý¿âÖÐ´¥·¢Æ÷ÃûÊÇÎ¨Ò»µÄ¡£Ãû×ÖµÄ³¤¶È²»ÄÜ³¬¹ý¸ö×Ö¡£PROCEDURE¿ÉÒÔ¼òÐ´ÎªPROC¡£
+--PROCEDURE_NAMEä¸ºå­˜å‚¨è¿‡ç¨‹å(ä¸èƒ½ä»¥é˜¿æ‹‰ä¼¯æ•°å­—å¼€å¤´)ï¼Œåœ¨ä¸€ä¸ªæ•°æ®åº“ä¸­è§¦å‘å™¨åæ˜¯å”¯ä¸€çš„ã€‚åå­—çš„é•¿åº¦ä¸èƒ½è¶…è¿‡ä¸ªå­—ã€‚PROCEDUREå¯ä»¥ç®€å†™ä¸ºPROCã€‚
 @PARAM1 DATATYPE,@PARAM2 DATATYPE
---@PARAM1ºÍ@PARAM2Îª´æ´¢¹ý³ÌµÄ²ÎÊý£¬DATATYPEÎª²ÎÊýÀàÐÍ,¶à¸ö²ÎÊýÓÃ¶ººÅ¸ô¿ª,×î¶àÔÊÐí¸ö²ÎÊý¡£
+--@PARAM1å’Œ@PARAM2ä¸ºå­˜å‚¨è¿‡ç¨‹çš„å‚æ•°ï¼ŒDATATYPEä¸ºå‚æ•°ç±»åž‹,å¤šä¸ªå‚æ•°ç”¨é€—å·éš”å¼€,æœ€å¤šå…è®¸ä¸ªå‚æ•°ã€‚
 AS
---´æ´¢¹ý³ÌÒªÖ´ÐÐµÄ²Ù×÷
+--å­˜å‚¨è¿‡ç¨‹è¦æ‰§è¡Œçš„æ“ä½œ
 BEGIN
---BEGIN¸úEND×é³ÉÒ»¸ö´úÂë¿é£¬¿ÉÒÔÐ´Ò²¿ÉÒÔ²»Ð´£¬Èç¹û´æ´¢¹ý³ÌÖÐÖ´ÐÐµÄSQLÓï¾ä±È½Ï¸´ÔÓ£¬ÓÃBEGINºÍEND»áÈÃ´úÂë¸ü¼ÓÕûÆë£¬¸üÈÝÒ×Àí½â¡£
+--BEGINè·ŸENDç»„æˆä¸€ä¸ªä»£ç å—ï¼Œå¯ä»¥å†™ä¹Ÿå¯ä»¥ä¸å†™ï¼Œå¦‚æžœå­˜å‚¨è¿‡ç¨‹ä¸­æ‰§è¡Œçš„SQLè¯­å¥æ¯”è¾ƒå¤æ‚ï¼Œç”¨BEGINå’ŒENDä¼šè®©ä»£ç æ›´åŠ æ•´é½ï¼Œæ›´å®¹æ˜“ç†è§£ã€‚
 END
 GO
---GO¾Í´ú±í½á²Ù×÷Íê±Ï¡¡¡¡
-EXEC PROCEDURE_NAME [²ÎÊýÃû]
---µ÷ÓÃ´æ´¢¹ý³ÌPROCEDURE_NAME¡£
+--GOå°±ä»£è¡¨ç»“æ“ä½œå®Œæ¯•ã€€ã€€
+EXEC PROCEDURE_NAME [å‚æ•°å]
+--è°ƒç”¨å­˜å‚¨è¿‡ç¨‹PROCEDURE_NAMEã€‚
 DROP PROCEDURE PROCEDURE_NAME
---É¾³ý´æ´¢¹ý³ÌPROCEDURE_NAME£¬²»ÄÜÔÚÒ»¸ö´æ´¢¹ý³ÌÖÐÉ¾³ýÁíÒ»¸ö´æ´¢¹ý³Ì£¬Ö»ÄÜµ÷ÓÃÁíÒ»¸ö´æ´¢¹ý³Ì
+--åˆ é™¤å­˜å‚¨è¿‡ç¨‹PROCEDURE_NAMEï¼Œä¸èƒ½åœ¨ä¸€ä¸ªå­˜å‚¨è¿‡ç¨‹ä¸­åˆ é™¤å¦ä¸€ä¸ªå­˜å‚¨è¿‡ç¨‹ï¼Œåªèƒ½è°ƒç”¨å¦ä¸€ä¸ªå­˜å‚¨è¿‡ç¨‹
 SHOW PROCEDURE STATUS
---ÏÔÊ¾Êý¾Ý¿âÖÐËùÓÐ´æ´¢µÄ´æ´¢¹ý³Ì»ù±¾ÐÅÏ¢£¬°üÀ¨ËùÊôÊý¾Ý¿â£¬´æ´¢¹ý³ÌÃû³Æ£¬´´½¨Ê±¼äµÈ
+--æ˜¾ç¤ºæ•°æ®åº“ä¸­æ‰€æœ‰å­˜å‚¨çš„å­˜å‚¨è¿‡ç¨‹åŸºæœ¬ä¿¡æ¯ï¼ŒåŒ…æ‹¬æ‰€å±žæ•°æ®åº“ï¼Œå­˜å‚¨è¿‡ç¨‹åç§°ï¼Œåˆ›å»ºæ—¶é—´ç­‰
 SHOW CREATE PROCEDURE PROCEDURE_NAME
---ÏÔÊ¾´æ´¢¹ý³ÌPROCEDURE_NAMEµÄÏêÏ¸ÐÅÏ¢
+--æ˜¾ç¤ºå­˜å‚¨è¿‡ç¨‹PROCEDURE_NAMEçš„è¯¦ç»†ä¿¡æ¯
 EXEC SP_HELPTEXT PROCEDURE_NAME
---ÏÔÊ¾ÄãÕâ¸öPROCEDURE_NAMEÕâ¸ö¶ÔÏó´´½¨ÎÄ±¾
+--æ˜¾ç¤ºä½ è¿™ä¸ªPROCEDURE_NAMEè¿™ä¸ªå¯¹è±¡åˆ›å»ºæ–‡æœ¬
 
 
--------------------- ´æ´¢¹ý³Ì&ÉùÃ÷±äÁ¿&Ö´ÐÐº¯Êý--------------------
-CREATE  PROCEDURE  FACTORIAL  --´´½¨´æ´¢¹ý³Ì,¼òÐ´PROCÒà¿É
+-------------------- å­˜å‚¨è¿‡ç¨‹&å£°æ˜Žå˜é‡&æ‰§è¡Œå‡½æ•°--------------------
+CREATE  PROCEDURE  FACTORIAL  --åˆ›å»ºå­˜å‚¨è¿‡ç¨‹,ç®€å†™PROCäº¦å¯
 @M INT
 AS
-BEGIN--BEGIN  END ÎªÒ»×é
+BEGIN--BEGIN  END ä¸ºä¸€ç»„
 	DECLARE
-		@N INT,@L INT --DECLARE£ºÉùÃ÷±äÁ¿@N @L
+		@N INT,@L INT --DECLAREï¼šå£°æ˜Žå˜é‡@N @L
 	SELECT
 		@N = 1,@L = 1
 	WHILE
 			@N <@M BEGIN
-				SET @L =@L *@N --Ïà³Ë
+				SET @L =@L *@N --ç›¸ä¹˜
 				SET @N =@N + 1
-			END PRINT @L --PRINT ´òÓ¡
+			END PRINT @L --PRINT æ‰“å°
 		END
 
-EXEC FACTORIAL 2  --Ö´ÐÐº¯Êý(EXEC)  º¯ÊýÃû(FACTORIAL)  @MµÄÖµÎª(2)
+EXEC FACTORIAL 2  --æ‰§è¡Œå‡½æ•°(EXEC)  å‡½æ•°å(FACTORIAL)  @Mçš„å€¼ä¸º(2)
 
 
---------------------SET & SELECT  Çø±ð-------------------
+--------------------SET & SELECT  åŒºåˆ«-------------------
 
--- (´íÎóµÄ)±í´ïÊ½<·µ»Ø¶à¸öÖµ>Ê±£¬Ê¹ÓÃ SET ¸³Öµ
+-- (é”™è¯¯çš„)è¡¨è¾¾å¼<è¿”å›žå¤šä¸ªå€¼>æ—¶ï¼Œä½¿ç”¨ SET èµ‹å€¼
 USE MYDB
 DECLARE @NAME VARCHAR(128)
 SET @NAME=(SELECT NAME FROM INFO)
 PRINT @NAME
 
---³ö´íÐÅÏ¢Îª
---·þÎñÆ÷: ÏûÏ¢ 512£¬¼¶±ð 16£¬×´Ì¬ 1£¬ÐÐ 2
---×Ó²éÑ¯·µ»ØµÄÖµ¶àÓÚÒ»¸ö¡£µ±×Ó²éÑ¯¸úËæÔÚ=¡¢!=¡¢<¡¢<=¡¢>¡¢>=Ö®ºó£¬»ò×Ó²éÑ¯ÓÃ×÷±í´ïÊ½Ê±£¬ÕâÖÖÇé¿öÊÇ²»ÔÊÐíµÄ¡£
+--å‡ºé”™ä¿¡æ¯ä¸º
+--æœåŠ¡å™¨: æ¶ˆæ¯ 512ï¼Œçº§åˆ« 16ï¼ŒçŠ¶æ€ 1ï¼Œè¡Œ 2
+--å­æŸ¥è¯¢è¿”å›žçš„å€¼å¤šäºŽä¸€ä¸ªã€‚å½“å­æŸ¥è¯¢è·Ÿéšåœ¨=ã€!=ã€<ã€<=ã€>ã€>=ä¹‹åŽï¼Œæˆ–å­æŸ¥è¯¢ç”¨ä½œè¡¨è¾¾å¼æ—¶ï¼Œè¿™ç§æƒ…å†µæ˜¯ä¸å…è®¸çš„ã€‚
 
 
---±í´ïÊ½<·µ»Ø¶à¸öÖµ>Ê±£¬Ê¹ÓÃ SELECT ¸³Öµ
+--è¡¨è¾¾å¼<è¿”å›žå¤šä¸ªå€¼>æ—¶ï¼Œä½¿ç”¨ SELECT èµ‹å€¼
 USE MYDB
 DECLARE @NAME VARCHAR(20)
 SELECT @NAME= NAME FROM INFO
-PRINT @NAME --½á¹û¼¯ÖÐ×îºóÒ»¸ö USERNAME ÁÐµÄÖµ
---½á¹û ÀÏÁù
+PRINT @NAME --ç»“æžœé›†ä¸­æœ€åŽä¸€ä¸ª USERNAME åˆ—çš„å€¼
+--ç»“æžœ è€å…­
 
 
---±í´ïÊ½<Î´·µ»ØÖµ>Ê±£¬Ê¹ÓÃ SET ¸³Öµ
+--è¡¨è¾¾å¼<æœªè¿”å›žå€¼>æ—¶ï¼Œä½¿ç”¨ SET èµ‹å€¼
 USE MYDB
 DECLARE @NAME VARCHAR(20)
 SET @NAME='JACK'
 SET @NAME= (SELECT NAME FROM INFO WHERE NAME='NOT')
-PRINT @NAME  --NULLÖµ
---½á¹û NULL
+PRINT @NAME  --NULLå€¼
+--ç»“æžœ NULL
 
---±í´ïÊ½<Î´·µ»ØÖµ>Ê±£¬Ê¹ÓÃ SELECT ¸³Öµ
+--è¡¨è¾¾å¼<æœªè¿”å›žå€¼>æ—¶ï¼Œä½¿ç”¨ SELECT èµ‹å€¼
 USE MYDB
 DECLARE @NAME VARCHAR(20)
 SET @NAME='JACK'
-SELECT @NAME=NAME FROM INFO WHERE  NAME='ÕÅÈý'
-PRINT @NAME  --JACK,±£´æÔ­À´µÄÖµ
---½á¹û JACK
+SELECT @NAME=NAME FROM INFO WHERE  NAME='å¼ ä¸‰'
+PRINT @NAME  --JACK,ä¿å­˜åŽŸæ¥çš„å€¼
+--ç»“æžœ JACK
 **/
 
 --<------------------------------<---MYSQL--->------------------------------>--
 /**
---¶à×Ö¶ÎÅÅÐò ±ØÐëÍ¬Ê±¼ÓDESC/ASC»òÕßÍ¬Ê±²»¼Ó
+--å¤šå­—æ®µæŽ’åº å¿…é¡»åŒæ—¶åŠ DESC/ASCæˆ–è€…åŒæ—¶ä¸åŠ 
 
 SELECT
-	C.ID AS '¿Î³ÌID' ,
-	C.NAME AS '¿Î³ÌNAME',
-	MAX(SC.SCORE ) ×î¸ß·Ö,
-	MIN(SC.SCORE)×îµÍ·Ö,
-	AVG(SC.SCORE) Æ½¾ù·Ö,
-	#SUM(CASE WHEN SC.SCORE>='60' THEN 1 ELSE 0 END ) ¼°¸ñÈËÊý,
-	COUNT(SC.SCORE) Ñ¡ÐÞÈËÊý,
-	CONCAT(ROUND((SUM(CASE WHEN SC.SCORE>='60' THEN 1 ELSE 0 END ) /COUNT(SC.SCORE)*100),2),'%') ¼°¸ñÂÊ,
-	CONCAT(ROUND((SUM(CASE WHEN SC.SCORE>='70' AND SC.SCORE<'80'  THEN 1 ELSE 0 END ) /COUNT(SC.SCORE)*100),2),'%') ÖÐµÈÂÊ,
-	CONCAT(ROUND((SUM(CASE WHEN SC.SCORE>='80' AND SC.SCORE<'90'  THEN 1 ELSE 0 END ) /COUNT(SC.SCORE)*100),2),'%') ÓÅÁ¼ÂÊ,
-	CONCAT(ROUND((SUM(CASE WHEN SC.SCORE>='90' THEN 1 ELSE 0 END ) /COUNT(SC.SCORE)*100),2),'%') ÓÅÐãÂÊ
+	C.ID AS 'è¯¾ç¨‹ID' ,
+	C.NAME AS 'è¯¾ç¨‹NAME',
+	MAX(SC.SCORE ) æœ€é«˜åˆ†,
+	MIN(SC.SCORE)æœ€ä½Žåˆ†,
+	AVG(SC.SCORE) å¹³å‡åˆ†,
+	#SUM(CASE WHEN SC.SCORE>='60' THEN 1 ELSE 0 END ) åŠæ ¼äººæ•°,
+	COUNT(SC.SCORE) é€‰ä¿®äººæ•°,
+	CONCAT(ROUND((SUM(CASE WHEN SC.SCORE>='60' THEN 1 ELSE 0 END ) /COUNT(SC.SCORE)*100),2),'%') åŠæ ¼çŽ‡,
+	CONCAT(ROUND((SUM(CASE WHEN SC.SCORE>='70' AND SC.SCORE<'80'  THEN 1 ELSE 0 END ) /COUNT(SC.SCORE)*100),2),'%') ä¸­ç­‰çŽ‡,
+	CONCAT(ROUND((SUM(CASE WHEN SC.SCORE>='80' AND SC.SCORE<'90'  THEN 1 ELSE 0 END ) /COUNT(SC.SCORE)*100),2),'%') ä¼˜è‰¯çŽ‡,
+	CONCAT(ROUND((SUM(CASE WHEN SC.SCORE>='90' THEN 1 ELSE 0 END ) /COUNT(SC.SCORE)*100),2),'%') ä¼˜ç§€çŽ‡
 FROM COURSE C
 LEFT JOIN SC ON C.ID=SC.C_ID
 GROUP BY C.ID,C.NAME
@@ -460,7 +460,7 @@ ORDER BY COUNT(SC.SCORE) DESC ,C.ID ASC
 
 
 
---mysql ³É¼¨Ç°Èý TOP 3
+--mysql æˆç»©å‰ä¸‰ TOP 3
 
 SELECT T1.*,T2.S_ID,T2.SCORE
 FROM  SC T1

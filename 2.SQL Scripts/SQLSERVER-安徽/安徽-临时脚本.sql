@@ -1,4 +1,4 @@
--- ÁÙÊ±¸üĞÂÉí·İÂë
+-- ä¸´æ—¶æ›´æ–°èº«ä»½ç 
 UPDATE zcpt_k060
 SET zcpt_k060.k6040=rtrim(k060.k6040)
 FROM zcpt_k060
@@ -8,36 +8,36 @@ else left(k060.k0101,4)+left(k060.a0103,6)+'L'+rtrim(k060.k6001) end) = rtrim(ZC
 WHERE LEFT(k060.K0101,1) IN ('G','s')
 
 
---ÇÅÁº×Ó²éÑ¯
+--æ¡¥æ¢å­æŸ¥è¯¢
 SELECT rtrim(K060.K6040)
 from  k060
 left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108 and k060.k6003<=k001.k0109
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT  rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001)
 from  k060
 left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108 and k060.k6003<=k001.k0109
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 
 
 --9.2.3
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
-rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,rtrim(NBZC.zk0101)'×Ê²úÆ½Ì¨|ËùÔÚÂ·Ïß´úÂë',
-CASE WHEN rtrim(NBZC.k0101)<>rtrim(NBZC.zk0101) THEN 'ËùÔÚÂ·Ïß´úÂë ²»Ò»ÖÂ'	ELSE null END 'ËùÔÚÂ·Ïß´úÂë ¶Ô±È',
-rtrim(NBZC.k6002) k6002,rtrim(NBZC.zk6002) '×Ê²úÆ½Ì¨|ÇÅÁºÃû³Æ',
-CASE WHEN rtrim(NBZC.k6002)<>rtrim(NBZC.zk6002) THEN 'ÇÅÁºÃû³Æ ²»Ò»ÖÂ'	ELSE null END 'ÇÅÁºÃû³Æ ¶Ô±È',
-rtrim(NBZC.k6003) k6003,rtrim(NBZC.zk6003) '×Ê²úÆ½Ì¨|ÇÅÁºÖĞĞÄ×®ºÅ',
-CASE WHEN rtrim(NBZC.k6003)<>rtrim(NBZC.zk6003) THEN 'ÇÅÁºÖĞĞÄ×®ºÅ ²»Ò»ÖÂ'	ELSE null END'ÇÅÁºÖĞĞÄ×®ºÅ ¶Ô±È',
-rtrim(NBZC.A0103)A0103,rtrim(NBZC.zA0103)'×Ê²úÆ½Ì¨|ĞĞÕşÇø»®',
-CASE WHEN rtrim(NBZC.A0103)<>rtrim(NBZC.zA0103) THEN 'ĞĞÕşÇø»® ²»Ò»ÖÂ'	ELSE null END'ĞĞÕşÇø»® ¶Ô±È',
-rtrim(NBZC.hA0103)hA0103,rtrim(NBZC.zhA0103)'×Ê²úÆ½Ì¨|ĞĞÕşÇø»®ºº×Ö',
-CASE WHEN rtrim(NBZC.HA0103)<>rtrim(NBZC.zHA0103) THEN 'ĞĞÕşÇø»®ºº×Ö ²»Ò»ÖÂ'	ELSE null END'ĞĞÕşÇø»®ºº×Ö ¶Ô±È',
+rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,rtrim(NBZC.zk0101)'èµ„äº§å¹³å°|æ‰€åœ¨è·¯çº¿ä»£ç ',
+CASE WHEN rtrim(NBZC.k0101)<>rtrim(NBZC.zk0101) THEN 'æ‰€åœ¨è·¯çº¿ä»£ç  ä¸ä¸€è‡´'	ELSE null END 'æ‰€åœ¨è·¯çº¿ä»£ç  å¯¹æ¯”',
+rtrim(NBZC.k6002) k6002,rtrim(NBZC.zk6002) 'èµ„äº§å¹³å°|æ¡¥æ¢åç§°',
+CASE WHEN rtrim(NBZC.k6002)<>rtrim(NBZC.zk6002) THEN 'æ¡¥æ¢åç§° ä¸ä¸€è‡´'	ELSE null END 'æ¡¥æ¢åç§° å¯¹æ¯”',
+rtrim(NBZC.k6003) k6003,rtrim(NBZC.zk6003) 'èµ„äº§å¹³å°|æ¡¥æ¢ä¸­å¿ƒæ¡©å·',
+CASE WHEN rtrim(NBZC.k6003)<>rtrim(NBZC.zk6003) THEN 'æ¡¥æ¢ä¸­å¿ƒæ¡©å· ä¸ä¸€è‡´'	ELSE null END'æ¡¥æ¢ä¸­å¿ƒæ¡©å· å¯¹æ¯”',
+rtrim(NBZC.A0103)A0103,rtrim(NBZC.zA0103)'èµ„äº§å¹³å°|è¡Œæ”¿åŒºåˆ’',
+CASE WHEN rtrim(NBZC.A0103)<>rtrim(NBZC.zA0103) THEN 'è¡Œæ”¿åŒºåˆ’ ä¸ä¸€è‡´'	ELSE null END'è¡Œæ”¿åŒºåˆ’ å¯¹æ¯”',
+rtrim(NBZC.hA0103)hA0103,rtrim(NBZC.zhA0103)'èµ„äº§å¹³å°|è¡Œæ”¿åŒºåˆ’æ±‰å­—',
+CASE WHEN rtrim(NBZC.HA0103)<>rtrim(NBZC.zHA0103) THEN 'è¡Œæ”¿åŒºåˆ’æ±‰å­— ä¸ä¸€è‡´'	ELSE null END'è¡Œæ”¿åŒºåˆ’æ±‰å­— å¯¹æ¯”',
 
 nbzc.K6040
 from (
@@ -55,7 +55,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 --k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -71,30 +71,30 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 --k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and(
-rtrim(NBZC.k6002)<>rtrim(NBZC.zk6002) or -- ÇÅÁºÃû³Æ,
-rtrim(NBZC.k6003)<>rtrim(NBZC.zk6003) or -- ÇÅÁºÖĞĞÄ×®ºÅ
+rtrim(NBZC.k6002)<>rtrim(NBZC.zk6002) or -- æ¡¥æ¢åç§°,
+rtrim(NBZC.k6003)<>rtrim(NBZC.zk6003) or -- æ¡¥æ¢ä¸­å¿ƒæ¡©å·
 rtrim(NBZC.k0101)<>rtrim(NBZC.zk0101) or
-rtrim(NBZC.A0103)<>rtrim(NBZC.zA0103) or -- ĞĞÕşÇø»®
-rtrim(NBZC.hA0103)<>rtrim(NBZC.zhA0103) -- ĞĞÕşÇø»®
+rtrim(NBZC.A0103)<>rtrim(NBZC.zA0103) or -- è¡Œæ”¿åŒºåˆ’
+rtrim(NBZC.hA0103)<>rtrim(NBZC.zhA0103) -- è¡Œæ”¿åŒºåˆ’
 )
 order by k0101
 
 
 --9.2.4
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,rtrim(NBZC.K6002) K6002,
 
-rtrim(NBZC.K6065) K6065,rtrim(NBZC.zK6065) '×Ê²úÆ½Ì¨|¿ç¾¶×Ü³¤',
-CASE WHEN rtrim(NBZC.K6065)<>rtrim(NBZC.zK6065) THEN '¿ç¾¶×Ü³¤ ²»Ò»ÖÂ'	ELSE null END'¿ç¾¶×Ü³¤ ¶Ô±È',
-rtrim(NBZC.K6063) K6063,rtrim(NBZC.zK6063) '×Ê²úÆ½Ì¨|µ¥¿××î´ó¿ç¾¶',
-CASE WHEN rtrim(NBZC.K6063)<>rtrim(NBZC.zK6063) THEN 'µ¥¿××î´ó¿ç¾¶ ²»Ò»ÖÂ'	ELSE null END'µ¥¿××î´ó¿ç¾¶ ¶Ô±È',
-rtrim(NBZC.K6064) K6064,rtrim(NBZC.zK6064) '×Ê²úÆ½Ì¨|ÇÅÁº¿ç¾¶×éºÏ',
-CASE WHEN rtrim(NBZC.K6064)<>rtrim(NBZC.zK6064) THEN 'ÇÅÁº¿ç¾¶×éºÏ ²»Ò»ÖÂ'	ELSE null END'ÇÅÁº¿ç¾¶×éºÏ ¶Ô±È',
+rtrim(NBZC.K6065) K6065,rtrim(NBZC.zK6065) 'èµ„äº§å¹³å°|è·¨å¾„æ€»é•¿',
+CASE WHEN rtrim(NBZC.K6065)<>rtrim(NBZC.zK6065) THEN 'è·¨å¾„æ€»é•¿ ä¸ä¸€è‡´'	ELSE null END'è·¨å¾„æ€»é•¿ å¯¹æ¯”',
+rtrim(NBZC.K6063) K6063,rtrim(NBZC.zK6063) 'èµ„äº§å¹³å°|å•å­”æœ€å¤§è·¨å¾„',
+CASE WHEN rtrim(NBZC.K6063)<>rtrim(NBZC.zK6063) THEN 'å•å­”æœ€å¤§è·¨å¾„ ä¸ä¸€è‡´'	ELSE null END'å•å­”æœ€å¤§è·¨å¾„ å¯¹æ¯”',
+rtrim(NBZC.K6064) K6064,rtrim(NBZC.zK6064) 'èµ„äº§å¹³å°|æ¡¥æ¢è·¨å¾„ç»„åˆ',
+CASE WHEN rtrim(NBZC.K6064)<>rtrim(NBZC.zK6064) THEN 'æ¡¥æ¢è·¨å¾„ç»„åˆ ä¸ä¸€è‡´'	ELSE null END'æ¡¥æ¢è·¨å¾„ç»„åˆ å¯¹æ¯”',
 
 nbzc.K6040
 from (
@@ -111,7 +111,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -127,27 +127,27 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
-COALESCE(CASE WHEN rtrim(NBZC.K6065)<>rtrim(NBZC.zK6065) THEN '¿ç¾¶×Ü³¤ ²»Ò»ÖÂ'	ELSE null END,
-CASE WHEN rtrim(NBZC.K6063)<>rtrim(NBZC.zK6063) THEN 'µ¥¿××î´ó¿ç¾¶ ²»Ò»ÖÂ'	ELSE null END,
-CASE WHEN rtrim(NBZC.K6064)<>rtrim(NBZC.zK6064) THEN 'ÇÅÁº¿ç¾¶×éºÏ ²»Ò»ÖÂ'	ELSE null END
-)  like '%²»Ò»ÖÂ%'
+COALESCE(CASE WHEN rtrim(NBZC.K6065)<>rtrim(NBZC.zK6065) THEN 'è·¨å¾„æ€»é•¿ ä¸ä¸€è‡´'	ELSE null END,
+CASE WHEN rtrim(NBZC.K6063)<>rtrim(NBZC.zK6063) THEN 'å•å­”æœ€å¤§è·¨å¾„ ä¸ä¸€è‡´'	ELSE null END,
+CASE WHEN rtrim(NBZC.K6064)<>rtrim(NBZC.zK6064) THEN 'æ¡¥æ¢è·¨å¾„ç»„åˆ ä¸ä¸€è‡´'	ELSE null END
+)  like '%ä¸ä¸€è‡´%'
 order by k0101
 
 --9.2.5
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
-rtrim(NBZC.zk0101)'×Ê²úÆ½Ì¨|ËùÔÚÂ·Ïß´úÂë',
-CASE WHEN rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))<>rtrim(NBZC.zk0101) THEN 'ËùÔÚÂ·Ïß´úÂë ²»Ò»ÖÂ'	ELSE null END 'ËùÔÚÂ·Ïß´úÂë ¶Ô±È',
-NBZC.k0112,NBZC.zk0112 '×Ê²úÆ½Ì¨|Â·Ïß¼ò³Æ',
-CASE WHEN rtrim(NBZC.k0112)<>rtrim(NBZC.zk0112) THEN 'Â·Ïß¼ò³Æ ²»Ò»ÖÂ'	ELSE null END 'Â·Ïß¼ò³Æ ¶Ô±È',
-NBZC.hk0304,NBZC.zhk0304 '×Ê²úÆ½Ì¨|ËùÊôÂ·Ïß¼¼ÊõµÈ¼¶¶Ô±È',
-CASE WHEN rtrim(NBZC.hk0304)<>rtrim(NBZC.zhk0304) THEN 'ËùÊôÂ·Ïß¼¼ÊõµÈ¼¶¶Ô±È ²»Ò»ÖÂ'	ELSE null END'ËùÊôÂ·Ïß¼¼ÊõµÈ¼¶¶Ô±È ¶Ô±È',
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+rtrim(NBZC.zk0101)'èµ„äº§å¹³å°|æ‰€åœ¨è·¯çº¿ä»£ç ',
+CASE WHEN rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))<>rtrim(NBZC.zk0101) THEN 'æ‰€åœ¨è·¯çº¿ä»£ç  ä¸ä¸€è‡´'	ELSE null END 'æ‰€åœ¨è·¯çº¿ä»£ç  å¯¹æ¯”',
+NBZC.k0112,NBZC.zk0112 'èµ„äº§å¹³å°|è·¯çº¿ç®€ç§°',
+CASE WHEN rtrim(NBZC.k0112)<>rtrim(NBZC.zk0112) THEN 'è·¯çº¿ç®€ç§° ä¸ä¸€è‡´'	ELSE null END 'è·¯çº¿ç®€ç§° å¯¹æ¯”',
+NBZC.hk0304,NBZC.zhk0304 'èµ„äº§å¹³å°|æ‰€å±è·¯çº¿æŠ€æœ¯ç­‰çº§å¯¹æ¯”',
+CASE WHEN rtrim(NBZC.hk0304)<>rtrim(NBZC.zhk0304) THEN 'æ‰€å±è·¯çº¿æŠ€æœ¯ç­‰çº§å¯¹æ¯” ä¸ä¸€è‡´'	ELSE null END'æ‰€å±è·¯çº¿æŠ€æœ¯ç­‰çº§å¯¹æ¯” å¯¹æ¯”',
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -162,7 +162,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -177,32 +177,32 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.k0112)<>rtrim(NBZC.Zk0112)	or --   Â·Ïß¼ò³Æ,
-rtrim(NBZC.hk0304)<>rtrim(NBZC.Zhk0304) or 	 --   ËùÊôÂ·Ïß¼¼ÊõµÈ¼¶¶Ô±È,
+rtrim(NBZC.k0112)<>rtrim(NBZC.Zk0112)	or --   è·¯çº¿ç®€ç§°,
+rtrim(NBZC.hk0304)<>rtrim(NBZC.Zhk0304) or 	 --   æ‰€å±è·¯çº¿æŠ€æœ¯ç­‰çº§å¯¹æ¯”,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))<>rtrim(NBZC.zk0101)
-)	 -- Â·Ïß´úÂë,
+)	 -- è·¯çº¿ä»£ç ,
 order by k0101
 
 --9.2.6
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,
 NBZC.K6003 k6003,
-NBZC.K6007 K6007,NBZC.zK6007 '×Ê²úÆ½Ì¨|ÇÅÁº¿ç¾¶·ÖÀà´úÂë',
-CASE WHEN K6007<>zK6007 THEN 'ÇÅÁº¿ç¾¶·ÖÀà´úÂë ²»Ò»ÖÂ'	ELSE null END'ÇÅÁº¿ç¾¶·ÖÀà´úÂë ¶Ô±È',
-NBZC.HK6007 HK6007,NBZC.zHK6007 '×Ê²úÆ½Ì¨|ÇÅÁº¿ç¾¶·ÖÀà',
-CASE WHEN HK6007<>zHK6007 THEN 'ÇÅÁº¿ç¾¶·ÖÀà ²»Ò»ÖÂ'	ELSE null END'ÇÅÁº¿ç¾¶·ÖÀà ¶Ô±È',
-NBZC.K6004 K6004,NBZC.zK6004 '×Ê²úÆ½Ì¨|°´Ê¹ÓÃÄêÏŞ·Ö´úÂë',
-CASE WHEN K6004<>zK6004 THEN '°´Ê¹ÓÃÄêÏŞ·Ö´úÂë ²»Ò»ÖÂ'	ELSE null END'°´Ê¹ÓÃÄêÏŞ·Ö´úÂë ¶Ô±È',
-NBZC.HK6004 HK6004,NBZC.zHK6004 '×Ê²úÆ½Ì¨|°´Ê¹ÓÃÄêÏŞ·Öºº×Ö',
-CASE WHEN REPLACE(HK6004, 'ÇÅ', '')<>zHK6004 THEN '°´Ê¹ÓÃÄêÏŞ·Öºº×Ö ²»Ò»ÖÂ'	ELSE null END'°´Ê¹ÓÃÄêÏŞ·Öºº×Ö ¶Ô±È',
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+NBZC.K6007 K6007,NBZC.zK6007 'èµ„äº§å¹³å°|æ¡¥æ¢è·¨å¾„åˆ†ç±»ä»£ç ',
+CASE WHEN K6007<>zK6007 THEN 'æ¡¥æ¢è·¨å¾„åˆ†ç±»ä»£ç  ä¸ä¸€è‡´'	ELSE null END'æ¡¥æ¢è·¨å¾„åˆ†ç±»ä»£ç  å¯¹æ¯”',
+NBZC.HK6007 HK6007,NBZC.zHK6007 'èµ„äº§å¹³å°|æ¡¥æ¢è·¨å¾„åˆ†ç±»',
+CASE WHEN HK6007<>zHK6007 THEN 'æ¡¥æ¢è·¨å¾„åˆ†ç±» ä¸ä¸€è‡´'	ELSE null END'æ¡¥æ¢è·¨å¾„åˆ†ç±» å¯¹æ¯”',
+NBZC.K6004 K6004,NBZC.zK6004 'èµ„äº§å¹³å°|æŒ‰ä½¿ç”¨å¹´é™åˆ†ä»£ç ',
+CASE WHEN K6004<>zK6004 THEN 'æŒ‰ä½¿ç”¨å¹´é™åˆ†ä»£ç  ä¸ä¸€è‡´'	ELSE null END'æŒ‰ä½¿ç”¨å¹´é™åˆ†ä»£ç  å¯¹æ¯”',
+NBZC.HK6004 HK6004,NBZC.zHK6004 'èµ„äº§å¹³å°|æŒ‰ä½¿ç”¨å¹´é™åˆ†æ±‰å­—',
+CASE WHEN REPLACE(HK6004, 'æ¡¥', '')<>zHK6004 THEN 'æŒ‰ä½¿ç”¨å¹´é™åˆ†æ±‰å­— ä¸ä¸€è‡´'	ELSE null END'æŒ‰ä½¿ç”¨å¹´é™åˆ†æ±‰å­— å¯¹æ¯”',
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -218,7 +218,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -234,28 +234,28 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where
 NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.K6007)<>rtrim(NBZC.zK6007) or --  ÇÅÁº¿ç¾¶·ÖÀà´úÂë,
-rtrim(NBZC.HK6007)<>rtrim(NBZC.zHK6007)	or--  ÇÅÁº¿ç¾¶·ÖÀà,
-rtrim(NBZC.K6004)<>rtrim(NBZC.zK6004)	or --  °´Ê¹ÓÃÄêÏŞ·Ö´úÂë,
-REPLACE(HK6004, 'ÇÅ', '')<>zHK6004
+rtrim(NBZC.K6007)<>rtrim(NBZC.zK6007) or --  æ¡¥æ¢è·¨å¾„åˆ†ç±»ä»£ç ,
+rtrim(NBZC.HK6007)<>rtrim(NBZC.zHK6007)	or--  æ¡¥æ¢è·¨å¾„åˆ†ç±»,
+rtrim(NBZC.K6004)<>rtrim(NBZC.zK6004)	or --  æŒ‰ä½¿ç”¨å¹´é™åˆ†ä»£ç ,
+REPLACE(HK6004, 'æ¡¥', '')<>zHK6004
 )
 order by k0101
 
 --9.2.7
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,rtrim(NBZC.K6002) K6002,
 
-rtrim(NBZC.k6023) k6023,rtrim(NBZC.zk6023) '×Ê²úÆ½Ì¨|¿¹ÕğµÈ¼¶´úÂë',
-CASE WHEN rtrim(NBZC.k6023)<>rtrim(NBZC.zk6023) THEN '¿¹ÕğµÈ¼¶´úÂë ²»Ò»ÖÂ'	ELSE null END'¿¹ÕğµÈ¼¶´úÂë ¶Ô±È',
-rtrim(NBZC.hk6023) hk6023,rtrim(NBZC.zhk6023) '×Ê²úÆ½Ì¨|¿¹ÕğµÈ¼¶',
-CASE WHEN rtrim(NBZC.k6023)<>rtrim(NBZC.zk6023) THEN '¿¹ÕğµÈ¼¶ ²»Ò»ÖÂ'	ELSE null END'¿¹ÕğµÈ¼¶ ¶Ô±È',
+rtrim(NBZC.k6023) k6023,rtrim(NBZC.zk6023) 'èµ„äº§å¹³å°|æŠ—éœ‡ç­‰çº§ä»£ç ',
+CASE WHEN rtrim(NBZC.k6023)<>rtrim(NBZC.zk6023) THEN 'æŠ—éœ‡ç­‰çº§ä»£ç  ä¸ä¸€è‡´'	ELSE null END'æŠ—éœ‡ç­‰çº§ä»£ç  å¯¹æ¯”',
+rtrim(NBZC.hk6023) hk6023,rtrim(NBZC.zhk6023) 'èµ„äº§å¹³å°|æŠ—éœ‡ç­‰çº§',
+CASE WHEN rtrim(NBZC.k6023)<>rtrim(NBZC.zk6023) THEN 'æŠ—éœ‡ç­‰çº§ ä¸ä¸€è‡´'	ELSE null END'æŠ—éœ‡ç­‰çº§ å¯¹æ¯”',
 
 nbzc.K6040
 from (
@@ -271,7 +271,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -286,13 +286,13 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where --NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
 
-rtrim(NBZC.k6023)<>rtrim(NBZC.zk6023)-- or -- ¿¹ÕğµÈ¼¶´úÂë,
---rtrim(NBZC.hk6023)<>rtrim(NBZC.zhk6023)	 -- ¿¹ÕğµÈ¼¶,
+rtrim(NBZC.k6023)<>rtrim(NBZC.zk6023)-- or -- æŠ—éœ‡ç­‰çº§ä»£ç ,
+--rtrim(NBZC.hk6023)<>rtrim(NBZC.zhk6023)	 -- æŠ—éœ‡ç­‰çº§,
 
 
 )
@@ -300,13 +300,13 @@ order by k0101
 
 
 --9.2.8
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,rtrim(NBZC.K6002) K6002,
 
-rtrim(NBZC.hk0149) hk0149,rtrim(NBZC.zhk0149) '×Ê²úÆ½Ì¨|·Àºé±ê×¼',
-CASE WHEN rtrim(NBZC.hk0149)<>isnull(rtrim(NBZC.zhk0149),'999') THEN '·Àºé±ê×¼ ²»Ò»ÖÂ'	ELSE null END'·Àºé±ê×¼ ¶Ô±È',
+rtrim(NBZC.hk0149) hk0149,rtrim(NBZC.zhk0149) 'èµ„äº§å¹³å°|é˜²æ´ªæ ‡å‡†',
+CASE WHEN rtrim(NBZC.hk0149)<>isnull(rtrim(NBZC.zhk0149),'999') THEN 'é˜²æ´ªæ ‡å‡† ä¸ä¸€è‡´'	ELSE null END'é˜²æ´ªæ ‡å‡† å¯¹æ¯”',
 
 nbzc.K6040
 from (
@@ -321,7 +321,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -335,26 +335,26 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.hk0149)<>isnull(rtrim(NBZC.zhk0149),'999')	 -- ·Àºé±ê×¼,
+rtrim(NBZC.hk0149)<>isnull(rtrim(NBZC.zhk0149),'999')	 -- é˜²æ´ªæ ‡å‡†,
 )
 order by k0101
 
 
 --9.2.9 tonghang
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,rtrim(NBZC.K6002) K6002,
 
 
-rtrim(NBZC.hK6024) hK6024,rtrim(NBZC.zhK6024) '×Ê²úÆ½Ì¨|Í¨º½µÈ¼¶',
-CASE WHEN rtrim(NBZC.hK6024)<>rtrim(NBZC.zhK6024) THEN 'Í¨º½µÈ¼¶ ²»Ò»ÖÂ'        ELSE null END 'Í¨º½µÈ¼¶ ¶Ô±È',
-rtrim(NBZC.hA1328) hA1328,rtrim(NBZC.zhA1328) '×Ê²úÆ½Ì¨|¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ',
-CASE WHEN rtrim(NBZC.hA1328)<>rtrim(NBZC.zhA1328) THEN '¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ ²»Ò»ÖÂ'        ELSE null END'¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ ¶Ô±È',
+rtrim(NBZC.hK6024) hK6024,rtrim(NBZC.zhK6024) 'èµ„äº§å¹³å°|é€šèˆªç­‰çº§',
+CASE WHEN rtrim(NBZC.hK6024)<>rtrim(NBZC.zhK6024) THEN 'é€šèˆªç­‰çº§ ä¸ä¸€è‡´'        ELSE null END 'é€šèˆªç­‰çº§ å¯¹æ¯”',
+rtrim(NBZC.hA1328) hA1328,rtrim(NBZC.zhA1328) 'èµ„äº§å¹³å°|å¢©å°é˜²æ’è®¾æ–½ç±»å‹',
+CASE WHEN rtrim(NBZC.hA1328)<>rtrim(NBZC.zhA1328) THEN 'å¢©å°é˜²æ’è®¾æ–½ç±»å‹ ä¸ä¸€è‡´'        ELSE null END'å¢©å°é˜²æ’è®¾æ–½ç±»å‹ å¯¹æ¯”',
 
 nbzc.K6040
 from (
@@ -370,7 +370,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -385,27 +385,27 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.hK6024)<>rtrim(NBZC.zhK6024) or -- Í¨º½µÈ¼¶,
-rtrim(NBZC.hA1328)<>rtrim(NBZC.zhA1328)-- ¶ÕÌ¨·À×²ÉèÊ©ÀàĞÍ,
+rtrim(NBZC.hK6024)<>rtrim(NBZC.zhK6024) or -- é€šèˆªç­‰çº§,
+rtrim(NBZC.hA1328)<>rtrim(NBZC.zhA1328)-- å¢©å°é˜²æ’è®¾æ–½ç±»å‹,
 )
 order by k0101
 
 
 --9.2.10
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,rtrim(NBZC.K6002) K6002,
 
 
-rtrim(NBZC.ha1306) ha1306,rtrim(NBZC.zha1306) '×Ê²úÆ½Ì¨|Ö÷Òª²¡º¦Î»ÖÃ',
-CASE WHEN rtrim(NBZC.ha1306)<>rtrim(NBZC.zha1306) THEN 'Ö÷Òª²¡º¦Î»ÖÃ ²»Ò»ÖÂ'        ELSE null END 'Ö÷Òª²¡º¦Î»ÖÃ ¶Ô±È',
-rtrim(NBZC.k6102) k6102,rtrim(NBZC.zk6102) '×Ê²úÆ½Ì¨|Ö÷Òª²¡º¦ÃèÊö',
-CASE WHEN rtrim(NBZC.k6102)<>rtrim(NBZC.zk6102) THEN 'Ö÷Òª²¡º¦ÃèÊö ²»Ò»ÖÂ'        ELSE null END'Ö÷Òª²¡º¦ÃèÊö ¶Ô±È',
+rtrim(NBZC.ha1306) ha1306,rtrim(NBZC.zha1306) 'èµ„äº§å¹³å°|ä¸»è¦ç—…å®³ä½ç½®',
+CASE WHEN rtrim(NBZC.ha1306)<>rtrim(NBZC.zha1306) THEN 'ä¸»è¦ç—…å®³ä½ç½® ä¸ä¸€è‡´'        ELSE null END 'ä¸»è¦ç—…å®³ä½ç½® å¯¹æ¯”',
+rtrim(NBZC.k6102) k6102,rtrim(NBZC.zk6102) 'èµ„äº§å¹³å°|ä¸»è¦ç—…å®³æè¿°',
+CASE WHEN rtrim(NBZC.k6102)<>rtrim(NBZC.zk6102) THEN 'ä¸»è¦ç—…å®³æè¿° ä¸ä¸€è‡´'        ELSE null END'ä¸»è¦ç—…å®³æè¿° å¯¹æ¯”',
 
 nbzc.K6040
 from (
@@ -421,7 +421,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 --k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -436,29 +436,29 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 --k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where --NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.ha1306)<>rtrim(NBZC.zha1306) or -- Ö÷Òª²¡º¦Î»ÖÃ,
-rtrim(NBZC.k6102)<>rtrim(NBZC.zk6102)        -- Ö÷Òª²¡º¦ÃèÊö,
+rtrim(NBZC.ha1306)<>rtrim(NBZC.zha1306) or -- ä¸»è¦ç—…å®³ä½ç½®,
+rtrim(NBZC.k6102)<>rtrim(NBZC.zk6102)        -- ä¸»è¦ç—…å®³æè¿°,
 )
 order by k0101
 
 
 --9.2.11
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,NBZC.K6003 k6003,
 
-NBZC.k0181 k0181,NBZC.zk0181 '×Ê²úÆ½Ì¨|¸Ä½¨Äê¶È',
-CASE WHEN k0181<>zk0181 THEN '¸Ä½¨Äê¶È ²»Ò»ÖÂ'	ELSE null END'¸Ä½¨Äê¶È ¶Ô±È',
-NBZC.a1316 a1316,NBZC.za1316 '×Ê²úÆ½Ì¨|¸ÄÔìÍê¹¤ÈÕÆÚ',
-CASE WHEN a1316<>za1316 THEN '¸ÄÔìÍê¹¤ÈÕÆÚ ²»Ò»ÖÂ'	ELSE null END'¸ÄÔìÍê¹¤ÈÕÆÚ ¶Ô±È',
+NBZC.k0181 k0181,NBZC.zk0181 'èµ„äº§å¹³å°|æ”¹å»ºå¹´åº¦',
+CASE WHEN k0181<>zk0181 THEN 'æ”¹å»ºå¹´åº¦ ä¸ä¸€è‡´'	ELSE null END'æ”¹å»ºå¹´åº¦ å¯¹æ¯”',
+NBZC.a1316 a1316,NBZC.za1316 'èµ„äº§å¹³å°|æ”¹é€ å®Œå·¥æ—¥æœŸ',
+CASE WHEN a1316<>za1316 THEN 'æ”¹é€ å®Œå·¥æ—¥æœŸ ä¸ä¸€è‡´'	ELSE null END'æ”¹é€ å®Œå·¥æ—¥æœŸ å¯¹æ¯”',
 
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -472,7 +472,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -486,27 +486,27 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.k0181)<>rtrim(NBZC.zk0181)	or -- ¸Ä½¨Äê¶È,
-rtrim(NBZC.a1316)<>rtrim(NBZC.za1316)	 -- ¸ÄÔìÍê¹¤ÈÕÆÚ,
+rtrim(NBZC.k0181)<>rtrim(NBZC.zk0181)	or -- æ”¹å»ºå¹´åº¦,
+rtrim(NBZC.a1316)<>rtrim(NBZC.za1316)	 -- æ”¹é€ å®Œå·¥æ—¥æœŸ,
 )
 order by k0101
 
 --9.2.12
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,
 NBZC.K6003 k6003,
-NBZC.a1302 a1302,NBZC.za1302 '×Ê²úÆ½Ì¨|ÊÕ·ÑĞÔÖÊ´úÂë',
-CASE WHEN a1302<>za1302 THEN 'ÊÕ·ÑĞÔÖÊ´úÂë ²»Ò»ÖÂ'	ELSE null END'ÊÕ·ÑĞÔÖÊ´úÂë ¶Ô±È',
-NBZC.ha1302 ha1302,NBZC.zha1302 '×Ê²úÆ½Ì¨|ÊÕ·ÑĞÔÖÊ·şÎñ',
-CASE WHEN replace(replace(rtrim(NBZC.ha1302),'Õş¸®',''),'ĞÔ','')<>zha1302 THEN 'ÊÕ·ÑĞÔÖÊ·şÎñ ²»Ò»ÖÂ'	ELSE null END'ÊÕ·ÑĞÔÖÊ·şÎñ ¶Ô±È',
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+NBZC.a1302 a1302,NBZC.za1302 'èµ„äº§å¹³å°|æ”¶è´¹æ€§è´¨ä»£ç ',
+CASE WHEN a1302<>za1302 THEN 'æ”¶è´¹æ€§è´¨ä»£ç  ä¸ä¸€è‡´'	ELSE null END'æ”¶è´¹æ€§è´¨ä»£ç  å¯¹æ¯”',
+NBZC.ha1302 ha1302,NBZC.zha1302 'èµ„äº§å¹³å°|æ”¶è´¹æ€§è´¨æœåŠ¡',
+CASE WHEN replace(replace(rtrim(NBZC.ha1302),'æ”¿åºœ',''),'æ€§','')<>zha1302 THEN 'æ”¶è´¹æ€§è´¨æœåŠ¡ ä¸ä¸€è‡´'	ELSE null END'æ”¶è´¹æ€§è´¨æœåŠ¡ å¯¹æ¯”',
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -520,7 +520,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
  k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -534,27 +534,27 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
  k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where  NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.a1302)<>rtrim(NBZC.za1302)	or -- ÊÕ·ÑĞÔÖÊ´úÂë,
-replace(replace(rtrim(NBZC.ha1302),'Õş¸®',''),'ĞÔ','')<>rtrim(NBZC.zha1302)	 -- ÊÕ·ÑĞÔÖÊ·şÎñ,
+rtrim(NBZC.a1302)<>rtrim(NBZC.za1302)	or -- æ”¶è´¹æ€§è´¨ä»£ç ,
+replace(replace(rtrim(NBZC.ha1302),'æ”¿åºœ',''),'æ€§','')<>rtrim(NBZC.zha1302)	 -- æ”¶è´¹æ€§è´¨æœåŠ¡,
 )
 order by k0101
 
 --9.2.13
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,
 NBZC.K6003 k6003,
-NBZC.A1307 A1307,NBZC.zA1307 '×Ê²úÆ½Ì¨|ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©´úÂë',
-CASE WHEN A1307<>zA1307 THEN 'ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©´úÂë ²»Ò»ÖÂ'	ELSE null END'ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©´úÂë ¶Ô±È',
-NBZC.hA1307 hA1307,NBZC.zhA1307 '×Ê²úÆ½Ì¨|ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©',
-CASE WHEN hA1307<>zhA1307 THEN 'ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ© ²»Ò»ÖÂ'	ELSE null END'ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ© ¶Ô±È',
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+NBZC.A1307 A1307,NBZC.zA1307 'èµ„äº§å¹³å°|å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ä»£ç ',
+CASE WHEN A1307<>zA1307 THEN 'å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ä»£ç  ä¸ä¸€è‡´'	ELSE null END'å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ä»£ç  å¯¹æ¯”',
+NBZC.hA1307 hA1307,NBZC.zhA1307 'èµ„äº§å¹³å°|å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½',
+CASE WHEN hA1307<>zhA1307 THEN 'å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ ä¸ä¸€è‡´'	ELSE null END'å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ å¯¹æ¯”',
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -568,7 +568,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -582,34 +582,34 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.A1307)<>rtrim(NBZC.zA1307)	or -- ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©´úÂë,
-rtrim(NBZC.hA1307)<>rtrim(NBZC.zhA1307)	 -- ÒÑ²ÉÈ¡½»Í¨¹ÜÖÆ´ëÊ©,
+rtrim(NBZC.A1307)<>rtrim(NBZC.zA1307)	or -- å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½ä»£ç ,
+rtrim(NBZC.hA1307)<>rtrim(NBZC.zhA1307)	 -- å·²é‡‡å–äº¤é€šç®¡åˆ¶æªæ–½,
 )
 order by k0101
 
 --9.2.14
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,NBZC.K6003 k6003,
 
-rtrim(NBZC.ha1319) ha1319,rtrim(NBZC.zha1319) '×Ê²úÆ½Ì¨|ÊÇ·ñ²¿²¹ÖúÏîÄ¿',
-CASE WHEN rtrim(NBZC.ha1319)<>rtrim(NBZC.zha1319) THEN 'ÊÇ·ñ²¿²¹ÖúÏîÄ¿ ²»Ò»ÖÂ'        ELSE null END 'ÊÇ·ñ²¿²¹ÖúÏîÄ¿ ¶Ô±È',
-rtrim(NBZC.hk6118) hk6118,rtrim(NBZC.zhk6118) '×Ê²úÆ½Ì¨|ÊÇ·ñ¿íÂ·Õ­ÇÅ',
-CASE WHEN rtrim(NBZC.hk6118)<>rtrim(NBZC.zhk6118) THEN 'ÊÇ·ñ¿íÂ·Õ­ÇÅ ²»Ò»ÖÂ'        ELSE null END'ÊÇ·ñ¿íÂ·Õ­ÇÅ ¶Ô±È',
-rtrim(NBZC.hk6119) hk6119,rtrim(NBZC.zhk6119) '×Ê²úÆ½Ì¨|ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ',
-CASE WHEN rtrim(NBZC.hk6119)<>rtrim(NBZC.zhk6119) THEN 'ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ ²»Ò»ÖÂ'        ELSE null END 'ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ ¶Ô±È',
-rtrim(NBZC.hk6120) hk6120,rtrim(NBZC.zhk6120) '×Ê²úÆ½Ì¨|ÊÇ·ñ¿çÊ¡ÇÅÁº',
-CASE WHEN rtrim(NBZC.hk6120)<>rtrim(NBZC.zhk6120) THEN 'ÊÇ·ñ¿çÊ¡ÇÅÁº ²»Ò»ÖÂ'        ELSE null END 'ÊÇ·ñ¿çÊ¡ÇÅÁº ¶Ô±È',
-rtrim(NBZC.hk6041) hk6041,rtrim(NBZC.zhk6041) '×Ê²úÆ½Ì¨|ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº',
-CASE WHEN rtrim(NBZC.hk6041)<>rtrim(NBZC.zhk6041) THEN 'ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº ²»Ò»ÖÂ'        ELSE null END'ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº ¶Ô±È',
+rtrim(NBZC.ha1319) ha1319,rtrim(NBZC.zha1319) 'èµ„äº§å¹³å°|æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›®',
+CASE WHEN rtrim(NBZC.ha1319)<>rtrim(NBZC.zha1319) THEN 'æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›® ä¸ä¸€è‡´'        ELSE null END 'æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›® å¯¹æ¯”',
+rtrim(NBZC.hk6118) hk6118,rtrim(NBZC.zhk6118) 'èµ„äº§å¹³å°|æ˜¯å¦å®½è·¯çª„æ¡¥',
+CASE WHEN rtrim(NBZC.hk6118)<>rtrim(NBZC.zhk6118) THEN 'æ˜¯å¦å®½è·¯çª„æ¡¥ ä¸ä¸€è‡´'        ELSE null END'æ˜¯å¦å®½è·¯çª„æ¡¥ å¯¹æ¯”',
+rtrim(NBZC.hk6119) hk6119,rtrim(NBZC.zhk6119) 'èµ„äº§å¹³å°|æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­',
+CASE WHEN rtrim(NBZC.hk6119)<>rtrim(NBZC.zhk6119) THEN 'æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­ ä¸ä¸€è‡´'        ELSE null END 'æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­ å¯¹æ¯”',
+rtrim(NBZC.hk6120) hk6120,rtrim(NBZC.zhk6120) 'èµ„äº§å¹³å°|æ˜¯å¦è·¨çœæ¡¥æ¢',
+CASE WHEN rtrim(NBZC.hk6120)<>rtrim(NBZC.zhk6120) THEN 'æ˜¯å¦è·¨çœæ¡¥æ¢ ä¸ä¸€è‡´'        ELSE null END 'æ˜¯å¦è·¨çœæ¡¥æ¢ å¯¹æ¯”',
+rtrim(NBZC.hk6041) hk6041,rtrim(NBZC.zhk6041) 'èµ„äº§å¹³å°|æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢',
+CASE WHEN rtrim(NBZC.hk6041)<>rtrim(NBZC.zhk6041) THEN 'æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢ ä¸ä¸€è‡´'        ELSE null END'æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢ å¯¹æ¯”',
 
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -627,7 +627,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -645,30 +645,30 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.ha1319)<>rtrim(NBZC.zha1319) or -- ÊÇ·ñ²¿²¹ÖúÏîÄ¿,
-rtrim(NBZC.hk6118)<>rtrim(NBZC.zhk6118) or -- ÊÇ·ñ¿íÂ·Õ­ÇÅ,
-rtrim(NBZC.hk6119)<>rtrim(NBZC.zhk6119) or -- ÊÇ·ñÔÚ³¤´óÇÅÁºÄ¿Â¼ÖĞ,
-rtrim(NBZC.hk6120)<>rtrim(NBZC.zhk6120) or -- ÊÇ·ñ¿çÊ¡ÇÅÁº,
-rtrim(NBZC.hk6041)<>rtrim(NBZC.zhk6041)         -- ÊÇ·ñ¹«ÌúÁ½ÓÃÇÅÁº,
+rtrim(NBZC.ha1319)<>rtrim(NBZC.zha1319) or -- æ˜¯å¦éƒ¨è¡¥åŠ©é¡¹ç›®,
+rtrim(NBZC.hk6118)<>rtrim(NBZC.zhk6118) or -- æ˜¯å¦å®½è·¯çª„æ¡¥,
+rtrim(NBZC.hk6119)<>rtrim(NBZC.zhk6119) or -- æ˜¯å¦åœ¨é•¿å¤§æ¡¥æ¢ç›®å½•ä¸­,
+rtrim(NBZC.hk6120)<>rtrim(NBZC.zhk6120) or -- æ˜¯å¦è·¨çœæ¡¥æ¢,
+rtrim(NBZC.hk6041)<>rtrim(NBZC.zhk6041)         -- æ˜¯å¦å…¬é“ä¸¤ç”¨æ¡¥æ¢,
 )
 order by k0101
 --9.2.15
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,NBZC.K6003 k6003,
 
-NBZC.k0180 k0180,NBZC.zk0180 '×Ê²úÆ½Ì¨|ĞŞ½¨Äê¶È',
-CASE WHEN k0180<>left(rtrim(NBZC.zk0180),4) THEN 'ĞŞ½¨Äê¶È ²»Ò»ÖÂ'	ELSE null END'ĞŞ½¨Äê¶È ¶Ô±È',
-NBZC.k0116 k0116,NBZC.zk0116 '×Ê²úÆ½Ì¨|Í¨³µÈÕÆÚ',
-CASE WHEN k0116<>zk0116 THEN 'Í¨³µÈÕÆÚ ²»Ò»ÖÂ'	ELSE null END'Í¨³µÈÕÆÚ ¶Ô±È',
+NBZC.k0180 k0180,NBZC.zk0180 'èµ„äº§å¹³å°|ä¿®å»ºå¹´åº¦',
+CASE WHEN k0180<>left(rtrim(NBZC.zk0180),4) THEN 'ä¿®å»ºå¹´åº¦ ä¸ä¸€è‡´'	ELSE null END'ä¿®å»ºå¹´åº¦ å¯¹æ¯”',
+NBZC.k0116 k0116,NBZC.zk0116 'èµ„äº§å¹³å°|é€šè½¦æ—¥æœŸ',
+CASE WHEN k0116<>zk0116 THEN 'é€šè½¦æ—¥æœŸ ä¸ä¸€è‡´'	ELSE null END'é€šè½¦æ—¥æœŸ å¯¹æ¯”',
 
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -682,7 +682,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -696,31 +696,31 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.k0180)<>left(rtrim(NBZC.zk0180),4)	or -- ĞŞ½¨Äê¶È,
-rtrim(NBZC.k0116)<>rtrim(NBZC.zk0116)	 -- Í¨³µÈÕÆÚ,
+rtrim(NBZC.k0180)<>left(rtrim(NBZC.zk0180),4)	or -- ä¿®å»ºå¹´åº¦,
+rtrim(NBZC.k0116)<>rtrim(NBZC.zk0116)	 -- é€šè½¦æ—¥æœŸ,
 )
 order by k0101
 --9.2.16
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,NBZC.K6003 k6003,
 
-rtrim(NBZC.k6028) k6028,rtrim(NBZC.zk6028) '×Ê²úÆ½Ì¨|¼¼Êõ×´¿öÆÀ¶¨´úÂë',
-CASE WHEN rtrim(NBZC.k6028)<>rtrim(NBZC.zk6028) THEN '¼¼Êõ×´¿öÆÀ¶¨´úÂë ²»Ò»ÖÂ'        ELSE null END '¼¼Êõ×´¿öÆÀ¶¨´úÂë ¶Ô±È',
-rtrim(NBZC.hk6028) hk6028,rtrim(NBZC.zhk6028) '×Ê²úÆ½Ì¨|¼¼Êõ×´¿öÆÀ¶¨',
-CASE WHEN rtrim(NBZC.k6028)<>rtrim(NBZC.zk6028) THEN '¼¼Êõ×´¿öÆÀ¶¨ ²»Ò»ÖÂ'        ELSE null END'¼¼Êõ×´¿öÆÀ¶¨ ¶Ô±È',
-rtrim(NBZC.a1305) a1305,rtrim(NBZC.za1305) '×Ê²úÆ½Ì¨|ÆÀ¶¨ÈÕÆÚ',
-CASE WHEN rtrim(NBZC.a1305)<>rtrim(NBZC.za1305) THEN 'ÆÀ¶¨ÈÕÆÚ ²»Ò»ÖÂ'        ELSE null END 'ÆÀ¶¨ÈÕÆÚ ¶Ô±È',
-rtrim(NBZC.k6050) k6050,rtrim(NBZC.zk6050) '×Ê²úÆ½Ì¨|¼¼Êõ×´¿öÆÀ¶¨µ¥Î»',
-CASE WHEN rtrim(NBZC.k6050)<>rtrim(NBZC.zk6050) THEN '¼¼Êõ×´¿öÆÀ¶¨µ¥Î» ²»Ò»ÖÂ'        ELSE null END'¼¼Êõ×´¿öÆÀ¶¨µ¥Î» ¶Ô±È',
+rtrim(NBZC.k6028) k6028,rtrim(NBZC.zk6028) 'èµ„äº§å¹³å°|æŠ€æœ¯çŠ¶å†µè¯„å®šä»£ç ',
+CASE WHEN rtrim(NBZC.k6028)<>rtrim(NBZC.zk6028) THEN 'æŠ€æœ¯çŠ¶å†µè¯„å®šä»£ç  ä¸ä¸€è‡´'        ELSE null END 'æŠ€æœ¯çŠ¶å†µè¯„å®šä»£ç  å¯¹æ¯”',
+rtrim(NBZC.hk6028) hk6028,rtrim(NBZC.zhk6028) 'èµ„äº§å¹³å°|æŠ€æœ¯çŠ¶å†µè¯„å®š',
+CASE WHEN rtrim(NBZC.k6028)<>rtrim(NBZC.zk6028) THEN 'æŠ€æœ¯çŠ¶å†µè¯„å®š ä¸ä¸€è‡´'        ELSE null END'æŠ€æœ¯çŠ¶å†µè¯„å®š å¯¹æ¯”',
+rtrim(NBZC.a1305) a1305,rtrim(NBZC.za1305) 'èµ„äº§å¹³å°|è¯„å®šæ—¥æœŸ',
+CASE WHEN rtrim(NBZC.a1305)<>rtrim(NBZC.za1305) THEN 'è¯„å®šæ—¥æœŸ ä¸ä¸€è‡´'        ELSE null END 'è¯„å®šæ—¥æœŸ å¯¹æ¯”',
+rtrim(NBZC.k6050) k6050,rtrim(NBZC.zk6050) 'èµ„äº§å¹³å°|æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½',
+CASE WHEN rtrim(NBZC.k6050)<>rtrim(NBZC.zk6050) THEN 'æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½ ä¸ä¸€è‡´'        ELSE null END'æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½ å¯¹æ¯”',
 
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -736,7 +736,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -752,30 +752,30 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.k6028)<>rtrim(NBZC.zk6028) or -- ¼¼Êõ×´¿öÆÀ¶¨´úÂë,
-rtrim(NBZC.a1305)<>rtrim(NBZC.za1305) or -- ÆÀ¶¨ÈÕÆÚ,
-rtrim(NBZC.k6050)<>rtrim(NBZC.zk6050)         -- ¼¼Êõ×´¿öÆÀ¶¨µ¥Î»,
+rtrim(NBZC.k6028)<>rtrim(NBZC.zk6028) or -- æŠ€æœ¯çŠ¶å†µè¯„å®šä»£ç ,
+rtrim(NBZC.a1305)<>rtrim(NBZC.za1305) or -- è¯„å®šæ—¥æœŸ,
+rtrim(NBZC.k6050)<>rtrim(NBZC.zk6050)         -- æŠ€æœ¯çŠ¶å†µè¯„å®šå•ä½,
 )
 order by k0101
 --9.2.17
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,NBZC.K6003 k6003,
 
-rtrim(NBZC.ha1317) ha1317,rtrim(NBZC.zha1317) '×Ê²úÆ½Ì¨|¸ÄÔì²¿Î»',
-CASE WHEN rtrim(NBZC.ha1317)<>isnull(NBZC.zha1317,'9999') THEN '¸ÄÔì²¿Î» ²»Ò»ÖÂ'        ELSE null END '¸ÄÔì²¿Î» ¶Ô±È',
-rtrim(NBZC.ha1318) ha1318,rtrim(NBZC.zha1318) '×Ê²úÆ½Ì¨|¹¤³ÌĞÔÖÊ',
-CASE WHEN rtrim(NBZC.ha1318)<>isnull(rtrim(NBZC.zha1318),'9999') THEN '¹¤³ÌĞÔÖÊ ²»Ò»ÖÂ'        ELSE null END'¹¤³ÌĞÔÖÊ ¶Ô±È',
-rtrim(NBZC.k6051) k6051,rtrim(NBZC.zk6051) '×Ê²úÆ½Ì¨|¸ÄÔìÊ©¹¤µ¥Î»',
-CASE WHEN rtrim(NBZC.k6051)<>isnull(rtrim(NBZC.zk6051),'9999') THEN '¸ÄÔìÊ©¹¤µ¥Î» ²»Ò»ÖÂ'        ELSE null END '¸ÄÔìÊ©¹¤µ¥Î» ¶Ô±È',
+rtrim(NBZC.ha1317) ha1317,rtrim(NBZC.zha1317) 'èµ„äº§å¹³å°|æ”¹é€ éƒ¨ä½',
+CASE WHEN rtrim(NBZC.ha1317)<>isnull(NBZC.zha1317,'9999') THEN 'æ”¹é€ éƒ¨ä½ ä¸ä¸€è‡´'        ELSE null END 'æ”¹é€ éƒ¨ä½ å¯¹æ¯”',
+rtrim(NBZC.ha1318) ha1318,rtrim(NBZC.zha1318) 'èµ„äº§å¹³å°|å·¥ç¨‹æ€§è´¨',
+CASE WHEN rtrim(NBZC.ha1318)<>isnull(rtrim(NBZC.zha1318),'9999') THEN 'å·¥ç¨‹æ€§è´¨ ä¸ä¸€è‡´'        ELSE null END'å·¥ç¨‹æ€§è´¨ å¯¹æ¯”',
+rtrim(NBZC.k6051) k6051,rtrim(NBZC.zk6051) 'èµ„äº§å¹³å°|æ”¹é€ æ–½å·¥å•ä½',
+CASE WHEN rtrim(NBZC.k6051)<>isnull(rtrim(NBZC.zk6051),'9999') THEN 'æ”¹é€ æ–½å·¥å•ä½ ä¸ä¸€è‡´'        ELSE null END 'æ”¹é€ æ–½å·¥å•ä½ å¯¹æ¯”',
 
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -793,7 +793,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -811,30 +811,30 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.ha1317)<>rtrim(NBZC.zha1317) or -- ¸ÄÔì²¿Î»,
-rtrim(NBZC.ha1318)<>rtrim(NBZC.zha1318) or -- ¹¤³ÌĞÔÖÊ,
-rtrim(NBZC.k6051)<>rtrim(NBZC.zk6051)  -- ¸ÄÔìÊ©¹¤µ¥Î»
+rtrim(NBZC.ha1317)<>rtrim(NBZC.zha1317) or -- æ”¹é€ éƒ¨ä½,
+rtrim(NBZC.ha1318)<>rtrim(NBZC.zha1318) or -- å·¥ç¨‹æ€§è´¨,
+rtrim(NBZC.k6051)<>rtrim(NBZC.zk6051)  -- æ”¹é€ æ–½å·¥å•ä½
 )
 order by k0101
 --9.2.18
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,NBZC.K6003 k6003,
 
-rtrim(NBZC.ha1317) ha1317,rtrim(NBZC.zha1317) '×Ê²úÆ½Ì¨|¸ÄÔì²¿Î»',
-CASE WHEN rtrim(NBZC.ha1317)<>isnull(NBZC.zha1317,'9999') THEN '¸ÄÔì²¿Î» ²»Ò»ÖÂ'        ELSE null END '¸ÄÔì²¿Î» ¶Ô±È',
-rtrim(NBZC.ha1318) ha1318,rtrim(NBZC.zha1318) '×Ê²úÆ½Ì¨|¹¤³ÌĞÔÖÊ',
-CASE WHEN rtrim(NBZC.ha1318)<>isnull(rtrim(NBZC.zha1318),'9999') THEN '¹¤³ÌĞÔÖÊ ²»Ò»ÖÂ'        ELSE null END'¹¤³ÌĞÔÖÊ ¶Ô±È',
-rtrim(NBZC.k6051) k6051,rtrim(NBZC.zk6051) '×Ê²úÆ½Ì¨|¸ÄÔìÊ©¹¤µ¥Î»',
-CASE WHEN rtrim(NBZC.k6051)<>isnull(rtrim(NBZC.zk6051),'9999') THEN '¸ÄÔìÊ©¹¤µ¥Î» ²»Ò»ÖÂ'        ELSE null END '¸ÄÔìÊ©¹¤µ¥Î» ¶Ô±È',
+rtrim(NBZC.ha1317) ha1317,rtrim(NBZC.zha1317) 'èµ„äº§å¹³å°|æ”¹é€ éƒ¨ä½',
+CASE WHEN rtrim(NBZC.ha1317)<>isnull(NBZC.zha1317,'9999') THEN 'æ”¹é€ éƒ¨ä½ ä¸ä¸€è‡´'        ELSE null END 'æ”¹é€ éƒ¨ä½ å¯¹æ¯”',
+rtrim(NBZC.ha1318) ha1318,rtrim(NBZC.zha1318) 'èµ„äº§å¹³å°|å·¥ç¨‹æ€§è´¨',
+CASE WHEN rtrim(NBZC.ha1318)<>isnull(rtrim(NBZC.zha1318),'9999') THEN 'å·¥ç¨‹æ€§è´¨ ä¸ä¸€è‡´'        ELSE null END'å·¥ç¨‹æ€§è´¨ å¯¹æ¯”',
+rtrim(NBZC.k6051) k6051,rtrim(NBZC.zk6051) 'èµ„äº§å¹³å°|æ”¹é€ æ–½å·¥å•ä½',
+CASE WHEN rtrim(NBZC.k6051)<>isnull(rtrim(NBZC.zk6051),'9999') THEN 'æ”¹é€ æ–½å·¥å•ä½ ä¸ä¸€è‡´'        ELSE null END 'æ”¹é€ æ–½å·¥å•ä½ å¯¹æ¯”',
 
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -852,7 +852,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -870,32 +870,32 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.ha1317)<>rtrim(NBZC.zha1317) or -- ¸ÄÔì²¿Î»,
-rtrim(NBZC.ha1318)<>rtrim(NBZC.zha1318) or -- ¹¤³ÌĞÔÖÊ,
-rtrim(NBZC.k6051)<>rtrim(NBZC.zk6051)  -- ¸ÄÔìÊ©¹¤µ¥Î»
+rtrim(NBZC.ha1317)<>rtrim(NBZC.zha1317) or -- æ”¹é€ éƒ¨ä½,
+rtrim(NBZC.ha1318)<>rtrim(NBZC.zha1318) or -- å·¥ç¨‹æ€§è´¨,
+rtrim(NBZC.k6051)<>rtrim(NBZC.zk6051)  -- æ”¹é€ æ–½å·¥å•ä½
 )
 order by k0101
 --9.2.19
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,
 NBZC.K6003 k6003,
 
-rtrim(NBZC.K6079) K6079,rtrim(NBZC.zK6079) '×Ê²úÆ½Ì¨|½¨Éèµ¥Î»Ãû³Æ',
-CASE WHEN rtrim(NBZC.K6079)<>rtrim(NBZC.zK6079) THEN '½¨Éèµ¥Î»Ãû³Æ ²»Ò»ÖÂ'        ELSE null END '½¨Éèµ¥Î»Ãû³Æ ¶Ô±È',
-rtrim(NBZC.K6030) K6030,rtrim(NBZC.zK6030) '×Ê²úÆ½Ì¨|Éè¼Æµ¥Î»Ãû³Æ',
-CASE WHEN rtrim(NBZC.K6030)<>rtrim(NBZC.zK6030) THEN 'Éè¼Æµ¥Î»Ãû³Æ ²»Ò»ÖÂ'        ELSE null END'Éè¼Æµ¥Î»Ãû³Æ ¶Ô±È',
-rtrim(NBZC.K6031) K6031,rtrim(NBZC.zK6031) '×Ê²úÆ½Ì¨|Ê©¹¤µ¥Î»Ãû³Æ',
-CASE WHEN rtrim(NBZC.K6031)<>rtrim(NBZC.zK6031) THEN 'Ê©¹¤µ¥Î»Ãû³Æ ²»Ò»ÖÂ'        ELSE null END 'Ê©¹¤µ¥Î»Ãû³Æ ¶Ô±È',
-rtrim(NBZC.K6032) K6032,rtrim(NBZC.zK6032) '×Ê²úÆ½Ì¨|¼àÀíµ¥Î»Ãû³Æ',
-CASE WHEN rtrim(NBZC.K6032)<>rtrim(NBZC.zK6032) THEN '¼àÀíµ¥Î»Ãû³Æ ²»Ò»ÖÂ'        ELSE null END'¼àÀíµ¥Î»Ãû³Æ ¶Ô±È',
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+rtrim(NBZC.K6079) K6079,rtrim(NBZC.zK6079) 'èµ„äº§å¹³å°|å»ºè®¾å•ä½åç§°',
+CASE WHEN rtrim(NBZC.K6079)<>rtrim(NBZC.zK6079) THEN 'å»ºè®¾å•ä½åç§° ä¸ä¸€è‡´'        ELSE null END 'å»ºè®¾å•ä½åç§° å¯¹æ¯”',
+rtrim(NBZC.K6030) K6030,rtrim(NBZC.zK6030) 'èµ„äº§å¹³å°|è®¾è®¡å•ä½åç§°',
+CASE WHEN rtrim(NBZC.K6030)<>rtrim(NBZC.zK6030) THEN 'è®¾è®¡å•ä½åç§° ä¸ä¸€è‡´'        ELSE null END'è®¾è®¡å•ä½åç§° å¯¹æ¯”',
+rtrim(NBZC.K6031) K6031,rtrim(NBZC.zK6031) 'èµ„äº§å¹³å°|æ–½å·¥å•ä½åç§°',
+CASE WHEN rtrim(NBZC.K6031)<>rtrim(NBZC.zK6031) THEN 'æ–½å·¥å•ä½åç§° ä¸ä¸€è‡´'        ELSE null END 'æ–½å·¥å•ä½åç§° å¯¹æ¯”',
+rtrim(NBZC.K6032) K6032,rtrim(NBZC.zK6032) 'èµ„äº§å¹³å°|ç›‘ç†å•ä½åç§°',
+CASE WHEN rtrim(NBZC.K6032)<>rtrim(NBZC.zK6032) THEN 'ç›‘ç†å•ä½åç§° ä¸ä¸€è‡´'        ELSE null END'ç›‘ç†å•ä½åç§° å¯¹æ¯”',
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -911,7 +911,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -927,27 +927,27 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.K6079)<>rtrim(NBZC.zK6079) or -- ½¨Éèµ¥Î»Ãû³Æ,
-rtrim(NBZC.K6030)<>rtrim(NBZC.zK6030) or -- Éè¼Æµ¥Î»Ãû³Æ,
-rtrim(NBZC.K6031)<>rtrim(NBZC.zK6031) or -- Ê©¹¤µ¥Î»Ãû³Æ,
-rtrim(NBZC.K6032)<>rtrim(NBZC.zK6032)         -- ¼àÀíµ¥Î»Ãû³Æ
+rtrim(NBZC.K6079)<>rtrim(NBZC.zK6079) or -- å»ºè®¾å•ä½åç§°,
+rtrim(NBZC.K6030)<>rtrim(NBZC.zK6030) or -- è®¾è®¡å•ä½åç§°,
+rtrim(NBZC.K6031)<>rtrim(NBZC.zK6031) or -- æ–½å·¥å•ä½åç§°,
+rtrim(NBZC.K6032)<>rtrim(NBZC.zK6032)         -- ç›‘ç†å•ä½åç§°
 )
 order by k0101
 --9.2.20
-SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ±à¼­,
+SELECT 'K060'+'&A0102 ='''+RTRIM(CAST(NBZC.A0102 AS VARCHAR))+''' AND K0101='''+RTRIM(CAST(NBZC.K0101 AS VARCHAR))+''' AND K6003 ='+RTRIM(CAST(NBZC.K6003 AS VARCHAR))  AS ç¼–è¾‘,
 
 rtrim(NBZC.A0102) A0102,rtrim(NBZC.hA0102) hA0102,
 rtrim(replace(replace(replace(replace(replace(NBZC.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) K0101 ,
 NBZC.k6002 k6002,
 NBZC.K6003 k6003,
 
-rtrim(NBZC.hK6117) hK6117,rtrim(NBZC.zhK6117) '×Ê²úÆ½Ì¨|ÇÅÁºËùÔÚÎ»ÖÃ',
-CASE WHEN rtrim(NBZC.hK6117)<>rtrim(NBZC.zhK6117) THEN 'ÇÅÁºËùÔÚÎ»ÖÃ ²»Ò»ÖÂ'        ELSE null END 'ÇÅÁºËùÔÚÎ»ÖÃ ¶Ô±È',
-nbzc.K6040 'ÇÅÁºÉí·İÂë/ÇÅÁº±àºÅ'
+rtrim(NBZC.hK6117) hK6117,rtrim(NBZC.zhK6117) 'èµ„äº§å¹³å°|æ¡¥æ¢æ‰€åœ¨ä½ç½®',
+CASE WHEN rtrim(NBZC.hK6117)<>rtrim(NBZC.zhK6117) THEN 'æ¡¥æ¢æ‰€åœ¨ä½ç½® ä¸ä¸€è‡´'        ELSE null END 'æ¡¥æ¢æ‰€åœ¨ä½ç½® å¯¹æ¯”',
+nbzc.K6040 'æ¡¥æ¢èº«ä»½ç /æ¡¥æ¢ç¼–å·'
 from (
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -960,7 +960,7 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(K060.K6040)=rtrim(ZCPT_K060.K6040)
 where rtrim(K060.K6040)is not null and rtrim(ZCPT_K060.K6040) is not null and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 UNION
 SELECT
 rtrim(K060.A0102) A0102,rtrim(K060.hA0102) hA0102,
@@ -973,10 +973,10 @@ left join k001 on rtrim(k060.k0101)=rtrim(k001.k0101) and k060.k6003>=k001.k0108
 full join ZCPT_K060  on rtrim(replace(replace(replace(replace(replace(k060.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(k060.a0103,6)+'L'+rtrim(k060.k6001) = rtrim(ZCPT_K060.k6001)
 where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
-LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%¸ßËÙ%'AND k001.A0102 LIKE '341%'
+LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%é«˜é€Ÿ%'AND k001.A0102 LIKE '341%'
 )NBZC
 where NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
-rtrim(NBZC.hK6117)<>rtrim(NBZC.zhK6117) -- ÇÅÁºËùÔÚÎ»ÖÃ
+rtrim(NBZC.hK6117)<>rtrim(NBZC.zhK6117) -- æ¡¥æ¢æ‰€åœ¨ä½ç½®
 )
 order by k0101

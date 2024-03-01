@@ -1,4 +1,4 @@
---国省道路线明细表（按管理单位分）
+--鍥界渷閬撹矾绾挎槑缁嗚〃锛堟寜绠＄悊鍗曚綅鍒嗭級
 select
 rtrim(c.a0102) a0102,c.ha0102,rtrim(replace(replace(replace(replace(replace(c.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) k0101 ,rtrim(k0112) k0112,min(c.k0108) k0108,max(c.k0109) k0109,sum(isnull(c.k0114,0)) k0114
 from k01 c
@@ -9,7 +9,7 @@ ORDER BY  rtrim(c.a0102),k0101
 
 
 
---国省道路线明细表（按路线分）
+--鍥界渷閬撹矾绾挎槑缁嗚〃锛堟寜璺嚎鍒嗭級
 select
 rtrim(replace(replace(replace(replace(replace(c.k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) k0101 ,
 rtrim(k0112) k0112,	min(c.k0108) k0108,max(c.k0109) k0109,sum(isnull(c.k0114,0)) k0114

@@ -13,28 +13,28 @@ CREATE TABLE [dbo].[SXZBBG] (
 GO
 
 EXEC sp_addextendedproperty
-'MS_Description', N'�������루���ƴ���룬��Ȼ����룩',
+'MS_Description', N'行政代码（建制村代码，自然村代码）',
 'USER', N'dbo',
 'TABLE', N'SXZBBG',
 'COLUMN', N'XZDM'
 GO
 
 EXEC sp_addextendedproperty
-'MS_Description', N'�������ƣ����ƴ壬��Ȼ�����ƣ�',
+'MS_Description', N'行政名称（建制村，自然村名称）',
 'USER', N'dbo',
 'TABLE', N'SXZBBG',
 'COLUMN', N'XZMC'
 GO
 
 EXEC sp_addextendedproperty
-'MS_Description', N'�Ƿ�ͬ˫����/Ӳ��·',
+'MS_Description', N'是否同双车道/硬化路',
 'USER', N'dbo',
 'TABLE', N'SXZBBG',
 'COLUMN', N'TDQK'
 GO
 
 EXEC sp_addextendedproperty
-'MS_Description', N'�Ƿ�ͬ˫����/Ӳ��·  ����',
+'MS_Description', N'是否同双车道/硬化路  汉字',
 'USER', N'dbo',
 'TABLE', N'SXZBBG',
 'COLUMN', N'HTDQK'
@@ -48,7 +48,7 @@ EXEC sp_addextendedproperty
 GO
 
 EXEC sp_addextendedproperty
-'MS_Description', N'��ע',
+'MS_Description', N'备注',
 'USER', N'dbo',
 'TABLE', N'SXZBBG',
 'COLUMN', N'BEIZHU'
@@ -67,20 +67,20 @@ ON [dbo].[SXZBBG] (
 )
 GO
 
---�������޸�����
+--保留被修改数据
 INSERT INTO [dbo].[SXZBBG] 
 ([XZDM], [XZMC], [TDQK], [HTDQK], [NBTABLE], [BEIZHU])
-SELECT  v5701,hv5701,v5708,hv5708,'BGv53','20231218���ͨ�����'
+SELECT  v5701,hv5701,v5708,hv5708,'BGv53','20231218后的通达情况'
 from V53
 
 INSERT INTO [dbo].[SXZBBG] 
 ([XZDM], [XZMC], [TDQK], [HTDQK], [NBTABLE], [BEIZHU])
-SELECT  V0514,hV0514,V0513,hV0513,'BGv52','20231218���ͨ��������޸�'
+SELECT  V0514,hV0514,V0513,hV0513,'BGv52','20231218后的通达情况被修改'
 from V52
 
 
 
---��ѯ��Щͨ��������޸�
+--查询哪些通达情况被修改
 SELECT A.XZDM,A.TDQK,B.XZDM,B.TDQK
 FROM SXZB A
 LEFT JOIN SXZBBG B ON A.XZDM=B.XZDM 

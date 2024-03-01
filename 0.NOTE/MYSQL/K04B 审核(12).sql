@@ -2,16 +2,16 @@
 set @k04b_n1=null,@k04b_m1=0,@k04b_p1=0,@k04b_x1=null,@k04b_y1=0,@k04b_z1=0;
 
 select
-b01.b0111 as  ¹ÜÀíµ¥Î»´úÂë,
-b01.b0102 as ¹ÜÀíµ¥Î»Ãû³Æ,
-a50.k0101 as Â·Ïß´úÂë,
-a50.k0112 as  Â·ÏßÃû³Æ,
-min(k04b.k0108) as Â·ÏßÆğµã×®ºÅ,
-max(k04b.k0109) as Â·ÏßÖ¹µã×®ºÅ,
-case when a5009='1642702461923786753' then 'ÏÂĞĞ'
-	when  a5009 ='1642702417019568130' then 'ÉÏĞĞ'
-	when  a5009= '1642702316859588610' then 'Ë«Ïò'end  as ¼ì²â·½Ïò,
-'k04bÂ·Ïß´úÂëÔÚk001ÖĞ²»´æÔÚ£¡'as 'ËµÃ÷'
+b01.b0111 as  ç®¡ç†å•ä½ä»£ç ,
+b01.b0102 as ç®¡ç†å•ä½åç§°,
+a50.k0101 as è·¯çº¿ä»£ç ,
+a50.k0112 as  è·¯çº¿åç§°,
+min(k04b.k0108) as è·¯çº¿èµ·ç‚¹æ¡©å·,
+max(k04b.k0109) as è·¯çº¿æ­¢ç‚¹æ¡©å·,
+case when a5009='1642702461923786753' then 'ä¸‹è¡Œ'
+	when  a5009 ='1642702417019568130' then 'ä¸Šè¡Œ'
+	when  a5009= '1642702316859588610' then 'åŒå‘'end  as æ£€æµ‹æ–¹å‘,
+'k04bè·¯çº¿ä»£ç åœ¨k001ä¸­ä¸å­˜åœ¨ï¼'as 'è¯´æ˜'
 from k04b
 left join b01 on b01.b01_id=k04b.b01_id
 left join a50 on a50.a50_id=k04b.a50_id
@@ -21,16 +21,16 @@ and b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912)
 group by b01.b0111,b01.b0102,a50.k0101,a50.k0112
 union
 select
-b01.b0111 as  ¹ÜÀíµ¥Î»´úÂë,
-b01.b0102 as ¹ÜÀíµ¥Î»Ãû³Æ,
-a50.k0101 as Â·Ïß´úÂë,
-a50.k0112 as  Â·ÏßÃû³Æ,
-t.k04b_k0108 Â·ÏßÆğµã×®ºÅ,
-t.k04b_k0109 Â·ÏßÖ¹µã×®ºÅ,
-case when t.k04b_a5009='1642702461923786753' then 'ÏÂĞĞ'
-	when  t.k04b_a5009 ='1642702417019568130' then 'ÉÏĞĞ'
-	when  t.k04b_a5009= '1642702316859588610' then 'Ë«Ïò'end  as ¼ì²â·½Ïò,
-'k04bÂ·Ïß×®ºÅ²»ÔÚk001·¶Î§ÄÚ£¡'  as ËµÃ÷
+b01.b0111 as  ç®¡ç†å•ä½ä»£ç ,
+b01.b0102 as ç®¡ç†å•ä½åç§°,
+a50.k0101 as è·¯çº¿ä»£ç ,
+a50.k0112 as  è·¯çº¿åç§°,
+t.k04b_k0108 è·¯çº¿èµ·ç‚¹æ¡©å·,
+t.k04b_k0109 è·¯çº¿æ­¢ç‚¹æ¡©å·,
+case when t.k04b_a5009='1642702461923786753' then 'ä¸‹è¡Œ'
+	when  t.k04b_a5009 ='1642702417019568130' then 'ä¸Šè¡Œ'
+	when  t.k04b_a5009= '1642702316859588610' then 'åŒå‘'end  as æ£€æµ‹æ–¹å‘,
+'k04bè·¯çº¿æ¡©å·ä¸åœ¨k001èŒƒå›´å†…ï¼'  as è¯´æ˜
  from(
 select
  @k04b_n1:=k04b.a50_id k04b_a50_id,
@@ -55,12 +55,12 @@ and  b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912
 
 -- 12.2
 set @k04b_m2 = null, @k04b_n2 = null,@k04b_zd=null,@k04b_pzh=null;
-select t2.b0111 '¹ÜÀíµ¥Î»',
-T2.k0101 'Â·Ïß´úÂë',
-cast(t2.pzh as decimal(18,3)) 'ÉÏÒ»Â·¶ÎÖ¹µã×®ºÅ',
-t2.k0108 'Â·¶Î×®ºÅ|Æğµã',
-t2.k0109 'Â·¶Î×®ºÅ|Ö¹µã',
-t2.diff '²îÖµ' from (
+select t2.b0111 'ç®¡ç†å•ä½',
+T2.k0101 'è·¯çº¿ä»£ç ',
+cast(t2.pzh as decimal(18,3)) 'ä¸Šä¸€è·¯æ®µæ­¢ç‚¹æ¡©å·',
+t2.k0108 'è·¯æ®µæ¡©å·|èµ·ç‚¹',
+t2.k0109 'è·¯æ®µæ¡©å·|æ­¢ç‚¹',
+t2.diff 'å·®å€¼' from (
 select  T.b0111 b0111,
 @k04b_n2 := case when @k04b_m2 <>T.K0101 then  0
 			when @k04b_m2  = T.K0101 then  cast(T.k0108-@k04b_zd as decimal(18,3))
@@ -87,8 +87,8 @@ where t2.diff<0 and t2.B0111 like concat( (SELECT b0111 from b01 where b01_id=10
 
 -- 12.3
 
-select B01.B0111 '¹ÜÀíµ¥Î»´úÂë', B01.B0101 '¹ÜÀíµ¥Î»Ãû³Æ',A50.K0101 'Â·Ïß´úÂë',T.k0112 'Â·ÏßÃû³Æ',T.k0108 'Æğµã×®ºÅ',T.k0110 'ÆğµãÃû³Æ',T.k0109 'Ö¹µã×®ºÅ',T.k0111 'Ö¹µãÃû³Æ',T.k0114 'Àï³Ì',
-'Â·Ïß´úÂëÔÚK04BÖĞ²»´æÔÚ£¡' AS '´íÎóÌáÊ¾'
+select B01.B0111 'ç®¡ç†å•ä½ä»£ç ', B01.B0101 'ç®¡ç†å•ä½åç§°',A50.K0101 'è·¯çº¿ä»£ç ',T.k0112 'è·¯çº¿åç§°',T.k0108 'èµ·ç‚¹æ¡©å·',T.k0110 'èµ·ç‚¹åç§°',T.k0109 'æ­¢ç‚¹æ¡©å·',T.k0111 'æ­¢ç‚¹åç§°',T.k0114 'é‡Œç¨‹',
+'è·¯çº¿ä»£ç åœ¨K04Bä¸­ä¸å­˜åœ¨ï¼' AS 'é”™è¯¯æç¤º'
 FROM (
 SELECT   A50_ID,k0112,k0108,k0110,k0109,k0111,k0114,k0123,k0124
 FROM K001
@@ -102,10 +102,10 @@ WHERE  left(A50.k0101,1) in ('x','y','c') and ifnull(T.k0123,'1000001617955771')
 -- AND b01.b0111 like concat( (select b0111 from b01 where b01_id=#{b01code}),'%');
 AND b01.b0111 like concat( (select b0111 from b01 where b01_id=1000001653571912),'%');
 
--- 12.4 ÉÏĞĞ(ºÄÊ±)
-select  b.b0111 as ¹ÜÀíµ¥Î»´úÂë ,b.b0101 as ¹ÜÀíµ¥Î» ,b.k0101  as Â·Ïß´úÂë,
-cast(sum(ifnull(k04b.a5008/1000,0)) as decimal(18,3))  as k04b±íÖĞÀï³Ì,
-b.k0114 as k001±íÖĞÀï³Ì
+-- 12.4 ä¸Šè¡Œ(è€—æ—¶)
+select  b.b0111 as ç®¡ç†å•ä½ä»£ç  ,b.b0101 as ç®¡ç†å•ä½ ,b.k0101  as è·¯çº¿ä»£ç ,
+cast(sum(ifnull(k04b.a5008/1000,0)) as decimal(18,3))  as k04bè¡¨ä¸­é‡Œç¨‹,
+b.k0114 as k001è¡¨ä¸­é‡Œç¨‹
 from k04b
 left join (
     select  k001.a50_id,b01.b0111 b0111,b01.b0101 b0101,a50.k0101 k0101,cast(sum(k001.k0114) as decimal(18,3))  as k0114
@@ -122,14 +122,14 @@ where k04b.a5009 in ('1642702316859588610','1642702417019568130')
 -- and B01.B0111 like concat( (SELECT b0111 from b01 where b01_id=#{B01CODE}),'%')
 and B.B0111 like concat( (SELECT b0111 from b01 where b01_id=1000001653571912),'%')
 group by  b.k0101,b.b0111,b.b0101
-having k04b±íÖĞÀï³Ì<>b.k0114
+having k04bè¡¨ä¸­é‡Œç¨‹<>b.k0114
 order by k04b.k0101 asc
 
 
--- 12.5 ÏÂĞĞ(ºÄÊ±)
-select  b.b0111 as ¹ÜÀíµ¥Î»´úÂë ,b.b0101 as ¹ÜÀíµ¥Î» ,b.k0101  as Â·Ïß´úÂë,
-cast(sum(ifnull(k04b.a5008/1000,0)) as decimal(18,3))  as k04b±íÖĞÀï³Ì,
-b.k0114 as k001±íÖĞÀï³Ì
+-- 12.5 ä¸‹è¡Œ(è€—æ—¶)
+select  b.b0111 as ç®¡ç†å•ä½ä»£ç  ,b.b0101 as ç®¡ç†å•ä½ ,b.k0101  as è·¯çº¿ä»£ç ,
+cast(sum(ifnull(k04b.a5008/1000,0)) as decimal(18,3))  as k04bè¡¨ä¸­é‡Œç¨‹,
+b.k0114 as k001è¡¨ä¸­é‡Œç¨‹
 from k04b
 left join (
     select  k001.a50_id,b01.b0111 b0111,b01.b0101 b0101,a50.k0101 k0101,cast(sum(k001.k0114) as decimal(18,3))  as k0114
@@ -146,5 +146,5 @@ where k04b.a5009 in ('1642702316859588610','1642702461923786753')
 -- and B.B0111 like concat( (SELECT b0111 from b01 where b01_id=#{B01CODE}),'%')
 and B.B0111 like concat( (SELECT b0111 from b01 where b01_id=1000001653571912),'%')
 group by  b.k0101,b.b0111,b.b0101
-having k04b±íÖĞÀï³Ì<>b.k0114
+having k04bè¡¨ä¸­é‡Œç¨‹<>b.k0114
 order by k04b.k0101 asc

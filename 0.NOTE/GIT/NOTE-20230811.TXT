@@ -1,39 +1,39 @@
-ÉèÖÃÃû×Ö
+è®¾ç½®åå­—
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /
 $ git config --global user.name ysongcao
 
-ÉèÖÃÓÊÏä
+è®¾ç½®é‚®ç®±
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /
 $ git config --global user.email 2804119807@qq.com
 
-¿ËÂ¡²Ö¿â
+å…‹éš†ä»“åº“
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /
 $ git clone https://github.com/Rowling7/ONLINE-Repository.git
 Cloning into 'ONLINE-Repository'...
 fatal: unable to access 'https://github.com/Rowling7/ONLINE-Repository.git/': SS
 L certificate problem: unable to get local issuer certificate
 
-¹Ø±ÕĞ­Òé
+å…³é—­åè®®
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /
 $ git config --global http.sslverify false
 
-ÖØĞÂ¿ËÂ¡
+é‡æ–°å…‹éš†
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /
 $ git clone https://github.com/Rowling7/ONLINE-Repository.git
 Cloning into 'ONLINE-Repository'...
 warning: You appear to have cloned an empty repository.
 
 
-Ìí¼ÓÎÄ¼ş
+æ·»åŠ æ–‡ä»¶
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
 $ git add README.TXT
 
-²»ÄÜ´óĞ´
+ä¸èƒ½å¤§å†™
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
 $ GIT STATUS
 git: 'STATUS' is not a git command. See 'git --help'.
 
-²é¿´×´Ì¬
+æŸ¥çœ‹çŠ¶æ€
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
 $ git status
 On branch main
@@ -42,17 +42,17 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-        new file:   README.TXT --×ÖÌåÑÕÉ« ÂÌÉ«
+        new file:   README.TXT --å­—ä½“é¢œè‰² ç»¿è‰²
 
 
-Ìá½»ÎÄ¼ş Î´ÉÏ´«
+æäº¤æ–‡ä»¶ æœªä¸Šä¼ 
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
 $ git commit -m 'add README.TXT'
 [main (root-commit) 2690cbb] add README.TXT
  1 file changed, 24 insertions(+)
  create mode 100644 README.TXT
 
-²é¿´ÈÕÖ¾
+æŸ¥çœ‹æ—¥å¿—
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
 $ git log
 commit 2690cbb65cbb8f29ad85de585625596a7e8c1391 (HEAD -> main)
@@ -61,7 +61,7 @@ Date:   Fri Aug 11 10:01:18 2023 +0800
 
     add README.TXT
 
-ÉÏ´«ÎÄ¼ş
+ä¸Šä¼ æ–‡ä»¶
 OYDSOFT@DESKTOP-BH17PVG MINGW64 /ONLINE-Repository (main)
 $ git push
 warning: ----------------- SECURITY WARNING ----------------
@@ -84,4 +84,4 @@ Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 To https://github.com/Rowling7/ONLINE-Repository.git
  * [new branch]      main -> main
 
-ÉÏ´«³É¹¦
+ä¸Šä¼ æˆåŠŸ

@@ -1,5 +1,5 @@
 
-----´¦ÀíÀïÀï³Ì
+----å¤„ç†é‡Œé‡Œç¨‹
 
 declare @a0102 char(15)
 set @a0102='33_0783'
@@ -30,10 +30,10 @@ update #k001 set a0102=left(a0102,5)
 update #k063 set a0102=left(a0102,5)
 update #k060 set a0102=left(a0102,5)
 */
---ÕûºÏÒ»¸öÏØÇø¹ÜÀíµ¥Î»ºó£¬É¾³ıÖØ¸´Â·Ïß   select * from k001
+--æ•´åˆä¸€ä¸ªå¿åŒºç®¡ç†å•ä½åï¼Œåˆ é™¤é‡å¤è·¯çº¿   select * from k001
 
 delete #a50
---select * from #lx where bglx='±ä¸ü' and xgjy<>'Â·ÃæÀàĞÍ±ä¸ü'
+--select * from #lx where bglx='å˜æ›´' and xgjy<>'è·¯é¢ç±»å‹å˜æ›´'
 where rtrim(k0101)+rtrim(ha0102) in (
 select rtrim(k0101)+max(rtrim(ha0102)) from #a50
 group by a0102,k0101
@@ -46,17 +46,17 @@ Yk0101 char(15),Yk0112 varchar(50),Yk0108 numeric(18,3),Yk0109 numeric(18,3),YK0
 WK0101 CHAR(15),Wk0108 numeric(18,3),Wk0109 numeric(18,3),WK0114 NUMERIC(18,3),WHK5104 VARCHAR(50),cflx char(50),WCJWT VARCHAR(255),
 BGLX CHAR(20),BGYY VARCHAR(255),XGJY CHAR(255),B1 CHAR(255),B2 CHAR(255),B3 CHAR(255)
 )
--- ³¤ĞË 331125 331102 ÄÏä± µÂÇå
+-- é•¿å…´ 331125 331102 å—æµ” å¾·æ¸…
 INSERT #lx(fhsj,tpbm,gldw,YK0101,YK0112,YK0108,YK0109,YK0114,YHK5104,WK0101,WK0108,WK0109,WK0114,WHK5104,cflx,WCJWT,BGLX,BGYY,XGJY)
 Select a,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16,f17,f18,f19  from
 OpenRowSet
 (
 'MSDASQL',
 'DRIVER=Microsoft Excel Driver (*.xls);
-DBQ=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼ş\1.¹¤×÷ÎÄ¼ş£¨ÈÕÆÚ·ÖÀà£©\20230923 Õã½­\map\330783¶«Ñô\Êı¾İºË²é-½ğ»ª¶«Ñô-»ã×Ü.xls;
+DBQ=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20230923 æµ™æ±Ÿ\map\330783ä¸œé˜³\æ•°æ®æ ¸æŸ¥-é‡‘åä¸œé˜³-æ±‡æ€».xls;
 UID=admin;
 PWS=',
-'SELECT * from [Â·Ïß$]')
+'SELECT * from [è·¯çº¿$]')
 DELETE FROM #LX WHERE yk0101 LIKE 'CYS%'
 --SELECT * from #lx
 -- delete #lx where a0102='3320503'          select * from #k001 where a0102='33103811'
@@ -70,17 +70,17 @@ WK0101 CHAR(15),wk6003 numeric(18,3),WCJWT VARCHAR(255),
 BGLX CHAR(20),BGYY VARCHAR(255),XGJY CHAR(50),B1 CHAR(255),B2 CHAR(255),B3 CHAR(255)
 )
 
--- ³¤ĞË 331125 331102 ÄÏä± ¾°Äş
+-- é•¿å…´ 331125 331102 å—æµ” æ™¯å®
 INSERT #ql(fhsj,tpbm,gldw,YK0101,YK0112,k6001,k6002,yk6003,WK0101,wk6003,WCJWT,BGLX,BGYY,XGJY)
 Select a,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14 from
 OpenRowSet
 (
 'MSDASQL',
 'DRIVER=Microsoft Excel Driver (*.xls);
-DBQ=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼ş\1.¹¤×÷ÎÄ¼ş£¨ÈÕÆÚ·ÖÀà£©\20230923 Õã½­\map\330783¶«Ñô\Êı¾İºË²é-½ğ»ª¶«Ñô-»ã×Ü.xls;
+DBQ=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20230923 æµ™æ±Ÿ\map\330783ä¸œé˜³\æ•°æ®æ ¸æŸ¥-é‡‘åä¸œé˜³-æ±‡æ€».xls;
 UID=admin;
 PWS=',
-'SELECT * from [ÇÅÁº$]')
+'SELECT * from [æ¡¥æ¢$]')
 
 -- select * from #ql where wk0101 is not null and wk6003 is null
 -- select right(rtrim(yk0101),6) from #ql group by right(rtrim(yk0101),6)
@@ -92,20 +92,20 @@ WK0101 CHAR(15),wk6303 numeric(18,3),WCJWT VARCHAR(255),
 BGLX CHAR(20),BGYY VARCHAR(255),XGJY CHAR(50),B1 CHAR(255),B2 CHAR(255),B3 CHAR(255)
 )
 
--- ³¤ĞË 331125 331102 ÄÏä± ¾°Äş
+-- é•¿å…´ 331125 331102 å—æµ” æ™¯å®
 INSERT #sd(fhsj,tpbm,gldw,YK0101,YK0112,k6301,k6302,yk6303,WK0101,wk6303,WCJWT,BGLX,BGYY,XGJY)
 Select a,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14  from
 OpenRowSet
 (
 'MSDASQL',
 'DRIVER=Microsoft Excel Driver (*.xls);
-DBQ=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼ş\1.¹¤×÷ÎÄ¼ş£¨ÈÕÆÚ·ÖÀà£©\20230923 Õã½­\map\330783¶«Ñô\Êı¾İºË²é-½ğ»ª¶«Ñô-»ã×Ü.xls;
+DBQ=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\1.å·¥ä½œæ–‡ä»¶ï¼ˆæ—¥æœŸåˆ†ç±»ï¼‰\20230923 æµ™æ±Ÿ\map\330783ä¸œé˜³\æ•°æ®æ ¸æŸ¥-é‡‘åä¸œé˜³-æ±‡æ€».xls;
 UID=admin;
 PWS=',
-'SELECT * from [ËíµÀ$]')
+'SELECT * from [éš§é“$]')
 delete #ql where a0102 is null
 -- select right(rtrim(yk0101),6) from #sd group by right(rtrim(yk0101),6)\
---»ñÈ¡ÍâÒµÎ´²É¼¯µÄÂ·ÏßÌõÊı  select * from #lx where yk0101='Y010330502'
+--è·å–å¤–ä¸šæœªé‡‡é›†çš„è·¯çº¿æ¡æ•°  select * from #lx where yk0101='Y010330502'
 /*
 select @wts=(select count(1) from (
 	select k0101 from #k001  a
@@ -120,9 +120,9 @@ select @wts=(select count(1) from (
 ) a)
 */
 
---²åÈëÍâÒµÎ´²É¼¯µÄÂ·Ïß
+--æ’å…¥å¤–ä¸šæœªé‡‡é›†çš„è·¯çº¿
 insert into #lx(yk0101,yk0112,yk0108,yk0109,yk0114,yhk5104,bglx,xgjy)
-select k0101,k0112,k0108,k0109,k0114,hk5104,'²»±ä','²»±ä' from #k001  a
+select k0101,k0112,k0108,k0109,k0114,hk5104,'ä¸å˜','ä¸å˜' from #k001  a
 left join #lx on rtrim(k0101)=rtrim(yk0101) and rtrim(k0108)=rtrim(yk0108)
 where 1=1
 and yk0101 is null
@@ -138,7 +138,7 @@ select sum(yk0114) from #lx where isnull(b3,'') in ('1','2','4')
 select sum(yk0114) from #lx where isnull(b3,'') in ('5')
 select * from #lx where isnull(b3,'')='' and yk0108 is not null
 
-select k0101,k0112,k0108,k0109,k0114,hk5104,'²»±ä','²»±ä' from #k001  a
+select k0101,k0112,k0108,k0109,k0114,hk5104,'ä¸å˜','ä¸å˜' from #k001  a
 left join #lx on rtrim(k0101)=rtrim(yk0101) and rtrim(k0108)=rtrim(yk0108)
 where 1=1
 and yk0101 is null
@@ -149,16 +149,16 @@ and a.a0102 like rtrim('33_1127')+'%'
 and left(k0101,1) in ('G','S','X','Y','Z','C')
 */
 
---²åÈëÍâÒµÎ´²É¼¯µÄÇÅÁº  select * from #ql
+--æ’å…¥å¤–ä¸šæœªé‡‡é›†çš„æ¡¥æ¢  select * from #ql
 insert into #ql(yk0101,yk0112,k6001,k6002,yk6003,bglx,xgjy)
-select k0101,k0112,rtrim(k0101)+'L'+rtrim(a.k6001),a.k6002,a.k6003,'ÎŞ·¨ÅĞ¶Ï','' from #k060 a left join #ql on rtrim(k0101)=rtrim(yk0101) and rtrim(k6003)=rtrim(yk6003)
+select k0101,k0112,rtrim(k0101)+'L'+rtrim(a.k6001),a.k6002,a.k6003,'æ— æ³•åˆ¤æ–­','' from #k060 a left join #ql on rtrim(k0101)=rtrim(yk0101) and rtrim(k6003)=rtrim(yk6003)
 where yk0101 is null
 and a.a0102 like rtrim(@a0102)+'%'
 and left(k0101,1) in ('G','S','X','Y','Z','C')
 
---²åÈëÍâÒµÎ´²É¼¯µÄËíµÀ  select * from #sd
+--æ’å…¥å¤–ä¸šæœªé‡‡é›†çš„éš§é“  select * from #sd
 insert into #sd(yk0101,yk0112,k6301,k6302,yk6303,bglx,xgjy)
-select k0101,k0112,rtrim(k0101)+'U'+rtrim(a.k6301),a.k6302,a.k6303,'ÎŞ·¨ÅĞ¶Ï','' from #k063 a left join #sd on rtrim(k0101)=rtrim(yk0101) and rtrim(k6303)=rtrim(yk6303)
+select k0101,k0112,rtrim(k0101)+'U'+rtrim(a.k6301),a.k6302,a.k6303,'æ— æ³•åˆ¤æ–­','' from #k063 a left join #sd on rtrim(k0101)=rtrim(yk0101) and rtrim(k6303)=rtrim(yk6303)
 where yk0101 is null
 and a.a0102 like rtrim(@a0102)+'%'
 and left(k0101,1) in ('G','S','X','Y','Z','C')
@@ -167,14 +167,14 @@ and left(k0101,1) in ('G','S','X','Y','Z','C')
 
 
 --select * from #k060 where left(k0101,1) in ('Y','X','C')
--------´¦ÀíÂ·ÏßºË²éÊı¾İ
+-------å¤„ç†è·¯çº¿æ ¸æŸ¥æ•°æ®
 update #lx set yk0101=case when len(wk0101)>=10 then left(wk0101,10) else left(wk0101,len(wk0101)-1) end where isnull(yk0101,'')=''
-----¸ù¾İÊı¾İ¿â»ñÈ¡¹ÜÀíµ¥Î»
---Ô­Êı¾İ¿âÊı¾İ-
+----æ ¹æ®æ•°æ®åº“è·å–ç®¡ç†å•ä½
+--åŸæ•°æ®åº“æ•°æ®-
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102
 from #lx a join #k001 b on a.yk0101=b.k0101 AND A.YK0108=B.K0108
 
---ÍâÒµÊı¾İ»òÕßºÍÊı¾İ¿â¶ÔÓ¦²»ÉÏµÄÊı¾İ
+--å¤–ä¸šæ•°æ®æˆ–è€…å’Œæ•°æ®åº“å¯¹åº”ä¸ä¸Šçš„æ•°æ®
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102
 from #lx a join #k001 b on left(a.yk0101,10)=b.k0101 and wk0108>=k0108 and wk0108<=k0109
 where a.a0102 is null
@@ -187,11 +187,11 @@ select rtrim(max(a0102))+k0101 a from #k001 group by k0101)
 where a.a0102 is null
 
 
---É¾³ı²»´æÔÚµÄÊı¾İ  select * from #k001
+--åˆ é™¤ä¸å­˜åœ¨çš„æ•°æ®  select * from #k001
 --select * from #lx where a0102 is null and wk0101 is null
 delete #lx where a0102 is null and wk0101 is null
 
----É¾³ıºË²éµÄÖØ¸´Àï³Ì
+---åˆ é™¤æ ¸æŸ¥çš„é‡å¤é‡Œç¨‹
 if object_id('tempdb..#cf') is not null drop table #cf
 select a.* into #cf
 from #lx a left join #k001 on yk0101=k0101 and yk0108=k0108
@@ -203,55 +203,55 @@ from #lx a left join #k001 on yk0101=k0101 and yk0108=k0108
 where yk0101 is not null and yk0108 is not null
 and (isnull(k0124,'')<>''
 or isnull(k0123,2)=1)
---¸üĞÂÂ·ÃæÀàĞÍ
-update #lx set b1=case when left(yhk5104,2)='Á¤Çà' then '11' else case when left(yhk5104,2)='Ë®Äà' then '12' else '13' end end where yhk5104 is not null
-update #lx set b2=case when left(whk5104,2)='Á¤Çà' then '11' else case when left(whk5104,2)='Ë®Äà' then '12' else '13' end end where whk5104 is not null
---²éÑ¯³ö±ä¸üÀàĞÍÃ»ÓĞÌîĞ´µÄÊı¾İ£¬²¢ÇÒÒ»²¢°´ÕÕ²»±äÌîĞ´
+--æ›´æ–°è·¯é¢ç±»å‹
+update #lx set b1=case when left(yhk5104,2)='æ²¥é’' then '11' else case when left(yhk5104,2)='æ°´æ³¥' then '12' else '13' end end where yhk5104 is not null
+update #lx set b2=case when left(whk5104,2)='æ²¥é’' then '11' else case when left(whk5104,2)='æ°´æ³¥' then '12' else '13' end end where whk5104 is not null
+--æŸ¥è¯¢å‡ºå˜æ›´ç±»å‹æ²¡æœ‰å¡«å†™çš„æ•°æ®ï¼Œå¹¶ä¸”ä¸€å¹¶æŒ‰ç…§ä¸å˜å¡«å†™
 --select * from #lx
-update #lx set bglx='²»±ä',xgjy='²»±ä'
+update #lx set bglx='ä¸å˜',xgjy='ä¸å˜'
 where yk0101 is not null and yk0108 is not null and bglx is null
 
---¸üĞÂ±ä¸üÂ·Ïß
+--æ›´æ–°å˜æ›´è·¯çº¿
 update #lx set bglx=ltrim(rtrim(bglx))
 
-UPDATE #LX SET B3=case WHEN isnull(bglx,'')='²»±ä' THEN '1' ELSE
-case WHEN isnull(bglx,'') in ('±ä¸ü') THEN '2' ELSE
-case WHEN isnull(bglx,'')='ĞÂÔö' THEN '3' ELSE
-case WHEN isnull(bglx,'')='É¾³ı' THEN '4' ELSE
-case WHEN isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' THEN '5' ELSE null end end end end end
+UPDATE #LX SET B3=case WHEN isnull(bglx,'')='ä¸å˜' THEN '1' ELSE
+case WHEN isnull(bglx,'') in ('å˜æ›´') THEN '2' ELSE
+case WHEN isnull(bglx,'')='æ–°å¢' THEN '3' ELSE
+case WHEN isnull(bglx,'')='åˆ é™¤' THEN '4' ELSE
+case WHEN isnull(bglx,'')='æ— æ³•åˆ¤æ–­' THEN '5' ELSE null end end end end end
 
 --select * from #lx where isnull(yk0101,'')<>'' and yk0108 is not null and b3
 
---ĞŞÕıÀï³Ì  select * from #a50
+--ä¿®æ­£é‡Œç¨‹  select * from #a50
 update #lx set yk0114=convert(decimal(8,3),isnull(yk0109,0)-isnull(yk0108,0)),wk0114=convert(decimal(8,3),isnull(wk0109,0)-isnull(wk0108,0))
 
 update a set yhk5104=rtrim(hk5104)
 from #lx a join #k001 b on yk0101=k0101 and yk0108=k0108
 
-update #lx set whk5104=null where bglx='²»±ä'
-------ÇÅÁº
+update #lx set whk5104=null where bglx='ä¸å˜'
+------æ¡¥æ¢
 update #ql set yk0101=left(wk0101,10) where isnull(yk0101,'')=''
---¸ù¾İÊı¾İ¿â¸üĞÂÇÅÁºµÄ¹ÜÀíµ¥Î»
+--æ ¹æ®æ•°æ®åº“æ›´æ–°æ¡¥æ¢çš„ç®¡ç†å•ä½
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102,a.yk0112=b.k0112
 from #ql a left join #k060 b on left(a.yk0101,10)=left(b.k0101,10) and yk6003=k6003
---¸üĞÂÍâÒµ²É¼¯µÄÊı¾İµÄ¹ÜÀíµ¥Î»
+--æ›´æ–°å¤–ä¸šé‡‡é›†çš„æ•°æ®çš„ç®¡ç†å•ä½
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102
 from #ql a left join #a50 b on left(a.yk0101,10)=left(b.k0101,10)
 where a.a0102 is null
 
---¸üĞÂ±ä¸üÀàĞÍ
+--æ›´æ–°å˜æ›´ç±»å‹
 update #ql set bglx=ltrim(rtrim(bglx))
-UPDATE #ql SET B3=case WHEN isnull(bglx,'')='²»±ä' THEN '1' ELSE
-case WHEN isnull(bglx,'') in ('±ä¸ü') THEN '2' ELSE
-case WHEN isnull(bglx,'')='ĞÂÔö' THEN '3' ELSE
-case WHEN isnull(bglx,'')='É¾³ı' THEN '4' ELSE
-case WHEN isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' THEN '5' ELSE null end end end end end
---É¾³ı´íÎóÊı¾İ
+UPDATE #ql SET B3=case WHEN isnull(bglx,'')='ä¸å˜' THEN '1' ELSE
+case WHEN isnull(bglx,'') in ('å˜æ›´') THEN '2' ELSE
+case WHEN isnull(bglx,'')='æ–°å¢' THEN '3' ELSE
+case WHEN isnull(bglx,'')='åˆ é™¤' THEN '4' ELSE
+case WHEN isnull(bglx,'')='æ— æ³•åˆ¤æ–­' THEN '5' ELSE null end end end end end
+--åˆ é™¤é”™è¯¯æ•°æ®
 --select * from #ql where a0102 is null
 delete #ql where a0102 is null
 
 
---ËíµÀ
+--éš§é“
 update #sd set yk0101=left(wk0101,10) where isnull(yk0101,'')=''
 
 update a set a.a0102=b.a0102,a.ha0102=b.ha0102,a.yk0112=b.k0112
@@ -260,25 +260,25 @@ update a set a.a0102=b.a0102,a.ha0102=b.ha0102
 from #sd a left join #a50 b on left(a.wk0101,10)=left(b.k0101,10)
 where a.a0102 is null
 
---É¾³ı´íÎóÊı¾İ
+--åˆ é™¤é”™è¯¯æ•°æ®
 --select * from #sd where a0102 is null
 delete #sd where a0102 is null
---¸üĞÂ±ä¸üÀàĞÍ
+--æ›´æ–°å˜æ›´ç±»å‹
 update #sd set bglx=ltrim(rtrim(bglx))
-UPDATE #sd SET B3=case WHEN isnull(bglx,'')='²»±ä' THEN '1' ELSE
-case WHEN isnull(bglx,'') in ('±ä¸ü') THEN '2' ELSE
-case WHEN isnull(bglx,'')='ĞÂÔö' THEN '3' ELSE
-case WHEN isnull(bglx,'')='É¾³ı' THEN '4' ELSE
-case WHEN isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' THEN '5' ELSE null end end end end end
+UPDATE #sd SET B3=case WHEN isnull(bglx,'')='ä¸å˜' THEN '1' ELSE
+case WHEN isnull(bglx,'') in ('å˜æ›´') THEN '2' ELSE
+case WHEN isnull(bglx,'')='æ–°å¢' THEN '3' ELSE
+case WHEN isnull(bglx,'')='åˆ é™¤' THEN '4' ELSE
+case WHEN isnull(bglx,'')='æ— æ³•åˆ¤æ–­' THEN '5' ELSE null end end end end end
 
 select * from #lx
 --declare @a0102 char(15)
 --set @a0102=@a0102  select * from #lx
 
 SELECT zLX.A0102,zLX.HA0102,
-case when zlx.objname='AG' and left(zlx.a0102,3)='331' THEN 'ÆÕÍ¨¹úÊ¡µÀ' else
-case when zlx.objname='AG' and left(zlx.a0102,3)='330' then '¸ßËÙ¹«Â·' else
-case when zlx.objname='AX' THEN 'Å©´å¹«Â·' else
+case when zlx.objname='AG' and left(zlx.a0102,3)='331' THEN 'æ™®é€šå›½çœé“' else
+case when zlx.objname='AG' and left(zlx.a0102,3)='330' then 'é«˜é€Ÿå…¬è·¯' else
+case when zlx.objname='AX' THEN 'å†œæ‘å…¬è·¯' else
 RTRIM(ZLX.OBJJC) end END END,
 lc,lqlc,snlc,qtlc,ts,ql,sd,
 isnull(wlc,0) wlc,isnull(wcwlc,0) wcwlc,isnull(wlccwl,0),
@@ -327,7 +327,7 @@ FROM (
 		case when grouping(a.a0102)=1 and grouping(objname)=1 then 'A' else max(rtrim(a.ha0102)) end ha0102,
 		case when grouping(A.a0102)=1 and grouping(objname)=1 then 'A' else
 		case when grouping(A.a0102)=0 and grouping(objname)=1 then 'A'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(OBJNAME,'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(objname)) end end objname,
-		case when grouping(objname)=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
+		case when grouping(objname)=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
 		sum(k0114) LC,
 		sum(case when k5104='11' then k0114 else 0 end) LQLC,
 		sum(case when k5104='12' then k0114 else 0 end) SNLC,
@@ -347,13 +347,13 @@ FROM (
 		--order by grouping(a.a0102) DESC,MAX(A.A0102),replace(objname,'C','YY')  select * from da0201
 	) YLX full join
 	(
-	--Â·ÏßÌõÊı
+	--è·¯çº¿æ¡æ•°
 		select
 		case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else max(rtrim(a0102)) end a0102,
 		case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else max(rtrim(ha0102)) end ha0102,
 		case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else
 		case when grouping(a0102)=0 and grouping(objname)=1 then 'A'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(OBJNAME,'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(objname)) end end objname,
-		case when grouping(objname)=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
+		case when grouping(objname)=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
 		sum(1) TS
 		from
 		(
@@ -373,13 +373,13 @@ FROM (
 
 	FULL JOIN
 	 (
-	--ÇÅÁº
+	--æ¡¥æ¢
 		select
 		case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else max(rtrim(a0102)) end a0102,
 		case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else max(rtrim(ha0102)) end ha0102,
 		case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else
 		case when grouping(a0102)=0 and grouping(objname)=1 then 'A'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(OBJNAME,'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(objname)) end end objname,
-		case when grouping(objname)=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
+		case when grouping(objname)=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
 		sum(1) QL
 		from
 		(
@@ -395,13 +395,13 @@ FROM (
 	) YQL ON YLX.A0102=YQL.A0102 AND YLX.OBJNAME=YQL.OBJNAME
 	full join
 	(
-		--ËíµÀ
+		--éš§é“
 		select
 			case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else max(rtrim(a0102)) end a0102,
 			case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else max(rtrim(ha0102)) end ha0102,
 			case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else
 			case when grouping(a0102)=0 and grouping(objname)=1 then 'A'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(OBJNAME,'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(objname)) end end objname,
-			case when grouping(objname)=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
+			case when grouping(objname)=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
 		sum(1) SD
 		from
 		(
@@ -423,7 +423,7 @@ FULL JOIN
 	case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else max(rtrim(ha0102)) end ha0102,
 	case when grouping(a0102)=1 and grouping(objname)=1 then 'A' else
 	case when grouping(a0102)=0 and grouping(objname)=1 then 'A'+MAX(REPLACE(REPLACE(REPLACE(REPLACE(OBJNAME,'S','G'),'C','X'),'Y','X'),'Z','X')) else max(rtrim(objname)) end end objname,
-	case when grouping(objname)=1 then 'ºÏ¼Æ' else space(2)++max(rtrim(objjc)) end objjc,
+	case when grouping(objname)=1 then 'åˆè®¡' else space(2)++max(rtrim(objjc)) end objjc,
     sum(wlc) wlc,sum(wcwlc) wcwlc,round(sum(wcwlc)*100/case when sum(isnull(wlc,0))=0 then 1 else sum(wlc) end,2) wlccwl,
 	sum(wql) wql,sum(wcwql) wcwql,isnull(round(sum(wcwql)*100/case when sum(isnull(wql,0))=0 then 1 else sum(wql) end,2),0) wqlcwl,
 	sum(wsd) wsd,sum(wcwsd) wcwsd,isnull(round(sum(wcwsd)*100/case when sum(isnull(wsd,0))=0 then 1 else sum(wsd) end,2),0) wsdcwl,
@@ -520,7 +520,7 @@ FULL JOIN
 	) ylc
 		LEFT join
 	 (
-		--ÇÅÁº
+		--æ¡¥æ¢
 		select
 		max(a0102) a0102,k0101,
 		sum(1) yql
@@ -539,7 +539,7 @@ FULL JOIN
 		) YQL ON ylc.A0102=YQL.A0102 AND ylc.K0101=YQL.K0101
 		LEFT join
 	 (
-		--ËíµÀ
+		--éš§é“
 		select
 		max(a0102) a0102,k0101,
 		sum(1) YSD
@@ -557,54 +557,54 @@ FULL JOIN
 		) YSD ON ylc.A0102=YSD.A0102 AND ylc.K0101=YSD.K0101
  LEFT JOIN
 (
- --   select sum(yk0114) from #lx  where b3 is not null where isnull(b3,'')=  update #lx set whk5104='Á¤Çà»ìÄıÍÁ' , b2='11'  where yk0108 is not null and whk5104 is null
+ --   select sum(yk0114) from #lx  where b3 is not null where isnull(b3,'')=  update #lx set whk5104='æ²¥é’æ··å‡åœŸ' , b2='11'  where yk0108 is not null and whk5104 is null
 	select
 	 A0102,MAX(HA0102) ha0102,Yk0101,
 	 sum(case when b3 in ('1','2','4') then 1 else 0 end) fhts,
-	 sum(isnull(wk0114,0)) wlc,--ÍâÒµ²É¼¯Àï³Ì
-	 sum(case when isnull(wcjwt,'')<>''then isnull(wk0114,0) else 0 end) wcwlc,--ÍâÒµ²É¼¯´íÎóÀï³Ì
+	 sum(isnull(wk0114,0)) wlc,--å¤–ä¸šé‡‡é›†é‡Œç¨‹
+	 sum(case when isnull(wcjwt,'')<>''then isnull(wk0114,0) else 0 end) wcwlc,--å¤–ä¸šé‡‡é›†é”™è¯¯é‡Œç¨‹
 	-- round(sum(case when isnull(wcjwt,'')<>''then wk0114 else 0 end)*100/sum(wk0114),2) wlccwl,
-	sum(case when isnull(b3,'') in ('1','2','4') then yk0114 else 0 end) fhlc, --¸´ºËÀï³Ì
-	sum(case when isnull(b3,'') in ('5') then yk0114 else 0 end) wfpdlc, --ÎŞ·¨ÅĞ¶ÏÀï³Ì
-	max(case when yk0108 is not null then b3 else 4 end) BGLX, --¸ù¾İÂ·Ïß·Ö×é£¬»ñÈ¡×î´óµÄ±ä¸üÀàĞÍ,
-	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --ĞÂÔö
-	sum(case when isnull(b3,'')='3' and b2='11' then wk0114 else 0 end) XZLQ, --Á¤ÇàĞÂÔö
-	sum(case when isnull(b3,'')='3' and b2='12' then wk0114 else 0 end) XZSN, --Ë®ÄàĞÂÔö
-	sum(case when isnull(b3,'')='3' and b2='13' then wk0114 else 0 end) XZQT, --ÆäËûĞÂÔö
-	sum(case when isnull(b3,'')='3' and isnull(wcjwt,'') like '·ÇÔ­Êı¾İ¿â%' then 1 else 0 end) XZTS, --ĞÂÔöÌõÊı
-	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --É¾³ı
-	sum(case when isnull(b3,'')='4' and b1='11' then yk0114 else 0 end) scLQ, --Á¤ÇàÉ¾³ı
-	sum(case when isnull(b3,'')='4' and b1='12' then yk0114 else 0 end) scSN, --Ë®ÄàÉ¾³ı
-	sum(case when isnull(b3,'')='4' and b1='13' then yk0114 else 0 end) scQT, --ÆäËûÉ¾³ı
+	sum(case when isnull(b3,'') in ('1','2','4') then yk0114 else 0 end) fhlc, --å¤æ ¸é‡Œç¨‹
+	sum(case when isnull(b3,'') in ('5') then yk0114 else 0 end) wfpdlc, --æ— æ³•åˆ¤æ–­é‡Œç¨‹
+	max(case when yk0108 is not null then b3 else 4 end) BGLX, --æ ¹æ®è·¯çº¿åˆ†ç»„ï¼Œè·å–æœ€å¤§çš„å˜æ›´ç±»å‹,
+	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --æ–°å¢
+	sum(case when isnull(b3,'')='3' and b2='11' then wk0114 else 0 end) XZLQ, --æ²¥é’æ–°å¢
+	sum(case when isnull(b3,'')='3' and b2='12' then wk0114 else 0 end) XZSN, --æ°´æ³¥æ–°å¢
+	sum(case when isnull(b3,'')='3' and b2='13' then wk0114 else 0 end) XZQT, --å…¶ä»–æ–°å¢
+	sum(case when isnull(b3,'')='3' and isnull(wcjwt,'') like 'éåŸæ•°æ®åº“%' then 1 else 0 end) XZTS, --æ–°å¢æ¡æ•°
+	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --åˆ é™¤
+	sum(case when isnull(b3,'')='4' and b1='11' then yk0114 else 0 end) scLQ, --æ²¥é’åˆ é™¤
+	sum(case when isnull(b3,'')='4' and b1='12' then yk0114 else 0 end) scSN, --æ°´æ³¥åˆ é™¤
+	sum(case when isnull(b3,'')='4' and b1='13' then yk0114 else 0 end) scQT, --å…¶ä»–åˆ é™¤
 
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´
 
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='11' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_lqBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Á¤Çà
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='12' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_snBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Ë®Äà
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='13' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_qtBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-ÆäËû
-	sum(case when (isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8)) or b3='4' then 1 else 0 end) LXBG_tsBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-ÌõÊı
-	----Â·ÃæÀàĞÍ±ä¸ü
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqtz, --Á¤ÇàÂ·Ãæµ÷Õû
-	sum(case when isnull(b3,'')='1' and b1='11' then yk0114 else 0 end) lqbb, --Á¤ÇàÂ·Ãæ²»±ä
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='11' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_lqBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ²¥é’
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='12' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_snBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ°´æ³¥
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='13' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_qtBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-å…¶ä»–
+	sum(case when (isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8)) or b3='4' then 1 else 0 end) LXBG_tsBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ¡æ•°
+	----è·¯é¢ç±»å‹å˜æ›´
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqtz, --æ²¥é’è·¯é¢è°ƒæ•´
+	sum(case when isnull(b3,'')='1' and b1='11' then yk0114 else 0 end) lqbb, --æ²¥é’è·¯é¢ä¸å˜
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'11' and b2='11' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqbh, --Á¤ÇàÂ·Ãæ±ä»¯
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) sntz, --Ë®ÄàÂ·Ãæµ÷Õû
-	sum(case when isnull(b3,'')='1' and b1='12' then yk0114 else 0 end) snbb, --Ë®ÄàÂ·Ãæ²»±ä
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqbh, --æ²¥é’è·¯é¢å˜åŒ–
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) sntz, --æ°´æ³¥è·¯é¢è°ƒæ•´
+	sum(case when isnull(b3,'')='1' and b1='12' then yk0114 else 0 end) snbb, --æ°´æ³¥è·¯é¢ä¸å˜
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'12' and b2='12' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) snbh, --Ë®ÄàÂ·Ãæ±ä»¯
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qttz, --ÆäËûÂ·Ãæµ÷Õû
-	sum(case when isnull(b3,'')='1' and b1='13' then yk0114 else 0 end) qtbb, --ÆäËûÂ·Ãæ²»±ä
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) snbh, --æ°´æ³¥è·¯é¢å˜åŒ–
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qttz, --å…¶ä»–è·¯é¢è°ƒæ•´
+	sum(case when isnull(b3,'')='1' and b1='13' then yk0114 else 0 end) qtbb, --å…¶ä»–è·¯é¢ä¸å˜
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'13' and b2='13' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qtbh, --ÆäËûÂ·Ãæ±ä»¯
-	sum(case when isnull(bglx,'') in ('±ä¸ü') then yk0114 else 0 end) BgLC, --±ä¸ü
-	sum(case when isnull(bglx,'')='±ä¸ü' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) LXBG_THXX,--Â·Ïß±ä¸ü-Ìæ»»ÏßĞÎ
-	sum(case when isnull(bglx,'')='±ä¸ü' and isnull(xgjy,'')='Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) LXBG_LMLX,--Â·Ïß±ä¸ü-Â·ÃæÀàĞÍ
-    sum(case when isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' then yk0114 else 0 end) WFPD, --ÏßĞÎÎŞ·¨ÅĞ¶Ï
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qtbh, --å…¶ä»–è·¯é¢å˜åŒ–
+	sum(case when isnull(bglx,'') in ('å˜æ›´') then yk0114 else 0 end) BgLC, --å˜æ›´
+	sum(case when isnull(bglx,'')='å˜æ›´' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) LXBG_THXX,--è·¯çº¿å˜æ›´-æ›¿æ¢çº¿å½¢
+	sum(case when isnull(bglx,'')='å˜æ›´' and isnull(xgjy,'')='è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) LXBG_LMLX,--è·¯çº¿å˜æ›´-è·¯é¢ç±»å‹
+    sum(case when isnull(bglx,'')='æ— æ³•åˆ¤æ–­' then yk0114 else 0 end) WFPD, --çº¿å½¢æ— æ³•åˆ¤æ–­
 	null w
 	from #LX a
 	where left(yK0101,1) in ('G','S','X','Y','Z','C')
@@ -613,7 +613,7 @@ FULL JOIN
 
 ) fhlc on ylc.a0102=fhlc.a0102 and ylc.k0101=fhlc.yk0101
 left join
- --É¾³ıÂ·Ïß
+ --åˆ é™¤è·¯çº¿
 (
 	select yk0101,max(a0102) a0102,1 sclx from #lx
 	where yk0108 is not null
@@ -625,14 +625,14 @@ left join
  (  --- select * from #ql
 	select
 	max(a0102) a0102,max(ha0102) ha0102,yk0101,
-	SUM(case when isnull(wk6003,'0')<>'0' then 1 else 0 end) wql,--ÍâÒµ²É¼¯ÇÅÁº
-	SUM(case when isnull(k6001,'')='' and wcjwt like '%´íÎó%' then 1 else 0 end) wcwql,--´íÎóÇÅÁº
-	sum(case when isnull(k6001,'')<>'' and b3 in ('1','2','4') then 1 else 0 end) fhql, --¸´ºËÇÅÁº
-	SUM(case when isnull(k6001,'')<>'' and b3='2' then 1 else 0 end) bgql,--±ä¸üÇÅÁº
-	SUM(case when isnull(k6001,'')<>'' and b3='4' then 1 else 0 end) scql,--É¾³ıÇÅÁº
-	SUM(case when b3='3' then 1 else 0 end) xzql,--ĞÂÔöÇÅÁº
-	SUM(case when isnull(k6001,'')<>'' and b3='1' then 1 else 0 end) bbql,--²»±äÇÅÁº
-	SUM(case when isnull(k6001,'')<>'' and b3='5' then 1 else 0 end) wfpdql --ÎŞ·¨ÅĞ¶ÏÇÅÁº
+	SUM(case when isnull(wk6003,'0')<>'0' then 1 else 0 end) wql,--å¤–ä¸šé‡‡é›†æ¡¥æ¢
+	SUM(case when isnull(k6001,'')='' and wcjwt like '%é”™è¯¯%' then 1 else 0 end) wcwql,--é”™è¯¯æ¡¥æ¢
+	sum(case when isnull(k6001,'')<>'' and b3 in ('1','2','4') then 1 else 0 end) fhql, --å¤æ ¸æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='2' then 1 else 0 end) bgql,--å˜æ›´æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='4' then 1 else 0 end) scql,--åˆ é™¤æ¡¥æ¢
+	SUM(case when b3='3' then 1 else 0 end) xzql,--æ–°å¢æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='1' then 1 else 0 end) bbql,--ä¸å˜æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='5' then 1 else 0 end) wfpdql --æ— æ³•åˆ¤æ–­æ¡¥æ¢
 	from
 	(
 		select *
@@ -647,14 +647,14 @@ left join
 ( --- select * from  #sd
 	select
 	max(a0102) a0102,max(ha0102) ha0102,yk0101,
-	SUM(case when isnull(k6301,'')='' and isnull(wk6303,'0')<>'0' then 1 else 0 end) wsd,--ÍâÒµ²É¼¯ËíµÀ
-	SUM(case when isnull(k6301,'')='' and wcjwt like '%´íÎó%' then 1 else 0 end) wcwsd,--´íÎóËíµÀ
-	sum(case when isnull(k6301,'')<>'' and b3 in ('1','2','4') then 1 else 0 end) fhsd, --¸´ºËËíµÀ
-	SUM(case when isnull(k6301,'')<>'' and b3='2' then 1 else 0 end) bgsd,--±ä¸üËíµÀ
-	SUM(case when isnull(k6301,'')<>'' and b3='4' then 1 else 0 end) scsd,--É¾³ıËíµÀ
-	SUM(case when isnull(k6301,'')='' and b3='3' then 1 else 0 end) xzsd,--ĞÂÔöËíµÀ
-	SUM(case when isnull(k6301,'')<>'' and b3='1' then 1 else 0 end) bbsd,--²»±äËíµÀ
-	SUM(case when isnull(k6301,'')<>'' and b3='5' then 1 else 0 end) wfpdsd --ÎŞ·¨ÅĞ¶ÏËíµÀ
+	SUM(case when isnull(k6301,'')='' and isnull(wk6303,'0')<>'0' then 1 else 0 end) wsd,--å¤–ä¸šé‡‡é›†éš§é“
+	SUM(case when isnull(k6301,'')='' and wcjwt like '%é”™è¯¯%' then 1 else 0 end) wcwsd,--é”™è¯¯éš§é“
+	sum(case when isnull(k6301,'')<>'' and b3 in ('1','2','4') then 1 else 0 end) fhsd, --å¤æ ¸éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='2' then 1 else 0 end) bgsd,--å˜æ›´éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='4' then 1 else 0 end) scsd,--åˆ é™¤éš§é“
+	SUM(case when isnull(k6301,'')='' and b3='3' then 1 else 0 end) xzsd,--æ–°å¢éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='1' then 1 else 0 end) bbsd,--ä¸å˜éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='5' then 1 else 0 end) wfpdsd --æ— æ³•åˆ¤æ–­éš§é“
 	from
 	( -- select *from #sd
 		select *
@@ -675,8 +675,8 @@ order by case when zlx.a0102='a' then '1' else zlx.a0102 end,
     case when zlx.objname in ('G','S','AG') THEN '1'+REPLACE(ZLX.OBJNAME,'S','GG') ELSE '2'+REPLACE(ZLX.OBJNAME,'C','YY') END
 
 
-    -----------------------------------°´Â·ÏßÍ³¼Æ
-   ---ºË²éÊı¾İ  select * from #lx
+    -----------------------------------æŒ‰è·¯çº¿ç»Ÿè®¡
+   ---æ ¸æŸ¥æ•°æ®  select * from #lx
 	select ylc.A0102,ylc.HA0102,
 	ylc.k0101,ylc.k0112,YLC,YLQ,YSN,YQT,isnull(YQL,0) yql,isnull(YSD,0)  ysd,
 	isnull(wlc,0) wlc,isnull(wcwlc,0) wcwlc, round(wcwlc*100/case when isnull(wlc,0)=0 then 1 else wlc end,2) wlccwl,
@@ -743,7 +743,7 @@ order by case when zlx.a0102='a' then '1' else zlx.a0102 end,
 	) ylc
 		LEFT join
 	 (
-		--ÇÅÁº
+		--æ¡¥æ¢
 		select
 		max(a0102) a0102,k0101,
 		sum(1) yql
@@ -762,7 +762,7 @@ order by case when zlx.a0102='a' then '1' else zlx.a0102 end,
 		) YQL ON ylc.A0102=YQL.A0102 AND ylc.K0101=YQL.K0101
 		LEFT join
 	 (
-		--ËíµÀ
+		--éš§é“
 		select
 		max(a0102) a0102,k0101,
 		sum(1) YSD
@@ -783,49 +783,49 @@ order by case when zlx.a0102='a' then '1' else zlx.a0102 end,
  --   select sum(yk0114) from #lx where yk0108 is not null
 	select
 	 A0102,MAX(HA0102) ha0102,Yk0101,
-	 sum(isnull(wk0114,0)) wlc,--ÍâÒµ²É¼¯Àï³Ì
-	 sum(case when isnull(wcjwt,'')<>''  then isnull(wk0114,0) else 0 end) wcwlc,--ÍâÒµ²É¼¯´íÎóÀï³Ì
+	 sum(isnull(wk0114,0)) wlc,--å¤–ä¸šé‡‡é›†é‡Œç¨‹
+	 sum(case when isnull(wcjwt,'')<>''  then isnull(wk0114,0) else 0 end) wcwlc,--å¤–ä¸šé‡‡é›†é”™è¯¯é‡Œç¨‹
 	-- round(sum(case when isnull(wcjwt,'')<>''then wk0114 else 0 end)*100/sum(wk0114),2) wlccwl,
-	sum(case when isnull(b3,'') in ('1','2','4') then yk0114 else 0 end) fhlc, --¸´ºËÀï³Ì
-	sum(case when isnull(b3,'') in ('5') then yk0114 else 0 end) wfpdlc, --ÎŞ·¨ÅĞ¶ÏÀï³Ì
-	max(case when yk0108 is not null then b3 else 4 end) BGLX, --¸ù¾İÂ·Ïß·Ö×é£¬»ñÈ¡×î´óµÄ±ä¸üÀàĞÍ,
-	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --ĞÂÔö
-	sum(case when isnull(b3,'')='3' and b2='11' then wk0114 else 0 end) XZLQ, --Á¤ÇàĞÂÔö
-	sum(case when isnull(b3,'')='3' and b2='12' then wk0114 else 0 end) XZSN, --Ë®ÄàĞÂÔö
-	sum(case when isnull(b3,'')='3' and b2='13' then wk0114 else 0 end) XZQT, --ÆäËûĞÂÔö
-	sum(case when isnull(b3,'')='3' and isnull(wcjwt,'') like '·ÇÔ­Êı¾İ¿â%' then 1 else 0 end) XZTS, --ĞÂÔöÌõÊı
-	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --É¾³ı
-	sum(case when isnull(b3,'')='4' and b1='11' then yk0114 else 0 end) scLQ, --Á¤ÇàÉ¾³ı
-	sum(case when isnull(b3,'')='4' and b1='12' then yk0114 else 0 end) scSN, --Ë®ÄàÉ¾³ı
-	sum(case when isnull(b3,'')='4' and b1='13' then yk0114 else 0 end) scQT, --ÆäËûÉ¾³ı
+	sum(case when isnull(b3,'') in ('1','2','4') then yk0114 else 0 end) fhlc, --å¤æ ¸é‡Œç¨‹
+	sum(case when isnull(b3,'') in ('5') then yk0114 else 0 end) wfpdlc, --æ— æ³•åˆ¤æ–­é‡Œç¨‹
+	max(case when yk0108 is not null then b3 else 4 end) BGLX, --æ ¹æ®è·¯çº¿åˆ†ç»„ï¼Œè·å–æœ€å¤§çš„å˜æ›´ç±»å‹,
+	sum(case when isnull(b3,'')='3' then wk0114 else 0 end) XZLC, --æ–°å¢
+	sum(case when isnull(b3,'')='3' and b2='11' then wk0114 else 0 end) XZLQ, --æ²¥é’æ–°å¢
+	sum(case when isnull(b3,'')='3' and b2='12' then wk0114 else 0 end) XZSN, --æ°´æ³¥æ–°å¢
+	sum(case when isnull(b3,'')='3' and b2='13' then wk0114 else 0 end) XZQT, --å…¶ä»–æ–°å¢
+	sum(case when isnull(b3,'')='3' and isnull(wcjwt,'') like 'éåŸæ•°æ®åº“%' then 1 else 0 end) XZTS, --æ–°å¢æ¡æ•°
+	sum(case when isnull(b3,'')='4' then yk0114 else 0 end) scLC, --åˆ é™¤
+	sum(case when isnull(b3,'')='4' and b1='11' then yk0114 else 0 end) scLQ, --æ²¥é’åˆ é™¤
+	sum(case when isnull(b3,'')='4' and b1='12' then yk0114 else 0 end) scSN, --æ°´æ³¥åˆ é™¤
+	sum(case when isnull(b3,'')='4' and b1='13' then yk0114 else 0 end) scQT, --å…¶ä»–åˆ é™¤
 
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='11' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_lqBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Á¤Çà
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='12' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_snBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-Ë®Äà
-	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and b1='13' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_qtBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-ÆäËû
-	sum(case when (isnull(b3,'')='2' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' and
-	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8)) or b3='4' then 1 else 0 end) LXBG_tsBG,  --Â·Ïß±ä¸ü-Àï³Ì±ä¸ü-ÌõÊı
-	----Â·ÃæÀàĞÍ±ä¸ü
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqtz, --Á¤ÇàÂ·Ãæµ÷Õû
-	sum(case when isnull(b3,'')='1' and b1='11' then yk0114 else 0 end) lqbb, --Á¤ÇàÂ·Ãæ²»±ä
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_LCBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='11' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_lqBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ²¥é’
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='12' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_snBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ°´æ³¥
+	sum(case when isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and b1='13' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8) then wk0114-yk0114 else 0 end) LXBG_qtBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-å…¶ä»–
+	sum(case when (isnull(b3,'')='2' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' and
+	(yk0114/(case when wk0114=0 then 1 else wk0114 end)>=1.2 or yk0114/(case when wk0114=0 then 1 else wk0114 end)<=0.8)) or b3='4' then 1 else 0 end) LXBG_tsBG,  --è·¯çº¿å˜æ›´-é‡Œç¨‹å˜æ›´-æ¡æ•°
+	----è·¯é¢ç±»å‹å˜æ›´
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqtz, --æ²¥é’è·¯é¢è°ƒæ•´
+	sum(case when isnull(b3,'')='1' and b1='11' then yk0114 else 0 end) lqbb, --æ²¥é’è·¯é¢ä¸å˜
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'11' and b2='11' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqbh, --Á¤ÇàÂ·Ãæ±ä»¯
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) sntz, --Ë®ÄàÂ·Ãæµ÷Õû
-	sum(case when isnull(b3,'')='1' and b1='12' then yk0114 else 0 end) snbb, --Ë®ÄàÂ·Ãæ²»±ä
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='11' and b2<>'11' then yk0114 else 0 end) lqbh, --æ²¥é’è·¯é¢å˜åŒ–
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) sntz, --æ°´æ³¥è·¯é¢è°ƒæ•´
+	sum(case when isnull(b3,'')='1' and b1='12' then yk0114 else 0 end) snbb, --æ°´æ³¥è·¯é¢ä¸å˜
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'12' and b2='12' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) snbh, --Ë®ÄàÂ·Ãæ±ä»¯
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qttz, --ÆäËûÂ·Ãæµ÷Õû
-	sum(case when isnull(b3,'')='1' and b1='13' then yk0114 else 0 end) qtbb, --ÆäËûÂ·Ãæ²»±ä
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='12' and b2<>'12' then yk0114 else 0 end) snbh, --æ°´æ³¥è·¯é¢å˜åŒ–
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qttz, --å…¶ä»–è·¯é¢è°ƒæ•´
+	sum(case when isnull(b3,'')='1' and b1='13' then yk0114 else 0 end) qtbb, --å…¶ä»–è·¯é¢ä¸å˜
 	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1<>'13' and b2='13' then yk0114 else 0 end)-
-	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qtbh, --ÆäËûÂ·Ãæ±ä»¯
-	sum(case when isnull(bglx,'') in ('±ä¸ü') then yk0114 else 0 end) BgLC, --±ä¸ü
-	sum(case when isnull(bglx,'')='±ä¸ü' and isnull(xgjy,'')<>'Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) LXBG_THXX,--Â·Ïß±ä¸ü-Ìæ»»ÏßĞÎ
-	sum(case when isnull(bglx,'')='±ä¸ü' and isnull(xgjy,'')='Â·ÃæÀàĞÍ±ä¸ü' then yk0114 else 0 end) LXBG_LMLX,--Â·Ïß±ä¸ü-Â·ÃæÀàĞÍ
-    sum(case when isnull(bglx,'')='ÎŞ·¨ÅĞ¶Ï' then yk0114 else 0 end) WFPD, --ÏßĞÎÎŞ·¨ÅĞ¶Ï
+	sum(case when isnull(b3,'')='2' and isnull(b2,'')<>'' and b1<>b2 and b1='13' and b2<>'13' then yk0114 else 0 end) qtbh, --å…¶ä»–è·¯é¢å˜åŒ–
+	sum(case when isnull(bglx,'') in ('å˜æ›´') then yk0114 else 0 end) BgLC, --å˜æ›´
+	sum(case when isnull(bglx,'')='å˜æ›´' and isnull(xgjy,'')<>'è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) LXBG_THXX,--è·¯çº¿å˜æ›´-æ›¿æ¢çº¿å½¢
+	sum(case when isnull(bglx,'')='å˜æ›´' and isnull(xgjy,'')='è·¯é¢ç±»å‹å˜æ›´' then yk0114 else 0 end) LXBG_LMLX,--è·¯çº¿å˜æ›´-è·¯é¢ç±»å‹
+    sum(case when isnull(bglx,'')='æ— æ³•åˆ¤æ–­' then yk0114 else 0 end) WFPD, --çº¿å½¢æ— æ³•åˆ¤æ–­
    -- max(bz) bz,
 	null w
 	from #LX a
@@ -835,7 +835,7 @@ order by case when zlx.a0102='a' then '1' else zlx.a0102 end,
 
 ) fhlc on ylc.a0102=fhlc.a0102 and ylc.k0101=fhlc.yk0101
 left join
- --É¾³ıÂ·Ïß
+ --åˆ é™¤è·¯çº¿
 (  --- select * from #lx
 	select yk0101,max(a0102) a0102,1 sclx from #lx
 	where yk0108 is not null
@@ -847,14 +847,14 @@ left join
  (  --- select * from #ql
 	select
 	max(a0102) a0102,max(ha0102) ha0102,yk0101,
-	SUM(case when isnull(wk0101,'')=yk0101 and isnull(wk6003,'0')<>'0' then 1 else 0 end) wql,--ÍâÒµ²É¼¯ÇÅÁº
-	SUM(case when isnull(k6001,'')='' and wcjwt like '%´íÎó%' then 1 else 0 end) wcwql,--´íÎóÇÅÁº
-	sum(case when isnull(k6001,'')<>'' and b3 in ('1','2','4') then 1 else 0 end) fhql, --¸´ºËÇÅÁº
-	SUM(case when isnull(k6001,'')<>'' and b3='2' then 1 else 0 end) bgql,--±ä¸üÇÅÁº
-	SUM(case when isnull(k6001,'')<>'' and b3='4' then 1 else 0 end) scql,--É¾³ıÇÅÁº
-	SUM(case when b3='3' then 1 else 0 end) xzql,--ĞÂÔöÇÅÁº
-	SUM(case when isnull(k6001,'')<>'' and b3='1' then 1 else 0 end) bbql,--²»±äÇÅÁº
-	SUM(case when isnull(k6001,'')<>'' and b3='5' then 1 else 0 end) wfpdql --ÎŞ·¨ÅĞ¶ÏÇÅÁº
+	SUM(case when isnull(wk0101,'')=yk0101 and isnull(wk6003,'0')<>'0' then 1 else 0 end) wql,--å¤–ä¸šé‡‡é›†æ¡¥æ¢
+	SUM(case when isnull(k6001,'')='' and wcjwt like '%é”™è¯¯%' then 1 else 0 end) wcwql,--é”™è¯¯æ¡¥æ¢
+	sum(case when isnull(k6001,'')<>'' and b3 in ('1','2','4') then 1 else 0 end) fhql, --å¤æ ¸æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='2' then 1 else 0 end) bgql,--å˜æ›´æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='4' then 1 else 0 end) scql,--åˆ é™¤æ¡¥æ¢
+	SUM(case when b3='3' then 1 else 0 end) xzql,--æ–°å¢æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='1' then 1 else 0 end) bbql,--ä¸å˜æ¡¥æ¢
+	SUM(case when isnull(k6001,'')<>'' and b3='5' then 1 else 0 end) wfpdql --æ— æ³•åˆ¤æ–­æ¡¥æ¢
 	from
 	(
 		select *
@@ -869,14 +869,14 @@ left join
 ( --- select * from  #sd
 	select
 	max(a0102) a0102,max(ha0102) ha0102,yk0101,
-	SUM(case when isnull(wk6303,'0')<>'0' and isnull(wk0101,'')=yk0101 then 1 else 0 end) wsd,--ÍâÒµ²É¼¯ËíµÀ
-	SUM(case when isnull(k6301,'')='' and wcjwt like '%´íÎó%' then 1 else 0 end) wcwsd,--´íÎóËíµÀ
-	sum(case when isnull(k6301,'')<>'' and b3 in ('1','2','4') then 1 else 0 end) fhsd, --¸´ºËËíµÀ
-	SUM(case when isnull(k6301,'')<>'' and b3='2' then 1 else 0 end) bgsd,--±ä¸üËíµÀ
-	SUM(case when isnull(k6301,'')<>'' and b3='4' then 1 else 0 end) scsd,--É¾³ıËíµÀ
-	SUM(case when isnull(k6301,'')='' and b3='3' then 1 else 0 end) xzsd,--ĞÂÔöËíµÀ
-	SUM(case when isnull(k6301,'')<>'' and b3='1' then 1 else 0 end) bbsd,--²»±äËíµÀ
-	SUM(case when isnull(k6301,'')<>'' and b3='5' then 1 else 0 end) wfpdsd --ÎŞ·¨ÅĞ¶ÏËíµÀ
+	SUM(case when isnull(wk6303,'0')<>'0' and isnull(wk0101,'')=yk0101 then 1 else 0 end) wsd,--å¤–ä¸šé‡‡é›†éš§é“
+	SUM(case when isnull(k6301,'')='' and wcjwt like '%é”™è¯¯%' then 1 else 0 end) wcwsd,--é”™è¯¯éš§é“
+	sum(case when isnull(k6301,'')<>'' and b3 in ('1','2','4') then 1 else 0 end) fhsd, --å¤æ ¸éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='2' then 1 else 0 end) bgsd,--å˜æ›´éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='4' then 1 else 0 end) scsd,--åˆ é™¤éš§é“
+	SUM(case when isnull(k6301,'')='' and b3='3' then 1 else 0 end) xzsd,--æ–°å¢éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='1' then 1 else 0 end) bbsd,--ä¸å˜éš§é“
+	SUM(case when isnull(k6301,'')<>'' and b3='5' then 1 else 0 end) wfpdsd --æ— æ³•åˆ¤æ–­éš§é“
 	from
 	( -- select *from #sd
 		select *
@@ -889,10 +889,10 @@ left join
 --where left(ylc.k0101,1)='C' and xzlc>0
 order by ylc.a0102,replace(ylc.k0101,'C','YY')
 
-select * from #ql where bglx='²»±ä' and left(yk0101,1) in ('C','X','Y')
---select sum(k0114) from k001 where left(hk5104,2) not in ('Á¤Çà','Ë®Äà')
+select * from #ql where bglx='ä¸å˜' and left(yk0101,1) in ('C','X','Y')
+--select sum(k0114) from k001 where left(hk5104,2) not in ('æ²¥é’','æ°´æ³¥')
 
---select hk5104,* from k001 where left(hk5104,2) not in ('Á¤Çà','Ë®Äà')
+--select hk5104,* from k001 where left(hk5104,2) not in ('æ²¥é’','æ°´æ³¥')
 
 --select * from #lx where left(yk0101,1)='G'
 

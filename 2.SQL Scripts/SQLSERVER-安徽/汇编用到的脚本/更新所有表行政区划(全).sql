@@ -6,52 +6,52 @@ alter table JZC  NOCHECK constraint all;
 alter table ZRC  NOCHECK constraint all; 
 
 -------------------------V51--------------------------------------------
-UPDATE V51 set HV0501 ='»ªÍ¤Õò'
-FROM V51 where HV0501 like 'ÆÆÁ¹Õò%'
+UPDATE V51 set HV0501 ='åäº­é•‡'
+FROM V51 where HV0501 like 'ç ´å‡‰é•‡%'
 
-UPDATE V51 set HV0501='Èı³ÇÕò'
+UPDATE V51 set HV0501='ä¸‰åŸé•‡'
 from V51 WHERE V0501 ='341122200'
 
-UPDATE V51 set HV0501='¶ÀÉ½Õò'
+UPDATE V51 set HV0501='ç‹¬å±±é•‡'
 from V51 WHERE V0501 ='341122201'
 
-UPDATE V51 set HV0501='ÕÅÉ½Õò'
+UPDATE V51 set HV0501='å¼ å±±é•‡'
 from V51 WHERE V0501 ='341122202'
 
 update V51 set V0501 ='340827109'
-FROM V51 where HV0501 like 'À×³ØÕò%'
+FROM V51 where HV0501 like 'é›·æ± é•‡%'
 
 -------------------------V51--------------------------------------------
-UPDATE V71 set HV0501 ='»ªÍ¤Õò'
-FROM V71 where HV0501 like 'ÆÆÁ¹Õò%'
+UPDATE V71 set HV0501 ='åäº­é•‡'
+FROM V71 where HV0501 like 'ç ´å‡‰é•‡%'
 
-UPDATE V71 set HV0501='Èı³ÇÕò'
+UPDATE V71 set HV0501='ä¸‰åŸé•‡'
 from V71 WHERE V0501 ='341122200'
 
-UPDATE V71 set HV0501='¶ÀÉ½Õò'
+UPDATE V71 set HV0501='ç‹¬å±±é•‡'
 from V71 WHERE V0501 ='341122201'
 
-UPDATE V71 set HV0501='ÕÅÉ½Õò'
+UPDATE V71 set HV0501='å¼ å±±é•‡'
 from V71 WHERE V0501 ='341122202'
 
 update V71 set V0501 ='340827109'
-FROM V71 where HV0501 like 'À×³ØÕò%'
+FROM V71 where HV0501 like 'é›·æ± é•‡%'
 
 -------------------------V52--------------------------------------------
-UPDATE V52 set HV0514 ='»ªÍ¤Õò'
-FROM V52 where HV0514 like 'ÆÆÁ¹Õò%'
+UPDATE V52 set HV0514 ='åäº­é•‡'
+FROM V52 where HV0514 like 'ç ´å‡‰é•‡%'
 
-UPDATE V52 set HV0514='Èı³ÇÕò'
+UPDATE V52 set HV0514='ä¸‰åŸé•‡'
 from V52 WHERE V0514 ='341122200'
 
-UPDATE V52 set HV0514='¶ÀÉ½Õò'
+UPDATE V52 set HV0514='ç‹¬å±±é•‡'
 from V52 WHERE V0514 ='341122201'
 
-UPDATE V52 set HV0514='ÕÅÉ½Õò'
+UPDATE V52 set HV0514='å¼ å±±é•‡'
 from V52 WHERE V0514 ='341122202'
 
 update V52 set V0514 ='340827109'
-FROM V52 where HV0514 like 'À×³ØÕò%'
+FROM V52 where HV0514 like 'é›·æ± é•‡%'
 
 -------------------------V52--------------------------------------------
 UPDATE V52 set V0514=REPLACE(V0514,'340827200','340827109')
@@ -141,27 +141,27 @@ from V52	where V0514 like '340827101011%'
 UPDATE V52 set V0514=REPLACE(V0514,'340827108201','340827003201')
 from V52	where V0514 like '340827108201%'
 
-update V52 set HV0514 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
+update V52 set HV0514 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
 FROM V52 where V0514 = '340826001001'
 
 
 
 
 -------------------------V53--------------------------------------------
-UPDATE V53 set HV0514 ='»ªÍ¤Õò'
-FROM V53 where HV0514 like 'ÆÆÁ¹Õò%'
+UPDATE V53 set HV0514 ='åäº­é•‡'
+FROM V53 where HV0514 like 'ç ´å‡‰é•‡%'
 
-UPDATE V53 set HV0514='Èı³ÇÕò'
+UPDATE V53 set HV0514='ä¸‰åŸé•‡'
 from V53 WHERE V0514 ='341122200'
 
-UPDATE V53 set HV0514='¶ÀÉ½Õò'
+UPDATE V53 set HV0514='ç‹¬å±±é•‡'
 from V53 WHERE V0514 ='341122201'
 
-UPDATE V53 set HV0514='ÕÅÉ½Õò'
+UPDATE V53 set HV0514='å¼ å±±é•‡'
 from V53 WHERE V0514 ='341122202'
 
 update V53 set V0514 ='340827109'
-FROM V53 where HV0514 like 'À×³ØÕò%'
+FROM V53 where HV0514 like 'é›·æ± é•‡%'
 
 -------------------------V53--------------------------------------------
 UPDATE V53 set V0514=REPLACE(V0514,'340827200','340827109')
@@ -251,7 +251,7 @@ from V53	where V0514 like '340827101011%'
 UPDATE V53 set V0514=REPLACE(V0514,'340827108201','340827003201')
 from V53	where V0514 like '340827108201%'
 
-update V53 set HV0514 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
+update V53 set HV0514 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
 FROM V53 where V0514 = '340826001001'
 
 -------------------------V53--------------------------------------------
@@ -343,22 +343,22 @@ UPDATE V53 set v5701=REPLACE(v5701,'340827108201','340827003201')
 from V53	where v5701 like '340827108201%'
 
 
------------------------ÀúÊ·±í--------------------------------------
+-----------------------å†å²è¡¨--------------------------------------
 -------------------------JZC--------------------------------------------
-UPDATE JZC set HV0514 ='»ªÍ¤Õò'
-FROM JZC where HV0514 like 'ÆÆÁ¹Õò%'
+UPDATE JZC set HV0514 ='åäº­é•‡'
+FROM JZC where HV0514 like 'ç ´å‡‰é•‡%'
 
-UPDATE JZC set HV0514='Èı³ÇÕò'
+UPDATE JZC set HV0514='ä¸‰åŸé•‡'
 from JZC WHERE V0514 ='341122200'
 
-UPDATE JZC set HV0514='¶ÀÉ½Õò'
+UPDATE JZC set HV0514='ç‹¬å±±é•‡'
 from JZC WHERE V0514 ='341122201'
 
-UPDATE JZC set HV0514='ÕÅÉ½Õò'
+UPDATE JZC set HV0514='å¼ å±±é•‡'
 from JZC WHERE V0514 ='341122202'
 
 update JZC set V0514 ='340827109'
-FROM JZC where HV0514 like 'À×³ØÕò%'
+FROM JZC where HV0514 like 'é›·æ± é•‡%'
 
 -------------------------JZC--------------------------------------------
 UPDATE JZC set V0514=REPLACE(V0514,'340827200','340827109')
@@ -448,27 +448,27 @@ from JZC	where V0514 like '340827101011%'
 UPDATE JZC set V0514=REPLACE(V0514,'340827108201','340827003201')
 from JZC	where V0514 like '340827108201%'
 
-update JZC set HV0514 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
+update JZC set HV0514 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
 FROM JZC where V0514 = '340826001001'
 
 
 
 
 -------------------------ZRC--------------------------------------------
-UPDATE ZRC set HV0514 ='»ªÍ¤Õò'
-FROM ZRC where HV0514 like 'ÆÆÁ¹Õò%'
+UPDATE ZRC set HV0514 ='åäº­é•‡'
+FROM ZRC where HV0514 like 'ç ´å‡‰é•‡%'
 
-UPDATE ZRC set HV0514='Èı³ÇÕò'
+UPDATE ZRC set HV0514='ä¸‰åŸé•‡'
 from ZRC WHERE V0514 ='341122200'
 
-UPDATE ZRC set HV0514='¶ÀÉ½Õò'
+UPDATE ZRC set HV0514='ç‹¬å±±é•‡'
 from ZRC WHERE V0514 ='341122201'
 
-UPDATE ZRC set HV0514='ÕÅÉ½Õò'
+UPDATE ZRC set HV0514='å¼ å±±é•‡'
 from ZRC WHERE V0514 ='341122202'
 
 update ZRC set V0514 ='340827109'
-FROM ZRC where HV0514 like 'À×³ØÕò%'
+FROM ZRC where HV0514 like 'é›·æ± é•‡%'
 
 -------------------------ZRC--------------------------------------------
 UPDATE ZRC set V0514=REPLACE(V0514,'340827200','340827109')
@@ -558,7 +558,7 @@ from ZRC	where V0514 like '340827101011%'
 UPDATE ZRC set V0514=REPLACE(V0514,'340827108201','340827003201')
 from ZRC	where V0514 like '340827108201%'
 
-update ZRC set HV0514 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
+update ZRC set HV0514 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
 FROM ZRC where V0514 = '340826001001'
 
 -------------------------ZRC--------------------------------------------
@@ -661,27 +661,27 @@ alter table ZRC  CHECK constraint all;
 
 
 
-update A01 set Ha0103 ='»ªÍ¤Õò'
+update A01 set Ha0103 ='åäº­é•‡'
 FROM A01 where a0103 = '340826106'
 
- update A01 set Ha0103 ='Èı³ÇÕò'
+ update A01 set Ha0103 ='ä¸‰åŸé•‡'
 FROM A01 where a0103 ='341122200'
 
- update A01 set Ha0103 ='¶ÀÉ½Õò'
+ update A01 set Ha0103 ='ç‹¬å±±é•‡'
 FROM A01 where a0103 ='341122201'
 
- update A01 set Ha0103 ='ÕÅÉ½Õò'
+ update A01 set Ha0103 ='å¼ å±±é•‡'
 FROM A01 where a0103 ='341122202'
 
 update A01 set a0103 ='340827109'
-FROM A01 where Ha0103 ='À×³ØÕò'
+FROM A01 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE A01 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from A01	where a0103 like '340826100200%'
 
-update A01 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM A01 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update A01 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM A01 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE A01 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -802,27 +802,27 @@ UPDATE A01 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from A01	where a0103 like '340827200210%'
 ----------------------------------------------------------A01----------------------------------------------------------- 
 
-update k001 set Ha0103 ='»ªÍ¤Õò'
+update k001 set Ha0103 ='åäº­é•‡'
 FROM k001 where a0103 = '340826106'
 
- update k001 set Ha0103 ='Èı³ÇÕò'
+ update k001 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k001 where a0103 ='341122200'
 
- update k001 set Ha0103 ='¶ÀÉ½Õò'
+ update k001 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k001 where a0103 ='341122201'
 
- update k001 set Ha0103 ='ÕÅÉ½Õò'
+ update k001 set Ha0103 ='å¼ å±±é•‡'
 FROM k001 where a0103 ='341122202'
 
 update k001 set a0103 ='340827109'
-FROM k001 where Ha0103 ='À×³ØÕò'
+FROM k001 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k001 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k001	where a0103 like '340826100200%'
 
-update k001 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k001 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k001 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k001 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k001 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -942,27 +942,27 @@ from k001	where a0103 like '340827200209%'
 UPDATE k001 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k001	where a0103 like '340827200210%'
 ----------------------------------------------------------k001----------------------------------------------------------- 
-update k023 set Ha0103 ='»ªÍ¤Õò'
+update k023 set Ha0103 ='åäº­é•‡'
 FROM k023 where a0103 = '340826106'
 
- update k023 set Ha0103 ='Èı³ÇÕò'
+ update k023 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k023 where a0103 ='341122200'
 
- update k023 set Ha0103 ='¶ÀÉ½Õò'
+ update k023 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k023 where a0103 ='341122201'
 
- update k023 set Ha0103 ='ÕÅÉ½Õò'
+ update k023 set Ha0103 ='å¼ å±±é•‡'
 FROM k023 where a0103 ='341122202'
 
 update k023 set a0103 ='340827109'
-FROM k023 where Ha0103 ='À×³ØÕò'
+FROM k023 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k023 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k023	where a0103 like '340826100200%'
 
-update k023 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k023 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k023 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k023 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k023 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -1082,27 +1082,27 @@ from k023	where a0103 like '340827200209%'
 UPDATE k023 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k023	where a0103 like '340827200210%'
 ----------------------------------------------------------k023----------------------------------------------------------- 
-update k060 set Ha0103 ='»ªÍ¤Õò'
+update k060 set Ha0103 ='åäº­é•‡'
 FROM k060 where a0103 = '340826106'
 
- update k060 set Ha0103 ='Èı³ÇÕò'
+ update k060 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k060 where a0103 ='341122200'
 
- update k060 set Ha0103 ='¶ÀÉ½Õò'
+ update k060 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k060 where a0103 ='341122201'
 
- update k060 set Ha0103 ='ÕÅÉ½Õò'
+ update k060 set Ha0103 ='å¼ å±±é•‡'
 FROM k060 where a0103 ='341122202'
 
 update k060 set a0103 ='340827109'
-FROM k060 where Ha0103 ='À×³ØÕò'
+FROM k060 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k060 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k060	where a0103 like '340826100200%'
 
-update k060 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k060 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k060 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k060 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k060 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -1222,27 +1222,27 @@ from k060	where a0103 like '340827200209%'
 UPDATE k060 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k060	where a0103 like '340827200210%'
 ----------------------------------------------------------k060----------------------------------------------------------- 
-update k062 set Ha0103 ='»ªÍ¤Õò'
+update k062 set Ha0103 ='åäº­é•‡'
 FROM k062 where a0103 = '340826106'
 
- update k062 set Ha0103 ='Èı³ÇÕò'
+ update k062 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k062 where a0103 ='341122200'
 
- update k062 set Ha0103 ='¶ÀÉ½Õò'
+ update k062 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k062 where a0103 ='341122201'
 
- update k062 set Ha0103 ='ÕÅÉ½Õò'
+ update k062 set Ha0103 ='å¼ å±±é•‡'
 FROM k062 where a0103 ='341122202'
 
 update k062 set a0103 ='340827109'
-FROM k062 where Ha0103 ='À×³ØÕò'
+FROM k062 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k062 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k062	where a0103 like '340826100200%'
 
-update k062 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k062 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k062 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k062 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k062 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -1363,27 +1363,27 @@ UPDATE k062 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k062	where a0103 like '340827200210%'
 ----------------------------------------------------------k062----------------------------------------------------------- 
 
-update k063 set Ha0103 ='»ªÍ¤Õò'
+update k063 set Ha0103 ='åäº­é•‡'
 FROM k063 where a0103 = '340826106'
 
- update k063 set Ha0103 ='Èı³ÇÕò'
+ update k063 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k063 where a0103 ='341122200'
 
- update k063 set Ha0103 ='¶ÀÉ½Õò'
+ update k063 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k063 where a0103 ='341122201'
 
- update k063 set Ha0103 ='ÕÅÉ½Õò'
+ update k063 set Ha0103 ='å¼ å±±é•‡'
 FROM k063 where a0103 ='341122202'
 
 update k063 set a0103 ='340827109'
-FROM k063 where Ha0103 ='À×³ØÕò'
+FROM k063 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k063 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k063	where a0103 like '340826100200%'
 
-update k063 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k063 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k063 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k063 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k063 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -1504,27 +1504,27 @@ UPDATE k063 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k063	where a0103 like '340827200210%'
 ----------------------------------------------------------k063----------------------------------------------------------- 
 
-update k065 set Ha0103 ='»ªÍ¤Õò'
+update k065 set Ha0103 ='åäº­é•‡'
 FROM k065 where a0103 = '340826106'
 
- update k065 set Ha0103 ='Èı³ÇÕò'
+ update k065 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k065 where a0103 ='341122200'
 
- update k065 set Ha0103 ='¶ÀÉ½Õò'
+ update k065 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k065 where a0103 ='341122201'
 
- update k065 set Ha0103 ='ÕÅÉ½Õò'
+ update k065 set Ha0103 ='å¼ å±±é•‡'
 FROM k065 where a0103 ='341122202'
 
 update k065 set a0103 ='340827109'
-FROM k065 where Ha0103 ='À×³ØÕò'
+FROM k065 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k065 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k065	where a0103 like '340826100200%'
 
-update k065 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k065 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k065 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k065 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k065 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -1645,27 +1645,27 @@ UPDATE k065 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k065	where a0103 like '340827200210%'
 ----------------------------------------------------------k065----------------------------------------------------------- 
 
-update k088 set Ha0103 ='»ªÍ¤Õò'
+update k088 set Ha0103 ='åäº­é•‡'
 FROM k088 where a0103 = '340826106'
 
- update k088 set Ha0103 ='Èı³ÇÕò'
+ update k088 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k088 where a0103 ='341122200'
 
- update k088 set Ha0103 ='¶ÀÉ½Õò'
+ update k088 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k088 where a0103 ='341122201'
 
- update k088 set Ha0103 ='ÕÅÉ½Õò'
+ update k088 set Ha0103 ='å¼ å±±é•‡'
 FROM k088 where a0103 ='341122202'
 
 update k088 set a0103 ='340827109'
-FROM k088 where Ha0103 ='À×³ØÕò'
+FROM k088 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k088 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k088	where a0103 like '340826100200%'
 
-update k088 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k088 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k088 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k088 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k088 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -1786,27 +1786,27 @@ UPDATE k088 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k088	where a0103 like '340827200210%'
 ----------------------------------------------------------k088----------------------------------------------------------- 
 
-update k078 set Ha0103 ='»ªÍ¤Õò'
+update k078 set Ha0103 ='åäº­é•‡'
 FROM k078 where a0103 = '340826106'
 
- update k078 set Ha0103 ='Èı³ÇÕò'
+ update k078 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k078 where a0103 ='341122200'
 
- update k078 set Ha0103 ='¶ÀÉ½Õò'
+ update k078 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k078 where a0103 ='341122201'
 
- update k078 set Ha0103 ='ÕÅÉ½Õò'
+ update k078 set Ha0103 ='å¼ å±±é•‡'
 FROM k078 where a0103 ='341122202'
 
 update k078 set a0103 ='340827109'
-FROM k078 where Ha0103 ='À×³ØÕò'
+FROM k078 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k078 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k078	where a0103 like '340826100200%'
 
-update k078 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k078 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k078 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k078 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k078 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -1928,27 +1928,27 @@ from k078	where a0103 like '340827200210%'
 ----------------------------------------------------------k078----------------------------------------------------------- 
 
 
-update k081 set Ha0103 ='»ªÍ¤Õò'
+update k081 set Ha0103 ='åäº­é•‡'
 FROM k081 where a0103 = '340826106'
 
- update k081 set Ha0103 ='Èı³ÇÕò'
+ update k081 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k081 where a0103 ='341122200'
 
- update k081 set Ha0103 ='¶ÀÉ½Õò'
+ update k081 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k081 where a0103 ='341122201'
 
- update k081 set Ha0103 ='ÕÅÉ½Õò'
+ update k081 set Ha0103 ='å¼ å±±é•‡'
 FROM k081 where a0103 ='341122202'
 
 update k081 set a0103 ='340827109'
-FROM k081 where Ha0103 ='À×³ØÕò'
+FROM k081 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k081 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k081	where a0103 like '340826100200%'
 
-update k081 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k081 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k081 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k081 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k081 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -2070,27 +2070,27 @@ from k081	where a0103 like '340827200210%'
 ----------------------------------------------------------k081----------------------------------------------------------- 
 
 
-update k092 set Ha0103 ='»ªÍ¤Õò'
+update k092 set Ha0103 ='åäº­é•‡'
 FROM k092 where a0103 = '340826106'
 
- update k092 set Ha0103 ='Èı³ÇÕò'
+ update k092 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k092 where a0103 ='341122200'
 
- update k092 set Ha0103 ='¶ÀÉ½Õò'
+ update k092 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k092 where a0103 ='341122201'
 
- update k092 set Ha0103 ='ÕÅÉ½Õò'
+ update k092 set Ha0103 ='å¼ å±±é•‡'
 FROM k092 where a0103 ='341122202'
 
 update k092 set a0103 ='340827109'
-FROM k092 where Ha0103 ='À×³ØÕò'
+FROM k092 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k092 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k092	where a0103 like '340826100200%'
 
-update k092 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k092 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k092 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k092 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k092 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -2211,27 +2211,27 @@ UPDATE k092 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k092	where a0103 like '340827200210%'
 ----------------------------------------------------------k092----------------------------------------------------------- 
 
-update k090 set Ha0103 ='»ªÍ¤Õò'
+update k090 set Ha0103 ='åäº­é•‡'
 FROM k090 where a0103 = '340826106'
 
- update k090 set Ha0103 ='Èı³ÇÕò'
+ update k090 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k090 where a0103 ='341122200'
 
- update k090 set Ha0103 ='¶ÀÉ½Õò'
+ update k090 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k090 where a0103 ='341122201'
 
- update k090 set Ha0103 ='ÕÅÉ½Õò'
+ update k090 set Ha0103 ='å¼ å±±é•‡'
 FROM k090 where a0103 ='341122202'
 
 update k090 set a0103 ='340827109'
-FROM k090 where Ha0103 ='À×³ØÕò'
+FROM k090 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k090 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k090	where a0103 like '340826100200%'
 
-update k090 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k090 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k090 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k090 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k090 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -2353,27 +2353,27 @@ from k090	where a0103 like '340827200210%'
 ----------------------------------------------------------k090----------------------------------------------------------- 
 
 
-update k091 set Ha0103 ='»ªÍ¤Õò'
+update k091 set Ha0103 ='åäº­é•‡'
 FROM k091 where a0103 = '340826106'
 
- update k091 set Ha0103 ='Èı³ÇÕò'
+ update k091 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k091 where a0103 ='341122200'
 
- update k091 set Ha0103 ='¶ÀÉ½Õò'
+ update k091 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k091 where a0103 ='341122201'
 
- update k091 set Ha0103 ='ÕÅÉ½Õò'
+ update k091 set Ha0103 ='å¼ å±±é•‡'
 FROM k091 where a0103 ='341122202'
 
 update k091 set a0103 ='340827109'
-FROM k091 where Ha0103 ='À×³ØÕò'
+FROM k091 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k091 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k091	where a0103 like '340826100200%'
 
-update k091 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k091 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k091 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k091 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k091 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -2494,27 +2494,27 @@ UPDATE k091 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k091	where a0103 like '340827200210%'
 ----------------------------------------------------------k091----------------------------------------------------------- 
 
-update k084 set Ha0103 ='»ªÍ¤Õò'
+update k084 set Ha0103 ='åäº­é•‡'
 FROM k084 where a0103 = '340826106'
 
- update k084 set Ha0103 ='Èı³ÇÕò'
+ update k084 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k084 where a0103 ='341122200'
 
- update k084 set Ha0103 ='¶ÀÉ½Õò'
+ update k084 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k084 where a0103 ='341122201'
 
- update k084 set Ha0103 ='ÕÅÉ½Õò'
+ update k084 set Ha0103 ='å¼ å±±é•‡'
 FROM k084 where a0103 ='341122202'
 
 update k084 set a0103 ='340827109'
-FROM k084 where Ha0103 ='À×³ØÕò'
+FROM k084 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k084 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k084	where a0103 like '340826100200%'
 
-update k084 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k084 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k084 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k084 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k084 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -2635,27 +2635,27 @@ UPDATE k084 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k084	where a0103 like '340827200210%'
 ----------------------------------------------------------k084----------------------------------------------------------- 
 
-update k094 set Ha0103 ='»ªÍ¤Õò'
+update k094 set Ha0103 ='åäº­é•‡'
 FROM k094 where a0103 = '340826106'
 
- update k094 set Ha0103 ='Èı³ÇÕò'
+ update k094 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k094 where a0103 ='341122200'
 
- update k094 set Ha0103 ='¶ÀÉ½Õò'
+ update k094 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k094 where a0103 ='341122201'
 
- update k094 set Ha0103 ='ÕÅÉ½Õò'
+ update k094 set Ha0103 ='å¼ å±±é•‡'
 FROM k094 where a0103 ='341122202'
 
 update k094 set a0103 ='340827109'
-FROM k094 where Ha0103 ='À×³ØÕò'
+FROM k094 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k094 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k094	where a0103 like '340826100200%'
 
-update k094 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k094 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k094 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k094 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k094 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -2776,27 +2776,27 @@ UPDATE k094 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k094	where a0103 like '340827200210%'
 ----------------------------------------------------------k094----------------------------------------------------------- 
 
-update k095 set Ha0103 ='»ªÍ¤Õò'
+update k095 set Ha0103 ='åäº­é•‡'
 FROM k095 where a0103 = '340826106'
 
- update k095 set Ha0103 ='Èı³ÇÕò'
+ update k095 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k095 where a0103 ='341122200'
 
- update k095 set Ha0103 ='¶ÀÉ½Õò'
+ update k095 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k095 where a0103 ='341122201'
 
- update k095 set Ha0103 ='ÕÅÉ½Õò'
+ update k095 set Ha0103 ='å¼ å±±é•‡'
 FROM k095 where a0103 ='341122202'
 
 update k095 set a0103 ='340827109'
-FROM k095 where Ha0103 ='À×³ØÕò'
+FROM k095 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k095 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k095	where a0103 like '340826100200%'
 
-update k095 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k095 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k095 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k095 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k095 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -2917,27 +2917,27 @@ UPDATE k095 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k095	where a0103 like '340827200210%'
 ----------------------------------------------------------k095----------------------------------------------------------- 
 
-update k093 set Ha0103 ='»ªÍ¤Õò'
+update k093 set Ha0103 ='åäº­é•‡'
 FROM k093 where a0103 = '340826106'
 
- update k093 set Ha0103 ='Èı³ÇÕò'
+ update k093 set Ha0103 ='ä¸‰åŸé•‡'
 FROM k093 where a0103 ='341122200'
 
- update k093 set Ha0103 ='¶ÀÉ½Õò'
+ update k093 set Ha0103 ='ç‹¬å±±é•‡'
 FROM k093 where a0103 ='341122201'
 
- update k093 set Ha0103 ='ÕÅÉ½Õò'
+ update k093 set Ha0103 ='å¼ å±±é•‡'
 FROM k093 where a0103 ='341122202'
 
 update k093 set a0103 ='340827109'
-FROM k093 where Ha0103 ='À×³ØÕò'
+FROM k093 where Ha0103 ='é›·æ± é•‡'
 
 
 UPDATE k093 set a0103=REPLACE(a0103,'340826100200','340826001001')
 from k093	where a0103 like '340826100200%'
 
-update k093 set Ha0103 ='ÁúÉ½ÉçÇø¾ÓÎ¯»á'
-FROM k093 where Ha0103 ='ÁúÉ½´åÎ¯»á'
+update k093 set Ha0103 ='é¾™å±±ç¤¾åŒºå±…å§”ä¼š'
+FROM k093 where Ha0103 ='é¾™å±±æ‘å§”ä¼š'
 
 
 UPDATE k093 set a0103=REPLACE(a0103,'340826106002','340826001002')
@@ -3059,7 +3059,7 @@ from k093	where a0103 like '340827200210%'
 ----------------------------------------------------------k093----------------------------------------------------------- 
 
 
---------¸üĞÂËùÓĞµÄĞĞÕşÇø»®ºº×Ö²¿·Ö--------------------
+--------æ›´æ–°æ‰€æœ‰çš„è¡Œæ”¿åŒºåˆ’æ±‰å­—éƒ¨åˆ†--------------------
 exec Pr_ExecSQL2 
 'select
 ''update ''+tablename+

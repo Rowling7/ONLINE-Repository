@@ -1,9 +1,9 @@
 select
-LEFT(A0103,6) ĞĞÕş´úÂë  ,RTRIM(D.OBJJC )ĞĞÕşÇøÓò,
+LEFT(A0103,6) è¡Œæ”¿ä»£ç   ,RTRIM(D.OBJJC )è¡Œæ”¿åŒºåŸŸ,
 
---Ò»¼¶¹«Â·
-sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K0114,0) else 0 end)AS ×ÜÀï³Ì,
-NULLIF (sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' and K0304='11' then isnull(K0114,0) else 0 end),'0') 	Ò»¼¶¹«Â·,
+--ä¸€çº§å…¬è·¯
+sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K0114,0) else 0 end)AS æ€»é‡Œç¨‹,
+NULLIF (sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' and K0304='11' then isnull(K0114,0) else 0 end),'0') 	ä¸€çº§å…¬è·¯,
 NULLIF(RTRIM(CAST((
 CASE WHEN
 sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K0114,0) else 0 end)
@@ -15,11 +15,11 @@ sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K011
 )*100,2)
 )
 END )
-AS CHAR))+'%','0.00%')  AS Ò»¼¶¹«Â·Õ¼±È,
+AS CHAR))+'%','0.00%')  AS ä¸€çº§å…¬è·¯å æ¯”,
 
 
---¶ş¼¶¹«Â·
-NULLIF (sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' and K0304='11' then isnull(K0114,0) else 0 end),'0') 	¶ş¼¶¹«Â·,
+--äºŒçº§å…¬è·¯
+NULLIF (sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' and K0304='11' then isnull(K0114,0) else 0 end),'0') 	äºŒçº§å…¬è·¯,
 NULLIF(RTRIM(CAST((
 CASE WHEN
 sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K0114,0) else 0 end)
@@ -31,10 +31,10 @@ sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K011
 )*100,2)
 )
 END )
-AS CHAR))+'%','0.00%')  AS ¶ş¼¶¹«Â·Õ¼±È,
+AS CHAR))+'%','0.00%')  AS äºŒçº§å…¬è·¯å æ¯”,
 
---Èı¼¶¹«Â·
-NULLIF (sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' and K0304='11' then isnull(K0114,0) else 0 end),'0') 	Èı¼¶¹«Â·,
+--ä¸‰çº§å…¬è·¯
+NULLIF (sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' and K0304='11' then isnull(K0114,0) else 0 end),'0') 	ä¸‰çº§å…¬è·¯,
 NULLIF(RTRIM(CAST((
 CASE WHEN
 sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K0114,0) else 0 end)
@@ -46,11 +46,11 @@ sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K011
 )*100,2)
 )
 END )
-AS CHAR))+'%','0.00%')  AS Èı¼¶¹«Â·Õ¼±È,
+AS CHAR))+'%','0.00%')  AS ä¸‰çº§å…¬è·¯å æ¯”,
 
 
---ËÄ¼¶¹«Â·
-NULLIF (sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' and K0304='11' then isnull(K0114,0) else 0 end),'0') 	ËÄ¼¶¹«Â·,
+--å››çº§å…¬è·¯
+NULLIF (sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' and K0304='11' then isnull(K0114,0) else 0 end),'0') 	å››çº§å…¬è·¯,
 NULLIF(RTRIM(CAST((
 CASE WHEN
 sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K0114,0) else 0 end)
@@ -62,11 +62,11 @@ sum(case when isnull(K0124,'') = '' and isnull(K0123,'2') = '2' then isnull(K011
 )*100,2)
 )
 END )
-AS CHAR))+'%','0.00%')  AS ËÄ¼¶¹«Â·Õ¼±È
+AS CHAR))+'%','0.00%')  AS å››çº§å…¬è·¯å æ¯”
 
 FROM k001
 left join dz0101 D on D.OBJNAME =LEFT (K001.A0103,6) AND D.objtype='3'
 WHERE  (k0124 is null or k0124='')and (isnull (k0123,'2')='2'or k0123 is null or k0123='')and  left(K0101,1) in ('X','Y','Z','C')
 GROUP BY  LEFT(A0103,6),D.OBJJC with rollup
 HAVING GROUPING( LEFT(A0103,6))=GROUPING(D.OBJJC)
-ORDER BY ĞĞÕş´úÂë
+ORDER BY è¡Œæ”¿ä»£ç 

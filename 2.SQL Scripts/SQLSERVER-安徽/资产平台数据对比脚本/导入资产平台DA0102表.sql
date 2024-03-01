@@ -1,5 +1,5 @@
---1.´´½¨¹ÜÑøµ¥Î»±í£¬¹©EXCELµ¼Èë
---2.µ¼Èë¹ÜÑøµ¥Î»±í
+--1.åˆ›å»ºç®¡å…»å•ä½è¡¨ï¼Œä¾›EXCELå¯¼å…¥
+--2.å¯¼å…¥ç®¡å…»å•ä½è¡¨
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[ZCPT_DA0102]') AND type IN ('U'))
 	DROP TABLE [dbo].[ZCPT_DA0102]
 create table ZCPT_DA0102(
@@ -12,8 +12,8 @@ insert into ZCPT_DA0102(
 	objjc
 )
 select 
-	ltrim(rtrim(¹ÜÑøµ¥Î»´úÂë)),
-	case when ltrim(rtrim(¹ÜÑøµ¥Î»Ãû³Æ))='°²»ÕÊ¡Â·¸Û¹¤³ÌÓÐÏÞÔðÈÎ¹«Ë¾'  then '°²»ÕÊ¡Â·¸Û¹¤³ÌÓÐÏÞÔðÈÎ¹«Ë¾¡¢ÁÙÈª°²½¨' else ltrim(rtrim(¹ÜÑøµ¥Î»Ãû³Æ)) end 
-from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078²ÜÓÂáÔ\1.¹¤×÷ÎÄ¼þ\3.°²»Õ¹¤×÷ÎÄ¼þ\20231030 µ¼ÈëÂ·¶Î±í\°²»Õ¹ÜÑøµ¥Î»Ã÷Ï¸±í.xls',sheet1$)
+	ltrim(rtrim(ç®¡å…»å•ä½ä»£ç )),
+	case when ltrim(rtrim(ç®¡å…»å•ä½åç§°))='å®‰å¾½çœè·¯æ¸¯å·¥ç¨‹æœ‰é™è´£ä»»å…¬å¸'  then 'å®‰å¾½çœè·¯æ¸¯å·¥ç¨‹æœ‰é™è´£ä»»å…¬å¸ã€ä¸´æ³‰å®‰å»º' else ltrim(rtrim(ç®¡å…»å•ä½åç§°)) end 
+from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078æ›¹å‹‡åµ©\1.å·¥ä½œæ–‡ä»¶\3.å®‰å¾½å·¥ä½œæ–‡ä»¶\20231030 å¯¼å…¥è·¯æ®µè¡¨\å®‰å¾½ç®¡å…»å•ä½æ˜Žç»†è¡¨.xls',sheet1$)
 
 
