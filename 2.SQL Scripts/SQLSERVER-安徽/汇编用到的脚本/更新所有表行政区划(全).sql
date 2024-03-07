@@ -1,9 +1,9 @@
 alter table V51  NOCHECK constraint all;
-alter table V71  NOCHECK constraint all; 
-alter table V52  NOCHECK constraint all; 
-alter table V53  NOCHECK constraint all; 
-alter table JZC  NOCHECK constraint all; 
-alter table ZRC  NOCHECK constraint all; 
+alter table V71  NOCHECK constraint all;
+alter table V52  NOCHECK constraint all;
+alter table V53  NOCHECK constraint all;
+alter table JZC  NOCHECK constraint all;
+alter table ZRC  NOCHECK constraint all;
 
 -------------------------V51--------------------------------------------
 UPDATE V51 set HV0501 ='华亭镇'
@@ -58,86 +58,86 @@ UPDATE V52 set V0514=REPLACE(V0514,'340827200','340827109')
 from V52 WHERE V0514 like '340827200%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826100200','340826001001')
-from V52 where V0514 like '340826100200%' 
+from V52 where V0514 like '340826100200%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826106002','340826001002')
 from V52 where V0514 like '340826106002%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826100204','340826001200')
-from V52 where V0514 like '340826100204%' 
+from V52 where V0514 like '340826100204%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826100201','340826001201')
 from V52 where V0514 like '340826100201%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826106206','340826001202')
-from V52 where V0514 like '340826106206%' 
+from V52 where V0514 like '340826106206%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826100001','340826002001')
-from V52 where V0514 like '340826100001%' 
+from V52 where V0514 like '340826100001%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826100007','340826002007')
-from V52 where V0514 like '340826100007%' 
+from V52 where V0514 like '340826100007%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826212202','340826002202')
-from V52 where V0514 like '340826212202%' 
+from V52 where V0514 like '340826212202%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826212203','340826002203')
-from V52 where V0514 like '340826212203%' 
+from V52 where V0514 like '340826212203%'
 
 UPDATE V52 set V0514=REPLACE(V0514,'340826212204','340826100219')
-from V52 where V0514 like '340826212204%' 
-	
+from V52 where V0514 like '340826212204%'
+
 UPDATE V52 set V0514=REPLACE(V0514,'340826212205','340826100220')
 from V52	where V0514 like '340826212205%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340826212201','340826100221')
 from V52	where V0514 like '340826212201%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340826212200','340826100222')
 from V52	where V0514 like '340826212200%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101008','340827001008')
 from V52	where V0514 like '340827101008%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101010','340827001010')
 from V52	where V0514 like '340827101010%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101013','340827001013')
 from V52	where V0514 like '340827101013%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101204','340827001204')
 from V52	where V0514 like '340827101204%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101205','340827001205')
 from V52	where V0514 like '340827101205%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101004','340827002004')
 from V52	where V0514 like '340827101004%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101005','340827002005')
 from V52	where V0514 like '340827101005%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101006','340827002006')
 from V52	where V0514 like '340827101006%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101009','340827002009')
 from V52	where V0514 like '340827101009%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101012','340827002012')
 from V52	where V0514 like '340827101012%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101209','340827002209')
 from V52	where V0514 like '340827101209%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101003','340827003003')
 from V52	where V0514 like '340827101003%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101007','340827003007')
 from V52	where V0514 like '340827101007%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827101011','340827003011')
 from V52	where V0514 like '340827101011%'
-	
+
 UPDATE V52 set V0514=REPLACE(V0514,'340827108201','340827003201')
 from V52	where V0514 like '340827108201%'
 
@@ -168,86 +168,86 @@ UPDATE V53 set V0514=REPLACE(V0514,'340827200','340827109')
 from V53 WHERE V0514 like '340827200%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826100200','340826001001')
-from V53 where V0514 like '340826100200%' 
+from V53 where V0514 like '340826100200%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826106002','340826001002')
 from V53 where V0514 like '340826106002%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826100204','340826001200')
-from V53 where V0514 like '340826100204%' 
+from V53 where V0514 like '340826100204%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826100201','340826001201')
 from V53 where V0514 like '340826100201%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826106206','340826001202')
-from V53 where V0514 like '340826106206%' 
+from V53 where V0514 like '340826106206%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826100001','340826002001')
-from V53 where V0514 like '340826100001%' 
+from V53 where V0514 like '340826100001%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826100007','340826002007')
-from V53 where V0514 like '340826100007%' 
+from V53 where V0514 like '340826100007%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826212202','340826002202')
-from V53 where V0514 like '340826212202%' 
+from V53 where V0514 like '340826212202%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826212203','340826002203')
-from V53 where V0514 like '340826212203%' 
+from V53 where V0514 like '340826212203%'
 
 UPDATE V53 set V0514=REPLACE(V0514,'340826212204','340826100219')
-from V53 where V0514 like '340826212204%' 
-	
+from V53 where V0514 like '340826212204%'
+
 UPDATE V53 set V0514=REPLACE(V0514,'340826212205','340826100220')
 from V53	where V0514 like '340826212205%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340826212201','340826100221')
 from V53	where V0514 like '340826212201%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340826212200','340826100222')
 from V53	where V0514 like '340826212200%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101008','340827001008')
 from V53	where V0514 like '340827101008%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101010','340827001010')
 from V53	where V0514 like '340827101010%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101013','340827001013')
 from V53	where V0514 like '340827101013%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101204','340827001204')
 from V53	where V0514 like '340827101204%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101205','340827001205')
 from V53	where V0514 like '340827101205%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101004','340827002004')
 from V53	where V0514 like '340827101004%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101005','340827002005')
 from V53	where V0514 like '340827101005%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101006','340827002006')
 from V53	where V0514 like '340827101006%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101009','340827002009')
 from V53	where V0514 like '340827101009%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101012','340827002012')
 from V53	where V0514 like '340827101012%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101209','340827002209')
 from V53	where V0514 like '340827101209%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101003','340827003003')
 from V53	where V0514 like '340827101003%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101007','340827003007')
 from V53	where V0514 like '340827101007%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827101011','340827003011')
 from V53	where V0514 like '340827101011%'
-	
+
 UPDATE V53 set V0514=REPLACE(V0514,'340827108201','340827003201')
 from V53	where V0514 like '340827108201%'
 
@@ -259,86 +259,86 @@ UPDATE V53 set v5701=REPLACE(v5701,'340827200','340827109')
 from V53 WHERE v5701 like '340827200%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826100200','340826001001')
-from V53 where v5701 like '340826100200%' 
+from V53 where v5701 like '340826100200%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826106002','340826001002')
 from V53 where v5701 like '340826106002%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826100204','340826001200')
-from V53 where v5701 like '340826100204%' 
+from V53 where v5701 like '340826100204%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826100201','340826001201')
 from V53 where v5701 like '340826100201%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826106206','340826001202')
-from V53 where v5701 like '340826106206%' 
+from V53 where v5701 like '340826106206%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826100001','340826002001')
-from V53 where v5701 like '340826100001%' 
+from V53 where v5701 like '340826100001%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826100007','340826002007')
-from V53 where v5701 like '340826100007%' 
+from V53 where v5701 like '340826100007%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826212202','340826002202')
-from V53 where v5701 like '340826212202%' 
+from V53 where v5701 like '340826212202%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826212203','340826002203')
-from V53 where v5701 like '340826212203%' 
+from V53 where v5701 like '340826212203%'
 
 UPDATE V53 set v5701=REPLACE(v5701,'340826212204','340826100219')
-from V53 where v5701 like '340826212204%' 
-	
+from V53 where v5701 like '340826212204%'
+
 UPDATE V53 set v5701=REPLACE(v5701,'340826212205','340826100220')
 from V53	where v5701 like '340826212205%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340826212201','340826100221')
 from V53	where v5701 like '340826212201%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340826212200','340826100222')
 from V53	where v5701 like '340826212200%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101008','340827001008')
 from V53	where v5701 like '340827101008%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101010','340827001010')
 from V53	where v5701 like '340827101010%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101013','340827001013')
 from V53	where v5701 like '340827101013%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101204','340827001204')
 from V53	where v5701 like '340827101204%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101205','340827001205')
 from V53	where v5701 like '340827101205%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101004','340827002004')
 from V53	where v5701 like '340827101004%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101005','340827002005')
 from V53	where v5701 like '340827101005%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101006','340827002006')
 from V53	where v5701 like '340827101006%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101009','340827002009')
 from V53	where v5701 like '340827101009%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101012','340827002012')
 from V53	where v5701 like '340827101012%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101209','340827002209')
 from V53	where v5701 like '340827101209%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101003','340827003003')
 from V53	where v5701 like '340827101003%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101007','340827003007')
 from V53	where v5701 like '340827101007%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827101011','340827003011')
 from V53	where v5701 like '340827101011%'
-	
+
 UPDATE V53 set v5701=REPLACE(v5701,'340827108201','340827003201')
 from V53	where v5701 like '340827108201%'
 
@@ -365,86 +365,86 @@ UPDATE JZC set V0514=REPLACE(V0514,'340827200','340827109')
 from JZC WHERE V0514 like '340827200%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826100200','340826001001')
-from JZC where V0514 like '340826100200%' 
+from JZC where V0514 like '340826100200%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826106002','340826001002')
 from JZC where V0514 like '340826106002%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826100204','340826001200')
-from JZC where V0514 like '340826100204%' 
+from JZC where V0514 like '340826100204%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826100201','340826001201')
 from JZC where V0514 like '340826100201%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826106206','340826001202')
-from JZC where V0514 like '340826106206%' 
+from JZC where V0514 like '340826106206%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826100001','340826002001')
-from JZC where V0514 like '340826100001%' 
+from JZC where V0514 like '340826100001%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826100007','340826002007')
-from JZC where V0514 like '340826100007%' 
+from JZC where V0514 like '340826100007%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826212202','340826002202')
-from JZC where V0514 like '340826212202%' 
+from JZC where V0514 like '340826212202%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826212203','340826002203')
-from JZC where V0514 like '340826212203%' 
+from JZC where V0514 like '340826212203%'
 
 UPDATE JZC set V0514=REPLACE(V0514,'340826212204','340826100219')
-from JZC where V0514 like '340826212204%' 
-	
+from JZC where V0514 like '340826212204%'
+
 UPDATE JZC set V0514=REPLACE(V0514,'340826212205','340826100220')
 from JZC	where V0514 like '340826212205%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340826212201','340826100221')
 from JZC	where V0514 like '340826212201%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340826212200','340826100222')
 from JZC	where V0514 like '340826212200%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101008','340827001008')
 from JZC	where V0514 like '340827101008%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101010','340827001010')
 from JZC	where V0514 like '340827101010%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101013','340827001013')
 from JZC	where V0514 like '340827101013%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101204','340827001204')
 from JZC	where V0514 like '340827101204%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101205','340827001205')
 from JZC	where V0514 like '340827101205%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101004','340827002004')
 from JZC	where V0514 like '340827101004%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101005','340827002005')
 from JZC	where V0514 like '340827101005%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101006','340827002006')
 from JZC	where V0514 like '340827101006%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101009','340827002009')
 from JZC	where V0514 like '340827101009%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101012','340827002012')
 from JZC	where V0514 like '340827101012%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101209','340827002209')
 from JZC	where V0514 like '340827101209%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101003','340827003003')
 from JZC	where V0514 like '340827101003%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101007','340827003007')
 from JZC	where V0514 like '340827101007%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827101011','340827003011')
 from JZC	where V0514 like '340827101011%'
-	
+
 UPDATE JZC set V0514=REPLACE(V0514,'340827108201','340827003201')
 from JZC	where V0514 like '340827108201%'
 
@@ -475,86 +475,86 @@ UPDATE ZRC set V0514=REPLACE(V0514,'340827200','340827109')
 from ZRC WHERE V0514 like '340827200%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826100200','340826001001')
-from ZRC where V0514 like '340826100200%' 
+from ZRC where V0514 like '340826100200%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826106002','340826001002')
 from ZRC where V0514 like '340826106002%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826100204','340826001200')
-from ZRC where V0514 like '340826100204%' 
+from ZRC where V0514 like '340826100204%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826100201','340826001201')
 from ZRC where V0514 like '340826100201%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826106206','340826001202')
-from ZRC where V0514 like '340826106206%' 
+from ZRC where V0514 like '340826106206%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826100001','340826002001')
-from ZRC where V0514 like '340826100001%' 
+from ZRC where V0514 like '340826100001%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826100007','340826002007')
-from ZRC where V0514 like '340826100007%' 
+from ZRC where V0514 like '340826100007%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826212202','340826002202')
-from ZRC where V0514 like '340826212202%' 
+from ZRC where V0514 like '340826212202%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826212203','340826002203')
-from ZRC where V0514 like '340826212203%' 
+from ZRC where V0514 like '340826212203%'
 
 UPDATE ZRC set V0514=REPLACE(V0514,'340826212204','340826100219')
-from ZRC where V0514 like '340826212204%' 
-	
+from ZRC where V0514 like '340826212204%'
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340826212205','340826100220')
 from ZRC	where V0514 like '340826212205%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340826212201','340826100221')
 from ZRC	where V0514 like '340826212201%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340826212200','340826100222')
 from ZRC	where V0514 like '340826212200%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101008','340827001008')
 from ZRC	where V0514 like '340827101008%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101010','340827001010')
 from ZRC	where V0514 like '340827101010%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101013','340827001013')
 from ZRC	where V0514 like '340827101013%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101204','340827001204')
 from ZRC	where V0514 like '340827101204%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101205','340827001205')
 from ZRC	where V0514 like '340827101205%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101004','340827002004')
 from ZRC	where V0514 like '340827101004%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101005','340827002005')
 from ZRC	where V0514 like '340827101005%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101006','340827002006')
 from ZRC	where V0514 like '340827101006%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101009','340827002009')
 from ZRC	where V0514 like '340827101009%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101012','340827002012')
 from ZRC	where V0514 like '340827101012%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101209','340827002209')
 from ZRC	where V0514 like '340827101209%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101003','340827003003')
 from ZRC	where V0514 like '340827101003%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101007','340827003007')
 from ZRC	where V0514 like '340827101007%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827101011','340827003011')
 from ZRC	where V0514 like '340827101011%'
-	
+
 UPDATE ZRC set V0514=REPLACE(V0514,'340827108201','340827003201')
 from ZRC	where V0514 like '340827108201%'
 
@@ -566,96 +566,96 @@ UPDATE ZRC set v5701=REPLACE(v5701,'340827200','340827109')
 from ZRC WHERE v5701 like '340827200%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826100200','340826001001')
-from ZRC where v5701 like '340826100200%' 
+from ZRC where v5701 like '340826100200%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826106002','340826001002')
 from ZRC where v5701 like '340826106002%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826100204','340826001200')
-from ZRC where v5701 like '340826100204%' 
+from ZRC where v5701 like '340826100204%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826100201','340826001201')
 from ZRC where v5701 like '340826100201%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826106206','340826001202')
-from ZRC where v5701 like '340826106206%' 
+from ZRC where v5701 like '340826106206%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826100001','340826002001')
-from ZRC where v5701 like '340826100001%' 
+from ZRC where v5701 like '340826100001%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826100007','340826002007')
-from ZRC where v5701 like '340826100007%' 
+from ZRC where v5701 like '340826100007%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826212202','340826002202')
-from ZRC where v5701 like '340826212202%' 
+from ZRC where v5701 like '340826212202%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826212203','340826002203')
-from ZRC where v5701 like '340826212203%' 
+from ZRC where v5701 like '340826212203%'
 
 UPDATE ZRC set v5701=REPLACE(v5701,'340826212204','340826100219')
-from ZRC where v5701 like '340826212204%' 
-	
+from ZRC where v5701 like '340826212204%'
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340826212205','340826100220')
 from ZRC	where v5701 like '340826212205%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340826212201','340826100221')
 from ZRC	where v5701 like '340826212201%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340826212200','340826100222')
 from ZRC	where v5701 like '340826212200%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101008','340827001008')
 from ZRC	where v5701 like '340827101008%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101010','340827001010')
 from ZRC	where v5701 like '340827101010%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101013','340827001013')
 from ZRC	where v5701 like '340827101013%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101204','340827001204')
 from ZRC	where v5701 like '340827101204%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101205','340827001205')
 from ZRC	where v5701 like '340827101205%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101004','340827002004')
 from ZRC	where v5701 like '340827101004%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101005','340827002005')
 from ZRC	where v5701 like '340827101005%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101006','340827002006')
 from ZRC	where v5701 like '340827101006%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101009','340827002009')
 from ZRC	where v5701 like '340827101009%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101012','340827002012')
 from ZRC	where v5701 like '340827101012%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101209','340827002209')
 from ZRC	where v5701 like '340827101209%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101003','340827003003')
 from ZRC	where v5701 like '340827101003%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101007','340827003007')
 from ZRC	where v5701 like '340827101007%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827101011','340827003011')
 from ZRC	where v5701 like '340827101011%'
-	
+
 UPDATE ZRC set v5701=REPLACE(v5701,'340827108201','340827003201')
 from ZRC	where v5701 like '340827108201%'
 
 
-alter table V51  CHECK constraint all; 
-alter table V71  CHECK constraint all; 
-alter table V52  CHECK constraint all; 
-alter table V53  CHECK constraint all; 
-alter table JZC  CHECK constraint all; 
-alter table ZRC  CHECK constraint all; 
+alter table V51  CHECK constraint all;
+alter table V71  CHECK constraint all;
+alter table V52  CHECK constraint all;
+alter table V53  CHECK constraint all;
+alter table JZC  CHECK constraint all;
+alter table ZRC  CHECK constraint all;
 
 
 
@@ -800,7 +800,7 @@ from A01	where a0103 like '340827200209%'
 
 UPDATE A01 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from A01	where a0103 like '340827200210%'
-----------------------------------------------------------A01----------------------------------------------------------- 
+----------------------------------------------------------A01-----------------------------------------------------------
 
 update k001 set Ha0103 ='华亭镇'
 FROM k001 where a0103 = '340826106'
@@ -941,7 +941,7 @@ from k001	where a0103 like '340827200209%'
 
 UPDATE k001 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k001	where a0103 like '340827200210%'
-----------------------------------------------------------k001----------------------------------------------------------- 
+----------------------------------------------------------k001-----------------------------------------------------------
 update k023 set Ha0103 ='华亭镇'
 FROM k023 where a0103 = '340826106'
 
@@ -1081,7 +1081,7 @@ from k023	where a0103 like '340827200209%'
 
 UPDATE k023 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k023	where a0103 like '340827200210%'
-----------------------------------------------------------k023----------------------------------------------------------- 
+----------------------------------------------------------k023-----------------------------------------------------------
 update k060 set Ha0103 ='华亭镇'
 FROM k060 where a0103 = '340826106'
 
@@ -1221,7 +1221,7 @@ from k060	where a0103 like '340827200209%'
 
 UPDATE k060 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k060	where a0103 like '340827200210%'
-----------------------------------------------------------k060----------------------------------------------------------- 
+----------------------------------------------------------k060-----------------------------------------------------------
 update k062 set Ha0103 ='华亭镇'
 FROM k062 where a0103 = '340826106'
 
@@ -1361,7 +1361,7 @@ from k062	where a0103 like '340827200209%'
 
 UPDATE k062 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k062	where a0103 like '340827200210%'
-----------------------------------------------------------k062----------------------------------------------------------- 
+----------------------------------------------------------k062-----------------------------------------------------------
 
 update k063 set Ha0103 ='华亭镇'
 FROM k063 where a0103 = '340826106'
@@ -1502,7 +1502,7 @@ from k063	where a0103 like '340827200209%'
 
 UPDATE k063 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k063	where a0103 like '340827200210%'
-----------------------------------------------------------k063----------------------------------------------------------- 
+----------------------------------------------------------k063-----------------------------------------------------------
 
 update k065 set Ha0103 ='华亭镇'
 FROM k065 where a0103 = '340826106'
@@ -1643,7 +1643,7 @@ from k065	where a0103 like '340827200209%'
 
 UPDATE k065 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k065	where a0103 like '340827200210%'
-----------------------------------------------------------k065----------------------------------------------------------- 
+----------------------------------------------------------k065-----------------------------------------------------------
 
 update k088 set Ha0103 ='华亭镇'
 FROM k088 where a0103 = '340826106'
@@ -1784,7 +1784,7 @@ from k088	where a0103 like '340827200209%'
 
 UPDATE k088 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k088	where a0103 like '340827200210%'
-----------------------------------------------------------k088----------------------------------------------------------- 
+----------------------------------------------------------k088-----------------------------------------------------------
 
 update k078 set Ha0103 ='华亭镇'
 FROM k078 where a0103 = '340826106'
@@ -1925,7 +1925,7 @@ from k078	where a0103 like '340827200209%'
 
 UPDATE k078 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k078	where a0103 like '340827200210%'
-----------------------------------------------------------k078----------------------------------------------------------- 
+----------------------------------------------------------k078-----------------------------------------------------------
 
 
 update k081 set Ha0103 ='华亭镇'
@@ -2067,7 +2067,7 @@ from k081	where a0103 like '340827200209%'
 
 UPDATE k081 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k081	where a0103 like '340827200210%'
-----------------------------------------------------------k081----------------------------------------------------------- 
+----------------------------------------------------------k081-----------------------------------------------------------
 
 
 update k092 set Ha0103 ='华亭镇'
@@ -2209,7 +2209,7 @@ from k092	where a0103 like '340827200209%'
 
 UPDATE k092 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k092	where a0103 like '340827200210%'
-----------------------------------------------------------k092----------------------------------------------------------- 
+----------------------------------------------------------k092-----------------------------------------------------------
 
 update k090 set Ha0103 ='华亭镇'
 FROM k090 where a0103 = '340826106'
@@ -2350,7 +2350,7 @@ from k090	where a0103 like '340827200209%'
 
 UPDATE k090 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k090	where a0103 like '340827200210%'
-----------------------------------------------------------k090----------------------------------------------------------- 
+----------------------------------------------------------k090-----------------------------------------------------------
 
 
 update k091 set Ha0103 ='华亭镇'
@@ -2492,7 +2492,7 @@ from k091	where a0103 like '340827200209%'
 
 UPDATE k091 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k091	where a0103 like '340827200210%'
-----------------------------------------------------------k091----------------------------------------------------------- 
+----------------------------------------------------------k091-----------------------------------------------------------
 
 update k084 set Ha0103 ='华亭镇'
 FROM k084 where a0103 = '340826106'
@@ -2633,7 +2633,7 @@ from k084	where a0103 like '340827200209%'
 
 UPDATE k084 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k084	where a0103 like '340827200210%'
-----------------------------------------------------------k084----------------------------------------------------------- 
+----------------------------------------------------------k084-----------------------------------------------------------
 
 update k094 set Ha0103 ='华亭镇'
 FROM k094 where a0103 = '340826106'
@@ -2774,7 +2774,7 @@ from k094	where a0103 like '340827200209%'
 
 UPDATE k094 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k094	where a0103 like '340827200210%'
-----------------------------------------------------------k094----------------------------------------------------------- 
+----------------------------------------------------------k094-----------------------------------------------------------
 
 update k095 set Ha0103 ='华亭镇'
 FROM k095 where a0103 = '340826106'
@@ -2915,7 +2915,7 @@ from k095	where a0103 like '340827200209%'
 
 UPDATE k095 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k095	where a0103 like '340827200210%'
-----------------------------------------------------------k095----------------------------------------------------------- 
+----------------------------------------------------------k095-----------------------------------------------------------
 
 update k093 set Ha0103 ='华亭镇'
 FROM k093 where a0103 = '340826106'
@@ -3056,18 +3056,18 @@ from k093	where a0103 like '340827200209%'
 
 UPDATE k093 set a0103=REPLACE(a0103,'340827200210','340827109210')
 from k093	where a0103 like '340827200210%'
-----------------------------------------------------------k093----------------------------------------------------------- 
+----------------------------------------------------------k093-----------------------------------------------------------
 
 
 --------更新所有的行政区划汉字部分--------------------
-exec Pr_ExecSQL2 
+exec Pr_ExecSQL2
 'select
 ''update ''+tablename+
 '' set ha0103=objjc
-from ''+tablename+'',DZ0101 
+from ''+tablename+'',DZ0101
 where a0103=objname''
 from dbo.oydst_FieldCont1
-where objid in 
+where objid in
 (
 select parentid
 from dbo.oydst_FieldCont1

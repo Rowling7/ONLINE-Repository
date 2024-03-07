@@ -8,15 +8,15 @@ exec master..xp_regread	'hkey_local_machine'
 set @filepath=@softpath+'资产平台桥梁明细表.xls'
 
 declare @query nvarchar(1000);
-set @query = 
-    'select 
+set @query =
+    'select
         *
 				into ##tk060
     from openrowset(''microsoft.jet.oledb.4.0'', ''excel 5.0;database=' + @filepath + ';hdr=yes'', ''select * from [明细表$]'')';
 
 exec(@query);
 
-	
+
 	-- 插入资产平台桥梁数据
 truncate table zcpt_k060
 
@@ -91,7 +91,7 @@ k0185, -- 经度
 k0186 -- 纬度
 
 )
-select 
+select
 桥梁名称 	,
 桥梁编号 	,
 桥梁中心桩号 	,
@@ -181,10 +181,10 @@ drop table ##tk060
 
 --<CONTROL
 	SELECT
-		'执行结果' AS CAPTION , 
+		'执行结果' AS CAPTION ,
 		LABELTEXT='导入完成'+char(13)+char(10),
-		370 AS WIDTH , 
-		0 AS HEIGHT, 
+		370 AS WIDTH ,
+		0 AS HEIGHT,
 		'确定=' AS BUTTON,
 		0 AS SHOWTITLE,
 		'select null' as datasource

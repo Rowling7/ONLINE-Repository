@@ -24,8 +24,8 @@ sum(ifnull(a2720,0)) a2720,-- 无人机
 sum(ifnull(a2709,0)) a2709,-- 发电机组
 sum(ifnull(a2721,0)) a2721,-- 移动照明设备
 sum(ifnull(a2722,0)) a2722-- 应急抢通宿营车
-from a27 
-left join b01 b on a27.b01_id=b.b01_id	 
+from a27
+left join b01 b on a27.b01_id=b.b01_id
 where   b.b0111 like'42A%'
 and A27.z0011!=3
 and b.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID),'%')
@@ -56,10 +56,10 @@ sum(ifnull(a2720,0)) a2720,-- 无人机
 sum(ifnull(a2709,0)) a2709,-- 发电机组
 sum(ifnull(a2721,0)) a2721,-- 移动照明设备
 sum(ifnull(a2722,0)) a2722-- 移动照明设备
-from a27 
+from a27
 left join b01 b on a27.b01_id=b.b01_id and B.z0011!=3
-left join  s951 C on a27.a0101=C.s951_id and C.z0011!=3 -- 年限		 
+left join  s951 C on a27.a0101=C.s951_id and C.z0011!=3 -- 年限
 where  b.b0111 like'42A%'  and A27.z0011!=3
 AND C.s9532 < :A0101
 and b.b0111 like concat( (select b0111 from b01 where b01_id=:B01_ID),'%')
-group by  b.b0111 
+group by  b.b0111

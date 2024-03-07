@@ -1,11 +1,11 @@
 
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (214, 135, 3, NULL, 'HBJT', '╨Ч╠╠╫╩м╤╤УнВ╠╠╦ъкы╧╚б╥ткс╙╧эюМспоч╧╚к╬  ', '42A72    ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (215, 135, 3, NULL, 'HBJT', '╨Ч╠╠╫╩м╤╩ф╩ф╦ъкы╧╚б╥ткс╙╧эюМспоч╧╚к╬    ', '42A73    ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (216, 135, 3, NULL, 'HBJT', '╨Ч╠╠╫╩м╤нД╩ф╦ъкы╧╚б╥ткс╙╧эюМспоч╧╚к╬    ', '42A74    ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (217, 135, 3, NULL, 'HBJT', '╨Ч╠╠╫╩м╤рк╡Щ(╨Ч╠╠╫╩м╤рк╤В)              ', '42A75    ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (218, 135, 3, NULL, 'HBJT', '╨Ч╠╠╫╩м╤ч╜╢╨нВ╦ъкы╧╚б╥споч╧╚к╬          ', '42A76    ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (219, 135, 3, NULL, 'HBJT', '╨Ч╠╠╫╩м╤иЁ╧╚до╦ъкы╧╚б╥споч╧╚к╬          ', '42A77    ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (220, 135, 3, NULL, 'HBLT', '╨Ч╠╠а╙м╤╤Уолм╤вйспоч╧╚к╬                ', '42A78    ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (221, 135, 3, NULL, 'HBJT', '╨Ч╠╠╫╩м╤рк╡Щ╦ъкы╧╚б╥ткс╙╧эюМспоч╧╚к╬    ', '42A79    ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (227, 135, 3, NULL, 'HBJT', '╨Ч╠╠╫╩м╤оЕяТ╦ъкы╧╚б╥ткс╙╧эюМспоч╧╚к╬    ', '42A80    ');
-INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (228, 135, 3, NULL, 'YCSS', 'рк╡ЩйпйпуЧ╧╚сциХй╘╧эюМ╢╕                ', '42A81    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (214, 135, 3, NULL, 'HBJT', 'Ф╧√Е▄≈Д╨╓Ф┼∙И└┌Х╔©Е▄≈И╚≤И─÷Е┘╛Х╥╞Х©░Х░╔Г╝║Г░├Ф°┴И≥░Е┘╛Е▐╦  ', '42A72    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (215, 135, 3, NULL, 'HBJT', 'Ф╧√Е▄≈Д╨╓Ф┼∙И╩└И╩└И╚≤И─÷Е┘╛Х╥╞Х©░Х░╔Г╝║Г░├Ф°┴И≥░Е┘╛Е▐╦    ', '42A73    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (216, 135, 3, NULL, 'HBJT', 'Ф╧√Е▄≈Д╨╓Ф┼∙Ф╜╕И╩└И╚≤И─÷Е┘╛Х╥╞Х©░Х░╔Г╝║Г░├Ф°┴И≥░Е┘╛Е▐╦    ', '42A74    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (217, 135, 3, NULL, 'HBJT', 'Ф╧√Е▄≈Д╨╓Ф┼∙Е╝°Ф≤▄(Ф╧√Е▄≈Д╨╓Ф┼∙Е╝°Ф│╘)              ', '42A75    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (218, 135, 3, NULL, 'HBJT', 'Ф╧√Е▄≈Д╨╓Ф┼∙Х∙╡Ф≤╔Х╔©И╚≤И─÷Е┘╛Х╥╞Ф°┴И≥░Е┘╛Е▐╦          ', '42A76    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (219, 135, 3, NULL, 'HBJT', 'Ф╧√Е▄≈Д╨╓Ф┼∙Ф╡≥Е┘╛Е█≈И╚≤И─÷Е┘╛Х╥╞Ф°┴И≥░Е┘╛Е▐╦          ', '42A77    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (220, 135, 3, NULL, 'HBLT', 'Ф╧√Е▄≈Х│■Ф┼∙И└┌Е▓╦Ф┼∙Х╣└Ф°┴И≥░Е┘╛Е▐╦                ', '42A78    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (221, 135, 3, NULL, 'HBJT', 'Ф╧√Е▄≈Д╨╓Ф┼∙Е╝°Ф≤▄И╚≤И─÷Е┘╛Х╥╞Х©░Х░╔Г╝║Г░├Ф°┴И≥░Е┘╛Е▐╦    ', '42A79    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (227, 135, 3, NULL, 'HBJT', 'Ф╧√Е▄≈Д╨╓Ф┼∙Х╔└И≤ЁИ╚≤И─÷Е┘╛Х╥╞Х©░Х░╔Г╝║Г░├Ф°┴И≥░Е┘╛Е▐╦    ', '42A80    ');
+INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (228, 135, 3, NULL, 'YCSS', 'Е╝°Ф≤▄Е╦┌Е╦┌Ф■©Е┘╛Г■╗Х╝╬Ф√╫Г╝║Г░├Е╓└                ', '42A81    ');

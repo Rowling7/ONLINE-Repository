@@ -33,9 +33,9 @@ FROM INFO
 	where isnull(k0123,'2')='2' and nullif(k0124,'') is null
 
 /*  */
-update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(10), '') 
+update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(10), '')
 --去除换行符
-update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(13), '') 
+update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(13), '')
 --去除回车符
 
 

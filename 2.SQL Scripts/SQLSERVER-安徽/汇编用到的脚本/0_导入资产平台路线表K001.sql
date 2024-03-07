@@ -8,8 +8,8 @@ exec master..xp_regread	'hkey_local_machine'
 set @filepath=@softpath+'资产平台路线明细表.xls'
 
 declare @query nvarchar(1000);
-set @query = 
-    'select 
+set @query =
+    'select
         *
 				into ##tk001
     from openrowset(''microsoft.jet.oledb.4.0'', ''excel 5.0;database=' + @filepath + ';hdr=yes'', ''select * from [明细表$]'')';
@@ -60,7 +60,7 @@ k3990,--国道调整前路线编号
 hk0138,--是否按干线公路管理接养
 k0199--备注
 )
-select 
+select
 rtrim(k001.a0102),
 rtrim(k001.ha0102),
 路线编码,
@@ -105,7 +105,7 @@ case when len(涵洞数量)>0 then 涵洞数量 when len(涵洞数量)=0 or 涵�
 case when rtrim(省际出入口)  like '%非省际出入%' or (len(省际出入口)=0 or 省际出入口 is null) then '路段非省际出入'
 		when rtrim(省际出入口) like '%起点在省界%' then '国省道路段起点在省界，与邻省路线连接'
 		when rtrim(省际出入口) like '%止点在省界%' then '国省道路段止点在省界，与邻省路线连接'
-		when rtrim(省际出入口) like '%起止点均在省界%' then '国省道路段起止点均在省界，与邻省路线连接'	
+		when rtrim(省际出入口) like '%起止点均在省界%' then '国省道路段起止点均在省界，与邻省路线连接'
 		else null	end,
 
 case when len(国道调整前路线编号)>0 then 国道调整前路线编号 when len(国道调整前路线编号)=0 or 国道调整前路线编号 is null then null end,
@@ -135,10 +135,10 @@ drop table ##tk001
 
 --<CONTROL
 	SELECT
-		'执行结果' AS CAPTION , 
+		'执行结果' AS CAPTION ,
 		LABELTEXT='导入完成'+char(13)+char(10),
-		370 AS WIDTH , 
-		0 AS HEIGHT, 
+		370 AS WIDTH ,
+		0 AS HEIGHT,
 		'确定=' AS BUTTON,
 		0 AS SHOWTITLE,
 		'select null' as datasource

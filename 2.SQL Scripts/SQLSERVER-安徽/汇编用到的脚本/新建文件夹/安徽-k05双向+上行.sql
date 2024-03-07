@@ -8,7 +8,7 @@ left join (
 	and c.A0101 like '#TJND#%'and c.A0102 like '#A0102#%' and c.A0102 like '#GLDW#%'/*GLDW,A0102必须大写*/
 	group by  c.k0101,rtrim(c.a0102),c.ha0102
     ) b on a.k0101=b.k0101 and rtrim(a.a0102)=rtrim(b.a0102)
-where a.a5009 in ('1','2')  
+where a.a5009 in ('1','2')
 	and A.A0101A like '#TJND#%'and A.A0102 like '#A0102#%' and A.A0102 like '#GLDW#%'/*GLDW,A0102必须大写*/
 group by  a.k0101,a.a0102,a.ha0102,b.k0114
 having sum(isnull(a.a5008/1000,0))<>b.k0114
@@ -25,7 +25,7 @@ left join (
 	and c.A0101 like '2022%'--and c.A0102 like '343%' and c.A0102 like '343%'/*GLDW,A0102必须大写*/
 	group by  c.k0101,rtrim(c.a0102),c.ha0102
     ) b on a.k0101=b.k0101 and rtrim(a.a0102)=rtrim(b.a0102)
-where a.a5009 in ('3','2')  
+where a.a5009 in ('3','2')
 and a.A0101A like '2022%' --and A.A0102 like '343%' and A.A0102 like '343%'/*GLDW,A0102必须大写*/
 group by  a.k0101,a.a0102,a.ha0102,b.k0114
 having sum(isnull(a.a5008/1000,0))<>b.k0114

@@ -1,5 +1,5 @@
 
-if object_id('tempdb..#TimeTable') is not null drop table #TimeTable 	--记录输入的汇总时间     
+if object_id('tempdb..#TimeTable') is not null drop table #TimeTable 	--记录输入的汇总时间
 CREATE TABLE #TimeTable ( ParamName CHAR(16), ParamValue CHAR(4))
 INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 THEN YEAR(GETDATE())-1 ELSE YEAR(GETDATE()) END
 
@@ -8,9 +8,9 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 
 		---更新管理单位信息
 		update a
-		set	A0102 = b.A0102,--管理单位名称   
+		set	A0102 = b.A0102,--管理单位名称
 			HA0102 = b.HA0102,--管理单位名称
-			A0103 = b.A0103,--行政区划   
+			A0103 = b.A0103,--行政区划
 			HA0103 = b.HA0103,--行政区划
 			A0121 = b.A0121,--单位负责人
 			A0122 = b.A0122,--统计负责人
@@ -21,16 +21,16 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			A0127 = b.A0127,--网址
 			A0128 = b.A0128,--电子信箱
 			A0129 = b.A0129,--备注
-			A0131 = b.A0131,--管养单位性质   
+			A0131 = b.A0131,--管养单位性质
 			HA0131 = b.HA0131,--管养单位性质
 			A0134 = b.A0133 --填报人
 		from A01 a join [HRP-DBMS2014]..A01 b on a.A0102=b.A0102
 
 		--追加管理单位
 		insert A01(
-		A0102,--管理单位名称   
+		A0102,--管理单位名称
 		HA0102,--管理单位名称
-		A0103,--行政区划   
+		A0103,--行政区划
 		HA0103,--行政区划
 		A0121,--单位负责人
 		A0122,--统计负责人
@@ -41,14 +41,14 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0127,--网址
 		A0128,--电子信箱
 		A0129,--备注
-		A0131,--管养单位性质   
+		A0131,--管养单位性质
 		HA0131,--管养单位性质
 		A0134--填报人
 		)
 		select
-		a.A0102,--管理单位名称   
+		a.A0102,--管理单位名称
 		a.HA0102,--管理单位名称
-		a.A0103,--行政区划   
+		a.A0103,--行政区划
 		a.HA0103,--行政区划
 		a.A0121,--单位负责人
 		a.A0122,--统计负责人
@@ -59,27 +59,27 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		a.A0127,--网址
 		a.A0128,--电子信箱
 		a.A0129,--备注
-		a.A0131,--管养单位性质   
+		a.A0131,--管养单位性质
 		a.HA0131,--管养单位性质
 		a.A0133 --填报人
 		from [HRP-DBMS2014]..A01 a left join A01 b on a.A0102=b.A0102
 		where b.A0102 is null
-		
+
 
 
 		---------------A50------------------
 		--更新作废路线的起止点桩号
 		update a
-		set 
+		set
 			K0105=0,	--路线起点桩号
 			K0106=0		 --路线终点桩号
 		from A50 a left join [HRP-DBMS2014]..A50 b on a.A0102=b.A0102 and a.K0101=b.K0101
 		where b.A0102 is null
-		
+
 		--更新未变更路线的属性
 		update a
-		set 
-		A0203=b.A0203,--行政等级   
+		set
+		A0203=b.A0203,--行政等级
 		HA0203=b.HA0203,--行政等级
 		K0102=b.K0102,--路线全称
 		K0103=b.K0103,--路线起点名称
@@ -90,14 +90,14 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		K0113=b.K0113,--途经行政区划代码
 		K0116=b.K0116,--通车日期
 		K0199=b.K0199 --备注
-		from A50 a join [HRP-DBMS2014]..A50 b 
+		from A50 a join [HRP-DBMS2014]..A50 b
 		on a.A0102=b.A0102 and a.K0101=b.K0101
-		
+
 		--追加新增路线
 		insert A50(
-		A0102,--管理单位名称   
+		A0102,--管理单位名称
 		HA0102,--管理单位名称
-		A0203,--行政等级   
+		A0203,--行政等级
 		HA0203,--行政等级
 		K0101,--路线代码
 		K0102,--路线全称
@@ -109,10 +109,10 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		K0113,--途经行政区划代码
 		K0199--备注
 		)
-		select 
-		a.A0102,--管理单位名称   
+		select
+		a.A0102,--管理单位名称
 		a.HA0102,--管理单位名称
-		a.A0203,--行政等级   
+		a.A0203,--行政等级
 		a.HA0203,--行政等级
 		a.K0101,--路线代码
 		a.K0102,--路线全称
@@ -214,7 +214,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		k6122,
 		hk6122
 		)
-		SELECT 
+		SELECT
 		A0101,HA0101,  --时间
 		A0102,HA0102,  --管理单位名称
 		A0103,HA0103,  --行政区划
@@ -298,17 +298,17 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		HK6121,
 		k6122,
 		hk6122
-		FROM 	[HRP-DBMS2014]..K060 
+		FROM 	[HRP-DBMS2014]..K060
 		WHERE LEFT(K0101,1)<>'W'
 
 		update a
 		set ha3219=rtrim(objjc)
 		from k60 a,DA3201 b
 		where a3219=objname
-		
+
 		updAte	A
-		set 	A.K0112=b.K0112 
-		from 	K60 A,A50 b 
+		set 	A.K0112=b.K0112
+		from 	K60 A,A50 b
 		where 	A.A0102=b.A0102 And A.K0101=b.K0101
 
 		update a --跨越地物类型
@@ -414,7 +414,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		K0149,	--防洪标准(年)
 		HK0149
 		)
-		SELECT 
+		SELECT
 		A0101,HA0101,  --时间
 		A0102,HA0102,  --管理单位名称
 		A0103,HA0103,  --行政区划
@@ -500,21 +500,21 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		HK0149
 		FROM 	[HRP-DBMS2014]..K063
 		WHERE LEFT(K0101,1)<>'W'
-		
+
 		update a
 		set ha3219=rtrim(objjc)
 		from k63 a,DA3201 b
 		where a3219=objname
 
 		updAte	A
-		set	A.K0112=b.K0112 
-		from 	K63 A,A50 b 
+		set	A.K0112=b.K0112
+		from 	K63 A,A50 b
 		where	A.A0102=b.A0102 And A.K0101=b.K0101
 
 		updAte	A  --衬砌材料
-		set	A.HK6311=b.objjc 
-		from 	K63 A,DK4301 b 
-		where	A.K6311=b.objname 
+		set	A.HK6311=b.objjc
+		from 	K63 A,DK4301 b
+		where	A.K6311=b.objname
 
 
 		--------------K65--------------------
@@ -602,7 +602,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		K6523,	--渡口宽度
 		K3912,	--变更原因
 		HK3912
-		FROM [HRP-DBMS2014]..K065 left join 
+		FROM [HRP-DBMS2014]..K065 left join
 			(
 				select a0102 a,k0101 b,k6501 c
 				from [HRP-DBMS2014]..k065
@@ -622,10 +622,10 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		where a3219=objname
 
 		updAte	A
-		set	A.K0112=b.K0112 
-		from 	K65 A, A50 b 
+		set	A.K0112=b.K0112
+		from 	K65 A, A50 b
 		where	A.A0102=b.A0102 And A.K0101=b.K0101
-		
+
 		----------------K88普通干线公路服务设施信息--------------------
 		DELETE K88
 		INSERT K88(
@@ -683,17 +683,17 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		----------------A61高速公路服务信息--------------------
 		DELETE A61
 		INSERT A61(
-		A0101,--时间   
+		A0101,--时间
 		HA0101,--时间
-		A0102,--管理单位名称   
+		A0102,--管理单位名称
 		HA0102,--管理单位名称
-		A0103,--行政区划   
+		A0103,--行政区划
 		HA0103,--行政区划
 		A0129,--备注
 		A7002,--路线地方名称
 		A7003,--管理、经营单位名称
 		A7004,--联系电话
-		A7005,--服务设施类型   
+		A7005,--服务设施类型
 		HA7005,--服务设施类型
 		A7006,--桩号
 		A7007,--服务区位置
@@ -708,22 +708,22 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A7011a,--出口连接路线编号
 		A7014,--出口连接路线桩号
 		A7015,--出入口编号
-		A7016, --出入口名称  
+		A7016, --出入口名称
 		A7017,	--服务区及出入口位置
 		HA7017
 		)
-		SELECT 
-		rtrim(a.A0101),--时间   
+		SELECT
+		rtrim(a.A0101),--时间
 		rtrim(a.HA0101),--时间
-		rtrim(a.A0102),--管理单位名称   
+		rtrim(a.A0102),--管理单位名称
 		rtrim(a.HA0102),--管理单位名称
-		rtrim(a.A0103),--行政区划   
+		rtrim(a.A0103),--行政区划
 		rtrim(a.HA0103),--行政区划
 		a.K0199,--备注
 		ISNULL(rtrim(b.A7002),'请输入'),--路线地方名称
 		ISNULL(rtrim(a.A7003),'请输入'),--管理、经营单位名称
 		ISNULL(rtrim(a.A7004),'999'),--联系电话
-		rtrim(a.K7502),--公路服务设施种类   
+		rtrim(a.K7502),--公路服务设施种类
 		rtrim(a.HK7502),--公路服务设施种类
 		a.K7001,--位置桩号
 		rtrim(a.A7007),--服务区位置
@@ -738,7 +738,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		RTRIM(A.A7011a),--出口连接路线编号
 		RTRIM(A.A7014),--出口连接路线桩号
 		RTRIM(A.A7015),--出入口编号
-		RTRIM(A.A7016), --出入口名称  
+		RTRIM(A.A7016), --出入口名称
 		rtrim(a.A7017),	--服务区及出入口位置
 		rtrim(a.HA7017)
 		FROM [HRP-DBMS2014]..K078 a join [HRP-DBMS2014]..K001 b ON a.A0102=b.A0102 AND a.K0101=b.K0101 AND a.K7001>b.K0108 AND a.K7001<=b.K0109
@@ -747,7 +747,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		----------------------K01--------------------------------
 
 		--根据K001、K025、K031、K038、K039进行路段分段处理
-		IF object_id('tempdb..#temp00') is not null     drop table #temp00 
+		IF object_id('tempdb..#temp00') is not null     drop table #temp00
 		Create table #temp00(A0102 varchar(8),K0101 varchar(15),K0108 numeric(18,3))
 		----K001
 		insert #temp00(A0102,K0101,K0108)select A0102,K0101,K0108 from [HRP-DBMS2014]..K001 WHERE isnull(k9111,'0')<>'4' AND LEFT(K0101,1)<>'W'
@@ -771,17 +771,17 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		insert #temp00(A0102,K0101,K0108)select A0102,K0101,K6503+isnull(K6523,0) from [HRP-DBMS2014]..K065 where isnull(k6513,'1')='1'
 		*/
 		/*选择起止点桩号，并对路段细分；*/
-		IF object_id('tempdb..#K01') is not null     drop table #K01    
+		IF object_id('tempdb..#K01') is not null     drop table #K01
 		create table #k01(a0102 char(10),k0101 char(15),k0108 numeric(18,3),id int IDENTITY(1,1))
 		insert 	#k01(k0108,k0101,A0102)
 		select 	distinct(k0108) k0108,k0101,A0102
-		from 	#temp00 
+		from 	#temp00
 		order by k0101,A0102,k0108
-        
-		IF object_id('tempdb..#K0001') is not null     drop table #K0001    
+
+		IF object_id('tempdb..#K0001') is not null     drop table #K0001
 		create table #k0001(a0102 char(10),k0101 char(15),k0108 numeric(18,3),k0109 numeric(18,3))
-		insert #K0001(k0101,A0102,k0108,k0109) 
-		select 
+		insert #K0001(k0101,A0102,k0108,k0109)
+		select
 			t1.k0101 K0101,
 			t1.A0102 A0102,
 			t1.k0108 k0108,
@@ -800,7 +800,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 
 		update #k001 set k0114=k0109-k0108
 		--更新K001中的所有属性
-		update 	a 
+		update 	a
 		set 	a.K0306=b.K0306,				--设计车速
 			a.K2010=b.k2010,a.hk2010=b.hk2010,		--管养单位行业类别
 			a.a0130=rtrim(b.a0130), 			--养护单位名称
@@ -808,7 +808,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			a.K0126=b.K0126,a.HK0126=b.HK0126,		--是否一幅高速
                         a.K9109=b.K9110,				--乡镇名称
 			a.K0135=b.K0135,a.HK0135=b.HK0135,		--是否重要县道
-			a.A7002=rtrim(b.A7002),				--路线地方名称 
+			a.A7002=rtrim(b.A7002),				--路线地方名称
 			a.K5104=b.K5104,a.HK5104=rtrim(b.HK5104),	--面层类型
 			a.K0404=b.k0404,a.hk0404=rtrim(b.hk0404),	--车道特征
 			a.K0124=rtrim(b.K0124),				--重复路线
@@ -816,13 +816,13 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			a.HK0161=rtrim(b.HK0161),			--重复路段管理单位
 			a.K0162=b.K0162,				--重复路段起点桩号
 			a.K0163=b.K0163,				--重复路段止点桩号
-			a.K0153=rtrim(b.K0153),				--起点是否为分界点   
+			a.K0153=rtrim(b.K0153),				--起点是否为分界点
 			a.HK0153=rtrim(b.HK0153),			--起点是否为分界点
-			a.K0154=rtrim(b.K0154),				--起点分界点类别   
+			a.K0154=rtrim(b.K0154),				--起点分界点类别
 			a.HK0154=rtrim(b.HK0154),			--起点分界点类别
-			a.K0157=rtrim(b.K0157),				--止点是否为分界点   
+			a.K0157=rtrim(b.K0157),				--止点是否为分界点
 			a.HK0157=rtrim(b.HK0157),			--止点是否为分界点
-			a.K0158=rtrim(b.K0158),				--止点分界点类别   
+			a.K0158=rtrim(b.K0158),				--止点分界点类别
 			a.HK0158=rtrim(b.HK0158),			--止点分界点类别
 			a.K0121=b.K0121,a.hk0121=rtrim(b.HK0121),	--是否城管
 			a.K0123=b.K0123,a.hk0123=rtrim(b.HK0123),	--断头路里程
@@ -860,31 +860,31 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		--2022年新增
 			A.K6023=B.K6023,A.HK6023=B.HK6023,	--抗震等级
 			A.K0149=B.K0149,A.HK0149=B.HK0149	--防洪标准(年)
-		from 	#k001 a ,[HRP-DBMS2014]..k001 b 
+		from 	#k001 a ,[HRP-DBMS2014]..k001 b
 		where 	a.a0102=b.a0102 and a.k0101=b.k0101 and a.k0108>=b.k0108 and a.k0109<=b.k0109
 
 		-----------------------------插入渡口里程--------------------------------------------------------------------
 		/*update a
 		set a.k5104='5',a.hk5104='无路面',a.k0199='渡口里程',a.a0103=b.a0103,a.ha0103=b.ha0103
-		from #K001 a,[HRP-DBMS2014]..k065 b 
+		from #K001 a,[HRP-DBMS2014]..k065 b
 		where a.a0102=b.a0102 and a.k0101=b.k0101 and a.k0108=b.k6503 and a.k0109=b.k6503+b.k6523 and isnull(b.k6513,'1')='1'
-		
+
 		update 	a
 		set 	a.k0304=b.k0304 , a.hk0304=b.hk0304 , a.k0404=b.k0404 , a.hk0404=b.hk0404
 		from 	#K001 a , #k001 b
-		where 	a.a0102=b.a0102 and a.k0101=b.k0101 and (a.k0108=b.k0109 or a.k0109=b.k0108) and a.k0199 like '渡口里程%' 
+		where 	a.a0102=b.a0102 and a.k0101=b.k0101 and (a.k0108=b.k0109 or a.k0109=b.k0108) and a.k0199 like '渡口里程%'
 		*/
 		---注释掉
 		/*update a
 		set a.a0701=1,a.a0702=case when b.k6504=1 then 1 else 0 end
-		from #K001 a,[HRP-DBMS2014]..k065 b 
+		from #K001 a,[HRP-DBMS2014]..k065 b
 		where a.a0102=b.a0102 and a.k0101=b.k0101 and a.k0108=b.k6503 and a.k0109=b.k6503+b.k6523  and a.k0199 like '渡口里程%'*/
 
 		--------------------------------------------------------GBM里程--------------------------------------------------------------
 		if object_id('tempdb..#L031') is not null
 		drop table #L031
 		select 	a.a0102,a.k0101,a.k0108,a.k0109, --GBM里程
-			case 	when a.k0108<=b.k0108 and a.k0109>=b.k0109 then b.k0109-b.k0108 
+			case 	when a.k0108<=b.k0108 and a.k0109>=b.k0109 then b.k0109-b.k0108
 				when a.k0108>=b.k0108 and a.k0109<=b.k0109 then a.k0109-a.k0108
 				when a.k0108>=b.k0108 and a.k0109>=b.k0109 and a.k0108<=b.k0109 then b.k0109-a.k0108
 				when a.k0108<=b.k0108 and a.k0109<=b.k0109 and a.k0109>=b.k0108 then a.k0109-b.k0108
@@ -900,12 +900,12 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 					from #L031
 					group by a0102,k0101,k0108,k0109
 			    ) b on a.k0101=b.k0101 and a.a0102=b.a0102 and a.k0108=b.k0108 and a.k0109=b.k0109
-	
+
 		------------------------------------------------------文明样板路里程---------------------------------------------------------
 		if object_id('tempdb..#L032') is not null
 		drop table #L032
 		select 	a.a0102,a.k0101,a.k0108,a.k0109, --GBM里程
-			case 	when a.k0108<=b.k0108 and a.k0109>=b.k0109 then b.k0109-b.k0108 
+			case 	when a.k0108<=b.k0108 and a.k0109>=b.k0109 then b.k0109-b.k0108
 				when a.k0108>=b.k0108 and a.k0109<=b.k0109 then a.k0109-a.k0108
 				when a.k0108>=b.k0108 and a.k0109>=b.k0109 and a.k0108<=b.k0109 then b.k0109-a.k0108
 				when a.k0108<=b.k0108 and a.k0109<=b.k0109 and a.k0109>=b.k0108 then a.k0109-b.k0108
@@ -950,7 +950,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		update a	--通车日期
 		set a.K0116=b.K0116
 		from #K001 a,[HRP-DBMS2014]..K001 b
-		where a.a0102=b.a0102 and a.k0101=b.k0101 and a.k0108>=b.k0108 and a.k0109<=b.k0109 
+		where a.a0102=b.a0102 and a.k0101=b.k0101 and a.k0108>=b.k0108 and a.k0109<=b.k0109
 		update a
 		set a.k0112=case when b.k0112 is not null then rtrim(b.k0112) else rtrim(b.k0102) end--路线简称
 		from #k001 a join a50 b on a.a0102=b.a0102 and a.k0101=b.k0101
@@ -982,11 +982,11 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		-------------------------------------向K01导数据-----------------------
 		delete K01
 		insert K01(
-		A0101,--时间   
+		A0101,--时间
 		HA0101,--时间
-		A0102,--管理单位名称   
+		A0102,--管理单位名称
 		HA0102,--管理单位名称
-		A0103,--行政区划   
+		A0103,--行政区划
 		HA0103,--行政区划
 		A0130,--管养单位名称
 		A0320,--晴雨通车里程(公里)
@@ -997,7 +997,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A1001,--养护里程(公里)
 		A3101,--可绿化里程(公里)
 		A3102,--已绿化里程(公里)
-		A3219,--建设性质   
+		A3219,--建设性质
 		HA3219,--建设性质
 		A7002,--路线地方名称
 		K9109,
@@ -1009,45 +1009,45 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		K0112,--路线简称
 		K0114,--里程(公里)
 		K0115,--路段编号
-		K0153,--起点是否为分界点   
+		K0153,--起点是否为分界点
 		HK0153,--起点是否为分界点
-		K0154,--起点分界点类别   
+		K0154,--起点分界点类别
 		HK0154,--起点分界点类别
-		K0157,--止点是否为分界点   
+		K0157,--止点是否为分界点
 		HK0157,--止点是否为分界点
-		K0158,--止点分界点类别   
+		K0158,--止点分界点类别
 		HK0158,--止点分界点类别
 		K0306,--设计车速
 		K0116,--通车日期
-		K0121,--是否城管路段   
+		K0121,--是否城管路段
 		HK0121,--是否城管路段
-		K0123,--是否断头路路段   
+		K0123,--是否断头路路段
 		HK0123,--是否断头路路段
 		K0124,--重复路线代码
 		K0161,--重复路段管理单位
 		HK0161,--重复路段管理单位
 		K0162,--重复路段起点桩号
 		K0163,--重复路段止点桩号
-		K0126,--是否一幅高速   
+		K0126,--是否一幅高速
 		HK0126,--是否一幅高速
 		K0135,
 		HK0135,
-		K0130,--养护类型(按时间分)   
+		K0130,--养护类型(按时间分)
 		HK0130,--养护类型(按时间分)
-		K0131,--养护类型(按资金来源分)   
+		K0131,--养护类型(按资金来源分)
 		HK0131,--养护类型(按资金来源分)
 		K0199,--备注
-		K0304,--技术等级   
+		K0304,--技术等级
 		HK0304,--技术等级
-		K0404,--车道分类   
+		K0404,--车道分类
 		HK0404,--车道分类
-		K2010,--管养单位所属行业类别   
+		K2010,--管养单位所属行业类别
 		HK2010,--管养单位所属行业类别
 		K4002,--路基宽度(米)
-		K5104,--面层类型   
+		K5104,--面层类型
 		HK5104,--面层类型
 		K5404,--路面宽度(米)
-		K9508,--地形   
+		K9508,--地形
 		HK9508,--地形
 		K0180,--修建年度
 		K0181,--改建年度
@@ -1079,11 +1079,11 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		HK0149	--防洪标准(年)
 		)
 		select
-		A0101,--时间   
+		A0101,--时间
 		HA0101,--时间
-		A0102,--管理单位名称   
+		A0102,--管理单位名称
 		HA0102,--管理单位名称
-		A0103,--行政区划   
+		A0103,--行政区划
 		HA0103,--行政区划
 		A0130,--管养单位名称
 		A0320,--晴雨通车里程(公里)
@@ -1094,7 +1094,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A1001,--养护里程(公里)
 		A3101,--可绿化里程(公里)
 		A3102,--已绿化里程(公里)
-		A3219,--建设性质   
+		A3219,--建设性质
 		HA3219,--建设性质
 		A7002,--路线地方名称
 		K9109,
@@ -1106,45 +1106,45 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		K0112,--路线简称
 		K0114,--里程(公里)
 		K0115,--路段编号
-		K0153,--起点是否为分界点   
+		K0153,--起点是否为分界点
 		HK0153,--起点是否为分界点
-		K0154,--起点分界点类别   
+		K0154,--起点分界点类别
 		HK0154,--起点分界点类别
-		K0157,--止点是否为分界点   
+		K0157,--止点是否为分界点
 		HK0157,--止点是否为分界点
-		K0158,--止点分界点类别   
+		K0158,--止点分界点类别
 		HK0158,--止点分界点类别
 		K0306,--设计车速
 		K0116,--通车日期
-		K0121,--是否城管路段   
+		K0121,--是否城管路段
 		HK0121,--是否城管路段
-		K0123,--是否断头路路段   
+		K0123,--是否断头路路段
 		HK0123,--是否断头路路段
 		K0124,--重复路线代码
 		K0161,--重复路段管理单位
 		HK0161,--重复路段管理单位
 		K0162,--重复路段起点桩号
 		K0163,--重复路段止点桩号
-		K0126,--是否一幅高速   
+		K0126,--是否一幅高速
 		HK0126,--是否一幅高速
 		K0135,
 		HK0135,
-		K0130,--养护类型(按时间分)   
+		K0130,--养护类型(按时间分)
 		HK0130,--养护类型(按时间分)
-		K0131,--养护类型(按资金来源分)   
+		K0131,--养护类型(按资金来源分)
 		HK0131,--养护类型(按资金来源分)
 		K0199,--备注
-		K0304,--技术等级   
+		K0304,--技术等级
 		HK0304,--技术等级
-		K0404,--车道分类   
+		K0404,--车道分类
 		HK0404,--车道分类
-		K2010,--管养单位所属行业类别   
+		K2010,--管养单位所属行业类别
 		HK2010,--管养单位所属行业类别
 		K4002,--路基宽度(米)
-		K5104,--面层类型   
+		K5104,--面层类型
 		HK5104,--面层类型
 		K5404,--路面宽度(米)
-		K9508,--地形   
+		K9508,--地形
 		HK9508,--地形
 		K0180,--修建年度
 		K0181,--改建年度
@@ -1179,11 +1179,11 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		------------------------汇总A11、A51、A12、K02数据-----------------------------
 		--如果[时间]为NULL则默认的为本年，因K01中只填写本年的数据。
 		update k01 set a0101=@CurYear,ha0101=str(@CurYear,4)+'年',a3219='9',ha3219='其他'
-		where a0101 is null 
-		--------------------------	
+		where a0101 is null
+		--------------------------
 		--[建设性质]为NULL则默认的为‘其他’.
 		update k01 set a3219='9',ha3219='其他'
-		where a3219 is null 
+		where a3219 is null
 		---更新为零的指标项
 		update K01 set 	K4002=nullif(K4002,0),
 				K5404=nullif(K5404,0),
@@ -1232,8 +1232,8 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		[断头路里程]		= sum(case when k0123 = '1' then K0114 else 0 end), --如果既是断头又是重复，则算为断头路里程，这样“路线长度＝路线里程＋断头路里程＋重复里程”
 		[重复里程]		= sum(case when isnull(K0123,'2') = '2' and k0124 is not null then K0114 else 0 end)
 		into #本年新建里程
-		from K01 
-		where 
+		from K01
+		where
 		left(A0101,4)=@CurYear and a3219='1' and left(K0101,1) in ('G','S','X','Y','Z','C')
 		group by A0102,K0101
 		--------------------------------------
@@ -1267,8 +1267,8 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		[断头路里程]		= NULL, --如果既是断头又是重复，则算为断头路里程，这样“路线长度＝路线里程＋断头路里程＋重复里程”
 		[重复里程]		= NULL
 		into #新建下行线涵洞数量
-		from K01 
-		where 
+		from K01
+		where
 		left(A0101,4)=@CurYear and a3219='1' and left(K0101,1) in ('H','T','J','N')
 		group by A0102,K0101
 		--------------------------------------
@@ -1342,7 +1342,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		----------------------------------------
 		--以下计算桥梁
 		if object_id('tempdb..#本年新建桥梁') is not null	drop table #本年新建桥梁
-		select 
+		select
 		A0102,
 		Max(HA0102) ha0102,
 		K0101,
@@ -1365,12 +1365,12 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		[小桥座数]		= sum(case when K6007='4' then 1 else 0 end),
 		[小桥延米]		= sum(case when K6007='4' then K6008 else 0 end)
 		into #本年新建桥梁
-		from k60 
+		from k60
 		where left(A0101,4)=@CurYear and a3219='1' and isnull(K6008,0)<>0 --20011217修改 桥梁全长为0,则不计数
 		group by a0102,k0101
 
 		if object_id('tempdb..#非本年新建桥梁数') is not null	drop table #非本年新建桥梁数
-		select 
+		select
 		A50.A0102,
 		Max(A50.HA0102) ha0102,
 		A50.K0101,
@@ -1398,7 +1398,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		-----------------------------------------------------------------------------
 		--以下计算隧道
 		if object_id('tempdb..#本年新建隧道') is not null	drop table #本年新建隧道
-		select 
+		select
 		A0102,
 		Max(HA0102) ha0102,
 		K0101,
@@ -1420,7 +1420,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		group by a0102,k0101
 
 		if object_id('tempdb..#非本年新建隧道数') is not null	drop table #非本年新建隧道数
-		select 
+		select
 		A50.A0102,
 		Max(A50.HA0102) ha0102,
 		A50.K0101,
@@ -1442,7 +1442,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		-------------------------------------------
 		--以下计算渡口
 		if object_id('tempdb..#本年新建渡口') is not null	drop table #本年新建渡口
-		select 
+		select
 		A0102,
 		Max(HA0102) ha0102,
 		K0101,
@@ -1452,9 +1452,9 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		from k65
 		where left(A0101,4)=@CurYear and a3219='1' and isnull(K6523,0)<>0 --20011217修改 渡口宽度为0,则不计数
 		group by a0102,k0101
-	
+
 		if object_id('tempdb..#非本年新建渡口数') is not null	drop table #非本年新建渡口数
-		select 
+		select
 		A50.A0102,
 		Max(A50.HA0102) ha0102,
 		A50.K0101,
@@ -1529,7 +1529,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		--下面(^@^):由于所有里程为0的不计算，所以路线名称、通车日期等字段不能填写到A51表中.
 		insert a51 (a0102,ha0102,k0101,a3219,ha3219,a0101,ha0101,K0105,K0106,K0103,K0104)
 		select a0102,ha0102,k0101,'1','新建',@CurYear,@CurYear+'年',0,K0106,K0103,K0104 from A50
-	
+
 		insert a51 (a0102,ha0102,k0101,a3219,ha3219,a0101,ha0101,K0105,K0106,K0103,K0104)
 		select a0102,ha0102,k0101,'2','改建',@CurYear,@CurYear+'年',0,K0106,K0103,K0104 from A50
 		--新建数直接填写到A51表中.
@@ -1558,11 +1558,11 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0324=[城管里程],
 		A0321=[断头路里程],
 		K1707=[重复里程]
-		from #本年新建里程 
-		where 
+		from #本年新建里程
+		where
 		a51.a0101=@CurYear and a51.a3219='1' and
 		#本年新建里程.a0102=a51.a0102 and #本年新建里程.k0101=a51.k0101
-	
+
 		--新建下行线涵洞数直接填写到A51表中.
 		update a51 set
 		A0304=[高速四车道里程],
@@ -1590,7 +1590,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0321=[断头路里程],
 		K1707=[重复里程]
 		from #新建下行线涵洞数量
-		where 
+		where
 		a51.a0101=@CurYear and a51.a3219='1' and
 		#新建下行线涵洞数量.a0102=a51.a0102 and #新建下行线涵洞数量.k0101=a51.k0101
 
@@ -1614,7 +1614,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0517=[小桥座数],
 		A0518=[小桥延米]
 		from #本年新建桥梁
-		where 
+		where
 		A51.A0101=@CurYear AND A51.A3219='1' AND
 		#本年新建桥梁.A0102=A51.A0102 AND #本年新建桥梁.K0101=A51.K0101
 
@@ -1632,18 +1632,18 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0611=[短隧道数],
 		A0612=[短隧道延米]
 		from #本年新建隧道
-		where 
+		where
 		A51.A0101=@CurYear AND A51.A3219='1' AND
 		#本年新建隧道.A0102=A51.A0102 AND #本年新建隧道.K0101=A51.K0101
-		
+
 		update a51 set
 		A0701=[渡口数],
 		A0702=[机动渡口数]
 		from #本年新建渡口
-		where 
+		where
 		A51.A0101=@CurYear AND A51.A3219='1' AND
 		#本年新建渡口.A0102=A51.A0102 AND #本年新建渡口.K0101=A51.K0101
-		
+
 		/*计算A51表中本年改建的数据：路段表中非本新建-上年底到达数*/
 		update a51
 		set
@@ -1671,8 +1671,8 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0324=isnull(a.[城管里程],0)		-isnull(b.A0324,0),
 		A0321=isnull(a.[断头路里程],0)		-isnull(b.A0321,0),
 		K1707=isnull(a.[重复里程],0)		-isnull(b.K1707,0)
-		from 
-		#非本年新建里程数 a 
+		from
+		#非本年新建里程数 a
 		join a51 on a.a0102=a51.a0102 and a.k0101=a51.k0101 and a51.a3219='2' and a51.a0101=@curyear
 		left join #上年底到达 b on a51.a0102=b.a0102 and a51.k0101=b.k0101
 
@@ -1703,13 +1703,13 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0324=isnull(a.[城管里程],0)		-isnull(b.A0324,0),
 		A0321=isnull(a.[断头路里程],0)		-isnull(b.A0321,0),
 		K1707=isnull(a.[重复里程],0)		-isnull(b.K1707,0)
-		from 
-		#非本年新建下行线涵洞数量 a 
+		from
+		#非本年新建下行线涵洞数量 a
 		join a51 on a.a0102=a51.a0102 and a.k0101=a51.k0101 and a51.a3219='2' and a51.a0101=@curyear
 		left join #上年底到达 b on a51.a0102=b.a0102 and a51.k0101=b.k0101
 
 		update a51
-		set 	
+		set
 		A0503=isnull(a.[危桥座数],0)		-isnull(b.A0503,0),
 		A0504=isnull(a.[危桥延米],0)		-isnull(b.A0504,0),
 		A0505=isnull(a.[永久性桥梁座数],0)	-isnull(b.A0505,0),
@@ -1728,13 +1728,13 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0516=isnull(a.[中桥延米],0)		-isnull(b.A0516,0),
 		A0517=isnull(a.[小桥座数],0)		-isnull(b.A0517,0),
 		A0518=isnull(a.[小桥延米],0)		-isnull(b.A0518,0)
-		from 
-		#非本年新建桥梁数 a 	
+		from
+		#非本年新建桥梁数 a
 		join a51 on a.a0102=a51.a0102 and a.k0101=a51.k0101 and a51.a3219='2' and a51.a0101=@curyear
-		left join #上年底到达 b on a51.a0102=b.a0102 and a51.k0101=b.k0101 
-	
+		left join #上年底到达 b on a51.a0102=b.a0102 and a51.k0101=b.k0101
+
 		update a51
-		set 
+		set
 		A0601=isnull(a.[四五类隧道数],0)	-isnull(b.A0601,0),
 		A0602=isnull(a.[四五类隧道延米],0)	-isnull(b.A0602,0),
 		A0603=isnull(a.[水下隧道数],0)		-isnull(b.A0603,0),
@@ -1747,21 +1747,21 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0610=isnull(a.[中隧道延米],0)		-isnull(b.A0610,0),
 		A0611=isnull(a.[短隧道数],0)		-isnull(b.A0611,0),
 		A0612=isnull(a.[短隧道延米],0)		-isnull(b.A0612,0)
-		from 
-		#非本年新建隧道数 a 	
+		from
+		#非本年新建隧道数 a
 		join a51 on a.a0102=a51.a0102 and a.k0101=a51.k0101 and a51.a3219='2' and a51.a0101=@curyear
-		left join #上年底到达 b on a51.a0102=b.a0102 and a51.k0101=b.k0101 
-	
+		left join #上年底到达 b on a51.a0102=b.a0102 and a51.k0101=b.k0101
+
 		update a51
 		set
 		A0701=isnull(a.[渡口数],0)		-isnull(b.A0701,0),
 		A0702=isnull(a.[机动渡口数],0)		-isnull(b.A0702,0)
-		from 
-		#非本年新建渡口数 a 	
+		from
+		#非本年新建渡口数 a
 		join a51 on a.a0102=a51.a0102 and a.k0101=a51.k0101 and a51.a3219='2' and a51.a0101=@curyear
-		left join #上年底到达 b on a51.a0102=b.a0102 and a51.k0101=b.k0101 
+		left join #上年底到达 b on a51.a0102=b.a0102 and a51.k0101=b.k0101
 		--
-		delete a51 
+		delete a51
 		where left(a0101,4)=@curyear and
 		isnull(	A0304 	,0) =0 and
 		isnull(	A0305 	,0) =0 and
@@ -1815,10 +1815,10 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		isnull( A0316A	,0) =0 and
 		isnull( A0317A	,0) =0 and
 		isnull( A0322	,0) =0 and
-		isnull( A0323	,0) =0 and	
+		isnull( A0323	,0) =0 and
 		isnull(	K1707	,0) =0 and
 		isnull(	a0324	,0) =0 and
-		isnull(	a0321	,0) =0 
+		isnull(	a0321	,0) =0
 
 
 		--下面填写行政等级
@@ -1837,7 +1837,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		--from a50 a,(select a0102,k0101,min(k0108) k0105,max(k0109) k0106 from k01
 		--	  group by a0102,k0101	)b
 		--where a.a0102=b.a0102 and a.k0101=b.k0101
-		
+
 		--update a
 		--set a.k0103=b.k0110
 		--from a50 a,(select a0102,k0101,k0108 ,max(k0110) k0110 from k01
@@ -1851,7 +1851,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		--where a.a0102=b.a0102 and a.k0101=b.k0101 and a.k0106=b.k0109
 
 		--A51是A50的子表，同一条新建路线以下字段值相同
-		update a set 
+		update a set
 		a.K0112=b.K0112,--路线全称
 		a.K0105=b.K0105,--路线起点桩号
 		a.K0106=b.K0106,--路线终点桩号
@@ -1893,7 +1893,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			update A51 set A3219='9',Ha3219='其他'
 		end
 		---导入A11
-		insert A11(A0102,HA0102,A0101,HA0101,A0203,HA0203,A3219,HA3219,A0304,A0305,A0306,A0307,A0308,A0309,A0310,A0311,A0312,A0320,A0503,A0504,A0505,A0506,A0507,A0508,A0509,A0510,A0511,A0512,A0513,A0514,A0515,A0516,A0517,A0518,A0519,A0520,A0522,A0601,A0602,A0603,A0604,A0605,A0606,A0607,A0608,A0609,A0610,A0611,A0612,A0701,A0702,A1001,A3102,A0523,A3101,A0314A,A0315A,A0316A,A0317A,A0322,A0323,A0324,K1707,A0321) 
+		insert A11(A0102,HA0102,A0101,HA0101,A0203,HA0203,A3219,HA3219,A0304,A0305,A0306,A0307,A0308,A0309,A0310,A0311,A0312,A0320,A0503,A0504,A0505,A0506,A0507,A0508,A0509,A0510,A0511,A0512,A0513,A0514,A0515,A0516,A0517,A0518,A0519,A0520,A0522,A0601,A0602,A0603,A0604,A0605,A0606,A0607,A0608,A0609,A0610,A0611,A0612,A0701,A0702,A1001,A3102,A0523,A3101,A0314A,A0315A,A0316A,A0317A,A0322,A0323,A0324,K1707,A0321)
 		select A0102,max(HA0102),@CurYear,@CurYear+'年',A0203,max(HA0203),A3219,max(HA3219),
 			NULLIF(SUM(CASE WHEN LEFT(K0101,1) NOT IN ('H','T','J','N') THEN ISNULL(A0304,0) END),0),
 			NULLIF(SUM(CASE WHEN LEFT(K0101,1) NOT IN ('H','T','J','N') THEN ISNULL(A0305,0) END),0),
@@ -1919,7 +1919,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			NULLIF(SUM(CASE WHEN LEFT(K0101,1) NOT IN ('H','T','J','N') THEN ISNULL(A0324,0) END),0),
 			NULLIF(SUM(CASE WHEN LEFT(K0101,1) NOT IN ('H','T','J','N') THEN ISNULL(K1707,0) END),0),
 			NULLIF(SUM(CASE WHEN LEFT(K0101,1) NOT IN ('H','T','J','N') THEN ISNULL(A0321,0) END),0)
-		from A51 
+		from A51
 		where left(A0101,4)=@CurYear
 		group by A0102,A0203,A3219
 
@@ -1991,14 +1991,14 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			from a51
 			where left(a0101,4)<=@CurYear and left(k0101,1) in ('g','s','x','y','z','C')
 			group by a0102,a0203
-		else 
+		else
 			begin
 			insert a13(a0102,ha0102,a0101,ha0101,a3199,ha3199)
 			select a0102,max(ha0102),@CurYear,@CurYear+'年',a0203,max(ha0203)
 			from a51
 			where left(a0101,4)<=@CurYear and left(k0101,1) in ('g','s','x','y','z','C') and rtrim(a0102)+rtrim(a0203) not in (select rtrim(a0102)+rtrim(a3199) from a13 where a0101=@CurYear)
 			group by a0102,a0203
-			
+
 			update a
 			set a.a3101=b.a3101,a.a3102=b.a3102,a.a3103a=b.a3102
 			from A13 a, (	select a0102,a0203,sum(a3101) a3101 ,sum(a3102) a3102
@@ -2013,14 +2013,14 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		delete A13 where left(a0101,4)= @CurYear and isnull(a3101,0)=0 and isnull(a3102,0)=0
 
                	update a13
-               	set 	
+               	set
                   	A3101=nullif(A3101,0),
                     	A3102=nullif(A3102,0),
                   	A3103A=nullif(A3103A,0),
                   	A3104A=nullif(A3104A,0),
  		   	A3106A=nullif(A3106A,0)
 		---汇总A12表
-		delete A12 where left(a0101,4)= @CurYear	
+		delete A12 where left(a0101,4)= @CurYear
 		insert A12(a0102,ha0102,a0101,ha0101,a0203,ha0203)
 		select a0102,max(ha0102),@CurYear,@CurYear+'年',a0203,max(ha0203)
 		from A50
@@ -2034,7 +2034,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			a.A1005=b.a1005, --性固定养护
 			a.A1006=b.a1006 --	季节性固定养护
 		from a12 a,( select c.a0102,c.a0203,
-				  a1002=sum(case when k0131='1' then isnull(d.A1001,0) else 0 end), 
+				  a1002=sum(case when k0131='1' then isnull(d.A1001,0) else 0 end),
 				  a1003=sum(case when k0131='2' then isnull(d.A1001,0) else 0 end),
 				  a1004=sum(case when k0131='3' then isnull(d.A1001,0) else 0 end),
 				  a1005=sum(case when left(k0130,1)='1' then isnull(d.A1001,0) else 0 end),
@@ -2045,12 +2045,12 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			) b
 		where a.a0102=b.a0102 and a.a0203=b.a0203 and left(a.a0101,4)= @CurYear
 
-		
+
 		update a
 		set	a.A0322=b.A0322,--	已实施GBM里程
 			a.A0323=b.A0323 --	已实施文明样板路的里程
 		from a12 a,( select c.a0102,c.a0203,
-				  A0322=sum(isnull(d.A0322,0)), 
+				  A0322=sum(isnull(d.A0322,0)),
 				  A0323=sum(isnull(d.A0323,0))
 			  from a50 c,k01 d
 			  where c.a0102=d.a0102 and c.k0101=d.k0101  and left(c.k0101,1) in ('g','s','x','y','z','C') and (d.K0124 is null or d.K0124 = '') and isnull(d.K0123,'2') = '2'
@@ -2068,8 +2068,8 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			) b
 		where a.a0102=b.a0102 and a.a0203=b.a0203 and left(a.a0101,4)= @CurYear
 
-		delete a12 
-		where left(a0101,4)= @CurYear and 
+		delete a12
+		where left(a0101,4)= @CurYear and
 			(isnull(A0321,0)=0 and 	--断头路里程
 			isnull(A0322,0)=0 and 	--已实施GBM里程
 			isnull(A0323,0)=0 and 	--已实施文明样板路的里程
@@ -2078,7 +2078,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 			isnull(A1004,0)=0 and 	--其他费养护里程
 			isnull(A1005,0)=0 and 	--固定养护
 			isnull(A1006,0)=0 	--季节性固定养护
-				) 	
+				)
                	update a12
                	set 	a0321=nullif(a0321,0),
                     	a0322=nullif(a0322,0),
@@ -2100,9 +2100,9 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		[高速六车道里程]	= sum(case when K0304='10' and K0404='6' then K0114 else 0 end),
 		[高速八车道及以上里程]	= sum(case when K0304='10' and K0404 >='8' then K0114 else 0 end)
 		into #本年新建里程A52
-		from K01 
-		where 
-			(K0124 is null OR K0124='') AND ISNULL(K0123,'2')='2' and 
+		from K01
+		where
+			(K0124 is null OR K0124='') AND ISNULL(K0123,'2')='2' and
 			left(A0101,4)=@CurYear and a3219='1' and K0304='10' and left(k0101,1) in ('g','s','x','y','z','c')
 		group by A0102,K0101
 		--------------------------------------
@@ -2115,18 +2115,18 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		[高速六车道里程]	= sum(case when K0304='10' and K0404='6' then K0114 else 0 end),
 		[高速八车道及以上里程]	= sum(case when K0304='10' and K0404 >='8' then K0114 else 0 end)
 		into #非本年新建里程数A52
-		from K01 
-		where 
-			(K0124 is null OR K0124='') AND ISNULL(K0123,'2')='2' and 
+		from K01
+		where
+			(K0124 is null OR K0124='') AND ISNULL(K0123,'2')='2' and
 			not(left(A0101,4)=@CurYear and a3219='1') and K0304='10' and left(k0101,1) in ('g','s','x','y','z','c')
-		group by A0102,K0101		
+		group by A0102,K0101
 		-------------------------------------------
 		--下面计算上年底到达,#上年底到达
 		if object_id('tempdb..#上年底到达A52') is not null		drop table #上年底到达A52
 		select a0102,k0101,
 		sum(A0304)	A0304 ,
 		sum(A0305)	A0305 ,
-		sum(A0306)	A0306 
+		sum(A0306)	A0306
 		into #上年底到达A52
 		from a52 where a0101<@CurYear group by a0102,k0101
 
@@ -2141,8 +2141,8 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0304=[高速四车道里程],
 		A0305=[高速六车道里程],
 		A0306=[高速八车道及以上里程]
-		from #本年新建里程A52 
-		where 
+		from #本年新建里程A52
+		where
 		a52.a0101=@CurYear and a52.a3219='1' and
 		#本年新建里程A52.a0102=a52.a0102 and #本年新建里程A52.k0101=a52.k0101
 
@@ -2152,16 +2152,16 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		A0304=a.[高速四车道里程]	-isnull(b.A0304,0),
 		A0305=a.[高速六车道里程]	-isnull(b.A0305,0),
 		A0306=a.[高速八车道及以上里程]	-isnull(b.A0306,0)
-		from 
-		#非本年新建里程数A52 a 
+		from
+		#非本年新建里程数A52 a
 		join a52 on a.a0102=a52.a0102 and a.k0101=a52.k0101 and a52.a3219='2' and a52.a0101=@curyear
 		left join #上年底到达A52 b on a.a0102=b.a0102 and a.k0101=b.k0101
 
-		delete a52 
+		delete a52
 		where left(a0101,4)=@curyear and
 		isnull(	A0304 	,0) =0 and
 		isnull(	A0305 	,0) =0 and
-		isnull(	A0306 	,0) =0 
+		isnull(	A0306 	,0) =0
 		--A51是A50的子表，同一条路线以下字段值相同
 		if object_id('tempdb..#qdzh') is not null drop table #qdzh
                 if object_id('tempdb..#zdzh') is not null drop table #zdzh
@@ -2176,9 +2176,9 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 
 		select K01.A0102 a,K01.K0101 b,min(case when K0108 is not null  then K0108 else K0105 end) c,K01.A3219 d
 							into  #qdzh
-							from 
-								A52 
-								full join 
+							from
+								A52
+								full join
 								K01 on (K01.A0102=A52.A0102 and K01.K0101=A52.K0101 and K01.A3219=A52.A3219)
 							where left(k01.A0101,4)=@CurYear
 							group by K01.A0102,K01.K0101,K01.A3219
@@ -2190,8 +2190,8 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		select K01.A0102 a,K01.K0101 b,max(case when K0109 is not null  then K0109 else K0106 end) c,K01.A3219 d
 							into #zdzh
 							from
-							A52 
-							full join 
+							A52
+							full join
 							K01 on (K01.A0102=A52.A0102 and K01.K0101=A52.K0101 and K01.A3219=A52.A3219)
 							where left(k01.A0101,4)=@CurYear
 							group by K01.A0102,K01.K0101,K01.A3219
@@ -2219,7 +2219,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		update A52 set A0208=c from #yssj where a=A52.A0102 and b=A52.K0101
 
 		--A50表中没有管养单位性质,从A01表中提取
-		select rtrim(isnull(a01.a0131,'')) c, rtrim(isnull(a01.ha0131,'')) d, a01.a0102 a, a52.k0101 b into #xz from a01, a52 where a01.A0102=A52.A0102 and left(A52.A0101,4)=@CurYear 
+		select rtrim(isnull(a01.a0131,'')) c, rtrim(isnull(a01.ha0131,'')) d, a01.a0102 a, a52.k0101 b into #xz from a01, a52 where a01.A0102=A52.A0102 and left(A52.A0101,4)=@CurYear
 
 		update A52 set a0131=c,ha0131=d from #xz where b=A52.K0101 and a=A52.A0102
 
@@ -2232,7 +2232,7 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
                 /*---更新默认数据
                 UPDATE A52 SET A52.K0105=A50.K0105,A52.K0106=A50.K0106
                 FROM A52,A50
-                WHERE A52.A0102=A50.A0102 AND A52.K0101=A50.K0101 AND A52.K0105=0 AND A52.K0106=0 
+                WHERE A52.A0102=A50.A0102 AND A52.K0101=A50.K0101 AND A52.K0105=0 AND A52.K0106=0
                 UPDATE A52 SET A52.K0103=A50.K0103,A52.K0104=A50.K0104
                 FROM A52,A50
                 WHERE A52.A0102=A50.A0102 AND A52.K0101=A50.K0101 AND (A52.K0103='B2' or A52.K0104='A2')*/
@@ -2295,14 +2295,14 @@ INSERT #TimeTable SELECT '请输入汇总年份:',CASE WHEN MONTH(GETDATE())<6 T
 		update A52 set
 		A0304=nullif(A0304,0),--高速四车道里程
 		A0305=nullif(A0305,0),--高速六车道里程
-		A0306=nullif(A0306,0)--高速八车道及以上里程	
+		A0306=nullif(A0306,0)--高速八车道及以上里程
 
 		--<CONTROL
-			SELECT 
+			SELECT
 				CAPTION='信息',
 				LABELTEXT='已成功完成数据导入!',
 				SHOWTITLE=0,
-				WIDTH=260, 
+				WIDTH=260,
 				'确定(&Y)=' AS BUTTON
 		--CONTROL>
 	--汇总数据>

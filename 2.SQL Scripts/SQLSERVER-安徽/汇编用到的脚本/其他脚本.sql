@@ -9,7 +9,7 @@ INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy
 INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (3006, 4, 3, '3414                                                                                                                                                                                                                                                           ', 'TCC ', '天长处                                            ', '34307    ');
 
 
-update da0102 set objjc='来安县公路运输管理服务中心(农村公路)' 
+update da0102 set objjc='来安县公路运输管理服务中心(农村公路)'
 from da0102
 where objname='3421122'
 
@@ -17,6 +17,6 @@ where objname='3421122'
 INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6148, 1, 2, NULL, 'AHMC', '安徽明巢高速公路开发有限公司                      ', '349F     ');
 INSERT INTO [dbo].[DA0102] ([objid], [parentid], [objtype], [objexplain], [objpy], [objjc], [objname]) VALUES (6149, 1, 2, NULL, 'AHLL', '安徽来六高速公路开发有限公司                      ', '349G     ');
 
-update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(10), '') 
+update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(10), '')
 --去除换行符
-update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(13), '') 
+update dz0101 set objjc=REPLACE(RTRIM(OBJJC), CHAR(13), '')

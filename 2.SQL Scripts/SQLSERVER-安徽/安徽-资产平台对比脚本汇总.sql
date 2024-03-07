@@ -1072,7 +1072,7 @@ where k060.k6040 is null  and
 k060.A0102 LIKE '#A0102#%' AND k060.A0102 LIKE '#GLDW#%' and
 LEFT(k001.K0101,1) IN ('G','S') and rtrim(k001.k0112) not like '%高速%'AND k001.A0102 LIKE '341%'
 )NBZC
-where 
+where
 NBZC.A0102 LIKE '#A0102#%' AND NBZC.A0102 LIKE '#GLDW#%' and
 (
 HK6016<>zHK6016 or--  上部结构类型,

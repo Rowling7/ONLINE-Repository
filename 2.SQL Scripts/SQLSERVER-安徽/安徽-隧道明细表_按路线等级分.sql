@@ -3,7 +3,7 @@ SELECT
 rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) k0101
 INTO #K01
 FROM K01
-WHERE left(k01.K0101,1) in ('G','S','X','Y','Z','C','h','t') 
+WHERE left(k01.K0101,1) in ('G','S','X','Y','Z','C','h','t')
       and (K0124 is null or K0124 = '') and isnull(K0123,'2') = '2'  and K0304='10'
 GROUP BY rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))
 ORDER BY rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))
@@ -59,7 +59,7 @@ select
 from k63
 	left join a50 on k63.a0102 = a50.a0102 and k63.k0101 = a50.k0101
 	left join da0102 on k63.a0102=da0102.objname
-	left join 
+	left join
 		(select a.a0102,a.k0101,a.k6301,max(b.k0304) k0304
 		from K63 a left join K01 b on a.a0102=b.a0102 and a.k0101=b.k0101 and a.k6324>=b.k0108 and a.k6324<=b.k0109
 		where LEFT(A.K0101,1) IN ('G','S','H','T') AND a.A0102 like '34%' and a.a0101 <= '2024'

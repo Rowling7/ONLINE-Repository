@@ -6,15 +6,22 @@ title %time%
 :: taskkill /f /im code.exe
 :: timeout /t 3
 
-:: QQ
-start D:\"Program Files (x86)"\Tencent\QQ\Bin\QQScLauncher.exe
+::清除微信文件
+::start C:\Users\OYDSOFT\AppData\Roaming\Microsoft\Windows\"Start Menu"\Programs\Startup\"Clear WeChat Files Online.bat"
+
+::TIM
+::start D:\"Program Files (x86)"\Tencent\QQ\Bin\QQScLauncher.exe
+start D:\"Program Files (x86)"\Tencent\TIM\Bin\QQScLauncher.exe
 
 :: 企业微信
 start D:\"Program Files (x86)"\WXWork\WXWork.exe
 
 :: 微信多开
 :: start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
-:: start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
+start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
+
+:: Steam++
+start  D:\"Program Files (x86)"\"Micro Soft"\Compressed\Steam++\Steam++.exe
 
 :: Ssms
 :: start C:\"Program Files (x86)"\"Microsoft SQL Server"\90\Tools\Binn\VSShell\Common7\IDE\Ssms.exe
@@ -25,19 +32,24 @@ start D:\"Program Files (x86)"\WXWork\WXWork.exe
 :: 此电脑
 :: start C:\Users\OYDSOFT\AppData\Roaming\Microsoft\Windows\"Start Menu"\Programs\"System Tools"\computer.lnk
 
+:: Everything
+start C:\Users\OYDSOFT\AppData\Roaming\Microsoft\Windows\"Start Menu"\Programs\Everything.exe.lnk
+
 :: 关闭向日葵
 taskkill /f /im SunloginClient.exe
 
 :: 关闭ToDesk
-taskkill /f /im ToDesk.exe
+::taskkill /f /im ToDesk.exe
 :: 关闭ToDesk服务
-sc stop "ToDesk_Service"
+::sc stop "ToDesk_Service"
 
 :: 关闭edge 后台
-taskkill /f /im MSEDGE.EXE
+::taskkill /f /im MSEDGE.EXE
 
 :: 关闭Chrome 后台
 taskkill /f /im Chrome.EXE
+
+
 
 pause
 

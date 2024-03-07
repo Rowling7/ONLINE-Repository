@@ -6,7 +6,7 @@ AND A11.A3219 in('1') AND LEFT(STUFF(rtrim(A0102),3,1,null),4)IN(
 select --查询市州
 STUFF(rtrim(objname),3,1,null) objjc
 from DA0102
-where len(rtrim(objname))=5 AND  OBJJC LIKE '%干线公路%' 
+where len(rtrim(objname))=5 AND  OBJJC LIKE '%干线公路%'
 )
 --and LEFT(rtrim(A0102),5) ='34101'
 GROUP BY LEFT(STUFF(rtrim(A0102),3,1,null),4)  with rollup

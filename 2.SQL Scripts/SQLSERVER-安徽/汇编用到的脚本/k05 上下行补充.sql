@@ -12,7 +12,7 @@ SELECT  RTRIM(k05.A0102) A0102,RTRIM(k05.HA0102) HA0102,RTRIM(k05.K0101) K0101,R
 into #t2
 from K05
 left join k01 b on k05.k0101=b.k0101 and k05.k0105>=b.k0108 and k05.k0105<b.k0109
-where ((b.k0304 in('10','11') and A5009='2') or left(k05.k0101,1) in ('x','y','z','c')) and left(k05.a0101a,4) ='2023' 
+where ((b.k0304 in('10','11') and A5009='2') or left(k05.k0101,1) in ('x','y','z','c')) and left(k05.a0101a,4) ='2023'
 
 SELECT * from #t2
 ORDER BY ID
@@ -22,7 +22,7 @@ SELECT  RTRIM(k05.A0102) A0102,RTRIM(k05.HA0102) HA0102,RTRIM(k05.K0101) K0101,R
 into #t3
 from K05
 left join k01 b on k05.k0101=b.k0101 and k05.k0105>=b.k0108 and k05.k0105<b.k0109
-where ((b.k0304 in('10','11') and A5009='3') or left(k05.k0101,1) in ('x','y','z','c')) and left(k05.a0101a,4) ='2023' 
+where ((b.k0304 in('10','11') and A5009='3') or left(k05.k0101,1) in ('x','y','z','c')) and left(k05.a0101a,4) ='2023'
 
 
 SELECT * from #t3

@@ -4,7 +4,7 @@ SELECT
 rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) k0101
 INTO #K01
 FROM K01
-WHERE left(k01.K0101,1) in ('G','S','X','Y','Z','C','h','t') 
+WHERE left(k01.K0101,1) in ('G','S','X','Y','Z','C','h','t')
       and (K0124 is null or K0124 = '') and isnull(K0123,'2') = '2'  and K0304='10'
 GROUP BY rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))
 ORDER BY rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))
@@ -13,14 +13,14 @@ ORDER BY rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'00000
 
 
 /*不显示零*/
-SELECT 
+SELECT
 	[COL01] = RTRIM(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(k01.K0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')),	--路线代码
 	[COL02] = LEFT(RTRIM(A0103),6), --行政区划代码
 	[COL03] = RTRIM(K0112), 	--路线标准名称
 	[COL04] = RTRIM(K0110),		--路段起点名称
 	[COL05] = RTRIM(K0111),		--路段止点名称
 	[COL06] = K0108,		--路段起点桩号
-	[COL07] = K0109,		--路段止点桩号   
+	[COL07] = K0109,		--路段止点桩号
 	[COL08] = K0114 ,		--里程
 	[COL09] = CASE WHEN RTRIM(K0304)='22' THEN '12' WHEN RTRIM(K0304)='23' THEN '13' WHEN RTRIM(K0304)='24' THEN '14' ELSE RTRIM(K0304) END,		--技术等级代码
 	[COL10] = RTRIM(HK0304),	--技术等级
@@ -40,10 +40,10 @@ SELECT
 	[COL24] = CASE WHEN ISNULL(K0182,0)=0 THEN 0 ELSE K0182 END,		--断链类型
 	[COL25] = CASE WHEN RTRIM(HK0121)='是' THEN '是' ELSE '否' END,		--是否城管路段
 	[COL26] = CASE WHEN RTRIM(HK0123)='是' THEN '是' ELSE '否' END,		--是否断头路段
-	[COL27] = CASE WHEN RTRIM(ISNULL(K0136,'01'))='01' THEN '非收费' 
-			WHEN RTRIM(ISNULL(K0136,'01'))='02' THEN '还贷' 
-			WHEN RTRIM(ISNULL(K0136,'01'))='03' THEN '经营' 
-			ELSE '' 
+	[COL27] = CASE WHEN RTRIM(ISNULL(K0136,'01'))='01' THEN '非收费'
+			WHEN RTRIM(ISNULL(K0136,'01'))='02' THEN '还贷'
+			WHEN RTRIM(ISNULL(K0136,'01'))='03' THEN '经营'
+			ELSE ''
 		END,			--路段收费性质
 	[COL28] = RTRIM(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(K0124,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')),	--重复路线代码
 	[COL29] = CASE WHEN ISNULL(K0176,'')='1' THEN K0163 ELSE K0162 END,		--重复路段起点桩号
@@ -59,7 +59,7 @@ SELECT
 	[COL39] = CASE WHEN LEFT(k01.K0101,1) IN ('G','H') THEN LTRIM(RTRIM(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(K3990,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))) ELSE '' END,		--国道调整前路线编号
 	[COL40] = HK0138,		--是否按干线公路管理接养
 	[COL41] = CASE WHEN CHARINDEX('D',ISNULL(K0124,'')) <> 0 THEN '重复主线为长链' ELSE CASE WHEN LEFT(k01.K0101,1) IN ('G','S','H','T','X') THEN LTRIM(RTRIM(CAST(K0199 AS VARCHAR(1000)))) ELSE '' END END	--备注
-from k01 
+from k01
 WHERE	A0102 LIKE '34%' AND
 	left(k01.K0101,1) in ('G','S','X','Y','Z','C','h','t')  and K0304='10' and rtrim(K01.K0101)  in (select rtrim(k0101) from #k01) --高速
 	-- left(k01.K0101,1) in ('G','h') and rtrim(K01.K0101) not in (select rtrim(k0101) from #k01) --普通国道

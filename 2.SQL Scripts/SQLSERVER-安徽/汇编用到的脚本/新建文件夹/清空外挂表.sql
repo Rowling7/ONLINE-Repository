@@ -1,6 +1,6 @@
-declare @A0102 varchar(255) 
-declare @A0101 varchar(255)  
-declare @LA0101 varchar(255)  
+declare @A0102 varchar(255)
+declare @A0101 varchar(255)
+declare @LA0101 varchar(255)
 SET @A0102 ='34'+'%'
 SET @A0101 ='2023'+'%'
 SET @LA0101 ='2023'+'%'

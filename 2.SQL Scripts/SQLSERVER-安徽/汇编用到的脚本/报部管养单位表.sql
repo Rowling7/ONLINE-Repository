@@ -7,16 +7,16 @@ NBNF,
 HYLBDM,
 HYLBMC
 )
-select 
+select
 DWMC,
 DWDM,
 '2023',
 HYLBDM,
 HYLBMC
-from 
+from
 OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 8.0;HDR=YES;DATABASE=C:\Users\Administrator\Desktop\安徽管养单位明细表+行业类别 (1).xls',sheet2$)
-UNION 
-SELECT 
+UNION
+SELECT
 OBJJC,
 OBJNAME ,
 

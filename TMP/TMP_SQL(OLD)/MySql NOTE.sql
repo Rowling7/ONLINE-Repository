@@ -1,4 +1,4 @@
-mklink /H "E:\Documents\Navicat\MySQL\Servers\Localhost\test\报表SQL.sql" "E:\Documents\VSCode Files\0.NOTE\MYSQL\报表SQL.sql" 
+mklink /H "E:\Documents\Navicat\MySQL\Servers\Localhost\test\报表SQL.sql" "E:\Documents\VSCode Files\0.NOTE\MYSQL\报表SQL.sql"
 
 -- 调整一次传送数据包的过程中最大允许的数据包大小
 set global max_allowed_packet=1024*1024*1*20;

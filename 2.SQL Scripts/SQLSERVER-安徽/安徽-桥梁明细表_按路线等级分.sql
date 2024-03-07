@@ -4,7 +4,7 @@ SELECT
 rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')) k0101
 INTO #K01
 FROM K01
-WHERE left(k01.K0101,1) in ('G','S','X','Y','Z','C','h','t') 
+WHERE left(k01.K0101,1) in ('G','S','X','Y','Z','C','h','t')
       and (K0124 is null or K0124 = '') and isnull(K0123,'2') = '2'  and K0304='10'
 GROUP BY rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))
 ORDER BY rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))
@@ -20,7 +20,7 @@ RTRIM(A50.K0112),			--路线名称
 RTRIM(D.OBJJC) HK0304,			--技术等级
 -- CASE WHEN ISNULL(K6117,'') IN ('4','5') AND ISNULL(K6121,'')<>'' THEN RTRIM(HK6121)
 -- 	ELSE
--- 		CASE WHEN RTRIM(D.OBJJC) IS NULL THEN '等外' ELSE RTRIM(D.OBJJC) END 
+-- 		CASE WHEN RTRIM(D.OBJJC) IS NULL THEN '等外' ELSE RTRIM(D.OBJJC) END
 -- END	HK0304,				--技术等级
 K6008,					--桥梁全长
 K6065,					--跨径总长
@@ -75,8 +75,8 @@ RTRIM(ISNULL(HK6120,'否')),		--是否跨省桥梁
 RTRIM(ISNULL(HK6041,'否')),		--是否公铁两用桥梁
 K60.K0199, 				--备注
 CASE WHEN LEFT(K60.K0101,1) IN ('G','H') THEN RTRIM(ISNULL(K6040,'')) ELSE '' END		--国道桥梁身份码
-FROM K60 
-	LEFT JOIN 
+FROM K60
+	LEFT JOIN
 		(SELECT A.A0102,A.K0101,A.K6001,MAX(B.K0304) K0304
 		FROM K60 A LEFT JOIN K01 B ON A.A0102=B.A0102 AND A.K0101=B.K0101 AND A.K6003>=B.K0108 AND A.K6003<=B.K0109
 		WHERE LEFT(A.K0101,1) IN ('G','H','S','T') AND A.A0102 LIKE '34%' AND A.A0101 <= '2024'

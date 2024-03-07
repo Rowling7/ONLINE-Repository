@@ -107,20 +107,20 @@ GO
 
 
 INSERT into SXZB
-SELECT 
+SELECT
 convert(varchar(255),cast(convert(float,XZDM) as decimal)),XZMC,TDQK,HTDQK,NBTABLE,nbnf
 from OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=C:\Users\Administrator\Desktop\SXZB20231217.xls',sheet1$)
 
 /*
 update v52 set V0513=TDQK,hV0513=HTDQK
 --SELECT V0513,TDQK,hV0513,HTDQK
-from v52 
+from v52
 left join sxzb on V0514=xzdm
 where tdqk is not null and v0513<>tdqk and NBTABLE ='v52' and nbnf='2023' and left(V0514,4)='3408'
 
 update v53 set V5708=TDQK,hV5708=HTDQK
 --SELECT V5708,TDQK,hV5708,HTDQK
-from v53 
+from v53
 left join sxzb on V5701=xzdm
 where tdqk is not null and V5708<>tdqk and NBTABLE ='v53' and nbnf='2023' and left(V0514,4)='3408'
 */
@@ -130,12 +130,12 @@ backup database [HRP-DBMS2014] to disk ='c:\HRP-DBMS2014-1220-1'
 --更新历史表
 update jzc set V0513=TDQK,hV0513=HTDQK
 --SELECT V0513,TDQK,hV0513,HTDQK
-from jzc 
+from jzc
 left join sxzb on V0514=xzdm
-where tdqk is not null and RTRIM(v0513)<>RTRIM(tdqk) and nbtable='V52' 
+where tdqk is not null and RTRIM(v0513)<>RTRIM(tdqk) and nbtable='V52'
 
 update ZRC set V5708=TDQK,hV5708=HTDQK
 --SELECT V5708,TDQK,hV5708,HTDQK
-from ZRC 
+from ZRC
 left join sxzb on V5701=xzdm
-where tdqk is not null and RTRIM(V5708)<>RTRIM(tdqk) and nbtable='V53' 
+where tdqk is not null and RTRIM(V5708)<>RTRIM(tdqk) and nbtable='V53'

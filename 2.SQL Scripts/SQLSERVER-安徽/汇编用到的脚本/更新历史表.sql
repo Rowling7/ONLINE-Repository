@@ -162,48 +162,48 @@ CREATE TABLE [dbo].[ZRC] (
 )
 GO
 
-INSERT INTO [dbo].[ZRC] ([A0102], [HA0102],[A0101], [V0514], [HV0514], [V5701], [HV5701], [V5708], [HV5708], [V8104], [V8105], [V5703], [A0129], [InsertLogin], [ModifyLogin], [K0185], [K0186], [KWYID]) 
+INSERT INTO [dbo].[ZRC] ([A0102], [HA0102],[A0101], [V0514], [HV0514], [V5701], [HV5701], [V5708], [HV5708], [V8104], [V8105], [V5703], [A0129], [InsertLogin], [ModifyLogin], [K0185], [K0186], [KWYID])
 SELECT [A0102], [HA0102],'2022', [V0514], [HV0514], [V5701], [HV5701], [V5708], [HV5708], [V8104], [V8105], [V5703], [A0129], [InsertLogin], [ModifyLogin], [K0185], [K0186], [KWYID]
 from [HRP-DBMS2014汇编基数]..V53
 
 
-select case when a.a=b.b then'路段历史表更新完成' else '！！路段历史表更新未成功！！'  end  '更新结果' 
-from 
+select case when a.a=b.b then'路段历史表更新完成' else '！！路段历史表更新未成功！！'  end  '更新结果'
+from
 (SELECT COUNT(*) a FROM LUDUAN where not (left(k0101,1) in ('G','S','H','T') AND K0101 LIKE '%ZD%'))a,
 (SELECT COUNT(*) b FROM [HRP-DBMS2014汇编基数]..k001 where not (left(k0101,1) in ('G','S','H','T') AND K0101 LIKE '%ZD%'))b
 UNION
-select case when a.a=b.b then'W路段历史表更新完成' else '！！W路段历史表更新未成功！！'  end  '更新结果' 
-from 
+select case when a.a=b.b then'W路段历史表更新完成' else '！！W路段历史表更新未成功！！'  end  '更新结果'
+from
 (SELECT COUNT(*) a FROM Wluduan where left(k0101,1) in ('W'))a,
 (SELECT COUNT(*) b FROM [HRP-DBMS2014汇编基数]..k001 where left(k0101,1) in ('W'))b
 UNION
-select case when a.a=b.b then'桥梁历史表更新完成' else '！！桥梁历史表更新未成功！！'  end  '更新结果' 
-from 
+select case when a.a=b.b then'桥梁历史表更新完成' else '！！桥梁历史表更新未成功！！'  end  '更新结果'
+from
 (SELECT COUNT(*) a FROM qiaoliang )a,
 (SELECT COUNT(*) b FROM [HRP-DBMS2014汇编基数]..K060 )b
 UNION
-select case when a.a=b.b then'隧道历史表更新完成' else '！！隧道历史表更新未成功！！'  end  '更新结果' 
-from 
+select case when a.a=b.b then'隧道历史表更新完成' else '！！隧道历史表更新未成功！！'  end  '更新结果'
+from
 (SELECT COUNT(*) a FROM suidao )a,
 (SELECT COUNT(*) b FROM [HRP-DBMS2014汇编基数]..K063 )b
 UNION
-select case when a.a=b.b then'渡口历史表更新完成' else '！！渡口历史表更新未成功！！'  end  '更新结果' 
-from 
+select case when a.a=b.b then'渡口历史表更新完成' else '！！渡口历史表更新未成功！！'  end  '更新结果'
+from
 (SELECT COUNT(*) a FROM dukou )a,
 (SELECT COUNT(*) b FROM [HRP-DBMS2014汇编基数]..K065 )b
 UNION
-select case when a.a=b.b then'乡镇历史表更新完成' else '！！乡镇历史表更新未成功！！'  end  '更新结果' 
-from 
+select case when a.a=b.b then'乡镇历史表更新完成' else '！！乡镇历史表更新未成功！！'  end  '更新结果'
+from
 (SELECT COUNT(*) a FROM XZ )a,
 (SELECT COUNT(*) b FROM [HRP-DBMS2014汇编基数]..V51 )b
 UNION
-select case when a.a=b.b then'建制村历史表更新完成' else '！！建制村历史表更新未成功！！'  end  '更新结果' 
-from 
+select case when a.a=b.b then'建制村历史表更新完成' else '！！建制村历史表更新未成功！！'  end  '更新结果'
+from
 (SELECT COUNT(*) a FROM JZC )a,
 (SELECT COUNT(*) b FROM [HRP-DBMS2014汇编基数]..V52 )b
 UNION
-select case when a.a=b.b then'自然村历史表更新完成' else '！！自然村历史表更新未成功！！'  end  '更新结果' 
-from 
+select case when a.a=b.b then'自然村历史表更新完成' else '！！自然村历史表更新未成功！！'  end  '更新结果'
+from
 (SELECT COUNT(*) a FROM zrc )a,
 (SELECT COUNT(*) b FROM [HRP-DBMS2014汇编基数]..V53 )b
 ORDER BY '更新结果'
@@ -218,13 +218,13 @@ update dukou set a0101='2022',ha0101='2022年'
 
 
 SELECT kwyid,*
-from luduan 
+from luduan
 where kwyid is null
 SELECT kwyid,*
-from qiaoliang 
+from qiaoliang
 where kwyid is null
 SELECT kwyid,*
-from suidao 
+from suidao
 where kwyid is null
 SELECT kwyid,*
 from wluduan

@@ -11,14 +11,14 @@ set curdate=%date:~0,4%%date:~5,2%%date:~8,2%_%time:~0,2%%time:~3,2%%time:~6,2%
 set zipfile=D:\Pictures
 ::备份文件夹
 xcopy %zipfile% %SaveTmpe% /e /y /h /r /q /i
- 
+
 ::备份命令 -xr!.svn过滤.svn文件夹
 "%zip7%" a -tzip "%Save%\BakFile_%curdate%.zip" "%SaveTmpe%" -mx0 -xr!.svn
 
 ::删除临时目录
 del /f /s /q "%SaveTmpe%"\*.*
 rd /s /q  "%SaveTmpe%"
- 
+
 ::删除超过180天的备份--start--
 ::forfiles /p "%Save%" /m *.zip -d -180 /c "cmd /c del /f @path"
 

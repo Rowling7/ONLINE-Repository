@@ -10,7 +10,7 @@ where k0101=@k0101
 
 SELECT @k0114c=SUM(round(ZDZH-QDZH,3))
 from
-openrowset('Microsoft.Jet.OLEDB.4.0', 'D:\������ʱ�ļ���\4208\mapdata.sdd';'admin';'',LX_Y)
+openrowset('Microsoft.Jet.OLEDB.4.0', 'D:\4208\mapdata.sdd';'admin';'',LX_Y)
 WHERE LXBM =@k0101
 
 SELECT 'a历史数据', k0101,k0124,k0112,k0140,k0108,k0109,k0114
@@ -25,5 +25,5 @@ SELECT 'd修改后-地图数据','------------','------------','------------','-
 union
 SELECT 'e地图数据',LXBM,'',LXMC,'',QDZH,ZDZH,round(ZDZH-QDZH,3) 'k0114'
 FROM
-openrowset('Microsoft.Jet.OLEDB.4.0', 'D:\桌面临时文件夹\4208\mapdata.sdd';'admin';'',LX_Y)
+openrowset('Microsoft.Jet.OLEDB.4.0', 'D:\桌面临时文件夹\4208\mapdata.sdd';'admin';'',LX_Y)
 WHERE LXBM =@k0101

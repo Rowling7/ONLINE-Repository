@@ -8,8 +8,8 @@ exec master..xp_regread	'hkey_local_machine'
 set @filepath=@softpath+'资产平台隧道明细表.xls'
 
 declare @query nvarchar(1000);
-set @query = 
-    'select 
+set @query =
+    'select
         *
 				into ##tk063
     from openrowset(''microsoft.jet.oledb.4.0'', ''excel 5.0;database=' + @filepath + ';hdr=yes'', ''select * from [明细表$]'')';
@@ -116,7 +116,7 @@ case when len(备注) >0 then 备注 when len(备注) =0 or 备注 is null then 
 case when len(隧道工程师) >0 then 隧道工程师 when len(隧道工程师) =0 or 隧道工程师 is null then null end 隧道工程师	,
 case when len(经度) >0 then 经度 when len(经度) =0 or 经度 is null then null end 经度	,
 case when len(纬度) >0 then 纬度 when len(纬度) =0 or 纬度 is null then null end 纬度	,
-case when len(隧道养护等级) >0 then 隧道养护等级 when len(隧道养护等级) =0 or 隧道养护等级 is null then null end 隧道养护等级	
+case when len(隧道养护等级) >0 then 隧道养护等级 when len(隧道养护等级) =0 or 隧道养护等级 is null then null end 隧道养护等级
 from ##tk063
 
 
@@ -134,10 +134,10 @@ drop table ##tk063
 
 --<CONTROL
 	SELECT
-		'执行结果' AS CAPTION , 
+		'执行结果' AS CAPTION ,
 		LABELTEXT='导入完成'+char(13)+char(10),
-		370 AS WIDTH , 
-		0 AS HEIGHT, 
+		370 AS WIDTH ,
+		0 AS HEIGHT,
 		'确定=' AS BUTTON,
 		0 AS SHOWTITLE,
 		'select null' as datasource

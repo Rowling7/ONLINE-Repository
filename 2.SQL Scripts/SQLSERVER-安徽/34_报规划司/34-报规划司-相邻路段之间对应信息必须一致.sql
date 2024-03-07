@@ -1,4 +1,4 @@
-select 
+select
 a.a0102,
 a.ha0102,--单位
 a.k0101,--路线编码
@@ -21,10 +21,10 @@ rtrim(a.hk0158) hk0158,--止点分界点类别
 [下一路段k0154]=b.k0154,
 [下一路段b.hk0154]=rtrim(b.hk0154)--起点分界点类别
 
-from k001 a left join k001 b 
-on rtrim(a.k0101) = rtrim(b.k0101)  and a.k0109=b.k0108 
+from k001 a left join k001 b
+on rtrim(a.k0101) = rtrim(b.k0101)  and a.k0109=b.k0108
 where ( nullif(ltrim(rtrim(a.k0111)),'')< > nullif(ltrim(rtrim(b.k0110)),'') or a.k0183< > b.k0283 or a.k0184< > b.k0284
-or nullif(a.k0157,'')< > nullif(b.k0153,'') or nullif(a.k0158,'')< > nullif(b.k0154,'') ) 
+or nullif(a.k0157,'')< > nullif(b.k0153,'') or nullif(a.k0158,'')< > nullif(b.k0154,'') )
 and left(a.k0101,1)in('x','y','c','z')
--- and b.k0108 is not null  
+-- and b.k0108 is not null
 --and a.k0283 is null and b.k0284 is null
