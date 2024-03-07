@@ -7,20 +7,31 @@
 
 SELECT
 tbl.name,
-@PageSize*0.001*((SELECT sum(sidx.dpages)
+[DataSpaceUsed(MB)] = @PageSize*0.001*((SELECT sum(sidx.dpages)
 		 FROM dbo.sysindexes sidx
 		 WHERE sidx.indid < 2 and sidx.id = tbl.id)
 		+
 		(SELECT isnull(sum(sidx.used), 0)
 		 FROM dbo.sysindexes sidx
-		 WHERE sidx.indid = 255 and sidx.id = tbl.id)) AS [DataSpaceUsed(MB)],
-@PageSize2*0.001*(SELECT sum(isnull(sidx.used,0)-isnull(sidx.dpages,0))
+		 WHERE sidx.indid = 255 and sidx.id = tbl.id)),
+[IndexSpaceUsed(MB)] = @PageSize2*0.001*(SELECT sum(isnull(sidx.used,0)-isnull(sidx.dpages,0))
 		 FROM dbo.sysindexes sidx
-		 WHERE sidx.indid < 2 and sidx.id = tbl.id) AS [IndexSpaceUsed(MB)]
+		 WHERE sidx.indid < 2 and sidx.id = tbl.id),
+[TotalIndexSpaceUsed(MB)] = @PageSize2*0.001*(SELECT sum(isnull(sidx.used,0)-isnull(sidx.dpages,0))
+		 FROM dbo.sysindexes sidx
+		 WHERE sidx.indid < 2 and sidx.id = tbl.id)
+		+
+		@PageSize*0.001*((SELECT sum(sidx.dpages)
+		 FROM dbo.sysindexes sidx
+		 WHERE sidx.indid < 2 and sidx.id = tbl.id)
+		+
+		(SELECT isnull(sum(sidx.used), 0)
+		 FROM dbo.sysindexes sidx
+		 WHERE sidx.indid = 255 and sidx.id = tbl.id))
 FROM
 dbo.sysobjects AS tbl
 INNER JOIN sysusers AS stbl ON stbl.uid = tbl.uid
 WHERE
 ((tbl.type='U' or tbl.type='S'))
-ORDER BY [IndexSpaceUsed(MB)]DESC ,[DataSpaceUsed(MB)] DESC
+ORDER BY [TotalIndexSpaceUsed(MB)] desc,[IndexSpaceUsed(MB)]DESC ,[DataSpaceUsed(MB)] DESC
 -- and(tbl.name=N'k001' and stbl.name=N'dbo')
