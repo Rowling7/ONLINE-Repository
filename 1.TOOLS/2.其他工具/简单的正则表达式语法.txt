@@ -20,3 +20,8 @@
 	{x,}		 匹配前一项内容 x 或多次
 	{x,y}		 匹配前一项内容次数介于 x 和 y 之间
 	\		 特殊转义字符
+
+GRAAAAAAAAAAAAAAY
+gry
+GRAAAY
+GRA+Y

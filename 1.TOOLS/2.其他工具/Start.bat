@@ -1,22 +1,22 @@
 title %time%
-:: æ‰“å¼€ vscode
+:: ´ò¿ª vscode
 :: start D:\"Program Files (x86)"\"Microsoft VS Code"\code.exe
 :: timeout /t 10
-:: å…³é—­ VScode
+:: ¹Ø±Õ VScode
 :: taskkill /f /im code.exe
 :: timeout /t 3
 
-::æ¸…é™¤å¾®ä¿¡æ–‡ä»¶
+::Çå³ıÎ¢ĞÅÎÄ¼ş
 ::start C:\Users\OYDSOFT\AppData\Roaming\Microsoft\Windows\"Start Menu"\Programs\Startup\"Clear WeChat Files Online.bat"
 
 ::TIM
 ::start D:\"Program Files (x86)"\Tencent\QQ\Bin\QQScLauncher.exe
 start D:\"Program Files (x86)"\Tencent\TIM\Bin\QQScLauncher.exe
 
-:: ä¼ä¸šå¾®ä¿¡
+:: ÆóÒµÎ¢ĞÅ
 start D:\"Program Files (x86)"\WXWork\WXWork.exe
 
-:: å¾®ä¿¡å¤šå¼€
+:: Î¢ĞÅ¶à¿ª
 :: start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
 start D:\"Program Files (x86)"\Tencent\WeChat\WeChat.exe
 
@@ -29,24 +29,24 @@ start  D:\"Program Files (x86)"\"Micro Soft"\Compressed\Steam++\Steam++.exe
 :: Edge
 :: start C:\"Program Files (x86)"\Microsoft\Edge\Application\msedge.exe
 
-:: æ­¤ç”µè„‘
+:: ´ËµçÄÔ
 :: start C:\Users\OYDSOFT\AppData\Roaming\Microsoft\Windows\"Start Menu"\Programs\"System Tools"\computer.lnk
 
 :: Everything
 start C:\Users\OYDSOFT\AppData\Roaming\Microsoft\Windows\"Start Menu"\Programs\Everything.exe.lnk
 
-:: å…³é—­å‘æ—¥è‘µ
+:: ¹Ø±ÕÏòÈÕ¿û
 taskkill /f /im SunloginClient.exe
 
-:: å…³é—­ToDesk
+:: ¹Ø±ÕToDesk
 ::taskkill /f /im ToDesk.exe
-:: å…³é—­ToDeskæœåŠ¡
+:: ¹Ø±ÕToDesk·şÎñ
 ::sc stop "ToDesk_Service"
 
-:: å…³é—­edge åå°
+:: ¹Ø±Õedge ºóÌ¨
 ::taskkill /f /im MSEDGE.EXE
 
-:: å…³é—­Chrome åå°
+:: ¹Ø±ÕChrome ºóÌ¨
 taskkill /f /im Chrome.EXE
 
 
