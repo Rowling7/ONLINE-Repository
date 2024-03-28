@@ -4,6 +4,8 @@ from
 openrowset('Microsoft.Jet.OLEDB.4.0',  'E:\42\mapdata.sdd';'admin';'',QL)
 order by  rtrim(DWDM)
 
+OPENROWSET('Microsoft.jet.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=E:\6078曹勇嵩\1.工作文件\1.工作文件（日期分类）\20230818 温州核查\330328\330328.xlsx',sheet1$)
+
 
 --Microsoft.ACE.OLEDB.12.0
 select distinct rtrim(DWDM)
@@ -11,6 +13,7 @@ from
 openrowset('Microsoft.ACE.OLEDB.12.0', 'E:\42\mapdata.sdd';'admin';'',QL)
 order by  rtrim(DWDM)
 
+OPENROWSET('Microsoft.ACE.OLEDB.12.0','Excel 8.0;HDR=YES;DATABASE=E:\6078曹勇嵩\1.工作文件\1.工作文件（日期分类）\20230818 温州核查\330328\330328.xlsx',sheet1$)
 
 --核对表格数据库是否一致
 
