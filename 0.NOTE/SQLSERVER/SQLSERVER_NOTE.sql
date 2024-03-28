@@ -48,7 +48,8 @@ FROM (
 			and RTRIM(D.OBJJC)<>'高速'
 		) AS t1
 GROUP BY [K01011];
-
+--子查询和 FOR XML PATH 来模拟 STRING_AGG 函数的功能，将同一个 K01011 对应的 K6002 值组合成一个逗号分隔的字符串。
+--STUFF 函数用于去除开头的逗号和空格。
 
 -- sql执行顺序区别
 /*
